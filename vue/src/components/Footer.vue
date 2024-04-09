@@ -33,32 +33,39 @@
 .footer {
     position: relative;
     display: flex;
+    flex-direction: row;
     padding: 0;
 }
 
 .logo {
     position: relative;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     padding: 0;
-    width: 15%;
-    height: 15%; 
+    width: 5%;
+    height: 5%; 
 }
 
 .footer-links {
     position: relative;
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     padding: 0;
 }
 
 .social-media {
     position: relative;
     display: flex;
+    flex-direction: row;
     padding: 0;
 }
 
 #facebook {
     position: relative;
     display: flex;
+    flex-direction: row;
     padding: 0;
     width: 15%;
     height: 15%; 
@@ -67,6 +74,7 @@
 #instagram {
     position: relative;
     display: flex;
+    flex-direction: row;
     padding: 0;
     width: 15%;
     height: 15%; 
@@ -75,6 +83,7 @@
 #twitter {
     position: relative;
     display: flex;
+    flex-direction: row;
     padding: 0;
     width: 15%;
     height: 15%; 
@@ -83,6 +92,7 @@
 #linkedin {
     position: relative;
     display: flex;
+    flex-direction: row;
     padding: 0;
     width: 15%;
     height: 15%; 
