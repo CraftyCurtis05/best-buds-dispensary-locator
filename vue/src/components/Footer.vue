@@ -4,23 +4,27 @@
             <img src="src\assets\dispensary_logo_white_green.png"/>
         </div>
         <div class="footer-links">
+            <h2>Helpful Links</h2>
             <ul>
-                <h2>Helpful Links</h2>
+                
             </ul>
         </div>
+        
         <div class="social-media">
             <h2>Follow Us</h2>
-            <div id="facebook">
-                <img src="src\assets\facebook_logo.png"/>
-            </div>
-            <div id="instagram">
-                <img src="src\assets\instagram_logo.png"/>
-            </div>
-            <div id="twitter">
-                <img src="src\assets\twitter_logo.png"/>
-            </div>
-            <div id="linkedin">
-                <img src="src\assets\linkedIn_logo.png"/>
+            <div class="social-media-logos">
+                <div id="facebook">
+                    <img src="src\assets\facebook_logo.png"/>
+                </div>
+                <div id="instagram">
+                    <img src="src\assets\instagram_logo.png"/>
+                </div>
+                <div id="twitter">
+                    <img src="src\assets\twitter_logo.png"/>
+                </div>
+                <div id="linkedin">
+                    <img src="src\assets\linkedIn_logo.png"/>
+                </div>
             </div>
         </div>
     </footer>
@@ -31,70 +35,64 @@
 
 <style scoped>
 .footer {
-    position: relative;
     display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: #00331A;
     flex-direction: row;
-    padding: 0;
+    align-items: center;
 }
 
 .logo {
-    position: relative;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 0;
-    width: 5%;
-    height: 5%; 
+    justify-content: flex-start;
+    height: 75px;
+    margin-left: 25px;
 }
 
 .footer-links {
-    position: relative;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding: 0;
 }
 
 .social-media {
-    position: relative;
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center; */
+    margin-right: 25px;
+    
 }
 
+.social-media-logos {
+    display: flex;
+}
+
+
 #facebook {
-    position: relative;
     display: flex;
     flex-direction: row;
-    padding: 0;
-    width: 15%;
-    height: 15%; 
+    height: 15px;
+    padding: 5px;
 }
 
 #instagram {
-    position: relative;
     display: flex;
     flex-direction: row;
-    padding: 0;
-    width: 15%;
-    height: 15%; 
+    height: 15px; 
+    padding: 5px;
 }
 
 #twitter {
-    position: relative;
     display: flex;
     flex-direction: row;
-    padding: 0;
-    width: 15%;
-    height: 15%; 
+    height: 15px; 
+    padding: 5px;
 }
 
 #linkedin {
-    position: relative;
     display: flex;
     flex-direction: row;
-    padding: 0;
-    width: 15%;
-    height: 15%; 
+    height: 15px; 
+    padding: 5px;
 }
 </style>
