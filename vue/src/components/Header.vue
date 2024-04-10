@@ -14,28 +14,28 @@
 
 <style scoped>
 .header {
-    position: relative;
     display: flex;
-    padding: 0;
+    margin: 0 auto;
+    max-width: 100%;
+    align-items: center;
 }
 
 #logo {
     position: absolute;
     display: flex;
-    width: 15%;
-    height: 15%; 
+    width: 20%;
+    height: 20%; 
     z-index: 1;
-    top: 50px;
-    left: 25px;
+    justify-content: flex-start;
+    margin-left: 15px;
 }
 
 #banner {
-    position: absolute;
-    width: 100%;
-    height: 25%;
-    border: 0px;
     display: flex;
-    padding: 0;
-    overflow: hidden;
+    margin: 0 auto;
+}
+
+#banner img {
+    width: 208.9vh;
 }
 </style>
