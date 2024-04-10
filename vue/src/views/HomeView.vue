@@ -6,11 +6,10 @@
     <NavBar />
   </div>
   <div class="home">
-    <h1>Home</h1>
-    <p>You must be authenticated to see this</p>
+    <h1>Welcome to Best Buds!</h1>
+    <h2>Find And Connect With Your Dispensary Here</h2>
      <div id="nav">
-      <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp;
-      <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
+      <h3>"Sativa to change the things I can, indica to accept the things I can’t." -Unknown</h3>
     </div>
   </div>
   <div class="footer">
@@ -28,5 +27,20 @@ export default {
 
 };
 </script>
+
+<style scoped>
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+  font-style: italic;
+}
+</style>
 
 
