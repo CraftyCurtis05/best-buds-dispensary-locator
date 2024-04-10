@@ -6,7 +6,7 @@
         <div class="footer-links">
             <h2>Helpful Links</h2>
             <ul>
-                
+                <a href="www.google.com">Privacy Policy</a>
             </ul>
         </div>
         
@@ -46,53 +46,77 @@
 .logo {
     display: flex;
     justify-content: flex-start;
-    height: 75px;
+    height: 105px;
     margin-left: 25px;
 }
 
 .footer-links {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.footer-links h2 {
+    color: white;
+    margin-left: 15px;
+}
+
+ul {
+    display: flex;
+    text-align: center;
+    justify-self: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    margin-top: -15px;
 }
 
 .social-media {
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center; */
     margin-right: 25px;
-    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.social-media h2 {
+    color: white;
+    margin-left: 60px;
 }
 
 .social-media-logos {
     display: flex;
+    margin-bottom: 25px;
+    margin-top: -10px;
 }
 
 
 #facebook {
     display: flex;
     flex-direction: row;
-    height: 15px;
+    height: 45px;
     padding: 5px;
 }
 
 #instagram {
     display: flex;
     flex-direction: row;
-    height: 15px; 
+    height: 45px; 
     padding: 5px;
 }
 
 #twitter {
     display: flex;
     flex-direction: row;
-    height: 15px; 
+    height: 45px; 
     padding: 5px;
 }
 
 #linkedin {
     display: flex;
     flex-direction: row;
-    height: 15px; 
+    height: 45px; 
     padding: 5px;
 }
 </style>
