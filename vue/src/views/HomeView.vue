@@ -2,6 +2,9 @@
   <div class="header">
     <Header />
   </div>
+  <div class="nav-bar">
+    <NavBar />
+  </div>
   <div class="home">
     <h1>Home</h1>
     <p>You must be authenticated to see this</p>
@@ -18,9 +21,10 @@
 <script>
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
+import NavBar from '../components/NavBar.vue';
 
 export default {
-  components: { Header, Footer },
+  components: { Header, Footer, NavBar },
 
 };
 </script>
