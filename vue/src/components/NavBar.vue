@@ -5,22 +5,20 @@
                 <router-link v-bind:to="{ name: 'home' }">Home</router-link>
             </div>
             <div id="search-nav">
-                <p>Search</p>
+                <router-link v-bind:to="{ name: 'search' }">Search</router-link>
             </div>
             <div id="shop-nav">
-                <p>Shop</p>
+                <router-link v-bind:to="{ name: 'Shop' }">Shop</router-link>
             </div>
             <div id="tips-tricks-nav">
-                <p>Tips & Tricks</p>
+                <router-link v-bind:to="{ name: 'TipsTricks' }">Tips & Tricks</router-link>
             </div>
             <div id="articles-nav">
-                <p>Articles</p>
+                <router-link v-bind:to="{ name: 'Articles' }">Articles</router-link>
             </div>
             <div id="about-us-nav">
-                <p>About Us</p>
-            </div>
+                <router-link v-bind:to="{ name: 'About Us' }">About Us</router-link>
         </div>
-
         <div id="right-nav">
             <div id="profile-nav">
                 <p>Profile</p>
@@ -29,6 +27,7 @@
                 <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
             </div>
         </div>
+    </div>
     </div>
 </template>
 

@@ -1,11 +1,16 @@
-import { createRouter as createRouter, createWebHistory } from 'vue-router'
-import { useStore } from 'vuex'
+import { createRouter, createWebHistory } from 'vue-router';
+import { useStore } from 'vuex';
 
 // Import components
 import HomeView from '../views/HomeView.vue';
 import LoginView from '../views/LoginView.vue';
 import LogoutView from '../views/LogoutView.vue';
 import RegisterView from '../views/RegisterView.vue';
+import SearchView from '../views/SearchView.vue';
+import ShopView from '../views/ShopView.vue';
+import TipsTricksView from '../views/TipsTricksView.vue';
+import ArticlesView from '../views/ArticlesView.vue';
+import AboutUsView from '../views/AboutUsView.vue';
 
 /**
  * The Vue Router is used to "direct" the browser to render a specific view component
@@ -44,6 +49,46 @@ const routes = [
     path: "/register",
     name: "register",
     component: RegisterView,
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: "/search",
+    name: "search",
+    component: SearchView,
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: "/shop",
+    name: "shop",
+    component: ShopView,
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: "/tipstricks",
+    name: "tipstricks",
+    component: TipsTricksView,
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: "/articles",
+    name: "articles",
+    component: ArticlesView,
+    meta: {
+      requiresAuth: false
+    }
+  },
+  {
+    path: "/aboutus",
+    name: "aboutus",
+    component: AboutUsView,
     meta: {
       requiresAuth: false
     }

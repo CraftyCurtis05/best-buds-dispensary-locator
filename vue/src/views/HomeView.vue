@@ -8,7 +8,7 @@
   <div class="home">
     <h1>Welcome to Best Buds!</h1>
     <h2>Find And Connect With Your Dispensary Here</h2>
-     <div id="nav">
+    <div id="nav">
       <h3>"Sativa to change the things I can, indica to accept the things I can’t." -Unknown</h3>
     </div>
   </div>
