@@ -1,7 +1,7 @@
 <template>
     <div class="header">
         <div id="logo">
-            <img src="src\assets\dispensary_logo_white_green.png"/>
+            <img src="src\assets\best_buds_logo_white.png"/>
         </div>
         <div id="banner">
             <img src="src\assets\dispensary_banner.png"/>

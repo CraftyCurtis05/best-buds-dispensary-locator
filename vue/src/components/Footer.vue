@@ -1,7 +1,7 @@
 <template>
     <footer class="footer">
         <div class="logo">
-            <img src="src\assets\dispensary_logo_white_green.png"/>
+            <img src="src\assets\best_buds_logo_white.png"/>
         </div>
         <div class="footer-links">
             <h2>Helpful Links</h2>
