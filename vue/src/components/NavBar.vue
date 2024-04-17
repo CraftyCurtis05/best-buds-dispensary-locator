@@ -1,33 +1,18 @@
 <template>
     <div class="nav-bar">
         <div id="left-nav">
-            <div id="home-nav">
-                <router-link v-bind:to="{ name: 'home' }">Home</router-link>
-            </div>
-            <div id="search-nav">
-                <router-link v-bind:to="{ name: 'search' }">Search</router-link>
-            </div>
-            <div id="shop-nav">
-                <router-link v-bind:to="{ name: 'Shop' }">Shop</router-link>
-            </div>
-            <div id="tips-tricks-nav">
-                <router-link v-bind:to="{ name: 'TipsTricks' }">Tips & Tricks</router-link>
-            </div>
-            <div id="articles-nav">
-                <router-link v-bind:to="{ name: 'Articles' }">Articles</router-link>
-            </div>
-            <div id="about-us-nav">
-                <router-link v-bind:to="{ name: 'About Us' }">About Us</router-link>
+            <router-link id="home-nav" v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''">Home</router-link>
+            <div class="separators" id="sep1"></div>
+            <router-link id="search-nav" v-bind:to="{ name: 'search' }" v-if="$store.state.token != ''">Search</router-link>
+            <router-link id="shop-nav" v-bind:to="{ name: 'Shop' }" v-if="$store.state.token != ''">Shop</router-link>
+            <router-link id="tips-tricks-nav" v-bind:to="{ name: 'TipsTricks' }" v-if="$store.state.token != ''">Tips & Tricks</router-link>
+            <router-link id="articles-nav" v-bind:to="{ name: 'Articles' }" v-if="$store.state.token != ''">Articles</router-link>
+            <router-link id="about-us-nav" v-bind:to="{ name: 'About Us' }" v-if="$store.state.token != ''">About Us</router-link>
         </div>
         <div id="right-nav">
-            <div id="profile-nav">
-                <router-link v-bind:to="{ name: 'Profile' }">Profile</router-link>
-            </div>
-            <div id="logout-nav">
-                <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
-            </div>
+            <router-link id="profile-nav" v-bind:to="{ name: 'Profile' }" v-if="$store.state.token != ''">Profile</router-link>
+            <router-link id="logout-nav" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
         </div>
-    </div>
     </div>
 </template>
 

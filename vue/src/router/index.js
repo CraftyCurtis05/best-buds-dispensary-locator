@@ -59,7 +59,7 @@ const routes = [
     name: "search",
     component: SearchView,
     meta: {
-      requiresAuth: false
+      requiresAuth: true
     }
   },
   {
@@ -67,7 +67,7 @@ const routes = [
     name: "shop",
     component: ShopView,
     meta: {
-      requiresAuth: false
+      requiresAuth: true
     }
   },
   {
@@ -75,7 +75,7 @@ const routes = [
     name: "tipstricks",
     component: TipsTricksView,
     meta: {
-      requiresAuth: false
+      requiresAuth: true 
     }
   },
   {
@@ -83,7 +83,7 @@ const routes = [
     name: "articles",
     component: ArticlesView,
     meta: {
-      requiresAuth: false
+      requiresAuth: true
     }
   },
   {
@@ -91,7 +91,8 @@ const routes = [
     name: "aboutus",
     component: AboutUsView,
     meta: {
-      requiresAuth: false
+      requiresAuth: true
+
     }
   },
   {
@@ -99,7 +100,7 @@ const routes = [
     name: "profile",
     component: ProfileView,
     meta: {
-      requiresAuth: false
+      requiresAuth: true
   }
 }
 ];
