@@ -23,8 +23,7 @@ import Footer from '../components/Footer.vue';
 import NavBar from '../components/NavBar.vue';
 
 export default {
-  components: { Header, Footer, NavBar },
-
+  components: { Header, Footer, NavBar }
 };
 </script>
 

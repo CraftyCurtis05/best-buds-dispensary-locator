@@ -2,6 +2,8 @@
     <footer class="footer">
         <div class="logo">
             <img src="src\assets\best_buds_logo_white.png"/>
+            <span>&copy; {{ year }} {{ companyName }}</span>
+            <p class="slogan">SLOGAN</p>
         </div>
         <div class="footer-links">
             <h2>Helpful Links</h2>
@@ -31,6 +33,14 @@
 </template>
 
 <script>
+export default {
+    data() {
+      return {
+        year: new Date().getFullYear(),
+        companyName: "Best Buds Dispensary Locator",
+      };
+    },
+  };
 </script>
 
 <style scoped>
