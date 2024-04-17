@@ -21,7 +21,7 @@
         </div>
         <div id="right-nav">
             <div id="profile-nav">
-                <p>Profile</p>
+                <router-link v-bind:to="{ name: 'Profile' }">Profile</router-link>
             </div>
             <div id="logout-nav">
                 <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
