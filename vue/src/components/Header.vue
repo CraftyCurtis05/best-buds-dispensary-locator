@@ -4,7 +4,7 @@
             <img src="src\assets\best_buds_logo_white.png"/>
         </div>
         <div id="banner">
-            <img src="src\assets\dispensary_banner.png"/>
+            <img src="src\assets\dispensary_banner_cropped.png"/>
         </div>
     </div>    
 </template>
@@ -15,19 +15,16 @@
 <style scoped>
 .header {
     display: flex;
-    margin: 0 auto;
-    max-width: 100%;
-    align-items: center;
+    height: 10vw;
 }
 
 #logo {
     position: absolute;
     display: flex;
-    width: 20%;
-    height: 20%; 
-    z-index: 1;
     justify-content: flex-start;
-    margin-left: 15px;
+    height: 10vw;
+    z-index: 1;
+    margin-left: 7vw;
 }
 
 #banner {
@@ -36,6 +33,6 @@
 }
 
 #banner img {
-    width: 208.9vh;
+    width: 100vw;
 }
 </style>

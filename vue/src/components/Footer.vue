@@ -2,19 +2,17 @@
     <footer class="footer">
         <div class="logo">
             <img src="src\assets\best_buds_logo_white.png"/>
-            <span>&copy; {{ year }} {{ companyName }}</span>
-            <p class="slogan">SLOGAN</p>
+            <p id="slogan">"CREATE OUR SLOGAN"</p>
         </div>
         <div class="footer-links">
             <h2>Helpful Links</h2>
-            <ul>
-                <a href="www.google.com">Privacy Policy</a>
-            </ul>
+            <a href="www.google.com">Privacy Policy</a>
+            <span id="copyright"> @{{ year }} {{ companyName }} </span>
         </div>
         
         <div class="social-media">
             <h2>Follow Us</h2>
-            <div class="social-media-logos">
+            <div id="social-media-logos">
                 <div id="facebook">
                     <img src="src\assets\facebook_logo.png"/>
                 </div>
@@ -37,7 +35,7 @@ export default {
     data() {
       return {
         year: new Date().getFullYear(),
-        companyName: "Best Buds Dispensary Locator",
+        companyName: "Best Buds Locator",
       };
     },
   };
@@ -46,87 +44,97 @@ export default {
 <style scoped>
 .footer {
     display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
+    justify-content: space-around;
     background-color: #00331A;
-    flex-direction: row;
-    align-items: center;
+    text-align: center;
+    height: 12vw;
 }
 
-.logo {
+.logo img {
     display: flex;
-    justify-content: flex-start;
-    height: 105px;
-    margin-left: 25px;
+    flex-direction: column;
+    height: 7vw;
+    padding-top: 15%;
+}
+
+#slogan {
+    color: white;
+    font-size: 0.8vw;
 }
 
 .footer-links {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .footer-links h2 {
     color: white;
-    margin-left: 15px;
-}
-
-ul {
-    display: flex;
     text-align: center;
-    justify-self: center;
+    font-size: 1.3vw;
+    padding-block-start: 20%;
 }
 
-a {
-    text-decoration: none;
+.footer-links a {
     color: white;
-    margin-top: -15px;
+    text-align:center;
+    text-decoration: none;
+    font-size: 1vw;
+}
+
+#copyright {
+    color: white;
+    font-size: 0.77vw;
+    padding-block: 50%;
 }
 
 .social-media {
-    margin-right: 25px;
     display: flex;
-    justify-content: center;
     flex-direction: column;
 }
 
 .social-media h2 {
     color: white;
-    margin-left: 60px;
+    text-align: center;
+    font-size: 1.3vw;
+    padding-block-start: 20%;
+
 }
 
-.social-media-logos {
+#social-media-logos {
     display: flex;
-    margin-bottom: 25px;
-    margin-top: -10px;
+    align-content: center;
+    justify-content: center;
+    margin-bottom: 3.5vw;
+    margin-top: -1vw;
 }
-
 
 #facebook {
     display: flex;
     flex-direction: row;
-    height: 45px;
-    padding: 5px;
+    height: 2.5vw;
+    padding: 0.4vw;
 }
 
 #instagram {
     display: flex;
     flex-direction: row;
-    height: 45px; 
-    padding: 5px;
+    height: 2.5vw;
+    padding: 0.4vw;
 }
 
 #twitter {
     display: flex;
     flex-direction: row;
-    height: 45px; 
-    padding: 5px;
+    height: 2.5vw;
+    padding: 0.4vw;
 }
 
 #linkedin {
     display: flex;
     flex-direction: row;
-    height: 45px; 
-    padding: 5px;
+    height: 2.5vw;
+    padding: 0.4vw;
 }
 </style>

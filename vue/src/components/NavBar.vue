@@ -1,6 +1,6 @@
 <template>
     <div class="nav-bar">
-        <div id="left-nav">
+        <div class="left-nav">
             <div id="home-div">
                 <router-link id="home-nav" v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''">Home</router-link>
             </div>
@@ -20,7 +20,7 @@
                 <router-link id="about-us-nav" v-bind:to="{ name: 'aboutus' }" v-if="$store.state.token != ''">About Us</router-link>
             </div>    
         </div>
-        <div id="right-nav">
+        <div class="right-nav">
             <div id="profile-div">
                 <router-link id="profile-nav" v-bind:to="{ name: 'profile' }" v-if="$store.state.token != ''">Profile</router-link>
             </div>
@@ -40,47 +40,69 @@
     justify-content: space-between;
     box-sizing: border-box;
     background-color: #00331A;
-    color: white;
-    align-items: center;
 }
 
-#left-nav {
+.left-nav {
     display: flex;
 }
 
-#right-nav {
+.right-nav {
     display: flex;
 }
 
 #home-nav {
-    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 90%;
+    padding-inline: 2vw;
 }
 
 #search-nav {
-    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 90%;
+    padding-inline: 2vw;
 }
 
 #shop-nav {
-    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 90%;
+    padding-inline: 2vw;
 }
 
 #tips-tricks-nav {
-    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 90%;
+    padding-inline: 2vw;
 }
 
 #articles-nav {
-    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 90%;
+    padding-inline: 2vw;
 }
 
 #about-us-nav {
-    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 90%;
+    padding-inline: 2vw;
 }
 
 #profile-nav {
-    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 90%;
+    padding-inline: 2vw;
 }
 
 #logout-nav {
-    margin-right: 20px;
+    text-decoration: none;
+    color: white;
+    font-size: 90%;
+    padding-inline: 2vw;
 }
 </style>
