@@ -40,69 +40,75 @@
     justify-content: space-between;
     box-sizing: border-box;
     background-color: #00331A;
+    height: 30px;
+    width: 100vw;
 }
 
 .left-nav {
     display: flex;
+    font-weight: bold;
+    margin-top: 0.4%
 }
 
 .right-nav {
     display: flex;
+    font-weight: bold;
+    margin-top: 0.4%;
 }
 
 #home-nav {
     text-decoration: none;
     color: white;
-    font-size: 90%;
+    font-size: 100%;
     padding-inline: 2vw;
 }
 
 #search-nav {
     text-decoration: none;
     color: white;
-    font-size: 90%;
+    font-size: 100%;
     padding-inline: 2vw;
 }
 
 #shop-nav {
     text-decoration: none;
     color: white;
-    font-size: 90%;
+    font-size: 100%;
     padding-inline: 2vw;
 }
 
 #tips-tricks-nav {
     text-decoration: none;
     color: white;
-    font-size: 90%;
+    font-size: 100%;
     padding-inline: 2vw;
 }
 
 #articles-nav {
     text-decoration: none;
     color: white;
-    font-size: 90%;
+    font-size: 100%;
     padding-inline: 2vw;
 }
 
 #about-us-nav {
     text-decoration: none;
     color: white;
-    font-size: 90%;
+    font-size: 100%;
     padding-inline: 2vw;
 }
 
 #profile-nav {
     text-decoration: none;
     color: white;
-    font-size: 90%;
+    font-size: 100%;
     padding-inline: 2vw;
 }
 
 #logout-nav {
     text-decoration: none;
     color: white;
-    font-size: 90%;
+    font-size: 100%;
     padding-inline: 2vw;
 }
 </style>

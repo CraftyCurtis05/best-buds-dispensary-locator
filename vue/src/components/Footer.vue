@@ -1,8 +1,8 @@
 <template>
     <footer class="footer">
-        <div class="logo">
-            <img src="src\assets\best_buds_logo_white.png"/>
-            <p id="slogan">"CREATE OUR SLOGAN"</p>
+        <div id="logo">
+            <router-link v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''" target="_blank"><img src="src\assets\best_buds_logo_white.png"/></router-link>
+            <p id="slogan">"Good To Grow"</p>
         </div>
         <div class="footer-links">
             <h2>Helpful Links</h2>
@@ -14,16 +14,16 @@
             <h2>Follow Us</h2>
             <div id="social-media-logos">
                 <div id="facebook">
-                    <img src="src\assets\facebook_logo.png"/>
+                    <a href="https://www.facebook.com/" target="_blank"><img src="src\assets\facebook_logo.png"/></a>
                 </div>
                 <div id="instagram">
-                    <img src="src\assets\instagram_logo.png"/>
+                    <a href="http://www.instagram.com/" target="_blank"><img src="src\assets\instagram_logo.png"/></a>
                 </div>
                 <div id="twitter">
-                    <img src="src\assets\twitter_logo.png"/>
+                    <a href="http://wwww.twitter.com/" target="_blank"><img src="src\assets\twitter_logo.png"/></a>
                 </div>
                 <div id="linkedin">
-                    <img src="src\assets\linkedIn_logo.png"/>
+                    <a href="http://www.linkedin.com/" target="_blank"><img src="src\assets\linkedIn_logo.png"/></a>
                 </div>
             </div>
         </div>
@@ -37,7 +37,7 @@ export default {
         year: new Date().getFullYear(),
         companyName: "Best Buds Locator",
       };
-    },
+    }
   };
 </script>
 
@@ -50,7 +50,7 @@ export default {
     height: 12vw;
 }
 
-.logo img {
+#logo img {
     display: flex;
     flex-direction: column;
     height: 7vw;
@@ -110,28 +110,28 @@ export default {
     margin-top: -1vw;
 }
 
-#facebook {
+#facebook img {
     display: flex;
     flex-direction: row;
     height: 2.5vw;
     padding: 0.4vw;
 }
 
-#instagram {
+#instagram img {
     display: flex;
     flex-direction: row;
     height: 2.5vw;
     padding: 0.4vw;
 }
 
-#twitter {
+#twitter img {
     display: flex;
     flex-direction: row;
     height: 2.5vw;
     padding: 0.4vw;
 }
 
-#linkedin {
+#linkedin img {
     display: flex;
     flex-direction: row;
     height: 2.5vw;

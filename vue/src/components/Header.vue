@@ -1,7 +1,7 @@
 <template>
     <div class="header">
         <div id="logo">
-            <img src="src\assets\best_buds_logo_white.png"/>
+            <router-link v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''" target="_blank"><img src="src\assets\best_buds_logo_white.png"/></router-link>
         </div>
         <div id="banner">
             <img src="src\assets\dispensary_banner_cropped.png"/>
@@ -16,9 +16,10 @@
 .header {
     display: flex;
     height: 10vw;
+    width: 100vw;
 }
 
-#logo {
+#logo img {
     position: absolute;
     display: flex;
     justify-content: flex-start;
