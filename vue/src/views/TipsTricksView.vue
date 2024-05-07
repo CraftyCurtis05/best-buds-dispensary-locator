@@ -6,8 +6,17 @@
         </div>
         <div class="tips-tricks">
             <h1>Tips & Tricks</h1>
-            <h2>Something witty about how we have tips and tricks to help you consume your dispensary goodies!</h2>
-            <p>This is where the buttons will go</p>
+            <h2>Cannabis confusion got you burnt out?</h2>
+            <h2>Check out some of the Tips and Tricks we've compiled below!</h2>
+            <div class="links">
+                <a href="https://www.colorado.com/articles/8-tips-safer-cannabis-consumption">8 Tips for Safer Cannabis Consumption</a>
+           
+                <a href="https://silverstemcannabis.com/news-articles/how-to-smoke-cannabis-the-right-way-tips-and-tricks">How to Smoke Cannabis The Right Way</a>
+               
+                <a href="https://cbd-alchemy.com/en/blog/a-comprehensive-guide-to-cannabis-strains/">A Comprehensive Guide to Cannabis Strains</a>
+            
+                <a href="https://420central.com/how-do-i-know-which-cannabis-products-are-right-for-me/">Choosing the Right Product for You</a>      
+        </div>
         </div>
        <div class="footer"><Footer/></div>
     </div>
@@ -52,15 +61,34 @@ h1 {
 
 h2 { 
     text-align: center; 
-    font-size: 105%; 
+    font-size: 100%; 
     font-weight: lighter; 
 }
 
-p {
-    text-align: center; 
-    font-size: 100%; 
-    margin-left: 16%; 
-    margin-right: 16%;
+.links {
+    display: grid;
+    width: 100%; 
+    height: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    /* grid-template-columns: 20% 20%;
+    grid-template-rows: 20% 20%; */
+    /* grid-template-areas: 
+        "a a"
+        "a a"; */
+    align-items: center;
+    justify-items: center;
 }
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+
 
 </style>

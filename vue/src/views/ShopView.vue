@@ -6,7 +6,7 @@
     </div>
     <div class="shop">
         <h1>Shop our Favorite Products</h1>
-        <h2>We're still packing this bowl full of the best deals we can find, stay tuned.</h2>
+        <h2>We're still packing this bowl full of the best deals we can find, stay tuned!</h2>
     </div>
     <div class="footer"><Footer/></div>
   </div>
