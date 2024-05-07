@@ -1,10 +1,10 @@
 <template>
-    <div class="container">
+    <div class="tips-tricks-view">
         <div class="header-nav">
             <div class="header"><Header/></div>
             <div class="nav-bar"><NavBar/></div>
         </div>
-        <div class="tips-and-tricks">
+        <div class="tips-tricks">
             <h1>Tips & Tricks</h1>
             <h2>Something witty about how we have tips and tricks to help you consume your dispensary goodies!</h2>
             <p>This is where the buttons will go</p>
@@ -20,16 +20,16 @@ import NavBar from '../components/NavBar.vue';
 
 export default {
     components: { Header, Footer, NavBar },
-    name: "tipsntricks"
+    name: "tips-tricks"
 }
 </script>
 
 <style scoped>
-#search-form{
+/* #search-form{
     margin-top: 20px;
-}
+} */
 
-.tips-and-tricks-view {
+.tips-tricks-view {
     width: 100vw;
     background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\green_smoke.png');
     background-position: center;
