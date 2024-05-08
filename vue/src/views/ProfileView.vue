@@ -45,14 +45,12 @@ export default {
     name: "ProfileView",
     data() {
     return {
-        // Example data (replace with actual data)
         profilePictureSrc: profilePictureSrc,
         favoriteLocations: ['Location 1', 'Location 2', 'Location 3'],
         profile: {
         name: 'John Doe',
         age: 30,
         email: 'johndoe@example.com',
-          // Add more profile information fields as needed
         }
     };
     }
