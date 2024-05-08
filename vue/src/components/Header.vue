@@ -6,7 +6,7 @@
         <div id="banner">
             <img src="src\assets\dispensary_banner_cropped.png"/>
         </div>
-    </div>    
+    </div>
 </template>
 
 <script>
