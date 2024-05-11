@@ -1,15 +1,19 @@
 <template>
     <div class="header">
-        <div id="logo">
-            <router-link v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''" target="_blank"><img src="src\assets\best_buds_logo_white.png"/></router-link>
+        <div class="logo-container">
+            <router-link v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''" target="_blank">
+            <img src="src/assets/best_buds_logo_white.png" alt="Logo">
+            </router-link>
         </div>
         <div id="banner">
-            <img src="src\assets\dispensary_banner_cropped.png"/>
+            <img src="src/assets/dispensary_banner_cropped.png" alt="Banner">
         </div>
     </div>
 </template>
 
 <script>
+export default {
+}
 </script>
 
 <style scoped>
@@ -17,15 +21,19 @@
     display: flex;
     height: 10vw;
     width: 100vw;
+    position: relative;
 }
 
-#logo img {
+.logo-container {
     position: absolute;
-    display: flex;
-    justify-content: flex-start;
-    height: 10vw;
-    z-index: 1;
-    margin-left: 7vw;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.logo-container img {
+    height: 100%;
 }
 
 #banner {
