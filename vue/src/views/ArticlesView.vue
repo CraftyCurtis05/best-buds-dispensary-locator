@@ -40,14 +40,14 @@
                         <a :href="article.link" target="_blank">Read more</a>
                     </div>
                 </div>
-                <!-- Archive Section -->
-                <div class="archive-container">
-                    <div class="archive">
-                        <h2>Archive</h2>
-                        <ul>
-                            <li v-for="(month, index) in archive" :key="index">{{ month }}</li>
-                        </ul>
-                    </div>
+            </div>    
+            <!-- Archive Section -->
+            <div class="archive-container">
+                <div class="archive">
+                    <h2>Archive</h2>
+                    <ul>
+                        <li v-for="(month, index) in archive" :key="index">{{ month }}</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -106,8 +106,15 @@ export default {
 
 <style scoped>
 .articles-view {
-    position: relative;
-    background-color: #ccc;
+    /* position: relative;
+    background-color: #ccc; */
+    width: 100vw;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\green_smoke.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+     margin-top: -1vw;
 }
 
 .header-nav {
@@ -158,9 +165,9 @@ export default {
     border-radius: 20%;
 }
 
-  .articles > * {
+  .articles > * {       /*Why??*/
     flex: 1 1 33%;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
 }
 
 .article-container1 {
@@ -172,8 +179,7 @@ export default {
     border: 5px solid;
     border-radius: 20%;
 }
-.article-container2
-{
+.article-container2 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -182,8 +188,7 @@ export default {
     border: 5px solid;
     border-radius: 20%;
 }
-.article-container3
-{
+.article-container3 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -211,10 +216,11 @@ export default {
 }
 
 .archive-container {
+    /* padding-top: 100px; */
     display: flex;
-    position: absolute;
-    top: 20%;
-    right: 0;
+    /* position: absolute; */
+    /* top: 20%;                             /*Utilize Flex to position archive instead of absolute, top, right
+    right: 0; */
     height: 75vh;
     width: 25%;
     padding: 0 10px;
