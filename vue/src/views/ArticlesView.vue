@@ -1,56 +1,56 @@
 <template>
-    <div class="container">
+    <div class="articles-view">
         <div class="header-nav">
             <div class="header"><Header/></div>
-        <div class="nav-bar"><NavBar/></div>
-    </div>
+            <div class="nav-bar"><NavBar/></div>
+        </div>
         <div class="main-content">
-        <!-- Search Bar -->
-        <div class="search-bar">
-            <input type="text" placeholder="Search articles">
-            <button @click="search">Search</button>
-        </div>
-        <div class="articles">
-        <!-- Article Boxes -->
-            <div class="article-container1" v-for="(article, index) in article1" :key="index">
-                <div class="article-box">
-                <h2>{{ article.title }}</h2>
-                <p>{{ article.description }}</p>
-                <a :href="article.link" target="_blank">Read more</a>
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search articles">
+                <button @click="search">Search</button>
+            </div>
+            <div class="articles">
+                <!-- Article Boxes -->
+                <div class="article-container1" v-for="(article, index) in article1" :key="index">
+                    <div class="article-box">
+                        <h2>{{ article.title }}</h2>
+                        <p>{{ article.description }}</p>
+                        <a :href="article.link" target="_blank">Read more</a>
+                    </div>
+                </div>
+                <div class="article-container2" v-for="(article, index) in article2" :key="index">
+                    <div class="article-box">
+                        <h2>{{ article.title }}</h2>
+                        <p>{{ article.description }}</p>
+                        <a :href="article.link" target="_blank">Read more</a>
+                    </div>
+                </div>
+                <div class="article-container3" v-for="(article, index) in article3" :key="index">
+                    <div class="article-box">
+                        <h2>{{ article.title }}</h2>
+                        <p>{{ article.description }}</p>
+                        <a :href="article.link" target="_blank">Read more</a>
+                    </div>
+                </div>
+                <div class="article-container4" v-for="(article, index) in article4" :key="index">
+                    <div class="article-box">
+                        <h2>{{ article.title }}</h2>
+                        <p>{{ article.description }}</p>
+                        <a :href="article.link" target="_blank">Read more</a>
+                    </div>
+                </div>
+                <!-- Archive Section -->
+                <div class="archive-container">
+                    <div class="archive">
+                        <h2>Archive</h2>
+                        <ul>
+                            <li v-for="(month, index) in archive" :key="index">{{ month }}</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="article-container2" v-for="(article, index) in article2" :key="index">
-            <div class="article-box">
-                <h2>{{ article.title }}</h2>
-                <p>{{ article.description }}</p>
-                <a :href="article.link" target="_blank">Read more</a>
-            </div>
-        </div>
-        <div class="article-container3" v-for="(article, index) in article3" :key="index">
-            <div class="article-box">
-                <h2>{{ article.title }}</h2>
-                <p>{{ article.description }}</p>
-                <a :href="article.link" target="_blank">Read more</a>
-            </div>
-        </div>
-        <div class="article-container4" v-for="(article, index) in article4" :key="index">
-            <div class="article-box">
-                <h2>{{ article.title }}</h2>
-                <p>{{ article.description }}</p>
-                <a :href="article.link" target="_blank">Read more</a>
-            </div>
-        </div>
-    </div>
-    </div>
-        <!-- Archive Section -->
-    <div class="archive-container">
-        <div class="archive">
-            <h2>Archive</h2>
-            <ul>
-                <li v-for="(month, index) in archive" :key="index">{{ month }}</li>
-            </ul>
-        </div>
-    </div>
     <Footer class="footer"></Footer>
     </div>
 </template>
@@ -105,33 +105,33 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.articles-view {
     position: relative;
     background-color: #ccc;
 }
 
-.header {
+.header-nav {
     position: fixed;
-    top: 0;
+    /* top: 0;
     width: 100%;
     height:60px;
-    z-index: 1000;
+    z-index: 1000; */
 }
 
-.nav-bar {
+/* .nav-bar {
     position: fixed;
     top: 60px;
     width: 100%;
     height:30px;
     z-index: 1000;
-}
+} */
 
-.footer {
+/* .footer {
     position: fixed;
     bottom: 0;
     width: 100%;
     z-index: 1000;
-}
+} */
 
 .main-content {
     padding-top: 100px;
@@ -211,6 +211,7 @@ export default {
 }
 
 .archive-container {
+    display: flex;
     position: absolute;
     top: 20%;
     right: 0;
