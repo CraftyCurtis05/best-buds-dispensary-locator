@@ -10,7 +10,6 @@
                 <li> Use a clean pipe or bong. </li>
                 <li>  </li>
             </ul>
-            </div>
         </div>
         <div class="smoker-tips">
             <h1> Tips for Cannabis Smokers </h1>
