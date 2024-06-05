@@ -60,6 +60,31 @@
                 <li> Dosing is important as well: Just because a CBD product is low- or no THC doesn’t mean you should swig the whole bottle. </li>
                 <li> Pay attention to labeling or consult the manufacturer if you have questions about how much to take. </li>
             </ul>
+            <ul id="talk-to-doctor">
+                <h2> Talk to Your Doctor Or a Aharmacist </h2>
+                <li> Like vitamins, supplements or additives, CBD products can interact with certain medications. </li>
+                <li> Ask your doctor or a pharmacist before trying CBD to make sure it’s OK to use with any meds you take or with any medical conditions you might have. </li>
+                <li> The Food and Drug Administration(FDA) says pregnant and nursing moms should steer clear of CBD. </li>
+            </ul>
+            <ul id="fda-stance">
+                <h2> Understand the FDA’s Stance </h2>
+                <li> To date, the FDA has only approved one CBD-derived drug product: Epidolex, which has to be prescribed by a doctor. </li>
+                <li> Aside from that, CBD remedies don’t have the FDA’s stamp of approval. </li>
+            </ul>
+            <ul id="instructions-ingredients">
+                <h2> Read the Instructions & Ingredients </h2>
+                <li> Some CBD topicals and edibles are infused with THC, so be sure to read the label. </li>
+                <li> CBD products containing THC above levels of 0.3 percent can only be bought at dispensaries. </li>
+                <li> However, some dispensaries also sell CBD products not mixed with THC. </li>
+                <li> If you’re in doubt, ask your budtender to point you in the right direction and look for the state’s diamond-shaped “THC” Universal Symbol on the product or its packaging to be sure. </li>
+                <li> And, of course, always follow the instructions to the letter, starting low and slow, just as you would with THC. </li>
+            </ul>
+            </div>
+        </div>
+        <div class="want-more">
+            <h1> Want More Information? </h1>
+            <div id="articles-link">
+                <router-link v-bind:to="{ name:'articles'}"> Visit our articles page for more information! </router-link>
             </div>
         </div>    
         <div id="quote">
