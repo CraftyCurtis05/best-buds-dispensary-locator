@@ -22,16 +22,8 @@
                     <li>
                         <router-link v-bind:to="{ name:'smokingcannabis'}">Smoke Cannabis</router-link>
                     </li>
-                     <!-- <a href="https://www.colorado.com/articles/8-tips-safer-cannabis-consumption">8 Tips for Safer Cannabis Consumption</a> -->
-           
-                    <!-- <a href="https://silverstemcannabis.com/news-articles/how-to-smoke-cannabis-the-right-way-tips-and-tricks">How to Smoke Cannabis The Right Way</a>
-               
-                    <a href="https://cbd-alchemy.com/en/blog/a-comprehensive-guide-to-cannabis-strains/">A Comprehensive Guide to Cannabis Strains</a>
-           
-                    <a href="https://420central.com/how-do-i-know-which-cannabis-products-are-right-for-me/">Choosing the Right Product for You</a>       -->
-                </ul>
-               
-        </div>
+                </ul>     
+            </div>
         </div>
        <div class="footer"><Footer/></div>
     </div>

@@ -82,7 +82,7 @@
             </div>
         </div>
         <div class="want-more">
-            <h1> Want More Information? </h1>
+            <h1> Do You Want More Information? </h1>
             <div id="articles-link">
                 <router-link v-bind:to="{ name:'articles'}"> Visit our articles page for more information! </router-link>
             </div>
