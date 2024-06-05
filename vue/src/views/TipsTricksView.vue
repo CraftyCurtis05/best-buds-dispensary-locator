@@ -13,6 +13,15 @@
                     <li>
                         <router-link v-bind:to="{ name:'safetytips'}">Saftey Tips for Cannabis Consumption</router-link>
                     </li>
+                    <li>
+                        <router-link v-bind:to="{ name:'cannabisproducts'}">How To Choose Which Cannabis Product Is Right For You</router-link>
+                    </li>
+                    <li>
+                        <router-link v-bind:to="{ name:'strainguide'}">Strain Guide</router-link>
+                    </li>
+                    <li>
+                        <router-link v-bind:to="{ name:'smokingcannabis'}">Smoke Cannabis</router-link>
+                    </li>
                      <!-- <a href="https://www.colorado.com/articles/8-tips-safer-cannabis-consumption">8 Tips for Safer Cannabis Consumption</a> -->
            
                     <!-- <a href="https://silverstemcannabis.com/news-articles/how-to-smoke-cannabis-the-right-way-tips-and-tricks">How to Smoke Cannabis The Right Way</a>
