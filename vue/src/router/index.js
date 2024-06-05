@@ -12,6 +12,7 @@ import TipsTricksView from '../views/TipsTricksView.vue';
 import ArticlesView from '../views/ArticlesView.vue';
 import AboutUsView from '../views/AboutUsView.vue';
 import ProfileView from '../views/ProfileView.vue';
+import SafetyTipsView from '../views/SafetyTipsView.vue';
 
 /**
  * The Vue Router is used to "direct" the browser to render a specific view component
@@ -102,7 +103,15 @@ const routes = [
     meta: {
       requiresAuth: true
   }
-}
+},
+  {
+    path: "/safetytips",
+    name: "safetytips",
+    component: SafetyTipsView,
+    meta: {
+      requiresAuth: true
+    }
+  }
 ];
 
 // Create the router

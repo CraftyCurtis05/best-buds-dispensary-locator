@@ -8,14 +8,20 @@
             <h1>Tips & Tricks</h1>
             <h2>Cannabis confusion got you burnt out?</h2>
             <h2>Check out some of the Tips and Tricks we've compiled below!</h2>
-            <div class="links">
-                <a href="https://www.colorado.com/articles/8-tips-safer-cannabis-consumption">8 Tips for Safer Cannabis Consumption</a>
+            <div class="tips-list">
+                <ul>
+                    <li>
+                        <router-link v-bind:to="{ name:'safetytips'}">Saftey Tips for Cannabis Consumption</router-link>
+                    </li>
+                     <!-- <a href="https://www.colorado.com/articles/8-tips-safer-cannabis-consumption">8 Tips for Safer Cannabis Consumption</a> -->
            
-                <a href="https://silverstemcannabis.com/news-articles/how-to-smoke-cannabis-the-right-way-tips-and-tricks">How to Smoke Cannabis The Right Way</a>
+                    <!-- <a href="https://silverstemcannabis.com/news-articles/how-to-smoke-cannabis-the-right-way-tips-and-tricks">How to Smoke Cannabis The Right Way</a>
                
-                <a href="https://cbd-alchemy.com/en/blog/a-comprehensive-guide-to-cannabis-strains/">A Comprehensive Guide to Cannabis Strains</a>
-            
-                <a href="https://420central.com/how-do-i-know-which-cannabis-products-are-right-for-me/">Choosing the Right Product for You</a>      
+                    <a href="https://cbd-alchemy.com/en/blog/a-comprehensive-guide-to-cannabis-strains/">A Comprehensive Guide to Cannabis Strains</a>
+           
+                    <a href="https://420central.com/how-do-i-know-which-cannabis-products-are-right-for-me/">Choosing the Right Product for You</a>       -->
+                </ul>
+               
         </div>
         </div>
        <div class="footer"><Footer/></div>
