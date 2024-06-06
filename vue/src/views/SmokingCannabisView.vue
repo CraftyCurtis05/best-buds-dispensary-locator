@@ -74,6 +74,16 @@
                             <li> If at any point you feel uncomfortable or anxious, stop and take a break. </li>
                             <li> Your comfort and safety should always be the priority. </li>
                         </ul>
+                    <li> Stay calm: </li>
+                        <ul class="sub-list">
+                            <li> Here are five things you can do to avoid freaking out on pot: </li>
+                                <ul class="sub-sub-list">
+                                    <li> Fight back with cannabidiol (CBD) - an anxiety-fighting compound that comes handy when it comes to fighting pot jitters. </li>
+                                    <li> Fight back with black pepper. Both pot and pepper affect the body’s endocannabinoid system. The phytocannabinoid-terpenoid effect not only kills anxiety, but it also helps with addiction, depression, as well as pain. </li>
+                                    <li> Don’t panic! You can’t overdose (OD) and die on weed. What hospital Emergency Rooms (ERs) are reporting is increased panic attacks and anxiety reactions, not overdoses. No one is suffering systemic organ failures, or losing their lives because they ingested too much pot. </li>
+                                    <li> Be smart on dosing. When starting out, limit yourself to only 10 milligrams of Tetrahydrocannabinol (THC) and note how it affects you. If smoking it, you’ll know within a few minutes how high you’re going to get. If using edibles, wait at least an hour. </li>
+                                </ul>
+                        </ul>    
                     <h4> *Cannabis comes in a variety of forms including edibles and concentrates but they are not the best choice for your first time. 
                         Extracts including vape cartridges are too potent and hard to handle for a novice and edibles are not that predictable in terms 
                         of dosage and effects (which depend on numerous factors like tolerance and the time of onset) the buzz may start hours from 
