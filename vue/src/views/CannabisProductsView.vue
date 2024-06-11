@@ -9,41 +9,64 @@
             <div class="thc-tips-list">
             <ul id="verify-meds-health">
                 <h2>Edibles</h2>
-                <li>  </li>
-                <li>  </li>
-                <li> </li>
-                <li> </li>
+                <p>Edibles are food products infused with cannabis extract. Edibles come in many forms, including baked goods, candies, gummies, chocolates, lozenges, and beverages.</p>
+                <h3>Pros</h3>
+                <li></li>
+                <li></li>
+                <h3>Cons</h3>
+                <li></li>
+                <li></li>
             </ul>
             <ul id="labels-start-small">
                 <h2>Flower</h2>
-                <li>  </li>
-                <li>  </li>
-                <li>  </li>
-                <li>  </li>
-                <li>  </li>
+                <p>Cannabis smoking is the inhalation of smoke or vapor released by heating the flowers, leaves, or extracts of cannabis and releasing the main psychoactive chemical, Δ9-tetrahydrocannabinol (THC), which is absorbed into the bloodstream via the lungs. Cannabis can be smoked in a variety of pipe-like implements made in different shapes and of different materials including hand pipes ("bowls"), water pipes ("bongs"), cigarettes ("joints"), or blunts.</p>
+                <h3>Pros</h3>
+                <li></li>
+                <li></li>
+                <h3>Cons</h3>
+                <li></li>
+                <li></li>
+                
             </ul>
             <ul id="too-much-edibles">
                 <h2>Oil</h2>
-                <li>  </li>
-                <li>  </li>   
-                <li>  </li>
+                <p>Hash oil or cannabis oil is an oleoresin obtained by the extraction of cannabis or hashish. It is a cannabis concentrate containing many of its resins and terpenes - in particular, tetrahydrocannabinol, cannabidiol, and other cannabinoids. Hash oil is usually consumed by smoking, vaporizing or eating.</p>
+                <h3>Pros</h3>
+                <li></li>
+                <li></li>
+                <h3>Cons</h3>   
+                <li></li>
             </ul>
             <ul id="dont-mix">
                 <h2>Tincture</h2>
-                <li>  </li>
-                <li>  </li>
+                <p>A tincture in the most basic sense is a cannabis extract, in which a liquid is infused with cannabis, meant for sublingual consumption, not vaporization or smoking. The cannabis plant soaks in a base liquid, such as food-grade alcohol, glycerin, or even oil, and after days of steeping, the plant matter is strained out and—voilà! The cannabinoids, terpenes, and other compounds have melded with the base liquid, ready to dose and consume. </p>
+                <h3>Pros</h3>
+                <li></li>
+                <h3>Cons</h3>
+                <li></li>
             </ul>
             <ul id="skip-drive">
                 <h2>Topical</h2>
-                <li>  </li>
-                <li>  </li>
-                <li>  </li>
+                <p>THC topicals, and cannabis topicals in general, are cannabis products infused in things like gels, balms, and lotions and then applied to our skin. The idea behind them is that they may be able to treat acute symptoms, including pain or inflammation, by interacting with cannabinoid receptors in the skin. Because the THC doesn't actually make it through the skin into the bloodstream, THC topical enthusiasts don't have to worry about getting intoxicated when they use a cannabis topical.</p>
+                <h3>Pros</h3>
+                <li></li>
+                <li></li>
+                <h3>Cons</h3>
+                <li></li>
             </ul>
             <ul id="skip-drive">
                 <h2>Wax</h2>
-                <li>  </li>
-                <li>  </li>
-                <li>  </li>
+                <p>THC wax is a highly concentrated form of tetrahydrocannabinol (THC), the main intoxicating substance found in cannabis. THC wax has 40-80 percent more THC per dose than more traditional, dried forms of cannabis.
+
+                Different types of weed concentrate can have the texture of a:
+                    Sticky, gummy liquid.
+                    Soft solid lip balm.
+                    Hard, dark-yellow solid resin.</p>
+                <h3>Pros</h3>
+                <li></li>
+                <li></li>
+                <h3>Cons</h3>
+                <li></li>
             </ul>
             </div>
         </div>
