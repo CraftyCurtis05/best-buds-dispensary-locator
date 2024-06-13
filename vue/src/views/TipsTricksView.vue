@@ -11,17 +11,27 @@
             <div class="tips-list">
                 <ul>
                     <li>
-                        <router-link v-bind:to="{ name:'safetytips'}">Saftey Tips for Cannabis Consumption</router-link>
-                    </li>
-                    <li>
                         <router-link v-bind:to="{ name:'cannabisproducts'}">How To Choose Which Cannabis Product Is Right For You</router-link>
                     </li>
                     <li>
-                        <router-link v-bind:to="{ name:'strainguide'}">Strain Guide</router-link>
+                        <router-link v-bind:to="{ name:'strainguide'}">Comprehensive Strain Guide To Cannabis Products</router-link>
                     </li>
                     <li>
-                        <router-link v-bind:to="{ name:'smokingcannabis'}">Smoke Cannabis</router-link>
+                        <router-link v-bind:to="{ name:'smokingcannabis'}">Safety Tips for Smoking Cannabis</router-link>
                     </li>
+                    <li>
+                        <router-link v-bind:to="{ name:'safetytips'}">Saftey Tips for Cannabis Consumption</router-link>
+                    </li>
+                    <li>
+                        <router-link v-bind:to="{ name:'topicals'}">Saftey Tips for Cannabis Topicals</router-link> 
+                    </li>
+                    <li>
+                        <router-link v-bind:to="{ name:'toomuchcannabis'}">What To Do If You Have Too Much Cannabis</router-link> 
+                    </li>
+                    <li>
+                        <router-link v-bind:to="{ name:'legality'}">Curious About The Legal Use Within Your Area</router-link> 
+                    </li>
+
                 </ul>     
             </div>
         </div>
@@ -36,7 +46,7 @@ import NavBar from '../components/NavBar.vue';
 
 export default {
     components: { Header, Footer, NavBar },
-    name: "tips-tricks"
+    name: "tipstricks"
 }
 </script>
 

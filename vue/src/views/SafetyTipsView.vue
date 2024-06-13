@@ -101,7 +101,7 @@ import NavBar from '../components/NavBar.vue';
 
 export default {
     components: { Header, Footer, NavBar },
-    name: "SafetyTipsView"
+    name: "safetytips"
 };
 </script>
 
