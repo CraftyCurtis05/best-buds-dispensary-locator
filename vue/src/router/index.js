@@ -12,6 +12,13 @@ import TipsTricksView from '../views/TipsTricksView.vue';
 import ArticlesView from '../views/ArticlesView.vue';
 import AboutUsView from '../views/AboutUsView.vue';
 import ProfileView from '../views/ProfileView.vue';
+import SafetyTipsView from '../views/SafetyTipsView.vue';
+import CannabisProductsView from '../views/CannabisProductsView.vue';
+import StrainGuideView from '../views/StrainGuideView.vue';
+import SmokingCannabisView from '../views/SmokingCannabisView.vue';
+import TooMuchCannabisView from '../views/TooMuchCannabisView.vue';
+import TopicalsView from '../views/TopicalsView.vue';
+import LegalityView from '../views/LegalityView.vue';
 
 /**
  * The Vue Router is used to "direct" the browser to render a specific view component
@@ -102,7 +109,63 @@ const routes = [
     meta: {
       requiresAuth: true
   }
-}
+},
+  {
+    path: "/safetytips",
+    name: "safetytips",
+    component: SafetyTipsView,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: "/cannabisproducts",
+    name: "cannabisproducts",
+    component: CannabisProductsView,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: "/strainguide",
+    name: "strainguide",
+    component: StrainGuideView,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: "/smokingcannabis",
+    name: "smokingcannabis",
+    component: SmokingCannabisView,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: "/toomuchcannabis",
+    name: "toomuchcannabis",
+    component: TooMuchCannabisView,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: "/topicals",
+    name: "topicals",
+    component: TopicalsView,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: "/legaity",
+    name: "legality",
+    component: LegalityView,
+    meta: {
+      requiresAuth: true
+    }
+  }
 ];
 
 // Create the router

@@ -2,7 +2,7 @@
     <footer class="footer">
         <div id="logo">
             <router-link v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''" target="_blank"><img src="src\assets\best_buds_logo_white.png"/></router-link>
-            <p id="slogan">"Good To Grow"</p>
+            <p id="slogan"> "We're Good To Grow!" </p>
         </div>
         <div class="footer-links">
             <h2>Helpful Links</h2>

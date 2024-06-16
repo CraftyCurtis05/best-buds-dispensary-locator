@@ -5,6 +5,7 @@
         <div class="nav-bar"><NavBar/></div>
     </div>
         <div class="main-content">
+<<<<<<< HEAD
         <!-- Search Bar -->
         <div class="search-bar">
             <input type="text" placeholder="Search articles">
@@ -17,6 +18,52 @@
                 <h2>{{ article.title }}</h2>
                 <p>{{ article.description }}</p>
                 <a :href="article.link" target="_blank">Read more</a>
+=======
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <input type="text" placeholder="Search articles">
+                <button @click="search">Search</button>
+            </div>
+            <div class="articles">
+                <!-- Article Boxes -->
+                <div class="article-container1" v-for="(article, index) in article1" :key="index">
+                    <div class="article-box">
+                        <h2>{{ article.title }}</h2>
+                        <p>{{ article.description }}</p>
+                        <a :href="article.link" target="_blank">Read more</a>
+                    </div>
+                </div>
+                <div class="article-container2" v-for="(article, index) in article2" :key="index">
+                    <div class="article-box">
+                        <h2>{{ article.title }}</h2>
+                        <p>{{ article.description }}</p>
+                        <a :href="article.link" target="_blank">Read more</a>
+                    </div>
+                </div>
+                <div class="article-container3" v-for="(article, index) in article3" :key="index">
+                    <div class="article-box">
+                        <h2>{{ article.title }}</h2>
+                        <p>{{ article.description }}</p>
+                        <a :href="article.link" target="_blank">Read more</a>
+                    </div>
+                </div>
+                <div class="article-container4" v-for="(article, index) in article4" :key="index">
+                    <div class="article-box">
+                        <h2>{{ article.title }}</h2>
+                        <p>{{ article.description }}</p>
+                        <a :href="article.link" target="_blank">Read more</a>
+                    </div>
+                </div>
+            </div>    
+            <!-- Archive Section -->
+            <div class="archive-container">
+                <div class="archive">
+                    <h2>Archive</h2>
+                    <ul>
+                        <li v-for="(month, index) in archive" :key="index">{{ month }}</li>
+                    </ul>
+                </div>
+>>>>>>> a46a402e5ef39d077e1bcee6b35f4a2dcfef90b9
             </div>
         </div>
         <div class="article-container2" v-for="(article, index) in article2" :key="index">
@@ -105,9 +152,22 @@ export default {
 </script>
 
 <style scoped>
+<<<<<<< HEAD
 .container {
     position: relative;
     background-color: #ccc;
+=======
+.articles-view {
+    /* position: relative;
+    background-color: #ccc; */
+    width: 100vw;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\green_smoke.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+     margin-top: -1vw;
+>>>>>>> a46a402e5ef39d077e1bcee6b35f4a2dcfef90b9
 }
 
 .header {
@@ -158,9 +218,9 @@ export default {
     border-radius: 20%;
 }
 
-  .articles > * {
+  .articles > * {       /*Why??*/
     flex: 1 1 33%;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
 }
 
 .article-container1 {
@@ -172,8 +232,7 @@ export default {
     border: 5px solid;
     border-radius: 20%;
 }
-.article-container2
-{
+.article-container2 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -182,8 +241,7 @@ export default {
     border: 5px solid;
     border-radius: 20%;
 }
-.article-container3
-{
+.article-container3 {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -211,9 +269,17 @@ export default {
 }
 
 .archive-container {
+<<<<<<< HEAD
     position: absolute;
     top: 20%;
     right: 0;
+=======
+    /* padding-top: 100px; */
+    display: flex;
+    /* position: absolute; */
+    /* top: 20%;                             /*Utilize Flex to position archive instead of absolute, top, right
+    right: 0; */
+>>>>>>> a46a402e5ef39d077e1bcee6b35f4a2dcfef90b9
     height: 75vh;
     width: 25%;
     padding: 0 10px;
