@@ -6,7 +6,7 @@
         </div>  
         <div class="symptoms-too-much">
             <h1> What To Expect If You've Had Too Much Cannabis </h1>
-            <h3> Consuming too much cannabis can lead to a range of symptoms, from anxiety to nausea. </h3>
+            <h3> *Consuming too much cannabis can lead to a range of symptoms, from anxiety to nausea. </h3>
             <ul class="list">
                 <li> Physical Symptoms: </li>
                 <ul class="sub-list">
@@ -22,7 +22,7 @@
             </ul>
             <ul class="list">
                 <li> Psychological Symptoms: </li>
-                <h4> *High doses of cannabis can also cause psychological symptoms like: </h4>
+                <h4> High doses of cannabis can also cause psychological symptoms like: </h4>
                 <ul class="sub-list">
                     <li> Anxiety </li>
                     <li> Confusion </li>
@@ -30,13 +30,13 @@
                     <li> Mood changes </li>
                     <li> Thoughts racing </li>
                 </ul>
-                <h4> *In rare cases, it can cause more serious psychological symptoms like: </h4>
+                <h4> In rare cases, it can cause more serious psychological symptoms like: </h4>
                 <ul class="sub-list">
                     <li> Hallucinations </li>
                     <li> Panic attacks </li>
                     <li> Paranoia </li>
                 </ul>
-                <h4> *In some extremely rare cases, cannabis use may contribute to the onset of psychosis. which can include symptoms like: </h4>
+                <h4> In some extremely rare cases, cannabis use may contribute to the onset of psychosis. which can include symptoms like: </h4>
                 <ul class="sub-list">
                     <li> Delusions </li>
                     <li> Confusion </li>
@@ -44,7 +44,7 @@
                     <li> Disorganized speech </li>
                     <li> Difficulty feeling or expressing emotions </li>
                 </ul>
-                <h4> If you think you or someone else is experiencing psychosis, contact emergency services or get immediate medical care. </h4>
+                <h5> **If you think you or someone else is experiencing psychosis, contact emergency services or get immediate medical care. </h5>
             </ul>
         </div>
         <div class="coping-tips">
@@ -89,19 +89,60 @@
         </div>
         <div class="what-to-do-too-much">
             <h1> What To Do If You've Had Too Much Cannabis </h1>
-            <h3> *While these symptoms usually don’t cause lasting health effects, there are a few cases when you may want to get medical care. </h3>
+            <h3> *While these symptoms usually don’t cause lasting health effects, there are a few cases when you may want to get medical care. 
+                 Keep reading to learn more about what people can do to reduce the ‘high.’ Note that many of these tips are anecdotal or based 
+                 on animal studies, which means they lack rigorous human research. </h3>
             <ul class="list">
-                <li> Counteract effects with CBD </li>
+                <li> Shift the focus and relax </li>
+                <ul class="sub-list">
+                    <li> Listening to some favorite music. </li>
+                    <li> Watching a film or some funny clips online. </li>
+                    <li> Doing some breathing exercises or yoga. </li>
+                    <li> Doing a jigsaw, doodling, playing a computer game. </li>
+                    <li> Playing an instrument or painting, doing something creative. </li>
+                    <li> Being productive in a simple way, for example, organizing a wardrobe or doing some cleaning. </li>
+                </ul>
+                <li> Hydrate </li>
+                <ul class="sub-list">
+                    <li> Drinking plenty of water, tea, or other soft drinks to keep hydrated can also minimize discomfort from being too high. </li>
+                    <li> Having a dry mouth (xerostomia) from smoking or ingesting marijuana can make a person feel worse. </li>
+                    <li> The American Dental Association indicate a link between using marijuana and oral dryness. </li>
+                    <li> A person should avoid drinking alcohol when they are already too high. </li>
+                    <li> It can worsen the effects of weed and the ‘high feeling.’ </li>
+                </ul>     
+                <li> Eat </li>
+                <ul class="sub-list">
+                    <li> There is some evidenceTrusted Source that cannabis consumption can lead to increased hunger and appetite.
+                    There are no scientific studies to support the anecdotal claim that eating will diminish the psychoactive effects of weed.
+                    According to an article in the <a href="https://www.medicalnewstoday.com/articles/how-to-get-unhigh#eat" target="_blank">British Journal of Pharmacology</a>, 
+                    compounds called terpenoids found in some plant foods might have therapeutic properties that may serve as an antidote to a cannabis high. </li>
+                    <li>  </li>    
+                </ul>
+                <li> Take a shower </li>
                 <ul class="sub-list">
                     <li> *PUT SOMETHING HERE!!!* </li>
                 </ul>
-            </ul> 
-            <ul class="list">
-                <li> Chew on a whole black peppercorn </li>
+                <li> Walk it off </li>
                 <ul class="sub-list">
                     <li> *PUT SOMETHING HERE!!!* </li>
                 </ul>
-            </ul> 
+                <li> Talk it through </li>
+                <ul class="sub-list">
+                    <li> *PUT SOMETHING HERE!!!* </li>
+                </ul>
+                <li> Try some CBD </li>
+                <ul class="sub-list">
+                    <li> *PUT SOMETHING HERE!!!* </li>
+                </ul> 
+                <li> Chew on whole black peppercorn </li>
+                <ul class="sub-list">
+                    <li> *PUT SOMETHING HERE!!!* </li>
+                </ul>
+                <li> Sleep </li>
+                <ul class="sub-list">
+                    <li> *PUT SOMETHING HERE!!!* </li>
+                </ul>
+            </ul>    
         </div>
         
         <div class="want-more">
