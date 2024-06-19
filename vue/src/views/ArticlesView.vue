@@ -5,7 +5,6 @@
         <div class="nav-bar"><NavBar/></div>
     </div>
         <div class="main-content">
-<<<<<<< HEAD
         <!-- Search Bar -->
         <div class="search-bar">
             <input type="text" placeholder="Search articles">
@@ -18,7 +17,7 @@
                 <h2>{{ article.title }}</h2>
                 <p>{{ article.description }}</p>
                 <a :href="article.link" target="_blank">Read more</a>
-=======
+
             <!-- Search Bar -->
             <div class="search-bar">
                 <input type="text" placeholder="Search articles">
@@ -63,7 +62,6 @@
                         <li v-for="(month, index) in archive" :key="index">{{ month }}</li>
                     </ul>
                 </div>
->>>>>>> a46a402e5ef39d077e1bcee6b35f4a2dcfef90b9
             </div>
         </div>
         <div class="article-container2" v-for="(article, index) in article2" :key="index">
@@ -99,6 +97,7 @@
         </div>
     </div>
     <Footer class="footer"></Footer>
+    </div>
     </div>
 </template>
 
@@ -152,11 +151,10 @@ export default {
 </script>
 
 <style scoped>
-<<<<<<< HEAD
 .container {
     position: relative;
     background-color: #ccc;
-=======
+}
 .articles-view {
     /* position: relative;
     background-color: #ccc; */
@@ -167,7 +165,6 @@ export default {
     background-size: cover;
     background-attachment: fixed;
      margin-top: -1vw;
->>>>>>> a46a402e5ef39d077e1bcee6b35f4a2dcfef90b9
 }
 
 .header {
@@ -269,17 +266,14 @@ export default {
 }
 
 .archive-container {
-<<<<<<< HEAD
     position: absolute;
     top: 20%;
     right: 0;
-=======
     /* padding-top: 100px; */
     display: flex;
     /* position: absolute; */
     /* top: 20%;                             /*Utilize Flex to position archive instead of absolute, top, right
     right: 0; */
->>>>>>> a46a402e5ef39d077e1bcee6b35f4a2dcfef90b9
     height: 75vh;
     width: 25%;
     padding: 0 10px;
