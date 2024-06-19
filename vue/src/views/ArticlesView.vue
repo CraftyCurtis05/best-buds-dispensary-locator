@@ -5,8 +5,6 @@
         <div class="nav-bar"><NavBar/></div>
     </div>
         <div class="main-content">
-<<<<<<< HEAD
-=======
         <!-- Search Bar -->
         <div class="search-bar">
             <input type="text" placeholder="Search articles">
@@ -20,7 +18,6 @@
                 <p>{{ article.description }}</p>
                 <a :href="article.link" target="_blank">Read more</a>
 
->>>>>>> 62513c1f4ed035435cecf87f16e3b0bd4b54751c
             <!-- Search Bar -->
             <div class="search-bar">
                 <input type="text" placeholder="Search articles">
@@ -154,13 +151,10 @@ export default {
 </script>
 
 <style scoped>
-<<<<<<< HEAD
-=======
 .container {
     position: relative;
     background-color: #ccc;
 }
->>>>>>> 62513c1f4ed035435cecf87f16e3b0bd4b54751c
 .articles-view {
     /* position: relative;
     background-color: #ccc; */
@@ -272,12 +266,9 @@ export default {
 }
 
 .archive-container {
-<<<<<<< HEAD
-=======
     position: absolute;
     top: 20%;
     right: 0;
->>>>>>> 62513c1f4ed035435cecf87f16e3b0bd4b54751c
     /* padding-top: 100px; */
     display: flex;
     /* position: absolute; */
