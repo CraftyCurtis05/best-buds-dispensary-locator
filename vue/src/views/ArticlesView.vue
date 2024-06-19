@@ -5,6 +5,22 @@
         <div class="nav-bar"><NavBar/></div>
     </div>
         <div class="main-content">
+<<<<<<< HEAD
+=======
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search articles">
+            <button @click="search">Search</button>
+        </div>
+        <div class="articles">
+        <!-- Article Boxes -->
+            <div class="article-container1" v-for="(article, index) in article1" :key="index">
+                <div class="article-box">
+                <h2>{{ article.title }}</h2>
+                <p>{{ article.description }}</p>
+                <a :href="article.link" target="_blank">Read more</a>
+
+>>>>>>> 62513c1f4ed035435cecf87f16e3b0bd4b54751c
             <!-- Search Bar -->
             <div class="search-bar">
                 <input type="text" placeholder="Search articles">
@@ -85,6 +101,7 @@
     </div>
     <Footer class="footer"></Footer>
     </div>
+    </div>
 </template>
 
 <script>
@@ -137,6 +154,13 @@ export default {
 </script>
 
 <style scoped>
+<<<<<<< HEAD
+=======
+.container {
+    position: relative;
+    background-color: #ccc;
+}
+>>>>>>> 62513c1f4ed035435cecf87f16e3b0bd4b54751c
 .articles-view {
     /* position: relative;
     background-color: #ccc; */
@@ -248,6 +272,12 @@ export default {
 }
 
 .archive-container {
+<<<<<<< HEAD
+=======
+    position: absolute;
+    top: 20%;
+    right: 0;
+>>>>>>> 62513c1f4ed035435cecf87f16e3b0bd4b54751c
     /* padding-top: 100px; */
     display: flex;
     /* position: absolute; */
