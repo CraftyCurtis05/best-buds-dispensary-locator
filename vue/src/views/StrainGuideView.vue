@@ -48,7 +48,7 @@ export default {
 </script>
 
 <style scoped>
-.safety-tips-view {
+.strain-guide-view {
   width: 100vw;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\green_smoke.png');
   background-position: center;
