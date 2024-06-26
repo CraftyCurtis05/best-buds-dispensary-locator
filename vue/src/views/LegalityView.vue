@@ -4,158 +4,101 @@
             <div class="header"><Header/></div>
             <div class="nav-bar"><NavBar/></div>
         </div>  
-        <div class="smoking-tips">
-            <h1> Tips for Smoking Cannabis </h1>
-            <h3> *By following these tips, you can ensure that you are smoking cannabis the right way and getting the most out of your experience. </h3>
+        <div class="laws-by-state">
+            <h1> Quick Guide to the Laws in Each State </h1>
+            <h2> Fully Legal States </h2>
             <ul class="list">
-                <li> Use a clean pipe or bong. </li>
-                <li> Grind the cannabis finely. </li>
-                <li> Light the bowl evenly. </li>
-                <li> Inhale slowly and deeply. </li>
-                <li> Don't hold the smoke in your lungs for too long. </li>
-                <li> Exhale the smoke slowly. </li>
-                <li> Drink plenty of water. </li>
-                <li> Stay hydrated. </li>
+                <li> Alaska: Adults over the age of 21 can legally use and possess up to an ounce of marijuana recreationally, though it is still illegal to consume in public and punishable by a fine of up to $100. Adults may also cultivate up to six marijuana plants in a household, but only three of the plants can be mature. </li>
+
+                <li>Arizona: Adults 21 and over can use, possess and buy up to 1 ounce of marijuana of which not more than 5 grams of that allowable ounce can be marijuana concentrates. Medical card holders can posses more than twice that amount. However, smoking or vaping marijuana in public remains illegal. Adults 21 and older can legally cultivate up to six plants in a home. </li>
+
+                <li>California: Adults over the age of 21 can legally buy and posses 1 ounce of cannabis or up to 8 grams of concentrated cannabis for recreational use. For medicinal use with a physician's prescription, the age drops to 18 and users have higher possession limits. The sale of cannabis is legal at licensed dispensaries and adults can grow up to six cannabis plants at home, though rules on cultivating requirements vary by cities and counties. Marijuana use in public spaces remains illegal. </li>
+
+                <li>Colorado: Residents over the age of 21 can buy up to 1 ounce of marijuana, 8 grams of marijuana concentrate or marijuana products containing up to 800 milligrams of THC in a single transaction. The law limits possession to 2 ounces of "retail" marijuana, purchased from a licensed dispensary.</li>
+
+                <li>Connecticut: Adults over the age of 21 are allowed to possess or consume up to 1.5 ounces (42.5 grams) of “cannabis plant material” and up to 5 ounces (141.7 grams) in a locked container in a home or in the trunk or locked glove box in the person’s vehicle.</li>
+
+                <li>Delaware: People 21 and older can possess up to up to 1 ounce (28 grams) of leaf marijuana, 12 grams of concentrated marijuana, or marijuana products containing up to 750 milligrams of the psychoactive compound THC. Possession of more than an ounce of marijuana and public consumption would remain misdemeanors.</li>
+
+                <li>Illinois: Residents over the age of 21 may purchase and possess up to 1 ounce of marijuana at any time. Non-residents may have 15 grams. However, consuming it in public places remains illegal.</li>
+
+                <li>Maine: In Maine, anyone over 21 can possess up to 2.5 ounces (70.9 grams) of marijuana. An adult can also cultivate up to three flowering marijuana plants and 12 immature plants.</li>
+
+                <li>Maryland: In Maryland, people 21 and older can possess up to 1.5 ounces of cannabis flower, 12 grams of concentrated cannabis or a total amount of cannabis products that does not exceed 750 mg THC</li>
+
+                <li>Massachusetts: Adults over the age of 21 possession of up to 1 ounce of marijuana outside the home and up to 10 ounces inside their homes. If you're caught with more than 2 ounces of marijuana outside the home, it's a criminal offense. Residents may also grow up to six plants per person and up to 12 plants per household, but not in public view. However, landlords may prohibit tenets from growing pot plants.</li>
+
+                <li>Michigan: Michigan residents who are 21 or older can possess or transport up to 2.5 ounces (70.8 grams) of marijuana. They can grow up to 12 plants, although not in public view. They also can give 2.5 ounces (70.8 grams) to another person, but not for payment </li>
+
+                <li>Minnesota: Adults 21 and older can possess and travel in the state with 2 ounces of cannabis flower, 8 grams of concentrate and 800 milligrams worth of THC-containing edible products such as gummies and seltzers. They can have up to 2 pounds of cannabis flower at home.</li>
+
+                <li>Missouri: Adults 21 and older can purchase and posses 3 ounces of marijuana. Medical patients are allowed to buy 6 ounces per 30-day period. Residents may also have up to six flowering plants at home, but are required to register for a cultivation card through the state's health department. The cost of the card is $100.</li>
+
+                <li>Montana: Adults 21 and older can buy and possess an ounce of cannabis, up to 8 grams of concentrate or edibles containing up to 800 mg of THC — the main psychoactive compound in cannabis. But adult-use marijuana businesses are not allowed in counties where the majority of voters rejected the recreational marijuana ballot measure that passed in 2020.</li>
+
+                <li>Nevada: Anyone who is over 21 with a valid ID can buy up to an ounce of pot or one-eighth of an ounce of edibles or concentrates. People can only use the drug in a private home as it remains illegal to consume it in public, except for at licenses businesses with established on-site consumption lounges. Residents can grow six plants a person, and 12 plants per household.</li>
+
+                <li>New Jersey: Dispensaries are allowed to sell up to the equivalent of 1 ounce of cannabis, which means an ounce of dried flower, or 5 grams of concentrate or 1,000 milligrams of edibles, like gummies to adults 21 and older. The state decriminalized possession of 6 ounces (170 grams) or less of marijuana or about three-fifths of an ounce (17 grams) of hashish.</li>
+
+                <li>New Mexico: In April 2021, New Mexico Gov. Michelle Lujan Grisham signed a bill allowing adults over the age of 21 to have up to two ounces of cannabis with them to grow up to six cannabis plants per person, or 12 per household. </li>
+
+                <li>New York: Anyone 21 and over can buy and possess up to 3 ounces of cannabis or 24 grams of concentrated forms of the drug, such as oils. Individual adults may also grow up to six cannabis plants — three mature and three immature — in their home for personal use and up to 12 plants for a household.</li>
+
+                <li>Ohio: Adults 21 and over can buy and possess up to 2.5 ounces of cannabis and to grow up to six plants per individual or 12 plants per household at home.</li>
+
+                <li>Oregon: Adults over the age of 21can possess up to eight ounces of marijuana in their home and up to one ounce away from home. For edible products, the limits are 16 ounces for a solid form and 72 ounces for drinkables. Residents can grow up to four cannabis plants in the house. Consuming marijuana in public remains illegal.</li>
+
+                <li>Rhode Island: Anyone 21 and older can buy and possess up to 1 ounce of cannabis with no more than 10 ounces (283 grams) for personal use kept at a person’s home. Resident may also grow up to six plants, with no more than three mature, at home. </li>
+
+                <li>Vermont: Adults over the age of 21 can buy and possess up to 1 ounce of marijuana, two mature and four immature plants. </li>
+
+                <li>Virginia: Anyone over the age of 21 can possess up to an 1 ounce of cannabis and grow up to four plants for personal use. The plants cannot be in public view. </li>
+
+                <li>Washington: Adults 21 and older can buy up to an ounce of dried marijuana, 16 ounces of pot-infused solids, 72 ounces of pot-infused liquids or 7 grams of concentrated marijuana, like hashish. </li>
+
+                <li>Washington, D.C.: Adults over the age of 21 can possess up to 2 ounces of marijuana and can may gift up to 1 ounce to another person as long as "nothing else of value changes hand." That because while recreational marijuana has been legalized in D.C., it's still illegal to buy and sell the drug. Adults can legally grow up to six marijuana plants, but only three of them can be mature. </li>
             </ul>
-        </div>
-        <div class="smoker-tips">
-            <h1> Tips for Cannabis Smokers </h1>
-            <h4> If you've found yourself asking, "What is the first feeling of weed?", it's important to understand that each person's reaction 
-                can be quite diverse. As you ponder, "Is it okay to start smoking weed?", remember that preparation is paramount. A comprehensive 
-                understanding of the varying cannabis strains, a cautious starting approach, and ensuring a comfortable, secure environment can lay 
-                the groundwork for an enjoyable and memorable first-time experience. 
-            </h4>
-            <h2> Understanding Cannabis: </h2>
-                <ul class="list">
-                    <li> Cannabis is a versatile plant with hundreds of strains, each one uniquely characterized by its distinct effects. </li>
-                    <li> These strains range from those known for inducing relaxation and tranquility to those that stimulate creativity and energy. </li>
-                    <li> Being aware of these differences is the first step towards selecting a strain that aligns with your expectations and comfort level. </li>
-                    <li> Please check out our <router-link v-bind:to="{ name:'strainguide'}"> Strain Guide </router-link> for information. </li>
-                </ul>
-            <h2> How to Enjoy Your First High: </h2>
-            <h4> *To fully appreciate your first cannabis experience, consider these tips for first-time weed smokers: </h4>
-                <ul class="list">
-                    <li> Choose the Right Strain: </li>
-                        <ul class="sub-list">
-                            <li> Start with a strain known for its mild and relaxing effects. </li>
-                            <li> This can ease you into the world of cannabis, mitigating the potential for any discomfort. </li>
-                            <li> Make sure to check out the strain’s potency and pick the dosage accordingly. </li>
-                            <li> Always start small - you can get more anytime but if you overdo it, you will ruin your first experience. </li>
-                        </ul>
-                    <li> Start Slowly: </li>  
-                        <ul class="sub-list">
-                            <li> Moderation is key when starting your cannabis journey. </li>
-                            <li> Begin with a small quantity and assess your comfort level and reaction. </li>
-                            <li> Remember, you can always smoke more if desired, but reversing the effects of overconsumption can be challenging. </li>
-                        </ul>
-                    <li> Environment Matters: </li>
-                        <ul class="sub-list">
-                            <li> The setting in which you consume cannabis can significantly influence your experience. </li>
-                            <li> Choose a calm, comfortable, and safe environment where you can relax and enjoy the experience without stress or anxiety. </li>
-                        </ul>  
-                    <li> Have a Sober Friend with You: </li>  
-                        <ul class="sub-list">
-                            <li> For your first time, it's advantageous to have a sober, experienced friend by your side. </li>
-                            <li> This person can provide reassurance, guidance, and answer any questions you may have. </li>
-                        </ul> 
-                    <li> Stay Hydrated: </li>
-                        <ul class="sub-list">
-                            <li> Ensure you drink plenty of water before, during, and after smoking. </li>
-                            <li> Hydration can mitigate some of the dry-mouth effects that can come with smoking cannabis. </li>
-                        </ul> 
-                    <li> Eat Before You Smoke: </li>  
-                        <ul class="sub-list">
-                            <li> Cannabis is known to stimulate the appetite. </li>
-                            <li> Having a meal before smoking can prevent overeating or choosing unhealthy snacks when the "munchies" kick in. </li>
-                        </ul> 
-                    <li> Listen to Your Body: </li>   
-                        <ul class="sub-list">
-                            <li> Respect your body's signals. </li>    
-                            <li> If at any point you feel uncomfortable or anxious, stop and take a break. </li>
-                            <li> Your comfort and safety should always be the priority. </li>
-                        </ul>
-                    <li> Stay calm: </li>
-                        <ul class="sub-list">
-                            <li> Here are five things you can do to avoid freaking out on pot: </li>
-                                <ul class="sub-sub-list">
-                                    <li> Fight back with cannabidiol (CBD) - an anxiety-fighting compound that comes handy when it comes to fighting pot jitters. </li>
-                                    <li> Fight back with black pepper. Both pot and pepper affect the body’s endocannabinoid system. The phytocannabinoid-terpenoid effect not only kills anxiety, but it also helps with addiction, depression, as well as pain. </li>
-                                    <li> Don’t panic! You can’t overdose (OD) and die on weed. What hospital Emergency Rooms (ERs) are reporting is increased panic attacks and anxiety reactions, not overdoses. No one is suffering systemic organ failures, or losing their lives because they ingested too much pot. </li>
-                                    <li> Be smart on dosing. When starting out, limit yourself to only 10 milligrams of Tetrahydrocannabinol (THC) and note how it affects you. If smoking it, you’ll know within a few minutes how high you’re going to get. If using edibles, wait at least an hour. </li>
-                                </ul>
-                        </ul>    
-                    <h4> *Cannabis comes in a variety of forms including edibles and concentrates but they are not the best choice for your first time. 
-                        Extracts including vape cartridges are too potent and hard to handle for a novice and edibles are not that predictable in terms 
-                        of dosage and effects (which depend on numerous factors like tolerance and the time of onset) the buzz may start hours from 
-                        ingestion and last for up to 8 hours. 
-                    </h4>            
-                </ul>
-            <h2> Conclusion: </h2> 
-                <ul class="list">
-                    <li> Your first cannabis experience can be a wonderful journey when approached with care and responsibility. </li>
-                    <li> As for the question, "Is it better to smoke weed the first time alone or in company?", having a trusted, sober friend nearby can make the experience more comforting and enjoyable. </li>
-                    <li> By following the tips shared in this guide, first-time cannabis smokers can look forward to a positive and memorable first high. </li>
-                    <li> If you are contemplating smoking cannabis for the first time, undertake comprehensive research and connect with experienced cannabis users for their insights. </li>
-                    <li> This can empower you to make an informed decision about whether cannabis is the right choice for you. </li>
-                    <li> Remember, responsible consumption is crucial for any enjoyable cannabis experience. </li>
-                </ul>   
-        </div>
-        <div class="common-questions">
-            <h1> Common Questions for Smokers </h1>
+            <h2> Medically Legal States </h2>
             <ul class="list">
-                <li> What is the method of smoking cannabis? </li>
-                    <ul class="sub-list">
-                        <li> The most common method of smoking cannabis is to use a pipe, bong, or joint. </li>
-                        <li> A pipe is a small, handheld device with a bowl at one end and a mouthpiece at the other. </li>
-                        <li> A bong is a larger device with a water chamber that cools the smoke before it is inhaled. </li>
-                        <li> A joint is a rolled cigarette made of cannabis and tobacco. </li>
-                    </ul>
-                <li> How do you take a good hit? </li>
-                    <ul class="sub-list">
-                        <li> To take a good hit, first grind the cannabis. </li>
-                        <li> Then, pack the bowl of your pipe or bong with the ground cannabis. </li>
-                        <li> Light the bowl and inhale slowly and deeply. </li>
-                        <li> Hold the smoke in your lungs for just a few seconds before exhaling. </li>
-                    </ul>
-                <li> How can I get higher smoking? </li>
-                    <ul class="sub-list">
-                        <li> There are a few things you can do to get higher when smoking cannabis. </li>
-                        <li> First, use more potent strains. </li>
-                        <li> Second, take bigger hits. </li>
-                        <li> And third - do not hold in the smoke. </li>
-                        <li> The THC is absorbed in the lungs almost instantaneously so holding the smoke will lead to absorbing stuff you do not need and can actually be harmful to your lungs. </li>
-                    </ul>
-                <li> How to smoke cannabis the first time? </li>
-                    <ul class="sub-list">
-                        <li> If you are smoking cannabis for the first time, it is important to start slowly and gradually increase the amount you smoke. </li>
-                        <li> This will help you avoid getting too high and feeling sick. </li>
-                        <li> It is also important to be in a comfortable and relaxed setting when you first smoke cannabis. </li>
-                        <li> Having a friend who knows cannabis help you is a great option. </li>
-                    </ul>
-                <li> How to inhale smoke for the first time? </li>
-                <h4> *If you are new to smoking, it may be difficult to inhale the smoke properly. Here are a few tips: </h4>
-                    <ul class="sub-list">
-                        <li> Start by taking small, shallow breaths. </li>
-                        <li> Don't try to inhale too much smoke at once. </li>
-                        <li> Hold the smoke in your lungs briefly before exhaling. </li>
-                        <li> Practice inhaling and exhaling with a clean pipe or bong before you smoke cannabis. </li>
-                    </ul>    
-                <li> Does coughing get you higher? </li>
-                    <ul class="sub-list">
-                        <li> Coughing does not get you higher. </li>
-                        <li> In fact, it can actually make you feel less high. </li>
-                        <li> When you cough, you are expelling the smoke from your lungs before it has a chance to be absorbed into your bloodstream. </li>
-                    </ul>
-                <li> Does breathing deeper get you higher? </li>
-                    <ul class="sub-list">
-                        <li> Breathing deeper will not get you higher, but it can help you to absorb the smoke more efficiently. </li>
-                        <li>  When you breathe deeply, you are taking in more oxygen, which helps to carry the THC (the active ingredient in cannabis) into your bloodstream. </li>
-                    </ul>
-                <li> What is better for first time cannabis use? </li>
+                <li>Alabama: The medical marijuana program will allow resident who are 19 and older — or under 19 with guardian permission — with one of 16 qualifying medical conditions, to purchase medical marijuana with the recommendation of a doctor. Among the qualifying conditions for treatment are cancer-related nausea or vomiting, or chronic pain; Crohn’s disease; depression; epilepsy, HIV/AIDS-related nausea or weight loss; panic disorder, Parkinson’s disease; persistent nausea; post-traumatic stress disorder; sickle cell anemia; spasticity associated with multiple sclerosis, spinal cord injury and Tourette’s syndrome. Marijuana would allow marijuana in forms such as pills, skin patches and creams, but not smoking or vaping products.*** Medical marijuana remains unavailable in Alabama more than two years after lawmakers voted to legalize it in 2021. The state had to develop rules, and the selection process has been bogged down in disputes. </li>
+
+                <li>Arkansas: Patients over 18 with a qualifying medical condition or verified caregivers in the state of Arkansas can possess up to 2.5 ounces of cannabis to be used for medical purposes only. To purchase, a state-issued medical marijuana ID card is needed. Patients or caregivers can apply for an ID with a physician written certification and a state ID. </li>
+
+                <li>Florida: Residents who are 18 and older and have one of 12 qualifying medical conditions may a medical marijuana card from a licensed physicians. Physicians cannot issue a certification for more than three 70-day supply limits of marijuana or more than six 35-day supply limits of marijuana in a form for smoking, and a 35-day supply for smokable marijuana must be 2.5 ounces or less. </li>
+
+                <li>Hawaii: Patients and caregivers may purchase up to 4 ounces of marijuana from a dispensary and cultivate up to 10 plants at home. However, patients must register as a cultivator with the state before growing their plants. For in-state residents, patients must be 18 and older, have one of 15 qualifying conditions and possess a medical marijuana card. Out-of-state visitors can also register to get medical cannabis while visiting Hawaii. Those patients can apply online for a 60 day registration card and pay a $49.50 fee in order to shop at Hawaii’s dispensaries.</li>
+
+                <li>Iowa: Patients over the age of 18, with an eligible condition can obtain a state-issued medical marijuana card. With their card, a patient can purchase 4.5 grams of THC every 90 days.</li>
+
+                <li>Louisiana: Medical marijuana is legal in Louisiana with a verified medical card that indicates a recommendation from a registered physician. Patients must be at least 18 years old and sales are capped at 2.5 ounces every 14 days.</li>
+
+                <li>Mississippi: Card-carrying patients over 18 years old can buy up to 3.5 grams of cannabis flower or 1 gram of cannabis concentrate per day from a licensed dispensary, but no more than 24 days in a month. Minors with permission from a custodial parent or legal guardian may obtain a card through a physician. However, residents with prior convictions may not qualify for the program </li>
+
+                <li>New Hampshire: Patients who are 18 years of age and old, with a valid registry card can buy up to 2 ounces of marijuana at a time. Purchases are also capped at 2 ounces in a 10-day period. </li>
+
+                <li>North Dakota: Medical marijuana is legal in the state for patients over 19 years old with one of 31 qualifying conditions. Anyone purchasing either flower or topical products are subject to monthly limits: no more than 2.5 ounces at a time and no more than 6,000 milligrams of THC in topicals or concentrates. </li>
+
+                <li>Oklahoma: Any patient over 18 years old with a medical marijuana card can posses up to 8 ounces of marijuana in their home, up to an ounce of concentrated marijuana, up to 72 ounces of edible marijuana and to three ounces of marijuana on their person.  They can also cultivate up to six plants.</li>
+
+                <li>Pennsylvania: Residents 18 years and older with one of 23 qualifying medical conditions can apply for a medical marijuana ID card. Exact dosage limits are not inscribed in the law. Patients are capped at a 90-day supply determined by the recommending doctor.</li>
+
+                <li>South Dakota: Patients over the age of 18 with a "debilitating medical condition" can apply for a state-issued medical marijuana card. The card fee is $75 and carriers can use it to buy up 3 ounces of cannabis flower every 14 days. They can also register to obtain permission to cultivate up to two cannabis flowering plants and two cannabis plants that are not flowering.  </li>
+
+                <li>Utah: Resident over the age of 21with one of more than a dozen qualifying medical conditions may be referred to for a medical marijuana card, which costs $15 and requires renewal every 6-months. A one-month supply in accordance with the dosage amount specified by a doctor or state-licensed pharmacist can be acquired at a time or up to 4 ounces of cannabis flower or 20 grams of THC. However, sparking up is still illegal in the state, as are edibles. Medical cannabis can be consumed via vaping, tablets, capsules and oils, among other forms. </li>
+
+                <li>West Virginia: Patients over 18 years old with one of 15 qualifying conditions can get a state-issued medical marijuana ID card and purchase cannabis in the form of pills, oils, gels, creams, ointments, tinctures, liquid, and non-whole plant forms for administration through vaporization. Dispensaries cannot sell edibles and smoking marijuana remains prohibited. Exact dosage limits are not inscribed in the law. Patients are limited to a 30-day supply at a time, determined by the recommending doctor. </li>
+
+                <li>***Kentucky: Last year, lawmakers gave the green light for the state to launch a medical marijuana program in 2025. However, marijuana remains illegal in the state. Patients with a diagnosis from the list of 21 approved conditions can possess up to 8 ounces of marijuana. That marijuana must come from a state where it's legal. </li>
+
+                <li>***Georgia: Patients with a doctor's approval can receive a medical marijuana card for a variety of conditions, however the state's medical cannabis program is limited to low-THC, which the minimal amount of tetrahydrocannabinol (THC), typically less than 0.3%. Qualified patients can possess up to 20 fluid ounces of low-THC oil. A medical marijuana card costs $25. </li>
+
+                <li>***Texas: Medical cannabis is legal in Texas in very limited circumstances. Patients with certain qualifying medical conditions can obtain cannabis oil with less than 1% THC by weight. They can also obtain CBD products. Other forms of marijuana for consumption, like smoking, vaping and edibles remain illegal. </li> 
+                </ul>
+        </div>
+                <li> What is best for first time cannabis use? </li>
                     <ul class="sub-list">
                         <li> Please check out our <router-link v-bind:to="{ name:'strainguide'}"> Strain Guide </router-link> for information. </li>
                     </ul>
-            </ul>
         </div>
         <div class="want-more">
             <h1> Do You Want More Information? </h1>
@@ -167,7 +110,6 @@
             <h3> "NEED NEW QUOTE" -UNKNOWN </h3>
         </div>
         <div class="footer"><Footer/></div>
-    </div>  
   </template>
 
 <script>
