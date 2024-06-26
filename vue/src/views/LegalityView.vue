@@ -94,6 +94,26 @@
 
                 <li>***Texas: Medical cannabis is legal in Texas in very limited circumstances. Patients with certain qualifying medical conditions can obtain cannabis oil with less than 1% THC by weight. They can also obtain CBD products. Other forms of marijuana for consumption, like smoking, vaping and edibles remain illegal. </li> 
                 </ul>
+                <h2> States Where Cannabis is Illegal </h2>
+            <ul class="list">
+              <li>Idaho: The use of marijuana for medical or recreational purposes remains fully illegal in Idaho. Possessing more than 3 ounces of marijuana can be punished with a prison sentence of up to five years and a fine of up to $10,000, or both. Under 3 ounces is a misdemeanor offense that carries a fine.</li>
+
+              <li>Indiana: Possession of any amount of marijuana is a crime in Indiana, but anything less than 30 grams is treated as a misdemeanor offense. Anything over 30 grams is a Class D felony resulting in jail time and fines. </li>
+
+              <li>Kansas: All forms and amounts of marijuana are illegal in Kansas. First time offenders caught with any amount of marijuana faces a fine of up to $1,000 and a maximum of 6 months in prison. However, Kansas law if very severe toward repeat offenders, with second time charges doubling jail time and increased fines.</li>
+
+              <li>Nebraska: Anyone caught with less than 1 ounce marijuana, regardless of the THC percentage, and it is your first offense, you can be charged with an infraction which carries a maximum fine of $300. However, possession of possession of more than an ounce carries jail time and fines.</li>
+
+              <li>North Carolina: Marijuana in North Carolina is fully illegal, and punishable by varying amounts of prison time and fines, depending on the amount in your possession.</li>
+
+              <li>South Carolina: Marijuana is also fully illegal in South Carolina, with the potential penalties of jail time and fines depending of the amount the accused possessed.</li>
+
+              <li>Tennessee: Marijuana remains fully illegal in Tennessee. Possession of any amount will lead to jail time and fines, with length of incarceration and penalties depending on the amount.</li>
+
+              <li>Wisconsin: Marijuana in Wisconsin is fully illegal and punishable prison time and fines, which vary depending on the amount in your possession.</li>
+
+              <li>Wyoming: Any use of marijuana is illegal in Wyoming. Any person caught using or under the influences marijuana is subject to jail time and/or fines.</li>
+              </ul>
         </div>
                 <li> What is best for first time cannabis use? </li>
                     <ul class="sub-list">
