@@ -35,6 +35,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import Footer from '../components/Footer.vue';
 import Header from '../components/Header.vue';
 import NavBar from '../components/NavBar.vue';
@@ -46,26 +47,26 @@ data() {
     return {
     searchQuery: '',
     articles: [
-        {
-        title: 'Article 1',
-        description: 'Description of article 1',
-        link: 'https://example.com/article1',
-        },
-        {
-        title: 'Article 2',
-        description: 'Description of article 2',
-        link: 'https://example.com/article2',
-        },
-        {
-        title: 'Article 3',
-        description: 'Description of article 3',
-        link: 'https://example.com/article3',
-        },
-        {
-        title: 'Article 4',
-        description: 'Description of article 4',
-        link: 'https://example.com/article4',
-        },
+        // {
+        // title: 'Article 1',
+        // description: 'Description of article 1',
+        // link: 'https://example.com/article1',
+        // },
+        // {
+        // title: 'Article 2',
+        // description: 'Description of article 2',
+        // link: 'https://example.com/article2',
+        // },
+        // {
+        // title: 'Article 3',
+        // description: 'Description of article 3',
+        // link: 'https://example.com/article3',
+        // },
+        // {
+        // title: 'Article 4',
+        // description: 'Description of article 4',
+        // link: 'https://example.com/article4',
+        // },
     ],
     archive: ['January 2024', 'February 2024', 'March 2024'], // Sample archive data
     };
@@ -78,10 +79,28 @@ computed: {
     },
 },
 methods: {
-    search() {
-    // Implement search functionality here if needed
+    async fetchArticles() {
+        try {
+            const response = await axios.get('https://api.thenewsapi.com/v1/news/all', {
+                params: {
+                    q: 'marijuana',
+                    // api_token: 'WYKYp9K37PkhTQosYnP2jrsOh5687P8bkV2IHdGQ',
+                    language: 'en'
+                },
+            paramsSerializer: params => {
+                return new URLSearchParams(params).toString();
+            }
+        });
+        console.log('API Response:', response);
+        this.articles = response.data.data; // Ensure you're accessing the correct part of the response
+        } catch (error) {
+        console.error('Error fetching articles:', error);
+        }
     },
 },
+mounted() {
+    this.fetchArticles();
+    }
 };
 </script>
 
