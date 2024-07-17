@@ -1,15 +1,23 @@
+<!-- Footer Component Display--->
 <template>
+
+    <!-- Display footer information with three(3) sections -->
     <footer class="footer">
+
+        <!-- Display logo and slogan to the left -->
         <div id="logo">
             <router-link v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''" target="_blank"><img src="src\assets\best_buds_logo_white.png"/></router-link>
             <p id="slogan"> "We're Good To Grow!" </p>
         </div>
+
+        <!-- Display helpful links and trademark in the center -->
         <div class="footer-links">
             <h2>Helpful Links</h2>
             <a href="www.google.com">Privacy Policy</a>
             <span id="copyright"> @{{ year }} {{ companyName }} </span>
         </div>
-        
+
+        <!-- Display social media links to the right -->
         <div class="social-media">
             <h2>Follow Us</h2>
             <div id="social-media-logos">
@@ -27,11 +35,14 @@
                 </div>
             </div>
         </div>
+
     </footer>
 </template>
 
 <script>
 export default {
+    
+    //Return company name and year to use as template display for trademark
     data() {
       return {
         year: new Date().getFullYear(),

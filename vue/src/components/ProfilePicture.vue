@@ -1,18 +1,24 @@
+<!-- User Profile Picture Component Display--->
 <template>
+
+    <!-- Display user profile picture; Allow user to upload image and save on profile-->
     <div class="profile-picture">
-    <img :src="src" alt="Profile Picture">
+        <img :src="src" alt="Profile Picture">
     </div>
+
 </template>
 
 <script>
+
+//Export component properties of profile picture "" and mark as required
 export default {
     props: {
-    src: {
-        type: String,
-        required: true
+        src: {
+            type: String,
+            required: true
+        }
     }
-    }
-}
+};
 </script>
 
 <style scoped>

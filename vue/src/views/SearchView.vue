@@ -1,8 +1,8 @@
 <template>
   <div class="search-view">
     <div class="header-nav">
-      <div class="header"><Header/></div>
-      <div class="nav-bar"><NavBar/></div>
+      <div id="header"><Header/></div>
+      <div id="nav-bar"><NavBar/></div>
     </div>  
     <div class="search">
       <h1>Best Buds Dispensary Locator</h1>
@@ -10,9 +10,9 @@
       <div id="search-bar"><SearchBar/></div>
       <div class="map-list">
         <div id="search-map"><SearchMap/></div>
-        <div id="search-list"><SearchList/></div> 
+        <div id="search-list"><SearchList v-if="this.$store.state.locationID"/></div> 
       </div>   
-      <div id="quote">
+      <div class="quote">
         <h3>"If everyone smoked weed the world would be a better place." -Kirsten Dunst</h3>
       </div>
     </div>
@@ -29,7 +29,8 @@ import SearchList from '../components/SearchList.vue';
 import Footer from '../components/Footer.vue';
    
 export default {
-  components: {Header, NavBar, SearchBar, SearchMap, SearchList, Footer},
+  components: {
+    Header, NavBar, SearchBar, SearchMap, SearchList, Footer},
   name: "SearchView"
 };
 </script>

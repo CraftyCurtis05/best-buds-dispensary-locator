@@ -1,23 +1,31 @@
+<!-- User Profile Information Component Display--->
 <template>
+
+    <!-- Display profile information -->
     <div class="profile-info">
-    <h2>Profile Information</h2>
-    <div>
-        <p><strong>Name:</strong> {{ profile.name }}</p>
-        <p><strong>Age:</strong> {{ profile.age }}</p>
-        <p><strong>Email:</strong> {{ profile.email }}</p>
-    </div>
+        <h2>Profile Information</h2>
+
+        <!-- Display user 'Name', 'Age', 'Email' -->
+        <div>
+            <p><strong>Name:</strong> {{ profile.name }}</p>
+            <p><strong>Age:</strong> {{ profile.age }}</p>
+            <p><strong>Email:</strong> {{ profile.email }}</p>
+        </div>
+
     </div>
 </template>
 
 <script>
-export default {
+
+//Export component properties of profile object and mark as required
+export default { 
     props: {
-    profile: {
-        type: Object,
-        required: true
+        profile: {
+            type: Object,
+            required: true
+        }
     }
-    }
-}
+};
 </script>
 
 <style scoped>

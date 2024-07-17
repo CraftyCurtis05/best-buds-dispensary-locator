@@ -1,6 +1,12 @@
+<!-- Google Map Component Display--->
 <template>
+
+    <!-- Display google map -->
     <div class="search-map">
-        <img src="src\assets\temp_search_map_img.webp"/>
+
+        <!-- When location is selected, use address1 to display location on map -->
+
+    
     </div>    
 </template>
 
@@ -11,8 +17,4 @@ export default {
 </script>
 
 <style scoped>
-.search-map img {
-    max-width: 75vw;
-   padding: 1vw;
-}
 </style>

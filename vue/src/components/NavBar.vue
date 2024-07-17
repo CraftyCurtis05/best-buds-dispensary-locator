@@ -1,5 +1,10 @@
+<!-- Navigation Bar Component Display--->
 <template>
+
+    <!-- Display navigation bar -->
     <div class="nav-bar">
+
+        <!-- Display 'Home', 'Search', 'Shop', 'Tips & Tricks', 'Articles', 'About Us' to the left of navigation bar -->
         <div class="left-nav">
             <div id="home-div">
                 <router-link id="home-nav" v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''">Home</router-link>
@@ -20,6 +25,8 @@
                 <router-link id="about-us-nav" v-bind:to="{ name: 'aboutus' }" v-if="$store.state.token != ''">About Us</router-link>
             </div>    
         </div>
+
+        <!-- Display 'Profile', 'Logout' to the right of navigation bar -->
         <div class="right-nav">
             <div id="profile-div">
                 <router-link id="profile-nav" v-bind:to="{ name: 'profile' }" v-if="$store.state.token != ''">Profile</router-link>
@@ -28,10 +35,13 @@
                 <router-link id="logout-nav" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
             </div>    
         </div>
+
     </div>
 </template>
 
 <script>
+export default {
+}
 </script>
 
 <style scoped>

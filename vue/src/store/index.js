@@ -3,9 +3,12 @@ import axios from 'axios';
 
 export function createStore(currentToken, currentUser) {
   let store = _createStore({
+
+    //Store user token for authorization and location Id during current session
     state: {
       token: currentToken || '',
-      user: currentUser || {}
+      user: currentUser || {},
+      locationID: ''
     },
     mutations: {
       SET_AUTH_TOKEN(state, token) {
@@ -23,8 +26,11 @@ export function createStore(currentToken, currentUser) {
         state.token = '';
         state.user = {};
         axios.defaults.headers.common = {};
+      },
+      SET_FAVORITE_STATUS(favorite, payload) {
+        payload.locationID.favorite = payload.value;
       }
-    },
+    }
   });
   return store;
 }

@@ -47,26 +47,26 @@ data() {
     return {
     searchQuery: '',
     articles: [
-        // {
-        // title: 'Article 1',
-        // description: 'Description of article 1',
-        // link: 'https://example.com/article1',
-        // },
-        // {
-        // title: 'Article 2',
-        // description: 'Description of article 2',
-        // link: 'https://example.com/article2',
-        // },
-        // {
-        // title: 'Article 3',
-        // description: 'Description of article 3',
-        // link: 'https://example.com/article3',
-        // },
-        // {
-        // title: 'Article 4',
-        // description: 'Description of article 4',
-        // link: 'https://example.com/article4',
-        // },
+        {
+        title: 'Article 1',
+        description: 'Description of article 1',
+        link: 'https://example.com/article1',
+        },
+        {
+        title: 'Article 2',
+        description: 'Description of article 2',
+        link: 'https://example.com/article2',
+        },
+        {
+        title: 'Article 3',
+        description: 'Description of article 3',
+        link: 'https://example.com/article3',
+        },
+        {
+        title: 'Article 4',
+        description: 'Description of article 4',
+        link: 'https://example.com/article4',
+        },
     ],
     archive: ['January 2024', 'February 2024', 'March 2024'], // Sample archive data
     };
@@ -83,9 +83,10 @@ methods: {
         try {
             const response = await axios.get('https://api.thenewsapi.com/v1/news/all', {
                 params: {
-                    q: 'marijuana',
-                    // api_token: 'WYKYp9K37PkhTQosYnP2jrsOh5687P8bkV2IHdGQ',
-                    language: 'en'
+                    categories: 'marijuana',
+                    api_token: 'WYKYp9K37PkhTQosYnP2jrsOh5687P8bkV2IHdGQ',
+                    language: 'en',
+                    limit: 4  
                 },
             paramsSerializer: params => {
                 return new URLSearchParams(params).toString();
