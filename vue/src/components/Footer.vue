@@ -13,7 +13,7 @@
         <!-- Display helpful links and trademark in the center -->
         <div class="footer-links">
             <h2>Helpful Links</h2>
-            <a href="www.google.com">Privacy Policy</a>
+            <router-link v-bind:to="{ name: 'privacypolicy' }" v-if="$store.state.token != ''" target="_blank">Privacy Policy</router-link>
             <span id="copyright"> @{{ year }} {{ companyName }} </span>
         </div>
 

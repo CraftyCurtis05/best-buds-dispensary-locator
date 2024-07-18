@@ -19,6 +19,7 @@ import SmokingCannabisView from '../views/SmokingCannabisView.vue';
 import TooMuchCannabisView from '../views/TooMuchCannabisView.vue';
 import TopicalsView from '../views/TopicalsView.vue';
 import LegalityView from '../views/LegalityView.vue';
+import PrivacyPolicyView from '../views/PrivacyPolicyView.vue';
 
 /**
  * The Vue Router is used to "direct" the browser to render a specific view component
@@ -162,6 +163,14 @@ const routes = [
     path: "/legaity",
     name: "legality",
     component: LegalityView,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: "/privacypolicy",
+    name: "privacypolicy",
+    component: PrivacyPolicyView,
     meta: {
       requiresAuth: true
     }
