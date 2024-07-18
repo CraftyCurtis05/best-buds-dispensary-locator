@@ -1,4 +1,5 @@
 <template>
+  <title>Register | Best Buds</title>
   <div id="register" class="text-center">
     <form v-on:submit.prevent="register">
       <h1>Create Account</h1>

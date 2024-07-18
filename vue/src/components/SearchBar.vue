@@ -4,7 +4,7 @@
     <!-- Display search bar and search button; Run search method when search button is clicked -->
     <div class="search-bar">
         <input id="input-location" type="text" name="user-location" placeholder="Enter your location"/>
-        <button id="search-button" v-on:click="search">Search</button>
+        <button id="search-button" @click="search">Search</button>
     </div>
 
     <!-- Store search results from an array by location(result) id -->
@@ -29,7 +29,8 @@ export default {
 
         //Return location id from search results
         return {
-            locationID: ''
+            locationID: '',
+            results: Array
         }
     },
     methods: {

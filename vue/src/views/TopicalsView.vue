@@ -1,4 +1,5 @@
 <template>
+  <title>Topicals | Best Buds</title>
     <div class="topicals-view">
         <div class="header-nav">
             <div class="header"><Header/></div>

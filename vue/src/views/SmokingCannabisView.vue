@@ -1,4 +1,5 @@
 <template>
+    <title>Smoking | Best Buds</title>
     <div class="smoking-cannabis-view">
         <div class="header-nav">
             <div class="header"><Header/></div>

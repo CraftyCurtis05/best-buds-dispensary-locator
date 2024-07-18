@@ -28,7 +28,7 @@
                     <a href="http://www.instagram.com/" target="_blank"><img src="src\assets\instagram_logo.png"/></a>
                 </div>
                 <div id="twitter">
-                    <a href="http://wwww.twitter.com/" target="_blank"><img src="src\assets\twitter_logo.png"/></a>
+                    <a href="http://x.com/" target="_blank"><img src="src\assets\twitter_logo.png"/></a>
                 </div>
                 <div id="linkedin">
                     <a href="http://www.linkedin.com/" target="_blank"><img src="src\assets\linkedIn_logo.png"/></a>

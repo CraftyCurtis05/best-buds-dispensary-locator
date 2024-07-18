@@ -1,15 +1,27 @@
+<!-- Articles Page Display --->
 <template>
+    <title>Articles | Best Buds</title>
     <div class="container">
+
+        <!-- Display header and navigation bar component -->
         <div class="header-nav">
-            <div class="header"><Header /></div>
-            <div class="nav-bar"><NavBar /></div>
+            <div class="header">
+                <Header/>
+            </div>
+            <div class="nav-bar">
+                <NavBar/>
+            </div>
         </div>
+
+        <!-- Display main article content -->
         <div class="main-content">
-            <!-- Search Bar -->
+
+            <!-- Articles search bar -->
             <div class="search-bar">
                 <input type="text" v-model="searchQuery" placeholder="Search articles" />
                 <button @click="search">Search</button>
             </div>
+            
             <!-- Article Boxes -->
             <div class="articles">
                 <div class="article-container" v-for="(article, index) in filteredArticles" :key="index">
@@ -41,46 +53,46 @@ import Header from '../components/Header.vue';
 import NavBar from '../components/NavBar.vue';
 
 export default {
-components: { Header, NavBar, Footer },
-name: 'ArticlesView',
-data() {
-    return {
-    searchQuery: '',
-    articles: [
-        {
-        title: 'Article 1',
-        description: 'Description of article 1',
-        link: 'https://example.com/article1',
-        },
-        {
-        title: 'Article 2',
-        description: 'Description of article 2',
-        link: 'https://example.com/article2',
-        },
-        {
-        title: 'Article 3',
-        description: 'Description of article 3',
-        link: 'https://example.com/article3',
-        },
-        {
-        title: 'Article 4',
-        description: 'Description of article 4',
-        link: 'https://example.com/article4',
-        },
-    ],
-    archive: ['January 2024', 'February 2024', 'March 2024'], // Sample archive data
-    };
-},
-computed: {
-    filteredArticles() {
-    return this.articles.filter(article =>
-        article.title.toLowerCase().includes(this.searchQuery.toLowerCase())
-    );
+    components: { Header, NavBar, Footer },
+    name: 'ArticlesView',
+    data() {
+        return {
+            searchQuery: '',
+            articles: [
+                {
+                    title: 'Article 1',
+                    description: 'Description of article 1',
+                    link: 'https://example.com/article1',
+                },
+                {
+                    title: 'Article 2',
+                    description: 'Description of article 2',
+                    link: 'https://example.com/article2',
+                },
+                {
+                    title: 'Article 3',
+                    description: 'Description of article 3',
+                    link: 'https://example.com/article3',
+                },
+                {
+                    title: 'Article 4',
+                    description: 'Description of article 4',
+                    link: 'https://example.com/article4',
+                }
+            ],
+            archive: ['January 2024', 'February 2024', 'March 2024'], // Sample archive data
+        }
     },
-},
-methods: {
-    async fetchArticles() {
-        try {
+    computed: {
+        filteredArticles: function() {
+            return this.articles.filter(article =>
+            article.title.toLowerCase().includes(this.searchQuery.toLowerCase())
+            );
+        }
+    },
+    methods: {
+        async fetchArticles() {
+            try {
             const response = await axios.get('https://api.thenewsapi.com/v1/news/all', {
                 params: {
                     categories: 'marijuana',
@@ -88,19 +100,19 @@ methods: {
                     language: 'en',
                     limit: 4  
                 },
-            paramsSerializer: params => {
-                return new URLSearchParams(params).toString();
-            }
-        });
-        console.log('API Response:', response);
-        this.articles = response.data.data; // Ensure you're accessing the correct part of the response
-        } catch (error) {
-        console.error('Error fetching articles:', error);
+                paramsSerializer: params => {
+                    return new URLSearchParams(params).toString();
+                }
+            });
+            console.log('API Response:', response);
+            this.articles = response.data.data; // Ensure you're accessing the correct part of the response
+            } catch (error) {
+                console.error('Error fetching articles:', error);
+            }      
         }
     },
-},
-mounted() {
-    this.fetchArticles();
+    mounted() {
+        this.fetchArticles();
     }
 };
 </script>

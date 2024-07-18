@@ -1,11 +1,19 @@
+<!-- Abbout Us Page Display --->
 <template>
+  <title>About Us | Best Buds</title>
+
+    <!-- Display header component -->
     <div class="header">
-    <Header />
-  </div>
-  <div class="nav-bar">
-    <NavBar />
-  </div>
-    <div class="container">
+      <Header />
+    </div>
+
+    <!-- Display navigation bar component -->
+    <div class="nav-bar">
+      <NavBar />
+    </div>
+
+    <!-- Display about us description -->
+    <div class="about-us-description">
         <h1>We Are Best Buds</h1>
           <p>At Best Buds, we're dedicated to providing a seamless experience for individuals seeking access to legal cannabis products. Our platform serves as a comprehensive guide, connecting consumers with dispensaries that meet their specific needs and preferences. Whether you're a seasoned cannabis enthusiast or exploring its benefits for the first time, we're here to help you navigate the landscape with ease.</p>
         <h2>Our Mission</h2>
@@ -16,10 +24,15 @@
           <p>Have questions or feedback? We'd love to hear from you! Feel free to reach out to our friendly team at [contact email] for assistance or inquiries.</p>
           <p>Thank you for choosing Best Buds as your trusted guide in the world of cannabis. Together, let's explore, discover, and embrace the benefits of this remarkable plant.</p>
     </div>
-   <h3>“A joint a day keeps the bad mood away.” -Unknown</h3>
+
+    <!-- Display page quote -->
+    <h3>“A joint a day keeps the bad mood away.” -Unknown</h3>
+
+    <!-- Display footer component -->
     <div class="footer">
-    <Footer />
-  </div>
+      <Footer />
+    </div>
+
 </template>
 
 <script>

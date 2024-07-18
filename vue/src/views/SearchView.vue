@@ -1,4 +1,6 @@
+
 <template>
+  <title>Search | Best Buds</title>
   <div class="search-view">
     <div class="header-nav">
       <div id="header"><Header/></div>

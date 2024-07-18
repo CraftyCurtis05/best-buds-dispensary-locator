@@ -1,4 +1,5 @@
 <template>
+    <title>Too Much | Best Buds</title>
     <div class="too-much-view">
         <div class="header-nav">
             <div class="header"><Header/></div>

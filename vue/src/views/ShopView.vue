@@ -1,4 +1,5 @@
 <template>
+    <title>Shop | Best Buds</title>
   <div class="shop-view">
     <div class="header-nav">
         <div class="header"><Header/></div>

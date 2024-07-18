@@ -1,4 +1,5 @@
 <template>
+    <title>Profile | Best Buds</title>
     <div class="container">
         <div class="header-nav">
         <div class="header"><Header/></div>

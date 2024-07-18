@@ -28,7 +28,7 @@
                         </div>
 
                         <!-- Display favorite button with each location result and use set favorite function to save location when clicked -->
-                        <button id="favorite-button" v-on:click.prevent="setFavorite(result.id)">Favorite Dispensary</button>
+                        <button id="favorite-button" @click.prevent="setFavorite(result.id)">Favorite Dispensary</button>
 
                     </div>
                 </div>
@@ -49,7 +49,6 @@ export default {
 
         //Return location results array and location Id
         return {
-            results: Array,
             locationID: ''
         }
     },

@@ -1,4 +1,5 @@
 <template>
+  <title>Login | Best Buds</title>
   <div id="login">
     <form v-on:submit.prevent="login">
       <h1 >Please Sign In</h1>

@@ -1,4 +1,5 @@
 <template>
+  <title>Legality | Best Buds</title>
     <div class="legality-view">
         <div class="header-nav">
             <div class="header"><Header/></div>

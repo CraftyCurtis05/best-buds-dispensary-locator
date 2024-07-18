@@ -1,4 +1,5 @@
 <template>
+  <title>Guide | Best Buds</title>
     <div class="strain-guide-view">
         <div class="header-nav">
             <div class="header"><Header/></div>

@@ -1,4 +1,5 @@
 <template>
+    <title>Safety Tips | Best Buds</title>
     <div class="safety-tips-view">
         <div class="header-nav">
             <div class="header"><Header/></div>

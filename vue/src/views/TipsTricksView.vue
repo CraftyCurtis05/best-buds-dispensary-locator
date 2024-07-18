@@ -1,4 +1,5 @@
 <template>
+    <title>Tips & Tricks | Best Buds</title>
     <div class="tips-tricks-view">
         <div class="header-nav">
             <div class="header"><Header/></div>

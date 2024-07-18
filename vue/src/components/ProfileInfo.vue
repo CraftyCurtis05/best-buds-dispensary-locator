@@ -7,9 +7,9 @@
 
         <!-- Display user 'Name', 'Age', 'Email' -->
         <div>
-            <p><strong>Name:</strong> {{ profile.name }}</p>
-            <p><strong>Age:</strong> {{ profile.age }}</p>
-            <p><strong>Email:</strong> {{ profile.email }}</p>
+            <p>Name: {{ profile.name }}</p>
+            <p>Age: {{ profile.age }}</p>
+            <p>Email: {{ profile.email }}</p>
         </div>
 
     </div>

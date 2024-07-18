@@ -1,4 +1,5 @@
 <template>
+    <title>Products | Best Buds</title>
     <div class="cannabis-products-view">
         <div class="header-nav">
             <div class="header"><Header/></div>
