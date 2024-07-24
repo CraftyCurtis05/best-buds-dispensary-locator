@@ -30,7 +30,6 @@ export default {
         //Return location id from search results
         return {
             locationID: '',
-            results: Array
         }
     },
     methods: {
@@ -55,4 +54,5 @@ export default {
 .search-bar {
     padding: 1%;
 }
+
 </style>

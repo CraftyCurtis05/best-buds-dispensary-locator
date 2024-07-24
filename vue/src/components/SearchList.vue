@@ -20,7 +20,7 @@
                         <div id="location-details">
 
                             <!-- Display location address -->
-                            <p id="location-address"> {{ result.location.address1 }} </p>
+                            <p id="location-address"><a href="https:www.google.com/maps/dir/?api=1" target="_blank"></a> {{ result.location.address1 }} </p>
 
                             <!-- Display location image and bind to location url -->
                             <a id="location-image" v-bind:href="result.url" target="_blank"><img v-bind:src="result.image_url"/></a>
@@ -49,6 +49,7 @@ export default {
 
         //Return location results array and location Id
         return {
+            results: [],
             locationID: ''
         }
     },
