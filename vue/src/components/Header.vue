@@ -6,7 +6,7 @@
 
         <!-- Display logo to the left and in front of banner image; Link logo to home page, unless NOT logged in -->
         <div class="logo-container">
-            <router-link v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''" target="_blank">
+            <router-link v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''">
                 <img src="src/assets/best_buds_logo_white.png" alt="Logo">
             </router-link>
         </div>

@@ -11,7 +11,7 @@
       <h2>Search for dispensaries near you</h2>
       <div id="search-bar"><SearchBar/></div>
       <div class="map-list">
-        <div id="search-map"><SearchMap/></div>
+        <!-- <div id="search-map"><SearchMap/></div> -->
         <div id="search-list"><SearchList v-if="this.$store.state.locationID"/></div> 
       </div>   
       <div class="quote">
@@ -26,13 +26,13 @@
 import Header from '../components/Header.vue';
 import NavBar from '../components/NavBar.vue';
 import SearchBar from '../components/SearchBar.vue';
-import SearchMap from '../components/SearchMap.vue';
+// import SearchMap from '../components/SearchMap.vue';
 import SearchList from '../components/SearchList.vue';
 import Footer from '../components/Footer.vue';
    
 export default {
   components: {
-    Header, NavBar, SearchBar, SearchMap, SearchList, Footer},
+    Header, NavBar, SearchBar, SearchList, Footer},
   name: "SearchView"
 };
 </script>

@@ -6,7 +6,7 @@
 
         <!-- Display logo and slogan to the left -->
         <div id="logo">
-            <router-link v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''" target="_blank"><img src="src\assets\best_buds_logo_white.png"/></router-link>
+            <router-link v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''"><img src="src\assets\best_buds_logo_white.png"/></router-link>
             <p id="slogan"> "We're Good To Grow!" </p>
         </div>
 

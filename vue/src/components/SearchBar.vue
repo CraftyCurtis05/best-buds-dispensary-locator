@@ -3,7 +3,7 @@
 
     <!-- Display search bar and search button; Run search method when search button is clicked -->
     <div class="search-bar">
-        <input id="input-location" type="text" name="user-location" placeholder="Enter your location"/>
+        <input id="input-location" v-model="locationID" type="text" name="user-location" placeholder="Enter your location"/>
         <button id="search-button" @click="search">Search</button>
     </div>
 
