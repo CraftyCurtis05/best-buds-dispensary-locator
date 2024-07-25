@@ -9,17 +9,20 @@
     <div class="search">
       <h1>Best Buds Dispensary Locator</h1>
       <h2>Search for dispensaries near you</h2>
-      <div id="search-bar"><SearchBar/></div>
-      <div class="map-list">
-        <!-- <div id="search-map"><SearchMap/></div> -->
-        <div id="search-list"><SearchList v-if="this.$store.state.locationID"/></div> 
-      </div>   
-      <div class="quote">
-        <h3>"If everyone smoked weed the world would be a better place." -Kirsten Dunst</h3>
+      <div id="search-bar">
+        <SearchBar/>
       </div>
+      <div id="search-list">
+        <SearchList v-if="this.$store.state.locationID"/>
+      </div> 
+    </div>    
+    <div class="quote">
+      <h3>"If everyone smoked weed the world would be a better place." -Kirsten Dunst</h3>
     </div>
   </div>  
-  <div class="footer"><Footer/></div>
+  <div class="footer">
+    <Footer/>
+  </div>
 </template>
   
 <script>
@@ -69,11 +72,19 @@ h2 {
   text-align: center;
 }
 
-.map-list {
+#list-search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* Center text content within the list */
+  }
+
+/* .map-list {
   display: flex;
   justify-content: center;
   align-content: center;
-}
+} */
 
 h3 {
   text-align: center;
