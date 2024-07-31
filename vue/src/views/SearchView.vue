@@ -15,7 +15,10 @@
       <div id="search-list">
         <SearchList v-if="this.$store.state.locationID"/>
       </div> 
-    </div>    
+    </div> 
+    <div class="search-map">
+      <SearchMap />
+    </div>   
     <div class="quote">
       <h3>"If everyone smoked weed the world would be a better place." -Kirsten Dunst</h3>
     </div>
@@ -29,13 +32,13 @@
 import Header from '../components/Header.vue';
 import NavBar from '../components/NavBar.vue';
 import SearchBar from '../components/SearchBar.vue';
-// import SearchMap from '../components/SearchMap.vue';
+import SearchMap from '../components/SearchMap.vue';
 import SearchList from '../components/SearchList.vue';
 import Footer from '../components/Footer.vue';
    
 export default {
   components: {
-    Header, NavBar, SearchBar, SearchList, Footer},
+    Header, NavBar, SearchBar, SearchList, SearchMap, Footer},
   name: "SearchView"
 };
 </script>

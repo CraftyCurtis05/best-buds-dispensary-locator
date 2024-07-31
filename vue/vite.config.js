@@ -1,5 +1,4 @@
 import { fileURLToPath, URL } from 'node:url';
-
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 
@@ -11,4 +10,11 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   }
+  // 1st try Google Maps:
+  // optimizeDeps: {
+  //   include: [
+  //     "@fawmi/vue-google-maps",
+  //     "fast-deep-equal",
+  //   ]
+  // }
 });

@@ -1,20 +1,18 @@
 <!-- Google Map Component Display--->
 <template>
-
-    <!-- Display google map -->
-    <div class="search-map">
-
-        <!-- When location is selected, use address1 to display location on map -->
-
-    
-    </div>    
+    <GoogleMap 
+        api-key="AIzaSyC_eyTPqQJl9g4WT2vYrQOnaLdC1KbdbGQ" 
+        style="width:50%;height:500px" 
+        :zoom="8">
+    </GoogleMap>
 </template>
-
+  
 <script>
-export default {
+import { GoogleMap } from "vue3-google-map";
+import { defineComponent } from "vue";
 
-};    
+export default defineComponent({
+    components: {GoogleMap},
+    name: 'SearchMap'
+});
 </script>
-
-<style scoped>
-</style>

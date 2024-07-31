@@ -21,6 +21,9 @@ import TopicalsView from '../views/TopicalsView.vue';
 import LegalityView from '../views/LegalityView.vue';
 import PrivacyPolicyView from '../views/PrivacyPolicyView.vue';
 
+// TESTING LINK - REMOVE BEFORE RELEASE
+import TestView from '../views/TestView.vue';
+
 /**
  * The Vue Router is used to "direct" the browser to render a specific view component
  * inside of App.vue depending on the URL.
@@ -171,6 +174,16 @@ const routes = [
     path: "/privacypolicy",
     name: "privacypolicy",
     component: PrivacyPolicyView,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  
+  // TESTING LINK - REMOVE BEFORE RELEASE
+  {
+    path: "/test",
+    name: "test",
+    component: TestView,
     meta: {
       requiresAuth: true
     }

@@ -8,6 +8,12 @@
     <div class="home">
       <h1>Welcome to Best Buds!</h1>
       <h2>Find And Connect With Your Dispensary Here</h2>
+
+      <!-- TESTING LINK - REMOVE BEFORE RELEASE-->
+      <li>
+        <router-link v-bind:to="{ name:'test'}">Dev Testing</router-link>
+      </li>
+
       <div id="quote">
         <h3>"Sativa to change the things I can, indica to accept the things I can’t." -Unknown</h3>
       </div>
