@@ -7,31 +7,10 @@
         <button id="search-button" v-on:click="search()">Search</button>
     </div>
 
-    <!-- Store search results from an array by location(result) id -->
-    <div id="search-result" v-for="result in results" v-bind:key="result.id">
-
-        <!-- Store each result in results array and bind name and link name to its google result when clicked  -->
-        <a id="business-name" :href="'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(result.location.address1)" target="_blank">
-            {{ result.name }}
-        </a>
-
-        <!-- Store each result in results array by location result address1 -->
-        <p id="business-address">
-            {{ result.location.address1 }}
-        </p>
-
-    </div>    
 </template>
 
 <script>
 export default {
-    data() {
-
-        //Return location id from search results
-        return {
-            locationID: '',
-        };
-    },
     methods: {
 
         //Search function that gets provided locationID that is stored from search results 
@@ -46,7 +25,7 @@ export default {
         clearResults() {
             this.$store.state.locationID = null;
         }
-    }
+    },
 };    
 </script>
 

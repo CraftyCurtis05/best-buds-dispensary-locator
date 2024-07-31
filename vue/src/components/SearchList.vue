@@ -20,15 +20,18 @@
                     <div id="location-details">
 
                         <!-- Display location address; @click:address go to Google Directions-->
-                        <p id="location-address"><a href="https:www.google.com/maps/dir/?api=1" target="_blank"> {{ result.location.address1 }} </a> </p>
+                        <p id="location-address"> {{ result.location.display_address }} </p>
                         
                         <!-- Display location image and bind to location url -->
                         <a id="location-name" v-bind:href="result.url" target="_blank"><img id="location-image" v-bind:src="result.image_url" /></a>
+                        
                     </div>
+
                     <div class="favorite-button-display">
                         <!-- Display favorite button with each location result and use set favorite function to save location when clicked -->
                         <button id="favorite-button" v-on:click.prevent="setFavorite(result.id)">Favorite Dispensary</button>
-                    </div>    
+                    </div>   
+
                 </div>
             </div>
             </ul>
@@ -71,7 +74,7 @@ export default {
             this.$store.commit('SET_FAVORITE_STATUS',  value);
             JavaService.makeFavorite({ 
                 name: 'favorite', 
-                params: { 
+                props: { 
                     businessId: this.$store.state.id, 
                     businessName: this.$store.state.name, 
                     businessAddress: this.$store.state.location.address1 
