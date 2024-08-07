@@ -24,7 +24,7 @@
                         
                         <!-- Display location image and bind to location url -->
                         <a id="location-name" v-bind:href="result.url" target="_blank"><img id="location-image" v-bind:src="result.image_url" /></a>
-                        
+
                     </div>
 
                     <div class="favorite-button-display">

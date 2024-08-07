@@ -4,7 +4,7 @@
     <!-- Display search bar and search button; Run search method when search button is clicked -->
     <div class="search-bar">
         <input id="input-location" v-model="locationID" type="text" name="user-location" placeholder="Enter Location"/>
-        <button id="search-button" v-on:click="search()">Search</button>
+        <button id="search-button" v-on:click="search(),getUserLocation()">Search</button>
     </div>
 
 </template>
@@ -24,8 +24,23 @@ export default {
         //Clear results function that is used during search function
         clearResults() {
             this.$store.state.locationID = null;
+        },
+
+        //
+        showPosition(position) {
+            const latitude = position.coords.latitude;
+            const longitude = position.ccords.longitude;
+        },
+        getUserLocation(){
+            const x = document.getElementById("geolocation");
+            
+            if (navigator.geolocation) {
+                const position = navigator.geolocation.getCurrentPosition();
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
         }
-    },
+    }
 };    
 </script>
 

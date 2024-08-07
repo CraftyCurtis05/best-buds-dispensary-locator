@@ -2,7 +2,7 @@
 <!-- Install axios package in terminal: npm i axios -->
 <!-- Open: https://cors-anywhere.herokuapp.com/corsdemo - Select 'Request temporary access to the demo server' -->
 <!-- Install google maps package in terminal: npm i vue3-google-map -->
- <!-- npm run dev -->
+<!-- npm run dev -->
 
 <template>
   <div id="capstone-app">

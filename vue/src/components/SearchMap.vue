@@ -14,7 +14,6 @@
 <script>
 import { defineComponent } from "vue";
 import { GoogleMap, Marker } from "vue3-google-map";
-import YelpService from '../services/YelpService';
 
 export default defineComponent({
     components: {GoogleMap, Marker},
@@ -26,3 +25,7 @@ export default defineComponent({
     }  
 });
 </script>
+
+<style scoped>
+
+</style>
