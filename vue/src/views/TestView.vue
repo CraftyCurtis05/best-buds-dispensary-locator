@@ -1,16 +1,31 @@
 <!-- TESTING LINK - REMOVE BEFORE RELEASE-->
 <template>
-    <div class="search-map">
-        <SearchMap />
-    </div>
+  <head>
+
+  </head>
+  <body>
+
+  </body>
+  <footer>
+
+  </footer>
 </template>
 
 <script>
-import SearchMap from '../components/SearchMap.vue';
+import articles from '../services/ArticlesObject.js';
 
 export default {
   name: "TestView",
-  components: {SearchMap}
+  
+  methods: {
+    getArticles(keyword) {
+      for(let i = 0; i < articles.length; i++) {
+        if(keyword === articles.keyword) {
+          return articles.name;
+        }
+      }
+    }
+  }
 };
 </script>
 
