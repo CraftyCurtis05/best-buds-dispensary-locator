@@ -8,17 +8,13 @@
     <!-- Search bar that takes in user input as keyword and runs the searchArticles function when button is pressed -->
     <div class="search-bar">
       <input id="user-input" name="user-input" type="text" v-model="keyword" placeholder="Enter Search Keyword"/>
-      <button id="search-button" v-on:click="searchArticles(keyword)">Search</button>
+      <button id="search-button" v-on:click="searchArticles()">Search</button>
     </div>
 
     <!-- Display JSON result objects from search keyword -->
     <ul class="list">
-      <li v-for="result in results" :key="result.name">
-        <span>{{  result.name  }}</span>
-        <span>{{ result.author }}</span>
-        <span>{{ result.date }}</span>
-        <span>{{ result.description }}</span>
-        <img src="result.image" />
+      <li v-for="article in articlesArray" :key="article.title">
+        <span>{{  article.title  }}</span>
       </li>
     </ul>
 
@@ -30,7 +26,7 @@
 
 <script>
 // Importing array from local JSON file
-import articles from "../assets/articles.json";
+import articles from "../assets/articles.js";
 
 export default {
   name: "TestView",
@@ -38,7 +34,7 @@ export default {
   data() {
     return {
       keyword: '',
-      results: []
+      articlesArray: []
     }
   },
 
@@ -47,28 +43,19 @@ export default {
     searchArticles(keyword) {
 
       // Initialize an empty array to store objects that contain keyword
-      let results = [];
+      let articlesArray = [];
+      let articlesObj = articles;
 
-      // Loop through articles objects
-      for(let i = 0; i < articles.length; i++) {
+      // console.log(articlesObj); // FOR TESTING - DELETE WHEN DONE
 
-        // Loop through articles objects properties
-        for(let j = 0; j < articles[i].length; j++) {
+      Object.entries(articlesObj).forEach(([key, value]) => {
+        console.log(key, value); // This works!!!
+        console.log(value.title); // This 
+      })
 
-          // If articles objects property contains keyowrd then add articles object to results array
-          if(articles[i][j].includes(keyword.toLowerCase())) {
-          results.push(articles[i]);
-          } 
-        }
-      }
+      //console.log(articlesArray); // FOR TESTING - DELETE WHEN DONE
 
-      // If results array is empty return nothing else return results array
-      if(results.length === 0) {
-        return '';
-      } else {
-        console.log(results); // For testing in dev tools - delete when working
-        return results;
-      }
+      return articlesArray;
     }  
   }
 };
