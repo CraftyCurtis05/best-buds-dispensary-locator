@@ -9,12 +9,12 @@
     <!-- Search bar that takes in user input as keyword and runs the searchArticles function when button is pressed -->
     <div class="search-bar">
       <input id="user-input" name="user-input" type="text" v-model="keyword" placeholder="Enter Search Keyword"/>
-      <button id="search-button" v-on:click="searchArticles(keyword)">Search</button>
+      <!-- <button id="search-button" v-on:click="searchArticles(keyword)">Search</button> -->
     </div>
 
     <!-- Display JSON result objects from search keyword -->
     <div class="search-list">
-      <div v-for="result in searchArticles(keyword)" :key="result.title">
+      <div class="results" v-for="result in searchArticles(keyword)" :key="result.title">
         <a v-bind:href="result.url" target="_blank"><img :src="(`src/assets/article_assets/${result.image}`)"/></a> <!-- Display result image and bind url to image -->
         <h3>{{  result.title  }}</h3>     <!-- Display result title -->
         <h4>{{ result.author }}</h4>      <!-- Display result author -->
@@ -98,5 +98,9 @@ export default {
   padding: 10px 20px;
   margin-left: 10px;
   cursor: pointer;
+}
+
+.results {
+  border: 1rem solid black;
 }
 </style>
