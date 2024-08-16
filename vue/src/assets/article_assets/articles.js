@@ -88,10 +88,10 @@ export default [
         url: "https://www.healthline.com/health/what-is-delta-9"
     },
     {
-        title: "CBD May Increase the Adverse Effects of THC in Edible Cannabis Products, Study Shows",
+        title: "CBD May Increase the Adverse Effects of THC in Edible Cannabis Products",
         author: "Marisol Martinez",
         date: "February 13, 2023",
-        description: "Contrary to some common claims, a study led by Johns Hopkins Medicine researchers found that relatively high doses of cannabidiol (CBD) may increase the adverse effects of delta-9-tetrahydrocannabinol (THC), the main active ingredient in cannabis that can cause a mood alteration or a “high” sensation.",
+        description: "A study led by Johns Hopkins Medicine researchers found that relatively high doses of cannabidiol may increase the adverse effects of delta-9-tetrahydrocannabinol, the main active ingredient in cannabis that can cause a mood alteration or a “high” sensation.",
         image: "article12.jpeg",
         url: "https://www.hopkinsmedicine.org/news/newsroom/news-releases/2023/02/cbd-may-increase-the-adverse-effects-of-thc-in-edible-cannabis-products-study-shows"
     },
@@ -136,7 +136,7 @@ export default [
         url: "https://www.nccih.nih.gov/health/cannabis-marijuana-and-cannabinoids-what-you-need-to-know"
     },
     {
-        title: "8 ways to get 'unhigh'",
+        title: "Eight(8) ways to get 'unhigh'",
         author: "Ruth Eagle",
         date: "May 21, 2020",
         description: "The highs that people experience after smoking cannabis vary. Some people may feel anxious and nauseous. A person may want to get ‘unhigh’ sooner rather than later after smoking cannabis. Tips on how to get unhigh range from drinking water to taking CBD",
@@ -144,7 +144,7 @@ export default [
         url: "https://www.medicalnewstoday.com/articles/how-to-get-unhigh"
     },
     {
-        title: "If you use cannabis, do it safely: Key safety tips as legal medical and recreational marijuana evolve",
+        title: "Key safety tips as legal medical and recreational marijuana evolve",
         author: "Peter Grinspoon, MD",
         date: "January 17, 2023",
         description: "It's fair to say that society's views on cannabis have been evolving. Today, adult recreational use is legal in 21 states and medical use is legal in most other states, to varying degrees. The use of cannabis doesn't seem to be going away. Given that, here is what you need to know to make using cannabis safer.",

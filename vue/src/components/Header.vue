@@ -28,7 +28,7 @@ export default {
 .header {
     display: flex;
     height: 10vw;
-    width: 100vw;
+    width: 100vw;;
     position: relative;
 }
 

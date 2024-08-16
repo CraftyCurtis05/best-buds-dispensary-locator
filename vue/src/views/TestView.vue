@@ -1,32 +1,34 @@
 <!-- TESTING LINK - REMOVE BEFORE RELEASE-->
 <template>
+
   <header>
     <div><Header/></div>
     <div><NavBar/></div>
   </header>
-  <body>
 
+  <body>
     <!-- Search bar that takes in user input as keyword and runs the searchArticles function when button is pressed -->
     <div class="search-bar">
       <input id="user-input" name="user-input" type="text" v-model="keyword" placeholder="Enter Search Keyword"/>
       <!-- <button id="search-button" v-on:click="searchArticles(keyword)">Search</button> -->
     </div>
 
-    <!-- Display JSON result objects from search keyword -->
+    <!-- Display JSON result objects from search keyword --> 
     <div class="search-list">
-      <div class="results" v-for="result in searchArticles(keyword)" :key="result.title">
-        <a v-bind:href="result.url" target="_blank"><img :src="(`src/assets/article_assets/${result.image}`)"/></a> <!-- Display result image and bind url to image -->
-        <h3>{{  result.title  }}</h3>     <!-- Display result title -->
-        <h4>{{ result.author }}</h4>      <!-- Display result author -->
-        <h5>{{ result.date }}</h5>        <!-- Display result date -->
-        <h6>{{ result.description }}</h6> <!-- Display result description -->
-      </div>
+    <div class="results" v-for="result in searchArticles(keyword)" :key="result.title">
+      <a v-bind:href="result.url" target="_blank"><img :src="(`src/assets/article_assets/${result.image}`)"/></a> <!-- Display result image and bind url to image -->
+      <h3>{{  result.title  }}</h3>     <!-- Display result title -->
+      <h4>{{ result.author }}</h4>      <!-- Display result author -->
+      <h5>{{ result.date }}</h5>        <!-- Display result date -->
+      <h6>{{ result.description }}</h6> <!-- Display result description -->
     </div>
-
+    </div>
   </body>
+
   <footer>
     <div><Footer/></div>
   </footer>
+
 </template>
 
 <script>
@@ -100,7 +102,47 @@ export default {
   cursor: pointer;
 }
 
+.search-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1000px;
+}
+
 .results {
-  border: 1rem solid black;
+  border: .3em solid black;
+  width: 14em;
+  height: 20em;
+  text-align: center; 
+  margin: auto;
+  margin-bottom: 15px;
+  padding: .5em;
+}
+
+img {
+  width: 9em;
+  height: 7em;
+}
+
+h3 {
+  font-size: .95em;
+  font-weight: bolder;
+  margin: .2em;
+}
+
+h4 {
+  font-size: .75em;
+  font-weight: bold;
+  margin: .5em;
+}
+
+h5 {
+  font-size: .60em;
+  font-style: italic;
+  margin: .5em;
+}
+
+h6 {
+  font-size: .73em;
+  font-weight: lighter;
 }
 </style>
