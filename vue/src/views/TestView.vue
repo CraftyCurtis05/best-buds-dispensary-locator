@@ -8,14 +8,14 @@
     <!-- Search bar that takes in user input as keyword and runs the searchArticles function when button is pressed -->
     <div class="search-bar">
       <input id="user-input" name="user-input" type="text" v-model="keyword" placeholder="Enter Search Keyword"/>
-      <button id="search-button" v-on:click="searchArticles()">Search</button>
+      <button id="search-button" v-on:click="searchArticles(keyword)">Search</button>
     </div>
 
     <!-- Display JSON result objects from search keyword -->
     <ul class="list">
-      <!-- <li v-for="result in searchResults" :key="result.title">
+      <li v-for="result in results" :key="result.title">
         <span>{{  result.title  }}</span>
-      </li> -->
+      </li>
     </ul>
 
   </body>
@@ -48,14 +48,15 @@ export default {
 
         Object.keys(article).forEach((key) => { // Loop through article object = article key [{key:}]
 
-          console.log("key : " + key + " - value : " + article[key]); // ***FOR TESTING - DELETE WHEN FUNCTION WORKS
+          //console.log("key : " + key + " - value : " + article[key]); // ***FOR TESTING - DELETE WHEN FUNCTION WORKS
 
-          // if(article[key].includes(keyword)) { // Loop through value string and search for keyword                      /* LEFT OFF HERE */
-          //   results.push(article);             // If article contains keyword, add article object to results array
-          // }
+          if(article[key].includes(keyword)) { // Loop through value string and search for keyword                      /* LEFT OFF HERE */
+            results.push(article);             // If article contains keyword, add article object to results array
+          }
         })
       })
-      //console.log(results);
+      console.log(results);
+      return results;
     }  
   }
 };
