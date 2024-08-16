@@ -13,9 +13,9 @@
 
     <!-- Display JSON result objects from search keyword -->
     <ul class="list">
-      <li v-for="article in articlesArray" :key="article.title">
-        <span>{{  article.title  }}</span>
-      </li>
+      <!-- <li v-for="result in searchResults" :key="result.title">
+        <span>{{  result.title  }}</span>
+      </li> -->
     </ul>
 
   </body>
@@ -26,15 +26,15 @@
 
 <script>
 // Importing array from local JSON file
-import articles from "../assets/articles.js";
+import Articles from "../assets/articles.js";
 
 export default {
   name: "TestView",
 
   data() {
     return {
-      keyword: '',
-      articlesArray: []
+      articles: Articles,
+      keyword: ''
     }
   },
 
@@ -42,20 +42,20 @@ export default {
 
     searchArticles(keyword) {
 
-      // Initialize an empty array to store objects that contain keyword
-      let articlesArray = [];
-      let articlesObj = articles;
+      let results = [];
 
-      // console.log(articlesObj); // FOR TESTING - DELETE WHEN DONE
+      this.articles.forEach((article) => { // Loop through the articles array = article object [{}]
 
-      Object.entries(articlesObj).forEach(([key, value]) => {
-        console.log(key, value); // This works!!!
-        console.log(value.title); // This 
+        Object.keys(article).forEach((key) => { // Loop through article object = article key [{key:}]
+
+          console.log("key : " + key + " - value : " + article[key]); // ***FOR TESTING - DELETE WHEN FUNCTION WORKS
+
+          // if(article[key].includes(keyword)) { // Loop through value string and search for keyword                      /* LEFT OFF HERE */
+          //   results.push(article);             // If article contains keyword, add article object to results array
+          // }
+        })
       })
-
-      //console.log(articlesArray); // FOR TESTING - DELETE WHEN DONE
-
-      return articlesArray;
+      //console.log(results);
     }  
   }
 };

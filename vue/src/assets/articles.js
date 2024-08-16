@@ -1,5 +1,4 @@
-const articles = {
-    article1:
+export default [
     {
         title: "Test",
         author: "Testy McTesty",
@@ -8,7 +7,6 @@ const articles = {
         image: "src/assets/LARRY!.webp",
         url: "www.google.com"
     },
-    article2:
     {
         title: "Test2",
         author: "Two Testy",
@@ -17,6 +15,4 @@ const articles = {
         image: "src/assets/temp_search_map_img.webp",
         url: "www.linkedin.com"
     }
-}
-
-export default { articles };
+]
