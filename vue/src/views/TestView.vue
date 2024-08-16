@@ -12,11 +12,15 @@
     </div>
 
     <!-- Display JSON result objects from search keyword -->
-    <ul class="list">
-      <li v-for="result in results" :key="result.title">
-        <span>{{  result.title  }}</span>
-      </li>
-    </ul>
+    <div class="search-list">
+      <div v-for="result in searchArticles(keyword)" :key="result.title">
+        <a v-bind:href="result.url" target="_blank"><img src="result.image"/></a> <!-- Display result image and bind url to image ***NOT WORKING???** -->
+        <h3>{{  result.title  }}</h3>     <!-- Display result title -->
+        <h4>{{ result.author }}</h4>      <!-- Display result author -->
+        <h5>{{ result.date }}</h5>        <!-- Display result date -->
+        <h6>{{ result.description }}</h6> <!-- Display result description -->
+      </div>
+    </div>
 
   </body>
   <footer>
@@ -34,7 +38,8 @@ export default {
   data() {
     return {
       articles: Articles,
-      keyword: ''
+      keyword: '',
+      results: []
     }
   },
 
@@ -42,21 +47,28 @@ export default {
 
     searchArticles(keyword) {
 
-      let results = [];
+      keyword = keyword.toLowerCase().trim(); // User input/keyword is converted to lower case and whitespace is trimmed off both sides
+
+      let results = []; // Variable initialized containing an empty array to store matched results
 
       this.articles.forEach((article) => { // Loop through the articles array = article object [{}]
 
         Object.keys(article).forEach((key) => { // Loop through article object = article key [{key:}]
 
-          //console.log("key : " + key + " - value : " + article[key]); // ***FOR TESTING - DELETE WHEN FUNCTION WORKS
-
-          if(article[key].includes(keyword)) { // Loop through value string and search for keyword                      /* LEFT OFF HERE */
-            results.push(article);             // If article contains keyword, add article object to results array
+          if(article[key].includes(keyword)) { // Loop through value string and search for keyword   
+            
+            if(!results.includes(article)) { // Checks if results array does not already contain article             
+              results.push(article); // If article contains keyword, add article object to results array
+            }
           }
         })
       })
-      console.log(results);
-      return results;
+      if(results.length === 0) { // Checks results array to verify it is not empty
+        console.log("No articles match. Please try again.") // FOR TESTING - DELETE WHEN FUNCTION WORKS
+        results.push("No articles match. Please try again.");  // *** NEED TO FIGURE OUT HOW TO DISPLAY ON PAGE WHEN NO RESULTS ***
+      }
+      console.log(results); // FOR TESTING - DELETE WHEN FUNCTION WORKS
+      return results; //
     }  
   }
 };
