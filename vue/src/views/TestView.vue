@@ -1,7 +1,8 @@
 <!-- TESTING LINK - REMOVE BEFORE RELEASE-->
 <template>
   <header>
-
+    <div><Header/></div>
+    <div><NavBar/></div>
   </header>
   <body>
 
@@ -14,7 +15,7 @@
     <!-- Display JSON result objects from search keyword -->
     <div class="search-list">
       <div v-for="result in searchArticles(keyword)" :key="result.title">
-        <a v-bind:href="result.url" target="_blank"><img src="result.image"/></a> <!-- Display result image and bind url to image ***NOT WORKING???** -->
+        <a v-bind:href="result.url" target="_blank"><img :src="(`src/assets/article_assets/${result.image}`)"/></a> <!-- Display result image and bind url to image -->
         <h3>{{  result.title  }}</h3>     <!-- Display result title -->
         <h4>{{ result.author }}</h4>      <!-- Display result author -->
         <h5>{{ result.date }}</h5>        <!-- Display result date -->
@@ -24,16 +25,19 @@
 
   </body>
   <footer>
-
+    <div><Footer/></div>
   </footer>
 </template>
 
 <script>
-// Importing array from local JSON file
-import Articles from "../assets/articles.js";
+import Header from "../components/Header.vue";
+import NavBar from "../components/NavBar.vue";
+import Footer from "../components/Footer.vue";
+import Articles from "../assets/article_assets/articles.js";
 
 export default {
   name: "TestView",
+  components: { Header, NavBar, Footer },
 
   data() {
     return {
@@ -65,11 +69,11 @@ export default {
       })
       if(results.length === 0) { // Checks results array to verify it is not empty
         console.log("No articles match. Please try again.") // FOR TESTING - DELETE WHEN FUNCTION WORKS
-        results.push("No articles match. Please try again.");  // *** NEED TO FIGURE OUT HOW TO DISPLAY ON PAGE WHEN NO RESULTS ***
+        results.push("No articles match. Please try again.");  // *** NEED TO FIGURE OUT HOW TO DISPLAY ON PAGE WHEN NO RESULTS *** <<<<<<<<<<
       }
       console.log(results); // FOR TESTING - DELETE WHEN FUNCTION WORKS
       return results; //
-    }  
+    }
   }
 };
 </script>
@@ -81,7 +85,7 @@ export default {
   background-color: black;
   padding: .45%;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 40px auto;
 }
 
 #user-input {
@@ -94,9 +98,5 @@ export default {
   padding: 10px 20px;
   margin-left: 10px;
   cursor: pointer;
-}
-
-.list {
-  margin: auto;
 }
 </style>
