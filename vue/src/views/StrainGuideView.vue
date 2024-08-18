@@ -16,7 +16,7 @@
     <main id="strain-guide-main">
 
       <!-- Display Page Title -->
-      <h1>Strain, Type and Terpene Guide</h1>
+      <h1>Strain Type and Terpene Guide</h1>
 
       <!-- Display Strain Guide Summary -->
       <p>Every cannabis strain has a name, a type and terpenes. While most dispensaries categorize cannabis by the type--indica, sativa or hybrid; terpenes are another great way to find the best cannabis strain for you. Below is a basic guide to strains and the most common terpenes.</p>

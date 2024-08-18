@@ -22,7 +22,8 @@
             <section class="edible">
                 <h2>Edibles</h2>
                     <p>Edibles are food products infused with cannabis extract. Edibles come in many forms, including baked goods, candies, gummies, chocolates, lozenges, and beverages.</p>
-                <h3>Pros</h3>
+
+                    <h3>Pros</h3>
                 <ul id="edible-pro-list">
                     <li>Better for patients with respiratory and cardiovascular conditions, or for individuals who want to avoid smoking.</li>
                     <li>Come in an infinite array of options, so consumers can take edibles that appeal to their taste buds.</li>
@@ -31,6 +32,7 @@
                     <li>A more discreet means of consumption.</li>
                     <li> According to a 2016 study, edibles have been anecdotally reported to assist with symptoms of conditions like muscle spasms, pain, nausea and vomiting, cancer, appetite stimulation, and epilepsy, as well as several psychiatric disorders such as depression and PTSD.</li>
                 </ul>
+
                 <h3>Cons</h3>
                 <ul id="edible-con-list">
                     <li>Effects and benefits take longer to kick in.</li>
@@ -45,6 +47,7 @@
             <section class="flower">
                 <h2>Flower</h2>
                     <p>Cannabis smoking is the inhalation of smoke or vapor released by heating the flowers, leaves, or extracts of cannabis and releasing the main psychoactive chemical, Δ9-tetrahydrocannabinol (THC), which is absorbed into the bloodstream via the lungs. Cannabis can be smoked in a variety of pipe-like implements made in different shapes and of different materials including hand pipes ("bowls"), water pipes ("bongs"), cigarettes ("joints"), or blunts.</p>
+
                 <h3>Pros</h3>
                 <ul id="flower-pro-list">
                     <li>Rapid onset rate, which means that consumers will feel effects and benefit from cannabis almost immediately.</li>
@@ -54,6 +57,7 @@
                     <li>Has a reduced risk of being eaten by pets and children since it does not look like a delicious treat.</li>
                     <li>Quick and convenient means of consumption.</li>
                 </ul>
+
                 <h3>Cons</h3>
                 <ul id="flower-con-list">
                     <li>May compromise respiratory function since some of the same chemicals found in cigarettes can be found in cannabis smoke.</li>
@@ -68,6 +72,7 @@
             <section class="oil">
                 <h2>Oil</h2>
                     <p>Hash oil or cannabis oil is an oleoresin obtained by the extraction of cannabis or hashish. It is a cannabis concentrate containing many of its resins and terpenes - in particular, tetrahydrocannabinol, cannabidiol, and other cannabinoids. Hash oil is usually consumed by smoking, vaporizing or eating.</p>
+
                 <h3>Pros</h3>
                 <ul id="oil-pro-list">
                     <li>Cannabis oil is one of the most commonly prescribed home treatments for inflammation, chronic pain, and sometimes even acute pain.</li>
@@ -83,6 +88,7 @@
                     <li>There have only been early studies in this area, but reports state that the active components of cannabis oil can have preventative effects in the body by reducing the accumulation of free radicals in the body. In addition, it can also be used to treat tumors, according to the results. Cannabis oil reduces tumor size, according to these early reports.</li>
                     <li>Quite often, the effects of a stroke can extend to the brain. Studies have shown that compounds in cannabis oil may help in protecting the brain from the effects of a stroke. It reduces the size of the affected area, thus protecting quite a bit of brain function. Studies have thrown light on the neuroprotective effects of cannabis oil in other traumatic events, such as concussions.</li>
                 </ul>
+
                 <h3>Cons</h3>
                 <ul id="oil-con-list">
                     <li>Using large amounts of cannabis oil can lead to several problems. It can irritate the lungs and increase the risk of developing chronic bronchitis, as well as respiratory cancers.</li>
@@ -95,6 +101,7 @@
             <section class="tincture">
                 <h2>Tincture</h2>
                     <p>A tincture in the most basic sense is a cannabis extract, in which a liquid is infused with cannabis, meant for sublingual consumption, not vaporization or smoking. The cannabis plant soaks in a base liquid, such as food-grade alcohol, glycerin, or even oil, and after days of steeping, the plant matter is strained out and—voilà! The cannabinoids, terpenes, and other compounds have melded with the base liquid, ready to dose and consume.</p>
+
                 <h3>Pros</h3>
                 <ul id="tincture-pro-list">
                     <li>A measured dropper is often distributed with tinctures, allowing users to get precise doses.</li>
@@ -103,6 +110,7 @@
                     <li>Most tinctures are vegan, and do not contain sugar, fat, gluten, and so on. Most tinctures, unless flavored, are just a mix of MCT oil & cannabis.</li>
                     <li>Tinctures can come as pure THC, pure CBD, or a ratio of cannabinoids (anywhere from 1:1 to 30:1 and above), allowing consumers to tailor their experience.</li>
                 </ul>
+
                 <h3>Cons</h3>
                 <ul id="tincture-con-list">
                     <li> Because of their higher THC content, tinctures can run a bit higher in price. Some can run over $100 per bottle.</li>
@@ -115,12 +123,14 @@
             <section class="topical">
                 <h2>Topical</h2>
                     <p>THC topicals, and cannabis topicals in general, are cannabis products infused in things like gels, balms, and lotions and then applied to our skin. The idea behind them is that they may be able to treat acute symptoms, including pain or inflammation, by interacting with cannabinoid receptors in the skin. Because the THC doesn't actually make it through the skin into the bloodstream, THC topical enthusiasts don't have to worry about getting intoxicated when they use a cannabis topical.</p>
+                
                 <h3>Pros</h3>
                 <ul id="topical-pro-list">
                     <li>Cannabis topicals enter the bloodstream through cannabinoid receptors in the skin and offer fast-acting, localized relief. They’re a fantastic way to enjoy the therapeutic qualities of cannabis without the psychoactive effects.</li>
                     <li>While studies are ongoing, cannabis topicals appear to offer several potential benefits. They may be a promising alternative to traditional pain and inflammation treatments, help soothe skin conditions, and intensify sexual response when used in products such as lubricants.</li>
                     <li>Because they offer little to no psychoactive impact, there really aren’t any side effects associated with the use of cannabis topicals.</li>
                 </ul>
+
                 <h3>Cons</h3>
                 <ul id="topical-con-list">
                     <li>These products would have to be more seriously studied to know for sure, but based on our own experience and the anecdotal evidence we’ve heard, there are no apparent downsides to THC topicals.</li>
@@ -134,6 +144,7 @@
             <section class="wax">
                 <h2>Wax</h2>
                     <p>THC wax is a highly concentrated form of tetrahydrocannabinol (THC), the main intoxicating substance found in cannabis. THC wax has 40-80 percent more THC per dose than more traditional, dried forms of cannabis. Different types of weed concentrate can have the texture of a: Sticky, gummy liquid; Soft, solid lip balm; Hard, dark-yellow solid resin.</p>
+                
                 <h3>Pros</h3>
                 <ul class="wax-pro-list">
                     <li>The effect is much cleaner and stronger than a joint or vaporizer.</li>
@@ -141,13 +152,13 @@
                     <li>Other inhalation methods would not deliver as high a dose of cannabinoids in a single inhalation.</li>
                     <li>The researchers concluded that there were no more problems or accidents from cannabis dabbing compared to smoking cannabis flowers.</li>
                 </ul>
+
                 <h3>Cons</h3>
                 <ul class="wax-con-list">
                     <li>Some find dabbing scary because the act is reminiscent of smoking crack — the device is made out of glass and a blow torch is required to heat the nail. As a result, there are people who claim that it does not contribute to a positive image of cannabis.</li>
                     <li>The concentrate itself, however, can be a problem. Making a cannabis concentrate is a painstaking job which involves chemical solvents such as ethanol, alcohol, propane or butane. A pure concentrate devoid of residual solvents is difficult to achieve without the correct knowledge and expertise. This leads to a lot of people to YouTube-style self-tuition, which often ends in a contaminated product. If customers purchase professionally-made cannabis concentrates however, there are far fewer risks of residual solvent.</li>
                     <li>Another danger is overdosing. Although it is still not possible to die from a cannabis overdose, the effects can be very unpleasant if too large a dose is inhaled. Caution is therefore advised.</li>
                 </ul>
-
             </section>
 
         </main>
@@ -171,7 +182,7 @@
         <!-- Display Page Quote -->
         <h6>***NEED QUOTE***</h6>
 
-     </body>
+    </body>
 
      <!-- Display Footer Component -->
     <footer>
