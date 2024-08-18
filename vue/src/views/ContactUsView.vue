@@ -22,14 +22,6 @@
             </div>
         </div>  
 
-        <!-- Display Want More Info with Articles Link -->
-        <div class="want-more">
-            <h5> Want More Information? </h5>
-            <div id="articles-link">
-                <router-link v-bind:to="{ name:'articles'}"> Visit our articles page for more information! </router-link>
-            </div>
-        </div> 
-
         <!-- Display Page Quote -->
         <div id="quote">
             <h6> "NEED NEW QUOTE" -UNKNOWN </h6>
@@ -67,7 +59,6 @@ export default {
 h1,
 h2,
 h3,
-.want-more,
 h6 {
     text-align: center;
 }
@@ -86,14 +77,6 @@ h2 {
 h3 {
     font-size: 1.3em;
     font-weight: light;    
-}
-
-.want-more {
-    margin-top: 3vw;
-}
-
-#articles-link {
-    margin-top: -1vw;
 }
 
 h6 {

@@ -28,14 +28,6 @@
         <p>Thank you for choosing Best Buds as your trusted guide in the world of cannabis. Together, let's explore, discover, and embrace the benefits of this remarkable plant.</p>
     </div>
 
-    <!-- Display Want More Info with Articles Link -->
-    <div class="want-more">
-      <h5> Want More Information? </h5>
-      <div id="articles-link">
-        <router-link v-bind:to="{ name:'articles'}"> Visit our articles page for more information! </router-link>
-      </div>
-    </div> 
-
     <!-- Display Page Quote -->
     <h6>“A joint a day keeps the bad mood away.” -Unknown</h6> 
   </body>
@@ -76,7 +68,6 @@ export default {
 h1, 
 h2, 
 p, 
-.want-more, 
 h6 {
   text-align: center;
 }
@@ -95,14 +86,6 @@ h2 {
 p {
   font-size: 1.1em;
   margin: auto 10vw;
-}
-
-.want-more {
-  margin-top: 3vw;
-}
-
-#articles-link {
-  margin-top: -1vw;
 }
 
 h6 {
