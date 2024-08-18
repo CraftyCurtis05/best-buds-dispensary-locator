@@ -3,7 +3,6 @@
 
   <header>
     <div><Header/></div>
-    <div><NavBar/></div>
   </header>
 
   <body>
@@ -34,13 +33,12 @@
 
 <script>
 import Header from "../components/Header.vue";
-import NavBar from "../components/NavBar.vue";
 import Footer from "../components/Footer.vue";
 import Articles from "../assets/article_assets/articles.js";
 
 export default {
   name: "test",
-  components: { Header, NavBar, Footer },
+  components: { Header, Footer },
 
   data() {
     return {
