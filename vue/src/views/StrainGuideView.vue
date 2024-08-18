@@ -4,73 +4,183 @@
   <!-- Browser Tab Title -->
   <title>Strain Guide | Best Buds</title>
 
+  <!-- Display Header Component -->
   <header>
-    <!-- Display Header Component -->
     <Header/>
   </header>
 
+  <!-- Display Page Body -->
   <body class="strain-guide-view">
 
-    <!-- Display Strain Guide Information -->
-    <div class="strain-guide-info">
-      <h1> Strain, Type and Terpene Guide </h1>
-      <p>Every cannabis strain has a name, a type and terpenes. While most dispensaries categorize cannabis by the type--indica, sativa or hybrid; 
-        terpenes are another great way to find the best cannabis strain for you. Below is a basic guide to strains and the most common terpenes. </p>
+    <!-- Display Strain Guide Main Content -->
+    <main id="strain-guide-main">
 
-      <!-- Display Strain Guide List -->
-      <h2> Strain 101 </h2>
-      <ul class="list">
-        <h3>Indica</h3> 
-          <h4>Effects:</h4> Relaxing, "body" high, pain relief, nauseau reduction.
-          <h4>Common Strains</h4> Granddaddy Purple, Z, Blueberry, Rainbow Runtz, King Louis, Watermelon
-        <h3>Sativa</h3> 
-          <h4>Effects:</h4> Energizing, "mind" high, anxiety-reducing, stimulating.
-          <h4>Common Strains</h4> Durban Poison, Tropicana Cookies, Maui Wowie, Acapulco Gold, Tangie
-        <h3>Hybrid</h3> 
-          <h4>Effects:</h4> A mix of indica and sativa, effects have a wide range from anxiolytic to anti-inflammatory.
-          <h4>Common Strains</h4> CG4, Wedding Cake, Blue Dream, Lemon Cherry Gelato, Runtz, Gelato
-      </ul>
+      <!-- Display Page Title -->
+      <h1>Strain, Type and Terpene Guide</h1>
 
-      <!-- Display Terpene Guide List -->
-      <h2> Terpene 101 </h2>
-      <ul class="list">
-        <h3>Humulene</h3> 
-          <h4>Effects:</h4> Anti-inflammatory, appetite suppressant.
-          <h4>Common Strains:</h4> Gelato, Atlantis, Sour Diesel
-        <h3>Limonene</h3> 
-          <h4>Effects:</h4> Antidepressant, antifungal, antimicobial, anxiolytic, gastroprotective, immunostimulant.
-          <h4>Common Strains:</h4> Wedding Cake, Quantum Kush, Berry White
-        <h3>Myrcene</h3> 
-          <h4>Effects:</h4> Analgesic, anti-inflammatory, antipsychotic, muscle relaxant, sedative, antispasmodic.
-          <h4>Common Strains:</h4> OG Kush, Girl Scout Cookies, Grape Ape
-        <h3>Caryophyllene</h3> 
-          <h4>Effects:</h4> Anti-inflammatory, analgesic, protects digestive tract lining, antidepressant.
-          <h4>Common Strains:</h4> Runtz, Gelato, Gorilla Glue, Wedding Cake
-        <h3>Linalool</h3> 
-          <h4>Effects:</h4> Analgesic, anticonvulsant, antiepileptic, antineoplastic, antipsychotic, anxiolytic, sedative.
-          <h4>Common Strains:</h4> Durban, Mazar, Candy OG, Red Haze
-        <h3>A-Pinene</h3> 
-          <h4>Effects:</h4> Anti-inflammatory, gastroprotective, energy boosting, bronchodilator, memory aid, antibacterial.
-          <h4>Common Strains:</h4> Haze Berry, OG Kush, Blue Dream, Skunkberry
-      </ul>
-    </div>
+      <!-- Display Strain Guide Summary -->
+      <p>Every cannabis strain has a name, a type and terpenes. While most dispensaries categorize cannabis by the type--indica, sativa or hybrid; terpenes are another great way to find the best cannabis strain for you. Below is a basic guide to strains and the most common terpenes.</p>
+
+      <!-- Display Strain Guide  -->
+      <section class="strain-101">
+        <h2>Strain 101</h2>
+        <p>***NEED STRAIN SUMMARY***</p>
+
+        <!-- Display Indica Strain Information -->
+        <article class="indica">
+          <h3>Indica</h3>
+          <h4>Effects:</h4>
+          <span>Relaxing, "body" high, pain relief, nauseau reduction.</span>
+          <h4>Common Strains:</h4>
+          <ul id="indica-strains">
+            <li>Granddaddy Purple</li>
+            <li>Z</li>
+            <li>Blueberry</li>
+            <li>Rainbow Runtz</li>
+            <li>King Louis</li>
+            <li>Watermelon</li>
+          </ul>
+        </article>
+
+        <!-- Display Sativa Strain Information -->
+        <article class="sativa">
+          <h3>Sativa</h3>
+          <h4>Effects:</h4>
+          <span>Energizing, "mind" high, anxiety-reducing, stimulating.</span>
+          <h4>Common Strains:</h4>
+          <ul id="sativa-strains">
+            <li>Durban Poison</li>
+            <li>Tropicana Cookies</li>
+            <li>Maui Wowie</li>
+            <li>Acapulco Gold</li>
+            <li>Tangie</li>
+          </ul>
+        </article>
+
+        <!-- Display Hybrid Strain Information -->
+        <article class="hybrid">
+          <h3>Hybrid</h3>
+          <h4>Effects:</h4>
+          <span>A mix of indica and sativa, effects have a wide range from anxiolytic to anti-inflammatory.</span>
+          <h4>Common Strains</h4>
+          <ul id="hybrid-strains">
+            <li>CG4</li>
+            <li>Wedding Cake</li>
+            <li>Blue Dream</li>
+            <li>Lemon Cherry Gelato</li>
+            <li>Runtz</li>
+            <li>Gelato</li>
+          </ul>
+        </article>    
+      </section>
+
+      <!-- Display Terpene Guide  -->
+      <section class="terpene-101">
+        <h2>Terpene 101</h2>
+        <p>***NEED STRAIN SUMMARY***</p>
+
+        <!-- Display Humulene Information -->
+        <article class="humulene">
+          <h3>Humulene</h3>
+          <h4>Effects:</h4>
+          <span>Anti-inflammatory, appetite suppressant.</span>
+          <h4>Common Strains:</h4>
+          <ul id="humulene-strains">
+            <li>Gelato</li>
+            <li>Atlantis</li>
+            <li>Sour Diesel</li>
+          </ul>
+        </article>
+
+        <!-- Display Limonene Information -->
+        <article class="limonene">
+          <h3>Limonene</h3>
+          <h4>Effects:</h4>
+          <span>Antidepressant, antifungal, antimicobial, anxiolytic, gastroprotective, immunostimulant.</span>
+          <h4>Common Strains:</h4>
+          <ul class="limonene-strains">
+            <li>Wedding Cake</li>
+            <li>Quantum Kush</li>
+            <li>Berry White</li>
+          </ul>
+        </article>
+
+        <!-- Display Myrcene Information -->
+        <article class="myrcene">
+          <h3>Myrcene</h3>
+          <h4>Effects:</h4>
+          <span>Analgesic, anti-inflammatory, antipsychotic, muscle relaxant, sedative, antispasmodic.</span>
+          <h4>Common Strains:</h4>
+          <ul class="myrcene-strains">
+            <li>OG Kush</li>
+            <li>Girl Scout Cookies</li>
+            <li>Grape Ape</li>
+          </ul>
+        </article>
+
+        <!-- Display Caryophyllene Information -->
+        <article class="caryophyllene">
+          <h3>Caryophyllene</h3>
+          <h4>Effects:</h4>
+          <span>Anti-inflammatory, analgesic, protects digestive tract lining, antidepressant.</span>
+          <h4>Common Strains:</h4>
+          <ul class="caryophyllene-strains">
+            <li>Runtz</li>
+            <li>Gelato</li>
+            <li>Gorilla Glue</li>
+            <li>Wedding Cake</li>
+          </ul>
+        </article>
+
+        <!-- Display Linalool Information -->
+        <article class="linalool">
+          <h3>Linalool</h3>
+          <h4>Effects:</h4>
+          <span>Analgesic, anticonvulsant, antiepileptic, antineoplastic, antipsychotic, anxiolytic, sedative.</span>
+          <h4>Common Strains:</h4>
+          <ul class="linalool-strains">
+            <li>Durban</li>
+            <li>Mazar</li>
+            <li>Candy OG</li>
+            <li>Red Haze</li>
+          </ul>
+        </article>
+
+        <!-- Display A-Pinene Information -->
+        <article class="apinene">
+          <h3>A-Pinene</h3>
+          <h4>Effects:</h4>
+          <span>Anti-inflammatory, gastroprotective, energy boosting, bronchodilator, memory aid, antibacterial.</span>
+          <h4>Common Strains:</h4>
+          <ul class="apinene-strains">
+            <li>Haze Berry</li>
+            <li>OG Kush</li>
+            <li>Blue Dream</li>
+            <li>Skunkberry</li>
+          </ul>
+        </article>
+
+      </section>
+
+    </main>
 
     <!-- Display Want More Info with Articles Link -->
-    <div class="want-more">
-      <h5> Want More Information? </h5>
-      <div id="articles-link">
-        <router-link v-bind:to="{ name:'articles'}"> Visit our articles page for more information! </router-link>
-      </div>
-    </div> 
+    <section class="articles-visit">
+        <h5>Looking for more information?</h5>
+        <summary id="articles-link">
+            <router-link v-bind:to="{ name:'articles'}">Visit our articles page</router-link>
+        </summary>
+    </section>
 
     <!-- Display Page Quote -->
-    <h6>***NEED QUOTE***</h6> 
+    <h6>***NEED QUOTE***</h6>
+
   </body>
 
+  <!-- Display Footer Component -->
   <footer>
-    <!-- Display Footer Component -->
-    <Footer />
-  </footer> 
+    <Footer/>
+  </footer>
 
 </template>
 
