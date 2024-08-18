@@ -198,7 +198,7 @@
                 </ul>
             </section>    
 
-            <!-- Display Consclusion Information -->
+            <!-- Display Conclusion Information -->
             <section class="conclusion"> 
                 <h2>Conclusion:</h2>
                     <p>Your first cannabis experience can be a wonderful journey when approached with care and responsibility. As for the question, "Is it better to use weed the first time alone or in company?", having a trusted, sober friend nearby can make the experience more comforting and enjoyable. By following the tips shared in this guide, first-time cannabis smokers can look forward to a positive and memorable first high. If you are contemplating using cannabis for the first time, undertake comprehensive research and connect with experienced cannabis users for their insights. This can empower you to make an informed decision about whether cannabis is the right choice for you.</p>
