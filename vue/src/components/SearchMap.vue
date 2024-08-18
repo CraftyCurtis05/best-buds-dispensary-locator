@@ -1,14 +1,16 @@
 <!-- Google Map Component Display--->
 <template>
+    
     <GoogleMap 
         api-key="AIzaSyC_eyTPqQJl9g4WT2vYrQOnaLdC1KbdbGQ" 
-        style="width:50%;height:500px" 
+        style="width:50vw;height:50vw" 
         :zoom="10"
         :center="center">
         <Marker 
             :options="{ position: center }"
         />
     </GoogleMap>
+
 </template>
   
 <script>
@@ -27,5 +29,8 @@ export default defineComponent({
 </script>
 
 <style scoped>
+template {
+
+}
 
 </style>

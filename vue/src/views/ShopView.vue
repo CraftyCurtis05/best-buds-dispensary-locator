@@ -1,61 +1,92 @@
+<!-- Shop Page Display -->
 <template>
+
+    <!-- Browser Tab Title -->
     <title>Shop | Best Buds</title>
-  <div class="shop-view">
-    <div class="header-nav">
-        <div class="header"><Header/></div>
-        <div class="nav-bar"><NavBar/></div>
-    </div>
-    <div class="shop">
-        <h1>Shop our Favorite Products</h1>
-        <h2>We're still packing this bowl full of the best deals we can find, stay tuned!</h2>
-    </div>
-    <div class="footer"><Footer/></div>
-  </div>
+
+    <header>
+        <!-- Display Header Component -->
+        <Header/>
+    </header>
+
+    <body class="shop-view">
+
+        <!-- Display Shop Descripton -->
+        <div class="shop-description">
+            <h1>Shop our Favorite Products</h1>
+            <h2>We're still packing this bowl full of the best deals we can find, stay tuned!</h2>
+        </div>
+
+        <!-- Display Want More Info with Articles Link -->
+        <div class="want-more">
+            <h5> Want More Information? </h5>
+            <div id="articles-link">
+                <router-link v-bind:to="{ name:'articles'}"> Visit our articles page for more information! </router-link>
+            </div>
+        </div> 
+
+        <!-- Display Page Quote -->
+        <h6>***NEEDS QUOTE***</h6> 
+    </body>
+
+    <footer>
+        <!-- Display Footer Component -->
+        <Footer />
+    </footer> 
+
 </template>
 
 <script>
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
-import NavBar from '../components/NavBar.vue';
 
 export default {
-    components: { Header, Footer, NavBar },
-    name: "ShopView"
+    name: "shop",
+    components: { Header, Footer }
 }
 </script>
 
 <style scoped>
-#search-form{
-    margin-top: 20px;
-}
-
 .shop-view {
-width: 100vw;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\green_smoke.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  margin-top: -1vw;
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\green_smoke.png');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
-.header-nav {
-    position: fixed;
+h1,
+h2,
+.want-more,
+h6 {
+    text-align: center;
 }
 
 h1 {
-    text-align: center;
-    font-size: 130%;
-    font-weight: bolder; 
-    padding-top: 15%; 
+  font-size: 1.8em;
+  font-weight: bolder;
+  margin-top: 4vw;
 }
 
 h2 {
-    text-align: center; 
-    font-style: italic; 
-    font-weight: lighter; 
-    font-size: 100%;
+  font-size: 1.5em;
+  font-weight: light;
 }
 
+.want-more {
+  margin-top: 3vw;
+}
 
+#articles-link {
+  margin-top: -1vw;
+}
+
+h6 {
+  font-size: .9em;
+  font-style: italic;
+  font-weight: lighter;
+  margin-bottom: 1vw;
+}
 </style>

@@ -1,98 +1,121 @@
-
+<!-- Locator Search Page Display -->
 <template>
+
+  <!-- Browser Tab Title -->
   <title>Search | Best Buds</title>
-  <div class="search-view">
-    <div class="header-nav">
-      <div id="header"><Header/></div>
-      <div id="nav-bar"><NavBar/></div>
-    </div>  
-    <div class="search">
+
+  <header>
+    <!-- Display Header Component -->
+    <Header/>
+  </header>
+
+  <body class="search-view">
+ 
+    <!-- Display Search Description -->
+    <div class="search-information">
       <h1>Best Buds Dispensary Locator</h1>
       <h2>Search for dispensaries near you</h2>
+
+      <!-- Display Search Bar -->
       <div id="search-bar">
         <SearchBar/>
       </div>
+
+      <!-- Display Search Results List -->
       <div id="search-list">
         <SearchList v-if="this.$store.state.locationID"/>
-      </div> 
+      </div>
+  
+      <!-- Display Search Map -->
+      <div id="search-map">
+        <SearchMap />
+      </div>
+      
+    </div>    
+
+    <!-- Display Want More Info with Articles Link -->
+    <div class="want-more">
+      <h5> Want More Information? </h5>
+      <div id="articles-link">
+        <router-link v-bind:to="{ name:'articles'}"> Visit our articles page for more information! </router-link>
+      </div>
     </div> 
-    <div class="search-map">
-      <SearchMap />
-    </div>   
-    <div class="quote">
-      <h3>"If everyone smoked weed the world would be a better place." -Kirsten Dunst</h3>
-    </div>
-  </div>  
-  <div class="footer">
-    <Footer/>
-  </div>
+
+    <!-- Display Page Quote -->
+    <h6>***NEED QUOTE***</h6> 
+  </body>
+
+  <footer>
+    <!-- Display Footer Component -->
+    <Footer />
+  </footer> 
+
 </template>
   
 <script>
 import Header from '../components/Header.vue';
-import NavBar from '../components/NavBar.vue';
 import SearchBar from '../components/SearchBar.vue';
-import SearchMap from '../components/SearchMap.vue';
 import SearchList from '../components/SearchList.vue';
+import SearchMap from '../components/SearchMap.vue';
 import Footer from '../components/Footer.vue';
    
 export default {
-  components: {
-    Header, NavBar, SearchBar, SearchList, SearchMap, Footer},
-  name: "SearchView"
+  name: "search",
+  components: { Header, SearchBar, SearchList, SearchMap, Footer }
 };
 </script>
   
 <style scoped>
 .search-view {
   width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\green_smoke.png');
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  margin-top: -1vw;
 }
 
-.header-nav {
-  position: fixed;
+h1, 
+h2, 
+#search-bar, 
+.want-more, 
+h6 {
+  text-align: center;
+}
+
+#search-list {
+  display: flex;
+  margin-left: 65vw;
+}
+
+#search-map {
+  display: flex;
 }
 
 h1 {
-  text-align: center;
-  font-size: 130%;
+  font-size: 1.8em;
   font-weight: bolder;
-  padding-top: 15%;
+  margin-top: 4vw;
 }
-  
+
 h2 {
-  text-align: center;
-  font-size: 105%;
-  font-weight: lighter;
+  font-size: 1.5em;
+  font-weight: light;
 }
 
-#search-bar {
-  text-align: center;
+.want-more {
+  margin-top: 3vw;
 }
 
-#list-search {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center; /* Center text content within the list */
-  }
+#articles-link {
+  margin-top: -1vw;
+}
 
-/* .map-list {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-} */
-
-h3 {
-  text-align: center;
+h6 {
+  font-size: .9em;
   font-style: italic;
   font-weight: lighter;
-  font-size: 100%;
+  margin-bottom: 1vw;
 }
 </style>

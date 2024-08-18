@@ -18,19 +18,16 @@
                         <router-link v-bind:to="{ name:'strainguide'}">Comprehensive Strain Guide To Cannabis Products</router-link>
                     </li>
                     <li>
-                        <router-link v-bind:to="{ name:'smokingcannabis'}">Safety Tips for Smoking Cannabis</router-link>
-                    </li>
-                    <li>
-                        <router-link v-bind:to="{ name:'safetytips'}">Saftey Tips for Cannabis Consumption</router-link>
-                    </li>
-                    <li>
-                        <router-link v-bind:to="{ name:'topicals'}">Saftey Tips for Cannabis Topicals</router-link> 
+                        <router-link v-bind:to="{ name:'safetytips'}">Tips for Safer Consumption, Smoking and Topicals</router-link>
                     </li>
                     <li>
                         <router-link v-bind:to="{ name:'toomuchcannabis'}">What To Do If You Have Too Much Cannabis</router-link> 
                     </li>
                     <li>
                         <router-link v-bind:to="{ name:'legality'}">Curious About The Legal Use Within Your Area</router-link> 
+                    </li>
+                    <li>
+                        <router-link v-bind:to="{ name:'commonquestions'}">Commonly Asked Questions</router-link>
                     </li>
 
                 </ul>     
@@ -46,24 +43,20 @@ import Footer from '../components/Footer.vue';
 import NavBar from '../components/NavBar.vue';
 
 export default {
-    components: { Header, Footer, NavBar },
-    name: "tipstricks"
+    name: "tipstricks",
+    components: { Header, Footer, NavBar }
 }
 </script>
 
 <style scoped>
-/* #search-form{
-    margin-top: 20px;
-} */
-
 .tips-tricks-view {
     width: 100vw;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\green_smoke.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    margin-top: -1vw;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\green_smoke.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .header-nav {
@@ -106,7 +99,4 @@ a:link {
 a:visited {
   text-decoration: none;
 }
-
-
-
 </style>

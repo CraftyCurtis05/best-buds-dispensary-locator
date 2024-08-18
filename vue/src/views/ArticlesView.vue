@@ -1,18 +1,15 @@
 <!-- Articles Page Display --->
 <template>
+
+    <!-- Browser Tab Title -->
     <title>Articles | Best Buds</title>
-    <div class="container">
+  
+    <header>
+      <!-- Display Header Component -->
+      <Header/>
+    </header>
 
-        <!-- Display header and navigation bar component -->
-        <div class="header-nav">
-            <div class="header">
-                <Header/>
-            </div>
-            <div class="nav-bar">
-                <NavBar/>
-            </div>
-        </div>
-
+    <body class="articles-view">
         <!-- Display main article content -->
         <div class="main-content">
 
@@ -33,28 +30,37 @@
                 </div>
             </div>
         </div>
+
         <!-- Archive Section -->
         <div class="archive-container">
             <div class="archive">
                 <h2>Archive</h2>
                 <ul>
-                <li v-for="(month, index) in archive" :key="index">{{ month }}</li>
+                    <li v-for="(month, index) in archive" :key="index">{{ month }}</li>
                 </ul>
             </div>
         </div>
-    <Footer class="footer"></Footer>
-    </div>
+
+        <!-- Display Page Quote -->
+        <h6>***NEED QUOTE***</h6> 
+    </body>
+
+    <footer>
+        <!-- Display Footer Component -->
+        <Footer />
+    </footer> 
+
 </template>
 
 <script>
 import axios from 'axios';
 import Footer from '../components/Footer.vue';
 import Header from '../components/Header.vue';
-import NavBar from '../components/NavBar.vue';
 
 export default {
-    components: { Header, NavBar, Footer },
-    name: 'ArticlesView',
+    name: 'articles',
+    components: { Header, Footer },
+    
     data() {
         return {
             searchQuery: '',
@@ -118,46 +124,14 @@ export default {
 </script>
 
 <style scoped>
-.container {
-position: relative;
-background-color: #ccc;
-}
 .articles-view {
-width: 100vw;
-background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0.497),
-    rgba(255, 255, 255, 0.881)
-    ),
-    url('src\\assets\\green_smoke.png');
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-background-attachment: fixed;
-margin-top: -1vw;
-}
-
-.header {
-position: fixed;
-top: 0;
-width: 100%;
-height: 60px;
-z-index: 1000;
-}
-
-.nav-bar {
-position: fixed;
-top: 60px;
-width: 100%;
-height: 30px;
-z-index: 1000;
-}
-
-.footer {
-position: fixed;
-bottom: 0;
-width: 100%;
-z-index: 1000;
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\green_smoke.png');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .main-content {
@@ -246,4 +220,12 @@ text-decoration: none;
 border: 5px solid #f705a6;
 border-radius: 20%;
 } */
+
+h6 {
+    text-align: center;
+    font-size: .9em;
+    font-style: italic;
+    font-weight: lighter;
+    margin-bottom: 1em;
+}
 </style>

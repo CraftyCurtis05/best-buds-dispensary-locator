@@ -1,62 +1,76 @@
+<!-- Privacy Policy Page Display --->
 <template>
-    <title>Privacy Policy | Best Buds</title>
-    <div class="privacy-policy-view">
-        <div class="header-nav">
-            <div class="header"><Header/></div>
-            <div class="nav-bar"><NavBar/></div>
-        </div>  
-        <div class="privacy-policy">
-            <h1>Privacy Policy</h1>
-            <div id="quote">
-                <h3>Need Quote -Unknown</h3>
-            </div>
-        </div>
-        <div class="footer"><Footer/></div>
-    </div>  
+
+  <!-- Browser Tab Title -->
+  <title>Privacy Policy | Best Buds</title>
+
+  <header>
+    <!-- Display Header Component -->
+    <Header/>
+  </header>
+
+  <body class="privacy-policy-view"> 
+
+    <!-- Display Privacy Policy Description -->
+    <div class="privacy-policy-description">
+      <h1>Privacy Policy</h1>
+      <h2>***ADD PRIVACY POLICY HEADERS***</h2>
+      <h3>***ADD PRIVACY POLICY INFO***</h3>
+    </div>
+
+    <!-- Display Page Quote -->
+    <h6>“A joint a day keeps the bad mood away.” -Unknown</h6> 
+  </body>
+
+  <footer>
+    <!-- Display Footer Component -->
+    <Footer />
+  </footer> 
 </template>
 
 <script>
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';
-import NavBar from '../components/NavBar.vue';
 
 export default {
-  components: { Header, Footer, NavBar }
+  name: "privacypolicy",
+  components: { Header, Footer }
 };
 </script>
 
 <style scoped>
 .privacy-policy-view {
   width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\green_smoke.png');
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  margin-top: -1vw;
 }
 
-.header-nav {
-  position: fixed;
+h1, 
+h2,
+h3, 
+h6 {
+  text-align: center;
 }
 
 h1 {
-  text-align: center;
-  font-size: 130%;
+  font-size: 1.8em;
   font-weight: bolder;
-  padding-top: 15%;
+  margin-top: 4vw;
 }
 
 h2 {
-  text-align: center;
-  font-size: 105%;
-  font-weight: lighter;
+  font-size: 1.5em;
+  font-weight: light;
 }
 
-h3 {
-  text-align: center;
+h6 {
+  font-size: .9em;
   font-style: italic;
   font-weight: lighter;
-  font-size: 100%;
+  margin-bottom: 1vw;
 }
 </style>

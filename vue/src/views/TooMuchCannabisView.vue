@@ -165,20 +165,20 @@ import Footer from '../components/Footer.vue';
 import NavBar from '../components/NavBar.vue';
 
 export default {
-    components: { Header, Footer, NavBar },
-    name: "toomuchcannabis"
+    name: "toomuchcannabis",
+    components: { Header, Footer, NavBar }
 };
 </script>
 
 <style scoped>
 .too-much-view {
-  width: 100vw;
+    width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\green_smoke.png');
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  margin-top: -1vw;
 }
 
 .header-nav {

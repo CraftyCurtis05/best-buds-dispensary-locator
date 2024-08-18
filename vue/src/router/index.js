@@ -15,11 +15,11 @@ import ProfileView from '../views/ProfileView.vue';
 import SafetyTipsView from '../views/SafetyTipsView.vue';
 import CannabisProductsView from '../views/CannabisProductsView.vue';
 import StrainGuideView from '../views/StrainGuideView.vue';
-import SmokingCannabisView from '../views/SmokingCannabisView.vue';
+import CommonQuestionsView from '../views/CommonQuestionsView.vue';
 import TooMuchCannabisView from '../views/TooMuchCannabisView.vue';
-import TopicalsView from '../views/TopicalsView.vue';
 import LegalityView from '../views/LegalityView.vue';
 import PrivacyPolicyView from '../views/PrivacyPolicyView.vue';
+import ContactUsView from '../views/ContactUsView.vue';
 
 // TESTING LINK - REMOVE BEFORE RELEASE
 import TestView from '../views/TestView.vue';
@@ -82,7 +82,7 @@ const routes = [
     }
   },
   {
-    path: "/tipstricks",
+    path: "/tips-tricks",
     name: "tipstricks",
     component: TipsTricksView,
     meta: {
@@ -98,7 +98,7 @@ const routes = [
     }
   },
   {
-    path: "/aboutus",
+    path: "/about-us",
     name: "aboutus",
     component: AboutUsView,
     meta: {
@@ -115,7 +115,7 @@ const routes = [
   }
 },
   {
-    path: "/safetytips",
+    path: "/safety-tips",
     name: "safetytips",
     component: SafetyTipsView,
     meta: {
@@ -123,7 +123,7 @@ const routes = [
     }
   },
   {
-    path: "/cannabisproducts",
+    path: "/cannabis-products",
     name: "cannabisproducts",
     component: CannabisProductsView,
     meta: {
@@ -131,7 +131,7 @@ const routes = [
     }
   },
   {
-    path: "/strainguide",
+    path: "/strain-guide",
     name: "strainguide",
     component: StrainGuideView,
     meta: {
@@ -139,25 +139,17 @@ const routes = [
     }
   },
   {
-    path: "/smokingcannabis",
-    name: "smokingcannabis",
-    component: SmokingCannabisView,
+    path: "/common-questions",
+    name: "commonquestions",
+    component: CommonQuestionsView,
     meta: {
       requiresAuth: true
     }
   },
   {
-    path: "/toomuchcannabis",
+    path: "/too-much-cannabis",
     name: "toomuchcannabis",
     component: TooMuchCannabisView,
-    meta: {
-      requiresAuth: true
-    }
-  },
-  {
-    path: "/topicals",
-    name: "topicals",
-    component: TopicalsView,
     meta: {
       requiresAuth: true
     }
@@ -171,15 +163,23 @@ const routes = [
     }
   },
   {
-    path: "/privacypolicy",
+    path: "/privacy-policy",
     name: "privacypolicy",
     component: PrivacyPolicyView,
     meta: {
       requiresAuth: true
     }
   },
+  {
+    path: "/contact-us",
+    name: "contactus",
+    component: ContactUsView,
+    meta: {
+      requiresAuth: true
+    }
+  },
   
-  // TESTING LINK - REMOVE BEFORE RELEASE
+  // TESTING LINK - DELETE WHEN FINISHED
   {
     path: "/test",
     name: "test",

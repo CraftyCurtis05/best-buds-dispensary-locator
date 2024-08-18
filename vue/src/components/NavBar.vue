@@ -1,10 +1,10 @@
 <!-- Navigation Bar Component Display--->
 <template>
 
-    <!-- Display navigation bar -->
-    <div class="nav-bar">
+    <!-- Display Navigation Bar Information -->
+    <body>
 
-        <!-- Display 'Home', 'Search', 'Shop', 'Tips & Tricks', 'Articles', 'About Us' to the left of navigation bar -->
+        <!-- Display 'Home', 'Search', 'Shop', 'Tips & Tricks', 'Articles', 'About Us' to the Left of Navigation Bar -->
         <div class="left-nav">
             <div id="home-div">
                 <router-link id="home-nav" v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''">Home</router-link>
@@ -26,7 +26,7 @@
             </div>    
         </div>
 
-        <!-- Display 'Profile', 'Logout' to the right of navigation bar -->
+        <!-- Display 'Profile', 'Logout' to the Right of Navigation Bar -->
         <div class="right-nav">
             <div id="profile-div">
                 <router-link id="profile-nav" v-bind:to="{ name: 'profile' }" v-if="$store.state.token != ''">Profile</router-link>
@@ -35,8 +35,8 @@
                 <router-link id="logout-nav" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
             </div>    
         </div>
-
-    </div>
+        
+    </body>
 </template>
 
 <script>
@@ -45,80 +45,40 @@ export default {
 </script>
 
 <style scoped>
-.nav-bar {
+body {
     display: flex;
-    justify-content: space-between;
+    position: absolute;
+    align-items: center;
+    max-width: 100vw;
+    height: 2vw;
+    z-index: 100;
+    overflow-x: hidden;
     box-sizing: border-box;
     background-color: #00331A;
-    height: 30px;
-    width: 100vw;
 }
 
-.left-nav {
+.left-nav,
+.right-nav {
     display: flex;
+    position: absolute;
     font-weight: bold;
-    margin-top: 0.4%
 }
 
 .right-nav {
-    display: flex;
-    font-weight: bold;
-    margin-top: 0.4%;
+    margin-left: 80vw;
 }
 
-#home-nav {
+#home-nav,
+#search-nav,
+#shop-nav,
+#tips-tricks-nav,
+#articles-nav,
+#about-us-nav,
+#profile-nav,
+#logout-nav  {
+    margin-left: 4vw;
     text-decoration: none;
     color: white;
-    font-size: 100%;
-    padding-inline: 2vw;
-}
-
-#search-nav {
-    text-decoration: none;
-    color: white;
-    font-size: 100%;
-    padding-inline: 2vw;
-}
-
-#shop-nav {
-    text-decoration: none;
-    color: white;
-    font-size: 100%;
-    padding-inline: 2vw;
-}
-
-#tips-tricks-nav {
-    text-decoration: none;
-    color: white;
-    font-size: 100%;
-    padding-inline: 2vw;
-}
-
-#articles-nav {
-    text-decoration: none;
-    color: white;
-    font-size: 100%;
-    padding-inline: 2vw;
-}
-
-#about-us-nav {
-    text-decoration: none;
-    color: white;
-    font-size: 100%;
-    padding-inline: 2vw;
-}
-
-#profile-nav {
-    text-decoration: none;
-    color: white;
-    font-size: 100%;
-    padding-inline: 2vw;
-}
-
-#logout-nav {
-    text-decoration: none;
-    color: white;
-    font-size: 100%;
-    padding-inline: 2vw;
+    font-size: 1.1rem;
 }
 </style>

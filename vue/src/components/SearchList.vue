@@ -2,8 +2,8 @@
 <template>
 
     <!-- Display search results and favorite button -->
-    <div class="locator-search-view">
-        <h3 id="search-list-title">List of dispensaries near you:</h3>
+    <body class="locator-search-view">
+        <h1 id="search-list-title">List of dispensaries near you:</h1>
 
         <!-- Display search results within a list -->
         <div class="search-list">
@@ -14,16 +14,16 @@
 
                 <!-- Display location name and bind it to Yelp business url -->
                 <div class="location-item">
-                    <a id="location-name" v-bind:href="result.url" target="_blank"> {{ result.name }} </a>
+                    <h2 v-bind:href="result.url" target="_blank"> {{ result.name }} </h2>
 
                     <!-- Display location details -->
                     <div id="location-details">
 
                         <!-- Display location address; @click:address go to Google Directions-->
-                        <p id="location-address"> {{ result.location.display_address }} </p>
+                        <h3 id="location-address"> {{ result.location.display_address }} </h3>
                         
                         <!-- Display location image and bind to location url -->
-                        <a id="location-name" v-bind:href="result.url" target="_blank"><img id="location-image" v-bind:src="result.image_url" /></a>
+                        <!-- <a id="location-name" v-bind:href="result.url" target="_blank"><img id="location-image" v-bind:src="result.image_url" /></a> -->
 
                     </div>
 
@@ -36,7 +36,7 @@
             </div>
             </ul>
         </div>
-    </div>        
+    </body>        
 </template>
   
 <script>
@@ -91,45 +91,25 @@ export default {
 </script>
   
 <style scoped>
-.locator-search-view {
-    align-items: center;
+.location-item {
+    padding-bottom: 2vw;
 }
 
-h3#search-list-title {
-    text-align: center;
+h1 {
+    font-size: 1.5em;
+    font-weight: bolder;
+    margin-top: 2vw;
 }
 
-#location-name {
+h2 {
+    font-size: 1.2em;
+    font-weight: light;
+    margin-bottom: -.5vw;
+}
+
+h3 {
+    font-size: 1em;
     font-weight: bold;
-}
-
-#location-image {
-    width: 150px;
-    height: auto;
-}
-
-#location-image:hover {
-    transform: scale(1.05);
-}
-
-.favorite-button-display {
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-#favorite-button {
-    background-color: black;
-    color: white;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-a:link, a:visited {
-    color: black;
-    text-decoration: none;
-}
-
-a:hover{
-    color:#122d1a;
+    margin-bottom: 1vw;
 }
 </style>

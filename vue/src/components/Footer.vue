@@ -1,90 +1,93 @@
 <!-- Footer Component Display--->
 <template>
 
-    <!-- Display footer information with three(3) sections -->
-    <footer class="footer">
+    <!-- Display Footer information -->
+    <body>
 
-        <!-- Display logo and slogan to the left -->
+        <!-- Display Logo and Slogan to the Left -->
         <div id="logo">
-            <router-link v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''"><img src="src\assets\best_buds_logo_white.png"/></router-link>
+            <router-link v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''"><img src="src\assets\logo_assets\best_buds_logo_white.png"/></router-link>
             <p id="slogan"> "We're Good To Grow!" </p>
         </div>
 
-        <!-- Display helpful links and trademark in the center -->
+        <!-- Display Helpful Links and Trademark in the Center -->
         <div class="footer-links">
             <h2>Helpful Links</h2>
             <router-link v-bind:to="{ name: 'privacypolicy' }" v-if="$store.state.token != ''">Privacy Policy</router-link>
+            <router-link v-bind:to="{ name: 'contactus' }" v-if="$store.state.token != ''">Contact Us</router-link>
             <span id="copyright"> @{{ year }} {{ companyName }} </span>
         </div>
 
-        <!-- Display social media links to the right -->
+        <!-- Display Social Media Links to the Right -->
         <div class="social-media">
             <h2>Follow Us</h2>
             <div id="social-media-logos">
                 <div id="facebook">
-                    <a href="https://www.facebook.com/" target="_blank"><img src="src\assets\facebook_logo.png"/></a>
+                    <a href="https://www.facebook.com/" target="_blank"><img src="src\assets\social_media_assets\facebook_logo.png"/></a>
                 </div>
                 <div id="instagram">
-                    <a href="http://www.instagram.com/" target="_blank"><img src="src\assets\instagram_logo.png"/></a>
+                    <a href="http://www.instagram.com/" target="_blank"><img src="src\assets\social_media_assets\instagram_logo.png"/></a>
                 </div>
                 <div id="twitter">
-                    <a href="http://x.com/" target="_blank"><img src="src\assets\twitter_logo.png"/></a>
+                    <a href="http://x.com/" target="_blank"><img src="src\assets\social_media_assets\twitter_logo.png"/></a>
                 </div>
                 <div id="linkedin">
-                    <a href="http://www.linkedin.com/" target="_blank"><img src="src\assets\linkedIn_logo.png"/></a>
+                    <a href="http://www.linkedin.com/" target="_blank"><img src="src\assets\social_media_assets\linkedIn_logo.png"/></a>
                 </div>
             </div>
         </div>
 
-    </footer>
+    </body>
 </template>
 
 <script>
 export default {
-    
-    //Return company name and year to use as template display for trademark
+
     data() {
       return {
-        year: new Date().getFullYear(),
-        companyName: "Best Buds Locator",
-      };
+        year: new Date().getFullYear(),  // Return Year and Company Name to use as Template Display for Trademark
+        companyName: "Best Buds Locator"
+      }
     }
   };
 </script>
 
 <style scoped>
-.footer {
+body {
     display: flex;
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
     justify-content: space-around;
-    background-color: #00331A;
     text-align: center;
-    height: 12vw;
+    background-color: #00331A;
 }
 
 #logo img {
     display: flex;
     flex-direction: column;
-    height: 7vw;
-    padding-top: 15%;
+    height: 10vw;
+    padding-top: 1.5vw;
 }
 
 #slogan {
     color: white;
-    font-size: 0.8vw;
+    font-size: 1vw;
+    margin-top: 5px;
 }
 
 .footer-links {
     display: flex;
     flex-direction: column;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 10vw;
+    padding-right: 10vw;
 }
 
 .footer-links h2 {
     color: white;
     text-align: center;
     font-size: 1.3vw;
-    padding-block-start: 20%;
+    padding-block-start: 1.5vw;
 }
 
 .footer-links a {
@@ -96,8 +99,9 @@ export default {
 
 #copyright {
     color: white;
-    font-size: 0.77vw;
-    padding-block: 50%;
+    font-size: .75vw;
+    margin-top: 5vw;
+    padding-bottom: 1vw;
 }
 
 .social-media {
@@ -108,8 +112,8 @@ export default {
 .social-media h2 {
     color: white;
     text-align: center;
-    font-size: 1.3vw;
-    padding-block-start: 20%;
+    font-size: 1.2vw;
+    padding-block-start: 4vw;
 
 }
 
@@ -117,35 +121,17 @@ export default {
     display: flex;
     align-content: center;
     justify-content: center;
-    margin-bottom: 3.5vw;
+    margin-bottom: 3vw;
     margin-top: -1vw;
 }
 
-#facebook img {
-    display: flex;
-    flex-direction: row;
-    height: 2.5vw;
-    padding: 0.4vw;
-}
-
-#instagram img {
-    display: flex;
-    flex-direction: row;
-    height: 2.5vw;
-    padding: 0.4vw;
-}
-
-#twitter img {
-    display: flex;
-    flex-direction: row;
-    height: 2.5vw;
-    padding: 0.4vw;
-}
-
+#facebook img,
+#instagram img,
+#twitter img,
 #linkedin img {
     display: flex;
     flex-direction: row;
     height: 2.5vw;
-    padding: 0.4vw;
+    padding: .4vw;
 }
 </style>

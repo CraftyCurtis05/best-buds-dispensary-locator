@@ -1,34 +1,43 @@
+<!-- Login Page Display -->
 <template>
+
+  <!-- Browser Tab Title -->
   <title>Login | Best Buds</title>
-  <div id="login">
-    <form v-on:submit.prevent="login">
-      <h1 >Please Sign In</h1>
-      <div role="alert" v-if="invalidCredentials">
-        Invalid username and password!
-      </div>
-      <div role="alert" v-if="this.$route.query.registration">
-        Thank you for registering, please sign in.
-      </div>
-      <div class="form-input-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" v-model="user.username" required autofocus />
-      </div>
-      <div class="form-input-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" v-model="user.password" required />
-      </div>
-      <button type="submit">Sign in</button>
-      <p>
-      <router-link v-bind:to="{ name: 'register' }">Need an account? Sign up.</router-link></p>
-    </form>
-  </div>
+
+  <body class="login-view">
+
+    <!-- Display Login Form -->
+    <div class="login-form">
+      <form v-on:submit.prevent="login">
+        <h1 >Please Sign In</h1>
+        <div role="alert" v-if="invalidCredentials">
+          Invalid username and password!
+        </div>
+        <div role="alert" v-if="this.$route.query.registration">
+          Thank you for registering, please sign in.
+        </div>
+        <div class="form-input-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" v-model="user.username" required autofocus />
+        </div>
+        <div class="form-input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" v-model="user.password" required />
+        </div>
+        <button type="submit">Sign in</button>
+        <p><router-link v-bind:to="{ name: 'register' }">Need an account? Sign up.</router-link></p>
+      </form>
+    </div>
+
+  </body>
+
 </template>
 
 <script>
 import authService from "../services/AuthService";
 
 export default {
-  components: {},
+  name: "login",
   data() {
     return {
       user: {
@@ -62,10 +71,29 @@ export default {
 </script>
 
 <style scoped>
-.form-input-group {
-  margin-bottom: 1rem;
+.login-view {
+  width: 100vw;
+  max-width: 100%;
+  height: 45vw;
+  overflow-x: hidden;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\green_smoke.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
+
+.login-form {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10vw;
+}
+
+.form-input-group {
+  margin-bottom: 1em;
+}
+
 label {
-  margin-right: 0.5rem;
+  margin-right: 0.5em;
 }
 </style>

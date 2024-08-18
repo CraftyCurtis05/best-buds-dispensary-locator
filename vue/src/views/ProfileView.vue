@@ -1,65 +1,95 @@
+<!-- Profile Page Display -->
 <template>
-    <title>Profile | Best Buds</title>
-    <div class="container">
-        <div class="header-nav">
-        <div class="header"><Header/></div>
-        <div class="nav-bar"><NavBar/></div>
-    </div>
 
-    <div class="main-content">
-        <div class="profile">
-        <!-- Profile Picture -->
-        <ProfilePicture :src="profilePictureSrc" />
+    <!-- Browser Tab Title -->
+    <title>Profile | Best Buds</title>
+
+
+    <header>
+        <!-- Display Header Component -->
+        <Header/>
+    </header>
+
+    <!-- Display Profile Information -->
+    <body class="profile-view">
+
+        <!-- Display Profile Picture -->
         <div class="profile-picture">
+            <ProfilePicture :src="profilePictureSrc" />
         </div>
 
-        <!-- Favorite Locations -->
+        <!-- Display Favorite Locations -->
         <div class="favorite-locations">
             <FavoriteLocations :locations="favoriteLocations" />
         </div>
 
-        <!-- Profile Information -->
+        <!-- Display Profile Information -->
         <div class="profile-info">
             <ProfileInfo :profile="profile" />
         </div>
-        </div>
-    </div>
 
-    <Footer class="footer"></Footer>
-    </div>
+        <!-- Display Page Quote -->
+        <h6>***NEED QUOTE***</h6> 
+    </body>
+
+    <footer>
+        <!-- Display Footer Component -->
+        <Footer />
+    </footer> 
+
 </template>
 
 <script>
 import Footer from '../components/Footer.vue';
 import Header from '../components/Header.vue';
-import NavBar from '../components/NavBar.vue';
 import ProfilePicture from '../components/ProfilePicture.vue';
 import FavoriteLocations from '../components/FavoriteLocations.vue';
 import ProfileInfo from '../components/ProfileInfo.vue';
 import profilePictureSrc from '@/assets/LARRY!.webp';
 
-
-
-
 export default {
-    components: { Header, NavBar, Footer, ProfilePicture, FavoriteLocations, ProfileInfo  },
-    name: "ProfileView",
+    name: "profile",
+    components: { Header, Footer, ProfilePicture, FavoriteLocations, ProfileInfo  },
     data() {
-    return {
-        profilePictureSrc: profilePictureSrc,
-        favoriteLocations: ['Location 1', 'Location 2', 'Location 3'],
-        profile: {
-        name: 'John Doe',
-        age: 30,
-        email: 'johndoe@example.com',
-        }
-    };
+        return {
+            profilePictureSrc: profilePictureSrc,
+            favoriteLocations: ['Location 1', 'Location 2', 'Location 3'],
+            profile: {
+                name: 'John Doe',
+                age: 30,
+                email: 'johndoe@example.com',
+            }
+        };
     }
 }
 </script>
 
 <style scoped>
-#search-form{
-    margin-top: 20px;
+.profile-view {
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\green_smoke.png');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.profile-picture,
+.favorite-locations,
+.profile-info {
+    margin-left: 2vw;
+}
+
+.profile-picture {
+    margin: 3vw;
+}
+
+h6 {
+    text-align: center;
+  font-size: .9em;
+  font-style: italic;
+  font-weight: lighter;
+  margin-bottom: 1vw;
 }
 </style>

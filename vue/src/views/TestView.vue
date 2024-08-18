@@ -10,18 +10,19 @@
     <!-- Search bar that takes in user input as keyword and runs the searchArticles function when button is pressed -->
     <div class="search-bar">
       <input id="user-input" name="user-input" type="text" v-model="keyword" placeholder="Enter Search Keyword"/>
-      <!-- <button id="search-button" v-on:click="searchArticles(keyword)">Search</button> -->
     </div>
 
     <!-- Display JSON result objects from search keyword --> 
     <div class="search-list">
-    <div class="results" v-for="result in searchArticles(keyword)" :key="result.title">
-      <a v-bind:href="result.url" target="_blank"><img :src="(`src/assets/article_assets/${result.image}`)"/></a> <!-- Display result image and bind url to image -->
-      <h3>{{  result.title  }}</h3>     <!-- Display result title -->
-      <h4>{{ result.author }}</h4>      <!-- Display result author -->
-      <h5>{{ result.date }}</h5>        <!-- Display result date -->
-      <h6>{{ result.description }}</h6> <!-- Display result description -->
-    </div>
+      <div class="results" v-for="result in searchArticles(keyword)" :key="result.title">
+        <a v-bind:href="result.url" target="_blank"> <!-- Bind result url to result image -->
+          <img :src="(`src/assets/article_assets/${result.image}`)"/> <!-- Display result image -->
+        </a>
+        <h3>{{  result.title  }}</h3>     <!-- Display result title -->
+        <h4>{{ result.author }}</h4>      <!-- Display result author -->
+        <h5>{{ result.date }}</h5>        <!-- Display result date -->
+        <h6>{{ result.description }}</h6> <!-- Display result description -->
+      </div>
     </div>
   </body>
 
@@ -38,7 +39,7 @@ import Footer from "../components/Footer.vue";
 import Articles from "../assets/article_assets/articles.js";
 
 export default {
-  name: "TestView",
+  name: "test",
   components: { Header, NavBar, Footer },
 
   data() {
@@ -70,8 +71,10 @@ export default {
         })
       })
       if(results.length === 0) { // Checks results array to verify it is not empty
+        results = []; // Verify that array is empty of proxy objects
         console.log("No articles match. Please try again.") // FOR TESTING - DELETE WHEN FUNCTION WORKS
-        results.push("No articles match. Please try again.");  // *** NEED TO FIGURE OUT HOW TO DISPLAY ON PAGE WHEN NO RESULTS *** <<<<<<<<<<
+        return results; // *** NEED TO FIGURE OUT HOW TO DISPLAY MESSAGE ON PAGE WHEN NO RESULTS *** <<<<<<<<<<
+        
       }
       console.log(results); // FOR TESTING - DELETE WHEN FUNCTION WORKS
       return results; //
@@ -95,17 +98,9 @@ export default {
   padding: 10px;
 }
 
-#search-button {
-  border-radius: 5px;
-  padding: 10px 20px;
-  margin-left: 10px;
-  cursor: pointer;
-}
-
 .search-list {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 1000px;
 }
 
 .results {
