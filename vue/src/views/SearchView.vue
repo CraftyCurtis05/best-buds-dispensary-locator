@@ -2,7 +2,7 @@
 <template>
 
   <!-- Browser Tab Title -->
-  <title>Search | Best Buds</title>
+  <title>Dispensary Search | Best Buds</title>
 
   <header>
     <!-- Display Header Component -->

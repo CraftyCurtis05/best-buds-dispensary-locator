@@ -12,10 +12,11 @@
     <body class="cannabis-products-view">
 
         <!-- Display Safety-Tips -->
-        <div class="safety-tips-thc">
+        <div class="cannabis-products-thc">
             <h1>How To Choose Which Cannabis Product Is Right For You</h1>
-            <div class="thc-tips-list">
-                <ul id="verify-meds-health">
+
+            <div class="thc-products">
+                <ul class="list">
                     <h2>Edibles</h2>
                         <p>Edibles are food products infused with cannabis extract. Edibles come in many forms, including baked goods, candies, gummies, chocolates, lozenges, and beverages.</p>
                     <h3>Pros</h3>
@@ -33,7 +34,7 @@
                         <li>According to the same 2016 study, overconsumption of edibles has been linked to: cognitive and motor impairment, extreme sedation, agitation, anxiety, cardiac stress, and vomiting.</li>
                 </ul>
 
-                <ul id="labels-start-small">
+                <ul class="list">
                     <h2>Flower</h2>
                         <p>Cannabis smoking is the inhalation of smoke or vapor released by heating the flowers, leaves, or extracts of cannabis and releasing the main psychoactive chemical, Δ9-tetrahydrocannabinol (THC), which is absorbed into the bloodstream via the lungs. Cannabis can be smoked in a variety of pipe-like implements made in different shapes and of different materials including hand pipes ("bowls"), water pipes ("bongs"), cigarettes ("joints"), or blunts.</p>
                     <h3>Pros</h3>
@@ -51,7 +52,7 @@
                         <li>Emits a noticeable smell</li>  
                 </ul>
 
-                <ul id="too-much-edibles">
+                <ul class="list">
                     <h2>Oil</h2>
                         <p>Hash oil or cannabis oil is an oleoresin obtained by the extraction of cannabis or hashish. It is a cannabis concentrate containing many of its resins and terpenes - in particular, tetrahydrocannabinol, cannabidiol, and other cannabinoids. Hash oil is usually consumed by smoking, vaporizing or eating.</p>
                     <h3>Pros</h3>
@@ -73,7 +74,7 @@
                         <li>Additionally, cannabis oil also reduces libido and dependence can also result in irregular menstrual cycles in females and lower sperm count in males.</li>
                 </ul>
 
-                <ul id="dont-mix">
+                <ul class="list">
                     <h2>Tincture</h2>
                         <p>A tincture in the most basic sense is a cannabis extract, in which a liquid is infused with cannabis, meant for sublingual consumption, not vaporization or smoking. The cannabis plant soaks in a base liquid, such as food-grade alcohol, glycerin, or even oil, and after days of steeping, the plant matter is strained out and—voilà! The cannabinoids, terpenes, and other compounds have melded with the base liquid, ready to dose and consume. </p>
                     <h3>Pros</h3>
@@ -88,7 +89,7 @@
                         <li>6-8 hours of effects can be too long for some users to commit to.</li>
                 </ul>
 
-                <ul id="skip-drive">
+                <ul class="list">
                     <h2>Topical</h2>
                         <p>THC topicals, and cannabis topicals in general, are cannabis products infused in things like gels, balms, and lotions and then applied to our skin. The idea behind them is that they may be able to treat acute symptoms, including pain or inflammation, by interacting with cannabinoid receptors in the skin. Because the THC doesn't actually make it through the skin into the bloodstream, THC topical enthusiasts don't have to worry about getting intoxicated when they use a cannabis topical.</p>
                     <h3>Pros</h3>
@@ -99,7 +100,7 @@
                         <li>These products would have to be more seriously studied to know for sure, but based on our own experience and the anecdotal evidence we’ve heard, there are no apparent downsides to THC topicals. The only exception is for those who have seriously sensitive skin or an allergy to some other ingredient the topical contains. If you’re afraid of experiencing a reaction, make sure to do a “patch test” before use. Apply a little of the product to a few inches of skin and monitor for a reaction before you slather on a whole bottle.</li>
                 </ul>
 
-                <ul id="skip-drive">
+                <ul class="list">
                     <h2>Wax</h2>
                         <p>THC wax is a highly concentrated form of tetrahydrocannabinol (THC), the main intoxicating substance found in cannabis. THC wax has 40-80 percent more THC per dose than more traditional, dried forms of cannabis.
                         Different types of weed concentrate can have the texture of a:
