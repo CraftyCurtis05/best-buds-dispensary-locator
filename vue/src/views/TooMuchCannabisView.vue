@@ -173,7 +173,7 @@
 
         <!-- Display Strain Guide Link -->
         <section class="strain-guide">
-            <h4>Looking for more information of types and strains?</h4>
+            <h4>Looking for more information on types and strains?</h4>
             <summary id="strain-guide-link">
                 Please check out our <router-link v-bind:to="{ name:'strainguide'}">Strain Guide</router-link> for information.
             </summary>
