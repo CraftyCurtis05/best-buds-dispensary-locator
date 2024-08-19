@@ -3,69 +3,59 @@
 
     <!-- Browser Tab Title -->
     <title>Articles | Best Buds</title>
-
-    <!-- Display Header Component -->
+  
     <header>
+      <!-- Display Header Component -->
       <Header/>
     </header>
 
-    <!-- Display Page Body -->
-    <body id="articles-body">
+    <body class="articles-view">
+        <!-- Display main article content -->
+        <div class="main-content">
 
-        <!-- Display Articles Main Content -->
-        <main id="articles-main">
-
-            <!-- Display Page Title -->
-            <h1>***NEEDS PAGE TITLE***</h1>
-
-            <!-- Display Articles Information -->
-            <section id="articles">
-                <h2>***NEEDS PAGE HEADLINER***</h2>
-                    <p>***NEEDS PAGE SUMMARY***</p>
-
-                <!-- Display Articles Search Bar -->
-                <article id="search-bar">
-                    <input type="text" v-model="searchQuery" placeholder="Search articles"/>
-                    <button @click="search">Search</button>
-                </article>
-
-                <!-- Display Article Result Objects -->
-                <article id="articles-object" v-for="(article, index) in filteredArticles" :key="index">
-                    <h3>{{ article.title }}</h3>
-                    <h4>{{ article.description }}</h4>
-                    <nav>
+            <!-- Articles search bar -->
+            <div class="search-bar">
+                <input type="text" v-model="searchQuery" placeholder="Search articles" />
+                <button @click="search">Search</button>
+            </div>
+            
+            <!-- Article Boxes -->
+            <div class="articles">
+                <div class="article-container" v-for="(article, index) in filteredArticles" :key="index">
+                    <div class="article-box">
+                        <h2>{{ article.title }}</h2>
+                        <p>{{ article.description }}</p>
                         <a :href="article.link" target="_blank">Read more</a>
-                    </nav>
-                </article>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            </section>
-
-            <!-- Display Archives information -->
-            <section id="archive">
-                <h5>Archive</h5>
-                    <ul>
-                        <li v-for="(month, index) in archive" :key="index">{{ month }}</li>
-                    </ul>
-            </section>
-
-        </main>
+        <!-- Archive Section -->
+        <div class="archive-container">
+            <div class="archive">
+                <h2>Archive</h2>
+                <ul>
+                    <li v-for="(month, index) in archive" :key="index">{{ month }}</li>
+                </ul>
+            </div>
+        </div>
 
         <!-- Display Page Quote -->
-        <h6>***NEED QUOTE***</h6>
-
+        <h6>***NEED QUOTE***</h6> 
     </body>
 
-    <!-- Display Footer Component -->
     <footer>
-        <Footer/>
+        <!-- Display Footer Component -->
+        <Footer />
     </footer> 
 
 </template>
 
 <script>
-import Header from '../components/Header.vue';
-import Footer from '../components/Footer.vue';
 import axios from 'axios';
+import Footer from '../components/Footer.vue';
+import Header from '../components/Header.vue';
 
 export default {
     name: 'articles',
@@ -134,7 +124,7 @@ export default {
 </script>
 
 <style scoped>
-#articles-body {
+.articles-view {
     width: 100vw;
     max-width: 100%;
     overflow-x: hidden;
@@ -143,6 +133,93 @@ export default {
     background-size: cover;
     background-attachment: fixed;
 }
+
+.main-content {
+padding-top: 100px;
+padding-bottom: 50px;
+/* border: 5px solid #007bff;
+border-radius: 20%; */
+}
+
+.search-bar {
+margin-bottom: 20px;
+display: flex;
+justify-content: flex-end;
+/* border: 5px solid #00ff37;
+border-radius: 20%; */
+margin-left: 80%;
+}
+
+.articles {
+display: flex;
+flex-wrap: wrap;
+width: 70%;
+height: 90vh;
+/* border: 5px solid #ff0022;
+border-radius: 20%; */
+}
+
+.articles > * {
+flex: 1 1 45%;
+flex-wrap: wrap;
+}
+
+.article-container {
+display: flex;
+flex-direction: row;
+align-items: center;
+height: 40vh;
+width: 30%;
+/* border: 5px solid; */
+border-radius: 20%;
+}
+
+.article-box {
+margin-bottom: 20px;
+padding: 20px;
+/* border: 1px solid #ccc;
+background-color: #00ccff; */
+border-radius: 8px;
+}
+
+.archive-container {
+position: absolute;
+top: 20%;
+right: 0;
+height: 75vh;
+width: 25%;
+/* padding: 0 10px;
+border: 5px solid #f705a6; */
+border-radius: 20%;
+}
+
+.archive {
+display: flex;
+flex-direction: column;
+/* border: 5px solid #f705a6;
+border-radius: 20%; */
+padding: 20px;
+justify-content: flex-end;
+}
+
+/* .article-box h2 {
+margin-bottom: 10px;
+border: 5px solid #f705a6;
+border-radius: 20%;
+} */
+
+/* .article-box p {
+margin-bottom: 15px;
+border: 5px solid #f705a6;
+border-radius: 20%;
+} */
+
+/* .article-box a {
+color: #007bff;
+text-decoration: none;
+border: 5px solid #f705a6;
+border-radius: 20%;
+} */
 
 h6 {
     text-align: center;
