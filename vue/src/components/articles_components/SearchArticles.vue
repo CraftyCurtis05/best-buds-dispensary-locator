@@ -21,7 +21,7 @@
                 </a>
 
                 <!-- Display Result Title, Author, Date and Description -->
-                <h3>{{  result.title  }}</h3>
+                <h3>{{ result.title }}</h3>
                 <h4>{{ result.author }}</h4>
                 <h5>{{ result.date }}</h5>
                 <h6>{{ result.description }}</h6>
