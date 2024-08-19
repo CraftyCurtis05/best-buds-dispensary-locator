@@ -4,35 +4,45 @@
     <!-- Browser Tab Title -->
     <title>Contact Us | Best Buds</title>
 
+    <!-- Display Header Component -->
     <header>
-        <!-- Display Header Component -->
         <Header/>
     </header>
-    
-    <body class="contact-us-view">
 
-        <!-- Display Contact Us Information -->
-        <div class="contact-us-info">
+    <!-- Display Page Body -->
+    <body id="contact-us-body">
+
+        <!-- Display Contact Us Main Content -->
+        <main id="contact-us-main">
+
+            <!-- Display Page Title -->
             <h1>Contact Us</h1>
-            <h2>***PAGE DESCRIPTION***</h2>
+
+            <!-- Display About Us Information -->
+            <section id="contact-us-summary">
+                <h2>Using the form below</h2>
+                    <p>***NEED ABOUT US SUMMARY***</p>
+            </section>
 
             <!-- Display Contact Us Form -->
-            <div class="contact-form">
-                <h3>***CONTACT FORM***</h3>
-            </div>
-        </div>  
+            <section id="contact-us-form">
+                <form>
+                    ***NEED CONTACT US FORM***
+                </form>
+            </section>
+
+        </main>      
 
         <!-- Display Page Quote -->
-        <div id="quote">
-            <h6> "NEED NEW QUOTE" -UNKNOWN </h6>
-        </div>
+        <h6>***NEED QUOTE***</h6>
+
     </body>
 
+     <!-- Display Footer Component -->
     <footer>
-        <!-- Display Footer Component -->
-        <Footer />
+        <Footer/>
     </footer> 
-    
+
 </template>
 
 <script>

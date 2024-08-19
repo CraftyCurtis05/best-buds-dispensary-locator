@@ -10,7 +10,7 @@
   </header>
 
   <!-- Display Page Body -->
-  <body class="strain-guide-view">
+  <body id="strain-guide-view">
 
     <!-- Display Strain Guide Main Content -->
     <main id="strain-guide-main">
@@ -22,12 +22,12 @@
       <p>Every cannabis strain has a name, a type and terpenes. While most dispensaries categorize cannabis by the type--indica, sativa or hybrid; terpenes are another great way to find the best cannabis strain for you. Below is a basic guide to strains and the most common terpenes.</p>
 
       <!-- Display Strain Guide  -->
-      <section class="strain-101">
+      <section id="strain-101">
         <h2>Strain 101</h2>
         <p>***NEED STRAIN SUMMARY***</p>
 
         <!-- Display Indica Strain Information -->
-        <article class="indica">
+        <article id="indica">
           <h3>Indica</h3>
           <h4>Effects:</h4>
           <span>Relaxing, "body" high, pain relief, nauseau reduction.</span>
@@ -43,7 +43,7 @@
         </article>
 
         <!-- Display Sativa Strain Information -->
-        <article class="sativa">
+        <article id="sativa">
           <h3>Sativa</h3>
           <h4>Effects:</h4>
           <span>Energizing, "mind" high, anxiety-reducing, stimulating.</span>
@@ -58,7 +58,7 @@
         </article>
 
         <!-- Display Hybrid Strain Information -->
-        <article class="hybrid">
+        <article id="hybrid">
           <h3>Hybrid</h3>
           <h4>Effects:</h4>
           <span>A mix of indica and sativa, effects have a wide range from anxiolytic to anti-inflammatory.</span>
@@ -75,12 +75,12 @@
       </section>
 
       <!-- Display Terpene Guide  -->
-      <section class="terpene-101">
+      <section id="terpene-101">
         <h2>Terpene 101</h2>
         <p>***NEED STRAIN SUMMARY***</p>
 
         <!-- Display Humulene Information -->
-        <article class="humulene">
+        <article id="humulene">
           <h3>Humulene</h3>
           <h4>Effects:</h4>
           <span>Anti-inflammatory, appetite suppressant.</span>
@@ -93,12 +93,12 @@
         </article>
 
         <!-- Display Limonene Information -->
-        <article class="limonene">
+        <article id="limonene">
           <h3>Limonene</h3>
           <h4>Effects:</h4>
           <span>Antidepressant, antifungal, antimicobial, anxiolytic, gastroprotective, immunostimulant.</span>
           <h4>Common Strains:</h4>
-          <ul class="limonene-strains">
+          <ul id="limonene-strains">
             <li>Wedding Cake</li>
             <li>Quantum Kush</li>
             <li>Berry White</li>
@@ -106,12 +106,12 @@
         </article>
 
         <!-- Display Myrcene Information -->
-        <article class="myrcene">
+        <article id="myrcene">
           <h3>Myrcene</h3>
           <h4>Effects:</h4>
           <span>Analgesic, anti-inflammatory, antipsychotic, muscle relaxant, sedative, antispasmodic.</span>
           <h4>Common Strains:</h4>
-          <ul class="myrcene-strains">
+          <ul id="myrcene-strains">
             <li>OG Kush</li>
             <li>Girl Scout Cookies</li>
             <li>Grape Ape</li>
@@ -119,12 +119,12 @@
         </article>
 
         <!-- Display Caryophyllene Information -->
-        <article class="caryophyllene">
+        <article id="caryophyllene">
           <h3>Caryophyllene</h3>
           <h4>Effects:</h4>
           <span>Anti-inflammatory, analgesic, protects digestive tract lining, antidepressant.</span>
           <h4>Common Strains:</h4>
-          <ul class="caryophyllene-strains">
+          <ul id="caryophyllene-strains">
             <li>Runtz</li>
             <li>Gelato</li>
             <li>Gorilla Glue</li>
@@ -133,12 +133,12 @@
         </article>
 
         <!-- Display Linalool Information -->
-        <article class="linalool">
+        <article id="linalool">
           <h3>Linalool</h3>
           <h4>Effects:</h4>
           <span>Analgesic, anticonvulsant, antiepileptic, antineoplastic, antipsychotic, anxiolytic, sedative.</span>
           <h4>Common Strains:</h4>
-          <ul class="linalool-strains">
+          <ul id="linalool-strains">
             <li>Durban</li>
             <li>Mazar</li>
             <li>Candy OG</li>
@@ -147,12 +147,12 @@
         </article>
 
         <!-- Display A-Pinene Information -->
-        <article class="apinene">
+        <article id="apinene">
           <h3>A-Pinene</h3>
           <h4>Effects:</h4>
           <span>Anti-inflammatory, gastroprotective, energy boosting, bronchodilator, memory aid, antibacterial.</span>
           <h4>Common Strains:</h4>
-          <ul class="apinene-strains">
+          <ul id="apinene-strains">
             <li>Haze Berry</li>
             <li>OG Kush</li>
             <li>Blue Dream</li>
@@ -165,10 +165,10 @@
     </main>
 
     <!-- Display Want More Info with Articles Link -->
-    <section class="articles-visit">
+    <section id="articles-visit">
         <h5>Looking for more information?</h5>
         <summary id="articles-link">
-            <router-link v-bind:to="{ name:'articles'}">Visit our articles page</router-link>
+            <router-link v-bind:to="{ name:'articles' }">Visit our articles page</router-link>
         </summary>
     </section>
 

@@ -1,62 +1,79 @@
-<!-- Locator Search Page Display -->
+<!-- Search Page Display -->
 <template>
 
   <!-- Browser Tab Title -->
   <title>Dispensary Search | Best Buds</title>
 
+  <!-- Display Header Component -->
   <header>
-    <!-- Display Header Component -->
     <Header/>
   </header>
 
-  <body class="search-view">
+  <!-- Display Page Body -->
+  <body id="search-body">
  
-    <!-- Display Search Description -->
-    <div class="search-information">
+    <!-- Display Search Main Content -->
+    <main id="search-main">
+
+      <!-- Display Page Title -->
       <h1>Best Buds Dispensary Locator</h1>
-      <h2>Search for dispensaries near you</h2>
 
-      <!-- Display Search Bar -->
-      <div id="search-bar">
-        <SearchBar/>
-      </div>
+      <!-- Display Search Information -->
+      <section id="search">
+        <h2>Search for dispensaries near you</h2>
+          <p>***NEED SEARCH LOCATOR SUMMARY***</p>
 
-      <!-- Display Search Results List -->
-      <div id="search-list">
-        <SearchList v-if="this.$store.state.locationID"/>
-      </div>
-  
-      <!-- Display Search Map -->
-      <div id="search-map">
-        <SearchMap />
-      </div>
-      
-    </div>    
+        <!-- Display Search Bar -->
+        <div id="search-bar">
+          <SearchBar/>
+        </div>
+
+        <!-- Display Search Results List -->
+        <div id="search-list">
+          <SearchList v-if="this.$store.state.locationID"/>
+        </div>
+
+        <!-- Display Search Map -->
+        <div id="search-map">
+          <SearchMap />
+        </div>
+      </section>
+
+    </main> 
+
+    <!-- Display Strain Guide Link -->
+    <section id="strain-guide">
+      <h4>Looking for more information on types and strains?</h4>
+      <summary id="strain-guide-link">
+        Please check out our <router-link v-bind:to="{ name:'strainguide' }">Strain Guide</router-link> for information.
+      </summary>
+    </section>
 
     <!-- Display Want More Info with Articles Link -->
-    <div class="want-more">
-      <h5> Want More Information? </h5>
-      <div id="articles-link">
-        <router-link v-bind:to="{ name:'articles'}"> Visit our articles page for more information! </router-link>
-      </div>
-    </div> 
+    <section id="articles-visit">
+      <h5>Looking for more information?</h5>
+      <summary id="articles-link">
+        <router-link v-bind:to="{ name:'articles' }">Visit our articles page</router-link>
+      </summary>
+    </section>
 
     <!-- Display Page Quote -->
-    <h6>***NEED QUOTE***</h6> 
+    <h6>***NEED QUOTE***</h6>
+
   </body>
 
+  <!-- Display Footer Component -->
   <footer>
-    <!-- Display Footer Component -->
-    <Footer />
+    <Footer/>
   </footer> 
 
 </template>
   
 <script>
 import Header from '../components/Header.vue';
-import SearchBar from '../components/SearchBar.vue';
-import SearchList from '../components/SearchList.vue';
-import SearchMap from '../components/SearchMap.vue';
+import SearchBar from '../components/search_components/SearchBar.vue';
+import SearchList from '../components/search_components/SearchList.vue';
+import SearchMap from '../components/search_components/SearchMap.vue';
 import Footer from '../components/Footer.vue';
    
 export default {

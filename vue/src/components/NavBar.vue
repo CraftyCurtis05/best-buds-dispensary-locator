@@ -4,39 +4,30 @@
     <!-- Display Navigation Bar Information -->
     <body>
 
-        <!-- Display 'Home', 'Search', 'Shop', 'Tips & Tricks', 'Articles', 'About Us' to the Left of Navigation Bar -->
-        <div class="left-nav">
-            <div id="home-div">
-                <router-link id="home-nav" v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''">Home</router-link>
-            </div>
-            <div id="search-div">    
-                <router-link id="search-nav" v-bind:to="{ name: 'search' }" v-if="$store.state.token != ''">Search</router-link>
-            </div>
-            <div id="shop-div">    
-                <router-link id="shop-nav" v-bind:to="{ name: 'shop' }" v-if="$store.state.token != ''">Shop</router-link>
-            </div>
-            <div id="tips-tricks-div">    
-                <router-link id="tips-tricks-nav" v-bind:to="{ name: 'tipstricks' }" v-if="$store.state.token != ''">Tips & Tricks</router-link>
-            </div>
-            <div id="articles-div">    
-                <router-link id="articles-nav" v-bind:to="{ name: 'articles' }" v-if="$store.state.token != ''">Articles</router-link>
-            </div>
-            <div id="about-us-div">    
-                <router-link id="about-us-nav" v-bind:to="{ name: 'aboutus' }" v-if="$store.state.token != ''">About Us</router-link>
-            </div>    
-        </div>
+        <!-- Display Left of Navigation Bar -->
+        <section id="left-nav">
+            <nav><router-link id="home-nav" v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''">Home</router-link></nav>
 
-        <!-- Display 'Profile', 'Logout' to the Right of Navigation Bar -->
-        <div class="right-nav">
-            <div id="profile-div">
-                <router-link id="profile-nav" v-bind:to="{ name: 'profile' }" v-if="$store.state.token != ''">Profile</router-link>
-            </div>
-            <div id="logout-div">    
-                <router-link id="logout-nav" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
-            </div>    
-        </div>
-        
+            <nav><router-link id="search-nav" v-bind:to="{ name: 'search' }" v-if="$store.state.token != ''">Search</router-link></nav>
+
+            <nav><router-link id="shop-nav" v-bind:to="{ name: 'shop' }" v-if="$store.state.token != ''">Shop</router-link></nav>
+            
+            <nav><router-link id="tips-tricks-nav" v-bind:to="{ name: 'tipstricks' }" v-if="$store.state.token != ''">Tips & Tricks</router-link></nav>
+            
+            <nav><router-link id="articles-nav" v-bind:to="{ name: 'articles' }" v-if="$store.state.token != ''">Articles</router-link></nav>
+            
+            <nav><router-link id="about-us-nav" v-bind:to="{ name: 'aboutus' }" v-if="$store.state.token != ''">About Us</router-link></nav>
+        </section>
+
+        <!-- Display Right of Navigation Bar -->
+        <section id="right-nav">
+            <nav><router-link id="profile-nav" v-bind:to="{ name: 'profile' }" v-if="$store.state.token != ''">Profile</router-link></nav>
+
+            <nav><router-link id="logout-nav" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link></nav>
+        </section>
+
     </body>
+
 </template>
 
 <script>
@@ -57,14 +48,14 @@ body {
     background-color: #00331A;
 }
 
-.left-nav,
-.right-nav {
+#left-nav,
+#right-nav {
     display: flex;
     position: absolute;
     font-weight: bold;
 }
 
-.right-nav {
+#right-nav {
     margin-left: 80vw;
 }
 

@@ -4,37 +4,39 @@
   <!-- Browser Tab Title -->
   <title>Home | Best Buds</title>
 
+  <!-- Display Header Component -->
   <header>
-    <!-- Display Header Component -->
     <Header/>
   </header>
 
-  <body class="home-view">
+  <!-- Display Page Body -->
+  <body id="home-body">
 
-    <!-- Display Home Description -->
-    <h1>Welcome to Best Buds!</h1>
-    <h2>Find And Connect With Your Dispensary Here</h2>
+    <!-- Display Home Main Content -->
+    <main id="home-main">
 
-    <!-- TESTING LINK - REMOVE BEFORE RELEASE-->
-    <li>
-      <router-link v-bind:to="{ name:'test'}">Dev Testing</router-link>
-    </li>
+      <!-- Display Page Title -->
+      <h1>Welcome to Best Buds!</h1>
 
-    <!-- Display Want More Info with Articles Link -->
-    <div class="want-more">
-      <h5> Want More Information? </h5>
-      <div id="articles-link">
-        <router-link v-bind:to="{ name:'articles'}"> Visit our articles page for more information! </router-link>
-      </div>
-    </div> 
+      <!-- Display Home Page Information -->
+      <section id="home"> 
+        <h2>Find And Connect With Your Dispensary Here</h2>
+
+        <!-- ***TESTING LINK - REMOVE BEFORE WHEN FINISHED*** -->
+        <router-link v-bind:to="{ name:'test'}">Dev Testing</router-link> <!-- ********** -->
+
+      </section>
+      
+    </main>  
 
     <!-- Display Page Quote -->
-    <h6>***NEED QUOTE***</h6> 
+    <h6>***NEED QUOTE***</h6>
+
   </body>
 
+  <!-- Display Footer Component -->
   <footer>
-    <!-- Display Footer Component -->
-    <Footer />
+    <Footer/>
   </footer> 
 
 </template>

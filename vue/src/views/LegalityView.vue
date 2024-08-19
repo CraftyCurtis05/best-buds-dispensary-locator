@@ -10,21 +10,21 @@
     </header>
 
     <!-- Display Page Body -->
-    <body class="legality-body">
+    <body id="legality-body">
 
         <!-- Display Legality Main Content -->
-        <main class="legality-main">
+        <main id="legality-main">
 
             <!-- Display Page Title -->
             <h1>Quick Guide to the Laws in Each State</h1>
 
             <!-- Display Legal States Information -->
-            <section class="legal-states">
+            <section id="legal-states">
                 <h2>Fully Legal States</h2>
                     <p>***NEED LEGAL STATES SUMMARY</p>
 
                 <!-- Display State and Law Information -->
-                <ul class="legal-list">
+                <ul id="legal-list">
                     <h3>Alaska:</h3>
                     <li>Adults over the age of 21 can legally use and possess up to an ounce of marijuana recreationally, though it is still illegal to consume in public and punishable by a fine of up to $100. Adults may also cultivate up to six marijuana plants in a household, but only three of the plants can be mature.</li>
 
@@ -103,12 +103,12 @@
             </section>    
 
             <!-- Display Medically Legal States Information -->
-            <section class="medically-legal-states">
+            <section id="medically-legal-states">
                 <h2>Medically Legal States</h2>
                     <p>***NEED MEDICALLY LEGAL STATES SUMMARY</p>
 
                 <!-- Display State and Law Information -->
-                <ul class="medically-legal-list">
+                <ul id="medically-legal-list">
                     <h3>Alabama:</h3>
                     <li>The medical marijuana program will allow resident who are 19 and older — or under 19 with guardian permission — with one of 16 qualifying medical conditions, to purchase medical marijuana with the recommendation of a doctor. Among the qualifying conditions for treatment are:</li>
                     <ul id="alabama-sub-list">
@@ -193,12 +193,12 @@
             </section>
 
             <!-- Display Ilegal States Information -->
-            <section class="illegal-states">
+            <section id="illegal-states">
                 <h2>Illegal States</h2>
                     <p>***NEED ILLEGAL STATES SUMMARY</p>
 
                 <!-- Display State and Law Information -->
-                <ul class="illegal-list">
+                <ul id="illegal-list">
                     <h3>Idaho:</h3>
                     <li>The use of marijuana for medical or recreational purposes remains fully illegal in Idaho. Possessing more than 3 ounces of marijuana can be punished with a prison sentence of up to five years and a fine of up to $10,000, or both. Under 3 ounces is a misdemeanor offense that carries a fine.</li>
 
@@ -231,18 +231,18 @@
         </main>
 
         <!-- Display Strain Guide Link -->
-        <section class="strain-guide">
+        <section id="strain-guide">
             <h4>Looking for more information of types and strains?</h4>
             <summary id="strain-guide-link">
-                Please check out our <router-link v-bind:to="{ name:'strainguide'}">Strain Guide</router-link> for information.
+                Please check out our <router-link v-bind:to="{ name:'strainguide' }">Strain Guide</router-link> for information.
             </summary>
         </section>
  
         <!-- Display Want More Info with Articles Link -->
-        <section class="articles-visit">
+        <section id="articles-visit">
             <h5>Looking for more information?</h5>
             <summary id="articles-link">
-                <router-link v-bind:to="{ name:'articles'}">Visit our articles page</router-link>
+                <router-link v-bind:to="{ name:'articles' }">Visit our articles page</router-link>
             </summary>
         </section>
 

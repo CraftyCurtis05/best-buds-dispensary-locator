@@ -4,40 +4,59 @@
     <!-- Display Footer information -->
     <body>
 
-        <!-- Display Logo and Slogan to the Left -->
-        <div id="logo">
-            <router-link v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''"><img src="src\assets\logo_assets\best_buds_logo_white.png"/></router-link>
-            <p id="slogan"> "We're Good To Grow!" </p>
-        </div>
+        <!-- Display Logo and Slogan and Link to Home on the Left -->
+        <section id="logo">
+            <router-link v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''">
+                <img src="src\assets\logo_assets\best_buds_logo_white.png"/>
+            </router-link>
+            <p id="slogan">"We're Good To Grow!"</p>
+        </section>
 
-        <!-- Display Helpful Links and Trademark in the Center -->
-        <div class="footer-links">
-            <h2>Helpful Links</h2>
-            <router-link v-bind:to="{ name: 'privacypolicy' }" v-if="$store.state.token != ''">Privacy Policy</router-link>
-            <router-link v-bind:to="{ name: 'contactus' }" v-if="$store.state.token != ''">Contact Us</router-link>
+        <!-- Display Helpful Links and Copyright in the Center -->
+        <section id="footer-links">
+            <h1>Helpful Links</h1>
+                <nav><router-link v-bind:to="{ name: 'privacypolicy' }" v-if="$store.state.token != ''">Privacy Policy</router-link></nav>
+                <nav><router-link v-bind:to="{ name: 'contactus' }" v-if="$store.state.token != ''">Contact Us</router-link></nav>
             <span id="copyright"> @{{ year }} {{ companyName }} </span>
-        </div>
+        </section>
 
         <!-- Display Social Media Links to the Right -->
-        <div class="social-media">
+        <section id="social-media">
             <h2>Follow Us</h2>
             <div id="social-media-logos">
-                <div id="facebook">
-                    <a href="https://www.facebook.com/" target="_blank"><img src="src\assets\social_media_assets\facebook_logo.png"/></a>
-                </div>
-                <div id="instagram">
-                    <a href="http://www.instagram.com/" target="_blank"><img src="src\assets\social_media_assets\instagram_logo.png"/></a>
-                </div>
-                <div id="twitter">
-                    <a href="http://x.com/" target="_blank"><img src="src\assets\social_media_assets\twitter_logo.png"/></a>
-                </div>
-                <div id="linkedin">
-                    <a href="http://www.linkedin.com/" target="_blank"><img src="src\assets\social_media_assets\linkedIn_logo.png"/></a>
-                </div>
+
+                <!-- Facebook Logo and Link -->
+                <nav id="facebook">
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <img src="src\assets\social_media_assets\facebook_logo.png"/>
+                    </a>
+                </nav>
+
+                <!-- Instagram Logo and Link -->
+                <nav id="instagram">
+                    <a href="http://www.instagram.com/" target="_blank">
+                        <img src="src\assets\social_media_assets\instagram_logo.png"/>
+                    </a>
+                </nav>
+
+                <!-- Twitter Logo and Link -->
+                <nav id="twitter">
+                    <a href="http://x.com/" target="_blank">
+                        <img src="src\assets\social_media_assets\twitter_logo.png"/>
+                    </a>
+                </nav>
+
+                <!-- LinkedIn Logo and Link -->
+                <nav id="linkedin">
+                    <a href="http://www.linkedin.com/" target="_blank">
+                        <img src="src\assets\social_media_assets\linkedIn_logo.png"/>
+                    </a>
+                </nav>
             </div>
-        </div>
+        </section>
 
     </body>
+
 </template>
 
 <script>
@@ -76,21 +95,21 @@ body {
     margin-top: 5px;
 }
 
-.footer-links {
+#footer-links {
     display: flex;
     flex-direction: column;
     padding-left: 10vw;
     padding-right: 10vw;
 }
 
-.footer-links h2 {
+#footer-links h1 {
     color: white;
     text-align: center;
     font-size: 1.3vw;
     padding-block-start: 1.5vw;
 }
 
-.footer-links a {
+#footer-links a {
     color: white;
     text-align:center;
     text-decoration: none;
@@ -104,12 +123,12 @@ body {
     padding-bottom: 1vw;
 }
 
-.social-media {
+#social-media {
     display: flex;
     flex-direction: column;
 }
 
-.social-media h2 {
+#social-media h2 {
     color: white;
     text-align: center;
     font-size: 1.2vw;

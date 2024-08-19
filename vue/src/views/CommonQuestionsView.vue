@@ -10,16 +10,16 @@
     </header>
 
     <!-- Display Page Body -->
-    <body class="common-questions-body">
+    <body id="common-questions-body">
 
         <!-- Display Common Questions Main Content -->
-        <main class="common-questions-main">
+        <main id="common-questions-main">
 
             <!-- Display Page Title -->
             <h1>Commonly Asked Questions About Cannabis</h1>
 
             <!-- Display Smoking Qustions and Answers Information-->
-             <section class="questions-smoking">
+             <section id="questions-smoking">
                 <h2>Smoking Cannabis Q&A</h2>
                     <p>***NEED SMOKING Q&A SUMMARY***</p>
 
@@ -32,7 +32,7 @@
                 </ul>
 
                 <h3>How do you take a good hit?</h3>
-                <ul class="questions-smoking-hit-list">
+                <ul id="questions-smoking-hit-list">
                     <li>To take a good hit, first grind the cannabis.</li>
                     <li>Then, pack the bowl of your pipe or bong with the ground cannabis.</li>
                     <li>Light the bowl and inhale slowly and deeply.</li>
@@ -103,18 +103,18 @@
         </main>
 
         <!-- Display Strain Guide Link -->
-        <section class="strain-guide">
+        <section id="strain-guide">
             <h4>Looking for more information on types and strains?</h4>
             <summary id="strain-guide-link">
-                Please check out our <router-link v-bind:to="{ name:'strainguide'}">Strain Guide</router-link> for information.
+                Please check out our <router-link v-bind:to="{ name:'strainguide' }">Strain Guide</router-link> for information.
             </summary>
         </section>
  
         <!-- Display Want More Info with Articles Link -->
-        <section class="articles-visit">
+        <section id="articles-visit">
             <h5>Looking for more information?</h5>
             <summary id="articles-link">
-                <router-link v-bind:to="{ name:'articles'}">Visit our articles page</router-link>
+                <router-link v-bind:to="{ name:'articles' }">Visit our articles page</router-link>
             </summary>
         </section>
 

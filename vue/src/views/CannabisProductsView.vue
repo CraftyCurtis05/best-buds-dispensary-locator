@@ -10,7 +10,7 @@
     </header>
 
     <!-- Display Page Body -->
-    <body class="cannabis-products-body">
+    <body id="cannabis-products-body">
 
         <!-- Display Cannabis Products Main Content -->
         <main id="cannabis-products-main">
@@ -19,7 +19,7 @@
             <h1>How To Choose Which Cannabis Product Is Right For You</h1>
 
             <!-- Display Edibles Information -->
-            <section class="edible">
+            <section id="edible">
                 <h2>Edibles</h2>
                     <p>Edibles are food products infused with cannabis extract. Edibles come in many forms, including baked goods, candies, gummies, chocolates, lozenges, and beverages.</p>
 
@@ -44,7 +44,7 @@
             </section>
 
             <!-- Display Flower Information -->
-            <section class="flower">
+            <section id="flower">
                 <h2>Flower</h2>
                     <p>Cannabis smoking is the inhalation of smoke or vapor released by heating the flowers, leaves, or extracts of cannabis and releasing the main psychoactive chemical, Δ9-tetrahydrocannabinol (THC), which is absorbed into the bloodstream via the lungs. Cannabis can be smoked in a variety of pipe-like implements made in different shapes and of different materials including hand pipes ("bowls"), water pipes ("bongs"), cigarettes ("joints"), or blunts.</p>
 
@@ -69,7 +69,7 @@
             </section>
 
             <!-- Display Oil Information -->
-            <section class="oil">
+            <section id="oil">
                 <h2>Oil</h2>
                     <p>Hash oil or cannabis oil is an oleoresin obtained by the extraction of cannabis or hashish. It is a cannabis concentrate containing many of its resins and terpenes - in particular, tetrahydrocannabinol, cannabidiol, and other cannabinoids. Hash oil is usually consumed by smoking, vaporizing or eating.</p>
 
@@ -98,7 +98,7 @@
             </section>
 
             <!-- Display Tincture Information -->
-            <section class="tincture">
+            <section id="tincture">
                 <h2>Tincture</h2>
                     <p>A tincture in the most basic sense is a cannabis extract, in which a liquid is infused with cannabis, meant for sublingual consumption, not vaporization or smoking. The cannabis plant soaks in a base liquid, such as food-grade alcohol, glycerin, or even oil, and after days of steeping, the plant matter is strained out and—voilà! The cannabinoids, terpenes, and other compounds have melded with the base liquid, ready to dose and consume.</p>
 
@@ -120,7 +120,7 @@
             </section>
 
             <!-- Display Topical Information -->
-            <section class="topical">
+            <section id="topical">
                 <h2>Topical</h2>
                     <p>THC topicals, and cannabis topicals in general, are cannabis products infused in things like gels, balms, and lotions and then applied to our skin. The idea behind them is that they may be able to treat acute symptoms, including pain or inflammation, by interacting with cannabinoid receptors in the skin. Because the THC doesn't actually make it through the skin into the bloodstream, THC topical enthusiasts don't have to worry about getting intoxicated when they use a cannabis topical.</p>
                 
@@ -141,12 +141,12 @@
             </section>
 
             <!-- Display Wax Information -->
-            <section class="wax">
+            <section id="wax">
                 <h2>Wax</h2>
                     <p>THC wax is a highly concentrated form of tetrahydrocannabinol (THC), the main intoxicating substance found in cannabis. THC wax has 40-80 percent more THC per dose than more traditional, dried forms of cannabis. Different types of weed concentrate can have the texture of a: Sticky, gummy liquid; Soft, solid lip balm; Hard, dark-yellow solid resin.</p>
                 
                 <h3>Pros</h3>
-                <ul class="wax-pro-list">
+                <ul id="wax-pro-list">
                     <li>The effect is much cleaner and stronger than a joint or vaporizer.</li>
                     <li>Though dabbing is not typically used by medicinal cannabis users, it theoretically could be an effective route for acute symptoms because it is fast acting and effective.</li>
                     <li>Other inhalation methods would not deliver as high a dose of cannabinoids in a single inhalation.</li>
@@ -154,7 +154,7 @@
                 </ul>
 
                 <h3>Cons</h3>
-                <ul class="wax-con-list">
+                <ul id="wax-con-list">
                     <li>Some find dabbing scary because the act is reminiscent of smoking crack — the device is made out of glass and a blow torch is required to heat the nail. As a result, there are people who claim that it does not contribute to a positive image of cannabis.</li>
                     <li>The concentrate itself, however, can be a problem. Making a cannabis concentrate is a painstaking job which involves chemical solvents such as ethanol, alcohol, propane or butane. A pure concentrate devoid of residual solvents is difficult to achieve without the correct knowledge and expertise. This leads to a lot of people to YouTube-style self-tuition, which often ends in a contaminated product. If customers purchase professionally-made cannabis concentrates however, there are far fewer risks of residual solvent.</li>
                     <li>Another danger is overdosing. Although it is still not possible to die from a cannabis overdose, the effects can be very unpleasant if too large a dose is inhaled. Caution is therefore advised.</li>
@@ -164,18 +164,18 @@
         </main>
 
         <!-- Display Strain Guide Link -->
-        <section class="strain-guide">
+        <section id="strain-guide">
             <h4>Looking for more information on types and strains?</h4>
             <summary id="strain-guide-link">
-                Please check out our <router-link v-bind:to="{ name:'strainguide'}">Strain Guide</router-link> for information.
+                Please check out our <router-link v-bind:to="{ name:'strainguide' }">Strain Guide</router-link> for information.
             </summary>
         </section>
  
         <!-- Display Want More Info with Articles Link -->
-        <section class="articles-visit">
+        <section id="articles-visit">
             <h5>Looking for more information?</h5>
             <summary id="articles-link">
-                <router-link v-bind:to="{ name:'articles'}">Visit our articles page</router-link>
+                <router-link v-bind:to="{ name:'articles' }">Visit our articles page</router-link>
             </summary>
         </section>
 

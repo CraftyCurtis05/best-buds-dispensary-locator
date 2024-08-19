@@ -4,46 +4,89 @@
     <!-- Browser Tab Title -->
     <title>Tips & Tricks | Best Buds</title>
 
+    <!-- Display Header Component -->
     <header>
-        <!-- Display Header Component -->
         <Header/>
     </header>    
 
-    <body class="tips-tricks-view">
+    <!-- Display Page Body -->
+    <body id="tips-tricks-body">
 
-        <!-- Display Tips and Tricks Description and Link List -->
-        <div class="tips-tricks-description">
+        <!-- Display Tips and Tricks Main Content -->
+        <main id="tips-tricks-main">
+
+            <!-- Display Page Title -->
             <h1>Tips & Tricks</h1>
-            <h2>Cannabis confusion got you burnt out?</h2>
-            <h2>Check out some of the Tips and Tricks we've compiled below!</h2>
-            <div class="link-list">
-                <h3><router-link v-bind:to="{ name:'cannabisproducts'}">How To Choose Which Cannabis Product Is Right For You</router-link></h3>
-                <h3><router-link v-bind:to="{ name:'strainguide'}">Comprehensive Strain Guide To Cannabis Products</router-link></h3>
-                <h3><router-link v-bind:to="{ name:'safetytips'}">Tips for Safer Consumption, Smoking and Topicals</router-link></h3>
-                <h3><router-link v-bind:to="{ name:'toomuchcannabis'}">What To Do If You Have Too Much Cannabis</router-link></h3>
-                <h3><router-link v-bind:to="{ name:'legality'}">Curious About The Legal Use Within Your Area</router-link></h3>
-                <h3><router-link v-bind:to="{ name:'commonquestions'}">Commonly Asked Questions</router-link></h3>
-            </div>
-        </div>              
-        
+
+            <!-- Display Tips and Tricks Information -->
+            <section id="tips-tricks">
+                <h2>Cannabis confusion got you burnt out?</h2>
+                <p>***NEED TIPS AND TRICKS SUMMARY***</p>
+                <h3>Check out some of the Tips and Tricks we've compiled below!</h3>
+
+                <div id="tips-tricks-list">
+
+                    <!-- Display Cannabis Products Link and Information -->
+                    <article id="tips-tricks-choose-products">
+                        <h4><router-link v-bind:to="{ name:'cannabisproducts' }">How To Choose Which Cannabis Product Is Right For You</router-link></h4>
+                        <span>***NEED SUMMARY ABOUT CHOOSING THE RIGHT PRODUCTS***</span>
+                    </article>
+
+                    <!-- Display Strain Guide Link and Information -->
+                    <article id="tips-tricks-strain-guide">
+                        <h4><router-link v-bind:to="{ name:'strainguide' }">Comprehensive Strain Guide To Cannabis Products</router-link></h4>
+                        <span>***NEED SUMMARY ABOUT STRAIN GUIDE***</span>
+                    </article>
+
+                    <!-- Display Safety Tips Link and Information -->
+                    <article id="tips-tricks-safety-tips">
+                        <h4><router-link v-bind:to="{ name:'safetytips' }">Tips for Safer Consumption, Smoking and Topicals</router-link></h4>
+                        <span>***NEED SUMMARY ABOUT SAFETY TIPS***</span>
+                    </article>
+
+                    <!-- Display Too Much Cannabis Link and Information -->
+                    <article id="tips-tricks-too-much">
+                        <h4><router-link v-bind:to="{ name:'toomuchcannabis' }">What To Do If You Have Too Much Cannabis</router-link></h4>
+                        <span>***NEED SUMMARY ABOUT WHAT TO DO IF TOO MUCH***</span>
+                    </article>
+
+                    <!-- Display Legality Link and Information -->
+                    <article id="tips-tricks-legality">
+                        <h4><router-link v-bind:to="{ name:'legality' }">Curious About The Legal Use Within Your Area</router-link></h4>
+                        <span>***NEED SUMMARY ABOUT U.S. LAWS AND LEGALITY***</span>
+                    </article>
+
+                    <!-- Display Common Questions Link and Information -->
+                    <article id="tips-tricks-questions">
+                        <h4><router-link v-bind:to="{ name:'commonquestions' }">Commonly Asked Questions</router-link></h4>
+                        <span>***NEED SUMMARY ABOUT COMMON QUESTIONS***</span>
+                    </article>
+                </div>
+                
+            </section>
+
+        </main>
+
         <!-- Display Want More Info with Articles Link -->
-        <div class="want-more">
-            <h5> Want More Information? </h5>
-            <div id="articles-link">
-                <router-link v-bind:to="{ name:'articles'}"> Visit our articles page for more information! </router-link>
-            </div>
-        </div> 
+        <section id="articles-visit">
+            <h5>Looking for more information?</h5>
+            <summary id="articles-link">
+                <router-link v-bind:to="{ name:'articles' }">Visit our articles page</router-link>
+            </summary>
+        </section>
 
         <!-- Display Page Quote -->
-        <h6>***NEED QUOTE***</h6> 
+        <h6>***NEED QUOTE***</h6>
+
     </body>
 
+    <!-- Display Footer Component -->
     <footer>
-        <!-- Display Footer Component -->
-        <Footer />
-    </footer> 
+        <Footer/>
+    </footer>
 
 </template>
+
 <script>
 import Header from '../components/Header.vue';
 import Footer from '../components/Footer.vue';

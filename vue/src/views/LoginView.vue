@@ -4,30 +4,50 @@
   <!-- Browser Tab Title -->
   <title>Login | Best Buds</title>
 
-  <body class="login-view">
+  <!-- Display Page Body -->
+  <body id="login-body">
 
-    <!-- Display Login Form -->
-    <div class="login-form">
-      <form v-on:submit.prevent="login">
-        <h1 >Please Sign In</h1>
-        <div role="alert" v-if="invalidCredentials">
-          Invalid username and password!
-        </div>
-        <div role="alert" v-if="this.$route.query.registration">
-          Thank you for registering, please sign in.
-        </div>
-        <div class="form-input-group">
-          <label for="username">Username</label>
-          <input type="text" id="username" v-model="user.username" required autofocus />
-        </div>
-        <div class="form-input-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" v-model="user.password" required />
-        </div>
-        <button type="submit">Sign in</button>
-        <p><router-link v-bind:to="{ name: 'register' }">Need an account? Sign up.</router-link></p>
-      </form>
-    </div>
+    <!-- Display Login Main Content -->
+    <main id="login-main">
+
+      <!-- Display Page Title -->
+      <h1>Please Sign In</h1>
+
+      <!-- Display Login Form -->
+      <section id="login-form">
+        <form v-on:submit.prevent="login">
+
+          <!-- Alert If Invalid Login Credentials -->
+          <div role="alert" v-if="invalidCredentials">
+            Invalid username and password!
+          </div>
+
+          <!-- Alert If Newly Registered -->
+          <div role="alert" v-if="this.$route.query.registration">
+            Thank you for registering, please sign in.
+          </div>
+
+          <!-- Username Text Input -->
+          <div class="form-input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" v-model="user.username" required autofocus/>
+          </div>
+
+          <!-- Password Text Input -->
+          <div class="form-input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" v-model="user.password" required/>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit">Sign in</button>
+
+          <!-- Link to Register Page If No Account -->
+          <p><router-link v-bind:to="{ name: 'register' }">Need an account? Sign up.</router-link></p>
+        </form>
+      </section>
+
+    </main>
 
   </body>
 

@@ -1,38 +1,56 @@
 <!-- Shop Page Display -->
 <template>
 
-    <!-- Browser Tab Title -->
-    <title>Shop | Best Buds</title>
+  <!-- Browser Tab Title -->
+  <title>Shop | Best Buds</title>
 
-    <header>
-        <!-- Display Header Component -->
-        <Header/>
-    </header>
+  <!-- Display Header Component -->
+  <header>
+    <Header/>
+  </header>
 
-    <body class="shop-view">
+  <!-- Display Page Body -->
+  <body id="shop-body">
 
-        <!-- Display Shop Descripton -->
-        <div class="shop-description">
-            <h1>Shop our Favorite Products</h1>
-            <h2>We're still packing this bowl full of the best deals we can find, stay tuned!</h2>
-        </div>
+    <!-- Display Shop Main Content -->
+    <main id="shop-main">
 
-        <!-- Display Want More Info with Articles Link -->
-        <div class="want-more">
-            <h5> Want More Information? </h5>
-            <div id="articles-link">
-                <router-link v-bind:to="{ name:'articles'}"> Visit our articles page for more information! </router-link>
-            </div>
-        </div> 
+      <!-- Display Page Title -->
+      <h1>Shop our Favorite Products</h1>
 
-        <!-- Display Page Quote -->
-        <h6>***NEEDS QUOTE***</h6> 
-    </body>
+      <!-- Display Shop Information -->
+      <section id="shop">
+        <h2>We're still packing this bowl full of the best deals we can find, stay tuned!</h2>
+          <p>***NEED SHOP SUMMARY***</p>
+      </section>
 
-    <footer>
-        <!-- Display Footer Component -->
-        <Footer />
-    </footer> 
+    </main>
+
+    <!-- Display Strain Guide Link -->
+    <section id="strain-guide">
+      <h4>Looking for more information on types and strains?</h4>
+      <summary id="strain-guide-link">
+        Please check out our <router-link v-bind:to="{ name:'strainguide' }">Strain Guide</router-link> for information.
+      </summary>
+    </section>
+
+    <!-- Display Want More Info with Articles Link -->
+    <section id="articles-visit">
+      <h5>Looking for more information?</h5>
+      <summary id="articles-link">
+        <router-link v-bind:to="{ name:'articles' }">Visit our articles page</router-link>
+      </summary>
+    </section>
+
+    <!-- Display Page Quote -->
+    <h6>***NEED QUOTE***</h6>
+
+  </body>
+
+  <!-- Display Footer Component -->
+  <footer>
+    <Footer/>
+  </footer> 
 
 </template>
 

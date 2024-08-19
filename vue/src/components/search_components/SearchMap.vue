@@ -7,8 +7,7 @@
         :zoom="10"
         :center="center">
         <Marker 
-            :options="{ position: center }"
-        />
+            :options="{ position: center }"/>
     </GoogleMap>
 
 </template>
@@ -19,7 +18,6 @@ import { GoogleMap, Marker } from "vue3-google-map";
 
 export default defineComponent({
     components: {GoogleMap, Marker},
-    name: 'SearchMap',
     setup() {
         const center = { lat: 45.42152967, lng: -75.6971931};
         // result in results = result.coordinates.latitude & result.coordinates.longitude
@@ -29,8 +27,5 @@ export default defineComponent({
 </script>
 
 <style scoped>
-template {
-
-}
 
 </style>

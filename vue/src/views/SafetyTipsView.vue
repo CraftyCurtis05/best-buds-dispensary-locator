@@ -10,7 +10,7 @@
     </header>
 
     <!-- Display Page Body -->
-    <body class="safety-tips-body">
+    <body id="safety-tips-body">
 
         <!-- Display Safety Tips Main Content -->
         <main id="safety-tips-main">
@@ -19,7 +19,7 @@
             <h1>Tips for Safer Cannabis Consumption, Smoking and Topicals</h1>
 
             <!-- Display THC Consumption Tips Information -->
-            <section class="thc-consumption">
+            <section id="thc-consumption">
                 <h2>Safety Tips for Cannabis(THC) Consumption</h2>
                     <p>***NEED THC CONSUMPTION SUMMARY***</p>
 
@@ -69,7 +69,7 @@
             </section>    
 
             <!-- Display CBD Consumption Tips Information -->
-            <section class="cbd-consumption"> 
+            <section id="cbd-consumption"> 
                 <h2>Safety Tips for Cannabinol(CBD) Consumption</h2>
                     <p>***NEED CBD CONSUMPTION SUMMARY***</p>
 
@@ -105,7 +105,7 @@
             </section>
 
             <!-- Display Cannabis Smoking Tips Information -->
-            <section class="smoking">
+            <section id="smoking">
                 <h2>Safety Tips for Smoking Cannabis</h2>
                     <p>If you've found yourself asking, "What is the first feeling of weed?", it's important to understand that each person's reaction can be quite diverse. As you ponder, "Is it okay to start smoking weed?", remember that preparation is paramount. A comprehensive understanding of the varying cannabis strains, a cautious starting approach, and ensuring a comfortable, secure environment can lay the groundwork for an enjoyable and memorable first-time experience.</p>
 
@@ -114,7 +114,7 @@
                         <li>Cannabis is a versatile plant with hundreds of strains, each one uniquely characterized by its distinct effects.</li>
                         <li>These strains range from those known for inducing relaxation and tranquility to those that stimulate creativity and energy.</li>
                         <li>Being aware of these differences is the first step towards selecting a strain that aligns with your expectations and comfort level.</li>
-                        <li>If you are new to smoking cannabis please check out our <router-link v-bind:to="{ name:'strainguide'}">Strain Guide</router-link> for information regarding what type is best for you.</li>
+                        <li>If you are new to smoking cannabis please check out our <router-link v-bind:to="{ name:'strainguide' }">Strain Guide</router-link> for information regarding what type is best for you.</li>
 
                     <h3>How to Enjoy Your First High:</h3>
                         <span>To fully appreciate your first cannabis experience, consider these tips for first-time weed smokers:</span>
@@ -178,7 +178,7 @@
             </section>
 
             <!-- Display Topical Use Tips Information -->
-             <section class="topical">
+             <section id="topical">
                 <h2>Safety Tips for Topical Use</h2>
                     <p>***NEED TOPICAL USE SUMMARY***</p>
 
@@ -199,7 +199,7 @@
             </section>    
 
             <!-- Display Conclusion Information -->
-            <section class="conclusion"> 
+            <section id="conclusion"> 
                 <h2>Conclusion:</h2>
                     <p>Your first cannabis experience can be a wonderful journey when approached with care and responsibility. As for the question, "Is it better to use weed the first time alone or in company?", having a trusted, sober friend nearby can make the experience more comforting and enjoyable. By following the tips shared in this guide, first-time cannabis smokers can look forward to a positive and memorable first high. If you are contemplating using cannabis for the first time, undertake comprehensive research and connect with experienced cannabis users for their insights. This can empower you to make an informed decision about whether cannabis is the right choice for you.</p>
                 <mark>Remember, responsible consumption is crucial for any enjoyable cannabis experience.</mark>
@@ -208,18 +208,18 @@
         </main>        
 
          <!-- Display Strain Guide Link -->
-        <section class="strain-guide">
+        <section id="strain-guide">
             <h4>Looking for more information on types and strains?</h4>
             <summary id="strain-guide-link">
-                Please check out our <router-link v-bind:to="{ name:'strainguide'}">Strain Guide</router-link> for information.
+                Please check out our <router-link v-bind:to="{ name:'strainguide' }">Strain Guide</router-link> for information.
             </summary>
         </section>
  
         <!-- Display Want More Info with Articles Link -->
-        <section class="articles-visit">
+        <section id="articles-visit">
             <h5>Looking for more information?</h5>
             <summary id="articles-link">
-                <router-link v-bind:to="{ name:'articles'}">Visit our articles page</router-link>
+                <router-link v-bind:to="{ name:'articles' }">Visit our articles page</router-link>
             </summary>
         </section>
 
@@ -248,12 +248,12 @@ export default {
 <style scoped>
 .safety-tips-view {
     width: 100vw;
-  max-width: 100%;
-  overflow-x: hidden;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\green_smoke.png');
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+    max-width: 100%;
+    overflow-x: hidden;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\green_smoke.png');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .safety-tips-info {

@@ -10,7 +10,7 @@
     </header>
 
     <!-- Display Page Body -->
-    <body class="too-much-body">
+    <body id="too-much-body">
 
         <!-- Display Too Much Cannabis Main Content -->
         <main id="too-much-main">
@@ -19,7 +19,7 @@
             <h1>What To Expect If You've Had Too Much Cannabis</h1>
 
             <!-- Display Too Much Symptoms Information -->
-            <section class="symptoms">
+            <section id="symptoms">
                 <h2>Signs and Symptoms</h2>
                     <p>Consuming too much cannabis can lead to a range of symptoms, from anxiety to nausea.</p>
 
@@ -64,7 +64,7 @@
             </section>
 
             <!-- Display Too Much Coping Information -->
-            <section class="coping">
+            <section id="coping">
                 <h2>Coping Tips:</h2>
                     <p>Consuming too much cannabis is rarely a medical emergency, despite how uncomfortable you may feel. Symptoms will subside as the effects wear off. In the meantime, these tips can help things feel more manageable:</p>
 
@@ -108,7 +108,7 @@
             </section>
 
             <!-- Display Too Much What To Do Information -->
-            <section class="what-to-do">
+            <section id="what-to-do">
                 <h2>What To Do If You've Had Too Much Cannabis</h2>
                     <p>While these symptoms usually don’t cause lasting health effects, there are a few cases when you may want to get medical care. Keep reading to learn more about what people can do to reduce the ‘high.’ Note that many of these tips are anecdotal or based on animal studies, which means they lack rigorous human research.</p>
 
@@ -172,7 +172,7 @@
         </main>
 
         <!-- Display Strain Guide Link -->
-        <section class="strain-guide">
+        <section id="strain-guide">
             <h4>Looking for more information on types and strains?</h4>
             <summary id="strain-guide-link">
                 Please check out our <router-link v-bind:to="{ name:'strainguide'}">Strain Guide</router-link> for information.
@@ -180,7 +180,7 @@
         </section>
  
         <!-- Display Want More Info with Articles Link -->
-        <section class="articles-visit">
+        <section id="articles-visit">
             <h5>Looking for more information?</h5>
             <summary id="articles-link">
                 <router-link v-bind:to="{ name:'articles'}">Visit our articles page</router-link>

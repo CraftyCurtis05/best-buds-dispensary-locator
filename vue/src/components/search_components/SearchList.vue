@@ -41,10 +41,10 @@
   
 <script>
 //Import Yelp Service to connect search with location results
-import YelpService from '../services/YelpService';
+import YelpService from '@/services/YelpService';
 
 //Import Java Service to connect favorites to store data within database
-import JavaService from '../services/JavaService';
+import JavaService from '@/services/JavaService';
   
 export default {
     data() {

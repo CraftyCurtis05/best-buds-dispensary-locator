@@ -4,29 +4,49 @@
   <!-- Browser Tab Title -->
   <title>Register | Best Buds</title>
 
-  <body class="register-view">
+  <!-- Display Page Body -->
+  <body id="register-body">
 
-    <!-- Display Register Form -->
-    <div class="register-form">
-      <form v-on:submit.prevent="register">
-        <h1>Create Account</h1>
-        <div role="alert" v-if="registrationErrors">{{ registrationErrorMsg }}</div>
-        <div class="form-input-group">
-          <label for="username">Username</label>
-          <input type="text" id="username" v-model="user.username" required autofocus />
-        </div>
-        <div class="form-input-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" v-model="user.password" required />
-        </div>
-        <div class="form-input-group">
-          <label for="confirmPassword">Confirm Password</label>
-          <input type="password" id="confirmPassword" v-model="user.confirmPassword" required />
-        </div>
-        <button type="submit">Create Account</button>
-        <p><router-link v-bind:to="{ name: 'login' }">Already have an account? Log in.</router-link></p>
-      </form>
-    </div>
+    <!-- Display Register Main Content -->
+    <main id="register-main">
+
+      <!-- Display Page Title -->
+      <h1>Create Account</h1>
+
+      <!-- Display Register Form -->
+      <section id="register-form">
+        <form v-on:submit.prevent="register">
+
+          <!-- Alert If Invalid Registration Credentials -->
+          <div role="alert" v-if="registrationErrors">{{ registrationErrorMsg }}</div>
+
+          <!-- Username Text Input -->
+          <div class="form-input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" v-model="user.username" required autofocus/>
+          </div>
+
+          <!-- Password Text Input -->
+          <div class="form-input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" v-model="user.password" required/>
+          </div>
+
+          <!-- Confirm Password Text Input -->
+          <div class="form-input-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" id="confirmPassword" v-model="user.confirmPassword" required/>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit">Create Account</button>
+
+          <!-- Link to Login Page If Already Have Account -->
+          <p><router-link v-bind:to="{ name: 'login' }">Already have an account? Log in.</router-link></p>
+        </form>
+      </section>
+
+    </main>  
 
   </body>
 

@@ -42,9 +42,9 @@
 <script>
 import Footer from '../components/Footer.vue';
 import Header from '../components/Header.vue';
-import ProfilePicture from '../components/ProfilePicture.vue';
-import FavoriteLocations from '../components/FavoriteLocations.vue';
-import ProfileInfo from '../components/ProfileInfo.vue';
+import ProfilePicture from '../components/profile_components/ProfilePicture.vue';
+import FavoriteLocations from '../components/favorite_components/FavoriteLocations.vue';
+import ProfileInfo from '../components/profile_components/ProfileInfo.vue';
 import profilePictureSrc from '@/assets/LARRY!.webp';
 
 export default {
