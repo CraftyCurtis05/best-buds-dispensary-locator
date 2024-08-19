@@ -1,4 +1,4 @@
-
+<!-- Search Articles Component Display -->
 <template>
 
     <!-- Display Component Body -->
@@ -9,18 +9,23 @@
             <input id="user-input" name="user-input" type="text" v-model="keyword" placeholder="Enter Search Keyword"/>
         </section>
 
-        <!-- Display Results List from Array of Objects Created in searchArticles Function --> 
+        <!-- Display Results List from Array of Objects Created in searchArticles Function -->
         <section id="search-list">
 
-            <!-- Loop Through Results Array and Bind Each  -->
+            <!-- Loop Through Results Array and Bind Each Result Object By It's Title For Loop Function -->
             <article id="results" v-for="result in searchArticles(keyword)" :key="result.title">
-                <a v-bind:href="result.url" target="_blank"> <!-- Bind result url to result image -->
-                    <img :src="(`src/assets/article_assets/${result.image}`)"/> <!-- Display result image -->
+
+                <!-- Display Result Image and Bind to Result URL -->
+                <a v-bind:href="result.url" target="_blank">
+                    <img :src="(`src/assets/article_assets/${result.image}`)"/>
                 </a>
-                <h3>{{  result.title  }}</h3>     <!-- Display result title -->
-                <h4>{{ result.author }}</h4>      <!-- Display result author -->
-                <h5>{{ result.date }}</h5>        <!-- Display result date -->
-                <h6>{{ result.description }}</h6> <!-- Display result description -->
+
+                <!-- Display Result Title, Author, Date and Description -->
+                <h3>{{  result.title  }}</h3>
+                <h4>{{ result.author }}</h4>
+                <h5>{{ result.date }}</h5>
+                <h6>{{ result.description }}</h6>
+
             </article>
         </section>
 
@@ -29,7 +34,50 @@
 </template>
 
 <script>
+import Articles from "@/assets/article_assets/articles.js";
 
+export default {
+  name: "SearchArticlesComponent",
+
+  data() {
+    return {
+      articles: Articles,
+      keyword: '',
+      results: []
+    }
+  },
+
+  methods: {
+
+    searchArticles(keyword) {
+
+      keyword = keyword.toLowerCase().trim(); // User input/keyword is converted to lower case and whitespace is trimmed off both sides
+
+      let results = []; // Variable initialized containing an empty array to store matched results
+
+      this.articles.forEach((article) => { // Loop through the articles array = article object [{}]
+
+        Object.keys(article).forEach((key) => { // Loop through article object = article key [{key:}]
+
+          if(article[key].includes(keyword)) { // Loop through value string and search for keyword   
+
+            if(!results.includes(article)) { // Checks if results array does not already contain article             
+              results.push(article); // If article contains keyword, add article object to results array
+            }
+          }
+        })
+      })
+      if(results.length === 0) { // Checks results array to verify it is not empty
+        results = []; // Verify that array is empty of proxy objects
+        console.log("No articles match. Please try again.") // FOR TESTING - DELETE WHEN FUNCTION WORKS
+        return results; // *** NEED TO FIGURE OUT HOW TO DISPLAY MESSAGE ON PAGE WHEN NO RESULTS ***        <<<<<<<< NOT WORKING >>>>>>>>>
+        
+      }
+      console.log(results); // FOR TESTING - DELETE WHEN FUNCTION WORKS
+      return results; //
+    }
+  }
+};
 </script>
 
 <style scoped>

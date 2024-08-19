@@ -11,29 +11,28 @@
 
 <script>
 export default {
+  name: "SearchBarComponent",
 
-    data() {
-        return {
-            locationID: ''
-        }
-    },
-
-    methods: {
-
-        // Clear Results Function That Resets Stored LocationID
-        clearResults() {
-            this.$store.state.locationID = null;
-        },
-
-        // Search Function That Stores LocationID From User Input
-        // Clear Results of Previous Search When New Search is Performed
-        // Set Timeout to Perform Multiple Searches WithoutRrefreshing Page
-        search() {
-            this.clearResults();
-            setTimeout(() => {
-                this.$store.state.locationID = this.locationID}, 500);
-        }
+  data() {
+    return {
+      locationID: ''
     }
+  },
+
+  methods: {
+    // Clear Results Function That Resets Stored LocationID
+    clearResults() {
+      this.$store.state.locationID = null;
+    },
+    // Search Function That Stores LocationID From User Input
+    // Clear Results of Previous Search When New Search is Performed
+    // Set Timeout to Perform Multiple Searches WithoutRrefreshing Page
+    search() {
+      this.clearResults();
+      setTimeout(() => {
+        this.$store.state.locationID = this.locationID}, 500);
+    }
+  }
 };    
 </script>
 

@@ -25,6 +25,7 @@
 <script>
 // Export Component Properties of Profile Object and Mark as Required
 export default { 
+    name: "ProfileInfoComponent",
     props: {
         profile: {
             type: Object,

@@ -61,14 +61,15 @@
 
 <script>
 export default {
-
+    name: "Footer",
+    
     data() {
       return {
         year: new Date().getFullYear(),  // Return Year and Company Name to use as Template Display for Trademark
         companyName: "Best Buds Locator"
       }
     }
-  };
+};
 </script>
 
 <style scoped>

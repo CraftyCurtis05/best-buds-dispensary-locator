@@ -25,17 +25,17 @@
 
         <!-- Display Search Bar -->
         <div id="search-bar">
-          <SearchBar/>
+          <SearchBarComponent/>
         </div>
 
         <!-- Display Search Results List -->
         <div id="search-list">
-          <SearchList v-if="this.$store.state.locationID"/>
+          <SearchListComponent v-if="this.$store.state.locationID"/>
         </div>
 
         <!-- Display Search Map -->
         <div id="search-map">
-          <SearchMap />
+          <SearchMapComponent/>
         </div>
       </section>
 
@@ -70,15 +70,15 @@
 </template>
   
 <script>
-import Header from '../components/Header.vue';
-import SearchBar from '../components/search_components/SearchBar.vue';
-import SearchList from '../components/search_components/SearchList.vue';
-import SearchMap from '../components/search_components/SearchMap.vue';
-import Footer from '../components/Footer.vue';
+import Header from '@/components/Header.vue';
+import SearchBarComponent from '@/components/search_components/SearchBar.vue';
+import SearchListComponent from '@/components/search_components/SearchList.vue';
+import SearchMapComponent from '@/components/search_components/SearchMap.vue';
+import Footer from '@/components/Footer.vue';
    
 export default {
-  name: "search",
-  components: { Header, SearchBar, SearchList, SearchMap, Footer }
+  name: "Search",
+  components: { Header, SearchBarComponent, SearchListComponent, SearchMapComponent, Footer }
 };
 </script>
   

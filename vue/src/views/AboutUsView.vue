@@ -49,13 +49,12 @@
 </template>
 
 <script>
-import Header from '../components/Header.vue';
-import Footer from '../components/Footer.vue';
+import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
 
 export default {
-  name: "aboutus",
-  components: { Header, Footer },
-
+  name: "AboutUs",
+  components: { Header, Footer }
 };
 </script>
 

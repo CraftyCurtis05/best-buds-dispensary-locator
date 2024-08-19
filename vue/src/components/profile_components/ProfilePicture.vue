@@ -15,6 +15,7 @@
 
 <script>
 export default {
+    name: "ProfilePictureComponent",
     props: {
         src: {
             required: true

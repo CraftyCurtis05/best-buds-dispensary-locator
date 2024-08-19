@@ -6,7 +6,7 @@
 
         <!-- NavBar Component -->
         <section id="navbar">
-            <NavBar/>
+            <NavBarComponent/>
         </section>
 
         <!-- Logo and Link to Home Page -->
@@ -26,10 +26,11 @@
 </template>
 
 <script>
-import NavBar from "../components/NavBar.vue";
+import NavBarComponent from "../components/NavBar.vue";
 
 export default {
-    components: { NavBar }
+    name: "Header",
+    components: { NavBarComponent }
 }
 </script>
 

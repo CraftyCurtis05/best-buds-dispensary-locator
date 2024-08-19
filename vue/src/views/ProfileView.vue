@@ -20,17 +20,17 @@
 
             <!-- Display User Picture -->
             <section id="profile-picture">
-                <ProfilePicture :src="profilePictureSrc"/>
+                <ProfilePictureComponent :src="profilePictureSrc"/>
             </section>
 
             <!-- Display User's Favorite Locations -->
             <section id="profile-favorites">
-                <FavoriteLocations :locations="favoriteLocations"/>
+                <FavoritesComponent :locations="favoriteLocations"/>
             </section>
 
             <!-- Display User Information -->
             <section id="profile-info">
-                <ProfileInfo :profile="profile"/>
+                <ProfileInfoComponent :profile="profile"/>
             </section>
 
         </main>
@@ -48,16 +48,16 @@
 </template>
 
 <script>
-import Header from '../components/Header.vue';
+import Header from '@/components/Header.vue';
 import profilePictureSrc from '@/assets/LARRY!.webp';
-import ProfilePicture from '../components/profile_components/ProfilePicture.vue';
-import FavoriteLocations from '../components/favorite_components/FavoriteLocations.vue';
-import ProfileInfo from '../components/profile_components/ProfileInfo.vue';
-import Footer from '../components/Footer.vue';
+import ProfilePictureComponent from '@/components/profile_components/ProfilePicture.vue';
+import FavoritesComponent from '@/components/favorite_components/FavoriteLocations.vue';
+import ProfileInfoComponent from '@/components/profile_components/ProfileInfo.vue';
+import Footer from '@/components/Footer.vue';
 
 export default {
-    name: "profile",
-    components: { Header, ProfilePicture, FavoriteLocations, ProfileInfo, Footer },
+    name: "Profile",
+    components: { Header, ProfilePictureComponent, FavoritesComponent, ProfileInfoComponent, Footer },
 
     data() {
         return {

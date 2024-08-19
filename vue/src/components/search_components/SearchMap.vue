@@ -23,6 +23,7 @@ import { defineComponent } from "vue";
 import { GoogleMap, Marker } from "vue3-google-map";
 
 export default defineComponent({
+    name: "SearchMapComponent",
 
     components: {GoogleMap, Marker},
 

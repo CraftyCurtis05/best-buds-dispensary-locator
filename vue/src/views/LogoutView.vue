@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: 'logout',
+  name: "Logout",
   created() {
     this.$store.commit("LOGOUT");
     this.$router.push("/login");

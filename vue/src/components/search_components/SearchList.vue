@@ -45,6 +45,7 @@ import YelpService from '@/services/YelpService';
 import JavaService from '@/services/JavaService';
   
 export default {
+    name: "SearchListComponent",
     
     data() {
         // Results Array Initialized to Hold Results From getResults Function Bc Used In Template and Script

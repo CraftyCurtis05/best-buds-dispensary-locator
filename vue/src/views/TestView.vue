@@ -2,7 +2,7 @@
 <template>
 
   <header>
-    <div><Header/></div>
+    <Header/>
   </header>
 
   <body>
@@ -26,18 +26,18 @@
   </body>
 
   <footer>
-    <div><Footer/></div>
+    <Footer/>
   </footer>
 
 </template>
 
 <script>
-import Header from "../components/Header.vue";
-import Footer from "../components/Footer.vue";
-import Articles from "../assets/article_assets/articles.js";
+import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
+import Articles from "@/assets/article_assets/articles.js";
 
 export default {
-  name: "test",
+  name: "Test",
   components: { Header, Footer },
 
   data() {
