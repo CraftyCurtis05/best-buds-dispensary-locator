@@ -23,7 +23,7 @@
         <h2>Find And Connect With Your Dispensary Here</h2>
 
         <!-- ***TESTING LINK - REMOVE BEFORE WHEN FINISHED*** -->
-        <router-link v-bind:to="{ name:'test'}">Dev Testing</router-link> <!-- ********** -->
+        <router-link v-bind:to="{ name:'test'}">Jen Dev Testing</router-link> <!-- ********** -->
 
       </section>
       
