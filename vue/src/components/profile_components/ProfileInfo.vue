@@ -1,23 +1,29 @@
-<!-- User Profile Information Component Display--->
+<!-- Profile Information Component Display--->
 <template>
 
-    <!-- Display profile information -->
-    <div class="profile-info">
+    <!-- Display Component Body -->
+    <body id="profile-info-body">
+
+        <!-- Display Title -->
         <h2>Profile Information</h2>
 
-        <!-- Display user 'Name', 'Age', 'Email' -->
-        <div>
-            <p>Name: {{ profile.name }}</p>
-            <p>Age: {{ profile.age }}</p>
-            <p>Email: {{ profile.email }}</p>
-        </div>
+        <!-- Display User 'Name', 'Age', 'Email' -->
+        <section id="profile-info">
 
-    </div>
+            <p>Name: {{ profile.name }}</p>
+
+            <p>Age: {{ profile.age }}</p>
+
+            <p>Email: {{ profile.email }}</p>
+            
+        </section>
+
+    </body>
+
 </template>
 
 <script>
-
-//Export component properties of profile object and mark as required
+// Export Component Properties of Profile Object and Mark as Required
 export default { 
     props: {
         profile: {
@@ -29,17 +35,17 @@ export default {
 </script>
 
 <style scoped>
-.profile-info {
+#profile-info-body {
     margin-top: 20px;
 }
 
-.profile-info div {
+#profile-info-body div {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.profile-info p {
+#profile-info-body p {
     margin: 5px 0;
 }
 </style>

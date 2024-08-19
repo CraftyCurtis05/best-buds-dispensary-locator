@@ -1,22 +1,22 @@
 <!-- Header Component Display--->
 <template>
 
-    <!-- Display Header information -->
+    <!-- Display Header Body -->
     <body>
 
-        <!-- Display NavBar Component -->
+        <!-- NavBar Component -->
         <section id="navbar">
             <NavBar/>
         </section>
 
-        <!-- Display Logo and Link to Home Page -->
+        <!-- Logo and Link to Home Page -->
         <section id="logo">
             <router-link v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''">
                 <img src="src\assets\logo_assets\best_buds_logo_white.png" alt="Logo">
             </router-link>
         </section>
 
-        <!-- Display Banner Image -->
+        <!-- Banner Image -->
         <section id="banner">
             <img src="src\assets\header_assets\dispensary_banner_cropped.png" alt="Banner">
         </section>

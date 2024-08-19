@@ -1,51 +1,44 @@
-<!-- Yelp Search Bar Component Display-->
+<!-- Search Bar Component Display-->
 <template>
 
-    <!-- Display search bar and search button; Run search method when search button is clicked -->
-    <div class="search-bar">
+    <!-- Display Search Bar and Search Button; Run Search and Get Location Method When Search Button is Clicked -->
+    <body id="search-bar">
         <input id="input-location" v-model="locationID" type="text" name="user-location" placeholder="Enter Location"/>
         <button id="search-button" v-on:click="search(),getUserLocation()">Search</button>
-    </div>
+    </body>
 
 </template>
 
 <script>
 export default {
+
+    data() {
+        return {
+            locationID: ''
+        }
+    },
+
     methods: {
 
-        //Search function that gets provided locationID that is stored from search results 
-        //Clear results of previous search
-        //Set timeout to be able to do multiple searches without refreshing page
-        search() {
-            this.clearResults();
-            setTimeout(() => {
-                this.$store.state.locationID = this.locationID}, 500);
-        },
-        //Clear results function that is used during search function
+        // Clear Results Function That Resets Stored LocationID
         clearResults() {
             this.$store.state.locationID = null;
         },
 
-        //
-        showPosition(position) {
-            const latitude = position.coords.latitude;
-            const longitude = position.ccords.longitude;
-        },
-        getUserLocation(){
-            const x = document.getElementById("geolocation");
-            
-            if (navigator.geolocation) {
-                const position = navigator.geolocation.getCurrentPosition();
-            } else {
-                x.innerHTML = "Geolocation is not supported by this browser.";
-            }
+        // Search Function That Stores LocationID From User Input
+        // Clear Results of Previous Search When New Search is Performed
+        // Set Timeout to Perform Multiple Searches WithoutRrefreshing Page
+        search() {
+            this.clearResults();
+            setTimeout(() => {
+                this.$store.state.locationID = this.locationID}, 500);
         }
     }
 };    
 </script>
 
 <style scoped>
-.search-bar {
+#search-bar {
   display: flex;
   align-items: center;
   background-color: black;

@@ -1,7 +1,7 @@
 <!-- Footer Component Display--->
 <template>
 
-    <!-- Display Footer information -->
+    <!-- Display Footer Body -->
     <body>
 
         <!-- Display Logo and Slogan and Link to Home on the Left -->

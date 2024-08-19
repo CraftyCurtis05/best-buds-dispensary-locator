@@ -54,8 +54,9 @@ import Footer from '../components/Footer.vue';
 
 export default {
   name: "aboutus",
-  components: { Header, Footer }
-}
+  components: { Header, Footer },
+
+};
 </script>
 
 <style scoped>

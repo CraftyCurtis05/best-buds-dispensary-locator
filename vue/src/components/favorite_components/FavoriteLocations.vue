@@ -1,19 +1,25 @@
-<!-- Favorite Locations Component Display--->
-
+<!-- <<<<< NOT WORKING >>>>> -->
+<!-- Display Favorite Component --->
 <template>
-    <div class="favorite-locations">
-        <h2>Favorite Locations</h2>
 
-        <!-- Make list of locations by looping through each location in locations array by index and display location -->
-        <ul>
+    <!-- Display Component Body -->
+    <body id="favorite-body">
+
+        <!-- Display Component Title -->
+        <h1>Favorite Locations</h1>
+
+        <!-- Make List of Locations by Looping Through Each Location in Locations Array and Display Location Object -->
+        <ul id="favorite-list">
             <li v-for="(location, index) in locations" :key="index">{{ location }}</li>
         </ul>
-    </div>
+
+    </body>
+
 </template>
 
 <script>
-//Export component properties of locations array and mark as required
 export default {
+
     props: {
         locations: {
             type: Array,
@@ -24,16 +30,5 @@ export default {
 </script>
 
 <style scoped>
-.favorite-locations {
-    margin-top: 20px;
-}
 
-.favorite-locations ul {
-    list-style: none;
-    padding: 0;
-}
-
-.favorite-locations li {
-    margin-bottom: 10px;
-}
 </style>
