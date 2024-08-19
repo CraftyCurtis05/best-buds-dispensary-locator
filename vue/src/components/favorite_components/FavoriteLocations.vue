@@ -1,5 +1,5 @@
 <!-- <<<<< NOT WORKING >>>>> -->
-<!-- Display Favorite Component --->
+<!-- Favorite Component Display --->
 <template>
 
     <!-- Display Component Body -->

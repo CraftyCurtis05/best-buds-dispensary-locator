@@ -1,4 +1,4 @@
-<!-- Display Search List Component -->
+<!-- Search List Component Display -->
 <template>
 
     <!-- Display Component Body -->

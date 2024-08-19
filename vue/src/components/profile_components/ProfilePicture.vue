@@ -1,20 +1,22 @@
-<!-- User Profile Picture Component Display--->
+<!-- Profile Picture Component Display --->
 <template>
 
-    <!-- Display user profile picture; Allow user to upload image and save on profile-->
-    <div class="profile-picture">
-        <img :src="src" alt="Profile Picture">
-    </div>
+    <!-- Display Component Body -->
+     <body id="profile-picture-body">
+
+        <!-- Display User Profile Picture -->
+        <section id="profile-picture">
+            <img :src="src" alt="profile-pic">
+        </section>
+
+    </body>
 
 </template>
 
 <script>
-
-//Export component properties of profile picture "" and mark as required
 export default {
     props: {
         src: {
-            type: String,
             required: true
         }
     }
@@ -22,14 +24,14 @@ export default {
 </script>
 
 <style scoped>
-.profile-picture {
+#profile-picture {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     overflow: hidden;
 }
 
-.profile-picture img {
+#profile-picture img {
     width: 100%;
     height: 100%;
     object-fit: cover;

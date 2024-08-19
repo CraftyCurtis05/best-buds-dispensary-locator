@@ -4,28 +4,39 @@
   <!-- Browser Tab Title -->
   <title>Privacy Policy | Best Buds</title>
 
+  <!-- Display Header Component -->
   <header>
-    <!-- Display Header Component -->
     <Header/>
   </header>
 
-  <body class="privacy-policy-view"> 
+  <!-- Display Page Body -->
+  <body id="privacy-policy-body">
 
-    <!-- Display Privacy Policy Description -->
-    <div class="privacy-policy-description">
+    <!-- Display Privacy Policy Main Content -->
+    <main id="privacy-poilcy-main">
+
+      <!-- Display Page Title -->
       <h1>Privacy Policy</h1>
-      <h2>***ADD PRIVACY POLICY HEADERS***</h2>
-      <h3>***ADD PRIVACY POLICY INFO***</h3>
-    </div>
+
+      <!-- Display Privacy Policy Information -->
+      <section id="privacy-policy">
+        <h2>***ADD PRIVACY POLICY HEADERS***</h2>
+
+        <h3>***ADD PRIVACY POLICY SUMMARY***</h3>
+      </section>
+
+    </main>
 
     <!-- Display Page Quote -->
-    <h6>“A joint a day keeps the bad mood away.” -Unknown</h6> 
+    <h6>***NEED QUOTE***</h6>
+
   </body>
 
+  <!-- Display Footer Component -->
   <footer>
-    <!-- Display Footer Component -->
-    <Footer />
+    <Footer/>
   </footer> 
+
 </template>
 
 <script>
@@ -39,7 +50,7 @@ export default {
 </script>
 
 <style scoped>
-.privacy-policy-view {
+#privacy-policy-body {
   width: 100vw;
   max-width: 100%;
   overflow-x: hidden;

@@ -15,7 +15,7 @@
             <p>Age: {{ profile.age }}</p>
 
             <p>Email: {{ profile.email }}</p>
-            
+
         </section>
 
     </body>
