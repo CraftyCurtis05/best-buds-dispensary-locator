@@ -92,8 +92,15 @@ export default {
 <style scoped>
 /* OBJECTS = rem */
 /* SPACING = vw */
+#search-body {
+
+}
+
 #result-object {
-    padding-bottom: 2vw;
+    text-align: left;
+    width: 22rem;
+    padding-bottom: 1.2vw;
+    background: pink;
 }
 
 h1 {

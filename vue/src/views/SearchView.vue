@@ -2,7 +2,9 @@
 <template>
 
   <!-- Browser Tab Title -->
-  <title>Dispensary Search | Best Buds</title>
+   <head>
+    <title>Search | Best Buds</title>
+   </head>
 
   <!-- Display Header Component -->
   <header>
@@ -81,7 +83,7 @@ import Footer from '@/components/Footer.vue';
    
 export default {
   name: "Search",
-  components: { Header, SearchBarComponent, SearchListComponent, SearchMapComponent, QuoteComponent, Footer }
+  components: { Header, SearchBarComponent, SearchListComponent, SearchMapComponent, QuoteComponent, Footer },
 };
 </script>
   
@@ -129,12 +131,16 @@ p {
 
 #search-list {
   position: absolute;
-  margin-left: 65vw;
+  max-width: 35%;
+  margin-top: -2vw;
+  margin-left: 60vw;
+  padding-top: .5vw;
   padding-bottom: 40vw;
 }
 
 #search-map {
   display: flex;
+  margin-left: 4vw;
 }
 
 h4,
