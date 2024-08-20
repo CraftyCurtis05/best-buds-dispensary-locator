@@ -101,7 +101,7 @@ export default {
 </script>
 
 <style scoped>
-.tips-tricks-view {
+#tips-tricks-body {
     width: 100vw;
     max-width: 100%;
     overflow-x: hidden;

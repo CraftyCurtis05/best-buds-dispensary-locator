@@ -62,7 +62,7 @@ export default {
 </script>
 
 <style scoped>
-.about-us-view {
+#about-us-body {
   width: 100vw;
   max-width: 100%;
   overflow-x: hidden;

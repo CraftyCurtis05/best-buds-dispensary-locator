@@ -91,7 +91,7 @@ export default {
 </script>
 
 <style scoped>
-.login-view {
+#login-body {
   width: 100vw;
   max-width: 100%;
   height: 45vw;

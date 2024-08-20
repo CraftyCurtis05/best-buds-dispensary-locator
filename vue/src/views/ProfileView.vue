@@ -77,7 +77,7 @@ export default {
 </script>
 
 <style scoped>
-#profile-view {
+#profile-body {
     width: 100vw;
     max-width: 100%;
     overflow-x: hidden;

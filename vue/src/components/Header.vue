@@ -38,7 +38,7 @@ export default {
 body {
     display: flex;
     width: 100vw;
-    max-width: 100vw; 
+    max-width: 100%; 
     overflow-x: hidden;
 }
 

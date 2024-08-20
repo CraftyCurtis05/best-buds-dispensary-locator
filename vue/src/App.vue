@@ -1,7 +1,8 @@
+<!-- TO RUN APPLICATION DIRECTIONS -->
 <!-- Install npm package in terminal: npm install -->
 <!-- Install axios package in terminal: npm i axios -->
-<!-- Open: https://cors-anywhere.herokuapp.com/corsdemo - Select 'Request temporary access to the demo server' -->
 <!-- Install google maps package in terminal: npm i vue3-google-map -->
+<!-- Open: https://cors-anywhere.herokuapp.com/corsdemo - Select 'Request temporary access to the demo server' -->
 <!-- npm run dev -->
 
 <template>
@@ -41,8 +42,8 @@ export default {
 
 <style>
 body {
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 </style>

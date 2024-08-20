@@ -86,7 +86,7 @@ export default {
 </script>
   
 <style scoped>
-.search-view {
+#search-body {
   width: 100vw;
   max-width: 100%;
   overflow-x: hidden;

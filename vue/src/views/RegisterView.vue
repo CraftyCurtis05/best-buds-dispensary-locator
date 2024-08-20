@@ -104,7 +104,7 @@ export default {
 </script>
 
 <style scoped>
-.register-view {
+#register-body {
   width: 100vw;
   max-width: 100%;
   height: 45vw;

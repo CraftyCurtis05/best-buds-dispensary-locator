@@ -10,7 +10,7 @@
   </header>
 
   <!-- Display Page Body -->
-  <body id="strain-guide-view">
+  <body id="strain-guide-body">
 
     <!-- Display Strain Guide Main Content -->
     <main id="strain-guide-main">
@@ -198,14 +198,14 @@ export default {
 </script>
 
 <style scoped>
-.strain-guide-view {
+#strain-guide-body {
   width: 100vw;
   max-width: 100%;
   overflow-x: hidden;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\green_smoke.png');
   background-position: center;
   background-size: cover;
-  background-attachment: fixed
+  background-attachment: fixed;
 }
 
 .strain-guide-info {

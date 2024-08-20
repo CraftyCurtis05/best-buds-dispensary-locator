@@ -250,7 +250,7 @@ export default {
 </script>
 
 <style scoped>
-.safety-tips-view {
+#safety-tips-body {
     width: 100vw;
     max-width: 100%;
     overflow-x: hidden;

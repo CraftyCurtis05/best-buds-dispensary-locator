@@ -68,14 +68,14 @@ export default {
 </script>
 
 <style scoped>
-.shop-view {
-    width: 100vw;
-    max-width: 100%;
-    overflow-x: hidden;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\green_smoke.png');
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+#shop-body {
+  width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\green_smoke.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 h1,

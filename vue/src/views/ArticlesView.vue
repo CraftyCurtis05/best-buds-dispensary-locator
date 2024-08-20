@@ -151,7 +151,7 @@ display: flex;
 justify-content: flex-end;
 /* border: 5px solid #00ff37;
 border-radius: 20%; */
-margin-left: 80%;
+margin-right: 5%;
 }
 
 .articles {
@@ -188,8 +188,8 @@ border-radius: 8px;
 
 .archive-container {
 position: absolute;
-top: 20%;
-right: 0;
+top: 45%;
+right: -8vw;
 height: 75vh;
 width: 25%;
 /* padding: 0 10px;
