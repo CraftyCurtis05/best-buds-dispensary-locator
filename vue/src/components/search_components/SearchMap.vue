@@ -35,5 +35,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-
+/* OBJECTS = rem */
+/* SPACING = vw */
 </style>

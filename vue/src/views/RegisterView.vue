@@ -104,6 +104,8 @@ export default {
 </script>
 
 <style scoped>
+/* OBJECTS = rem */
+/* SPACING = vw */
 #register-body {
   width: 100vw;
   max-width: 100%;
@@ -115,18 +117,22 @@ export default {
   background-attachment: fixed;
 }
 
-.register-form {
-  display: flex;
-  justify-content: center;
+#register-main {
+  border: .1rem solid black;
+  width: 15rem;
   text-align: center;
-  margin-top: 10vw;
+  margin: 10vw auto;
+}
+
+h1 {
+  font-size: 1.6rem;
 }
 
 .form-input-group {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 
 label {
-  margin-right: 0.5em;
+  margin-right: 0.5rem;
 }
 </style>

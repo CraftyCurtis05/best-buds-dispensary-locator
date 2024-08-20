@@ -12,11 +12,11 @@
     <!-- Display Page Body -->
     <body id="profile-body">
 
-        <!-- Display Page Title -->
-        <h1>***NEEDS A PAGE TITLE***</h1>
-
         <!-- Display Profile Information -->
         <main id="profile-main">
+
+            <!-- Display Page Title -->
+            <h1>***NEEDS A PAGE TITLE***</h1>
 
             <!-- Display User Picture -->
             <section id="profile-picture">
@@ -77,6 +77,8 @@ export default {
 </script>
 
 <style scoped>
+/* OBJECTS = rem */
+/* SPACING = vw */
 #profile-body {
     width: 100vw;
     max-width: 100%;
@@ -87,21 +89,12 @@ export default {
     background-attachment: fixed;
 }
 
-#profile-picture,
-#favorite-locations,
-.profile-info {
-    margin-left: 2vw;
+#profile-main {
+    margin: 4vw;
 }
 
-#profile-picture {
-    margin: 3vw;
-}
-
-h6 {
+h1 {
     text-align: center;
-  font-size: .9em;
-  font-style: italic;
-  font-weight: lighter;
-  margin-bottom: 1vw;
+    font-size: 1.6rem;
 }
 </style>

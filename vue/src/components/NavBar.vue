@@ -45,6 +45,7 @@ export default {
 </script>
 
 <style scoped>
+/* PLEASE DO NOT TOUCH STYLING */
 body {
     display: flex;
     position: absolute;

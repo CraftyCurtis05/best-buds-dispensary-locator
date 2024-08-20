@@ -55,6 +55,8 @@ export default {
 </script>
 
 <style scoped>
+/* OBJECTS = rem */
+/* SPACING = vw */
 #home-body {
   width: 100vw;
   max-width: 100%;
@@ -65,38 +67,22 @@ export default {
   background-attachment: fixed;
 }
 
-h1,
-h2,
-h3,
-.want-more,
-h6 {
+#home-main {
+  margin: 4vw;
+}
+
+h1, 
+h2 {
   text-align: center;
 }
 
 h1 {
-  font-size: 1.8em;
-  font-weight: bolder;
-  margin-top: 4vw;
+  font-size: 1.6rem;
 }
 
 h2 {
-  font-size: 1.5em;
-  font-weight: light;
-}
-
-.want-more {
-  margin-top: 3vw;
-}
-
-#articles-link {
-  margin-top: -1vw;
-}
-
-h6 {
-  font-size: .9em;
-  font-style: italic;
+  font-size: 1.3rem;
   font-weight: lighter;
-  margin-bottom: 1vw;
 }
 </style>
 

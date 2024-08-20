@@ -73,6 +73,7 @@ export default {
 </script>
 
 <style scoped>
+/* PLEASE DO NOT TOUCH STYLING */
 body {
     display: flex;
     width: 100vw;

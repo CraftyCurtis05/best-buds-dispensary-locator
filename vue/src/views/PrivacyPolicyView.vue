@@ -13,7 +13,7 @@
   <body id="privacy-policy-body">
 
     <!-- Display Privacy Policy Main Content -->
-    <main id="privacy-poilcy-main">
+    <main id="privacy-policy-main">
 
       <!-- Display Page Title -->
       <h1>Privacy Policy</h1>
@@ -53,6 +53,8 @@ export default {
 </script>
 
 <style scoped>
+/* OBJECTS = rem */
+/* SPACING = vw */
 #privacy-policy-body {
   width: 100vw;
   max-width: 100%;
@@ -63,28 +65,26 @@ export default {
   background-attachment: fixed;
 }
 
-h1, 
+#privacy-policy-main {
+  margin: 4vw;
+}
+
+h1,
 h2,
-h3, 
-h6 {
+h3 {
   text-align: center;
 }
 
 h1 {
-  font-size: 1.8em;
-  font-weight: bolder;
-  margin-top: 4vw;
+  font-size: 1.6rem;
 }
 
 h2 {
-  font-size: 1.5em;
-  font-weight: light;
+  font-size: 1.3rem;
+  padding-top: 2rem;
 }
 
-h6 {
-  font-size: .9em;
-  font-style: italic;
-  font-weight: lighter;
-  margin-bottom: 1vw;
+h3 {
+    font-size: 1.1rem;
 }
 </style>

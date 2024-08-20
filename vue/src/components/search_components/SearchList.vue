@@ -90,6 +90,8 @@ export default {
 </script>
   
 <style scoped>
+/* OBJECTS = rem */
+/* SPACING = vw */
 #result-object {
     padding-bottom: 2vw;
 }

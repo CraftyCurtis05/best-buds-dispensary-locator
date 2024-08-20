@@ -29,6 +29,22 @@
       </section>
 
     </main>
+
+    <!-- Display Strain Guide Link -->
+    <section id="strain-guide">
+      <h4>Looking for more information on types and strains?</h4>
+      <summary id="strain-guide-link">
+        Please check out our <router-link v-bind:to="{ name:'strainguide' }">Strain Guide</router-link> for information.
+      </summary>
+    </section>
+
+    <!-- Display Want More Info with Articles Link -->
+    <section id="articles-visit">
+      <h5>Looking for more information?</h5>
+      <summary id="articles-link">
+        <router-link v-bind:to="{ name:'articles' }">Visit our articles page</router-link>
+      </summary>
+    </section>
     
     <!-- Display Quote Component -->
     <div id="quote">
@@ -56,6 +72,8 @@ export default {
 </script>
 
 <style scoped>
+/* OBJECTS = rem */
+/* SPACING = vw */
 #articles-body {
   width: 100vw;
   max-width: 100%;
@@ -64,5 +82,41 @@ export default {
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
+}
+
+#articles-main {
+    margin: 4vw;
+}
+
+h1,
+h2,
+p,
+#strain-guide,
+#articles-visit {
+    text-align: center;
+}
+
+h1 {
+  font-size: 1.6rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  padding-top: 2rem;
+}
+
+p {
+    margin: auto 8vw;
+}
+
+h4,
+h5 {
+    font-size: 1rem;
+    margin: .1vw;
+}
+
+#strain-guide,
+#articles-visit {
+    padding: 1vw;
 }
 </style>

@@ -25,6 +25,8 @@ export default {
 </script>
 
 <style scoped>
+/* OBJECTS = rem */
+/* SPACING = vw */
 #profile-picture {
     width: 150px;
     height: 150px;

@@ -39,9 +39,17 @@ export default {
 </script>
 
 <style scoped>
+/* OBJECTS = rem */
+/* SPACING = vw */
 #quote {
     text-align: center;
-    margin-top: 5vw;
+    margin-top: 3vw;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: lighter;
 }
 
 h1 {
@@ -49,11 +57,13 @@ h1 {
 }
 
 h2 {
-    font-size: .9rem;
+    font-size: 1rem;
+    margin-top: -.3vw;
 }
 
 h3 {
-    font-size: .8rem;
+    font-size: .9rem;
     font-style: italic;
+    margin-top: -.8vw;
 }
 </style>

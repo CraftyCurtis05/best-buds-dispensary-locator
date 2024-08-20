@@ -205,6 +205,8 @@ export default {
 </script>
 
 <style scoped>
+/* OBJECTS = rem */
+/* SPACING = vw */
 #cannabis-products-body {
     width: 100vw;
     max-width: 100%;
@@ -215,66 +217,51 @@ export default {
     background-attachment: fixed;
 }
 
-.safety-tips-thc {
-    margin-left: 5vw;
-    margin-right: 5vw;    
+#cannabis-products-main {
+    margin: 4vw;
 }
 
-h1, 
-h2, 
-.want-more, 
-h6 {
+h1,
+h2,
+p,
+#strain-guide,
+#articles-visit {
     text-align: center;
 }
 
 h1 {
-    font-size: 1.5em;
-    font-weight: bolder;
-    margin-top: 4vw;
-    padding-bottom: 1vw;
-}
-
-p {
-    font-size: 1.1em;
+  font-size: 1.6rem;
 }
 
 h2 {
-    font-size: 1.2em;
-    font-weight: bolder;
-    text-decoration: underline;
-    padding-top: 2vw;
-    margin-bottom: -.5vw;
+  font-size: 1.3rem;
+  padding-top: 2rem;
+}
+
+p {
+    margin: auto 8vw;
 }
 
 h3 {
-    font-size: 1.1em;
-    font-style: italic;
-    font-weight: bold;
-    margin-bottom: 0vw;
+    font-size: 1.1rem;
+}
+
+ul {
+    font-size: 1.15rem;
 }
 
 li {
-    font-size: 1em;
-    margin-bottom: 1.2vw;
+    padding: .15vw;
 }
 
-.strain-guide {
-  margin-left: 7vw;
+h4,
+h5 {
+    font-size: 1rem;
+    margin: .1vw;
 }
 
-.want-more {
-    margin-top: 3vw;
-}
-
-#strain-guide-link,
-#articles-link {
-    margin-top: -1vw;
-}
-
-h6 {
-    font-size: .9em;
-    font-style: italic;
-    font-weight: lighter;
-    margin-bottom: 1vw;
+#strain-guide,
+#articles-visit {
+    padding: 1vw;
 }
 </style>

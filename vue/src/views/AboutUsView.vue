@@ -31,7 +31,7 @@
         <h3>Get In Touch</h3>
         <p>Have questions or feedback? We'd love to hear from you! Feel free to reach out to our friendly team from our <router-link v-bind:to="{ name:'contactus' }">contact page</router-link> for assistance or inquiries.</p>
         
-        <h3>Thank you for choosing Best Buds as your trusted guide in the world of cannabis. Together, let's explore, discover, and embrace the benefits of this remarkable plant.</h3>
+        <h4>Thank you for choosing Best Buds as your trusted guide in the world of cannabis. Together, let's explore, discover, and embrace the benefits of this remarkable plant.</h4>
       </section>
 
     </main>
@@ -62,6 +62,8 @@ export default {
 </script>
 
 <style scoped>
+/* OBJECTS = rem */
+/* SPACING = vw */
 #about-us-body {
   width: 100vw;
   max-width: 100%;
@@ -72,33 +74,30 @@ export default {
   background-attachment: fixed;
 }
 
-h1, 
-h2, 
-p, 
-h6 {
+#about-us-main {
   text-align: center;
+  margin: 4vw;
 }
 
 h1 {
-  font-size: 1.8em;
-  font-weight: bolder;
-  margin-top: 4vw;
+  font-size: 1.6rem;
 }
 
 h2 {
-  font-size: 1.5em;
-  font-weight: light;
+  font-size: 1.25rem;
+  font-weight: lighter;
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+h4 {
+  font-size: 1.1rem;
 }
 
 p {
-  font-size: 1.1em;
+  font-size: 1.2rem;
   margin: auto 10vw;
-}
-
-h6 {
-  font-size: .9em;
-  font-style: italic;
-  font-weight: lighter;
-  margin-bottom: 1vw;
 }
 </style>

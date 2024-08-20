@@ -36,6 +36,8 @@ export default {
 </script>
 
 <style scoped>
+/* OBJECTS = rem */
+/* SPACING = vw */
 #profile-info-body {
     margin-top: 20px;
 }

@@ -37,6 +37,8 @@ export default {
 </script>
 
 <style scoped>
+/* OBJECTS = rem */
+/* SPACING = vw */
 #search-bar {
   display: flex;
   align-items: center;

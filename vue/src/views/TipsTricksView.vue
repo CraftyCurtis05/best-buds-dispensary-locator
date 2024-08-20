@@ -101,6 +101,8 @@ export default {
 </script>
 
 <style scoped>
+/* OBJECTS = rem */
+/* SPACING = vw */
 #tips-tricks-body {
     width: 100vw;
     max-width: 100%;
@@ -111,47 +113,49 @@ export default {
     background-attachment: fixed;
 }
 
-.tips-tricks-description {
-    margin-left: 5vw;
-    margin-right: 5vw
+#tips-tricks-main {
+    margin: 4vw;
 }
 
-h1, 
-h2, 
-.want-more, 
-h6 {
+h1,
+h2,
+p,
+h3,
+#articles-visit {
     text-align: center;
 }
 
 h1 {
-    font-size: 1.5em;
-    font-weight: bolder;
-    margin-top: 4vw;
-    padding-bottom: 1vw;
+  font-size: 1.6rem;
 }
 
 h2 {
-    font-size: 1.2em;
-    font-weight: bolder;
+  font-size: 1.3rem;
+  padding-top: 2rem;
+}
+
+p {
+    margin: auto 8vw;
 }
 
 h3 {
-    font-size: 1.1em;
-    font-weight: bold;
+    font-size: 1.1rem;
 }
 
-.want-more {
-  margin-top: 3vw;
+article {
+    padding: 1vw;
 }
 
-#articles-link {
-  margin-top: -1vw;
+h4 {
+    margin-bottom: .5vw;
 }
 
-h6 {
-  font-size: .9em;
-  font-style: italic;
-  font-weight: lighter;
-  margin-bottom: 1vw;
+h5 {
+    font-size: 1rem;
+    margin: .1vw;
+}
+
+#articles-visit {
+    padding: 1vw;
 }
 </style>

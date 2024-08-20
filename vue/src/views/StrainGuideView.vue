@@ -198,6 +198,8 @@ export default {
 </script>
 
 <style scoped>
+/* OBJECTS = rem */
+/* SPACING = vw */
 #strain-guide-body {
   width: 100vw;
   max-width: 100%;
@@ -208,68 +210,53 @@ export default {
   background-attachment: fixed;
 }
 
-.strain-guide-info {
-    margin-left: 5vw;
-    margin-right: 5vw;
+#strain-guide-main {
+    margin: 4vw;
 }
 
 h1,
-p,
 h2,
-.want-more,
-h6 {
-  text-align: center;
+p,
+#articles-visit {
+    text-align: center;
 }
 
 h1 {
-  font-size: 1.5em;
-  font-weight: bolder;
-  margin-top: 4vw;
-  padding-bottom: 1vw;
-}
-
-p {
-  font-size: 1.1em;
+  font-size: 1.6rem;
 }
 
 h2 {
-  font-size: 1.3em;
-  font-weight: bolder;
-  text-decoration: underline;
-  padding-top: 2vw;
-  margin-bottom: -.5vw;
+  font-size: 1.3rem;
+  padding-top: 2rem;
+}
+
+p {
+  margin: auto 8vw;
 }
 
 h3 {
-  font-size: 1.2em;
-  font-weight: bold;
-  margin-bottom: -1vw;
+  font-size: 1.1rem;
+  padding-top: 1.5vw;
 }
 
 h4 {
-  font-size: 1.1em;
-  font-style: italic;
-  font-weight: bold;
-  margin-bottom: 0vw;
+  margin-bottom: .4vw;
+}
+
+ul {
+  font-size: 1.15rem;
 }
 
 li {
-  font-size: 1em;
-  margin-bottom: 1.2vw;
+  padding: .15vw;
 }
 
-.want-more {
-  margin-top: 3vw;
+h5 {
+  font-size: 1rem;
+  margin: .1vw;
 }
 
-#articles-link {
-  margin-top: -1vw;
-}
-
-h6 {
-  font-size: .9em;
-  font-style: italic;
-  font-weight: lighter;
-  margin-bottom: 1vw;
+#articles-visit {
+  padding: 1vw;
 }
 </style>

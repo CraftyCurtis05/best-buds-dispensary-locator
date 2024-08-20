@@ -81,11 +81,13 @@ export default {
 </script>
 
 <style scoped>
+/* OBJECTS = rem */
+/* SPACING = vw */
 #search-bar {
   display: flex;
   align-items: center;
   background-color: black;
-  padding: .45%;
+  padding: .25%;
   max-width: 800px;
   margin: 40px auto;
 }
@@ -101,7 +103,7 @@ export default {
 }
 
 #results {
-  border: .3em solid black;
+  border: .2rem solid black;
   width: 14em;
   height: 20em;
   text-align: center; 

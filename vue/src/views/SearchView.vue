@@ -86,6 +86,8 @@ export default {
 </script>
   
 <style scoped>
+/* OBJECTS = rem */
+/* SPACING = vw */
 #search-body {
   width: 100vw;
   max-width: 100%;
@@ -96,46 +98,53 @@ export default {
   background-attachment: fixed;
 }
 
-h1, 
-h2, 
-#search-bar, 
-.want-more, 
-h6 {
+#search-main {
+  margin: 4vw;
+}
+
+h1,
+h2,
+p,
+#strain-guide,
+#articles-visit {
   text-align: center;
 }
 
+h1 {
+  font-size: 1.6rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  padding-top: 1rem;
+}
+
+p {
+    margin: auto 8vw;
+}
+
+#search-bar {
+  margin: 1.5vw auto;
+}
+
 #search-list {
-  display: flex;
+  position: absolute;
   margin-left: 65vw;
+  padding-bottom: 40vw;
 }
 
 #search-map {
   display: flex;
 }
 
-h1 {
-  font-size: 1.8em;
-  font-weight: bolder;
-  margin-top: 4vw;
+h4,
+h5 {
+    font-size: 1rem;
+    margin: .1vw;
 }
 
-h2 {
-  font-size: 1.5em;
-  font-weight: light;
-}
-
-.want-more {
-  margin-top: 3vw;
-}
-
-#articles-link {
-  margin-top: -1vw;
-}
-
-h6 {
-  font-size: .9em;
-  font-style: italic;
-  font-weight: lighter;
-  margin-bottom: 1vw;
+#strain-guide,
+#articles-visit {
+    padding: 1vw;
 }
 </style>
