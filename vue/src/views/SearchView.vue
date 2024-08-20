@@ -57,8 +57,10 @@
       </summary>
     </section>
 
-    <!-- Display Page Quote -->
-    <h6>***NEED QUOTE***</h6>
+    <!-- Display Quote Component -->
+    <div id="quote">
+      <QuoteComponent/>
+    </div>  
 
   </body>
 
@@ -74,11 +76,12 @@ import Header from '@/components/Header.vue';
 import SearchBarComponent from '@/components/search_components/SearchBar.vue';
 import SearchListComponent from '@/components/search_components/SearchList.vue';
 import SearchMapComponent from '@/components/search_components/SearchMap.vue';
+import QuoteComponent from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
    
 export default {
   name: "Search",
-  components: { Header, SearchBarComponent, SearchListComponent, SearchMapComponent, Footer }
+  components: { Header, SearchBarComponent, SearchListComponent, SearchMapComponent, QuoteComponent, Footer }
 };
 </script>
   

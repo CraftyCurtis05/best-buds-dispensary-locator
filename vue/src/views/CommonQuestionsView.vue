@@ -118,8 +118,10 @@
             </summary>
         </section>
 
-        <!-- Display Page Quote -->
-        <h6>***NEED QUOTE***</h6>
+        <!-- Display Quote Component -->
+        <div id="quote">
+            <QuoteComponent/>
+        </div>  
 
     </body>
 
@@ -132,11 +134,12 @@
 
 <script>
 import Header from '@/components/Header.vue';
+import QuoteComponent from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
     name: "CommonQuestions",
-    components: { Header, Footer }
+    components: { Header, QuoteComponent, Footer }
 };
 </script>
 

@@ -1,10 +1,11 @@
 <template>
 
-    <body>
+    <body id="quote-body">
 
-        <section id="quote" v-for="quote in getQuote(quotes)" :key="quote.id">
-            <h1>{{ quote.quote }}</h1>
-            <h2>{{ quote.author }}</h2>
+        <!-- Display Random Quote Object -->
+        <section id="quote">
+            <h1>"{{ getQuote().quote }}"</h1>
+            <h2>- {{ quote.author }}</h2>
             <h3>{{ quote.job }}</h3>
         </section>
 
@@ -20,24 +21,39 @@ export default {
 
     data() {
         return {
-            quotes: Quotes,
-            quote: []
+            quotes: Quotes
         }    
     },
 
     methods: {
 
-        getQuote(quotes) {
-            const randomIndex = Math.floor(Math.random() * quotes.length);
-            let quote = [];
-            quote = quotes[randomIndex];
-            console.log(quote);
-            return quote;
+        // Create Random Number; Set Variable to Quotes Array[randomIndex]; Return Random Quote Object
+        getQuote() {
+            const randomIndex = Math.floor(Math.random() * this.quotes.length);
+            this.quote = this.quotes[randomIndex];
+            console.log(this.quote); // FOR TESTING - DELETE WHEN FINISHED
+            return this.quote;
         }
     }
 };
 </script>
 
 <style scoped>
+#quote {
+    text-align: center;
+    margin-top: 5vw;
+}
 
+h1 {
+    font-size: 1rem;
+}
+
+h2 {
+    font-size: .9rem;
+}
+
+h3 {
+    font-size: .8rem;
+    font-style: italic;
+}
 </style>

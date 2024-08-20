@@ -41,8 +41,11 @@
             </div>
         </div>
 
-        <!-- Display Page Quote -->
-        <h6>***NEED QUOTE***</h6> 
+        <!-- Display Quote Component -->
+        <div id="quote">
+            <QuoteComponent/>
+        </div> 
+
     </body>
 
     <footer>
@@ -56,10 +59,11 @@
 import axios from 'axios';
 import Footer from '@/components/Footer.vue';
 import Header from '@/components/Header.vue';
+import QuoteComponent from '@/components/Quote.vue';
 
 export default {
     name: "Articles",
-    components: { Header, Footer },
+    components: { Header, QuoteComponent, Footer },
     
     data() {
         return {

@@ -35,8 +35,10 @@
 
         </main>
 
-        <!-- Display Page Quote -->
-        <h6>***NEED QUOTE***</h6>
+        <!-- Display Quote Component -->
+        <div id="quote">
+            <QuoteComponent/>
+        </div>  
 
     </body>
 
@@ -53,11 +55,12 @@ import profilePictureSrc from '@/assets/LARRY!.webp';
 import ProfilePictureComponent from '@/components/profile_components/ProfilePicture.vue';
 import FavoritesComponent from '@/components/favorite_components/FavoriteLocations.vue';
 import ProfileInfoComponent from '@/components/profile_components/ProfileInfo.vue';
+import QuoteComponent from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
     name: "Profile",
-    components: { Header, ProfilePictureComponent, FavoritesComponent, ProfileInfoComponent, Footer },
+    components: { Header, ProfilePictureComponent, FavoritesComponent, ProfileInfoComponent, QuoteComponent, Footer },
 
     data() {
         return {
