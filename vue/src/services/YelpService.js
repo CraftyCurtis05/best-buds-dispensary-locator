@@ -19,9 +19,10 @@ export default{
     })
   },
 
+  //                                        <<<<<<<<<<<< ACTIVELY WORKING ON >>>>>>>>>>>>>>
   // getFeatured Function That Makes a GET Request Using API Key to Yelp Fusion API For The All Around Top Rated Dispensary
-  getFeatured(stateID) {
-    let queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+stateID+"&categories=cannabis&categories=cannabisdispensaries&categories=dispensary&sort_by=rating&limit=1";
+  getFeatured(state) {
+    let queryURL = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location="+state+"&categories=cannabis&categories=cannabisdispensaries&categories=dispensary&sort_by=rating&limit=1";
     const apiKey = "_VJj6fsEV44UAy-Cr65nlJl3GVdKOgK-vjlwwC7Nd6mxMJdt3rVRPGrJ8ZerjT-M7NseO0eyVDRSl2ZrOn2Ck6A8BZmdOUX0svKN-3cQfKt_dtgBaPpLk-RNfoGiZnYx";
 
     return axios.get(queryURL, {

@@ -27,6 +27,7 @@
                 <h6>{{ result.description }}</h6>
 
             </article>
+            
         </section>
 
     </body>
@@ -110,11 +111,18 @@ export default {
   margin: auto;
   margin-bottom: 15px;
   padding: .5em;
+  cursor: url('best_buds_logo_icon.ico'), pointer;
+}
+
+#results:hover {
+ transform: scale(1.1);
+
 }
 
 img {
   width: 9em;
   height: 7em;
+  cursor: url('best_buds_logo_icon.ico'), pointer;
 }
 
 h3 {

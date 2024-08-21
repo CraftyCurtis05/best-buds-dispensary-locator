@@ -104,27 +104,26 @@ export default {
   height: 45.7vw;
   overflow-x: hidden;
   overflow-y: hidden;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjRjOTB1aWJlb3hrMjNycGxnM2FsOHZxZ243Z2Fjc3Z1am4zcjBpMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L72bUwXTMoVIfBFPlM/giphy.gif');
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.497), rgba(164, 164, 164, 0.881)), url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjI1ZXR4Z3g3c2k2c2gzbnRqeTczNmlwb29oaHE5M3QwdmRscTc1cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ftfVpeWsm95QgGfOZ8/giphy.gif');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
 }
 
 #login-main {
+  position: fixed;
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: 20vw;
-  height: 35vw;
-  border: .1vw solid black;
 }
 
 img {
-  margin-top: -4vw;
+  width: 20vw;
+  margin-inline-end: 1vw;
 }
 
 h1 {
-  font-size: 1.6vw;
+  font-size: 1.5vw;
   margin-top: .7vw;
   margin-bottom: .1vw;
 }

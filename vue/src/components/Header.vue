@@ -45,22 +45,22 @@ body {
 
 #logo {
     position: absolute;
-    margin-top: .3vw;
-    margin-left: 7vw;
+    margin-top: .5vw;
+    margin-left: 6.5vw;
 }
 
 #logo img {
     position: absolute;
-    height: 11.8vw;
+    height: 11vw;
     cursor: url('best_buds_logo_icon.ico'), pointer;
 }
 
 #banner img {
     width: 100vw;
-    height: 12.5vw;
+    height: 12vw;
 }
 
 #navbar {
-    margin-top: 12.5vw;
+    margin-top: 12vw;
 }
 </style>

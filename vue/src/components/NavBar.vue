@@ -2,7 +2,7 @@
 <template>
 
     <!-- Display Navigation Bar Body -->
-    <body>
+    <body id="nav-body">
 
         <!-- Display Left of Navigation Bar -->
         <section id="left-nav">
@@ -47,26 +47,31 @@ export default {
 <style scoped>
 /* PLEASE DO NOT TOUCH STYLING */
 body {
-    display: flex;
     position: absolute;
     align-items: center;
-    width: 100vw;
     max-width: 100%;
     height: 2vw;
     overflow-x: hidden;
-    box-sizing: border-box;
+    overflow-y: hidden;
     background-color: #00331A;
 }
 
 #left-nav,
 #right-nav {
     display: flex;
-    position: absolute;
+    flex-direction: row;
+    flex-wrap: nowrap;
     font-weight: bolder;
+    max-width: 60vw;
+    max-height: 2vw;
+}
+
+#left-nav {
+    margin-inline-end: auto;
 }
 
 #right-nav {
-    margin-left: 83vw;
+    margin-inline-start: auto;
 }
 
 #home-nav,
@@ -77,13 +82,12 @@ body {
 #about-us-nav,
 #profile-nav,
 #logout-nav  {
-    margin-left: 3vw;
-    text-decoration: none;
     color: white;
     font-size: 1.2rem;
-    padding: .35vw 1.1vw;
-    margin: auto 1vw;
+    text-decoration: none;
     border-radius: .1vw;
+    padding-inline: 2.2vw;
+    padding-block: 5rem;
 }
 
 #home-nav:hover,
@@ -95,7 +99,7 @@ body {
 #profile-nav:hover,
 #logout-nav:hover {
     cursor: url('best_buds_logo_icon.ico'), pointer;
-    color: black;
+    color: hwb(151 0% 85%);
     background: linear-gradient(270deg, #377306, transparent) #01331b;
 }
 </style>
