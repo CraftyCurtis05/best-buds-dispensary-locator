@@ -31,7 +31,7 @@ export default {
         getQuote() {
             const randomIndex = Math.floor(Math.random() * this.quotes.length);
             this.quote = this.quotes[randomIndex];
-            console.log(this.quote); // FOR TESTING - DELETE WHEN FINISHED
+            // console.log(this.quote); <<<<<<<<<<<< FOR TESTING >>>>>>>>>>>>>>>
             return this.quote;
         }
     }

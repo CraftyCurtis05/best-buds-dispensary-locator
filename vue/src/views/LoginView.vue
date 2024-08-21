@@ -10,6 +10,7 @@
     <!-- Display Login Main Content -->
     <main id="login-main">
 
+      <!-- Display Logo -->
       <img src="src\assets\logo_assets\cropped\best_buds_logo_black cropped.png"/>
 
       <!-- Display Page Title -->
@@ -95,9 +96,12 @@ export default {
 <style scoped>
 /* ALL = vw (Will not move with zoom) */
 #login-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   max-width: 100%;
-  height: 45vw;
+  height: 45.7vw;
   overflow-x: hidden;
   overflow-y: hidden;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcjRjOTB1aWJlb3hrMjNycGxnM2FsOHZxZ243Z2Fjc3Z1am4zcjBpMCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/L72bUwXTMoVIfBFPlM/giphy.gif');
@@ -109,38 +113,49 @@ export default {
 #login-main {
   display: flex;
   flex-direction: column;
-  border: .1vw solid black;
-  width: 20vw;
-  height: 30vw;
   text-align: center;
-  justify-content: center;
-  margin: 7vw auto;
+  width: 20vw;
+  height: 35vw;
+  border: .1vw solid black;
+}
+
+img {
+  margin-top: -4vw;
 }
 
 h1 {
-  font-size: 1.5vw;
-  margin: auto;
+  font-size: 1.6vw;
+  margin-top: .7vw;
+  margin-bottom: .1vw;
 }
 
 .form-input-group {
-  margin: 1vw auto;
+  margin: 1vw;
 }
 
 label {
   display: flex;
   flex-direction: column;
+  font-size: 1.2vw;
 }
 
 #username,
 #password {
-  width: 10vw;
-  height: 1.2vw;
+  width: 12vw;
+  max-width: 12vw;
+  height: 1.5vw;
+  max-height: 1.5vw;
+  font-size: 1.1vw;
+  margin: .1vw;
 }
 
 button {
+  width: 9vw;
+  height: 2.3vw;
+  font-size: 1.1vw;
   border-radius: .3vw;
-  padding: .5vw 1.5vw;
   background-color: #377306;
+  margin: .5vw auto;
 }
 
 button:hover {
@@ -150,6 +165,7 @@ button:hover {
 }
 
 p {
+  font-size: 1.2vw;
   margin: 1vw auto;
 }
 </style>

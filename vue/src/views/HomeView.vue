@@ -54,7 +54,11 @@ import Footer from '@/components/Footer.vue';
 
 export default {
   name: "Home",
-  components: { Header, QuoteComponent, Footer }
+  components: { Header, QuoteComponent, Footer },
+
+  methods: {
+    
+  }
 };
 </script>
 
@@ -65,7 +69,7 @@ export default {
   width: 100vw;
   max-width: 100%;
   overflow-x: hidden;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\green_smoke.png');
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\background_assets\\green_smoke.png');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
