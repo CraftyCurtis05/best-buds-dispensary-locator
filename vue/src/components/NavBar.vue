@@ -62,11 +62,11 @@ body {
 #right-nav {
     display: flex;
     position: absolute;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 #right-nav {
-    margin-left: 80vw;
+    margin-left: 83vw;
 }
 
 #home-nav,
@@ -77,9 +77,25 @@ body {
 #about-us-nav,
 #profile-nav,
 #logout-nav  {
-    margin-left: 4vw;
+    margin-left: 3vw;
     text-decoration: none;
     color: white;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    padding: .35vw 1.1vw;
+    margin: auto 1vw;
+    border-radius: .1vw;
+}
+
+#home-nav:hover,
+#search-nav:hover,
+#shop-nav:hover,
+#tips-tricks-nav:hover,
+#articles-nav:hover,
+#about-us-nav:hover,
+#profile-nav:hover,
+#logout-nav:hover {
+    cursor: url('best_buds_logo_icon.ico'), pointer;
+    color: black;
+    background: linear-gradient(270deg, #377306, transparent) #01331b;
 }
 </style>

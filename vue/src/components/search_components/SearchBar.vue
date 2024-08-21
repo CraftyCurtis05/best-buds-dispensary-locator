@@ -42,26 +42,27 @@ export default {
 #search-bar {
   display: flex;
   align-items: center;
-  background-color: black;
-  padding: .45%;
-  max-width: 800px;
-  margin: 0 auto;
+  background-color: #01331b;
+  max-width: 50vw;
+  border-radius: .3vw;
+  padding: .15vw;
 }
 
 #input-location {
   flex: 1;
-  padding: 10px;
+  padding: .7vw;
 }
 
 #search-button {
-  border-radius: 5px;
-  padding: 10px 20px;
-  margin-left: 10px;
-  cursor: pointer;
+  border-radius: .3vw;
+  padding: .7vw 1.5vw;
+  margin-left: .2vw;
+  background-color: #377306;
 }
 
 #search-button:hover {
-  background-color: #122d1a;
-  color: white;
+  cursor: url('best_buds_logo_icon.ico'), pointer;
+  color: black;
+  background: linear-gradient(270deg, #377306, transparent) #01331b;
 }
 </style>

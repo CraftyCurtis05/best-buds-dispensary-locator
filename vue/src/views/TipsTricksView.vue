@@ -28,6 +28,7 @@
 
                     <!-- Display Cannabis Products Link and Information -->
                     <article id="tips-tricks-choose-products">
+                        <img src=""/>
                         <h4><router-link v-bind:to="{ name:'cannabisproducts' }">How To Choose Which Cannabis Product Is Right For You</router-link></h4>
                         <span>***NEED SUMMARY ABOUT CHOOSING THE RIGHT PRODUCTS***</span>
                     </article>
@@ -115,6 +116,35 @@ export default {
 
 #tips-tricks-main {
     margin: 4vw;
+}
+
+#tips-tricks-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#tips-tricks-choose-products,
+#tips-tricks-strain-guide,
+#tips-tricks-safety-tips,
+#tips-tricks-too-much,
+#tips-tricks-legality,
+#tips-tricks-questions {
+    text-align: center;
+    width: 35rem;
+    height: 20rem;
+    margin: 3vw 3vw;
+    border: .1rem black solid; /* <<<<<<<<<< DELETE WHEN FINISHED >>>>>>>>>> */
+}
+
+#tips-tricks-choose-products:hover,
+#tips-tricks-strain-guide:hover,
+#tips-tricks-safety-tips:hover,
+#tips-tricks-too-much:hover,
+#tips-tricks-legality:hover,
+#tips-tricks-questions:hover {
+    cursor: url('best_buds_logo_icon.ico'), pointer;
 }
 
 h1,

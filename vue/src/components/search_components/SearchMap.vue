@@ -2,12 +2,12 @@
 <template>
     
     <!-- Display Search Map Body -->
-    <body id="search-map">
+    <body id="search-map-body">
 
         <!-- Google Map Display -->
         <GoogleMap 
             api-key="AIzaSyC_eyTPqQJl9g4WT2vYrQOnaLdC1KbdbGQ" 
-            style="width:50vw;height:50vw" 
+            style="width:60vw;height:45vw" 
             :zoom="10"
             :center="center">
             <Marker 

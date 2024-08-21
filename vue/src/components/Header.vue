@@ -12,13 +12,13 @@
         <!-- Logo and Link to Home Page -->
         <section id="logo">
             <router-link v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''">
-                <img src="src\assets\logo_assets\best_buds_logo_white.png" alt="Logo">
+                <img src="@\assets\logo_assets\cropped\best_buds_logo_white cropped.png" alt="logo">
             </router-link>
         </section>
 
         <!-- Banner Image -->
         <section id="banner">
-            <img src="src\assets\header_assets\dispensary_banner_cropped.png" alt="Banner">
+            <img src="@\assets\header_assets\dispensary_banner_cropped.png" alt="banner">
         </section>
 
     </body>
@@ -46,12 +46,13 @@ body {
 #logo {
     position: absolute;
     margin-top: .3vw;
-    margin-left: 3.5vw;
+    margin-left: 7vw;
 }
 
 #logo img {
     position: absolute;
     height: 11.8vw;
+    cursor: url('best_buds_logo_icon.ico'), pointer;
 }
 
 #banner img {

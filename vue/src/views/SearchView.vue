@@ -131,16 +131,16 @@ p {
 
 #search-list {
   position: absolute;
-  max-width: 35%;
+  max-width: 29%;
   margin-top: -2vw;
-  margin-left: 60vw;
+  margin-left: 66vw;
   padding-top: .5vw;
-  padding-bottom: 40vw;
 }
 
 #search-map {
   display: flex;
-  margin-left: 4vw;
+  margin-left: 2vw;
+  margin-top: .9vw;
 }
 
 h4,

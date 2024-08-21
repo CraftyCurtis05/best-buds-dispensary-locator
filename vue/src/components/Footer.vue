@@ -7,7 +7,7 @@
         <!-- Display Logo and Slogan and Link to Home on the Left -->
         <section id="logo">
             <router-link v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''">
-                <img src="src\assets\logo_assets\best_buds_logo_white.png"/>
+                <img src="@\assets\logo_assets\cropped\best_buds_logo_white cropped.png"/>
             </router-link>
             <p id="slogan">"We're Good To Grow!"</p>
         </section>
@@ -28,28 +28,28 @@
                 <!-- Facebook Logo and Link -->
                 <nav id="facebook">
                     <a href="https://www.facebook.com/" target="_blank">
-                        <img src="src\assets\social_media_assets\facebook_logo.png"/>
+                        <img src="@\assets\social_media_assets\facebook_logo.png"/>
                     </a>
                 </nav>
 
                 <!-- Instagram Logo and Link -->
                 <nav id="instagram">
                     <a href="http://www.instagram.com/" target="_blank">
-                        <img src="src\assets\social_media_assets\instagram_logo.png"/>
+                        <img src="@\assets\social_media_assets\instagram_logo.png"/>
                     </a>
                 </nav>
 
                 <!-- Twitter Logo and Link -->
                 <nav id="twitter">
                     <a href="http://x.com/" target="_blank">
-                        <img src="src\assets\social_media_assets\twitter_logo.png"/>
+                        <img src="@\assets\social_media_assets\twitter_logo.png"/>
                     </a>
                 </nav>
 
                 <!-- LinkedIn Logo and Link -->
                 <nav id="linkedin">
                     <a href="http://www.linkedin.com/" target="_blank">
-                        <img src="src\assets\social_media_assets\linkedIn_logo.png"/>
+                        <img src="@\assets\social_media_assets\linkedIn_logo.png"/>
                     </a>
                 </nav>
             </div>
@@ -89,6 +89,7 @@ body {
     flex-direction: column;
     height: 10vw;
     padding-top: 1.5vw;
+    cursor: url('best_buds_logo_icon.ico'), pointer;
 }
 
 #slogan {

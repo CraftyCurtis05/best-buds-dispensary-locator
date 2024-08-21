@@ -1,0 +1,49 @@
+{
+    "businesses": [
+        {
+            "id": "kR9hy5j4uDcMQloHCAD48Q",
+            "alias": "revolutionary-botanicals-columbus",
+            "name": "Revolutionary Botanicals",
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/8Iq3i8pk24agPZgxo645rw/o.jpg",
+            "is_closed": false,
+            "url": "https://www.yelp.com/biz/revolutionary-botanicals-columbus?adjust_creative=LWQd1MOAw9qeP4-Hfef-GA&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=LWQd1MOAw9qeP4-Hfef-GA",
+            "review_count": 2,
+            "categories": [
+                {
+                    "alias": "herbalshops",
+                    "title": "Herbal Shops"
+                },
+                {
+                    "alias": "vapeshops",
+                    "title": "Vape Shops"
+                },
+                {
+                    "alias": "vitaminssupplements",
+                    "title": "Vitamins & Supplements"
+                }
+            ],
+            "rating": 5.0,
+            "coordinates": {
+                "latitude": 40.068282,
+                "longitude": -83.018865
+            },
+            "transactions": [],
+            "location": {
+                "address1": "5212 N High St",
+                "address2": "",
+                "address3": "",
+                "city": "Columbus",
+                "zip_code": "43214",
+                "country": "US",
+                "state": "OH",
+                "display_address": [
+                    "5212 N High St",
+                    "Columbus, OH 43214"
+                ]
+            },
+            "phone": "+16149875885",
+            "display_phone": "(614) 987-5885",
+            "distance": 1795.855385345347
+        }
+    ]
+}        

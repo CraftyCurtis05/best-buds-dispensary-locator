@@ -20,7 +20,9 @@
                 <div id="result-details">
 
                     <!-- Display Result Address -->
-                    <h3 id="result-address">{{ result.location.display_address }}</h3>
+                    <h3 id="result-address1">{{ result.location.address1 }} {{ result.location.address2 }}</h3>
+                    <h3 id="result-address2">{{ result.location.city }}, {{ result.location.state }} {{ result.location.zip_code }}</h3>
+                    <h3 id="result-phone">{{ result.display_phone }}</h3>
 
                     <!-- Display Result Image and Link to Result's URL -->
                     <!-- <a v-bind:href="result.url" target="_blank"><img id="result-image" v-bind:src="result.image_url"/></a> -->
@@ -92,32 +94,74 @@ export default {
 <style scoped>
 /* OBJECTS = rem */
 /* SPACING = vw */
-#search-body {
-
+#results {
+    max-height: 42vw;
+    overflow-y: auto;
 }
 
 #result-object {
     text-align: left;
-    width: 22rem;
+    width: 18rem;
     padding-bottom: 1.2vw;
-    background: pink;
+    cursor: url('best_buds_logo_icon.ico'), pointer;
+}
+
+#result-object:hover {
+    transform: scale(1.1);
 }
 
 h1 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-weight: bolder;
     margin-top: 2vw;
 }
 
 h2 {
-    font-size: 1.2em;
-    font-weight: light;
-    margin-bottom: -.5vw;
+    font-size: 1.2rem;
+    margin-bottom: .5vw;
 }
 
 h3 {
-    font-size: 1em;
-    font-weight: bold;
-    margin-bottom: 1vw;
+    font-size: 1rem;
+    font-weight: lighter;
+    margin: .5vw auto;
+}
+
+/* Scrollbar Width */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Buttons on Srollbar (Arrows Pointing Upwards/Downwards) */
+::-webkit-scrollbar-button {
+    width: 30vw;
+}
+
+/* Draggable Scrolling Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(53, 116, 7);
+  opacity: 30;
+  border-radius: 10px;
+}
+
+/* Track (Progress Bar)*/
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Track NOT Covered by Handle */
+::-webkit-scrollbar-track-piece {
+
+}
+
+/* Bottom Corner of Scrollbar (Where Both Horizontal/Vertical Scrollbars Meet */
+::-webkit-scrollbar-corner {
+
+}
+
+/* Draggable Resizing Handle That Appears at Bottom */
+::-webkit-resizer {
+
 }
 </style>
