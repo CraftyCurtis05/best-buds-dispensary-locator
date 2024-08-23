@@ -24,13 +24,33 @@
       <!-- Display Strain Guide  -->
       <section id="strain-101">
         <h2>Strain 101</h2>
-        <p>Strains are like flavors of cannabis, each with unique effects. Sativas boost energy and creativity, indicas help you chill, and hybrids mix the best of both worlds. From Pineapple Express to Blue Dream, each strain has its own vibe and aroma. Explore and find the one that hits just right! </p>
+          <p>Strains are like flavors of cannabis, each with unique effects. Sativas boost energy and creativity, indicas help you chill, and hybrids mix the best of both worlds. From Pineapple Express to Blue Dream, each strain has its own vibe and aroma. Explore and find the one that hits just right! </p>
 
         <!-- Display Indica Strain Information -->
         <article id="indica">
           <h3>Indica</h3>
+            <p>Great for evening use or when you need a break from the hustle and bustle!</p>
           <h4>Effects:</h4>
-          <span>Relaxing, "body" high, pain relief, nauseau reduction.</span>
+          <ul id="indica-effects">
+            <li>Relaxation</li>
+              <span>Deeply calming, often leading to a sense of tranquility.</span>
+            <li>Sleepiness</li>
+              <span>Aids in falling asleep and improving sleep quality.</span>
+            <li>Pain Relief</li>
+              <span>Effective in alleviating chronic pain and muscle tension.</span>
+            <li>Increased Appetite</li>
+              <span>Often causes the munchies, enhancing appetite.</span>
+            <li>Euphoria</li>
+              <span>Can produce a mild, comforting euphoria.</span>
+            <li>Sedation</li>
+              <span>May lead to drowsiness or heaviness in the body.</span>
+            <li>Stress Reduction</li>
+              <span>Helps in reducing anxiety and stress levels.</span>
+            <li>Muscle Relaxation</li>
+              <span>Provides relief from muscle spasms and tension.</span>
+            <li>Anti-nausea effects</li>
+              <span>Helps reduce feelings of queasiness and settle the stomach.</span>
+          </ul>  
           <h4>Common Strains:</h4>
           <ul id="indica-strains">
 
@@ -82,8 +102,28 @@
         <!-- Display Sativa Strain Information -->
         <article id="sativa">
           <h3>Sativa</h3>
+            <p>Perfect for daytime use, creative projects, or socializing!</p>
           <h4>Effects:</h4>
-          <span>Energizing, "mind" high, anxiety-reducing, stimulating.</span>
+          <ul id="sativa-effects">
+            <li>Increased Energy</li>
+              <span>Boosts motivation and helps you stay active.</span>
+            <li>Enhanced Focus</li>
+              <span>Sharpens concentration and creativity.</span>
+            <li>Euphoria</li>
+              <span>Creates a happy, uplifting feeling.</span>
+            <li>Mood Enhancement</li>
+              <span>Can improve mood and reduce feelings of depression.</span>
+            <li>Increased Sociability</li>
+              <span>Encourages conversation and social interaction.</span>
+            <li>Heightened Creativity</li>
+              <span>Sparks creative thinking and ideas.</span>
+            <li>Stress Relief</li>
+              <span>Eases mental tension while keeping you alert.</span>
+            <li>Mild Physical Relief</li>
+              <span>Can help with headaches and light pain without heavy sedation.</span>
+            <li>Increased Appetite</li>
+              <span>Stimulates hunger, useful for those with appetite loss.</span>
+          </ul>
           <h4>Common Strains:</h4>
           <ul id="sativa-strains">
 
@@ -135,8 +175,28 @@
         <!-- Display Hybrid Strain Information -->
         <article id="hybrid">
           <h3>Hybrid</h3>
+            <p>Hybrids offer versatility, making them perfect for anytime use, depending on the specific balance of sativa and indica effects!</p>
           <h4>Effects:</h4>
-          <span>A mix of indica and sativa, effects have a wide range from anxiolytic to anti-inflammatory.</span>
+          <ul id="hybrid-effects">
+            <li>Balanced Relaxation</li>
+              <span>Offers a mix of calmness without extreme sedation.</span>
+            <li>Euphoric Uplift</li>
+              <span>Provides mood-boosting effects, often leading to feelings of happiness and contentment.</span>
+            <li>Mental Clarity</li>
+              <span>Enhances focus and creativity while maintaining a relaxed state.</span>
+            <li>Pain Relief</li>
+              <span>Eases both physical and mental discomfort without overwhelming drowsiness.</span>
+            <li>Stress Reduction</li>
+              <span>Helps alleviate anxiety and stress, combining the relaxing effects of indica with the uplifting nature of sativa.</span>
+            <li>Social Boost</li>
+              <span>Can enhance sociability and interaction, making it great for social settings.</span>
+            <li>Moderate Energy</li>
+              <span>Offers a mild energy boost, ideal for daytime use without feeling overstimulated or sluggish.</span> 
+            <li>Focus and Creativity</li>
+              <span>Enhanced mental clarity and inspiration.</span>  
+            <li>Appetite Stimulation</li>
+              <span>Triggers the munchies, making it helpful for those with appetite issues.</span>
+          </ul>
           <h4>Common Strains</h4>
           <ul id="hybrid-strains">
 
