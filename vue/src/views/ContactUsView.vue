@@ -1,99 +1,104 @@
 <!-- Contact Us Page Display --->
 <template>
 
-    <!-- Browser Tab Title -->
-    <title>Contact Us | Best Buds</title>
+  <!-- Browser Tab Title -->
+  <title>Contact Us | Best Buds</title>
 
-    <!-- Display Header Component -->
-    <header>
-        <Header/>
-    </header>
+  <!-- Display Header Component -->
+  <header>
+      <Header/>
+  </header>
 
-    <!-- Display Page Body -->
-    <body id="contact-us-body">
+  <!-- Display Page Body -->
+  <body id="contact-us-body">
 
-        <!-- Display Contact Us Main Content -->
-        <main id="contact-us-main">
+    <!-- Display Contact Us Main Content -->
+    <main id="contact-us-main">
 
-            <!-- Display Page Title -->
-            <h1>Contact Us</h1>
+      <!-- Display Page Title -->
+      <h1>Contact Us</h1>
 
-            <!-- Display About Us Information -->
-            <section id="contact-us-summary">
-                <h2>Using the form below</h2>
-                    <p>***NEED ABOUT US SUMMARY***</p>
-            </section>
+        <!-- Display Page Summary -->
+        <p>***CONTACT US SUMMARY***</p>
 
-            <!-- Display Contact Us Form -->
-            <section id="contact-us-form">
-                <div class="contact-container" style="width: 450px;">
-    <card class="card-section" style="width: 450px; margin: auto">
-      <form ref="values" @submit.prevent="sendEmail">
-        <div class="form-group">
-          <input
-            class="form-input"
-            name="name"
-            v-model="user_name"
-            placeholder="Name"
-            required
-          />
-        </div>
-       
-        <div class="form-group">
-          <input
-            class="form-input"
-            name="email"
-            v-model="user_email"
-            placeholder="Email"
-            required
-          />
-        </div>
+      <!-- Display About Us Information -->
+      <section id="contact-us">
+          <h2>Using the form below</h2>
 
-        <div class="form-group">
-            <input
-                class="form-input"
-                name="favstrain"
-                v-model="fav_strain"
-                placeholder="Favorite Strain"
-                required
-            />
-        </div>
+        <!-- Display Contact Us Form -->
+        <article id="contact-us-form">
 
-        <div class="form-group">
-          <textarea
-            class="form-input"
-            name="message"
-            v-model="user_message"
-            placeholder="Message"
-            :rows="4"
-            required
-          />
-        </div>
+          <div class="contact-container" style="width: 450px;">
 
-        <div class="example-col">
-          <Button
-            id="submit-btn"
-            >Submit</Button
-          >
-        </div>
-      </form>
-    </card>
-  </div>
-            </section>
+            <card class="card-section" style="width: 450px; margin: auto">
 
-        </main>      
+              <form ref="values" @submit.prevent="sendEmail">
 
-        <!-- Display Quote Component -->
-        <div id="quote">
-            <QuoteComponent/>
-        </div>  
+                <div class="form-group">
+                  <input
+                    class="form-input"
+                    name="name"
+                    v-model="user_name"
+                    placeholder="Name"
+                    required
+                  />
+                </div>
 
-    </body>
+                <div class="form-group">
+                  <input
+                    class="form-input"
+                    name="email"
+                    v-model="user_email"
+                    placeholder="Email"
+                    required
+                  />
+                </div>
 
-     <!-- Display Footer Component -->
-    <footer>
-        <Footer/>
-    </footer> 
+                <div class="form-group">
+                  <input
+                    class="form-input"
+                    name="favstrain"
+                    v-model="fav_strain"
+                    placeholder="Favorite Strain"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <textarea
+                    class="form-input"
+                    name="message"
+                    v-model="user_message"
+                    placeholder="Message"
+                    :rows="4"
+                    required
+                  />
+                </div>
+
+                <div class="submit">
+                  <Button id="submit-btn">Submit</Button>
+                </div>
+
+              </form>
+            </card>
+          </div>
+        </article>
+
+      </section>
+
+    </main>      
+
+    <!-- Display Quote Component -->
+    <div id="quote">
+        <QuoteComponent/>
+    </div>  
+
+  </body>
+
+    <!-- Display Footer Component -->
+  <footer>
+      <Footer/>
+  </footer> 
 
 </template>
 

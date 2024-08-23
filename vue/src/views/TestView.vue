@@ -17,6 +17,9 @@
       <!-- Display Page Title -->
       <h1>***NEEDS PAGE TITLE***</h1>
 
+        <!-- Display Page Summary -->
+        <p>***PAGE SUMMARY***</p>
+
       <!-- Display About Us Information -->
       <section id="articles">
         <h2>***NEEDS ARTICLES PAGE HEAD LINER***</h2>

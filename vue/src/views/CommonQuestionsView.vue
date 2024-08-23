@@ -18,6 +18,9 @@
             <!-- Display Page Title -->
             <h1>Commonly Asked Questions About Cannabis</h1>
 
+            <!-- Display Page Summary -->
+             <p>***PAGE SUMMARY***</p>
+
             <!-- Display Smoking Qustions and Answers Information-->
              <section id="questions-smoking">
                 <h2>Smoking Cannabis Q&A</h2>

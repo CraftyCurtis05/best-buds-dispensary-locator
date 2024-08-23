@@ -17,6 +17,8 @@
 
             <!-- Display Page Title -->
             <h1>How To Choose Which Cannabis Product Is Right For You</h1>
+
+                <!-- Display Page Summary -->
                 <p>Choosing the right cannabis product is like picking your vibe! First choose the strain that is best for you, using our <router-link v-bind:to="{ name:'strainguide' }">strain guide</router-link>. Next consider how you want to consume—smoke, vape, or snack on an edible. Start with a low dose and see how it feels. Explore and find your perfect match! Below we have organized a pro and con list of each cannabis product that's out there.</p>
 
             <!-- Display Edibles Information -->

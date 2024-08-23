@@ -17,6 +17,8 @@
 
             <!-- Display Page Title -->
             <h1>Quick Guide to the Laws in Each State</h1>
+
+                <!-- Display Page Summary -->
                 <p>States like California and Colorado are rolling out the green carpet for adults 21+, with legal shops and chill vibes. Many states have medical programs where patients get the green light with a doctor's thumbs-up. Some states have turned down the legal heat, making minor offenses more about a fine than a felony. States are dancing to their own beat, while federal rules are like the old-school DJ trying to keep things under control. In short, it’s a legal jamboree with states setting their own rules while federal law lingers in the background!</p>
 
             <!-- Display Legal States Information -->

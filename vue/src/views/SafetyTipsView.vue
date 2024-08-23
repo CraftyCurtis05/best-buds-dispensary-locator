@@ -18,6 +18,9 @@
             <!-- Display Page Title -->
             <h1>Tips for Safer Cannabis Consumption, Smoking and Topicals</h1>
 
+                <!-- Display Page Summary -->
+                 <p>***PAGE SUMMARY***</p>
+
             <!-- Display THC Consumption Tips Information -->
             <section id="thc-consumption">
                 <h2>Safety Tips for Cannabis(THC) Consumption</h2>

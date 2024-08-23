@@ -18,6 +18,9 @@
             <!-- Display Page Title -->
             <h1>What To Expect If You've Had Too Much Cannabis</h1>
 
+                <!-- Display Page Summary -->
+                <p>***PAGE SUMMARY***</p>
+
             <!-- Display Too Much Symptoms Information -->
             <section id="symptoms">
                 <h2>Signs and Symptoms</h2>

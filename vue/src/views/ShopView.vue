@@ -17,7 +17,9 @@
 
       <!-- Display Page Title -->
       <h1>Shop our Favorite Products</h1>
-      <p>Shopping for cannabis products? It’s a fun adventure! Browse through a variety of strains, from energizing sativas to relaxing indicas. Check out edibles, vapes, and concentrates to match your style. Look for quality and lab-tested products to ensure a great experience. Enjoy discovering your perfect pick!</p>
+
+        <!-- Display Page Summary -->
+        <p>Shopping for cannabis products? It’s a fun adventure! Browse through a variety of strains, from energizing sativas to relaxing indicas. Check out edibles, vapes, and concentrates to match your style. Look for quality and lab-tested products to ensure a great experience. Enjoy discovering your perfect pick!</p>
 
       <!-- Display Shop Information -->
       <section id="shop">

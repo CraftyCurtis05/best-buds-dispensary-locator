@@ -18,8 +18,8 @@
       <!-- Display Page Title -->
       <h1>Strain Type and Terpene Guide</h1>
 
-      <!-- Display Strain Guide Summary -->
-      <p>Every cannabis strain has a name, a type and terpenes. While most dispensaries categorize cannabis by the type--indica, sativa or hybrid; terpenes are another great way to find the best cannabis strain for you. Below is a basic guide to strains and the most common terpenes.</p>
+        <!-- Display Page Summary -->
+        <p>Every cannabis strain has a name, a type and terpenes. While most dispensaries categorize cannabis by the type--indica, sativa or hybrid; terpenes are another great way to find the best cannabis strain for you. Below is a basic guide to strains and the most common terpenes.</p>
 
       <!-- Display Strain Guide  -->
       <section id="strain-101">
@@ -33,12 +33,49 @@
           <span>Relaxing, "body" high, pain relief, nauseau reduction.</span>
           <h4>Common Strains:</h4>
           <ul id="indica-strains">
-            <li>Granddaddy Purple</li>
-            <li>Z</li>
-            <li>Blueberry</li>
-            <li>Rainbow Runtz</li>
-            <li>King Louis</li>
-            <li>Watermelon</li>
+
+            <a href="https://www.leafly.com/strains/granddaddy-purple" target="_blank">
+              <li>Granddaddy Purple</li>
+            </a>
+            <a href="https://www.leafly.com/strains/granddaddy-purple" target="_blank">
+              <img src="@\assets\strain_guide_assets\strain_assets\indica\granddaddy-purple.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/zkittlez" target="_blank">
+              <li>The Original Z</li>
+            </a>
+            <a href="https://www.leafly.com/strains/zkittlez" target="_blank">
+              <img src="@\assets\strain_guide_assets\strain_assets\indica\original_z.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/blueberry" target="_blank">
+              <li>Blueberry</li>
+            </a>
+            <a href="https://www.leafly.com/strains/blueberry" target="_blank">
+              <img src="@\assets\strain_guide_assets\strain_assets\indica\blueberry.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/rainbow-runtz" target="_blank">
+              <li>Rainbow Runtz</li>
+            </a>
+            <a href="https://www.leafly.com/strains/rainbow-runtz" target="_blank">
+              <img src="@\assets\strain_guide_assets\strain_assets\indica\rainbow_runtz.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/king-louis" target="_blank">
+              <li>King Louis</li>
+            </a>
+            <a href="https://www.leafly.com/strains/king-louis" target="_blank">
+              <img src="@\assets\strain_guide_assets\strain_assets\indica\king_louis.avif"/>
+            </a>           
+
+            <a href="https://www.leafly.com/strains/watermelon" target="_blank">
+              <li>Watermelon</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/watermelon" target="_blank">
+              <img src="@\assets\strain_guide_assets\strain_assets\indica\watermelon.avif"/>
+            </a>
+
           </ul>
         </article>
 
@@ -49,11 +86,49 @@
           <span>Energizing, "mind" high, anxiety-reducing, stimulating.</span>
           <h4>Common Strains:</h4>
           <ul id="sativa-strains">
-            <li>Durban Poison</li>
-            <li>Tropicana Cookies</li>
-            <li>Maui Wowie</li>
-            <li>Acapulco Gold</li>
-            <li>Tangie</li>
+
+            <a href="https://www.leafly.com/strains/durban-poison" target="_blank">
+              <li>Durban Poison</li>
+            </a>
+            <a href="https://www.leafly.com/strains/durban-poison" target="_blank">
+              <img src="@\assets\strain_guide_assets\strain_assets\sativa\durban_poison.avif"/>
+            </a>
+            
+            <a href="https://www.leafly.com/strains/tropicana-cookies" target="_blank">
+              <li>Tropicana Cookies</li>
+            </a>
+            <a href="https://www.leafly.com/strains/tropicana-cookies" target="_blank">
+              <img src="@\assets\strain_guide_assets\strain_assets\sativa\tropicana_cookies.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/maui-wowie" target="_blank">
+              <li>Maui Wowie</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/maui-wowie" target="_blank">
+              <img src="@\assets\strain_guide_assets\strain_assets\sativa\maui_wowie.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/acapulco-gold" target="_blank">
+              <li>Acapulco Gold</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/acapulco-gold" target="_blank">
+              <img src="@\assets\strain_guide_assets\strain_assets\sativa\acapulco_gold.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/tangie" target="_blank">
+              <li>Tangie</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/tangie" target="_blank">
+              <img src="@\assets\strain_guide_assets\strain_assets\sativa\tangie.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/super-lemon-haze" target="_blank">
+              <li>Super Lemon Haze</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/super-lemon-haze" target="_blank">
+              <img src="@\assets\strain_guide_assets\strain_assets\sativa\super_lemon_haze.avif"/>
+            </a>
+
           </ul>
         </article>
 
@@ -64,12 +139,49 @@
           <span>A mix of indica and sativa, effects have a wide range from anxiolytic to anti-inflammatory.</span>
           <h4>Common Strains</h4>
           <ul id="hybrid-strains">
-            <li>CG4</li>
-            <li>Wedding Cake</li>
-            <li>Blue Dream</li>
-            <li>Lemon Cherry Gelato</li>
-            <li>Runtz</li>
-            <li>Gelato</li>
+
+            <a href="https://www.leafly.com/strains/original-glue" target="_blank">
+              <li>CG4</li>
+            </a>
+            <a href="https://www.leafly.com/strains/original-glue" target="_blank">
+              <img src="@\assets\strain_guide_assets\strain_assets\hybrid\cg4.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/wedding-cake" target="_blank">
+              <li>Wedding Cake</li>
+            </a>
+            <a href="https://www.leafly.com/strains/wedding-cake" target="_blank">
+              <img src="@\assets\strain_guide_assets\strain_assets\hybrid\wedding_cake.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/blue-dream" target="_blank">
+              <li>Blue Dream</li>
+            </a>
+            <a href="https://www.leafly.com/strains/blue-dream" target="_blank">
+              <img src="@\assets\strain_guide_assets\strain_assets\hybrid\blue_dream.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/lemon-cherry-gelato" target="_blank">
+              <li>Lemon Cherry Gelato</li>
+            </a>
+            <a href="https://www.leafly.com/strains/lemon-cherry-gelato" target="_blank">
+              <img src="@\assets\strain_guide_assets\strain_assets\hybrid\lemon_cherry_gelato.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/runtz" target="_blank">
+              <li>Runtz</li>
+            </a>
+            <a href="https://www.leafly.com/strains/runtz" target="_blank">
+              <img src="@\assets\strain_guide_assets\strain_assets\hybrid\runtz.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/ice-cream-cake" target="_blank">
+              <li>Ice Cream Cake</li>
+            </a>
+            <a href="https://www.leafly.com/strains/ice-cream-cake" target="_blank">
+              <img src="@\assets\strain_guide_assets\strain_assets\hybrid\ice_cream_cake.avif"/>
+            </a>
+
           </ul>
         </article>    
       </section>
@@ -211,14 +323,23 @@ export default {
 }
 
 #strain-guide-main {
-    margin: 4vw;
+  margin: 4vw;
 }
 
 h1,
 h2,
 p,
 #articles-visit {
-    text-align: center;
+  text-align: center;
+}
+
+img {
+  width: 10rem;
+  border: .2rem black solid;
+}
+
+img:hover {
+  cursor: url('best_buds_logo_icon.ico'), pointer;
 }
 
 h1 {
@@ -249,6 +370,10 @@ ul {
 
 li {
   padding: .15vw;
+}
+
+li:hover {
+  cursor: url('best_buds_logo_icon.ico'), pointer;
 }
 
 h5 {
