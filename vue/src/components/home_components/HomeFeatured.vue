@@ -5,10 +5,10 @@
     <section id="result-object">
 
         <!-- Loop Through Results Array From getResults Function and Bind Each Result to the Result's ID -->
-        <article id="result-object">
+        <article id="result-object" v-for="result in results" v-bind:key="result.id">
 
             <!-- Display Result Name and Link to Result's URL -->
-            <h1 v-bind:href="getResult().url" target="_blank">{{ result.name }}</h1>
+            <h2 v-bind:href="result.url" target="_blank">{{ result.name }}</h2>
 
             <!-- Display Result Details -->
             <div id="result-details">

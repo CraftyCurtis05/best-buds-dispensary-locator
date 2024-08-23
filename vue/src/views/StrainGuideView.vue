@@ -24,7 +24,7 @@
       <!-- Display Strain Guide  -->
       <section id="strain-101">
         <h2>Strain 101</h2>
-        <p>***NEED STRAIN SUMMARY***</p>
+        <p>Strains are like flavors of cannabis, each with unique effects. Sativas boost energy and creativity, indicas help you chill, and hybrids mix the best of both worlds. From Pineapple Express to Blue Dream, each strain has its own vibe and aroma. Explore and find the one that hits just right! </p>
 
         <!-- Display Indica Strain Information -->
         <article id="indica">
@@ -77,7 +77,7 @@
       <!-- Display Terpene Guide  -->
       <section id="terpene-101">
         <h2>Terpene 101</h2>
-        <p>***NEED STRAIN SUMMARY***</p>
+        <p>Terpenes are the aromatic oils in cannabis that give strains their unique flavors and scents. They also influence effects—like limonene for a citrusy, uplifting kick or myrcene for a relaxing, earthy vibe. Think of them as the spice of the cannabis world, adding flavor and personality to your experience.</p>
 
         <!-- Display Humulene Information -->
         <article id="humulene">
