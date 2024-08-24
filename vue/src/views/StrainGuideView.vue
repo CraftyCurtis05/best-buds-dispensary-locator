@@ -272,9 +272,26 @@
           </ul>
           <h4>Common Strains:</h4>
           <ul id="humulene-strains">
-            <li>Girl Scout Cookies</li>
-            <li>White Widow</li>
-            <li>Sour Diesel</li>
+            <a href="https://www.leafly.com/strains/gsc" target="_blank">
+              <li>GSC(Girl Scout Cookies)</li>
+            </a>
+            <a href="https://www.leafly.com/strains/gsc" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\humulene_assets\gsc.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/white-widow" target="_blank">
+              <li>White Widow</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/white-widow" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\humulene_assets\white_widow.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/sour-diesel" target="_blank">
+              <li>Sour Diesel</li>
+            </a>
+            <a href="https://www.leafly.com/strains/sour-diesel" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\humulene_assets\sour_diesel.avif"/>
+            </a>
           </ul>
         </article>
 
@@ -303,9 +320,26 @@
           </ul>
           <h4>Common Strains:</h4>
           <ul id="limonene-strains">
-            <li>Lemon Skunk</li>
-            <li>Lemon OG</li>
-            <li>Lemon Cake</li>
+            <a href="https://www.leafly.com/strains/lemon-skunk" target="_blank">
+              <li>Lemon Skunk</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/lemon-skunk" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\limonene_assets\lemon_skunk.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/lemon-og" target="_blank">
+              <li>Lemon OG</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/lemon-og" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\limonene_assets\lemon_og.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/lemon-cake" target="_blank">
+              <li>Lemon Cake</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/lemon-cake" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\limonene_assets\lemon_cake.avif"/>
+            </a>
           </ul>
         </article>
 
@@ -335,9 +369,26 @@
           <span>Analgesic, anti-inflammatory, antipsychotic, muscle relaxant, sedative, antispasmodic.</span>
           <h4>Common Strains:</h4>
           <ul id="myrcene-strains">
-            <li>OG Kush</li>
-            <li>Mango Kush</li>
-            <li>Skywalker OG</li>
+            <a href="https://www.leafly.com/strains/og-kush" target="_blank">
+              <li>OG Kush</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/og-kush" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\myrcene_assets\og_kush.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/mango-kush" target="_blank">
+              <li>Mango Kush</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/mango-kush" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\myrcene_assets\mango_kush.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/skywalker-og" target="_blank">
+              <li>Skywalker OG</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/skywalker-og" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\myrcene_assets\skywalker_og.avif"/>
+            </a>
           </ul>
         </article>
 
@@ -367,9 +418,26 @@
           <span>Anti-inflammatory, analgesic, protects digestive tract lining, antidepressant.</span>
           <h4>Common Strains:</h4>
           <ul id="caryophyllene-strains">
-            <li>Bubba Kush</li>
-            <li>Chemdawg</li>
-            <li>GMO Cookies</li>
+            <a href="https://www.leafly.com/strains/gary-payton" target="_blank">
+              <li>Gary Payton</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/gary-payton" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\caryophyllene_assets\gary_payton.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/chemdawg" target="_blank">
+              <li>Chemdawg</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/chemdawg" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\caryophyllene_assets\chemdawg.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/gmo-cookies" target="_blank">
+              <li>GMO Cookies</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/gmo-cookies" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\caryophyllene_assets\gmo_cookies.avif"/>
+            </a>
           </ul>
         </article>
 
@@ -398,9 +466,26 @@
           </ul>>
           <h4>Common Strains:</h4>
           <ul id="linalool-strains">
-            <li>Lavender</li>
-            <li>LA Confidential:</li>
-            <li>Amnesia Haze</li>
+            <a href="https://www.leafly.com/strains/lavender" target="_blank">
+              <li>Lavender</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/lavender" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\linalool_assets\lavender.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/la-confidential" target="_blank">
+              <li>LA Confidential</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/la-confidential" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\linalool_assets\la_confidential.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/red-haze" target="_blank">
+              <li>Red Haze</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/red-haze" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\linalool_assets\red_haze.avif"/>
+            </a>
           </ul>
         </article>
 
@@ -427,9 +512,26 @@
           </ul>
           <h4>Common Strains:</h4>
           <ul id="apinene-strains">
-            <li>Jack Herer</li>
-            <li>Pineapple Express</li>
-            <li>Super Silver Haze</li>
+            <a href="https://www.leafly.com/strains/jack-herer" target="_blank">
+              <li>Jack Herer</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/jack-herer" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\apinene_assets\jack_herer.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/pineapple-express" target="_blank">
+              <li>Pineapple Express</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/pineapple-express" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\apinene_assets\pineapple_express.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/super-silver-haze" target="_blank">
+              <li>Super Silver Haze</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/super-silver-haze" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\apinene_assets\super_silver_haze.avif"/>
+            </a>
           </ul>
         </article>
 
@@ -454,9 +556,26 @@
           </ul>
           <h4>Common Strains:</h4>
           <ul id="bpinene-strains">
-            <li>Strawberry Cough</li>
-            <li>Afghani</li>
-            <li>Hindu Kush</li>
+            <a href="https://www.leafly.com/strains/strawberry-cough" target="_blank">
+              <li>Strawberry Cough</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/strawberry-cough" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\bpinene_assets\strawberry_cough.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/afghani" target="_blank">
+              <li>Afghani</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/afghani" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\bpinene_assets\afghani.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/hindu-kush" target="_blank">
+              <li>Hindu Kush</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/hindu-kush" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\bpinene_assets\hindi_kush.avif"/>
+            </a>
           </ul>
         </article>
 
@@ -483,9 +602,26 @@
           </ul>
           <h4>Common Strains:</h4>
           <ul id="terpinolene-strains">
-            <li>Dutch Treat</li>
-            <li>Berry White</li>
-            <li>Apple Fritter</li>
+            <a href="https://www.leafly.com/strains/dutch-treat" target="_blank">
+              <li>Dutch Treat</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/dutch-treat" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\terpinolene_assets\dutch_treat.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/berry-white" target="_blank">
+              <li>Berry White</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/berry-white" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\terpinolene_assets\berry_white.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/apple-fritter" target="_blank">
+              <li>Apple Fritter</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/apple-fritter" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\terpinolene_assets\apple_fritter.avif"/>
+            </a>
           </ul>
         </article>
 
@@ -512,9 +648,26 @@
           </ul>
           <h4>Common Strains:</h4>
           <ul id="ocimene-strains">
-            <li>Mint Chocolate Chip</li>
-            <li>Gelato</li>
-            <li>Sunset Sherbet</li>
+            <a href="https://www.leafly.com/strains/mint-chocolate-chip" target="_blank">
+              <li>Mint Chocolate Chip</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/mint-chocolate-chip" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\ocimene_assets\mint_chocolate_chip.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/gelato" target="_blank">
+              <li>Gelato</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/gelato" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\ocimene_assets\gelato.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/sunset-sherbert" target="_blank">
+              <li>Sunset Sherbet</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/sunset-sherbert" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\ocimene_assets\sunset_sherbert.avif"/>
+            </a>
           </ul>
         </article>
 
@@ -541,9 +694,26 @@
           </ul>
           <h4>Common Strains:</h4>
           <ul id="eucalyptol-strains">
-            <li>Haze</li>
-            <li>Trainwreck</li>
-            <li>Green Crack</li>
+            <a href="https://www.leafly.com/strains/haze" target="_blank">
+              <li>Haze</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/haze" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\eucalyptol_assets\haze.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/trainwreck" target="_blank">
+              <li>Trainwreck</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/trainwreck" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\eucalyptol_assets\trainwreck.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/green-crack" target="_blank">
+              <li>Green Crack</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/green-crack" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\eucalyptol_assets\green_crack.avif"/>
+            </a>
           </ul>
         </article>
 
@@ -570,9 +740,26 @@
           </ul>
           <h4>Common Strains:</h4>
           <ul id="nerolidol-strains">
-            <li>Purple Punch</li>
-            <li>Amnesia Haze</li>
-            <li>Cherry Pie</li>
+            <a href="https://www.leafly.com/strains/purple-punch" target="_blank">
+              <li>Purple Punch</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/purple-punch" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\nerolidol_assets\purple_punch.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/amnesia-haze" target="_blank">
+              <li>Amnesia Haze</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/amnesia-haze" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\nerolidol_assets\amnesia_haze.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/cherry-pie" target="_blank">
+              <li>Cherry Pie</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/cherry-pie" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\nerolidol_assets\cherry_pie.avif"/>
+            </a>
           </ul>
         </article>
 
@@ -599,9 +786,26 @@
           </ul>
           <h4>Common Strains:</h4>
           <ul id="borneol-strains">
-            <li>Master Kush</li>
-            <li>Bubba Kush</li>
-            <li>Northern Lights</li>
+            <a href="https://www.leafly.com/strains/master-kush" target="_blank">
+              <li>Master Kush</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/master-kush" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\borneol_assets\master_kush.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/bubba-kush" target="_blank">
+              <li>Bubba Kush</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/bubba-kush" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\borneol_assets\bubba_kush.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/northern-lights" target="_blank">
+              <li>Northern Lights</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/northern-lights" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\borneol_assets\northern_lights.avif"/>
+            </a>
           </ul>
         </article>
 
@@ -628,9 +832,26 @@
           </ul>
           <h4>Common Strains:</h4>
           <ul id="camphene-strains">
-            <li>Pine Tar Kush</li>
-            <li>Afghan Kush</li>
-            <li>Sensi Star</li>
+            <a href="https://www.leafly.com/strains/pine-tar-kush" target="_blank">
+              <li>Pine Tar</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/pine-tar-kush" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\camphene_assets\pine_tar.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/afghan-kush" target="_blank">
+              <li>Afghan Kush</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/afghan-kush" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\camphene_assets\afghan_kush.avif"/>
+            </a>
+
+            <a href="https://www.leafly.com/strains/sensi-star" target="_blank">
+              <li>Sensi Star</li>
+            </a>  
+            <a href="https://www.leafly.com/strains/sensi-star" target="_blank">
+              <img src="@\assets\strain_guide_assets\turpene_assets\camphene_assets\sensi_star.avif"/>
+            </a>
           </ul>
         </article>
 
