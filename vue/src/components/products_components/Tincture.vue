@@ -26,6 +26,10 @@
             </ul>
         </section>
 
+        <aside id="photo">
+            <img src="@\assets\products_assets\tincture.jpg"/>
+        </aside>
+
     </body>
 
 </template>
@@ -52,5 +56,10 @@ ul {
 
 li {
     padding: .15vw;
+}
+
+img {
+    width: 40rem;
+    border: .2rem black solid;
 }
 </style>

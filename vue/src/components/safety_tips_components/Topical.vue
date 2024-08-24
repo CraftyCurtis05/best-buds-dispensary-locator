@@ -113,8 +113,12 @@
                     <li>Psychoactive Effects:</li>
                     <span>Be aware that some topicals may contain THC, which might cause psychoactive effects if absorbed into the bloodstream, though this is rare.</span>
                 </ul>
-            </ol>    
-        </section>    
+            </ol>
+        </section>
+
+        <aside id="photo">
+            <img src="@\assets\safety_assets\topical_tips.jpg"/>
+        </aside>
 
     </body>
     
@@ -127,5 +131,8 @@ export default {
 </script>
 
 <style scoped>
-
+img {
+    width: 40rem;
+    border: .2rem black solid;
+}
 </style>

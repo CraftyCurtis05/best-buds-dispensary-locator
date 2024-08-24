@@ -87,9 +87,12 @@
                     <li>Impairment:</li>
                     <span>Although CBD is generally non-psychoactive, it’s best to avoid driving or using heavy machinery until you know how it affects you.</span>
                 </ul>
-            </ol>
-            
+            </ol>  
         </section>
+
+        <aside id="photo">
+            <img src="@\assets\safety_assets\cbd_tips.jpg"/>
+        </aside>
 
     </body>
 
@@ -102,5 +105,8 @@ export default {
 </script>
 
 <style scoped>
-
+img {
+    width: 40rem;
+    border: .2rem black solid;
+}
 </style>

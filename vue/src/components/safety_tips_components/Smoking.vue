@@ -136,6 +136,10 @@
             </ol>
         </section>
 
+        <aside id="photo">
+            <img src="@\assets\safety_assets\smoking_tips.jpg"/>
+        </aside>
+
     </body>
     
 </template>
@@ -147,5 +151,8 @@ export default {
 </script>
 
 <style scoped>
-
+img {
+    width: 40rem;
+    border: .2rem black solid;
+}
 </style>
