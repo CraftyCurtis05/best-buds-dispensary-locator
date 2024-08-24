@@ -7,7 +7,7 @@
   <!-- Display Page Body -->
   <body id="register-body">
 
-    <!-- Display Register Main Content -->
+    <!-- Display Main Content -->
     <main id="register-main">
 
       <!-- Display Logo -->

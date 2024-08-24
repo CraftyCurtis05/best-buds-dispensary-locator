@@ -7,7 +7,7 @@
   <!-- Display Page Body -->
   <body id="login-body">
 
-    <!-- Display Login Main Content -->
+    <!-- Display Main Content -->
     <main id="login-main">
 
       <!-- Display Logo -->

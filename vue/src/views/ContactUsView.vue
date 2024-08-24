@@ -12,16 +12,16 @@
   <!-- Display Page Body -->
   <body id="contact-us-body">
 
-    <!-- Display Contact Us Main Content -->
+    <!-- Display Main Content -->
     <main id="contact-us-main">
 
       <!-- Display Page Title -->
       <h1>Contact Us</h1>
 
-        <!-- Display Page Summary -->
-        <p>***CONTACT US SUMMARY***</p>
+      <!-- Display Page Summary -->
+      <p>***CONTACT US SUMMARY***</p>
 
-      <!-- Display About Us Information -->
+      <!-- Display Contact Us Information -->
       <section id="contact-us">
           <h2>Using the form below</h2>
 
@@ -110,7 +110,11 @@ import Footer from '@/components/Footer.vue';
 
 export default {
     name: "ContactUs",
-    components: { Header, QuoteComponent, Footer },
+    components: { 
+      Header, 
+      QuoteComponent, 
+      Footer 
+    },
     data() {
     return {
       user_name: "",

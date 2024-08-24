@@ -12,7 +12,7 @@
     <!-- Display Page Body -->
     <body id="profile-body">
 
-        <!-- Display Profile Information -->
+        <!-- Display Main Content -->
         <main id="profile-main">
 
             <!-- Display Page Title -->
@@ -60,8 +60,14 @@ import Footer from '@/components/Footer.vue';
 
 export default {
     name: "Profile",
-    components: { Header, ProfilePictureComponent, FavoritesComponent, ProfileInfoComponent, QuoteComponent, Footer },
-
+    components: { 
+        Header, 
+        ProfilePictureComponent, 
+        FavoritesComponent, 
+        ProfileInfoComponent, 
+        QuoteComponent, 
+        Footer 
+    },
     data() {
         return {
             profilePictureSrc: profilePictureSrc,

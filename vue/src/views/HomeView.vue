@@ -3,8 +3,6 @@
 
   <!-- Browser Tab Title -->
   <head>
-    <!-- <link rel="icon" type="image/png" href="@/assets/logo_assets/best_buds_logo_image.png" sizes="16x16"> -->
-    <link rel="icon" type="image/ico" href="logo_icon.ico"/>
     <title>Home | Best Buds</title>
   </head>
 
@@ -16,7 +14,7 @@
   <!-- Display Page Body -->
   <body id="home-body">
 
-    <!-- Display Home Main Content -->
+    <!-- Display Main Content -->
     <main id="home-main">
 
       <!-- Display Page Title -->
@@ -58,8 +56,11 @@ import Footer from '@/components/Footer.vue';
 
 export default {
   name: "Home",
-  components: { Header, QuoteComponent, Footer }, // HomeFeaturedComponent, <<<<<<<<<<<< ACTIVELY WORKING ON >>>>>>>>>>>>>>
-
+  components: { 
+    Header, 
+    QuoteComponent, 
+    Footer 
+  }, // HomeFeaturedComponent, <<<<<<<<<<<< ACTIVELY WORKING ON >>>>>>>>>>>>>>
   methods: {
     
   }

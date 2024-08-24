@@ -12,6 +12,7 @@
   <!-- Display Page Body -->
   <body id="articles-body">
 
+    <!-- Display Main Content -->
     <main id="articles-main">
 
       <!-- Display Page Title -->
@@ -66,7 +67,14 @@ import Footer from '@/components/Footer.vue';
 
 export default {
   name: "Test",
-  components: { Header, SearchArticlesComponent, StrainGuideVisit, ArticlesVisit, QuoteComponent, Footer }
+  components: { 
+    Header, 
+    SearchArticlesComponent, 
+    StrainGuideVisit, 
+    ArticlesVisit, 
+    QuoteComponent, 
+    Footer 
+  }
 };
 </script>
 
@@ -90,7 +98,7 @@ export default {
 h1,
 h2,
 p,
-#strain-guide,
+#strain-guide-visit,
 #articles-visit {
     text-align: center;
 }
@@ -108,13 +116,7 @@ p {
     margin: auto 8vw;
 }
 
-h4,
-h5 {
-    font-size: 1rem;
-    margin: .1vw;
-}
-
-#strain-guide,
+#strain-guide-visit,
 #articles-visit {
     padding: 1vw;
 }

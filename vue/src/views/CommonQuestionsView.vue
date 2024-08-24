@@ -105,12 +105,12 @@
 
         </main>
 
-        <!-- Display Strain Guide Link -->
+        <!-- Display Strain Guide Visit Component -->
         <section id="strain-guide-visit">
             <StrainGuideVisit/>
         </section>
  
-        <!-- Display Want More Info with Articles Link -->
+        <!-- Display Articles Visit Component -->
         <section id="articles-visit">
             <ArticlesVisit/>
         </section>
@@ -138,7 +138,13 @@ import Footer from '@/components/Footer.vue';
 
 export default {
     name: "CommonQuestions",
-    components: { Header, StrainGuideVisit, ArticlesVisit, QuoteComponent, Footer }
+    components: { 
+        Header, 
+        StrainGuideVisit, 
+        ArticlesVisit, 
+        QuoteComponent, 
+        Footer 
+    }
 };
 </script>
 
@@ -162,7 +168,7 @@ export default {
 h1,
 h2,
 p,
-#strain-guide,
+#strain-guide-visit,
 #articles-visit {
     text-align: center;
 }

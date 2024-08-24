@@ -12,7 +12,7 @@
   <!-- Display Page Body -->
   <body id="about-us-body">
 
-    <!-- Display About Us Main Content -->
+    <!-- Display Main Content -->
     <main id="about-us-main">
 
       <!-- Display Page Title -->

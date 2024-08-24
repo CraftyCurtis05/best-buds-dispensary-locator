@@ -12,14 +12,14 @@
     <!-- Display Page Body -->
     <body id="safety-tips-body">
 
-        <!-- Display Safety Tips Main Content -->
+        <!-- Display Main Content -->
         <main id="safety-tips-main">
 
             <!-- Display Page Title -->
             <h1>Tips for Safer Cannabis Consumption, Smoking and Topicals</h1>
 
-                <!-- Display Page Summary -->
-                 <p>***PAGE SUMMARY***</p>
+            <!-- Display Page Summary -->
+            <p>***PAGE SUMMARY***</p>
 
             <!-- Display THC Consumption Tips Information -->
             <section id="thc-consumption">
@@ -244,7 +244,13 @@ import Footer from '@/components/Footer.vue';
 
 export default {
     name: "SafetyTips",
-    components: { Header, StrainGuideVisit, ArticlesVisit, QuoteComponent, Footer }
+    components: { 
+        Header, 
+        StrainGuideVisit, 
+        ArticlesVisit, 
+        QuoteComponent, 
+        Footer 
+    }
 };
 </script>
 
@@ -269,7 +275,7 @@ h1,
 h2,
 p,
 mark,
-#strain-guide,
+#strain-guide-visit,
 #articles-visit {
     text-align: center;
 }
@@ -299,17 +305,13 @@ li {
     padding: .15vw;
 }
 
-#smoking-list h4 {
+h4 {
+    font-size: 1rem;
+    margin: .1vw;
     padding-top: 1vw;
 }
 
-h4,
-h5 {
-    font-size: 1rem;
-    margin: .1vw;
-}
-
-#strain-guide,
+#strain-guide-visit,
 #articles-visit {
     padding: 1vw;
 }

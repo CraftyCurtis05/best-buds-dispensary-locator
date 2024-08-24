@@ -12,14 +12,14 @@
     <!-- Display Page Body -->
     <body id="too-much-body">
 
-        <!-- Display Too Much Cannabis Main Content -->
+        <!-- Display Main Content -->
         <main id="too-much-main">
 
             <!-- Display Page Title -->
             <h1>What To Expect If You've Had Too Much Cannabis</h1>
 
-                <!-- Display Page Summary -->
-                <p>***PAGE SUMMARY***</p>
+            <!-- Display Page Summary -->
+            <p>***PAGE SUMMARY***</p>
 
             <!-- Display Too Much Symptoms Information -->
             <section id="symptoms">
@@ -207,7 +207,13 @@ import Footer from '@/components/Footer.vue';
 
 export default {
     name: "TooMuchCannabis",
-    components: { Header, StrainGuideVisit, ArticlesVisit, QuoteComponent, Footer }
+    components: { 
+        Header, 
+        StrainGuideVisit, 
+        ArticlesVisit, 
+        QuoteComponent, 
+        Footer 
+    }
 };
 </script>
 
@@ -231,7 +237,7 @@ export default {
 h1,
 h2,
 p,
-#strain-guide,
+#strain-guide-visit,
 #articles-visit {
     text-align: center;
 }
@@ -262,13 +268,7 @@ li {
     padding: .15vw;
 }
 
-h4,
-h5 {
-    font-size: 1rem;
-    margin: .1vw;
-}
-
-#strain-guide,
+#strain-guide-visit,
 #articles-visit {
     padding: 1vw;
 }

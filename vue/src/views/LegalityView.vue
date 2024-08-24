@@ -12,14 +12,14 @@
     <!-- Display Page Body -->
     <body id="legality-body">
 
-        <!-- Display Legality Main Content -->
+        <!-- Display Main Content -->
         <main id="legality-main">
 
             <!-- Display Page Title -->
             <h1>Quick Guide to the Laws in Each State</h1>
 
-                <!-- Display Page Summary -->
-                <p>States like California and Colorado are rolling out the green carpet for adults 21+, with legal shops and chill vibes. Many states have medical programs where patients get the green light with a doctor's thumbs-up. Some states have turned down the legal heat, making minor offenses more about a fine than a felony. States are dancing to their own beat, while federal rules are like the old-school DJ trying to keep things under control. In short, it’s a legal jamboree with states setting their own rules while federal law lingers in the background!</p>
+            <!-- Display Page Summary -->
+            <p>States like California and Colorado are rolling out the green carpet for adults 21+, with legal shops and chill vibes. Many states have medical programs where patients get the green light with a doctor's thumbs-up. Some states have turned down the legal heat, making minor offenses more about a fine than a felony. States are dancing to their own beat, while federal rules are like the old-school DJ trying to keep things under control. In short, it’s a legal jamboree with states setting their own rules while federal law lingers in the background!</p>
 
             <!-- Display Legal States Information -->
             <section id="legal-states">
@@ -265,8 +265,14 @@ import QuoteComponent from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
-  name: "Legality",
-  components: { Header, StrainGuideVisit, ArticlesVisit, QuoteComponent, Footer }
+    name: "Legality",
+    components: { 
+        Header, 
+        StrainGuideVisit, 
+        ArticlesVisit, 
+        QuoteComponent, 
+        Footer 
+    }
 };
 </script>
 
@@ -290,7 +296,7 @@ export default {
 h1,
 h2,
 p,
-#strain-guide,
+#strain-guide-visit,
 #articles-visit {
     text-align: center;
 }
@@ -327,7 +333,7 @@ h5 {
     margin: .1vw;
 }
 
-#strain-guide,
+#strain-guide-visit,
 #articles-visit {
     padding: 1vw;
 }

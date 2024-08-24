@@ -12,14 +12,14 @@
   <!-- Display Page Body -->
   <body id="shop-body">
 
-    <!-- Display Shop Main Content -->
+    <!-- Display Main Content -->
     <main id="shop-main">
 
       <!-- Display Page Title -->
       <h1>Shop our Favorite Products</h1>
 
-        <!-- Display Page Summary -->
-        <p>Shopping for cannabis products? It’s a fun adventure! Browse through a variety of strains, from energizing sativas to relaxing indicas. Check out edibles, vapes, and concentrates to match your style. Look for quality and lab-tested products to ensure a great experience. Enjoy discovering your perfect pick!</p>
+      <!-- Display Page Summary -->
+      <p>Shopping for cannabis products? It’s a fun adventure! Browse through a variety of strains, from energizing sativas to relaxing indicas. Check out edibles, vapes, and concentrates to match your style. Look for quality and lab-tested products to ensure a great experience. Enjoy discovering your perfect pick!</p>
 
       <!-- Display Shop Information -->
       <section id="shop">
@@ -62,7 +62,13 @@ import Footer from '@/components/Footer.vue';
 
 export default {
   name: "Shop",
-  components: { Header, StrainGuideVisit, ArticlesVisit, QuoteComponent, Footer }
+  components: { 
+    Header, 
+    StrainGuideVisit, 
+    ArticlesVisit, 
+    QuoteComponent, 
+    Footer 
+  }
 };
 </script>
 
@@ -86,7 +92,7 @@ export default {
 h1,
 h2,
 p,
-#strain-guide,
+#strain-guide-visit,
 #articles-visit {
   text-align: center;
 }
@@ -109,13 +115,7 @@ p {
     margin: auto 8vw;
 }
 
-h4,
-h5 {
-    font-size: 1rem;
-    margin: .1vw;
-}
-
-#strain-guide,
+#strain-guide-visit,
 #articles-visit {
     padding: 1vw;
 }

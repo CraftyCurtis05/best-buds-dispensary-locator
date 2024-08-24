@@ -14,33 +14,33 @@
   <!-- Display Page Body -->
   <body id="search-body">
  
-    <!-- Display Search Main Content -->
+    <!-- Display Main Content -->
     <main id="search-main">
 
       <!-- Display Page Title -->
       <h1>Best Buds Dispensary Locator</h1>
 
-        <!-- Display Page Summary -->
-        <p>Need to find a dispensary? Use our cannabis locator to easily spot nearby shops. Just enter your location, and voilà! You’ll see the best places to get your favorite strains and products. It’s a quick and fun way to get your green fix!</p>
+      <!-- Display Page Summary -->
+      <p>Need to find a dispensary? Use our cannabis locator to easily spot nearby shops. Just enter your location, and voilà! You’ll see the best places to get your favorite strains and products. It’s a quick and fun way to get your green fix!</p>
 
       <!-- Display Search Information -->
       <section id="search">
         <h2>Search for dispensaries near you</h2>
 
         <!-- Display Search Bar -->
-        <div id="search-bar">
+        <article id="search-bar">
           <SearchBarComponent/>
-        </div>
+        </article>
 
         <!-- Display Search Results List -->
-        <div id="search-list">
+        <article id="search-list">
           <SearchListComponent v-if="this.$store.state.locationID"/>
-        </div>
+        </article>
 
         <!-- Display Search Map -->
-        <div id="search-map">
+        <article id="search-map">
           <SearchMapComponent/>
-        </div>
+        </article>
       </section>
 
     </main> 
@@ -81,7 +81,16 @@ import Footer from '@/components/Footer.vue';
    
 export default {
   name: "Search",
-  components: { Header, SearchBarComponent, SearchListComponent, SearchMapComponent, StrainGuideVisit, ArticlesVisit, QuoteComponent, Footer },
+  components: { 
+    Header, 
+    SearchBarComponent, 
+    SearchListComponent, 
+    SearchMapComponent, 
+    StrainGuideVisit, 
+    ArticlesVisit, 
+    QuoteComponent, 
+    Footer 
+  }
 };
 </script>
   
@@ -105,7 +114,7 @@ export default {
 h1,
 h2,
 p,
-#strain-guide,
+#strain-guide-visit,
 #articles-visit {
   text-align: center;
 }
@@ -141,13 +150,7 @@ p {
   margin-top: .9vw;
 }
 
-h4,
-h5 {
-    font-size: 1rem;
-    margin: .1vw;
-}
-
-#strain-guide,
+#strain-guide-visit,
 #articles-visit {
     padding: 1vw;
 }

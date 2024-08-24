@@ -12,7 +12,7 @@
   <!-- Display Page Body -->
   <body id="strain-guide-body">
 
-    <!-- Display Strain Guide Main Content -->
+    <!-- Display Main Content -->
     <main id="strain-guide-main">
 
       <!-- Display Page Title -->
@@ -62,7 +62,14 @@ import Footer from '@/components/Footer.vue';
 
 export default {
   name: "StrainGuide",
-  components: { Header, Strain101Component, Turpene101Component, ArticlesVisit, QuoteComponent, Footer }
+  components: { 
+    Header, 
+    Strain101Component, 
+    Turpene101Component, 
+    ArticlesVisit, 
+    QuoteComponent, 
+    Footer 
+  }
 };
 </script>
 

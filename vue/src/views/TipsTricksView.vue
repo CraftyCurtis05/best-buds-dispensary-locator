@@ -12,14 +12,14 @@
     <!-- Display Page Body -->
     <body id="tips-tricks-body">
 
-        <!-- Display Tips and Tricks Main Content -->
+        <!-- Display Main Content -->
         <main id="tips-tricks-main">
 
             <!-- Display Page Title -->
             <h1>Tips & Tricks</h1>
 
-                <!-- Display Page Summary -->
-                <p>Cannabis confusion got you burnt out? You're not alone! With so many strains, products, and effects, it can feel like a wild, green maze. But don't stress—it's all part of the fun! Think of it as a choose-your-own-adventure. Whether you're giggling over strain names or puzzled by potency, embrace the journey. The key is to explore, experiment, and enjoy the ride!</p>
+            <!-- Display Page Summary -->
+            <p>Cannabis confusion got you burnt out? You're not alone! With so many strains, products, and effects, it can feel like a wild, green maze. But don't stress—it's all part of the fun! Think of it as a choose-your-own-adventure. Whether you're giggling over strain names or puzzled by potency, embrace the journey. The key is to explore, experiment, and enjoy the ride!</p>
 
             <!-- Display Tips and Tricks Information -->
             <section id="tips-tricks">
@@ -179,19 +179,6 @@ p {
 
 h3 {
     font-size: 1.1rem;
-}
-
-article {
-    padding: 1vw;
-}
-
-h4 {
-    margin-bottom: .5vw;
-}
-
-h5 {
-    font-size: 1rem;
-    margin: .1vw;
 }
 
 #articles-visit {

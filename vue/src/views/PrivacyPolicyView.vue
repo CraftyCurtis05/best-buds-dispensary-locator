@@ -12,7 +12,7 @@
   <!-- Display Page Body -->
   <body id="privacy-policy-body">
 
-    <!-- Display Privacy Policy Main Content -->
+    <!-- Display Main Content -->
     <main id="privacy-policy-main">
 
       <!-- Display Page Title -->
@@ -48,7 +48,11 @@ import Footer from '@/components/Footer.vue';
 
 export default {
   name: "PrivacyPolicy",
-  components: { Header, QuoteComponent, Footer }
+  components: { 
+    Header, 
+    QuoteComponent, 
+    Footer 
+  }
 };
 </script>
 
