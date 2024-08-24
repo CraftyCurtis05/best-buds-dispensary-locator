@@ -23,32 +23,32 @@
 
             <!-- Display Edibles Component -->
             <section id="edible">
-                <EdibleComponent/>
+                <Edible/>
             </section>
 
             <!-- Display Flower Component -->
             <section id="flower">
-                <FlowerComponent/>
+                <Flower/>
             </section>
 
             <!-- Display Oil Component -->
             <section id="oil">
-                <OilComponent/>
+                <Oil/>
             </section>
 
             <!-- Display Tincture Component -->
             <section id="tincture">
-                <TinctureComponent/>
+                <Tincture/>
             </section>
 
             <!-- Display Topical Component -->
             <section id="topical">
-                <TopicalComponent/>
+                <Topical/>
             </section>
 
             <!-- Display Wax Component -->
             <section id="wax">
-                <WaxComponent/>
+                <Wax/>
             </section>
 
         </main>
@@ -79,12 +79,12 @@
 
 <script>
 import Header from '@/components/Header.vue';
-import EdibleComponent from '@/components/products_components/EdibleComponent.vue';
-import FlowerComponent from '@/components/products_components/FlowerComponent.vue';
-import OilComponent from '@/components/products_components/OilComponent.vue';
-import TinctureComponent from '@/components/products_components/TinctureComponent.vue';
-import TopicalComponent from '@/components/products_components/TopicalComponent.vue';
-import WaxComponent from '@/components/products_components/WaxComponent.vue';
+import Edible from '@/components/products_components/Edible.vue';
+import Flower from '@/components/products_components/Flower.vue';
+import Oil from '@/components/products_components/Oil.vue';
+import Tincture from '@/components/products_components/Tincture.vue';
+import Topical from '@/components/products_components/Topical.vue';
+import Wax from '@/components/products_components/Wax.vue';
 import StrainGuideVisit from '@/components/strain_guide_components/StrainGuideVisit.vue';
 import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
 import QuoteComponent from '@/components/Quote.vue';
@@ -94,12 +94,12 @@ export default {
     name: "CannabisProducts",
     components: { 
         Header, 
-        EdibleComponent, 
-        FlowerComponent, 
-        OilComponent, 
-        TinctureComponent, 
-        TopicalComponent, 
-        WaxComponent, 
+        Edible, 
+        Flower, 
+        Oil, 
+        Tincture, 
+        Topical, 
+        Wax, 
         StrainGuideVisit, 
         ArticlesVisit, 
         QuoteComponent, 
