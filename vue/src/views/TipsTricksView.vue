@@ -77,10 +77,7 @@
 
         <!-- Display Want More Info with Articles Link -->
         <section id="articles-visit">
-            <h5>Looking for more information?</h5>
-            <summary id="articles-link">
-                <router-link v-bind:to="{ name:'articles' }">Visit our articles page</router-link>
-            </summary>
+            <ArticlesVisit/>
         </section>
 
         <!-- Display Quote Component -->
@@ -99,12 +96,13 @@
 
 <script>
 import Header from '@/components/Header.vue';
+import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
 import QuoteComponent from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
     name: "TipsTricks",
-    components: { Header, QuoteComponent, Footer }
+    components: { Header, ArticlesVisit, QuoteComponent, Footer }
 };
 </script>
 

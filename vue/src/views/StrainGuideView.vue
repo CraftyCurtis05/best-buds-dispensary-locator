@@ -35,16 +35,13 @@
 
     <!-- Display Want More Info with Articles Link -->
     <section id="articles-visit">
-        <h5>Looking for more information?</h5>
-        <summary id="articles-link">
-            <router-link v-bind:to="{ name:'articles' }">Visit our articles page</router-link>
-        </summary>
+      <ArticlesVisit/>
     </section>
 
     <!-- Display Quote Component -->
-    <div id="quote">
+    <section id="quote">
       <QuoteComponent/>
-    </div>  
+    </section>  
 
   </body>
 
@@ -59,12 +56,13 @@
 import Header from '@/components/Header.vue';
 import Strain101Component from '@/components/strain_guide_components/Strain101Component.vue';
 import Turpene101Component from '@/components/strain_guide_components/Turpene101Component.vue';
+import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
 import QuoteComponent from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
   name: "StrainGuide",
-  components: { Header, Strain101Component, Turpene101Component, QuoteComponent, Footer }
+  components: { Header, Strain101Component, Turpene101Component, ArticlesVisit, QuoteComponent, Footer }
 };
 </script>
 
@@ -97,14 +95,5 @@ h1 {
 
 p {
   margin: auto 8vw;
-}
-
-h5 {
-  font-size: 1rem;
-  margin: .1vw;
-}
-
-#articles-visit {
-  padding: 1vw;
 }
 </style>
