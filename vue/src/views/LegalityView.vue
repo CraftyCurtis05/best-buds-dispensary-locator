@@ -50,8 +50,8 @@
                     <h3>Delaware:</h3>
                     <li>People 21 and older can possess up to up to 1 ounce (28 grams) of leaf marijuana, 12 grams of concentrated marijuana, or marijuana products containing up to 750 milligrams of the psychoactive compound THC. Possession of more than an ounce of marijuana and public consumption would remain misdemeanors.</li>
 
-                    <h3>Illinois:</h3>
-                    <li>Residents over the age of 21 may purchase and possess up to 1 ounce of marijuana at any time. Non-residents may have 15 grams. However, consuming it in public places remains illegal.</li>
+                    <!-- <h3>Illinois:</h3>
+                    <li>Residents over the age of 21 may purchase and possess up to 1 ounce of marijuana at any time. Non-residents may have 15 grams. However, consuming it in public places remains illegal.</li> -->
 
                     <h3>Maine:</h3>
                     <li>In Maine, anyone over 21 can possess up to 2.5 ounces (70.9 grams) of marijuana. An adult can also cultivate up to three flowering marijuana plants and 12 immature plants.</li>
