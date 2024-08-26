@@ -35,7 +35,7 @@
                     <span>Helps reduce feelings of queasiness and settle the stomach.</span>
                 </ul>  
                 <h3>Common Strains:</h3>
-                <ul id="indica-strains">
+                <ul id="strains">
                     <a href="https://www.leafly.com/strains/granddaddy-purple" target="_blank"><li>Granddaddy Purple</li></a>
                     <a href="https://www.leafly.com/strains/granddaddy-purple" target="_blank"><img src="@\assets\strain_guide_assets\strain_assets\indica\granddaddy-purple.avif"/></a>
 
@@ -82,7 +82,7 @@
                     <span>Stimulates hunger, useful for those with appetite loss.</span>
                 </ul>
                 <h3>Common Strains:</h3>
-                <ul id="sativa-strains">
+                <ul id="strains">
                     <a href="https://www.leafly.com/strains/durban-poison" target="_blank"><li>Durban Poison</li></a>
                     <a href="https://www.leafly.com/strains/durban-poison" target="_blank"><img src="@\assets\strain_guide_assets\strain_assets\sativa\durban_poison.avif"/></a>
                     
@@ -129,7 +129,7 @@
                     <span>Triggers the munchies, making it helpful for those with appetite issues.</span>
                 </ul>
                 <h3>Common Strains</h3>
-                <ul id="hybrid-strains">
+                <ul id="strains">
                     <a href="https://www.leafly.com/strains/original-glue" target="_blank"><li>CG4</li></a>
                     <a href="https://www.leafly.com/strains/original-glue" target="_blank"><img src="@\assets\strain_guide_assets\strain_assets\hybrid\cg4.avif"/></a>
 
@@ -196,5 +196,10 @@ img {
 
 img:hover {
     cursor: url('best_buds_logo_icon.ico'), pointer;
+}
+
+#strains {
+    display: flex;
+    flex-direction: row;
 }
 </style>

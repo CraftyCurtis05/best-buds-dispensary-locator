@@ -553,6 +553,18 @@
                     </g>
                 </svg>
             </div>
+
+            <div id="legend">
+                <div id="legal">
+                    <h4>Legal State</h4>
+                </div>
+                <div id="medical">
+                    <h4>Medical State</h4>
+                </div>
+                <div id="illegal">
+                    <h4>Illegal State</h4>
+                </div>
+            </div>
         </section>
 
     </body>
@@ -610,11 +622,38 @@ svg {
     fill: #367409;
 }
 
+.medical:hover {
+    fill: #2ccde2;
+}
+
 .illegal:hover {
     fill: #e31b1b;
 }
 
-.medical:hover {
-    fill: #2ccde2;
+#legend {
+    display: flex;
+    justify-content: center;
+}
+
+#legal,
+#medical,
+#illegal {
+    font-size: 1.2rem;
+    width: 8rem;
+    border: .1rem black solid;
+    border-radius: .5rem;
+    margin-inline: 1vw;
+}
+
+#legal {
+    background-color: #367409;
+}
+
+#medical {
+    background-color: #2ccde2;
+}
+
+#illegal {
+    background-color: #e31b1b;
 }
 </style>

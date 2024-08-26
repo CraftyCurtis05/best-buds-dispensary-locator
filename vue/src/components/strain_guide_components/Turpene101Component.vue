@@ -29,7 +29,7 @@
                     <span>Provides calming effects, contributing to an overall sense of relaxation and stress relief.</span>
                 </ul>
                 <h3>Common Strains:</h3>
-                <ul id="humulene-strains">
+                <ul id="strains">
                     <a href="https://www.leafly.com/strains/gsc" target="_blank"><li>GSC(Girl Scout Cookies)</li></a>
                     <a href="https://www.leafly.com/strains/gsc" target="_blank"><img src="@\assets\strain_guide_assets\turpene_assets\humulene_assets\gsc.avif"/></a>
 
@@ -65,7 +65,7 @@
                     <span>Helps fight off bacteria and fungi, offering potential antimicrobial benefits.</span>
                 </ul>
                 <h3>Common Strains:</h3>
-                <ul id="limonene-strains">
+                <ul id="strains">
                     <a href="https://www.leafly.com/strains/lemon-skunk" target="_blank"><li>Lemon Skunk</li></a>  
                     <a href="https://www.leafly.com/strains/lemon-skunk" target="_blank"><img src="@\assets\strain_guide_assets\turpene_assets\limonene_assets\lemon_skunk.avif"/></a>
 
@@ -101,7 +101,7 @@
                     <span>Can trigger hunger, often leading to the munchies.</span>
                 </ul>
                 <h3>Common Strains:</h3>
-                <ul id="myrcene-strains">
+                <ul id="strains">
                     <a href="https://www.leafly.com/strains/og-kush" target="_blank"><li>OG Kush</li></a>  
                     <a href="https://www.leafly.com/strains/og-kush" target="_blank"><img src="@\assets\strain_guide_assets\turpene_assets\myrcene_assets\og_kush.avif"/></a>
 
@@ -137,7 +137,7 @@
                     <span>Uniquely binds to CB2 receptors in the endocannabinoid system, contributing to its anti-inflammatory and pain-relieving effects.</span>
                 </ul>
                 <h3>Common Strains:</h3>
-                <ul id="caryophyllene-strains">
+                <ul id="strains">
                     <a href="https://www.leafly.com/strains/gary-payton" target="_blank"><li>Gary Payton</li></a>  
                     <a href="https://www.leafly.com/strains/gary-payton" target="_blank"><img src="@\assets\strain_guide_assets\turpene_assets\caryophyllene_assets\gary_payton.avif"/></a>
 
@@ -173,7 +173,7 @@
                     <span>May support skin health by soothing irritations and reducing inflammation.</span>
                 </ul>>
                 <h3>Common Strains:</h3>
-                <ul id="linalool-strains">
+                <ul id="strains">
                     <a href="https://www.leafly.com/strains/lavender" target="_blank"><li>Lavender</li></a>  
                     <a href="https://www.leafly.com/strains/lavender" target="_blank"><img src="@\assets\strain_guide_assets\turpene_assets\linalool_assets\lavender.avif"/></a>
 
@@ -207,7 +207,7 @@
                     <span>May assist in alleviating digestive issues, such as nausea or indigestion.</span>
                 </ul>
                 <h3>Common Strains:</h3>
-                <ul id="apinene-strains">
+                <ul id="strains">
                     <a href="https://www.leafly.com/strains/jack-herer" target="_blank"><li>Jack Herer</li></a>  
                     <a href="https://www.leafly.com/strains/jack-herer" target="_blank"><img src="@\assets\strain_guide_assets\turpene_assets\apinene_assets\jack_herer.avif"/></a>
 
@@ -239,7 +239,7 @@
                     <span>May support digestive health and alleviate digestive discomfort.</span>
                 </ul>
                 <h3>Common Strains:</h3>
-                <ul id="bpinene-strains">
+                <ul id="strains">
                     <a href="https://www.leafly.com/strains/strawberry-cough" target="_blank"><li>Strawberry Cough</li></a>  
                     <a href="https://www.leafly.com/strains/strawberry-cough" target="_blank"><img src="@\assets\strain_guide_assets\turpene_assets\bpinene_assets\strawberry_cough.avif"/></a>
 
@@ -273,7 +273,7 @@
                     <span>May increase appetite, useful for individuals with reduced appetite.</span>
                 </ul>
                 <h3>Common Strains:</h3>
-                <ul id="terpinolene-strains">
+                <ul id="strains">
                     <a href="https://www.leafly.com/strains/dutch-treat" target="_blank"><li>Dutch Treat</li></a>  
                     <a href="https://www.leafly.com/strains/dutch-treat" target="_blank"><img src="@\assets\strain_guide_assets\turpene_assets\terpinolene_assets\dutch_treat.avif"/></a>
 
@@ -307,7 +307,7 @@
                     <span>Provides mild calming effects, which can help with relaxation and stress relief.</span>
                 </ul>
                 <h3>Common Strains:</h3>
-                <ul id="ocimene-strains">
+                <ul id="strains">
                     <a href="https://www.leafly.com/strains/mint-chocolate-chip" target="_blank"><li>Mint Chocolate Chip</li></a>  
                     <a href="https://www.leafly.com/strains/mint-chocolate-chip" target="_blank"><img src="@\assets\strain_guide_assets\turpene_assets\ocimene_assets\mint_chocolate_chip.avif"/></a>
 
@@ -341,7 +341,7 @@
                     <span>Can contribute to a more positive mood and overall sense of well-being.</span>
                 </ul>
                 <h3>Common Strains:</h3>
-                <ul id="eucalyptol-strains">
+                <ul id="strains">
                     <a href="https://www.leafly.com/strains/haze" target="_blank"><li>Haze</li></a>  
                     <a href="https://www.leafly.com/strains/haze" target="_blank"><img src="@\assets\strain_guide_assets\turpene_assets\eucalyptol_assets\haze.avif"/></a>
 
@@ -375,7 +375,7 @@
                     <span>Supports skin health by soothing irritations and providing antioxidant benefits.</span>
                 </ul>
                 <h3>Common Strains:</h3>
-                <ul id="nerolidol-strains">
+                <ul id="strains">
                     <a href="https://www.leafly.com/strains/purple-punch" target="_blank"><li>Purple Punch</li></a>  
                     <a href="https://www.leafly.com/strains/purple-punch" target="_blank"><img src="@\assets\strain_guide_assets\turpene_assets\nerolidol_assets\purple_punch.avif"/></a>
 
@@ -409,7 +409,7 @@
                     <span>Can help relieve symptoms of respiratory conditions like coughs and colds.</span>
                 </ul>
                 <h3>Common Strains:</h3>
-                <ul id="borneol-strains">
+                <ul id="strains">
                     <a href="https://www.leafly.com/strains/master-kush" target="_blank"><li>Master Kush</li></a>  
                     <a href="https://www.leafly.com/strains/master-kush" target="_blank"><img src="@\assets\strain_guide_assets\turpene_assets\borneol_assets\master_kush.avif"/></a>
 
@@ -443,7 +443,7 @@
                     <span>Contributes to an uplifting mood and overall sense of well-being.</span>
                 </ul>
                 <h3>Common Strains:</h3>
-                <ul id="camphene-strains">
+                <ul id="strains">
                     <a href="https://www.leafly.com/strains/pine-tar-kush" target="_blank"><li>Pine Tar</li></a>  
                     <a href="https://www.leafly.com/strains/pine-tar-kush" target="_blank"><img src="@\assets\strain_guide_assets\turpene_assets\camphene_assets\pine_tar.avif"/></a>
 
@@ -501,5 +501,10 @@ img {
 
 img:hover {
     cursor: url('best_buds_logo_icon.ico'), pointer;
+}
+
+#strains {
+    display: flex;
+    flex-direction: row;
 }
 </style>
