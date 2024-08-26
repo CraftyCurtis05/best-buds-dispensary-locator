@@ -5,7 +5,7 @@
   <title>Strain Guide | Best Buds</title>
 
   <!-- Display Header Component -->
-  <header>
+  <header id="top">
     <Header/>
   </header>
 
@@ -20,6 +20,11 @@
 
       <!-- Display Page Summary -->
       <p>Every cannabis strain has a name, a type and terpenes. While most dispensaries categorize cannabis by the type--indica, sativa or hybrid; terpenes are another great way to find the best cannabis strain for you. Below is a basic guide to strains and the most common terpenes.</p>
+
+      <!-- Display Page Jump Links -->
+      <aside id="page-jump-links">
+        <PageJumpLinks/>
+      </aside>
 
       <!-- Display Strain Guide  -->
       <section id="strain-101">
@@ -46,7 +51,7 @@
   </body>
 
   <!-- Display Footer Component -->
-  <footer>
+  <footer id="bottom">
     <Footer/>
   </footer>
 
@@ -54,6 +59,7 @@
 
 <script>
 import Header from '@/components/Header.vue';
+import PageJumpLinks from '@/components/PageJumpLinks.vue';
 import Strain101Component from '@/components/strain_guide_components/Strain101Component.vue';
 import Turpene101Component from '@/components/strain_guide_components/Turpene101Component.vue';
 import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
@@ -63,7 +69,8 @@ import Footer from '@/components/Footer.vue';
 export default {
   name: "StrainGuide",
   components: { 
-    Header, 
+    Header,
+    PageJumpLinks,
     Strain101Component, 
     Turpene101Component, 
     ArticlesVisit, 

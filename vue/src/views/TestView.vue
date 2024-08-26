@@ -5,7 +5,7 @@
   <title>Articles | Best Buds</title>
 
   <!-- Display Header Component -->
-  <header>
+  <header id="top">
     <Header/>
   </header>
 
@@ -18,8 +18,13 @@
       <!-- Display Page Title -->
       <h1>***NEEDS PAGE TITLE***</h1>
 
-        <!-- Display Page Summary -->
-        <p>***PAGE SUMMARY***</p>
+      <!-- Display Page Summary -->
+      <p>***PAGE SUMMARY***</p>
+
+      <!-- Display Page Jump Links -->
+      <aside id="page-jump-links">
+        <PageJumpLinks/>
+      </aside>
 
       <!-- Display About Us Information -->
       <section id="articles">
@@ -51,7 +56,7 @@
     
   </body>
 
-  <footer>
+  <footer id="bottom">
     <Footer/>
   </footer>
 
@@ -59,6 +64,7 @@
 
 <script>
 import Header from '@/components/Header.vue';
+import PageJumpLinks from '@/components/PageJumpLinks.vue';
 import SearchArticlesComponent from '@/components/articles_components/SearchArticles.vue';
 import StrainGuideVisit from '@/components/strain_guide_components/StrainGuideVisit.vue';
 import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
@@ -68,7 +74,8 @@ import Footer from '@/components/Footer.vue';
 export default {
   name: "Test",
   components: { 
-    Header, 
+    Header,
+    PageJumpLinks,
     SearchArticlesComponent, 
     StrainGuideVisit, 
     ArticlesVisit, 

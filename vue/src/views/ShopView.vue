@@ -5,7 +5,7 @@
   <title>Shop | Best Buds</title>
 
   <!-- Display Header Component -->
-  <header>
+  <header id="top">
     <Header/>
   </header>
 
@@ -20,6 +20,11 @@
 
       <!-- Display Page Summary -->
       <p>Shopping for cannabis products? It’s a fun adventure! Browse through a variety of strains, from energizing sativas to relaxing indicas. Check out edibles, vapes, and concentrates to match your style. Look for quality and lab-tested products to ensure a great experience. Enjoy discovering your perfect pick!</p>
+
+      <!-- Display Page Jump Links -->
+      <aside id="page-jump-links">
+        <PageJumpLinks/>
+      </aside>
 
       <!-- Display Shop Information -->
       <section id="shop">
@@ -47,7 +52,7 @@
   </body>
 
   <!-- Display Footer Component -->
-  <footer>
+  <footer id="bottom">
     <Footer/>
   </footer> 
 
@@ -55,6 +60,7 @@
 
 <script>
 import Header from '@/components/Header.vue';
+import PageJumpLinks from '@/components/PageJumpLinks.vue';
 import StrainGuideVisit from '@/components/strain_guide_components/StrainGuideVisit.vue';
 import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
 import QuoteComponent from '@/components/Quote.vue';
@@ -63,7 +69,8 @@ import Footer from '@/components/Footer.vue';
 export default {
   name: "Shop",
   components: { 
-    Header, 
+    Header,
+    PageJumpLinks,
     StrainGuideVisit, 
     ArticlesVisit, 
     QuoteComponent, 

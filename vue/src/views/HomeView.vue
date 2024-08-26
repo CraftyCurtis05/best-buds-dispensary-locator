@@ -7,7 +7,7 @@
   </head>
 
   <!-- Display Header Component -->
-  <header>
+  <header id="top">
     <Header/>
   </header>
 
@@ -19,6 +19,12 @@
 
       <!-- Display Page Title -->
       <h1>Welcome to Best Buds!</h1>
+      <p>***NEED SUMMARY***</p>
+
+      <!-- Display Page Jump Links -->
+      <aside id="page-jump-links">
+        <PageJumpLinks/>
+      </aside>
 
       <!-- Display Home Page Information -->
       <section id="home"> 
@@ -42,7 +48,7 @@
   </body>
 
   <!-- Display Footer Component -->
-  <footer>
+  <footer id="bottom">
     <Footer/>
   </footer> 
 
@@ -50,6 +56,7 @@
 
 <script>
 import Header from '@/components/Header.vue';
+import PageJumpLinks from '@/components/PageJumpLinks.vue';
 import HomeFeaturedComponent from '@/components/home_components/HomeFeatured.vue';
 import QuoteComponent from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
@@ -58,9 +65,10 @@ export default {
   name: "Home",
   components: { 
     Header,
+    PageJumpLinks,
+    HomeFeaturedComponent,
     QuoteComponent,
-    Footer,
-    HomeFeaturedComponent
+    Footer
   }
 };
 </script>

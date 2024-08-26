@@ -5,7 +5,7 @@
   <title>About Us | Best Buds</title>
 
   <!-- Display Header Component -->
-  <header>
+  <header id="top">
     <Header/>
   </header>
 
@@ -17,6 +17,11 @@
 
       <!-- Display Page Title -->
       <h1>We Are Best Buds</h1>
+
+      <!-- Display Page Jump Links -->
+      <aside id="page-jump-links">
+        <PageJumpLinks/>
+      </aside>
 
       <!-- Display About Us Information -->
       <section id="about-us">
@@ -44,7 +49,7 @@
   </body>
 
   <!-- Display Footer Component -->
-  <footer>
+  <footer id="bottom">
     <Footer/>
   </footer> 
 
@@ -52,12 +57,18 @@
 
 <script>
 import Header from '@/components/Header.vue';
+import PageJumpLinks from '@/components/PageJumpLinks.vue';
 import QuoteComponent from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
   name: "AboutUs",
-  components: { Header, QuoteComponent, Footer }
+  components: { 
+    Header,
+    PageJumpLinks,
+    QuoteComponent,
+    Footer
+  }
 };
 </script>
 

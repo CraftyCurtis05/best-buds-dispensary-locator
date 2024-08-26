@@ -5,7 +5,7 @@
   <title>Privacy Policy | Best Buds</title>
 
   <!-- Display Header Component -->
-  <header>
+  <header id="top">
     <Header/>
   </header>
 
@@ -17,6 +17,11 @@
 
       <!-- Display Page Title -->
       <h1>Privacy Policy</h1>
+
+      <!-- Display Page Jump Links -->
+      <aside id="page-jump-links">
+        <PageJumpLinks/>
+      </aside>
 
       <!-- Display Privacy Policy Information -->
       <section id="privacy-policy">
@@ -35,7 +40,7 @@
   </body>
 
   <!-- Display Footer Component -->
-  <footer>
+  <footer id="bottom">
     <Footer/>
   </footer> 
 
@@ -43,13 +48,15 @@
 
 <script>
 import Header from '@/components/Header.vue';
+import PageJumpLinks from '@/components/PageJumpLinks.vue';
 import QuoteComponent from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
   name: "PrivacyPolicy",
   components: { 
-    Header, 
+    Header,
+    PageJumpLinks,
     QuoteComponent, 
     Footer 
   }

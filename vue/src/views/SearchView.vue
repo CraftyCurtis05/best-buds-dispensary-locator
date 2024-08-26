@@ -7,7 +7,7 @@
    </head>
 
   <!-- Display Header Component -->
-  <header>
+  <header id="top">
     <Header/>
   </header>
 
@@ -22,6 +22,11 @@
 
       <!-- Display Page Summary -->
       <p>Need to find a dispensary? Use our cannabis locator to easily spot nearby shops. Just enter your location, and voilà! You’ll see the best places to get your favorite strains and products. It’s a quick and fun way to get your green fix!</p>
+
+      <!-- Display Page Jump Links -->
+      <aside id="page-jump-links">
+        <PageJumpLinks/>
+      </aside>
 
       <!-- Display Search Information -->
       <section id="search">
@@ -63,7 +68,7 @@
   </body>
 
   <!-- Display Footer Component -->
-  <footer>
+  <footer id="bottom">
     <Footer/>
   </footer> 
 
@@ -71,6 +76,7 @@
   
 <script>
 import Header from '@/components/Header.vue';
+import PageJumpLinks from '@/components/PageJumpLinks.vue';
 import SearchBarComponent from '@/components/search_components/SearchBar.vue';
 import SearchListComponent from '@/components/search_components/SearchList.vue';
 import SearchMapComponent from '@/components/search_components/SearchMap.vue';
@@ -82,7 +88,8 @@ import Footer from '@/components/Footer.vue';
 export default {
   name: "Search",
   components: { 
-    Header, 
+    Header,
+    PageJumpLinks, 
     SearchBarComponent, 
     SearchListComponent, 
     SearchMapComponent, 

@@ -5,7 +5,7 @@
     <title>Too Much? | Best Buds</title>
 
     <!-- Display Header Component -->
-    <header>
+    <header id="top">
         <Header/>
     </header>
 
@@ -20,6 +20,11 @@
 
             <!-- Display Page Summary -->
             <p>***PAGE SUMMARY***</p>
+
+            <!-- Display Page Jump Links -->
+            <aside id="page-jump-links">
+                <PageJumpLinks/>
+            </aside>
 
             <!-- Display Too Much Symptoms Information -->
             <section id="symptoms">
@@ -56,7 +61,7 @@
     </body>
 
      <!-- Display Footer Component -->
-    <footer>
+    <footer id="bottom">
         <Footer/>
     </footer> 
 
@@ -64,6 +69,7 @@
 
 <script>
 import Header from '@/components/Header.vue';
+import PageJumpLinks from '@/components/PageJumpLinks.vue';
 import Symptoms from '@/components/too_much_components/Symptoms.vue';
 import Coping from '@/components/too_much_components/Coping.vue';
 import WhatToDo from '@/components/too_much_components/WhatToDo.vue';
@@ -75,7 +81,8 @@ import Footer from '@/components/Footer.vue';
 export default {
     name: "TooMuchCannabis",
     components: { 
-        Header, 
+        Header,
+        PageJumpLinks,
         Symptoms,
         Coping,
         WhatToDo,

@@ -5,7 +5,7 @@
     <title>Questions | Best Buds</title>
 
     <!-- Display Header Component -->    
-    <header>
+    <header id="top">
         <Header/>
     </header>
 
@@ -19,54 +19,79 @@
             <h1>Commonly Asked Questions About Cannabis</h1>
 
             <!-- Display Page Summary -->
-             <p>***PAGE SUMMARY***</p>
+            <section id="page-summary">
+                <h2>🌿Got cannabis questions? No worries!🌿</h2>
+                <p>Whether you're curious about legality, how it works, or the best ways to use it, the plant’s got answers. From getting high or just chilling with CBD, to understanding health impacts and legal stuff, dive in and explore. We've got all your questions answered below, just navigate to a topic by selecting a topic below.</p>
+                <p>Stay informed, use responsibly, and enjoy the journey!</p>
+            </section>
+
+            <!-- Display Jump Links -->
+             <section id="links">
+                <div class="link"><a href="#dispensaries-qa">Dispensaries</a></div>
+                <div class="link"><a href="#cannabis-qa">Cannabis</a></div>
+                <div class="link"><a href="#cbd-qa">CBD</a></div>
+                <div class="link"><a href="#delta9-qa">Delta-9</a></div>
+                <div class="link"><a href="#flower-qa">Flower</a></div>
+                <div class="link"><a href="#wax-qa">Wax</a></div>
+                <div class="link"><a href="#oil-qa">Oil</a></div>
+                <div class="link"><a href="#tincture-qa">Tincture</a></div>
+                <div class="link"><a href="#smoking-qa">Smoking</a></div>
+                <div class="link"><a href="#vaporizing-qa">Vaporizing</a></div>
+                <div class="link"><a href="#edibles-qa">Edibles</a></div>
+                <div class="link"><a href="#topicals-qa">Topicals</a></div>
+             </section>
+
+             <!-- Display Page Jump Links -->
+             <aside id="page-jump-links">
+                <PageJumpLinks/>
+             </aside>
 
             <!-- Display Qustions and Answers Components Information-->
-            <section id="questions-dispensaries">
+            <section id="dispensaries-qa">
                 <DispensariesQA/>
             </section>
 
-            <section id="questions-cannabis">
+            <section id="cannabis-qa">
                 <CannabisQA/>
             </section>
 
-            <section id="questions-cbd">
+            <section id="cbd-qa">
                 <CBDQA/>
             </section>
 
-            <section id="questions-delta9">
+            <section id="delta9-qa">
                 <Delta9QA/>
             </section>
 
-            <section id="questions-flower">
+            <section id="flower-qa">
                 <FlowerQA/>
             </section>
 
-            <section id="questions-wax">
+            <section id="wax-qa">
                 <WaxQA/>
             </section>
 
-            <section id="questions-oil">
+            <section id="oil-qa">
                 <OilQA/>  
             </section>
 
-            <section id="questions-tincture">
+            <section id="tincture-qa">
                 <TinctureQA/>
             </section>
 
-             <section id="questions-smoking">
+             <section id="smoking-qa">
                 <SmokingQA/>  
             </section>
             
-            <section id="questions-vaporizing">
+            <section id="vaporizing-qa">
                 <VaporizingQA/>
             </section>
 
-            <section id="questions-edibles">
+            <section id="edibles-qa">
                 <EdiblesQA/>
             </section>
 
-            <section id="questions-topicals">
+            <section id="topicals-qa">
                 <TopicalsQA/>
             </section>
 
@@ -90,7 +115,7 @@
     </body>
 
      <!-- Display Footer Component -->
-    <footer>
+    <footer id="bottom">
         <Footer/>
     </footer> 
 
@@ -98,6 +123,7 @@
 
 <script>
 import Header from '@/components/Header.vue';
+import PageJumpLinks from '@/components/PageJumpLinks.vue';
 import DispensariesQA from '@/components/questions_components/DispensariesQA.vue';
 import CannabisQA from '@/components/questions_components/CannabisQA.vue';
 import CBDQA from '@/components/questions_components/CBDQA.vue';
@@ -119,6 +145,7 @@ export default {
     name: "CommonQuestions",
     components: { 
         Header,
+        PageJumpLinks,
         DispensariesQA,
         CannabisQA,
         CBDQA,
@@ -169,33 +196,35 @@ h1 {
 }
 
 h2 {
-  font-size: 1.3rem;
-  padding-top: 2rem;
+    font-size: 1.2rem;
 }
 
 p {
+    font-size: 1.1rem;
     margin: auto 8vw;
 }
 
-h3 {
-    font-size: 1.1rem;
+#page-summary {
+    margin-bottom: 2vw;
 }
 
-ul {
-    font-size: 1.15rem;
+#links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-li {
-    padding: .15vw;
+.link {
+    font-size: 1.2rem;
+    font-weight: bolder;
+    margin-inline: 1vw;
 }
 
-h4,
-h5 {
-    font-size: 1rem;
-    margin: .1vw;
+.link:hover {
+    text-decoration: underline;
 }
 
-#strain-guide,
+#strain-guide-visit,
 #articles-visit {
     padding: 1vw;
 }

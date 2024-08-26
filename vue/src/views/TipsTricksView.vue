@@ -5,7 +5,7 @@
     <title>Tips & Tricks | Best Buds</title>
 
     <!-- Display Header Component -->
-    <header>
+    <header id="top">
         <Header/>
     </header>    
 
@@ -21,6 +21,11 @@
             <!-- Display Page Summary -->
             <p>Cannabis confusion got you burnt out? You're not alone! With so many strains, products, and effects, it can feel like a wild, green maze. But don't stress—it's all part of the fun! Think of it as a choose-your-own-adventure. Whether you're giggling over strain names or puzzled by potency, embrace the journey. The key is to explore, experiment, and enjoy the ride!</p>
 
+            <!-- Display Page Jump Links -->
+            <aside id="page-jump-links">
+                <PageJumpLinks/>
+            </aside>
+
             <!-- Display Tips and Tricks Information -->
             <section id="tips-tricks">
                 <h2>Check out some of the Tips and Tricks we've compiled below!</h2>
@@ -31,8 +36,7 @@
                     <article id="tips-tricks-choose-products">
                         <router-link v-bind:to="{ name:'cannabisproducts' }"><img src="@/assets/tipstricks_assets/which_product.jpg"/></router-link>
                         <h3><router-link v-bind:to="{ name:'cannabisproducts' }">How To Choose Which Cannabis Product Is Right For You</router-link></h3>
-                        <span>
-                            Choosing the right cannabis product is all about matching your mood and goals. Start by picking between sativas for energy, indicas for relaxation, or hybrids for balance by using our <router-link v-bind:to="{ name:'strainguide' }">strain guide</router-link> to help you figure out what type is best for you. Consider the potency and method—like edibles for longer effects or vaping for quick hits. Experiment and enjoy the journey to find what suits you best!</span>
+                        <span>Choosing the right cannabis product is all about matching your mood and goals. Start by picking between sativas for energy, indicas for relaxation, or hybrids for balance by using our <router-link v-bind:to="{ name:'strainguide' }">strain guide</router-link> to help you figure out what type is best for you. Consider the potency and method—like edibles for longer effects or vaping for quick hits. Experiment and enjoy the journey to find what suits you best!</span>
                     </article>
 
                     <!-- Display Strain Guide Link and Information -->
@@ -88,7 +92,7 @@
     </body>
 
     <!-- Display Footer Component -->
-    <footer>
+    <footer id="bottom">
         <Footer/>
     </footer>
 
@@ -96,13 +100,20 @@
 
 <script>
 import Header from '@/components/Header.vue';
+import PageJumpLinks from '@/components/PageJumpLinks.vue';
 import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
 import QuoteComponent from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
     name: "TipsTricks",
-    components: { Header, ArticlesVisit, QuoteComponent, Footer }
+    components: { 
+        Header,
+        PageJumpLinks,
+        ArticlesVisit, 
+        QuoteComponent, 
+        Footer 
+    }
 };
 </script>
 

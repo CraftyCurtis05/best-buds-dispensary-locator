@@ -5,7 +5,7 @@
     <title>Which Products? | Best Buds</title>
 
     <!-- Display Header Component -->
-    <header>
+    <header id="top">
         <Header/>
     </header>
 
@@ -19,7 +19,13 @@
             <h1>How To Choose Which Cannabis Product Is Right For You</h1>
 
             <!-- Display Page Summary -->
-            <p>Choosing the right cannabis product is like picking your vibe! First choose the strain that is best for you, using our <router-link v-bind:to="{ name:'strainguide' }">strain guide</router-link>. Next consider how you want to consume—smoke, vape, or snack on an edible. Start with a low dose and see how it feels. Explore and find your perfect match! Below we have organized a pro and con list of each cannabis product that's out there.</p>
+            <h2>🌿Choosing the right cannabis product is like picking your vibe!🌿</h2>
+            <p>First choose the strain that is best for you by using our <router-link v-bind:to="{ name:'strainguide' }">strain guide</router-link>. Next consider how you want to consume—smoke, vape, or snack on an edible. Start with a low dose and see how it feels. Explore and find your perfect match! Below we have organized a pro and con list of each cannabis product that's out there.</p>
+
+            <!-- Display Page Jump Links -->
+            <aside id="page-jump-links">
+                <PageJumpLinks/>
+            </aside>
 
             <!-- Display Edibles Component -->
             <section id="edible">
@@ -71,7 +77,7 @@
     </body>
 
      <!-- Display Footer Component -->
-    <footer>
+    <footer id="bottom">
         <Footer/>
     </footer> 
 
@@ -79,6 +85,7 @@
 
 <script>
 import Header from '@/components/Header.vue';
+import PageJumpLinks from '@/components/PageJumpLinks.vue';
 import Edible from '@/components/products_components/Edible.vue';
 import Flower from '@/components/products_components/Flower.vue';
 import Oil from '@/components/products_components/Oil.vue';
@@ -93,7 +100,8 @@ import Footer from '@/components/Footer.vue';
 export default {
     name: "CannabisProducts",
     components: { 
-        Header, 
+        Header,
+        PageJumpLinks, 
         Edible, 
         Flower, 
         Oil, 
@@ -126,6 +134,7 @@ export default {
 }
 
 h1,
+h2,
 p,
 #strain-guide-visit,
 #articles-visit {
@@ -134,6 +143,10 @@ p,
 
 h1 {
   font-size: 1.6rem;
+}
+
+h2 {
+    font-size: 1.2rem;
 }
 
 p {

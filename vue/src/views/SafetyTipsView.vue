@@ -5,7 +5,7 @@
     <title>Safety Tips | Best Buds</title>
 
     <!-- Display Header Component -->
-    <header>
+    <header id="top">
         <Header/>
     </header>
 
@@ -20,6 +20,11 @@
 
             <!-- Display Page Summary -->
             <p>***PAGE SUMMARY***</p>
+
+            <!-- Display Page Jump Links -->
+            <aside id="page-jump-links">
+                <PageJumpLinks/>
+            </aside>
 
             <!-- Display THC Consumption Tips Component -->
             <section id="thc-consumption">
@@ -70,7 +75,7 @@
     </body>
 
      <!-- Display Footer Component -->
-    <footer>
+    <footer id="bottom">
         <Footer/>
     </footer> 
 
@@ -78,6 +83,7 @@
 
 <script>
 import Header from '@/components/Header.vue';
+import PageJumpLinks from '@/components/PageJumpLinks.vue';
 import THCConsumption from '@/components/safety_tips_components/THCConsumption.vue';
 import CBDConsumption from '@/components/safety_tips_components/CBDConsumption.vue';
 import Smoking from '@/components/safety_tips_components/Smoking.vue';
@@ -91,6 +97,7 @@ export default {
     name: "SafetyTips",
     components: { 
         Header,
+        PageJumpLinks,
         THCConsumption,
         CBDConsumption,
         Smoking,
