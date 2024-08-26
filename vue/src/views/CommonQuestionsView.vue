@@ -1,4 +1,4 @@
-<!-- Common Questions Page Display -->
+<!-- Common Questions View Display -->
 <template>
 
     <!-- Browser Tab Title -->
@@ -9,23 +9,28 @@
         <Header/>
     </header>
 
-    <!-- Display Page Body -->
+    <!-- Display View Body -->
     <body id="questions-body">
 
-        <!-- Display Common Questions Main Content -->
+        <!-- Display Body's Main Content -->
         <main id="questions-main">
 
-            <!-- Display Page Title -->
+            <!-- Display Body Title -->
             <h1>Commonly Asked Questions About Cannabis</h1>
 
-            <!-- Display Page Summary -->
-            <section id="page-summary">
+            <!-- Display View Jump Links Component -->
+            <aside id="view-links">
+                <ViewJumpLinks/>
+            </aside>
+
+            <!-- Display Body Summary -->
+            <section id="summary">
                 <h2>🌿Got cannabis questions? No worries!🌿</h2>
-                <p>Whether you're curious about legality, how it works, or the best ways to use it, the plant’s got answers. From getting high or just chilling with CBD, to understanding health impacts and legal stuff, dive in and explore. We've got all your questions answered below, just navigate to a topic by selecting a topic below.</p>
-                <p>Stay informed, use responsibly, and enjoy the journey!</p>
+                <p>Whether you're curious about legality, how it works, or the best ways to use it, the plant’s got answers. From getting high or just chilling with CBD, to understanding health impacts and legal stuff, dive in and explore. Stay informed, use responsibly, and enjoy the journey!</p>
+                <h3>We've got all your questions answered below, just navigate to a topic by selecting a topic!</h3>
             </section>
 
-            <!-- Display Jump Links -->
+            <!-- Display Body Jump Links -->
              <section id="links">
                 <div class="link"><a href="#dispensaries-qa">Dispensaries</a></div>
                 <div class="link"><a href="#cannabis-qa">Cannabis</a></div>
@@ -41,58 +46,69 @@
                 <div class="link"><a href="#topicals-qa">Topicals</a></div>
              </section>
 
-             <!-- Display Page Jump Links -->
-             <aside id="page-jump-links">
-                <PageJumpLinks/>
-             </aside>
+            <!-- Display Questions and Answers Information-->
+            <section id="questions">
 
-            <!-- Display Qustions and Answers Components Information-->
-            <section id="dispensaries-qa">
-                <DispensariesQA/>
-            </section>
+                <!-- Display Dispensaries Q&A Component -->
+                <article id="dispensaries">
+                    <DispensariesQA/>
+                </article>
 
-            <section id="cannabis-qa">
-                <CannabisQA/>
-            </section>
+                <!-- Display Cannabis Q&A Component -->
+                <article id="cannabis">
+                    <CannabisQA/>
+                </article>
 
-            <section id="cbd-qa">
-                <CBDQA/>
-            </section>
+                <!-- Display CBD Q&A Component -->
+                <article id="cbd">
+                    <CBDQA/>
+                </article>
 
-            <section id="delta9-qa">
-                <Delta9QA/>
-            </section>
+                <!-- Display Delta9 Q&A Component -->
+                <article id="delta9">
+                    <Delta9QA/>
+                </article>
 
-            <section id="flower-qa">
-                <FlowerQA/>
-            </section>
+                <!-- Display Flower Q&A Component -->
+                <article id="flower">
+                    <FlowerQA/>
+                </article>
 
-            <section id="wax-qa">
-                <WaxQA/>
-            </section>
+                <!-- Display Wax Q&A Component -->
+                <article id="wax">
+                    <WaxQA/>
+                </article>
 
-            <section id="oil-qa">
-                <OilQA/>  
-            </section>
+                <!-- Display Oil Q&A Component -->
+                <article id="oil">
+                    <OilQA/>  
+                </article>
 
-            <section id="tincture-qa">
-                <TinctureQA/>
-            </section>
+                <!-- Display Tincture Q&A Component -->
+                <article id="tincture">
+                    <TinctureQA/>
+                </article>
 
-             <section id="smoking-qa">
-                <SmokingQA/>  
-            </section>
-            
-            <section id="vaporizing-qa">
-                <VaporizingQA/>
-            </section>
+                <!-- Display Smoking Q&A Component -->
+                <article id="smoking">
+                    <SmokingQA/>  
+                </article>
+                
+                <!-- Display Vaporizing Q&A Component -->
+                <article id="vaporizing">
+                    <VaporizingQA/>
+                </article>
 
-            <section id="edibles-qa">
-                <EdiblesQA/>
-            </section>
+                <!-- Display Edibles Q&A Component -->
+                <article id="edibles">
+                    <EdiblesQA/>
+                </article>
 
-            <section id="topicals-qa">
-                <TopicalsQA/>
+                <!-- Display Topicals Q&A Component -->
+                <article id="topicals">
+                    <TopicalsQA/>
+                </article>
+
             </section>
 
         </main>
@@ -123,7 +139,7 @@
 
 <script>
 import Header from '@/components/Header.vue';
-import PageJumpLinks from '@/components/PageJumpLinks.vue';
+import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
 import DispensariesQA from '@/components/questions_components/DispensariesQA.vue';
 import CannabisQA from '@/components/questions_components/CannabisQA.vue';
 import CBDQA from '@/components/questions_components/CBDQA.vue';
@@ -145,7 +161,7 @@ export default {
     name: "CommonQuestions",
     components: { 
         Header,
-        PageJumpLinks,
+        ViewJumpLinks,
         DispensariesQA,
         CannabisQA,
         CBDQA,
@@ -184,15 +200,16 @@ export default {
 }
 
 h1,
-h2,
-p,
-#strain-guide-visit,
-#articles-visit {
+#summary {
     text-align: center;
 }
 
 h1 {
   font-size: 1.6rem;
+}
+
+#summary {
+    margin-bottom: 2vw;
 }
 
 h2 {
@@ -204,8 +221,8 @@ p {
     margin: auto 8vw;
 }
 
-#page-summary {
-    margin-bottom: 2vw;
+h3 {
+    font-size: 1.1rem;
 }
 
 #links {
@@ -222,10 +239,5 @@ p {
 
 .link:hover {
     text-decoration: underline;
-}
-
-#strain-guide-visit,
-#articles-visit {
-    padding: 1vw;
 }
 </style>

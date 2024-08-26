@@ -26,4 +26,7 @@ export default {
 </script>
 
 <style scoped>
+#articles-visit-body {
+    text-align: center;
+}
 </style>

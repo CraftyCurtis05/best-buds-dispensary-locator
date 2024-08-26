@@ -1,4 +1,4 @@
-<!-- Privacy Policy Page Display --->
+<!-- Privacy Policy View Display --->
 <template>
 
   <!-- Browser Tab Title -->
@@ -9,28 +9,46 @@
     <Header/>
   </header>
 
-  <!-- Display Page Body -->
-  <body id="privacy-policy-body">
+  <!-- Display View Body -->
+  <body id="privacy-body">
 
-    <!-- Display Main Content -->
-    <main id="privacy-policy-main">
+    <!-- Display Body's Main Content -->
+    <main id="privacy-main">
 
-      <!-- Display Page Title -->
+      <!-- Display Body Title -->
       <h1>Privacy Policy</h1>
 
-      <!-- Display Page Jump Links -->
-      <aside id="page-jump-links">
-        <PageJumpLinks/>
+      <!-- Display View Jump Links Component -->
+      <aside id="view-links">
+        <ViewJumpLinks/>
       </aside>
 
-      <!-- Display Privacy Policy Information -->
-      <section id="privacy-policy">
-        <h2>***ADD PRIVACY POLICY HEADERS***</h2>
+      <!-- Display Body Summary -->
+      <section id="summary">
+        <h2>🌿***NEED ATTENTION GRABBER***🌿</h2>
+        <p>***NEED PAGE SUMMARY***</p>
+        <h3>***WHATS TO BE EXPECTED OF PAGE***!</h3>
+      </section>
 
-        <h3>***ADD PRIVACY POLICY SUMMARY***</h3>
+      <!-- Display Privacy Policy Information -->
+      <section id="privacy">
+
+        <!-- Display Policy Component -->
+        <article id="policy">***CREATE PRIVACY POLICY COMPONENT***</article>
+
       </section>
 
     </main>
+
+    <!-- Display Strain Guide Visit Component -->
+    <section id="strain-guide-visit">
+      <StrainGuideVisit/>
+    </section>
+
+    <!-- Display Articles Visit Component -->
+    <section id="articles-visit">
+      <ArticlesVisit/>
+    </section>
 
     <!-- Display Quote Component -->
     <div id="quote">
@@ -48,7 +66,9 @@
 
 <script>
 import Header from '@/components/Header.vue';
-import PageJumpLinks from '@/components/PageJumpLinks.vue';
+import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
+import StrainGuideVisit from '@/components/strain_guide_components/StrainGuideVisit.vue';
+import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
 import QuoteComponent from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
@@ -56,7 +76,9 @@ export default {
   name: "PrivacyPolicy",
   components: { 
     Header,
-    PageJumpLinks,
+    ViewJumpLinks,
+    StrainGuideVisit, 
+    ArticlesVisit, 
     QuoteComponent, 
     Footer 
   }
@@ -66,7 +88,7 @@ export default {
 <style scoped>
 /* OBJECTS = rem */
 /* SPACING = vw */
-#privacy-policy-body {
+#privacy-body {
   width: 100vw;
   max-width: 100%;
   overflow-x: hidden;
@@ -76,23 +98,30 @@ export default {
   background-attachment: fixed;
 }
 
-#privacy-policy-main {
+#privacy-main {
   margin: 4vw;
 }
 
 h1,
-h2,
-h3 {
-  text-align: center;
+#summary {
+    text-align: center;
 }
 
 h1 {
   font-size: 1.6rem;
 }
 
+#summary {
+    margin-bottom: 2vw;
+}
+
 h2 {
-  font-size: 1.3rem;
-  padding-top: 2rem;
+    font-size: 1.2rem;
+}
+
+p {
+    font-size: 1.1rem;
+    margin: auto 8vw;
 }
 
 h3 {

@@ -1,4 +1,4 @@
-<!-- Home Page Display --->
+<!-- Home View Display --->
 <template>
 
   <!-- Browser Tab Title -->
@@ -11,27 +11,34 @@
     <Header/>
   </header>
 
-  <!-- Display Page Body -->
+  <!-- Display View Body -->
   <body id="home-body">
 
-    <!-- Display Main Content -->
+    <!-- Display Body's Main Content -->
     <main id="home-main">
 
-      <!-- Display Page Title -->
+      <!-- Display Body Title -->
       <h1>Welcome to Best Buds!</h1>
-      <p>***NEED SUMMARY***</p>
 
-      <!-- Display Page Jump Links -->
-      <aside id="page-jump-links">
-        <PageJumpLinks/>
+      <!-- Display View Jump Links Component -->
+      <aside id="view-links">
+        <ViewJumpLinks/>
       </aside>
 
-      <!-- Display Home Page Information -->
-      <section id="home"> 
-        <h2>Find And Connect With Your Dispensary Here</h2>
+      <!-- Display Body Summary -->
+      <section id="summary">
+        <h2>🌿***NEED ATTENTION GRABBER***🌿</h2>
+        <p>***NEED PAGE SUMMARY***</p>
+        <h3>Check out the featured dispensary below!</h3>
+      </section>
 
+      <!-- Display Home Information -->
+      <section id="home"> 
+
+        <!-- <<<<<<<<<<<< FOR TESTING >>>>>>>>>>>>>>> -->
         <router-link v-bind:to="{ name:'test'}">Jen Dev Testing</router-link>  <!-- <<<<<<<<<<<< FOR TESTING >>>>>>>>>>>>>>> -->
 
+        <!-- Display Home Featured Component -->
         <article id="home-featured">
           <HomeFeaturedComponent/>
         </article>
@@ -39,6 +46,16 @@
       </section>
 
     </main>  
+
+    <!-- Display Strain Guide Visit Component -->
+    <section id="strain-guide-visit">
+      <StrainGuideVisit/>
+    </section>
+
+    <!-- Display Articles Visit Component -->
+    <section id="articles-visit">
+      <ArticlesVisit/>
+    </section>
 
     <!-- Display Quote Component -->
     <div id="quote">
@@ -56,7 +73,7 @@
 
 <script>
 import Header from '@/components/Header.vue';
-import PageJumpLinks from '@/components/PageJumpLinks.vue';
+import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
 import HomeFeaturedComponent from '@/components/home_components/HomeFeatured.vue';
 import QuoteComponent from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
@@ -65,7 +82,7 @@ export default {
   name: "Home",
   components: { 
     Header,
-    PageJumpLinks,
+    ViewJumpLinks,
     HomeFeaturedComponent,
     QuoteComponent,
     Footer
@@ -90,18 +107,30 @@ export default {
   margin: 4vw;
 }
 
-h1, 
-h2 {
-  text-align: center;
+h1,
+#summary {
+    text-align: center;
 }
 
 h1 {
   font-size: 1.6rem;
 }
 
+#summary {
+    margin-bottom: 2vw;
+}
+
 h2 {
-  font-size: 1.3rem;
-  font-weight: lighter;
+    font-size: 1.2rem;
+}
+
+p {
+    font-size: 1.1rem;
+    margin: auto 8vw;
+}
+
+h3 {
+    font-size: 1.1rem;
 }
 </style>
 

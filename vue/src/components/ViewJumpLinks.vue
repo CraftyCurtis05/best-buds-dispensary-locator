@@ -14,7 +14,7 @@
 
 <script>
 export default {
-    name: "PageJumpLinks"
+    name: "ViewJumpLinks"
 };
 </script>
 

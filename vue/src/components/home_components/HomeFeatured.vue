@@ -54,22 +54,23 @@ export default {
             console.log(this.state);
         },
 
-        // Gets Results Function That Takes in the Parameter, LocationID, That's Passed From The Store and Into the Yelp Service getGreen Function
-        // Results Array Holds All Results, JSON Objects, That Are Returned From the getGreen Yelp Service Function
         getResult(state) {
-            
-            YelpService.getFeatured(state)
-            .then(response => {
-                this.result = response.data.businesses;
-                console.log(this.result);
-            })
-            .catch(error => {
-                console.log(error);
-            })
-        }
+
+            //while (this.result.length === 0) {
+                YelpService.getFeatured(state)
+
+                .then(response => {
+                    this.result = response.data.businesses;
+                    console.log(this.result);
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+            //}    
+        }    
     },
     created() {
-        this.state = this.getState();
+        this.getState();
         this.getResult(this.state);
     }
 };        

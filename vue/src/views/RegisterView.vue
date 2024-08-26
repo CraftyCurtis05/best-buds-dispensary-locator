@@ -1,19 +1,19 @@
-<!-- Register Page Display -->
+<!-- Register View Display -->
 <template>
 
   <!-- Browser Tab Title -->
   <title>Register | Best Buds</title>
 
-  <!-- Display Page Body -->
+  <!-- Display View Body -->
   <body id="register-body">
 
-    <!-- Display Main Content -->
+    <!-- Display Body's Main Content -->
     <main id="register-main">
 
       <!-- Display Logo -->
       <img src="src\assets\logo_assets\cropped\best_buds_logo_black cropped.png"/>
 
-      <!-- Display Page Title -->
+      <!-- Display Body Title -->
       <h1>Create Account</h1>
 
       <!-- Display Register Form -->

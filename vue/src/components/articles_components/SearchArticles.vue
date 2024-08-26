@@ -9,6 +9,8 @@
             <input id="user-input" name="user-input" type="text" v-model="keyword" placeholder="Enter Search Keyword"/>
         </section>
 
+        <div id="error" v-if="results.length === 0">{{ this.error }}</div>
+
         <!-- Display Results List from Array of Objects Created in searchArticles Function -->
         <section id="search-list">
 
@@ -44,13 +46,16 @@ export default {
     return {
       articles: Articles,
       keyword: '',
-      results: []
+      results: [],
+      error: ''
     }
   },
 
   methods: {
 
     searchArticles(keyword) {
+
+      this.error = "";
 
       keyword = keyword.toLowerCase().trim(); // User input/keyword is converted to lower case and whitespace is trimmed off both sides
 
@@ -68,14 +73,15 @@ export default {
           }
         })
       })
-      if(results.length === 0) { // Checks results array to verify it is not empty
-        results = []; // Verify that array is empty of proxy objects
-        console.log("No articles match. Please try again.") // FOR TESTING - DELETE WHEN FUNCTION WORKS
-        return results; // *** NEED TO FIGURE OUT HOW TO DISPLAY MESSAGE ON PAGE WHEN NO RESULTS ***        <<<<<<<< NOT WORKING >>>>>>>>>
-        
+
+      if(results.length === 0) { // Checks and verifies results array is empty and sets error message variable
+
+        results = [];
+        this.error = "No articles match. Please try again.";
+        return results;
       }
-      console.log(results); // FOR TESTING - DELETE WHEN FUNCTION WORKS
-      return results; //
+
+      return results;
     }
   }
 };

@@ -5,9 +5,6 @@
     <!-- Display Component Body -->
     <body id="legality-map-body">
 
-        <!-- Display Component Title -->
-        <h1>Click Interactive Map To View The Cannabis Laws In Each State</h1>
-
         <!-- Display Interactive Map -->
         <section id="legality-map">
 

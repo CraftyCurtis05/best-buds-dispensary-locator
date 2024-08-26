@@ -1,37 +1,54 @@
-<!-- Profile Page Display -->
+<!-- Profile View Display -->
 <template>
 
     <!-- Browser Tab Title -->
     <title>Profile | Best Buds</title>
 
     <!-- Display Header Component -->
-    <header>
+    <header id="top">
         <Header/>
     </header>
 
-    <!-- Display Page Body -->
+    <!-- Display View Body -->
     <body id="profile-body">
 
-        <!-- Display Main Content -->
+        <!-- Display Body's Main Content -->
         <main id="profile-main">
 
-            <!-- Display Page Title -->
-            <h1>***NEEDS A PAGE TITLE***</h1>
+            <!-- Display Body Title -->
+            <h1>***NEEDS A TITLE***</h1>
 
-            <!-- Display User Picture -->
-            <section id="profile-picture">
-                <ProfilePictureComponent :src="profilePictureSrc"/>
+            <!-- Display View Jump Links Component -->
+            <aside id="view-links">
+                <ViewJumpLinks/>
+            </aside>
+
+            <!-- Display Body Summary -->
+            <section id="summary">
+                <h2>🌿***NEED ATTENTION GRABBER***🌿</h2>
+                <p>***NEED PAGE SUMMARY***</p>
+                <h3>***WHATS TO BE EXPECTED OF PAGE***!</h3>
             </section>
 
-            <!-- Display User's Favorite Locations -->
-            <section id="profile-favorites">
-                <FavoritesComponent :locations="favoriteLocations"/>
-            </section>
+            <!-- Display Profile Information -->
+            <section id="profile">
 
-            <!-- Display User Information -->
-            <section id="profile-info">
-                <ProfileInfoComponent :profile="profile"/>
-            </section>
+                <!-- Display User Picture Component -->
+                <article id="profile-picture">
+                    <ProfilePictureComponent :src="profilePictureSrc"/>
+                </article>
+
+                <!-- Display User's Favorite Locations Component -->
+                <article id="profile-favorites">
+                    <FavoritesComponent :locations="favoriteLocations"/>
+                </article>
+
+                <!-- Display User Information Component -->
+                <article id="profile-info">
+                    <ProfileInfoComponent :profile="profile"/>
+                </article>
+
+            </section>    
 
         </main>
 
@@ -43,7 +60,7 @@
     </body>
 
     <!-- Display Footer Component -->
-    <footer>
+    <footer id="bottom">
         <Footer/>
     </footer>
 
@@ -51,6 +68,7 @@
 
 <script>
 import Header from '@/components/Header.vue';
+import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
 import profilePictureSrc from '@/assets/LARRY!.webp';
 import ProfilePictureComponent from '@/components/profile_components/ProfilePicture.vue';
 import FavoritesComponent from '@/components/favorite_components/FavoriteLocations.vue';
@@ -61,7 +79,8 @@ import Footer from '@/components/Footer.vue';
 export default {
     name: "Profile",
     components: { 
-        Header, 
+        Header,
+        ViewJumpLinks,
         ProfilePictureComponent, 
         FavoritesComponent, 
         ProfileInfoComponent, 
@@ -99,8 +118,29 @@ export default {
     margin: 4vw;
 }
 
-h1 {
+h1,
+#summary {
     text-align: center;
-    font-size: 1.6rem;
+}
+
+h1 {
+  font-size: 1.6rem;
+}
+
+#summary {
+    margin-bottom: 2vw;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+p {
+    font-size: 1.1rem;
+    margin: auto 8vw;
+}
+
+h3 {
+    font-size: 1.1rem;
 }
 </style>

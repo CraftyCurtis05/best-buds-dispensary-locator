@@ -1,4 +1,4 @@
-<!-- About Us Page Display --->
+<!-- About Us View Display --->
 <template>
 
   <!-- Browser Tab Title -->
@@ -9,18 +9,18 @@
     <Header/>
   </header>
 
-  <!-- Display Page Body -->
-  <body id="about-us-body">
+  <!-- Display View Body -->
+  <body id="about-body">
 
-    <!-- Display Main Content -->
-    <main id="about-us-main">
+    <!-- Display Body's Main Content -->
+    <main id="about-main">
 
-      <!-- Display Page Title -->
+      <!-- Display Body Title -->
       <h1>We Are Best Buds</h1>
 
-      <!-- Display Page Jump Links -->
-      <aside id="page-jump-links">
-        <PageJumpLinks/>
+      <!-- Display View Jump Links Component -->
+      <aside id="view-links">
+        <ViewJumpLinks/>
       </aside>
 
       <!-- Display About Us Information -->
@@ -41,6 +41,16 @@
 
     </main>
 
+    <!-- Display Strain Guide Visit Component -->
+    <section id="strain-guide-visit">
+      <StrainGuideVisit/>
+    </section>
+ 
+    <!-- Display Articles Visit Component -->
+    <section id="articles-visit">
+      <ArticlesVisit/>
+    </section>
+
     <!-- Display Quote Component -->
     <div id="quote">
       <QuoteComponent/>
@@ -57,7 +67,9 @@
 
 <script>
 import Header from '@/components/Header.vue';
-import PageJumpLinks from '@/components/PageJumpLinks.vue';
+import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
+import StrainGuideVisit from '@/components/strain_guide_components/StrainGuideVisit.vue';
+import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
 import QuoteComponent from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
@@ -65,7 +77,9 @@ export default {
   name: "AboutUs",
   components: { 
     Header,
-    PageJumpLinks,
+    ViewJumpLinks,
+    StrainGuideVisit, 
+    ArticlesVisit,
     QuoteComponent,
     Footer
   }
@@ -75,7 +89,7 @@ export default {
 <style scoped>
 /* OBJECTS = rem */
 /* SPACING = vw */
-#about-us-body {
+#about-body {
   width: 100vw;
   max-width: 100%;
   overflow-x: hidden;
@@ -85,7 +99,7 @@ export default {
   background-attachment: fixed;
 }
 
-#about-us-main {
+#about-main {
   text-align: center;
   margin: 4vw;
 }
@@ -103,12 +117,12 @@ h3 {
   font-size: 1.4rem;
 }
 
-h4 {
-  font-size: 1.1rem;
-}
-
 p {
   font-size: 1.2rem;
   margin: auto 10vw;
+}
+
+h4 {
+  font-size: 1.1rem;
 }
 </style>

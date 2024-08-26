@@ -1,4 +1,4 @@
-<!-- Legality Page Display --->
+<!-- Legality View Display --->
 <template>
 
     <!-- Browser Tab Title -->
@@ -9,36 +9,45 @@
         <Header/>
     </header>
 
-    <!-- Display Page Body -->
+    <!-- Display View Body -->
     <body id="legality-body">
 
-        <!-- Display Main Content -->
+        <!-- Display Body's Main Content -->
         <main id="legality-main">
 
-            <!-- Display Page Title -->
+            <!-- Display Body Title -->
             <h1>Quick Guide to the Laws in Each State</h1>
 
-            <!-- Display Page Summary -->
-            <p>States like California and Colorado are rolling out the green carpet for adults 21+, with legal shops and chill vibes. Many states have medical programs where patients get the green light with a doctor's thumbs-up. Some states have turned down the legal heat, making minor offenses more about a fine than a felony. States are dancing to their own beat, while federal rules are like the old-school DJ trying to keep things under control. In short, it’s a legal jamboree with states setting their own rules while federal law lingers in the background!</p>
-
-            <!-- Display Page Jump Links -->
-            <aside id="page-jump-links">
-                <PageJumpLinks/>
+            <!-- Display View Jump Links Component -->
+            <aside id="view-links">
+                <ViewJumpLinks/>
             </aside>
 
-            <!-- Display Interactive Legality Map Component -->
-            <section id="legality-map">
-                <LegalityMap/>
+            <!-- Display Body Summary -->
+            <section id="summary">
+                <h2>🌿***NEED ATTENTION GRABBER***🌿</h2>
+                <p>States like California and Colorado are rolling out the green carpet for adults 21+, with legal shops and chill vibes. Many states have medical programs where patients get the green light with a doctor's thumbs-up. Some states have turned down the legal heat, making minor offenses more about a fine than a felony. States are dancing to their own beat, while federal rules are like the old-school DJ trying to keep things under control. In short, it’s a legal jamboree with states setting their own rules while federal law lingers in the background!</p>
+                <h3>Click Interactive Map To View The Cannabis Laws In Each State!</h3>
             </section>
+
+            <!-- Display Legality Inoformation -->
+             <section id="legality">
+
+                <!-- Display Interactive Legality Map Component -->
+                <article id="map">
+                    <LegalityMap/>
+                </article>
+
+            </section>    
 
         </main>
 
-        <!-- Display Strain Guide Link -->
+        <!-- Display Strain Guide Visit Component -->
         <section id="strain-guide-visit">
             <StrainGuideVisit/>
         </section>
  
-        <!-- Display Want More Info with Articles Link -->
+        <!-- Display Articles Visit Component -->
         <section id="articles-visit">
             <ArticlesVisit/>
         </section>
@@ -59,7 +68,7 @@
 
 <script>
 import Header from '@/components/Header.vue';
-import PageJumpLinks from '@/components/PageJumpLinks.vue';
+import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
 import LegalityMap from '@/components/legality_components/LegalityMap.vue';
 import StrainGuideVisit from '@/components/strain_guide_components/StrainGuideVisit.vue';
 import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
@@ -70,7 +79,7 @@ export default {
     name: "Legality",
     components: { 
         Header,
-        PageJumpLinks,
+        ViewJumpLinks,
         LegalityMap,
         StrainGuideVisit, 
         ArticlesVisit, 
@@ -98,47 +107,28 @@ export default {
 }
 
 h1,
-h2,
-p,
-#strain-guide-visit,
-#articles-visit {
+#summary {
     text-align: center;
 }
 
 h1 {
-    font-size: 1.6rem;
+  font-size: 1.6rem;
+}
+
+#summary {
+    margin-bottom: 2vw;
 }
 
 h2 {
-    font-size: 1.3rem;
-    padding-top: 2rem;
+    font-size: 1.2rem;
 }
 
 p {
+    font-size: 1.1rem;
     margin: auto 8vw;
 }
 
 h3 {
     font-size: 1.1rem;
-    margin-bottom: 0vw;
-}
-
-ul {
-    font-size: 1.15rem;
-}
-
-li {
-    padding: .15vw;
-}
-
-h4,
-h5 {
-    font-size: 1rem;
-    margin: .1vw;
-}
-
-#strain-guide-visit,
-#articles-visit {
-    padding: 1vw;
 }
 </style>

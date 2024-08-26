@@ -18,13 +18,23 @@
             <!-- Display Page Title -->
             <h1>What To Expect If You've Had Too Much Cannabis</h1>
 
-            <!-- Display Page Summary -->
-            <p>***PAGE SUMMARY***</p>
-
             <!-- Display Page Jump Links -->
             <aside id="page-jump-links">
                 <PageJumpLinks/>
             </aside>
+
+            <!-- Display Page Summary -->
+            <section id="page-summary">
+                <h2>***NEED CATCHY PHRASE***</h2>
+                <p>***NEED SUMMARY***</p>
+            </section>
+
+            <!-- Display Jump Links -->
+            <section id="links">
+                <div class="link"><a href="#symptoms">Signs and Symptoms</a></div>
+                <div class="link"><a href="#coping">How to Cope</a></div>
+                <div class="link"><a href="#what-to-do">What To Do</a></div>
+            </section> 
 
             <!-- Display Too Much Symptoms Information -->
             <section id="symptoms">
@@ -112,6 +122,7 @@ export default {
 }
 
 h1,
+h2,
 p,
 #strain-guide-visit,
 #articles-visit {
@@ -122,8 +133,33 @@ h1 {
   font-size: 1.6rem;
 }
 
+#page-summary {
+    margin-bottom: 2vw;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
 p {
+    font-size: 1.1rem;
     margin: auto 8vw;
+}
+
+#links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.link {
+    font-size: 1.2rem;
+    font-weight: bolder;
+    margin-inline: 1vw;
+}
+
+.link:hover {
+    text-decoration: underline;
 }
 
 #strain-guide-visit,

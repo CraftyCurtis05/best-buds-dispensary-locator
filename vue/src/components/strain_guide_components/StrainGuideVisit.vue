@@ -2,10 +2,10 @@
 <template>
 
     <!-- Display Component Body -->
-    <body id="articles-visit-body">
+    <body id="strain-guide-visit-body">
 
         <!-- Display Strain Guide Visit Link -->
-        <section id="strain-guide">
+        <section id="strain-guide-visit">
 
             <h1>Looking for more information on types and strains?</h1>
 
@@ -26,4 +26,7 @@ export default {
 </script>
 
 <style scoped>
+#strain-guide-visit-body {
+    text-align: center;
+}
 </style>

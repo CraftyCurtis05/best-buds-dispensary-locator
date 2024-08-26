@@ -1,4 +1,4 @@
-<!-- Contact Us Page Display --->
+<!-- Contact Us View Display --->
 <template>
 
   <!-- Browser Tab Title -->
@@ -9,17 +9,21 @@
       <Header/>
   </header>
 
-  <!-- Display Page Body -->
-  <body id="contact-us-body">
+  <!-- Display View Body -->
+  <body id="contact-body">
 
-    <!-- Display Main Content -->
-    <main id="contact-us-main">
+    <!-- Display Body's Main Content -->
+    <main id="contact-main">
 
-      <!-- Display Page Title -->
+      <!-- Display Body Title -->
       <h1>Contact Us</h1>
 
-      <!-- Display Page Summary -->
-      <p>***CONTACT US SUMMARY***</p>
+      <!-- Display Body Summary -->
+      <section id="summary">
+        <h2>🌿***NEED ATTENTION GRABBER***🌿</h2>
+        <p>***NEED PAGE SUMMARY***</p>
+        <h3>***WHATS EXPECTED OF PAGE***</h3>
+      </section>
 
       <!-- Display Contact Us Information -->
       <section id="contact-us">
@@ -155,7 +159,7 @@ export default {
 <style scoped>
 /* OBJECTS = rem */
 /* SPACING = vw */
-#contact-us-body {
+#contact-body {
     width: 100vw;
     max-width: 100%;
     overflow-x: hidden;
@@ -165,19 +169,22 @@ export default {
     background-attachment: fixed;
 }
 
-#contact-us-main {
+#contact-main {
     margin: 4vw;
 }
 
 h1,
-h2,
-p,
+#summary,
 form {
     text-align: center;
 }
 
 h1 {
     font-size: 1.6rem;
+}
+
+#summary {
+    margin-bottom: 2vw;
 }
 
 h2 {

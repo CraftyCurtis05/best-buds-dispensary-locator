@@ -18,13 +18,22 @@
       <!-- Display Page Title -->
       <h1>Strain Type and Terpene Guide</h1>
 
-      <!-- Display Page Summary -->
-      <p>Every cannabis strain has a name, a type and terpenes. While most dispensaries categorize cannabis by the type--indica, sativa or hybrid; terpenes are another great way to find the best cannabis strain for you. Below is a basic guide to strains and the most common terpenes.</p>
-
       <!-- Display Page Jump Links -->
       <aside id="page-jump-links">
         <PageJumpLinks/>
       </aside>
+
+      <!-- Display Page Summary -->
+      <section id="page-summary">
+        <h2>***NEED CATCHY PHRASE***</h2>
+        <p>Every cannabis strain has a name, a type and terpenes. While most dispensaries categorize cannabis by the type--indica, sativa or hybrid; terpenes are another great way to find the best cannabis strain for you. Below is a basic guide to strains and the most common terpenes.</p>
+      </section>
+      
+      <!-- Display Jump Links -->
+      <section id="links">
+        <div class="link"><a href="#strain-101">Strains 101</a></div>
+        <div class="link"><a href="#turpene-101">Turpenes 101</a></div>
+      </section>  
 
       <!-- Display Strain Guide  -->
       <section id="strain-101">
@@ -98,6 +107,7 @@ export default {
 }
 
 h1,
+h2,
 p,
 #articles-visit {
   text-align: center;
@@ -107,7 +117,32 @@ h1 {
   font-size: 1.6rem;
 }
 
+#page-summary {
+    margin-bottom: 2vw;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
 p {
-  margin: auto 8vw;
+    font-size: 1.1rem;
+    margin: auto 8vw;
+}
+
+#links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.link {
+    font-size: 1.2rem;
+    font-weight: bolder;
+    margin-inline: 1vw;
+}
+
+.link:hover {
+    text-decoration: underline;
 }
 </style>

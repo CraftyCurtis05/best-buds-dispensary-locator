@@ -1,19 +1,19 @@
-<!-- Login Page Display -->
+<!-- Login View Display -->
 <template>
 
   <!-- Browser Tab Title -->
   <title>Login | Best Buds</title>
 
-  <!-- Display Page Body -->
+  <!-- Display View Body -->
   <body id="login-body">
 
-    <!-- Display Main Content -->
+    <!-- Display Body's Main Content -->
     <main id="login-main">
 
       <!-- Display Logo -->
       <img src="src\assets\logo_assets\cropped\best_buds_logo_black cropped.png"/>
 
-      <!-- Display Page Title -->
+      <!-- Display Body Title -->
       <h1>Please Sign In</h1>
 
       <!-- Display Login Form -->
@@ -48,6 +48,7 @@
           <!-- Link to Register Page If No Account -->
           <p><router-link v-bind:to="{ name: 'register' }">Need an account? Sign up.</router-link></p>
         </form>
+        
       </section>
 
     </main>
