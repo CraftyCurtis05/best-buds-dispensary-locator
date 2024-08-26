@@ -26,9 +26,9 @@
 
         <router-link v-bind:to="{ name:'test'}">Jen Dev Testing</router-link>  <!-- <<<<<<<<<<<< FOR TESTING >>>>>>>>>>>>>>> -->
 
-        <!-- <article id="home-featured">
-          <HomeFeaturedComponent/>         <<<<<<<<<<<< ACTIVELY WORKING ON >>>>>>>>>>>>>>
-        </article> -->
+        <article id="home-featured">
+          <HomeFeaturedComponent/>
+        </article>
 
       </section>
 
@@ -50,19 +50,17 @@
 
 <script>
 import Header from '@/components/Header.vue';
-//import HomeFeaturedComponent from '@/components/home_components/HomeFeatured.vue';  <<<<<<<<<<<< ACTIVELY WORKING ON >>>>>>>>>>>>>>
+import HomeFeaturedComponent from '@/components/home_components/HomeFeatured.vue';
 import QuoteComponent from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
   name: "Home",
   components: { 
-    Header, 
-    QuoteComponent, 
-    Footer 
-  }, // HomeFeaturedComponent, <<<<<<<<<<<< ACTIVELY WORKING ON >>>>>>>>>>>>>>
-  methods: {
-    
+    Header,
+    QuoteComponent,
+    Footer,
+    HomeFeaturedComponent
   }
 };
 </script>

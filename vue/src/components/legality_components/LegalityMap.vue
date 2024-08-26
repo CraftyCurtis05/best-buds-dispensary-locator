@@ -11,16 +11,13 @@
         <!-- Display Interactive Map -->
         <section id="legality-map">
 
-            <!-- <button @click="clearSelection">Clear Selection</button> -->
-
+            <!--  -->
             <div id="state-law">
                 <h2>Selected State:</h2>
                 <h3>{{ this.selectedState }}</h3>
 
-                <div>
-                    <h2>State Law:</h2>
-                    <h3>{{ this.stateLaw }}</h3>
-                </div>
+                <h2>State Law:</h2>
+                <h3>{{ this.stateLaw }}</h3>
             </div>
 
             <!-- Interactive Map Information -->
@@ -586,8 +583,8 @@ export default {
                     this.selectedState = title;
                     this.stateLaw.value = law;
                     
-                    console.log(id);
-                    console.log(law);
+                    //console.log(id);  <<<<<<<<<< DELETE WHEN FINISHED >>>>>>>>>> 
+                    //console.log(law); <<<<<<<<<< DELETE WHEN FINISHED >>>>>>>>>> 
                 }
             }
         }
@@ -601,12 +598,11 @@ export default {
     text-align: center;
 }
 
-#map-svg {
-    width: 80rem;
+#legality-map {
+    width: 90rem;
 }
 
-path,
-polygon {
+svg {
     fill: black;
 }
 
