@@ -2,19 +2,19 @@
 <template>
 
     <!-- Display Component Body -->
-    <body id="profile-info-body">
+    <body id="info-body">
 
         <!-- Display Title -->
-        <h2>Profile Information</h2>
+        <h1>Profile Information</h1>
 
         <!-- Display User 'Name', 'Age', 'Email' -->
-        <section id="profile-info">
+        <section id="info">
 
-            <p>Name: {{ profile.name }}</p>
+            <h2 id="name">Name: {{ profile.name }}</h2>
 
-            <p>Age: {{ profile.age }}</p>
+            <h2 id="age">Age: {{ profile.age }}</h2>
 
-            <p>Email: {{ profile.email }}</p>
+            <h2 id="email">Email: {{ profile.email }}</h2>
 
         </section>
 
@@ -25,7 +25,7 @@
 <script>
 // Export Component Properties of Profile Object and Mark as Required
 export default { 
-    name: "ProfileInfoComponent",
+    name: "ProfileInfo",
     props: {
         profile: {
             type: Object,
@@ -38,17 +38,17 @@ export default {
 <style scoped>
 /* OBJECTS = rem */
 /* SPACING = vw */
-#profile-info-body {
+body {
     margin-top: 20px;
 }
 
-#profile-info-body div {
+#info {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-#profile-info-body p {
+h1 {
     margin: 5px 0;
 }
 </style>

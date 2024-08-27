@@ -2,7 +2,7 @@
 <template>
 
     <!-- Display Component Body -->
-    <body id="turpene-101-body">
+    <body id="turpene-body">
 
         <!-- Display Turpene 101 Information -->
         <section id="terpene-101">
@@ -188,7 +188,7 @@
             <!-- Display Alpha-Pinene Information -->
             <article id="apinene">
                 <h2>Alpha-Pinene</h2>
-                <p>Alpha-pinene, a prominent terpene found in cannabis, has a range of notable effects and benefits that make it a versatile and valuable component in cannabis, supporting respiratory health, cognitive function, and overall comfort.</p>
+                <p>Alpha-Pinene, a prominent terpene found in cannabis, has a range of notable effects and benefits that make it a versatile and valuable component in cannabis, supporting respiratory health, cognitive function, and overall comfort.</p>
                 <h3>Effects:</h3>
                 <ul id="apinene-effects">
                     <li>Bronchodilator</li>
@@ -222,7 +222,7 @@
             <!-- Display Beta-Pinene Information -->
             <article id="bpinene">
                 <h2>Beta-Pinene</h2>
-                <p>Beta-pinene, a terpene found in cannabis and other plants, offers several effects and benefits including relief from inflammation and pain, mood enhancement, and support for respiratory and digestive health.</p>
+                <p>Beta-Pinene, a terpene found in cannabis and other plants, offers several effects and benefits including relief from inflammation and pain, mood enhancement, and support for respiratory and digestive health.</p>
                 <h3>Effects:</h3>
                 <ul id="bpinene-effects">
                     <li>Anti-Inflammatory</li>
@@ -463,7 +463,7 @@
 
 <script>
 export default {
-    name: "Turpene101Component"
+    name: "Turpene101"
 }
 </script>
 

@@ -50,6 +50,7 @@
                 <mark>If you think you or someone else is experiencing psychosis, contact emergency services or get immediate medical care.</mark>
             </section>
 
+            <!-- Display Photo -->
             <aside id="photo">
                 <img src="@\assets\toomuch_assets\symptoms.jpg"/>
             </aside>

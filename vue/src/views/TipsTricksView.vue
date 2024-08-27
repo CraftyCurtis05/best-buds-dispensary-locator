@@ -10,21 +10,21 @@
     </header>    
 
     <!-- Display View Body -->
-    <body id="tips-tricks-body">
+    <body id="tips-body">
 
-        <!-- Display Main Content -->
-        <main id="tips-tricks-main">
+        <!-- Display Body's Main Content -->
+        <main id="tips-main">
 
-            <!-- Display Page Title -->
+            <!-- Display Body Title -->
             <h1>Tips & Tricks For Cannabis Use</h1>
 
-            <!-- Display Page Jump Links -->
-            <aside id="page-jump-links">
-                <PageJumpLinks/>
+            <!-- Display View Jump Links Component -->
+            <aside id="view-links">
+                <ViewJumpLinks/>
             </aside>
 
             <!-- Display Page Summary -->
-             <section id="page-summary">
+             <section id="summary">
                 <h2>🌿Cannabis confusion got you burnt out?🌿</h2>
                 <p>You're not alone! With so many strains, products, and effects, it can feel like a wild, green maze. But don't stress—it's all part of the fun! Think of it as a choose-your-own-adventure. Whether you're giggling over strain names or puzzled by potency, embrace the journey. The key is to explore, experiment, and enjoy the ride!</p>
                 <h3>Check out some of the Tips and Tricks we've compiled below!</h3>
@@ -38,23 +38,28 @@
                 <div class="link"><a href="#too-much">If You Have Too Much</a></div>
                 <div class="link"><a href="#legality">State Laws</a></div>
                 <div class="link"><a href="#questions">Common Questions</a></div>
-            </section>    
+            </section> 
 
             <!-- Display Tips and Tricks Information -->
-            <section id="tips-tricks">
-                <TipsTricksComponent/>
+            <section id="tips">
+
+                <!-- Display Tips and Tricks Component -->
+                <article id="tips-tricks">
+                    <TipsAndTricks/>
+                </article>
+
             </section>
 
         </main>
 
-        <!-- Display Want More Info with Articles Link -->
+        <!-- Display Articles Visit Component -->
         <section id="articles-visit">
             <ArticlesVisit/>
         </section>
 
         <!-- Display Quote Component -->
         <div id="quote">
-            <QuoteComponent/>
+            <Quote/>
         </div>  
 
     </body>
@@ -62,26 +67,26 @@
     <!-- Display Footer Component -->
     <footer id="bottom">
         <Footer/>
-    </footer>
+    </footer> 
 
 </template>
 
 <script>
 import Header from '@/components/Header.vue';
-import PageJumpLinks from '@/components/PageJumpLinks.vue';
-import TipsTricksComponent from '@/components/tips_tricks_components/TipsTricks.vue';
+import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
+import TipsAndTricks from '@/components/tips_tricks_components/TipsTricks.vue';
 import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
-import QuoteComponent from '@/components/Quote.vue';
+import Quote from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
     name: "TipsTricks",
     components: { 
         Header,
-        PageJumpLinks,
-        TipsTricksComponent,
+        ViewJumpLinks,
+        TipsAndTricks,
         ArticlesVisit, 
-        QuoteComponent, 
+        Quote, 
         Footer 
     }
 };
@@ -90,7 +95,7 @@ export default {
 <style scoped>
 /* OBJECTS = rem */
 /* SPACING = vw */
-#tips-tricks-body {
+#tips-body {
     width: 100vw;
     max-width: 100%;
     overflow-x: hidden;
@@ -100,14 +105,12 @@ export default {
     background-attachment: fixed;
 }
 
-#tips-tricks-main {
+#tips-main {
     margin: 4vw;
 }
 
 h1,
-h2,
-p,
-h3 {
+#summary {
     text-align: center;
 }
 
@@ -115,7 +118,7 @@ h1 {
   font-size: 1.6rem;
 }
 
-#page-summary {
+#summary {
     margin-bottom: 2vw;
 }
 

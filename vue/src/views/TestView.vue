@@ -1,4 +1,4 @@
-<!-- Articles Page Display -->
+<!-- Articles View Display -->
 <template>
 
   <!-- Browser Tab Title -->
@@ -9,77 +9,81 @@
     <Header/>
   </header>
 
-  <!-- Display Page Body -->
+  <!-- Display View Body -->
   <body id="articles-body">
 
-    <!-- Display Main Content -->
+    <!-- Display Body's Main Content -->
     <main id="articles-main">
 
-      <!-- Display Page Title -->
+      <!-- Display Body Title -->
       <h1>***NEEDS PAGE TITLE***</h1>
 
-      <!-- Display Page Summary -->
-      <p>***PAGE SUMMARY***</p>
-
-      <!-- Display Page Jump Links -->
-      <aside id="page-jump-links">
-        <PageJumpLinks/>
+      <!-- Display View Jump Links Component -->
+      <aside id="view-links">
+        <ViewJumpLinks/>
       </aside>
+
+      <!-- Display Body Summary -->
+      <section id="summary">
+        <h2>🌿***NEED ATTENTION GRABBER***🌿</h2>
+        <p>***NEED PAGE SUMMARY***</p>
+        <h3>***WHATS TO BE EXPECTED OF PAGE***!</h3>
+      </section>
 
       <!-- Display About Us Information -->
       <section id="articles">
-        <h2>***NEEDS ARTICLES PAGE HEAD LINER***</h2>
-          <p>***NEEDS ARTICLES SEARCH SUMMARY***</p>
 
           <!-- Display Articles Search Component -->
-          <article id="articles-search">
-            <SearchArticlesComponent/>
-          </article>  
+          <article id="search">
+            <SearchArticles/>
+          </article>
+
       </section>
 
     </main>
 
-    <!-- Display Strain Guide Link -->
+    <!-- Display Strain Guide Visit Component -->
     <section id="strain-guide-visit">
       <StrainGuideVisit/>
     </section>
 
-    <!-- Display Want More Info with Articles Link -->
+    <!-- Display Articles Visit Component -->
     <section id="articles-visit">
       <ArticlesVisit/>
     </section>
-    
+
     <!-- Display Quote Component -->
     <div id="quote">
-      <QuoteComponent/>
+      <Quote/>
     </div>  
-    
+
   </body>
 
+  <!-- Display Footer Component -->
   <footer id="bottom">
     <Footer/>
-  </footer>
+  </footer> 
 
 </template>
 
 <script>
 import Header from '@/components/Header.vue';
-import PageJumpLinks from '@/components/PageJumpLinks.vue';
-import SearchArticlesComponent from '@/components/articles_components/SearchArticles.vue';
+import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
+import SearchArticles from '@/components/articles_components/SearchArticles.vue';
 import StrainGuideVisit from '@/components/strain_guide_components/StrainGuideVisit.vue';
 import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
-import QuoteComponent from '@/components/Quote.vue';
+import Quote from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
   name: "Test",
   components: { 
     Header,
-    PageJumpLinks,
-    SearchArticlesComponent, 
+    ViewJumpLinks,
+    SearchArticles, 
     StrainGuideVisit, 
     ArticlesVisit, 
-    QuoteComponent, 
+    Quote, 
     Footer 
   }
 };
@@ -103,10 +107,7 @@ export default {
 }
 
 h1,
-h2,
-p,
-#strain-guide-visit,
-#articles-visit {
+#summary {
     text-align: center;
 }
 
@@ -114,17 +115,20 @@ h1 {
   font-size: 1.6rem;
 }
 
+#summary {
+    margin-bottom: 2vw;
+}
+
 h2 {
-  font-size: 1.3rem;
-  padding-top: 2rem;
+    font-size: 1.2rem;
 }
 
 p {
+    font-size: 1.1rem;
     margin: auto 8vw;
 }
 
-#strain-guide-visit,
-#articles-visit {
-    padding: 1vw;
+h3 {
+    font-size: 1.1rem;
 }
 </style>

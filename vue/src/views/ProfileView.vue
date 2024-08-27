@@ -35,17 +35,17 @@
 
                 <!-- Display User Picture Component -->
                 <article id="profile-picture">
-                    <ProfilePictureComponent :src="profilePictureSrc"/>
+                    <ProfilePicture :src="profilePictureSrc"/>
                 </article>
 
                 <!-- Display User's Favorite Locations Component -->
                 <article id="profile-favorites">
-                    <FavoritesComponent :locations="favoriteLocations"/>
+                    <Favorites :locations="favoriteLocations"/>
                 </article>
 
                 <!-- Display User Information Component -->
                 <article id="profile-info">
-                    <ProfileInfoComponent :profile="profile"/>
+                    <ProfileInfo :profile="profile"/>
                 </article>
 
             </section>    
@@ -54,7 +54,7 @@
 
         <!-- Display Quote Component -->
         <div id="quote">
-            <QuoteComponent/>
+            <Quote/>
         </div>  
 
     </body>
@@ -70,10 +70,10 @@
 import Header from '@/components/Header.vue';
 import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
 import profilePictureSrc from '@/assets/LARRY!.webp';
-import ProfilePictureComponent from '@/components/profile_components/ProfilePicture.vue';
-import FavoritesComponent from '@/components/favorite_components/FavoriteLocations.vue';
-import ProfileInfoComponent from '@/components/profile_components/ProfileInfo.vue';
-import QuoteComponent from '@/components/Quote.vue';
+import ProfilePicture from '@/components/profile_components/ProfilePicture.vue';
+import Favorites from '@/components/favorite_components/FavoriteLocations.vue';
+import ProfileInfo from '@/components/profile_components/ProfileInfo.vue';
+import Quote from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
@@ -81,10 +81,10 @@ export default {
     components: { 
         Header,
         ViewJumpLinks,
-        ProfilePictureComponent, 
-        FavoritesComponent, 
-        ProfileInfoComponent, 
-        QuoteComponent, 
+        ProfilePicture, 
+        Favorites, 
+        ProfileInfo, 
+        Quote, 
         Footer 
     },
     data() {

@@ -1,101 +1,103 @@
-<!-- Search Page Display -->
+<!-- Search View Display -->
 <template>
 
   <!-- Browser Tab Title -->
-   <head>
-    <title>Search | Best Buds</title>
-   </head>
+  <title>Search | Best Buds</title>
 
   <!-- Display Header Component -->
   <header id="top">
     <Header/>
   </header>
 
-  <!-- Display Page Body -->
+  <!-- Display View Body -->
   <body id="search-body">
  
-    <!-- Display Main Content -->
+    <!-- Display Body's Main Content -->
     <main id="search-main">
 
-      <!-- Display Page Title -->
+      <!-- Display Body Title -->
       <h1>Best Buds Dispensary Locator</h1>
 
-      <!-- Display Page Summary -->
-      <p>Need to find a dispensary? Use our cannabis locator to easily spot nearby shops. Just enter your location, and voilà! You’ll see the best places to get your favorite strains and products. It’s a quick and fun way to get your green fix!</p>
-
-      <!-- Display Page Jump Links -->
-      <aside id="page-jump-links">
-        <PageJumpLinks/>
+      <!-- Display View Jump Links Component -->
+      <aside id="view-links">
+        <ViewJumpLinks/>
       </aside>
+
+      <!-- Display Body Summary -->
+      <section id="summary">
+        <h2>🌿Need to find a dispensary?🌿</h2>
+        <p>Use our cannabis locator to easily spot nearby shops. Just enter your location, and voilà! You’ll see the best places to get your favorite strains and products. It’s a quick and fun way to get your green fix!</p>
+        <h3>Use the search below to find dispensaries near you!</h3>
+      </section>
 
       <!-- Display Search Information -->
       <section id="search">
-        <h2>Search for dispensaries near you</h2>
 
-        <!-- Display Search Bar -->
+        <!-- Display Search Bar Component -->
         <article id="search-bar">
-          <SearchBarComponent/>
+          <SearchBar/>
         </article>
 
-        <!-- Display Search Results List -->
+        <!-- Display Search Results List Component -->
         <article id="search-list">
-          <SearchListComponent v-if="this.$store.state.locationID"/>
+          <SearchList v-if="this.$store.state.locationID"/>
         </article>
 
-        <!-- Display Search Map -->
+        <!-- Display Search Map Component -->
         <article id="search-map">
-          <SearchMapComponent/>
+          <SearchMap/>
         </article>
+
       </section>
 
     </main> 
 
-    <!-- Display Strain Guide Link -->
+    <!-- Display Strain Guide Visit Component -->
     <section id="strain-guide-visit">
       <StrainGuideVisit/>
     </section>
 
-    <!-- Display Want More Info with Articles Link -->
+    <!-- Display Articles Visit Component -->
     <section id="articles-visit">
       <ArticlesVisit/>
     </section>
 
     <!-- Display Quote Component -->
     <div id="quote">
-      <QuoteComponent/>
+      <Quote/>
     </div>  
 
   </body>
 
   <!-- Display Footer Component -->
   <footer id="bottom">
-    <Footer/>
+      <Footer/>
   </footer> 
 
 </template>
   
 <script>
 import Header from '@/components/Header.vue';
-import PageJumpLinks from '@/components/PageJumpLinks.vue';
-import SearchBarComponent from '@/components/search_components/SearchBar.vue';
-import SearchListComponent from '@/components/search_components/SearchList.vue';
-import SearchMapComponent from '@/components/search_components/SearchMap.vue';
+import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
+import SearchBar from '@/components/search_components/SearchBar.vue';
+import SearchList from '@/components/search_components/SearchList.vue';
+import SearchMap from '@/components/search_components/SearchMap.vue';
 import StrainGuideVisit from '@/components/strain_guide_components/StrainGuideVisit.vue';
 import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
-import QuoteComponent from '@/components/Quote.vue';
+import Quote from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
    
 export default {
   name: "Search",
   components: { 
     Header,
-    PageJumpLinks, 
-    SearchBarComponent, 
-    SearchListComponent, 
-    SearchMapComponent, 
+    ViewJumpLinks, 
+    SearchBar, 
+    SearchList, 
+    SearchMap, 
     StrainGuideVisit, 
     ArticlesVisit, 
-    QuoteComponent, 
+    Quote, 
     Footer 
   }
 };
@@ -119,24 +121,29 @@ export default {
 }
 
 h1,
-h2,
-p,
-#strain-guide-visit,
-#articles-visit {
-  text-align: center;
+#summary {
+    text-align: center;
 }
 
 h1 {
   font-size: 1.6rem;
 }
 
+#summary {
+    margin-bottom: 2vw;
+}
+
 h2 {
-  font-size: 1.3rem;
-  padding-top: 1rem;
+    font-size: 1.2rem;
 }
 
 p {
+    font-size: 1.1rem;
     margin: auto 8vw;
+}
+
+h3 {
+    font-size: 1.1rem;
 }
 
 #search-bar {
@@ -155,10 +162,5 @@ p {
   display: flex;
   margin-left: 2vw;
   margin-top: .9vw;
-}
-
-#strain-guide-visit,
-#articles-visit {
-    padding: 1vw;
 }
 </style>

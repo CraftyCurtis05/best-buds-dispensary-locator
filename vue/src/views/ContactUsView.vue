@@ -94,7 +94,7 @@
 
     <!-- Display Quote Component -->
     <div id="quote">
-        <QuoteComponent/>
+        <Quote/>
     </div>  
 
   </body>
@@ -108,7 +108,7 @@
 
 <script>
 import Header from '@/components/Header.vue';
-import QuoteComponent from '@/components/Quote.vue';
+import Quote from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 // import emailjs from 'emailjs-com';
 
@@ -116,7 +116,7 @@ export default {
     name: "ContactUs",
     components: { 
       Header, 
-      QuoteComponent, 
+      Quote, 
       Footer 
     },
     data() {

@@ -89,7 +89,7 @@
 
         <!-- Display Quote Component -->
         <div id="quote">
-            <QuoteComponent/>
+            <Quote/>
         </div> 
 
     </body>
@@ -112,7 +112,7 @@ import Tincture from '@/components/products_components/Tincture.vue';
 import Topical from '@/components/products_components/Topical.vue';
 import StrainGuideVisit from '@/components/strain_guide_components/StrainGuideVisit.vue';
 import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
-import QuoteComponent from '@/components/Quote.vue';
+import Quote from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
@@ -128,7 +128,7 @@ export default {
         Topical,  
         StrainGuideVisit, 
         ArticlesVisit, 
-        QuoteComponent, 
+        Quote, 
         Footer 
     }
 };

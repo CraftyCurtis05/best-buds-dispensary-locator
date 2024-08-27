@@ -2,7 +2,7 @@
 <template>
 
     <!-- Display Component Body -->
-    <body id="strain-101-body">
+    <body id="strain-body">
 
         <!-- Display Strain 101 Information -->
         <section id="strain-101">
@@ -158,7 +158,7 @@
 
 <script>
 export default {
-    name: "Strain101Component"
+    name: "Strain101"
 }
 </script>
 

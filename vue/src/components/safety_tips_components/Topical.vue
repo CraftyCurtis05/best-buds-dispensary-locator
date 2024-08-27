@@ -116,6 +116,7 @@
             </ol>
         </section>
 
+        <!-- Display Photo -->
         <aside id="photo">
             <img src="@\assets\safety_assets\topical_tips.jpg"/>
         </aside>

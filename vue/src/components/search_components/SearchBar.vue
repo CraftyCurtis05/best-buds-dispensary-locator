@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "SearchBarComponent",
+  name: "SearchBar",
 
   data() {
     return {

@@ -1,12 +1,19 @@
+<!-- View Jump Links Component Display -->
 <template>
 
-    <body>
+    <!-- Display Component Body -->
+    <body id="links-body">
 
-        <!-- Display Page Jump Links -->
-        <aside id="links">
+        <!-- Display View Jump Links -->
+        <section id="links">
+
+            <!-- Display Top Arrow and Reference Top ID -->
             <div id="top-link"><a href="#top">Top<img src="@\assets\arrow_assets\top_arrow.png"/></a></div>
+
+            <!-- Display Bottom Arrow and Reference Bottom ID -->
             <div id="bottom-link"><a href="#bottom"><img src="@\assets\arrow_assets\bottom_arrow.png"/>Bottom</a></div>
-        </aside>
+
+        </section>
 
     </body>
 

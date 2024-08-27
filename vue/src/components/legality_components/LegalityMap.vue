@@ -1,26 +1,26 @@
-<!-- https://www.youtube.com/watch?v=cN4cKvrYqXs 30:31 -->
 <!-- Legality Map Component Display -->
 <template>
 
     <!-- Display Component Body -->
-    <body id="legality-map-body">
+    <body id="legality-body">
 
-        <!-- Display Interactive Map -->
-        <section id="legality-map">
+        <!-- Display Legality Information -->
+        <section id="legality">
 
-            <!--  -->
-            <div id="state-law">
+            <!-- Display State and Law From Selected State On Map -->
+            <article id="state-law">
+
                 <h2>Selected State:</h2>
                 <h3>{{ this.selectedState }}</h3>
 
                 <h2>State Law:</h2>
                 <h3>{{ this.stateLaw }}</h3>
-            </div>
 
-            <!-- Interactive Map Information -->
-            <div id="map">
+            </article>
 
-                <!-- Created with Inkscape (http://www.inkscape.org/) -->
+            <!-- Display Interactive Map -->
+            <article id="map">
+
                 <svg
                     viewBox="0 0 1122.5197 793.70081"
                     version="1.1"
@@ -549,19 +549,28 @@
                         </g>
                     </g>
                 </svg>
-            </div>
+            </article>
 
-            <div id="legend">
+            <!-- Display Map Color Legend -->
+            <article id="legend">
+
+                <!-- Legal State -->
                 <div id="legal">
                     <h4>Legal State</h4>
                 </div>
+
+                <!-- Medical Legal State -->
                 <div id="medical">
                     <h4>Medical State</h4>
                 </div>
+
+                <!-- Illegal State -->
                 <div id="illegal">
                     <h4>Illegal State</h4>
                 </div>
-            </div>
+
+            </article>
+
         </section>
 
     </body>
@@ -602,12 +611,12 @@ export default {
 </script>
 
 <style scoped>
-#legality-map-body {
+#legality-body {
     width: 100%;
     text-align: center;
 }
 
-#legality-map {
+#legality {
     width: 90rem;
 }
 

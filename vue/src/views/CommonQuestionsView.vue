@@ -32,18 +32,18 @@
 
             <!-- Display Body Jump Links -->
              <section id="links">
-                <div class="link"><a href="#dispensaries-qa">Dispensaries</a></div>
-                <div class="link"><a href="#cannabis-qa">Cannabis</a></div>
-                <div class="link"><a href="#cbd-qa">CBD</a></div>
-                <div class="link"><a href="#delta9-qa">Delta-9</a></div>
-                <div class="link"><a href="#flower-qa">Flower</a></div>
-                <div class="link"><a href="#wax-qa">Wax</a></div>
-                <div class="link"><a href="#oil-qa">Oil</a></div>
-                <div class="link"><a href="#tincture-qa">Tincture</a></div>
-                <div class="link"><a href="#smoking-qa">Smoking</a></div>
-                <div class="link"><a href="#vaporizing-qa">Vaporizing</a></div>
-                <div class="link"><a href="#edibles-qa">Edibles</a></div>
-                <div class="link"><a href="#topicals-qa">Topicals</a></div>
+                <div class="link"><a href="#dispensaries">Dispensaries</a></div>
+                <div class="link"><a href="#cannabis">Cannabis</a></div>
+                <div class="link"><a href="#cbd">CBD</a></div>
+                <div class="link"><a href="#delta9">Delta-9</a></div>
+                <div class="link"><a href="#flower">Flower</a></div>
+                <div class="link"><a href="#wax">Wax</a></div>
+                <div class="link"><a href="#oil">Oil</a></div>
+                <div class="link"><a href="#tincture">Tincture</a></div>
+                <div class="link"><a href="#smoking">Smoking</a></div>
+                <div class="link"><a href="#vaporizing">Vaporizing</a></div>
+                <div class="link"><a href="#edibles">Edibles</a></div>
+                <div class="link"><a href="#topicals">Topicals</a></div>
              </section>
 
             <!-- Display Questions and Answers Information-->
@@ -125,7 +125,7 @@
 
         <!-- Display Quote Component -->
         <div id="quote">
-            <QuoteComponent/>
+            <Quote/>
         </div>  
 
     </body>
@@ -154,7 +154,7 @@ import EdiblesQA from '@/components/questions_components/EdiblesQA.vue';
 import TopicalsQA from '@/components/questions_components/TopicalsQA.vue';
 import StrainGuideVisit from '@/components/strain_guide_components/StrainGuideVisit.vue';
 import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
-import QuoteComponent from '@/components/Quote.vue';
+import Quote from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
@@ -176,7 +176,7 @@ export default {
         TopicalsQA,
         StrainGuideVisit, 
         ArticlesVisit, 
-        QuoteComponent, 
+        Quote, 
         Footer 
     }
 };

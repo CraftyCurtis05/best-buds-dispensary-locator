@@ -2,14 +2,14 @@
 <template>
 
     <!-- Display Component Body -->
-    <body id="strain-guide-visit-body">
+    <body id="visit-body">
 
         <!-- Display Strain Guide Visit Link -->
-        <section id="strain-guide-visit">
+        <section id="visit">
 
             <h1>Looking for more information on types and strains?</h1>
 
-            <summary id="strain-guide-link">
+            <summary id="guide-link">
                 Please check out our <router-link v-bind:to="{ name:'strainguide' }">Strain Guide</router-link> for information.
             </summary>
             
@@ -26,7 +26,7 @@ export default {
 </script>
 
 <style scoped>
-#strain-guide-visit-body {
+body {
     text-align: center;
 }
 </style>

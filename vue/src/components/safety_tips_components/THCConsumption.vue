@@ -2,10 +2,10 @@
 <template>
 
     <!-- Display Component Body -->
-    <body id="thc-consumption-body">
+    <body id="thc-body">
 
         <!-- Display THC Consumption Tips Information -->
-        <section id="thc-consumption">
+        <section id="thc">
             <h1>Safety Tips for Cannabis(THC) Consumption</h1>
             <p>Start low, go slow — THC edibles are no joke! Wait for the magic (it takes a while), keep snacks and water handy, and chill in your happy place. No mixing with booze, and definitely no driving. And remember, stash those treats safely! If you overdo it, just relax—time is your friend. By following these safety tips, you can enjoy a more positive and controlled experience with THC edibles:</p>
 
@@ -106,6 +106,7 @@
             </ol>
         </section>
 
+        <!-- Display Photo -->
         <aside id="photo">
             <img src="@\assets\safety_assets\thc_tips.jpg"/>
         </aside>

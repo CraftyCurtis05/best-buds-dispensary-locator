@@ -1,11 +1,13 @@
+<!-- Quote Component Display -->
 <template>
 
+    <!-- Quote Component Body -->
     <body id="quote-body">
 
-        <!-- Display Random Quote Object -->
+        <!-- Display Random Quote Object From Quotes Array -->
         <section id="quote">
             <h1>"{{ getQuote().quote }}"</h1>
-            <h2>- {{ quote.author }}</h2>
+            <h2>{{ quote.author }}</h2>
             <h3>{{ quote.job }}</h3>
         </section>
 
@@ -17,7 +19,7 @@
 import Quotes from '@/assets/quote_assets/quote.js';
 
 export default {
-    name: "QuoteComponent",
+    name: "Quote",
 
     data() {
         return {
@@ -31,7 +33,6 @@ export default {
         getQuote() {
             const randomIndex = Math.floor(Math.random() * this.quotes.length);
             this.quote = this.quotes[randomIndex];
-            // console.log(this.quote); <<<<<<<<<<<< FOR TESTING >>>>>>>>>>>>>>>
             return this.quote;
         }
     }
@@ -41,6 +42,10 @@ export default {
 <style scoped>
 /* OBJECTS = rem */
 /* SPACING = vw */
+body {
+    margin-inline: 20vw;
+}
+
 #quote {
     text-align: center;
     margin-top: 3vw;

@@ -1,4 +1,4 @@
-<!-- Too Much Cananbis Page Display -->
+<!-- Too Much Cananbis View Display -->
 <template>
 
     <!-- Browser Tab Title -->
@@ -9,63 +9,69 @@
         <Header/>
     </header>
 
-    <!-- Display Page Body -->
-    <body id="too-much-body">
+    <!-- Display View Body -->
+    <body id="toomuch-body">
 
-        <!-- Display Main Content -->
-        <main id="too-much-main">
+        <!-- Display Body's Main Content -->
+        <main id="toomuch-main">
 
-            <!-- Display Page Title -->
+            <!-- Display Body Title -->
             <h1>What To Expect If You've Had Too Much Cannabis</h1>
 
-            <!-- Display Page Jump Links -->
-            <aside id="page-jump-links">
-                <PageJumpLinks/>
+            <!-- Display View Jump Links Component -->
+            <aside id="view-links">
+                <ViewJumpLinks/>
             </aside>
 
-            <!-- Display Page Summary -->
-            <section id="page-summary">
-                <h2>***NEED CATCHY PHRASE***</h2>
-                <p>***NEED SUMMARY***</p>
+            <!-- Display Body Summary -->
+            <section id="summary">
+                <h2>🌿***NEED ATTENTION GRABBER***🌿</h2>
+                <p>***NEED PAGE SUMMARY***</p>
+                <h3>***WHATS TO BE EXPECTED OF PAGE***!</h3>
             </section>
 
-            <!-- Display Jump Links -->
+            <!-- Display Body Jump Links -->
             <section id="links">
                 <div class="link"><a href="#symptoms">Signs and Symptoms</a></div>
                 <div class="link"><a href="#coping">How to Cope</a></div>
                 <div class="link"><a href="#what-to-do">What To Do</a></div>
             </section> 
 
-            <!-- Display Too Much Symptoms Information -->
-            <section id="symptoms">
-                <Symptoms/>
-            </section>
+            <!-- Display Too Much Cannabis Information -->
+             <section id="toomuch">
 
-            <!-- Display Too Much Coping Information -->
-            <section id="coping">
-                <Coping/>
-            </section>
+                <!-- Display Too Much Symptoms Component -->
+                <article id="symptoms">
+                    <Symptoms/>
+                </article>
 
-            <!-- Display Too Much What To Do Information -->
-            <section id="what-to-do">
-                <WhatToDo/>
-            </section>
+                <!-- Display Too Much Coping Component -->
+                <article id="coping">
+                    <Coping/>
+                </article>
+
+                <!-- Display Too Much What To Do Component -->
+                <article id="what">
+                    <WhatToDo/>
+                </article>
+
+            </section>    
 
         </main>
 
-        <!-- Display Strain Guide Link -->
+        <!-- Display Strain Guide Visit Component -->
         <section id="strain-guide-visit">
             <StrainGuideVisit/>
         </section>
  
-        <!-- Display Want More Info with Articles Link -->
+        <!-- Display Articles Visit Component -->
         <section id="articles-visit">
             <ArticlesVisit/>
         </section>
 
         <!-- Display Quote Component -->
         <div id="quote">
-            <QuoteComponent/>
+            <Quote/>
         </div>  
 
     </body>
@@ -79,26 +85,26 @@
 
 <script>
 import Header from '@/components/Header.vue';
-import PageJumpLinks from '@/components/PageJumpLinks.vue';
+import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
 import Symptoms from '@/components/too_much_components/Symptoms.vue';
 import Coping from '@/components/too_much_components/Coping.vue';
 import WhatToDo from '@/components/too_much_components/WhatToDo.vue';
 import StrainGuideVisit from '@/components/strain_guide_components/StrainGuideVisit.vue';
 import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
-import QuoteComponent from '@/components/Quote.vue';
+import Quote from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
     name: "TooMuchCannabis",
     components: { 
         Header,
-        PageJumpLinks,
+        ViewJumpLinks,
         Symptoms,
         Coping,
         WhatToDo,
         StrainGuideVisit, 
         ArticlesVisit, 
-        QuoteComponent, 
+        Quote, 
         Footer 
     }
 };
@@ -107,7 +113,7 @@ export default {
 <style scoped>
 /* OBJECTS = rem */
 /* SPACING = vw */
-#too-much-body {
+#toomuch-body {
     width: 100vw;
     max-width: 100%;
     overflow-x: hidden;
@@ -117,15 +123,12 @@ export default {
     background-attachment: fixed;
 }
 
-#too-much-main {
+#toomuch-main {
     margin: 4vw;
 }
 
 h1,
-h2,
-p,
-#strain-guide-visit,
-#articles-visit {
+#summary {
     text-align: center;
 }
 
@@ -133,7 +136,7 @@ h1 {
   font-size: 1.6rem;
 }
 
-#page-summary {
+#summary {
     margin-bottom: 2vw;
 }
 
@@ -144,6 +147,10 @@ h2 {
 p {
     font-size: 1.1rem;
     margin: auto 8vw;
+}
+
+h3 {
+    font-size: 1.1rem;
 }
 
 #links {
@@ -160,10 +167,5 @@ p {
 
 .link:hover {
     text-decoration: underline;
-}
-
-#strain-guide-visit,
-#articles-visit {
-    padding: 1vw;
 }
 </style>

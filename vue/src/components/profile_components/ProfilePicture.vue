@@ -2,11 +2,13 @@
 <template>
 
     <!-- Display Component Body -->
-     <body id="profile-picture-body">
+     <body id="picture-body">
 
         <!-- Display User Profile Picture -->
-        <section id="profile-picture">
-            <img :src="src" alt="profile-pic">
+        <section id="picture">
+
+            <img :src="src" alt="image">
+            
         </section>
 
     </body>
@@ -15,7 +17,7 @@
 
 <script>
 export default {
-    name: "ProfilePictureComponent",
+    name: "ProfilePicture",
     props: {
         src: {
             required: true
@@ -27,14 +29,14 @@ export default {
 <style scoped>
 /* OBJECTS = rem */
 /* SPACING = vw */
-#profile-picture {
+#picture {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     overflow: hidden;
 }
 
-#profile-picture img {
+img {
     width: 100%;
     height: 100%;
     object-fit: cover;

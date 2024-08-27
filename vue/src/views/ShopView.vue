@@ -1,4 +1,4 @@
-<!-- Shop Page Display -->
+<!-- Shop View Display -->
 <template>
 
   <!-- Browser Tab Title -->
@@ -9,47 +9,55 @@
     <Header/>
   </header>
 
-  <!-- Display Page Body -->
+  <!-- Display View Body -->
   <body id="shop-body">
 
-    <!-- Display Main Content -->
+    <!-- Display Body's Main Content -->
     <main id="shop-main">
 
-      <!-- Display Page Title -->
+      <!-- Display Body Title -->
       <h1>Shop our Favorite Products</h1>
 
-      <!-- Display Page Summary -->
-      <p>Shopping for cannabis products? It’s a fun adventure! Browse through a variety of strains, from energizing sativas to relaxing indicas. Check out edibles, vapes, and concentrates to match your style. Look for quality and lab-tested products to ensure a great experience. Enjoy discovering your perfect pick!</p>
-
-      <!-- Display Page Jump Links -->
-      <aside id="page-jump-links">
-        <PageJumpLinks/>
+      <!-- Display View Jump Links Component -->
+      <aside id="view-links">
+        <ViewJumpLinks/>
       </aside>
+
+      <!-- Display Body Summary -->
+      <section id="summary">
+        <h2>🌿Shopping for cannabis products?🌿</h2>
+        <p>It’s a fun adventure! Browse through a variety of strains, from energizing sativas to relaxing indicas. Check out edibles, vapes, and concentrates to match your style. Look for quality and lab-tested products to ensure a great experience. Enjoy discovering your perfect pick!</p>
+        <h3>We're still packing this bowl full of the best deals we can find, stay tuned!</h3>
+      </section>
 
       <!-- Display Shop Information -->
       <section id="shop">
-        <h2>We're still packing this bowl full of the best deals we can find, stay tuned!</h2>
+
+        <!-- Display Products Component -->
+        <article id="products">
           <img src="@/assets/shop_assets/shopping_cart.jpg"/>
+        </article>
+
       </section>
 
     </main>
 
-    <!-- Display Strain Guide Link -->
+    <!-- Display Strain Guide Visit Component -->
     <section id="strain-guide-visit">
       <StrainGuideVisit/>
     </section>
 
-    <!-- Display Want More Info with Articles Link -->
+    <!-- Display Articles Visit Component -->
     <section id="articles-visit">
       <ArticlesVisit/>
     </section>
 
     <!-- Display Quote Component -->
     <div id="quote">
-      <QuoteComponent/>
+      <Quote/>
     </div>  
 
-  </body>
+    </body>
 
   <!-- Display Footer Component -->
   <footer id="bottom">
@@ -60,20 +68,20 @@
 
 <script>
 import Header from '@/components/Header.vue';
-import PageJumpLinks from '@/components/PageJumpLinks.vue';
+import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
 import StrainGuideVisit from '@/components/strain_guide_components/StrainGuideVisit.vue';
 import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
-import QuoteComponent from '@/components/Quote.vue';
+import Quote from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
   name: "Shop",
   components: { 
     Header,
-    PageJumpLinks,
+    ViewJumpLinks,
     StrainGuideVisit, 
     ArticlesVisit, 
-    QuoteComponent, 
+    Quote, 
     Footer 
   }
 };
@@ -97,33 +105,33 @@ export default {
 }
 
 h1,
-h2,
-p,
-#strain-guide-visit,
-#articles-visit {
-  text-align: center;
-}
-
-img {
-  width: 40rem;
-  margin: auto 25vw;
+#summary {
+    text-align: center;
 }
 
 h1 {
   font-size: 1.6rem;
 }
 
+#summary {
+    margin-bottom: 2vw;
+}
+
 h2 {
-  font-size: 1.3rem;
-  padding-top: 2rem;
+    font-size: 1.2rem;
 }
 
 p {
+    font-size: 1.1rem;
     margin: auto 8vw;
 }
 
-#strain-guide-visit,
-#articles-visit {
-    padding: 1vw;
+h3 {
+    font-size: 1.1rem;
+}
+
+img {
+  width: 40rem;
+  margin: auto 25vw;
 }
 </style>

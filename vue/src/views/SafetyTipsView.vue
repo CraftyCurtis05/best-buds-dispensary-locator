@@ -1,4 +1,4 @@
-<!-- Safety Tips Page Display --->
+<!-- Safety Tips View Display --->
 <template>
 
     <!-- Browser Tab Title -->
@@ -9,72 +9,80 @@
         <Header/>
     </header>
 
-    <!-- Display Page Body -->
-    <body id="safety-tips-body">
+    <!-- Display View Body -->
+    <body id="tips-body">
 
-        <!-- Display Main Content -->
-        <main id="safety-tips-main">
+        <!-- Display Body's Main Content -->
+        <main id="tips-main">
 
-            <!-- Display Page Title -->
+            <!-- Display Body Title -->
             <h1>Tips for Safer Cannabis Consumption, Smoking and Topicals</h1>
 
-            <!-- Display Page Summary -->
-            <p>***PAGE SUMMARY***</p>
-
-            <!-- Display Page Jump Links -->
-            <aside id="page-jump-links">
-                <PageJumpLinks/>
+            <!-- Display View Jump Links Component -->
+            <aside id="view-links">
+                <ViewJumpLinks/>
             </aside>
 
-            <!-- Display THC Consumption Tips Component -->
-            <section id="thc-consumption">
-                <THCConsumption/>
-            </section>    
-
-            <!-- Display CBD Consumption Tips Component -->
-            <section id="cbd-consumption"> 
-                <CBDConsumption/>
+            <!-- Display Body Summary -->
+            <section id="summary">
+                <h2>🌿***NEED ATTENTION GRABBER***🌿</h2>
+                <p>***NEED PAGE SUMMARY***</p>
+                <h3>***WHATS TO BE EXPECTED OF PAGE***!</h3>
             </section>
 
-            <!-- Display Cannabis Smoking Tips Component -->
-            <section id="smoking">
-                <Smoking/>
-            </section>
+            <!-- Display Safety Tips Information -->
+             <section id="tips">
 
-            <!-- Display Topical Use Tips Component -->
-             <section id="topical">
-                <Topical/>
+                <!-- Display THC Consumption Tips Component -->
+                <article id="thc-consumption">
+                    <THCConsumption/>
+                </article>    
+
+                <!-- Display CBD Consumption Tips Component -->
+                <article id="cbd-consumption"> 
+                    <CBDConsumption/>
+                </article>
+
+                <!-- Display Cannabis Smoking Tips Component -->
+                <article id="smoking">
+                    <Smoking/>
+                </article>
+
+                <!-- Display Topical Use Tips Component -->
+                <article id="topical">
+                    <Topical/>
+                </article>    
+
+                <!-- Display Conclusion Information -->
+                <article id="conclusion"> 
+                    <h3>Conclusion:</h3>
+                    <p>Your first cannabis experience can be a wonderful journey when approached with care and responsibility. As for the question, "Is it better to use weed the first time alone or in company?", having a trusted, sober friend nearby can make the experience more comforting and enjoyable. By following the tips shared in this guide, first-time cannabis smokers can look forward to a positive and memorable first high. If you are contemplating using cannabis for the first time, undertake comprehensive research and connect with experienced cannabis users for their insights. This can empower you to make an informed decision about whether cannabis is the right choice for you.</p>
+                    <h4>Cannabis comes in a variety of forms including edibles and concentrates but they are not the best choice for your first time. Extracts including vape cartridges are too potent and hard to handle for a novice and edibles are not that predictable in terms of dosage and effects (which depend on numerous factors like tolerance and the time of onset) the buzz may start hours from ingestion and last for up to 8 hours.</h4>
+                    <h5>Remember, responsible consumption is crucial for any enjoyable cannabis experience.</h5>
+                </article> 
+             
             </section>    
-
-            <!-- Display Conclusion Information -->
-            <section id="conclusion"> 
-                <h2>Conclusion:</h2>
-                <p>Your first cannabis experience can be a wonderful journey when approached with care and responsibility. As for the question, "Is it better to use weed the first time alone or in company?", having a trusted, sober friend nearby can make the experience more comforting and enjoyable. By following the tips shared in this guide, first-time cannabis smokers can look forward to a positive and memorable first high. If you are contemplating using cannabis for the first time, undertake comprehensive research and connect with experienced cannabis users for their insights. This can empower you to make an informed decision about whether cannabis is the right choice for you.</p>
-                <mark>Cannabis comes in a variety of forms including edibles and concentrates but they are not the best choice for your first time. Extracts including vape cartridges are too potent and hard to handle for a novice and edibles are not that predictable in terms of dosage and effects (which depend on numerous factors like tolerance and the time of onset) the buzz may start hours from ingestion and last for up to 8 hours.</mark>
-                <mark>Remember, responsible consumption is crucial for any enjoyable cannabis experience.</mark>
-            </section> 
 
         </main>        
 
-        <!-- Display Strain Guide Link -->
+        <!-- Display Strain Guide Visit Component -->
         <section id="strain-guide-visit">
             <StrainGuideVisit/>
         </section>
- 
-        <!-- Display Want More Info with Articles Link -->
+
+        <!-- Display Articles Visit Component -->
         <section id="articles-visit">
             <ArticlesVisit/>
         </section>
 
         <!-- Display Quote Component -->
         <div id="quote">
-            <QuoteComponent/>
+            <Quote/>
         </div>  
-
 
     </body>
 
-     <!-- Display Footer Component -->
+    <!-- Display Footer Component -->
     <footer id="bottom">
         <Footer/>
     </footer> 
@@ -83,28 +91,28 @@
 
 <script>
 import Header from '@/components/Header.vue';
-import PageJumpLinks from '@/components/PageJumpLinks.vue';
+import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
 import THCConsumption from '@/components/safety_tips_components/THCConsumption.vue';
 import CBDConsumption from '@/components/safety_tips_components/CBDConsumption.vue';
 import Smoking from '@/components/safety_tips_components/Smoking.vue';
 import Topical from '@/components/safety_tips_components/Topical.vue';
 import StrainGuideVisit from '@/components/strain_guide_components/StrainGuideVisit.vue';
 import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
-import QuoteComponent from '@/components/Quote.vue';
+import Quote from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
     name: "SafetyTips",
     components: { 
         Header,
-        PageJumpLinks,
+        ViewJumpLinks,
         THCConsumption,
         CBDConsumption,
         Smoking,
         Topical,
         StrainGuideVisit, 
         ArticlesVisit, 
-        QuoteComponent,
+        Quote,
         Footer 
     }
 };
@@ -113,7 +121,7 @@ export default {
 <style scoped>
 /* OBJECTS = rem */
 /* SPACING = vw */
-#safety-tips-body {
+#tips-body {
     width: 100vw;
     max-width: 100%;
     overflow-x: hidden;
@@ -123,16 +131,13 @@ export default {
     background-attachment: fixed;
 }
 
-#safety-tips-main {
+#tips-main {
     margin: 4vw;
 }
 
 h1,
-h2,
-p,
-mark,
-#strain-guide-visit,
-#articles-visit {
+#summary,
+#conclusion {
     text-align: center;
 }
 
@@ -140,17 +145,20 @@ h1 {
   font-size: 1.6rem;
 }
 
+#summary {
+    margin-bottom: 2vw;
+}
+
 h2 {
-  font-size: 1.3rem;
-  padding-top: 2rem;
+    font-size: 1.2rem;
 }
 
 p {
+    font-size: 1.1rem;
     margin: auto 8vw;
 }
 
-#strain-guide-visit,
-#articles-visit {
-    padding: 1vw;
+h3 {
+    font-size: 1.1rem;
 }
 </style>

@@ -4,8 +4,10 @@
     <!-- Display Component Body -->
     <body id="tips-tricks-body">
 
+
         <!-- Display Tips and Tricks Information -->
         <section id="tips-tricks">
+
             <!-- Display Cannabis Products Link and Information -->
             <article id="choose-products">
                 <router-link v-bind:to="{ name:'cannabisproducts' }"><img src="@/assets/tipstricks_assets/which_product.jpg"/></router-link>
@@ -47,6 +49,7 @@
                 <h4><router-link v-bind:to="{ name:'commonquestions' }">Commonly Asked Questions</router-link></h4>
                 <span>Got questions about cannabis? You're not alone! People often wonder about the difference between indica and sativa, how much to take, how long effects last, and whether it’s legal. Others ask about edibles, safety tips, and the best ways to enjoy it. Curious minds lead to better experiences, so ask away and enjoy the high times! We've compiled a list of the most frequently asked questions and answers.</span>
             </article>
+
         </section>
 
     </body>
@@ -55,7 +58,7 @@
 
  <script>
 export default {
-    name: "TipsTricksComponent"
+    name: "TipsAndTricks"
 };
 </script>
 

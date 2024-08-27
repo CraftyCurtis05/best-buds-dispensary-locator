@@ -2,16 +2,18 @@
 <template>
 
     <!-- Display Component Body -->
-    <body id="articles-visit-body">
+    <body id="articles-body">
 
         <!-- Display Articles Visit Information -->
         <section id="articles-visit">
 
+            <!-- Display Component Title -->
             <h1>Looking for more information?</h1>
 
-            <summary id="articles-link">
+            <!-- Display Visit Articles Link That Routes To Articles View -->
+            <article id="articles-link">
                 <router-link v-bind:to="{ name:'articles' }">Visit our articles page</router-link>
-            </summary>
+            </article>
             
         </section>
 
@@ -26,7 +28,7 @@ export default {
 </script>
 
 <style scoped>
-#articles-visit-body {
+body {
     text-align: center;
 }
 </style>

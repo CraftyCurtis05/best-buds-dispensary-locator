@@ -39,8 +39,8 @@
         <router-link v-bind:to="{ name:'test'}">Jen Dev Testing</router-link>  <!-- <<<<<<<<<<<< FOR TESTING >>>>>>>>>>>>>>> -->
 
         <!-- Display Home Featured Component -->
-        <article id="home-featured">
-          <HomeFeaturedComponent/>
+        <article id="featured">
+          <Featured/>
         </article>
 
       </section>
@@ -59,7 +59,7 @@
 
     <!-- Display Quote Component -->
     <div id="quote">
-      <QuoteComponent/>
+      <Quote/>
     </div>  
 
   </body>
@@ -74,8 +74,10 @@
 <script>
 import Header from '@/components/Header.vue';
 import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
-import HomeFeaturedComponent from '@/components/home_components/HomeFeatured.vue';
-import QuoteComponent from '@/components/Quote.vue';
+import Featured from '@/components/home_components/HomeFeatured.vue';
+import StrainGuideVisit from '@/components/strain_guide_components/StrainGuideVisit.vue';
+import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
+import Quote from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
@@ -83,8 +85,10 @@ export default {
   components: { 
     Header,
     ViewJumpLinks,
-    HomeFeaturedComponent,
-    QuoteComponent,
+    Featured,
+    StrainGuideVisit, 
+    ArticlesVisit,
+    Quote,
     Footer
   }
 };

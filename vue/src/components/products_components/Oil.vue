@@ -33,6 +33,7 @@
             </ul>
         </section>
 
+        <!-- Display Photo -->
         <aside id="photo">
             <img src="@\assets\products_assets\oil.jpg"/>
         </aside>

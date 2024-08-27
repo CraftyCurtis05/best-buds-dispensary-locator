@@ -1,22 +1,22 @@
 <!-- Header Component Display--->
 <template>
 
-    <!-- Display Header Body -->
-    <body>
+    <!-- Display Component Body -->
+    <body id="header-body">
 
-        <!-- NavBar Component -->
+        <!-- Display NavBar Component -->
         <section id="navbar">
-            <NavBarComponent/>
+            <NavBar/>
         </section>
 
-        <!-- Logo and Link to Home Page -->
+        <!-- Display Logo and Link to Home Page -->
         <section id="logo">
             <router-link v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''">
                 <img src="@\assets\logo_assets\cropped\best_buds_logo_white cropped.png" alt="logo">
             </router-link>
         </section>
 
-        <!-- Banner Image -->
+        <!-- Display Banner Image -->
         <section id="banner">
             <img src="@\assets\header_assets\dispensary_banner_cropped.png" alt="banner">
         </section>
@@ -26,11 +26,11 @@
 </template>
 
 <script>
-import NavBarComponent from "../components/NavBar.vue";
+import NavBar from "../components/NavBar.vue";
 
 export default {
     name: "Header",
-    components: { NavBarComponent }
+    components: { NavBar }
 }
 </script>
 

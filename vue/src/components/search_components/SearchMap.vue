@@ -2,7 +2,7 @@
 <template>
     
     <!-- Display Search Map Body -->
-    <body id="search-map-body">
+    <body id="map-body">
 
         <!-- Google Map Display -->
         <GoogleMap 
@@ -23,7 +23,7 @@ import { defineComponent } from "vue";
 import { GoogleMap, Marker } from "vue3-google-map";
 
 export default defineComponent({
-    name: "SearchMapComponent",
+    name: "SearchMap",
 
     components: {GoogleMap, Marker},
 

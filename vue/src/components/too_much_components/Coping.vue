@@ -50,6 +50,7 @@
             </ol>    
         </section>
 
+        <!-- Display Photo -->
         <aside id="photo">
             <img src="@\assets\toomuch_assets\coping.jpg"/>
         </aside>

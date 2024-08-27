@@ -8,10 +8,14 @@
         <!-- Display Component Title -->
         <h1>Favorite Locations</h1>
 
-        <!-- Make List of Locations by Looping Through Each Location in Locations Array and Display Location Object -->
-        <ul id="favorite-list">
-            <li v-for="(location, index) in locations" :key="index">{{ location }}</li>
-        </ul>
+        <section id="favorite">
+
+            <!-- Make List of Locations by Looping Through Each Location in Locations Array and Display Location Object -->
+            <ul id="favorite-list">
+                <li v-for="(location, index) in locations" :key="index">{{ location }}</li>
+            </ul>
+
+        </section>    
 
     </body>
 
@@ -19,7 +23,7 @@
 
 <script>
 export default {
-    name: "FavoritesComponent",
+    name: "Favorites",
 
     props: {
         locations: {

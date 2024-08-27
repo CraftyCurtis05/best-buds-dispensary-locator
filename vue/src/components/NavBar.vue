@@ -1,7 +1,7 @@
 <!-- Navigation Bar Component Display--->
 <template>
 
-    <!-- Display Navigation Bar Body -->
+    <!-- Display Component Body -->
     <body id="nav-body">
 
         <!-- Display Left of Navigation Bar -->
@@ -40,7 +40,7 @@
 
 <script>
 export default {
-    name: "NavBarComponent"
+    name: "NavBar"
 };
 </script>
 

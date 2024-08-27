@@ -2,14 +2,15 @@
 <template>
 
     <!-- Display Component Body -->
-    <body>
+    <body id="search-body">
 
         <!-- Display Search Bar that Takes in User Input as 'keyword' and Runs the searchArticles Function in Real-Time-->
         <section id="search-bar">
             <input id="user-input" name="user-input" type="text" v-model="keyword" placeholder="Enter Search Keyword"/>
         </section>
 
-        <div id="error" v-if="results.length === 0">{{ this.error }}</div>
+        <!-- Display Error Message If Articles Array Is Empty After Keyword Search -->
+        <div id="error">{{ this.error }}</div>
 
         <!-- Display Results List from Array of Objects Created in searchArticles Function -->
         <section id="search-list">
@@ -40,7 +41,7 @@
 import Articles from "@/assets/article_assets/articles.js";
 
 export default {
-  name: "SearchArticlesComponent",
+  name: "SearchArticles",
 
   data() {
     return {
@@ -55,26 +56,36 @@ export default {
 
     searchArticles(keyword) {
 
+      // Resets Error Message
       this.error = "";
 
-      keyword = keyword.toLowerCase().trim(); // User input/keyword is converted to lower case and whitespace is trimmed off both sides
+      // User Input/Keyword is Converted to Lower Case and Whitespace is Removed
+      keyword = keyword.toLowerCase().trim();
 
-      let results = []; // Variable initialized containing an empty array to store matched results
+      // Variable Initialized Containing an Empty Array to Store Matched Results
+      let results = [];
 
-      this.articles.forEach((article) => { // Loop through the articles array = article object [{}]
+      // Loop Through Articles Array = article object [{}]
+      this.articles.forEach((article) => {
 
-        Object.keys(article).forEach((key) => { // Loop through article object = article key [{key:}]
+        // Loop Through Article Object = article key [{key:}]
+        Object.keys(article).forEach((key) => {
 
-          if(article[key].includes(keyword)) { // Loop through value string and search for keyword   
+          // Loop Through Value String and Search for Keyword
+          if(article[key].includes(keyword)) {   
 
-            if(!results.includes(article)) { // Checks if results array does not already contain article             
-              results.push(article); // If article contains keyword, add article object to results array
+            // Checks if Results Array Does Not Already Contain Article 
+            if(!results.includes(article)) {
+
+              // If Article Contains Keyword, Add Article Object to Results Array         
+              results.push(article);
             }
           }
         })
       })
 
-      if(results.length === 0) { // Checks and verifies results array is empty and sets error message variable
+      // Checks and Verifies if Results Array is Empty and Sets Error Message Variable If It Is
+      if(results.length === 0) {
 
         results = [];
         this.error = "No articles match. Please try again.";

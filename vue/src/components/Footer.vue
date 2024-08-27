@@ -1,8 +1,8 @@
 <!-- Footer Component Display--->
 <template>
 
-    <!-- Display Footer Body -->
-    <body>
+    <!-- Display Component Body -->
+    <body id="footer-body">
 
         <!-- Display Logo and Slogan and Link to Home on the Left -->
         <section id="logo">

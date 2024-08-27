@@ -25,6 +25,7 @@
             </ul>
         </section>
 
+        <!-- Display Photo -->
         <aside id="photo">
             <img src="@\assets\products_assets\wax.jpg"/>
         </aside>

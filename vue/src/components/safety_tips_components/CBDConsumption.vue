@@ -2,10 +2,10 @@
 <template>
 
     <!-- Display Component Body -->
-    <body id="cbd-consumption-body">
+    <body id="cbd-body">
 
         <!-- Display CBD Consumption Tips Information -->
-        <section id="cbd-consumption"> 
+        <section id="cbd"> 
             <h1>Safety Tips for Cannabinol(CBD) Consumption</h1>
             <p>Take it slow with CBD edibles—start small and see how you feel! Read labels, choose quality, and check with your doc if you’re on meds. Be patient, store them right, and enjoy the chill without overdoing it. Keep an eye out for any side effects, and make sure it's all legal. Relax, snack responsibly, and let the calm vibes roll! Check out more safety tips below:</p>
 
@@ -90,6 +90,7 @@
             </ol>  
         </section>
 
+        <!-- Display Photo -->
         <aside id="photo">
             <img src="@\assets\safety_assets\cbd_tips.jpg"/>
         </aside>

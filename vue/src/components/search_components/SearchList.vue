@@ -47,7 +47,7 @@ import YelpService from '@/services/YelpService';
 import JavaService from '@/services/JavaService';
   
 export default {
-    name: "SearchListComponent",
+    name: "SearchList",
     
     data() {
         // Results Array Initialized to Hold Results From getResults Function Bc Used In Template and Script
@@ -126,6 +126,8 @@ h3 {
     font-weight: lighter;
     margin: .5vw auto;
 }
+
+/* <<<<< MESSING AROUND WITH SCROLL BAR >>>>> */
 
 /* Scrollbar Width */
 ::-webkit-scrollbar {
