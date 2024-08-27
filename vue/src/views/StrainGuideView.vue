@@ -25,15 +25,15 @@
 
       <!-- Display Body Summary -->
       <section id="summary">
-        <h2>🌿***NEED ATTENTION GRABBER***🌿</h2>
-        <p>Every cannabis strain has a name, a type and terpenes. While most dispensaries categorize cannabis by the type--indica, sativa or hybrid; terpenes are another great way to find the best cannabis strain for you.</p>
-        <h3>Below is a basic guide to strains and the most common terpenes!</h3>
+        <h2>🌿Ever wondered if your ideal strain is out there, just waiting to make your day?🌿</h2>
+        <p>Finding the perfect strain or terpene is like dating—sometimes you need a few awkward encounters before you find "the one." Our guide helps you swipe right on the ideal match for your mood, whether you’re seeking blissful relaxation or an energy boost to conquer your Netflix marathon. It’s all about finding your cannabis soulmate!</p>
+        <h3>Find the right one for you by using our complete guide below!</h3>
       </section>
       
       <!-- Display Body Jump Links -->
       <section id="links">
-        <div class="link"><a href="#strain-101">Strains 101</a></div>
-        <div class="link"><a href="#turpene-101">Turpenes 101</a></div>
+        <div class="link"><a href="#strain-101">Strain 101</a></div>
+        <div class="link"><a href="#turpene-101">Turpene 101</a></div>
       </section>
 
       <!-- Display Guide Information -->

@@ -25,9 +25,17 @@
 
             <!-- Display Body Summary -->
             <section id="summary">
-                <h2>🌿***NEED ATTENTION GRABBER***🌿</h2>
-                <p>***NEED PAGE SUMMARY***</p>
-                <h3>***WHATS TO BE EXPECTED OF PAGE***!</h3>
+                <h2>🌿Want to keep your high smooth and groovy? 🌿</h2>
+                <p>Cannabis use safety is like mastering the art of throwing a great party—keep the vibes positive, don’t overdo it, and have a plan to get home safely if needed. Balance your snacks with hydration, and remember: moderation is key. So, enjoy the high, but don’t let it turn into a wild rave without a designated driver!</p>
+                <h3>Take a gander at the safety tips for cannabis use below!</h3>
+            </section>
+
+            <!-- Display Body Jump Links -->
+            <section id="links">
+                <div class="link"><a href="#thc-consumption">THC Consumption</a></div>
+                <div class="link"><a href="#cbd-consumption">CBD Consumption</a></div>
+                <div class="link"><a href="#smoking">Cannabis Smoking</a></div>
+                <div class="link"><a href="#topical">Topical Use</a></div>
             </section>
 
             <!-- Display Safety Tips Information -->
@@ -160,5 +168,21 @@ p {
 
 h3 {
     font-size: 1.1rem;
+}
+
+#links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.link {
+    font-size: 1.2rem;
+    font-weight: bolder;
+    margin-inline: 1vw;
+}
+
+.link:hover {
+    text-decoration: underline;
 }
 </style>

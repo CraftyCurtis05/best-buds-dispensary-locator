@@ -16,7 +16,7 @@
         <main id="legality-main">
 
             <!-- Display Body Title -->
-            <h1>Quick Guide to the Laws in Each State</h1>
+            <h1>Cannabis Legality In Each State</h1>
 
             <!-- Display View Jump Links Component -->
             <aside id="view-links">
@@ -25,7 +25,7 @@
 
             <!-- Display Body Summary -->
             <section id="summary">
-                <h2>🌿***NEED ATTENTION GRABBER***🌿</h2>
+                <h2>🌿Ever wondered if your cannabis stash is legal or if you’re just a really optimistic rebel?🌿</h2>
                 <p>States like California and Colorado are rolling out the green carpet for adults 21+, with legal shops and chill vibes. Many states have medical programs where patients get the green light with a doctor's thumbs-up. Some states have turned down the legal heat, making minor offenses more about a fine than a felony. States are dancing to their own beat, while federal rules are like the old-school DJ trying to keep things under control. In short, it’s a legal jamboree with states setting their own rules while federal law lingers in the background!</p>
                 <h3>Click Interactive Map To View The Cannabis Laws In Each State!</h3>
             </section>

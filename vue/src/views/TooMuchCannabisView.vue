@@ -16,7 +16,7 @@
         <main id="toomuch-main">
 
             <!-- Display Body Title -->
-            <h1>What To Expect If You've Had Too Much Cannabis</h1>
+            <h1>Too Much Cannabis</h1>
 
             <!-- Display View Jump Links Component -->
             <aside id="view-links">
@@ -25,9 +25,9 @@
 
             <!-- Display Body Summary -->
             <section id="summary">
-                <h2>🌿***NEED ATTENTION GRABBER***🌿</h2>
-                <p>***NEED PAGE SUMMARY***</p>
-                <h3>***WHATS TO BE EXPECTED OF PAGE***!</h3>
+                <h2>🌿Think you may have overdone it?🌿</h2>
+                <p>Using too much cannabis can lead to overthinking and heightened anxiety, making simple tasks seem overwhelming. It’s like your mind gets stuck in overdrive—what started as a relaxing evening can turn into a marathon of introspection. The key is moderation and knowing your limits to keep your experience enjoyable and stress-free.</p>
+                <h3>If you think you've had too much, please check out below to ease your mind!</h3>
             </section>
 
             <!-- Display Body Jump Links -->

@@ -27,9 +27,9 @@
 
       <!-- Display Body Summary -->
       <section id="summary">
-        <h2>🌿***NEED ATTENTION GRABBER***🌿</h2>
-        <p>***NEED PAGE SUMMARY***</p>
-        <h3>Check out the featured dispensary below!</h3>
+        <h2>🌿Need to find the nearest spot to grab some legal goodies?🌿</h2>
+        <p>Our dispensary locator is like a GPS for your chill – just plug in your location and let it guide you to the best green in town. Whether you’re a seasoned pro or just curious, it’ll make sure you’re never more than a few taps away from your next favorite herb!</p>
+        <h3>Check out the featured dispensary below or head over to our search page to find your next green spot!</h3>
       </section>
 
       <!-- Display Home Information -->

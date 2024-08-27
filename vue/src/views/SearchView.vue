@@ -16,7 +16,7 @@
     <main id="search-main">
 
       <!-- Display Body Title -->
-      <h1>Best Buds Dispensary Locator</h1>
+      <h1>Dispensary Locator</h1>
 
       <!-- Display View Jump Links Component -->
       <aside id="view-links">
@@ -26,7 +26,7 @@
       <!-- Display Body Summary -->
       <section id="summary">
         <h2>🌿Need to find a dispensary?🌿</h2>
-        <p>Use our cannabis locator to easily spot nearby shops. Just enter your location, and voilà! You’ll see the best places to get your favorite strains and products. It’s a quick and fun way to get your green fix!</p>
+        <p>Lost in the sea of “where can I get my hands on some top-shelf green”? Fear not! Our dispensary locator is here to rescue you from your herbless woes. Just input your location and watch as it guides you straight to the nearest stash spot—because life’s too short to wander around without a good bud!</p>
         <h3>Use the search below to find dispensaries near you!</h3>
       </section>
 

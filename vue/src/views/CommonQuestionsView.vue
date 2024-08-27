@@ -27,7 +27,7 @@
             <section id="summary">
                 <h2>🌿Got cannabis questions? No worries!🌿</h2>
                 <p>Whether you're curious about legality, how it works, or the best ways to use it, the plant’s got answers. From getting high or just chilling with CBD, to understanding health impacts and legal stuff, dive in and explore. Stay informed, use responsibly, and enjoy the journey!</p>
-                <h3>We've got all your questions answered below, just navigate to a topic by selecting a topic!</h3>
+                <h3>We've got all your questions answered below!</h3>
             </section>
 
             <!-- Display Body Jump Links -->
