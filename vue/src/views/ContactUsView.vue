@@ -27,7 +27,6 @@
 
       <!-- Display Contact Us Information -->
       <section id="contact-us">
-          <h2>Using the form below</h2>
 
         <!-- Display Contact Us Form -->
         <article id="contact-us-form">
@@ -134,7 +133,7 @@ export default {
     //       "service_bmvzxb3",
     //       "template_jrn3z3o",
     //       this.$refs.values,
-    //       "xKi3BvVcjev9tM0vx"
+    //       "LtzYKLHpH1MiB7EPW"
     //     )
     //     .then(
     //       (result) => {
