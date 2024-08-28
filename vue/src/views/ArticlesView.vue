@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <!-- Archive Section -->
+        <!-- Archive Section
         <div class="archive-container">
             <div class="archive">
                 <h2>Archive</h2>
@@ -39,7 +39,7 @@
                     <li v-for="(month, index) in archive" :key="index">{{ month }}</li>
                 </ul>
             </div>
-        </div>
+        </div> -->
 
         <!-- Display Quote Component -->
         <div id="quote">
@@ -57,6 +57,7 @@
 
 <script>
 import axios from 'axios';
+import Search from '@/assets/news_assets/search.js';
 import Footer from '@/components/Footer.vue';
 import Header from '@/components/Header.vue';
 import QuoteComponent from '@/components/Quote.vue';
@@ -68,6 +69,8 @@ export default {
     data() {
         return {
             searchQuery: '',
+            search: Search,
+            newsSearch: '',
             articles: [
                 {
                     title: 'Article 1',
@@ -83,14 +86,8 @@ export default {
                     title: 'Article 3',
                     description: 'Description of article 3',
                     link: 'https://example.com/article3',
-                },
-                {
-                    title: 'Article 4',
-                    description: 'Description of article 4',
-                    link: 'https://example.com/article4',
                 }
-            ],
-            archive: ['January 2024', 'February 2024', 'March 2024'], // Sample archive data
+            ]
         }
     },
     computed: {
@@ -101,14 +98,21 @@ export default {
         }
     },
     methods: {
+        randomSearch() {
+            const random = Math.floor(Math.random() * this.search.length);
+            this.newsSearch = this.search[random];
+            console.log(this.newsSearch);
+        },
         async fetchArticles() {
             try {
-            const response = await axios.get('https://api.thenewsapi.com/v1/news/all', {
+                // const date = new Date.getFullYear('July 20, 23 00:20:18');
+                const response = await axios.get('https://api.thenewsapi.com/v1/news/all', {
                 params: {
-                    categories: 'marijuana',
+                    title: this.newsSearch,
                     api_token: 'WYKYp9K37PkhTQosYnP2jrsOh5687P8bkV2IHdGQ',
                     language: 'en',
-                    limit: 4  
+                    limit:  3,
+                    published_after: '2024-01-01'
                 },
                 paramsSerializer: params => {
                     return new URLSearchParams(params).toString();
@@ -123,6 +127,9 @@ export default {
     },
     mounted() {
         this.fetchArticles();
+    },
+    created() {
+        this.randomSearch();
     }
 };
 </script>

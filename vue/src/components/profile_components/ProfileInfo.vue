@@ -11,10 +11,13 @@
         <section id="info">
 
             <h2 id="name">Name: {{ profile.name }}</h2>
+            
 
             <h2 id="age">Age: {{ profile.age }}</h2>
 
+
             <h2 id="email">Email: {{ profile.email }}</h2>
+
 
         </section>
 
@@ -24,8 +27,9 @@
 
 <script>
 // Export Component Properties of Profile Object and Mark as Required
-export default { 
+export default {
     name: "ProfileInfo",
+
     props: {
         profile: {
             type: Object,

@@ -1,3 +1,11 @@
+// For Profile:
+// Added to User Model - Birthday, Age, Email, Has Favorites?
+// Added to User Database - Birthday, Age, Email, Has Favorites?
+// Need to Create A Profile Pic DB blob (Binary Large OBject) Type; PK to USER FK
+// Add to/Create Repository(Dao) For Profile DB Interaction
+// Add To/Create Controller - Implement REST Endpoints (GET, POST, PUT)
+// Add Favorite Functionality
+
 package com.techelevator.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -5,6 +13,10 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+import java.util.Date;
+
+// For Profile Picture
+import javax.imageio.ImageIO;
 
 public class User {
 
@@ -15,6 +27,13 @@ public class User {
    @JsonIgnore
    private boolean activated;
    private Set<Authority> authorities = new HashSet<>();
+
+   // Added for User Profile:
+   private Date birthday;
+   private int age;
+   private String email;
+   private ImageIO profilePicture;
+   private boolean hasFavorites;
 
    public User() { }
 
