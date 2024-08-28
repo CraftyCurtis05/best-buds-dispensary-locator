@@ -8,7 +8,7 @@
         <section id="picture">
 
             <img :src="src" alt="image">
-            
+
         </section>
 
     </body>
