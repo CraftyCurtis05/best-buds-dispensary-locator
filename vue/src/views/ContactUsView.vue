@@ -109,12 +109,12 @@
 import Header from '@/components/Header.vue';
 import Quote from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
-// import emailjs from 'emailjs-com';
+import emailjs from 'emailjs-com';
 
 export default {
     name: "ContactUs",
     components: { 
-      Header, 
+      Header,
       Quote, 
       Footer 
     },
@@ -127,30 +127,30 @@ export default {
     };
   },
   methods: {
-    // sendEmail() {
-    //   emailjs
-    //     .sendForm(
-    //       "service_bmvzxb3",
-    //       "template_jrn3z3o",
-    //       this.$refs.values,
-    //       "LtzYKLHpH1MiB7EPW"
-    //     )
-    //     .then(
-    //       (result) => {
-    //         console.log(
-    //           "You have successfully submitted your message",
-    //           result.text
-    //         );
-    //          location.reload(true);
-    //       },
-    //       (error) => {
-    //         console.log(
-    //           "This form failed to submit, please kindly check your internet connection",
-    //           error.text
-    //         );
-    //       }
-    //     );
-    // },
+    sendEmail() {
+      emailjs
+        .sendForm(
+          "service_bmvzxb3",
+          "template_jrn3z3o",
+          this.$refs.values,
+          "LtzYKLHpH1MiB7EPW"
+        )
+        .then(
+          (result) => {
+            console.log(
+              "You have successfully submitted your message",
+              result.text
+            );
+             location.reload(true);
+          },
+          (error) => {
+            console.log(
+              "This form failed to submit, please kindly check your internet connection",
+              error.text
+            );
+          }
+        );
+    },
   },
 };
 </script>

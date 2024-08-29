@@ -2,6 +2,7 @@
 <!-- Install npm package in terminal: npm install -->
 <!-- Install axios package in terminal: npm i axios -->
 <!-- Install google maps package in terminal: npm i vue3-google-map -->
+<!-- Install emailjs package: npm install emailjs-com --save -->
 <!-- npm run dev -->
 
 <template>
