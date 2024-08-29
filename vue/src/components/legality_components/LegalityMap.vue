@@ -18,7 +18,7 @@
 
             </article>
 
-            <!-- Display Interactive Map -->
+            <!-- Display Interactive Map - Imported and Edited Paths from InkScape -->
             <article id="map">
 
                 <svg
