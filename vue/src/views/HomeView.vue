@@ -35,9 +35,6 @@
       <!-- Display Home Information -->
       <section id="home"> 
 
-        <!-- <<<<<<<<<<<< FOR TESTING >>>>>>>>>>>>>>> -->
-        <router-link v-bind:to="{ name:'test'}">Jen Dev Testing</router-link>  <!-- <<<<<<<<<<<< FOR TESTING >>>>>>>>>>>>>>> -->
-
         <!-- Display Home Featured Component -->
         <article id="featured">
           <Featured/>

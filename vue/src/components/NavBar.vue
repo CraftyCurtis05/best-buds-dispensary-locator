@@ -20,7 +20,10 @@
             
             <!-- Articles -->
             <nav><router-link id="articles-nav" v-bind:to="{ name: 'articles' }" v-if="$store.state.token != ''">Articles</router-link></nav>
-            
+
+            <!-- News -->
+            <nav><router-link id="news-nav" v-bind:to="{ name: 'news' }" v-if="$store.state.token != ''">News</router-link></nav>
+
             <!-- About Us -->
             <nav><router-link id="about-us-nav" v-bind:to="{ name: 'aboutus' }" v-if="$store.state.token != ''">About Us</router-link></nav>
         </section>
@@ -79,6 +82,7 @@ body {
 #shop-nav,
 #tips-tricks-nav,
 #articles-nav,
+#news-nav,
 #about-us-nav,
 #profile-nav,
 #logout-nav  {
@@ -86,7 +90,7 @@ body {
     font-size: 1.2rem;
     text-decoration: none;
     border-radius: .1vw;
-    padding-inline: 2.2vw;
+    padding-inline: 2vw;
     padding-block: 5rem;
 }
 
@@ -95,6 +99,7 @@ body {
 #shop-nav:hover,
 #tips-tricks-nav:hover,
 #articles-nav:hover,
+#news-nav:hover,
 #about-us-nav:hover,
 #profile-nav:hover,
 #logout-nav:hover {

@@ -1,242 +1,134 @@
-<!-- Articles Page Display --->
+<!-- Articles View Display -->
 <template>
 
-    <!-- Browser Tab Title -->
-    <title>Articles | Best Buds</title>
-  
-    <header>
-      <!-- Display Header Component -->
-      <Header/>
-    </header>
+  <!-- Browser Tab Title -->
+  <title>Articles | Best Buds</title>
 
-    <body class="articles-view">
-        <!-- Display main article content -->
-        <div class="main-content">
+  <!-- Display Header Component -->
+  <header id="top">
+    <Header/>
+  </header>
 
-            <!-- Articles search bar -->
-            <div class="search-bar">
-                <input type="text" v-model="searchQuery" placeholder="Search articles" />
-                <button @click="search">Search</button>
-            </div>
-            
-            <!-- Article Boxes -->
-            <div class="articles">
-                <div class="article-container" v-for="(article, index) in filteredArticles" :key="index">
-                    <div class="article-box">
-                        <h2>{{ article.title }}</h2>
-                        <p>{{ article.description }}</p>
-                        <a :href="article.link" target="_blank">Read more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- Display View Body -->
+  <body id="articles-body">
 
-        <!-- Archive Section
-        <div class="archive-container">
-            <div class="archive">
-                <h2>Archive</h2>
-                <ul>
-                    <li v-for="(month, index) in archive" :key="index">{{ month }}</li>
-                </ul>
-            </div>
-        </div> -->
+    <!-- Display Body's Main Content -->
+    <main id="articles-main">
 
-        <!-- Display Quote Component -->
-        <div id="quote">
-            <QuoteComponent/>
-        </div> 
+      <!-- Display Body Title -->
+      <h1>***NEEDS PAGE TITLE***</h1>
 
-    </body>
+      <!-- Display View Jump Links Component -->
+      <aside id="view-links">
+        <ViewJumpLinks/>
+      </aside>
 
-    <footer>
-        <!-- Display Footer Component -->
-        <Footer />
-    </footer> 
+      <!-- Display Body Summary -->
+      <section id="summary">
+        <h2>🌿***NEED ATTENTION GRABBER***🌿</h2>
+        <p>***NEED PAGE SUMMARY***</p>
+        <h3>***WHATS TO BE EXPECTED OF PAGE***!</h3>
+      </section>
+
+      <!-- Display About Us Information -->
+      <section id="articles">
+
+          <!-- Display Articles Search Component -->
+          <article id="search">
+            <SearchArticles/>
+          </article>
+
+      </section>
+
+    </main>
+
+    <!-- Display Strain Guide Visit Component -->
+    <section id="strain-guide-visit">
+      <StrainGuideVisit/>
+    </section>
+
+    <!-- Display Articles Visit Component -->
+    <section id="articles-visit">
+      <ArticlesVisit/>
+    </section>
+
+    <!-- Display Quote Component -->
+    <div id="quote">
+      <Quote/>
+    </div>  
+
+  </body>
+
+  <!-- Display Footer Component -->
+  <footer id="bottom">
+    <Footer/>
+  </footer> 
 
 </template>
 
 <script>
-import axios from 'axios';
-import Search from '@/assets/news_assets/search.js';
-import Footer from '@/components/Footer.vue';
 import Header from '@/components/Header.vue';
-import QuoteComponent from '@/components/Quote.vue';
+import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
+import SearchArticles from '@/components/articles_components/SearchArticles.vue';
+import StrainGuideVisit from '@/components/strain_guide_components/StrainGuideVisit.vue';
+import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
+import Quote from '@/components/Quote.vue';
+import Footer from '@/components/Footer.vue';
 
 export default {
-    name: "Articles",
-    components: { Header, QuoteComponent, Footer },
-    
-    data() {
-        return {
-            searchQuery: '',
-            search: Search,
-            newsSearch: '',
-            articles: [
-                {
-                    title: 'Article 1',
-                    description: 'Description of article 1',
-                    link: 'https://example.com/article1',
-                },
-                {
-                    title: 'Article 2',
-                    description: 'Description of article 2',
-                    link: 'https://example.com/article2',
-                },
-                {
-                    title: 'Article 3',
-                    description: 'Description of article 3',
-                    link: 'https://example.com/article3',
-                }
-            ]
-        }
-    },
-    computed: {
-        filteredArticles: function() {
-            return this.articles.filter(article =>
-            article.title.toLowerCase().includes(this.searchQuery.toLowerCase())
-            );
-        }
-    },
-    methods: {
-        randomSearch() {
-            const random = Math.floor(Math.random() * this.search.length);
-            this.newsSearch = this.search[random];
-            console.log(this.newsSearch);
-        },
-        async fetchArticles() {
-            try {
-                // const date = new Date.getFullYear('July 20, 23 00:20:18');
-                const response = await axios.get('https://api.thenewsapi.com/v1/news/all', {
-                params: {
-                    title: this.newsSearch,
-                    api_token: 'WYKYp9K37PkhTQosYnP2jrsOh5687P8bkV2IHdGQ',
-                    language: 'en',
-                    limit:  3,
-                    published_after: '2024-01-01'
-                },
-                paramsSerializer: params => {
-                    return new URLSearchParams(params).toString();
-                }
-            });
-            console.log('API Response:', response);
-            this.articles = response.data.data; // Ensure you're accessing the correct part of the response
-            } catch (error) {
-                console.error('Error fetching articles:', error);
-            }      
-        }
-    },
-    mounted() {
-        this.fetchArticles();
-    },
-    created() {
-        this.randomSearch();
-    }
+  name: "Articles",
+  components: { 
+    Header,
+    ViewJumpLinks,
+    SearchArticles, 
+    StrainGuideVisit, 
+    ArticlesVisit, 
+    Quote, 
+    Footer 
+  }
 };
 </script>
 
 <style scoped>
-.articles-view {
-    width: 100vw;
-    max-width: 100%;
-    overflow-x: hidden;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\background_assets\\green_smoke.png');
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
+/* OBJECTS = rem */
+/* SPACING = vw */
+#articles-body {
+  width: 100vw;
+  max-width: 100%;
+  overflow-x: hidden;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\background_assets\\green_smoke.png');
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.main-content {
-padding-top: 100px;
-padding-bottom: 50px;
-/* border: 5px solid #007bff;
-border-radius: 20%; */
+#articles-main {
+    margin: 4vw;
 }
 
-.search-bar {
-margin-bottom: 20px;
-display: flex;
-justify-content: flex-end;
-/* border: 5px solid #00ff37;
-border-radius: 20%; */
-margin-right: 5%;
-}
-
-.articles {
-display: flex;
-flex-wrap: wrap;
-width: 70%;
-height: 90vh;
-/* border: 5px solid #ff0022;
-border-radius: 20%; */
-}
-
-.articles > * {
-flex: 1 1 45%;
-flex-wrap: wrap;
-}
-
-.article-container {
-display: flex;
-flex-direction: row;
-align-items: center;
-height: 40vh;
-width: 30%;
-/* border: 5px solid; */
-border-radius: 20%;
-}
-
-.article-box {
-margin-bottom: 20px;
-padding: 20px;
-/* border: 1px solid #ccc;
-background-color: #00ccff; */
-border-radius: 8px;
-}
-
-.archive-container {
-position: absolute;
-top: 45%;
-right: -8vw;
-height: 75vh;
-width: 25%;
-/* padding: 0 10px;
-border: 5px solid #f705a6; */
-border-radius: 20%;
-}
-
-.archive {
-display: flex;
-flex-direction: column;
-/* border: 5px solid #f705a6;
-border-radius: 20%; */
-padding: 20px;
-justify-content: flex-end;
-}
-
-/* .article-box h2 {
-margin-bottom: 10px;
-border: 5px solid #f705a6;
-border-radius: 20%;
-} */
-
-/* .article-box p {
-margin-bottom: 15px;
-border: 5px solid #f705a6;
-border-radius: 20%;
-} */
-
-/* .article-box a {
-color: #007bff;
-text-decoration: none;
-border: 5px solid #f705a6;
-border-radius: 20%;
-} */
-
-h6 {
+h1,
+#summary {
     text-align: center;
-    font-size: .9em;
-    font-style: italic;
-    font-weight: lighter;
-    margin-bottom: 1em;
+}
+
+h1 {
+  font-size: 1.6rem;
+}
+
+#summary {
+    margin-bottom: 2vw;
+}
+
+h2 {
+    font-size: 1.2rem;
+}
+
+p {
+    font-size: 1.1rem;
+    margin: auto 8vw;
+}
+
+h3 {
+    font-size: 1.1rem;
 }
 </style>

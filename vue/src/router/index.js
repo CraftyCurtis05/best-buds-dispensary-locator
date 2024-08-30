@@ -10,6 +10,7 @@ import SearchView from '../views/SearchView.vue';
 import ShopView from '../views/ShopView.vue';
 import TipsTricksView from '../views/TipsTricksView.vue';
 import ArticlesView from '../views/ArticlesView.vue';
+import NewsView from '../views/NewsView.vue';
 import AboutUsView from '../views/AboutUsView.vue';
 import ProfileView from '../views/ProfileView.vue';
 import SafetyTipsView from '../views/SafetyTipsView.vue';
@@ -20,9 +21,6 @@ import TooMuchCannabisView from '../views/TooMuchCannabisView.vue';
 import LegalityView from '../views/LegalityView.vue';
 import PrivacyPolicyView from '../views/PrivacyPolicyView.vue';
 import ContactUsView from '../views/ContactUsView.vue';
-
-// TESTING LINK - REMOVE BEFORE RELEASE
-import TestView from '../views/TestView.vue';
 
 /**
  * The Vue Router is used to "direct" the browser to render a specific view component
@@ -93,6 +91,14 @@ const routes = [
     path: "/articles",
     name: "articles",
     component: ArticlesView,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: "/news",
+    name: "news",
+    component: NewsView,
     meta: {
       requiresAuth: true
     }
@@ -174,16 +180,6 @@ const routes = [
     path: "/contact-us",
     name: "contactus",
     component: ContactUsView,
-    meta: {
-      requiresAuth: true
-    }
-  },
-  
-  // TESTING LINK - DELETE WHEN FINISHED
-  {
-    path: "/test",
-    name: "test",
-    component: TestView,
     meta: {
       requiresAuth: true
     }

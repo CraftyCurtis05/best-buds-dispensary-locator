@@ -1,7 +1,12 @@
 <!-- TO RUN APPLICATION DIRECTIONS -->
 <!-- Install npm package in terminal: npm install -->
 <!-- Install axios package in terminal: npm i axios -->
+
+
 <!-- Install google maps package in terminal: npm i vue3-google-map -->
+<!-- OR npm install -S vue3-google-map @googlemaps/js-api-loader -->
+<!-- OR npm install -S @fawmi/vue-google-maps -->
+
 <!-- Install emailjs package: npm install emailjs-com --save -->
 <!-- npm run dev -->
 
