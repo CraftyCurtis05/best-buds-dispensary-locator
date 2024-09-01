@@ -1,4 +1,3 @@
-<!-- News View Display --->
 <template>
 
     <!-- Browser Tab Title -->
@@ -25,32 +24,13 @@
 
             <!-- Display Body Summary -->
              <section id="summary">
-                <h2>🌿***NEED ATTENTION GRABBER***🌿</h2>
-                <p>***NEED PAGE SUMMARY***</p>
-                <h3>***WHATS EXPECTED OF PAGE***</h3>
+                <h2>🌿 Breaking the Stigma: Explore the World of Cannabis 🌿</h2>
+                <p>Welcome to Best Buds, your go-to source for the latest news and trends in the ever-evolving world of cannabis. Whether you're interested in the medicinal benefits, the latest legislative changes, or the growing culture around cannabis, we've got you covered. Dive into our carefully curated articles to stay informed and ahead of the curve in this dynamic industry.</p>
+                <h3>Stay informed, stay curious, and explore the multifaceted world of cannabis through our curated news articles. Whether you’re a casual reader or a cannabis connoisseur, this page is designed to keep you up-to-date and engaged with the latest developments and insights.</h3>
             </section>
 
-            <!-- Display News Information -->
-            <section id="news">
-                
-                <!-- Display News Search Bar -->
-                <article id="search-bar">
-                    <input type="text" v-model="searchQuery" placeholder="Search news articles" />
-                    <button @click="search">Search</button>
-                </article>
-                
-                <!-- Display News Article Objects -->
-                <article id="article-object">
-                    <div id="article-container" v-for="(article, index) in filteredArticles" :key="index">
-                        <div id="article-box">
-                            <h2>{{ article.title }}</h2>
-                            <p>{{ article.description }}</p>
-                            <a :href="article.link" target="_blank">Read more</a>
-                        </div>
-                    </div>
-                </article>
-
-            </section>
+            <!-- Display News Component -->
+            <NewsComponent :articles="articles"/>
 
         </main>
 
@@ -69,87 +49,22 @@
 </template>
 
 <script>
-import axios from 'axios';
 import Header from '@/components/Header.vue';
 import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
-import Search from '@/assets/news_assets/search.js';
 import Quote from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
+import NewsComponent from '../components/news_components/NewsComponent.vue';
+import axios from 'axios';
 
 export default {
-    name: "News",
-    components: { 
-        Header,
-        ViewJumpLinks,
-        Quote, 
-        Footer 
-    },
-    
-    data() {
-        return {
-            searchQuery: '',
-            search: Search,
-            newsSearch: '',
-            articles: [
-                {
-                    title: 'Article 1',
-                    description: 'Description of article 1',
-                    link: 'https://example.com/article1',
-                },
-                {
-                    title: 'Article 2',
-                    description: 'Description of article 2',
-                    link: 'https://example.com/article2',
-                },
-                {
-                    title: 'Article 3',
-                    description: 'Description of article 3',
-                    link: 'https://example.com/article3',
-                }
-            ]
-        }
-    },
-    computed: {
-        filteredArticles: function() {
-            return this.articles.filter(article =>
-            article.title.toLowerCase().includes(this.searchQuery.toLowerCase())
-            );
-        }
-    },
-    methods: {
-        randomSearch() {
-            const random = Math.floor(Math.random() * this.search.length);
-            this.newsSearch = this.search[random];
-            console.log(this.newsSearch);
-        },
-        async fetchArticles() {
-            try {
-                // const date = new Date.getFullYear('July 20, 23 00:20:18');
-                const response = await axios.get('https://api.thenewsapi.com/v1/news/all', {
-                params: {
-                    title: this.newsSearch,
-                    api_token: 'WYKYp9K37PkhTQosYnP2jrsOh5687P8bkV2IHdGQ',
-                    language: 'en',
-                    limit:  3,
-                    published_after: '2024-01-01'
-                },
-                paramsSerializer: params => {
-                    return new URLSearchParams(params).toString();
-                }
-            });
-            console.log('API Response:', response);
-            this.articles = response.data.data; // Ensure you're accessing the correct part of the response
-            } catch (error) {
-                console.error('Error fetching articles:', error);
-            }      
-        }
-    },
-    mounted() {
-        this.fetchArticles();
-    },
-    created() {
-        this.randomSearch();
-    }
+  name: "News",
+  components: { 
+    Header,
+    ViewJumpLinks,
+    Quote, 
+    Footer,
+    NewsComponent 
+  }
 };
 </script>
 
@@ -192,46 +107,5 @@ p {
 
 h3 {
     font-size: 1.1rem;
-}
-
-#search-bar {
-margin-bottom: 20px;
-display: flex;
-justify-content: flex-end;
-/* border: 5px solid #00ff37;
-border-radius: 20%; */
-margin-right: 5%;
-}
-
-#article-object {
-display: flex;
-flex-wrap: wrap;
-width: 70%;
-height: 90vh;
-/* border: 5px solid #ff0022;
-border-radius: 20%; */
-}
-
-#article-object > * {
-flex: 1 1 45%;
-flex-wrap: wrap;
-}
-
-#article-container {
-display: flex;
-flex-direction: row;
-align-items: center;
-height: 40vh;
-width: 30%;
-/* border: 5px solid; */
-border-radius: 20%;
-}
-
-#article-box {
-margin-bottom: 20px;
-padding: 20px;
-/* border: 1px solid #ccc;
-background-color: #00ccff; */
-border-radius: 8px;
 }
 </style>
