@@ -30,7 +30,7 @@
             </section>
 
             <!-- Display News Component -->
-            <NewsComponent :articles="articles"/>
+            <NewsComponent/>
 
         </main>
 
