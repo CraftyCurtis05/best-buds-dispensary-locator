@@ -89,43 +89,32 @@ export default {
 
 <style scoped>
 #search-bar {
-margin-bottom: 20px;
 display: flex;
 justify-content: flex-end;
-/* border: 5px solid #00ff37;
-border-radius: 20%; */
 margin-right: 5%;
+margin-bottom: 20px;
 }
 
 #news-object {
-display: flex;
-flex-wrap: wrap;
-width: 70%;
-height: 90vh;
-/* border: 5px solid #ff0022;
-border-radius: 20%; */
-}
-
-#news-object > * {
-flex: 1 1 45%;
-flex-wrap: wrap;
-}
-
-#news-container {
-display: flex;
-flex-direction: row;
-align-items: center;
-height: 40vh;
-width: 30%;
-/* border: 5px solid; */
-border-radius: 20%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 #news-box {
-margin-bottom: 20px;
-padding: 20px;
-/* border: 1px solid #ccc;
-background-color: #00ccff; */
-border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 35vw;
+  height: 35vw;
+  padding: 2vw;
+  margin: 1vw;
+  border: 1px solid #000000;
+}
+
+img {
+  width: 30vw;
+  height: 20vw;
 }
 </style>
