@@ -110,7 +110,7 @@ import Quote from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
-    name: "SafetyTips",
+    name: "SafetyTipsView",
     components: { 
         Header,
         ViewJumpLinks,

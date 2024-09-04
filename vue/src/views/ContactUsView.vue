@@ -53,7 +53,7 @@ import Quote from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
-  name: "ContactUs",
+  name: "ContactUsView",
   components: { 
     Header,
     ContactUsForm,

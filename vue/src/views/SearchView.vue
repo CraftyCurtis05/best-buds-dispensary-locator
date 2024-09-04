@@ -88,7 +88,7 @@ import Quote from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
    
 export default {
-  name: "Search",
+  name: "SearchView",
   components: { 
     Header,
     ViewJumpLinks, 

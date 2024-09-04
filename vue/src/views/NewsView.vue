@@ -30,7 +30,7 @@
             </section>
 
             <!-- Display News Component -->
-            <NewsComponent/>
+            <News/>
 
         </main>
 
@@ -51,19 +51,18 @@
 <script>
 import Header from '@/components/Header.vue';
 import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
+import News from '../components/news_components/NewsComponent.vue';
 import Quote from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
-import NewsComponent from '../components/news_components/NewsComponent.vue';
-import axios from 'axios';
 
 export default {
-  name: "News",
+  name: "NewsView",
   components: { 
     Header,
     ViewJumpLinks,
+    News,
     Quote, 
-    Footer,
-    NewsComponent 
+    Footer
   }
 };
 </script>

@@ -77,7 +77,7 @@ import Quote from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
-    name: "Profile",
+    name: "ProfileView",
     components: {
         Header,
         ViewJumpLinks,

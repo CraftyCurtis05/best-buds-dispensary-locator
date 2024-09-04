@@ -34,14 +34,18 @@
 import axios from 'axios';
 
 export default {
-  name: "NewsComponent",
+  name: "News",
   data() {
     return {
       searchQuery: '',
-      fetchedNews: [], // Array to store fetched news
+
+      // Array to store fetched news
+      fetchedNews: []
     };
   },
   computed: {
+
+    // User input is used to filter the news search
     filteredNews() {
       return this.fetchedNews.filter(news =>
         news.title.toLowerCase().includes(this.searchQuery.toLowerCase())
@@ -49,24 +53,30 @@ export default {
     },
   },
   methods: {
+
+    // Make API to TheNewsAPI using specified search parameters
     async fetchNews() {
       try {
         const response = await axios.get('https://api.thenewsapi.com/v1/news/all', {
           params: {
-            search: 'cannabis',
             api_token: 'WYKYp9K37PkhTQosYnP2jrsOh5687P8bkV2IHdGQ',
+            search: 'cannabis',
             language: 'en',
             limit: 3,
             published_after: '2024-01-01'
           }
         });
-        console.log('API Response:', response.data); // Log API response
-        this.fetchedNews = response.data.data; // Set fetched news
+        // Log API response
+        console.log('API Response:', response.data);
+
+        // Set fetched news to fetchedNews array
+        this.fetchedNews = response.data.data;
+
       } catch (error) {
         console.error('Error fetching news:', error); // Log any errors
       }
     },
-    search() {
+      search() {
       this.fetchNews();
     },
   },

@@ -76,7 +76,7 @@ import Quote from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
-    name: "Legality",
+    name: "LegalityView",
     components: { 
         Header,
         ViewJumpLinks,

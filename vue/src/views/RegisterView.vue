@@ -59,7 +59,7 @@
 import authService from '@/services/AuthService';
 
 export default {
-  name: "Register",
+  name: "RegisterView",
 
   data() {
     return {

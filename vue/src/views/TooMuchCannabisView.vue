@@ -95,7 +95,7 @@ import Quote from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
-    name: "TooMuchCannabis",
+    name: "TooMuchCannabisView",
     components: { 
         Header,
         ViewJumpLinks,

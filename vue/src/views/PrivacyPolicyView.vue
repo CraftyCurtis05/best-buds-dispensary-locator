@@ -73,7 +73,7 @@ import Quote from '@/components/Quote.vue';
 import Footer from '@/components/Footer.vue';
 
 export default {
-  name: "PrivacyPolicy",
+  name: "PrivacyPolicyView",
   components: { 
     Header,
     ViewJumpLinks,
