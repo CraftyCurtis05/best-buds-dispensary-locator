@@ -1,5 +1,7 @@
 <template>
+
   <section id="news">
+
     <!-- Display News Search Bar -->
     <article id="search-bar">
       <input type="text" v-model="searchQuery" placeholder="Search news" />
@@ -8,7 +10,9 @@
 
     <!-- Display News Objects -->
     <article id="news-object">
+
       <div id="news-container" v-for="(news, index) in filteredNews" :key="index">
+
         <div id="news-box">
           <h2>{{ news.title }}</h2>
           <p>{{ news.description }}</p>
@@ -16,9 +20,13 @@
           <img :src="news.image_url" alt="News Image" v-if="news.image_url" />
           <a :href="news.url" target="_blank">Read more</a>
         </div>
+
       </div>
+
     </article>
+
   </section>
+
 </template>
 
 
@@ -45,7 +53,7 @@ export default {
       try {
         const response = await axios.get('https://api.thenewsapi.com/v1/news/all', {
           params: {
-            categories: 'cannabis',
+            search: 'cannabis',
             api_token: 'WYKYp9K37PkhTQosYnP2jrsOh5687P8bkV2IHdGQ',
             language: 'en',
             limit: 3,
