@@ -26,14 +26,49 @@ export default defineComponent({
     name: "SearchMap",
 
     components: {
-        GoogleMap, 
+        GoogleMap,
         Marker
     },
 
+    data() {
+        return {
+            locationID: '',
+            // latitude: 0,
+            // longitude: 0
+        }
+    },
+
     setup() {
-        const center = { lat: 45.42152967, lng: -75.6971931};
-        return {center}
-    }  
+        const center = { lat: 39.96357, lng: -82.98995};
+        return {center};
+    },
+
+    methods: {
+
+        // Method that gets user input to create a longitude and latitude
+        // If no user input, use user geolocation
+        // getLocation() {
+        //     this.locationID = this.$store.state.locationID;
+        //     console.log(this.locationID);
+
+        //     if (this.locationID == '') {
+
+        //         if (navigator.geolocation) {
+        //             navigator.geolocation.getCurrentPosition(function(position) {
+        //                 this.latitude = position.coords.latitude;
+        //                 this.longitude = position.coords.longitude;
+        //                 console.log(`Latitude: ${this.latitude}, Longitude: ${this.longitude}`);
+        //             });
+        //         } else {
+        //             console.log("Geolocation is not supported by this browser.");
+        //         }
+        //     }
+        // }
+    },
+
+    mounted() {
+       // this.getLocation();
+    }
 });
 </script>
 

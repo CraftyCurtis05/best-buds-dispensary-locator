@@ -16,8 +16,8 @@
         <div id="news-box">
           <h2>{{ news.title }}</h2>
           <p>{{ news.description }}</p>
-          <p><strong>Published on:</strong> {{ new Date(news.published_at).toLocaleDateString() }}</p>
-          <img :src="news.image_url" alt="News Image" v-if="news.image_url" />
+          <p><strong>Published on:</strong>{{ new Date(news.published_at).toLocaleDateString() }}</p>
+          <img :src="news.image_url" alt="news-image" v-if="news.image_url" />
           <a :href="news.url" target="_blank">Read more</a>
         </div>
 
@@ -37,6 +37,8 @@ export default {
   name: "News",
   data() {
     return {
+      
+      // Variable for user input for filteredNews()
       searchQuery: '',
 
       // Array to store fetched news
@@ -80,6 +82,7 @@ export default {
       this.fetchNews();
     },
   },
+  // Run fetchNews() right after web page is rendered
   mounted() {
     this.fetchNews();
   },

@@ -30,7 +30,7 @@
                 </div>
 
                 <!-- Display Favorite Button and When Clicked Run setFavorite Method to Store In User's Profile -->
-                <button id="favorite-button" v-on:click.prevent="setFavorite(result.id)">Favorite Dispensary</button>
+                <button id="favorite-button" v-on:click.prevent="setFavorite()">Favorite Dispensary</button>
             </ul>       
 
         </section>
@@ -72,8 +72,8 @@ export default {
             })
         },
         // Set Favorite Function That Stores the Result Object By Passing It Through Java Service and Stored in Database <<<< NOT WORKING >>>>>
-        setFavorite(value) {
-            this.$store.commit('SET_FAVORITE_STATUS',  value);
+        setFavorite(dispensary) {
+            this.$store.commit('SET_FAVORITE_STATUS',  dispensary);
             JavaService.makeFavorite({ 
                 name: 'favorite', 
                 props: { 

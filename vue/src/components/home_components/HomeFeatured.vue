@@ -42,7 +42,8 @@ export default {
         return {
             states: StatesList,
             result: [],
-            state: ''
+            state: '',
+            defaultValue: false
         }
     },
 
@@ -70,17 +71,35 @@ export default {
             .catch(error => {
                 console.log(error);
             })  
+        },
+
+        // Check if Result Image URL is a, Actual Image             <<<<<<<<<<<<<<<<<WORKINNG ON RETURN RESULT VERIFICATION>>>>>>>>>>>>>>>>>
+        isValid(urlTocheck="") {
+            let image = new Image();
+            this.result.img_url = urlTocheck;
+            if (image.width !== 0) {
+                this.defaultValue = true;
+                console.log(this.defaultValue);
+            }
         }    
     },
 
     created() {
 
-        // Method Calls For When The Page Is Rendered
-        // Checks To Verify Result Array Length Before Running Methods
-        if(this.result.length !== 1) {
+        // Method Calls When The Page Is Rendered
+        // Checks To Verify Result Has Image and Array Length Before Running Methods To Guarantee Result with Image
+        if(this.defaultValue) {
+            this.getState();
+            this.getResult(this.state);                           //  <<<<<<<<<<<<<<<<<WORKINNG ON RETURN RESULT VERIFICATION>>>>>>>>>>>>>>>>>
+            this.isValid();
+        }
+        else if(this.result.length === 0) {
             this.getState();
             this.getResult(this.state);
-        }    
+            this.isValid();
+        } else {
+            console.log("Please refresh page. We got issues.")
+        }
     }
 };        
 </script>

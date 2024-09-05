@@ -32,6 +32,12 @@ public class User {
    private Date birthday;
    private int age;
    private String email;
+   private int houseNumber;
+   private String streetName;
+   private String aptNumber;
+   private String city;
+   private String state;
+   private int zipCode;
    private ImageIO profilePicture;
    private boolean hasFavorites;
 
