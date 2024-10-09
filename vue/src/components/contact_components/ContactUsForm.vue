@@ -212,3 +212,35 @@ button:hover {
   color: #c6ff4a;
 }
 </style>
+
+<!-- button {
+  border: 1px solid;
+  overflow: hidden;
+  position: relative;
+  
+  span {
+    z-index: 20;
+  }
+  
+  &:after {
+    background: #fff;
+    content: "";
+    height: 155px;
+    left: -75px;
+    opacity: .2;
+    position: absolute;
+    top: -50px;
+    transform: rotate(35deg);
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+    width: 50px;
+    z-index: -10;
+  }
+}
+
+button:hover {
+  
+  &:after {
+    left: 120%;
+    transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+} -->
