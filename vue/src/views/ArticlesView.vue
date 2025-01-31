@@ -16,19 +16,19 @@
     <main id="articles-main">
 
       <!-- Display Body Title -->
-      <h1>***NEEDS PAGE TITLE***</h1>
+      <h1>The Cannabis Resource Center</h1>
 
       <!-- Display View Jump Links Component -->
       <aside id="view-links">
         <ViewJumpLinks/>
       </aside>
 
-      <!-- Display Body Summary -->
       <section id="summary">
-        <h2>🌿***NEED ATTENTION GRABBER***🌿</h2>
-        <p>***NEED PAGE SUMMARY***</p>
-        <h3>***WHATS TO BE EXPECTED OF PAGE***!</h3>
-      </section>
+        <h2>🌿Explore the World of Cannabis: Search Articles and Expand Your Mind!🌿</h2>
+        <p>Our articles cover everything from strain breakdowns to the latest trends, so you can navigate the world of cannabis with confidence. Whether you're a beginner or a seasoned enthusiast, we've got something for everyone!</p>
+        <h3>Looking for more info? Dive into our library of cannabis articles below!</h3>
+      </section>  
+      
 
       <!-- Display About Us Information -->
       <section id="articles">
@@ -109,10 +109,6 @@ export default {
 h1,
 #summary {
     text-align: center;
-}
-
-h1 {
-  font-size: 1.6rem;
 }
 
 #summary {

@@ -81,7 +81,7 @@ body {
     overflow-x: hidden;
     justify-content: space-around;
     text-align: center;
-    background-color: #00331A;
+    background-color: #01371d;
 }
 
 #logo img {

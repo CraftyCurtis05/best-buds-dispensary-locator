@@ -149,10 +149,6 @@ h1,
     text-align: center;
 }
 
-h1 {
-  font-size: 1.6rem;
-}
-
 #summary {
     margin-bottom: 2vw;
 }

@@ -123,7 +123,7 @@ h2 {
 
 h3 {
     font-size: 1rem;
-    font-weight: lighter;
+    font-weight: 400;
     margin: .5vw auto;
 }
 

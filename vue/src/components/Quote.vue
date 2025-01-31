@@ -54,7 +54,7 @@ body {
 h1,
 h2,
 h3 {
-    font-weight: lighter;
+   font-weight: 400;
 }
 
 h1 {

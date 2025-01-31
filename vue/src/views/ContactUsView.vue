@@ -20,9 +20,9 @@
 
       <!-- Display Body Summary -->
       <section id="summary">
-        <h2>🌿***NEED ATTENTION GRABBER***🌿</h2>
-        <p>***NEED PAGE SUMMARY***</p>
-        <h3>***WHATS EXPECTED OF PAGE***</h3>
+        <h2>🌿Got Questions or Feedback? Let Us Hear from You!🌿</h2>
+        <p>Whether you're looking for more information on dispensaries, want to share your favorite strain, or have a general question, we're here to help. Reach out to us, and we'll get back to you as soon as we can!</p>
+        <h3>Fill out the form below, and let's start the conversation!</h3>
       </section>
 
       <!-- Display Contact Us Information -->
@@ -84,10 +84,6 @@ h1,
 #summary,
 form {
     text-align: center;
-}
-
-h1 {
-    font-size: 1.6rem;
 }
 
 #summary {

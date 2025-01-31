@@ -48,15 +48,17 @@ export default {
 </script>
 
 <style scoped>
-/* PLEASE DO NOT TOUCH STYLING */
+
 body {
     position: absolute;
     align-items: center;
     max-width: 100%;
-    height: 2vw;
+    height: 2.5vw;
     overflow-x: hidden;
     overflow-y: hidden;
-    background-color: #00331A;
+    background-color: #01371d;
+    font-family: 'Open Sans';
+    font-size: 1.2rem;
 }
 
 #left-nav,
@@ -65,7 +67,7 @@ body {
     flex-direction: row;
     flex-wrap: nowrap;
     font-weight: bolder;
-    max-width: 60vw;
+    max-width: 80vw;
     max-height: 2vw;
 }
 
@@ -87,7 +89,6 @@ body {
 #profile-nav,
 #logout-nav  {
     color: white;
-    font-size: 1.2rem;
     text-decoration: none;
     border-radius: .1vw;
     padding-inline: 2vw;
@@ -106,5 +107,8 @@ body {
     cursor: url('best_buds_logo_icon.ico'), pointer;
     color: hwb(151 0% 85%);
     background: linear-gradient(270deg, #377306, transparent) #01331b;
+    /* font-weight: bolder; */
+    color: rgb(203, 220, 165);
+    font-size: 1.25rem;
 }
 </style>

@@ -69,7 +69,7 @@
 <script>
 import Header from '@/components/Header.vue';
 import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
-import profilePictureSrc from '@/assets/LARRY!.webp';
+import profilePictureSrc from '@/assets/profile_assets/profile_pic.png';
 import ProfilePicture from '@/components/profile_components/ProfilePicture.vue';
 import Favorites from '@/components/favorite_components/FavoriteLocations.vue';
 import ProfileInfo from '@/components/profile_components/ProfileInfo.vue';
@@ -121,10 +121,6 @@ export default {
 h1,
 #summary {
     text-align: center;
-}
-
-h1 {
-  font-size: 1.6rem;
 }
 
 #summary {

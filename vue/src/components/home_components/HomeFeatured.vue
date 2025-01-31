@@ -105,7 +105,7 @@ export default {
 </script>
 
 <style scoped>
-#featured-body {
+body {
     display: flex;
     justify-content: center;
     /* align-items: center; */
@@ -122,24 +122,33 @@ export default {
     background-color: black;
 }
 
+h1,
+h2,
+h3 {
+    font-family: 'Roboto';
+    color: white;
+}
+
 h1 {
     font-size: 1.5rem;
-    color: white;
 }
 
 img {
     height: 30rem;
-    margin: -1vw;
-    border: .5rem white solid;
+    border: .1rem white solid;
+    padding: 0;
+    cursor: url('best_buds_logo_icon.ico'), pointer;
+}
+
+img:hover {
+    height: 31rem;
 }
 
 h2 {
     font-size: 1.1rem;
-    color: white;
 }
 
 h3 {
     font-size: 1rem;
-    color: white;
 }
 </style>

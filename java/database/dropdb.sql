@@ -9,5 +9,5 @@ WHERE datname = 'best_buds_dispensary_locator';
 
 DROP DATABASE best_buds_dispensary_locator;
 
-DROP USER final_capstone_owner;
-DROP USER final_capstone_appuser;
+DROP USER best_buds_owner;
+DROP USER best_buds_appuser;

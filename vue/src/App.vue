@@ -44,7 +44,37 @@ export default {
 <style>
 body {
   margin: 0;
-  padding: 0;	
+  padding: 0;
+  caret-color: transparent;
 }
 
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Raleway';
+}
+
+h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: 650;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 650;
+}
+
+p {
+  font-family: 'Roboto';
+} 
+
+input {
+  caret-color: black;
+}
 </style>

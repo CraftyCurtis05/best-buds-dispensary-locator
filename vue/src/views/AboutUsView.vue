@@ -104,10 +104,6 @@ export default {
   margin: 4vw;
 }
 
-h1 {
-  font-size: 1.6rem;
-}
-
 h2 {
   font-size: 1.25rem;
   font-weight: lighter;
