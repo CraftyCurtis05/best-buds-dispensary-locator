@@ -118,7 +118,7 @@ Secure user authentication for personalized features.
 
 Introduces the application and primary navigation.
 
-![Home Page](images/01-home.png)
+![Home Page](images/02-home.png)
 
 ---
 
@@ -126,7 +126,7 @@ Introduces the application and primary navigation.
 
 Search nearby dispensaries using location-based business data.
 
-![Dispensary Search](images/02-search.png)
+![Dispensary Search](images/03-locator-search.png)
 
 ---
 
