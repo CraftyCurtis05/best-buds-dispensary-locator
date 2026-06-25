@@ -1,37 +1,38 @@
 # Best Buds Dispensary Locator
 
-### Multi-Source Location Intelligence & Decision Support Platform
+### Full-Stack Business Discovery Application
 
-Best Buds is a full-stack web application designed to help users discover, evaluate, and better understand dispensaries through a centralized, data-driven experience.
+Best Buds is a full-stack business discovery application that centralizes dispensary information, mapping services, industry news, and educational resources into a unified user experience.
 
-The application integrates business listings, mapping services, news content, and educational resources into a unified platform that supports informed decision-making and improved accessibility to dispensary information.
+The application demonstrates business systems analysis, API integration, relational database design, and full-stack web development by combining multiple external data sources with authenticated user features, personalized favorites, and structured workflows.
 
-Originally developed as a collaborative project, the application has been expanded and redesigned to improve usability, information organization, and overall system functionality.
+Originally developed as a collaborative project, the application was later redesigned and expanded to improve application architecture, user workflows, and overall functionality.
 
 ---
 
-## Business Problem
+## Project Overview
 
-Users seeking dispensary information often need to navigate multiple websites and resources to locate businesses, understand local regulations, access educational content, and stay informed about industry developments.
+Best Buds helps users discover and evaluate dispensaries by consolidating business information, mapping services, news content, and educational resources into a single application.
 
-Best Buds streamlines this process by consolidating multiple data sources into a single platform where users can:
+Users can:
 
-- Search for nearby dispensaries
+- Search nearby dispensaries
 - View business and location information
-- Explore cannabis-related educational resources
-- Stay informed through industry news content
-- Save favorite dispensaries for future reference
-- Access information across desktop and mobile devices
+- Save favorite dispensaries
+- Manage personalized user profiles
+- Access educational content and industry news
+
+All within a single, streamlined user experience.
 
 ---
 
 ## Key Features
 
-### Location Discovery
+### Business Discovery
 
-- Search dispensaries using real-time business data
-- Locate businesses using address search or geolocation
-- View dispensary information through interactive mapping tools
+- Search dispensaries using Yelp Fusion API data
+- View business details and location information
+- Browse nearby dispensaries through a centralized interface
 
 ### User Management
 
@@ -41,15 +42,9 @@ Best Buds streamlines this process by consolidating multiple data sources into a
 
 ### Information & Education
 
-- Cannabis industry news integration
-- Educational resources and informational content
-- Interactive state legality reference tools
-
-### Responsive Experience
-
-- Mobile-first responsive design
-- Desktop and tablet compatibility
-- Consistent user experience across devices
+- View cannabis-related news from external sources
+- Browse educational articles and informational resources
+- Access state legality reference information
 
 ---
 
@@ -62,21 +57,19 @@ Best Buds streamlines this process by consolidating multiple data sources into a
 - HTML5
 - CSS3
 - Axios
-- Vue Router
-- Vuex
 
 ### Backend
 
 - Java
 - Spring Boot
-- REST API Architecture
-- JPA
+- RESTful API
+- JDBC
 
 ### Database
 
 - PostgreSQL
 
-### External Integrations
+### External Services
 
 - Yelp Fusion API
 - Google Maps API
@@ -84,15 +77,16 @@ Best Buds streamlines this process by consolidating multiple data sources into a
 
 ---
 
-## Technical Highlights
+## Technical Implementation
 
-- Designed responsive user interfaces and workflows for desktop and mobile environments
-- Integrated Google Maps, Yelp Fusion, and News APIs into a unified user experience
-- Implemented secure user authentication, profiles, and favorites functionality
-- Developed RESTful communication between frontend and backend systems
-- Built interactive mapping and location-based search capabilities
-- Structured PostgreSQL databases to support user management and application workflows
-- Designed modular frontend architecture supporting educational content, news delivery, and business discovery features
+The application follows a traditional client-server architecture with a Vue.js frontend communicating with a Spring Boot REST API backed by PostgreSQL.
+
+- Designed intuitive user interfaces supporting business discovery and information access
+- Integrated Yelp Fusion, Google Maps, and News APIs into a unified user experience
+- Implemented user authentication, profile management, and favorites functionality
+- Implemented RESTful communication between frontend and backend systems
+- Designed PostgreSQL database structures to support user and application workflows
+- Applied full-stack development practices using Java, Spring Boot, Vue.js, and PostgreSQL
 
 ---
 
@@ -100,8 +94,8 @@ Best Buds streamlines this process by consolidating multiple data sources into a
 
 | Category | Technologies |
 |-----------|-------------|
-| Frontend | Vue.js, JavaScript, HTML5, CSS3, Vue Router, Vuex |
-| Backend | Java, Spring Boot, JPA |
+| Frontend | Vue.js, JavaScript, HTML5, CSS3, Axios |
+| Backend | Java, Spring Boot, JDBC |
 | Database | PostgreSQL |
 | APIs | Yelp Fusion API, Google Maps API, News API |
 | Tools | Git, GitHub, IntelliJ IDEA |
@@ -110,31 +104,80 @@ Best Buds streamlines this process by consolidating multiple data sources into a
 
 ## Screenshots
 
+The following screenshots demonstrate the primary user workflows throughout the application.
+
 ### Home Page
 
-![Home Page](images/home-page.png)
+Introduces the application and primary navigation.
+
+![Home Page](images/01-home.png)
+
+---
 
 ### Dispensary Search
 
-![Search Results](images/search-results.png)
+Displays nearby dispensaries retrieved from integrated business data sources.
+
+![Dispensary Search](images/02-search.png)
+
+---
+
+### Dispensary Details
+
+Displays dispensary information, location details, and available user actions.
+
+![Dispensary Details](images/03-dispensary-details.png)
+
+---
 
 ### Interactive Map
 
-![Interactive Map](images/map-view.png)
+Displays dispensary locations using Google Maps integration.
 
-### User Profile
+![Interactive Map](images/04-map.png)
 
-![User Profile](images/profile-page.png)
+---
+
+### Profile Management
+
+Allows users to create and manage their profile information.
+
+![Profile Management](images/05-profile.png)
+
+---
+
+### Favorites
+
+Displays saved dispensaries for authenticated users.
+
+![Favorites](images/06-favorites.png)
+
+---
+
+### Educational Resources
+
+Provides educational content and informational resources within the application.
+
+![Educational Resources](images/07-education.png)
+
+---
+
+### Industry News
+
+Displays current cannabis industry news from integrated external sources.
+
+![Industry News](images/08-news.png)
 
 ---
 
 ## Future Enhancements
 
+- Responsive layout for tablets and mobile devices
 - User reviews and ratings
-- Advanced filtering and recommendation capabilities
-- Enhanced mapping and geolocation functionality
-- Personalized content and search recommendations
-- Expanded educational and informational resources
+- Enhanced search filtering
+- Additional mapping functionality
+- Personalized recommendations
+- Expanded educational resources
 
 ---
 
@@ -144,8 +187,8 @@ Best Buds streamlines this process by consolidating multiple data sources into a
 
 Business Systems Analyst | Full-Stack Developer
 
-Portfolio: https://jennifercurtis.me
+🌐 **Portfolio:** https://jennifercurtis.me
 
-LinkedIn: https://linkedin.com/in/jcurtisdeveloper
+💼 **LinkedIn:** https://linkedin.com/in/jcurtisdeveloper
 
-GitHub: https://github.com/craftycurtis05
+💻 **GitHub:** https://github.com/craftycurtis05
