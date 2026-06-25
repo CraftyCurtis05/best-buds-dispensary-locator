@@ -203,8 +203,8 @@ Integrated contact form for user communication.
 
 Business Systems Analyst | Full-Stack Developer
 
-🌐 **Portfolio:** https://jennifercurtis.me
+🌐 **Portfolio:** [jennifercurtis.me](https://jennifercurtis.me)
 
-💼 **LinkedIn:** https://linkedin.com/in/jcurtisdeveloper
+💼 **LinkedIn:** [linkedin.com/in/jcurtisdeveloper](https://linkedin.com/in/jcurtisdeveloper)
 
-💻 **GitHub:** https://github.com/craftycurtis05
+💻 **GitHub:** [github.com/craftycurtis05](https://github.com/craftycurtis05)
