@@ -130,9 +130,9 @@ Search nearby dispensaries using location-based business data.
 
 ---
 
-### Dispensary Details
+### Shop
 
-View business information, contact details, and available user actions.
+Demonstrates the product information interface and planned expansion area for future dispensary product integrations.
 
 ![Shop](images/04-shop.png)
 
