@@ -106,6 +106,14 @@ The application follows a traditional client-server architecture with a Vue.js f
 
 The following screenshots demonstrate the primary user workflows throughout the application.
 
+### Login
+
+Secure user authentication for personalized features.
+
+![Login](images/01-login.png)
+
+---
+
 ### Home Page
 
 Introduces the application and primary navigation.
@@ -116,7 +124,7 @@ Introduces the application and primary navigation.
 
 ### Dispensary Search
 
-Displays nearby dispensaries retrieved from integrated business data sources.
+Search nearby dispensaries using location-based business data.
 
 ![Dispensary Search](images/02-search.png)
 
@@ -124,49 +132,57 @@ Displays nearby dispensaries retrieved from integrated business data sources.
 
 ### Dispensary Details
 
-Displays dispensary information, location details, and available user actions.
+View business information, contact details, and available user actions.
 
-![Dispensary Details](images/03-dispensary-details.png)
-
----
-
-### Interactive Map
-
-Displays dispensary locations using Google Maps integration.
-
-![Interactive Map](images/04-map.png)
+![Shop](images/04-shop.png)
 
 ---
 
-### Profile Management
+### User Profile
 
-Allows users to create and manage their profile information.
+Manage profile information and account settings.
 
-![Profile Management](images/05-profile.png)
-
----
-
-### Favorites
-
-Displays saved dispensaries for authenticated users.
-
-![Favorites](images/06-favorites.png)
+![Profile](images/05-profile.png)
 
 ---
 
-### Educational Resources
+### Tips & Tricks
 
-Provides educational content and informational resources within the application.
+Educational resources available within the application.
 
-![Educational Resources](images/07-education.png)
+![Tips](images/06-tips.png)
+
+---
+
+### State Legality Map
+
+Interactive map displaying cannabis legality information by state.
+
+![Legality Map](images/07-legality-map.png)
+
+---
+
+### Educational Articles
+
+Browse educational cannabis-related content.
+
+![Articles](images/08-articles.png)
 
 ---
 
 ### Industry News
 
-Displays current cannabis industry news from integrated external sources.
+Latest cannabis industry news aggregated through external APIs.
 
-![Industry News](images/08-news.png)
+![News](images/09-news.png)
+
+---
+
+### Contact
+
+Integrated contact form for user communication.
+
+![Contact](images/10-contact.png)
 
 ---
 
