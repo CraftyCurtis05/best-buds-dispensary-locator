@@ -56,7 +56,7 @@
 </template>
 
 <script>
-import authService from '@/services/AuthService';
+import authService from '../services/AuthService.js';
 
 export default {
   name: "RegisterView",
@@ -73,6 +73,7 @@ export default {
       registrationErrorMsg: 'There were problems registering this user.',
     };
   },
+
   methods: {
     register() {
       if (this.user.password != this.user.confirmPassword) {
@@ -107,78 +108,5 @@ export default {
 </script>
 
 <style scoped>
-/* ALL = vw (Will not move with zoom) */
-#register-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  max-width: 100%;
-  height: 45.7vw;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.497), rgba(164, 164, 164, 0.881)), url('https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjI1ZXR4Z3g3c2k2c2gzbnRqeTczNmlwb29oaHE5M3QwdmRscTc1cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ftfVpeWsm95QgGfOZ8/giphy.gif');
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-}
 
-#register-main {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-img {
-  width: 20vw;
-  margin-inline-end: 1vw;
-}
-
-h1 {
-  font-size: 1.5vw;
-  margin-top: .7vw;
-  margin-bottom: .1vw;
-}
-
-.form-input-group {
-  margin: 1vw;
-}
-
-label {
-  display: flex;
-  flex-direction: column;
-  font-size: 1.2vw;
-}
-
-#username,
-#password,
-#confirm-password {
-  width: 12vw;
-  max-width: 12vw;
-  height: 1.5vw;
-  max-height: 1.5vw;
-  font-size: 1.1vw;
-  margin: .1vw;
-}
-
-button {
-  width: 9vw;
-  height: 2.3vw;
-  font-size: 1.1vw;
-  border-radius: .3vw;
-  background-color: #377306;
-  margin: .5vw auto;
-}
-
-button:hover {
-  cursor: url('best_buds_logo_icon.ico'), pointer;
-  color: black;
-  background: linear-gradient(270deg, #377306, transparent) #01331b;
-}
-
-p {
-  font-size: 1.2vw;
-  margin: 1vw auto;
-}
 </style>

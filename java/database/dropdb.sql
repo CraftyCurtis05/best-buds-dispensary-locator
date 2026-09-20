@@ -1,13 +1,17 @@
 -- **************************************************************
--- This script destroys the database and associated users
+-- Best Buds
+-- Removes the local PostgreSQL database and database roles
 -- **************************************************************
 
--- The following line terminates any active connections to the database so that it can be destroyed
+-- Close active connections to the Best Buds database
 SELECT pg_terminate_backend(pid)
 FROM pg_stat_activity
-WHERE datname = 'best_buds_dispensary_locator';
+WHERE datname = 'best_buds'
+  AND pid <> pg_backend_pid();
 
-DROP DATABASE best_buds_dispensary_locator;
+-- Remove the database
+DROP DATABASE IF EXISTS best_buds;
 
-DROP USER best_buds_owner;
-DROP USER best_buds_appuser;
+-- Remove the database roles
+DROP ROLE IF EXISTS best_buds_appuser;
+DROP ROLE IF EXISTS best_buds_owner;

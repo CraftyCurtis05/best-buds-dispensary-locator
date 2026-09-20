@@ -4,11 +4,6 @@
     <!-- Browser Tab Title -->
     <title>Safety Tips | Best Buds</title>
 
-    <!-- Display Header Component -->
-    <header id="top">
-        <Header/>
-    </header>
-
     <!-- Display View Body -->
     <body id="tips-body">
 
@@ -18,14 +13,9 @@
             <!-- Display Body Title -->
             <h1>Tips for Safer Cannabis Consumption, Smoking and Topicals</h1>
 
-            <!-- Display View Jump Links Component -->
-            <aside id="view-links">
-                <ViewJumpLinks/>
-            </aside>
-
             <!-- Display Body Summary -->
             <section id="summary">
-                <h2>🌿Want to keep your high smooth and groovy? 🌿</h2>
+                <h2>Want to keep your high smooth and groovy?</h2>
                 <p>Cannabis use safety is like mastering the art of throwing a great party—keep the vibes positive, don’t overdo it, and have a plan to get home safely if needed. Balance your snacks with hydration, and remember: moderation is key. So, enjoy the high, but don’t let it turn into a wild rave without a designated driver!</p>
                 <h3>Take a gander at the safety tips for cannabis use below!</h3>
             </section>
@@ -83,102 +73,32 @@
             <ArticlesVisit/>
         </section>
 
-        <!-- Display Quote Component -->
-        <div id="quote">
-            <Quote/>
-        </div>  
-
     </body>
-
-    <!-- Display Footer Component -->
-    <footer id="bottom">
-        <Footer/>
-    </footer> 
 
 </template>
 
 <script>
-import Header from '@/components/Header.vue';
-import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
-import THCConsumption from '@/components/safety_tips_components/THCConsumption.vue';
-import CBDConsumption from '@/components/safety_tips_components/CBDConsumption.vue';
-import Smoking from '@/components/safety_tips_components/Smoking.vue';
-import Topical from '@/components/safety_tips_components/Topical.vue';
-import StrainGuideVisit from '@/components/strain_guide_components/StrainGuideVisit.vue';
-import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
-import Quote from '@/components/Quote.vue';
-import Footer from '@/components/Footer.vue';
+import THCConsumption from '../components/safety_tips/THCConsumption.vue';
+import CBDConsumption from '../components/safety_tips/CBDConsumption.vue';
+import Smoking from '../components/safety_tips/Smoking.vue';
+import Topical from '../components/safety_tips/Topical.vue';
+import StrainGuideVisit from '../components/strain_guide/StrainGuideVisit.vue';
+import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
 
 export default {
     name: "SafetyTipsView",
+
     components: { 
-        Header,
-        ViewJumpLinks,
         THCConsumption,
         CBDConsumption,
         Smoking,
         Topical,
-        StrainGuideVisit, 
-        ArticlesVisit, 
-        Quote,
-        Footer 
+        StrainGuideVisit,
+        ArticlesVisit
     }
 };
 </script>
 
 <style scoped>
-/* OBJECTS = rem */
-/* SPACING = vw */
-#tips-body {
-    width: 100vw;
-    max-width: 100%;
-    overflow-x: hidden;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\background_assets\\green_smoke.png');
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-}
 
-#tips-main {
-    margin: 4vw;
-}
-
-h1,
-#summary,
-#conclusion {
-    text-align: center;
-}
-
-#summary {
-    margin-bottom: 2vw;
-}
-
-h2 {
-    font-size: 1.2rem;
-}
-
-p {
-    font-size: 1.1rem;
-    margin: auto 8vw;
-}
-
-h3 {
-    font-size: 1.1rem;
-}
-
-#links {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.link {
-    font-size: 1.2rem;
-    font-weight: bolder;
-    margin-inline: 1vw;
-}
-
-.link:hover {
-    text-decoration: underline;
-}
 </style>

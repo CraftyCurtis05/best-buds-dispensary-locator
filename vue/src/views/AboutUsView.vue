@@ -4,11 +4,6 @@
   <!-- Browser Tab Title -->
   <title>About Us | Best Buds</title>
 
-  <!-- Display Header Component -->
-  <header id="top">
-    <Header/>
-  </header>
-
   <!-- Display View Body -->
   <body id="about-body">
 
@@ -17,11 +12,6 @@
 
       <!-- Display Body Title -->
       <h1>We Are Best Buds</h1>
-
-      <!-- Display View Jump Links Component -->
-      <aside id="view-links">
-        <ViewJumpLinks/>
-      </aside>
 
       <!-- Display About Us Information -->
       <section id="about-us">
@@ -51,74 +41,23 @@
       <ArticlesVisit/>
     </section>
 
-    <!-- Display Quote Component -->
-    <div id="quote">
-      <Quote/>
-    </div> 
-
   </body>
-
-  <!-- Display Footer Component -->
-  <footer id="bottom">
-    <Footer/>
-  </footer> 
 
 </template>
 
 <script>
-import Header from '@/components/Header.vue';
-import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
-import StrainGuideVisit from '@/components/strain_guide_components/StrainGuideVisit.vue';
-import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
-import Quote from '@/components/Quote.vue';
-import Footer from '@/components/Footer.vue';
+import StrainGuideVisit from '../components/strain_guide/StrainGuideVisit.vue';
+import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
 
 export default {
   name: "AboutUsView",
   components: { 
-    Header,
-    ViewJumpLinks,
     StrainGuideVisit, 
-    ArticlesVisit,
-    Quote,
-    Footer
+    ArticlesVisit
   }
 };
 </script>
 
 <style scoped>
-/* OBJECTS = rem */
-/* SPACING = vw */
-#about-body {
-  width: 100vw;
-  max-width: 100%;
-  overflow-x: hidden;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\background_assets\\green_smoke.png');
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-}
 
-#about-main {
-  text-align: center;
-  margin: 4vw;
-}
-
-h2 {
-  font-size: 1.25rem;
-  font-weight: lighter;
-}
-
-h3 {
-  font-size: 1.4rem;
-}
-
-p {
-  font-size: 1.2rem;
-  margin: auto 10vw;
-}
-
-h4 {
-  font-size: 1.1rem;
-}
 </style>

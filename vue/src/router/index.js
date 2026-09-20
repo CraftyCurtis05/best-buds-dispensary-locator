@@ -2,10 +2,10 @@ import { createRouter, createWebHistory } from 'vue-router';
 import { useStore } from 'vuex';
 
 // Import components
-import HomeView from '../views/HomeView.vue';
 import LoginView from '../views/LoginView.vue';
-import LogoutView from '../views/LogoutView.vue';
 import RegisterView from '../views/RegisterView.vue';
+import LogoutView from '../views/LogoutView.vue';
+import HomeView from '../views/HomeView.vue';
 import SearchView from '../views/SearchView.vue';
 import ShopView from '../views/ShopView.vue';
 import TipsTricksView from '../views/TipsTricksView.vue';
@@ -32,27 +32,12 @@ import ContactUsView from '../views/ContactUsView.vue';
  */
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView,
-    meta: {
-      requiresAuth: true
-    }
-  },
-  {
     path: "/login",
     name: "login",
     component: LoginView,
     meta: {
-      requiresAuth: false
-    }
-  },
-  {
-    path: "/logout",
-    name: "logout",
-    component: LogoutView,
-    meta: {
-      requiresAuth: false
+      requiresAuth: false,
+      title: 'Login | Best Buds'
     }
   },
   {
@@ -60,7 +45,26 @@ const routes = [
     name: "register",
     component: RegisterView,
     meta: {
-      requiresAuth: false
+      requiresAuth: false,
+      title: 'Register | Best Buds'
+    }
+  },
+  {
+    path: "/logout",
+    name: "logout",
+    component: LogoutView,
+    meta: {
+      requiresAuth: false,
+      title: 'Logout | Best Buds'
+    }
+  },
+  {
+    path: '/',
+    name: 'home',
+    component: HomeView,
+    meta: {
+      requiresAuth: true,
+      title: 'Home | Best Buds'
     }
   },
   {
@@ -68,7 +72,8 @@ const routes = [
     name: "search",
     component: SearchView,
     meta: {
-      requiresAuth: true
+      requiresAuth: true,
+      title: 'Search | Best Buds'
     }
   },
   {
@@ -76,7 +81,8 @@ const routes = [
     name: "shop",
     component: ShopView,
     meta: {
-      requiresAuth: true
+      requiresAuth: true,
+      title: 'Shop | Best Buds'
     }
   },
   {
@@ -84,7 +90,8 @@ const routes = [
     name: "tipstricks",
     component: TipsTricksView,
     meta: {
-      requiresAuth: true 
+      requiresAuth: true ,
+      title: 'Tips & Tricks | Best Buds'
     }
   },
   {
@@ -92,7 +99,8 @@ const routes = [
     name: "articles",
     component: ArticlesView,
     meta: {
-      requiresAuth: true
+      requiresAuth: true,
+      title: 'Articles | Best Buds'
     }
   },
   {
@@ -100,7 +108,8 @@ const routes = [
     name: "news",
     component: NewsView,
     meta: {
-      requiresAuth: true
+      requiresAuth: true,
+      title: 'News | Best Buds'
     }
   },
   {
@@ -108,7 +117,8 @@ const routes = [
     name: "aboutus",
     component: AboutUsView,
     meta: {
-      requiresAuth: true
+      requiresAuth: true,
+      title: 'About Us | Best Buds'
 
     }
   },
@@ -117,7 +127,8 @@ const routes = [
     name: "profile",
     component: ProfileView,
     meta: {
-      requiresAuth: true
+      requiresAuth: true,
+      title: 'Profile | Best Buds'
   }
 },
   {
@@ -125,7 +136,8 @@ const routes = [
     name: "safetytips",
     component: SafetyTipsView,
     meta: {
-      requiresAuth: true
+      requiresAuth: true,
+      title: 'Safety Tips | Best Buds'
     }
   },
   {
@@ -133,7 +145,8 @@ const routes = [
     name: "cannabisproducts",
     component: CannabisProductsView,
     meta: {
-      requiresAuth: true
+      requiresAuth: true,
+      title: 'Cannabis Products | Best Buds'
     }
   },
   {
@@ -141,7 +154,8 @@ const routes = [
     name: "strainguide",
     component: StrainGuideView,
     meta: {
-      requiresAuth: true
+      requiresAuth: true,
+      title: 'Strain Guide | Best Buds'
     }
   },
   {
@@ -149,7 +163,8 @@ const routes = [
     name: "commonquestions",
     component: CommonQuestionsView,
     meta: {
-      requiresAuth: true
+      requiresAuth: true,
+      title: 'Common Questions | Best Buds'
     }
   },
   {
@@ -157,7 +172,8 @@ const routes = [
     name: "toomuchcannabis",
     component: TooMuchCannabisView,
     meta: {
-      requiresAuth: true
+      requiresAuth: true,
+      title: 'Too Much Cannabis | Best Buds'
     }
   },
   {
@@ -165,7 +181,8 @@ const routes = [
     name: "legality",
     component: LegalityView,
     meta: {
-      requiresAuth: true
+      requiresAuth: true,
+      title: 'Legality | Best Buds'
     }
   },
   {
@@ -173,7 +190,8 @@ const routes = [
     name: "privacypolicy",
     component: PrivacyPolicyView,
     meta: {
-      requiresAuth: true
+      requiresAuth: true,
+      title: 'Privacy Policy | Best Buds'
     }
   },
   {
@@ -181,7 +199,8 @@ const routes = [
     name: "contactus",
     component: ContactUsView,
     meta: {
-      requiresAuth: true
+      requiresAuth: true,
+      title: 'Contact Us | Best Buds'
     }
   }
 ];

@@ -4,11 +4,6 @@
     <!-- Browser Tab Title -->
     <title>Which Products? | Best Buds</title>
 
-    <!-- Display Header Component -->
-    <header id="top">
-        <Header/>
-    </header>
-
     <!-- Display View Body -->
     <body id="products-body">
 
@@ -18,14 +13,9 @@
             <!-- Display Body Title -->
             <h1>Cannabis Products</h1>
 
-            <!-- Display View Jump Links Component -->
-            <aside id="view-links">
-                <ViewJumpLinks/>
-            </aside>
-
             <!-- Display Body Summary -->
              <section id="summary">
-                <h2>🌿How To Choose Which Cannabis Product Is Right For You?🌿</h2>
+                <h2>How To Choose Which Cannabis Product Is Right For You?</h2>
                 <p>Choosing the right cannabis product is like picking your vibe! First choose the strain that is best for you by using our <router-link v-bind:to="{ name:'strainguide' }">strain guide</router-link>. Next consider how you want to consume—smoke, vape, or snack on an edible. Start with a low dose and see how it feels. Explore and find your perfect match!</p>
                 <h3>Check out all the different types of cannabis products below!</h3>
             </section>
@@ -87,105 +77,35 @@
             <ArticlesVisit/>
         </section>
 
-        <!-- Display Quote Component -->
-        <div id="quote">
-            <Quote/>
-        </div> 
-
     </body>
-
-     <!-- Display Footer Component -->
-    <footer id="bottom">
-        <Footer/>
-    </footer> 
 
 </template>
 
 <script>
-import Header from '@/components/Header.vue';
-import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
-import Flower from '@/components/products_components/Flower.vue';
-import Edible from '@/components/products_components/Edible.vue';
-import Wax from '@/components/products_components/Wax.vue';
-import Oil from '@/components/products_components/Oil.vue';
-import Tincture from '@/components/products_components/Tincture.vue';
-import Topical from '@/components/products_components/Topical.vue';
-import StrainGuideVisit from '@/components/strain_guide_components/StrainGuideVisit.vue';
-import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
-import Quote from '@/components/Quote.vue';
-import Footer from '@/components/Footer.vue';
+import Flower from '../components/cannabis_products/Flower.vue';
+import Edible from '../components/cannabis_products/Edible.vue';
+import Wax from '../components/cannabis_products/Wax.vue';
+import Oil from '../components/cannabis_products/Oil.vue';
+import Tincture from '../components/cannabis_products/Tincture.vue';
+import Topical from '../components/cannabis_products/Topical.vue';
+import StrainGuideVisit from '../components/strain_guide/StrainGuideVisit.vue';
+import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
 
 export default {
     name: "CannabisProductsView",
     components: { 
-        Header,
-        ViewJumpLinks, 
         Flower,
         Edible,
-        Wax, 
-        Oil, 
-        Tincture, 
-        Topical,  
-        StrainGuideVisit, 
-        ArticlesVisit, 
-        Quote, 
-        Footer 
+        Wax,
+        Oil,
+        Tincture,
+        Topical,
+        StrainGuideVisit,
+        ArticlesVisit
     }
 };
 </script>
 
 <style scoped>
-/* OBJECTS = rem */
-/* SPACING = vw */
-#products-body {
-    width: 100vw;
-    max-width: 100%;
-    overflow-x: hidden;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\background_assets\\green_smoke.png');
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-}
 
-#products-main {
-    margin: 4vw;
-}
-
-h1,
-#summary {
-    text-align: center;
-}
-
-#summary {
-    margin-bottom: 2vw;
-}
-
-h2 {
-    font-size: 1.2rem;
-}
-
-p {
-    font-size: 1.1rem;
-    margin: auto 8vw;
-}
-
-h3 {
-    font-size: 1.1rem;
-}
-
-#links {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.link {
-    font-size: 1.2rem;
-    font-weight: bolder;
-    margin-inline: 1vw;
-}
-
-.link:hover {
-    text-decoration: underline;
-}
 </style>

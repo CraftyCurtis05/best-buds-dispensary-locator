@@ -4,11 +4,6 @@
     <!-- Browser Tab Title -->
     <title>Questions | Best Buds</title>
 
-    <!-- Display Header Component -->    
-    <header id="top">
-        <Header/>
-    </header>
-
     <!-- Display View Body -->
     <body id="questions-body">
 
@@ -18,14 +13,9 @@
             <!-- Display Body Title -->
             <h1>Commonly Asked Questions About Cannabis</h1>
 
-            <!-- Display View Jump Links Component -->
-            <aside id="view-links">
-                <ViewJumpLinks/>
-            </aside>
-
             <!-- Display Body Summary -->
             <section id="summary">
-                <h2>🌿Got cannabis questions? No worries!🌿</h2>
+                <h2>Got cannabis questions? No worries!</h2>
                 <p>Whether you're curious about legality, how it works, or the best ways to use it, the plant’s got answers. From getting high or just chilling with CBD, to understanding health impacts and legal stuff, dive in and explore. Stay informed, use responsibly, and enjoy the journey!</p>
                 <h3>We've got all your questions answered below!</h3>
             </section>
@@ -123,45 +113,29 @@
             <ArticlesVisit/>
         </section>
 
-        <!-- Display Quote Component -->
-        <div id="quote">
-            <Quote/>
-        </div>  
-
     </body>
-
-     <!-- Display Footer Component -->
-    <footer id="bottom">
-        <Footer/>
-    </footer> 
 
 </template>
 
 <script>
-import Header from '@/components/Header.vue';
-import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
-import DispensariesQA from '@/components/questions_components/DispensariesQA.vue';
-import CannabisQA from '@/components/questions_components/CannabisQA.vue';
-import CBDQA from '@/components/questions_components/CBDQA.vue';
-import Delta9QA from '@/components/questions_components/Delta9QA.vue';
-import FlowerQA from '@/components/questions_components/FlowerQA.vue';
-import WaxQA from '@/components/questions_components/WaxQA.vue';
-import OilQA from '@/components/questions_components/OilQA.vue';
-import TinctureQA from '@/components/questions_components/TinctureQA.vue';
-import SmokingQA from '@/components/questions_components/SmokingQA.vue';
-import VaporizingQA from '@/components/questions_components/VaporizingQA.vue';
-import EdiblesQA from '@/components/questions_components/EdiblesQA.vue';
-import TopicalsQA from '@/components/questions_components/TopicalsQA.vue';
-import StrainGuideVisit from '@/components/strain_guide_components/StrainGuideVisit.vue';
-import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
-import Quote from '@/components/Quote.vue';
-import Footer from '@/components/Footer.vue';
+import DispensariesQA from '../components/common_questions/DispensariesQA.vue';
+import CannabisQA from '../components/common_questions/CannabisQA.vue';
+import CBDQA from '../components/common_questions/CBDQA.vue';
+import Delta9QA from '../components/common_questions/Delta9QA.vue';
+import FlowerQA from '../components/common_questions/FlowerQA.vue';
+import WaxQA from '../components/common_questions/WaxQA.vue';
+import OilQA from '../components/common_questions/OilQA.vue';
+import TinctureQA from '../components/common_questions/TinctureQA.vue';
+import SmokingQA from '../components/common_questions/SmokingQA.vue';
+import VaporizingQA from '../components/common_questions/VaporizingQA.vue';
+import EdiblesQA from '../components/common_questions/EdiblesQA.vue';
+import TopicalsQA from '../components/common_questions/TopicalsQA.vue';
+import StrainGuideVisit from '../components/strain_guide/StrainGuideVisit.vue';
+import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
 
 export default {
     name: "CommonQuestionsView",
     components: { 
-        Header,
-        ViewJumpLinks,
         DispensariesQA,
         CannabisQA,
         CBDQA,
@@ -174,66 +148,12 @@ export default {
         VaporizingQA,
         EdiblesQA,
         TopicalsQA,
-        StrainGuideVisit, 
-        ArticlesVisit, 
-        Quote, 
-        Footer 
+        StrainGuideVisit,
+        ArticlesVisit
     }
 };
 </script>
 
 <style scoped>
-/* OBJECTS = rem */
-/* SPACING = vw */
-#questions-body {
-    width: 100vw;
-    max-width: 100%;
-    overflow-x: hidden;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\background_assets\\green_smoke.png');
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-}
 
-#questions-main {
-    margin: 4vw;
-}
-
-h1,
-#summary {
-    text-align: center;
-}
-
-#summary {
-    margin-bottom: 2vw;
-}
-
-h2 {
-    font-size: 1.2rem;
-}
-
-p {
-    font-size: 1.1rem;
-    margin: auto 8vw;
-}
-
-h3 {
-    font-size: 1.1rem;
-}
-
-#links {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.link {
-    font-size: 1.2rem;
-    font-weight: bolder;
-    margin-inline: 1vw;
-}
-
-.link:hover {
-    text-decoration: underline;
-}
 </style>

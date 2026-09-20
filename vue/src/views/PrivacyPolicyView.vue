@@ -4,11 +4,6 @@
   <!-- Browser Tab Title -->
   <title>Privacy Policy | Best Buds</title>
 
-  <!-- Display Header Component -->
-  <header id="top">
-    <Header/>
-  </header>
-
   <!-- Display View Body -->
   <body id="privacy-body">
 
@@ -17,11 +12,6 @@
 
       <!-- Display Body Title -->
       <h1>Best Buds Privacy Policy</h1>
-
-      <!-- Display View Jump Links Component -->
-      <aside id="view-links">
-        <ViewJumpLinks/>
-      </aside>
 
       <!-- Display Body Summary -->
       <section id="summary">
@@ -103,77 +93,24 @@
       <ArticlesVisit/>
     </section>
 
-    <!-- Display Quote Component -->
-    <div id="quote">
-      <Quote/>
-    </div>  
-
   </body>
-
-  <!-- Display Footer Component -->
-  <footer id="bottom">
-    <Footer/>
-  </footer> 
 
 </template>
 
 <script>
-import Header from '@/components/Header.vue';
-import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
-import StrainGuideVisit from '@/components/strain_guide_components/StrainGuideVisit.vue';
-import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
-import Quote from '@/components/Quote.vue';
-import Footer from '@/components/Footer.vue';
+import StrainGuideVisit from '../components/strain_guide/StrainGuideVisit.vue';
+import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
 
 export default {
   name: "PrivacyPolicyView",
+
   components: { 
-    Header,
-    ViewJumpLinks,
-    StrainGuideVisit, 
-    ArticlesVisit, 
-    Quote, 
-    Footer 
+    StrainGuideVisit,
+    ArticlesVisit
   }
 };
 </script>
 
 <style scoped>
-/* OBJECTS = rem */
-/* SPACING = vw */
-#privacy-body {
-  width: 100vw;
-  max-width: 100%;
-  overflow-x: hidden;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\background_assets\\green_smoke.png');
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-}
 
-#privacy-main {
-  margin: 4vw;
-}
-
-h1,
-#summary {
-    text-align: center;
-}
-
-#summary {
-    margin-bottom: 2vw;
-}
-
-h2 {
-    font-size: 1.2rem;
-}
-
-p {
-    font-size: 1.1rem;
-    margin: auto 8vw;
-}
-
-h3 {
-    font-size: 1.1rem;
-}
 </style>

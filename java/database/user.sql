@@ -1,25 +1,30 @@
--- ********************************************************************************
--- This script creates the database users and grants them the necessary permissions
--- ********************************************************************************
+-- **************************************************************
+-- Best Buds
+-- Creates the PostgreSQL roles used by the database
+-- **************************************************************
 
-CREATE USER best_buds_owner
-WITH PASSWORD 'bestbuds';
+-- Create the database owner role
+DO
+$$
+BEGIN
+    IF NOT EXISTS (
+        SELECT FROM pg_catalog.pg_roles
+        WHERE rolname = 'best_buds_owner'
+    ) THEN
+        CREATE ROLE best_buds_owner NOLOGIN;
+    END IF;
+END
+$$;
 
-GRANT ALL
-ON ALL TABLES IN SCHEMA public
-TO best_buds_owner;
-
-GRANT ALL
-ON ALL SEQUENCES IN SCHEMA public
-TO best_buds_owner;
-
-CREATE USER best_buds_appuser
-WITH PASSWORD 'bestbuds';
-
-GRANT SELECT, INSERT, UPDATE, DELETE
-ON ALL TABLES IN SCHEMA public
-TO best_buds_appuser;
-
-GRANT USAGE, SELECT
-ON ALL SEQUENCES IN SCHEMA public
-TO best_buds_appuser;
+-- Create the application user role
+DO
+$$
+BEGIN
+    IF NOT EXISTS (
+        SELECT FROM pg_catalog.pg_roles
+        WHERE rolname = 'best_buds_appuser'
+    ) THEN
+        CREATE ROLE best_buds_appuser LOGIN;
+    END IF;
+END
+$$;

@@ -4,11 +4,6 @@
     <!-- Browser Tab Title -->
     <title>Too Much? | Best Buds</title>
 
-    <!-- Display Header Component -->
-    <header id="top">
-        <Header/>
-    </header>
-
     <!-- Display View Body -->
     <body id="toomuch-body">
 
@@ -18,14 +13,9 @@
             <!-- Display Body Title -->
             <h1>Too Much Cannabis</h1>
 
-            <!-- Display View Jump Links Component -->
-            <aside id="view-links">
-                <ViewJumpLinks/>
-            </aside>
-
             <!-- Display Body Summary -->
             <section id="summary">
-                <h2>🌿Think you may have overdone it?🌿</h2>
+                <h2>Think you may have overdone it?</h2>
                 <p>Using too much cannabis can lead to overthinking and heightened anxiety, making simple tasks seem overwhelming. It’s like your mind gets stuck in overdrive—what started as a relaxing evening can turn into a marathon of introspection. The key is moderation and knowing your limits to keep your experience enjoyable and stress-free.</p>
                 <h3>If you think you've had too much, please check out below to ease your mind!</h3>
             </section>
@@ -67,101 +57,32 @@
         <!-- Display Articles Visit Component -->
         <section id="articles-visit">
             <ArticlesVisit/>
-        </section>
-
-        <!-- Display Quote Component -->
-        <div id="quote">
-            <Quote/>
-        </div>  
+        </section> 
 
     </body>
-
-     <!-- Display Footer Component -->
-    <footer id="bottom">
-        <Footer/>
-    </footer> 
 
 </template>
 
 <script>
-import Header from '@/components/Header.vue';
-import ViewJumpLinks from '@/components/ViewJumpLinks.vue';
-import Symptoms from '@/components/too_much_components/Symptoms.vue';
-import Coping from '@/components/too_much_components/Coping.vue';
-import WhatToDo from '@/components/too_much_components/WhatToDo.vue';
-import StrainGuideVisit from '@/components/strain_guide_components/StrainGuideVisit.vue';
-import ArticlesVisit from '@/components/articles_components/ArticlesVisit.vue';
-import Quote from '@/components/Quote.vue';
-import Footer from '@/components/Footer.vue';
+import Symptoms from '../components/too_much_cannabis/Symptoms.vue';
+import Coping from '../components/too_much_cannabis/Coping.vue';
+import WhatToDo from '../components/too_much_cannabis/WhatToDo.vue';
+import StrainGuideVisit from '../components/strain_guide/StrainGuideVisit.vue';
+import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
 
 export default {
     name: "TooMuchCannabisView",
+
     components: { 
-        Header,
-        ViewJumpLinks,
         Symptoms,
         Coping,
         WhatToDo,
-        StrainGuideVisit, 
-        ArticlesVisit, 
-        Quote, 
-        Footer 
+        StrainGuideVisit,
+        ArticlesVisit
     }
 };
 </script>
 
 <style scoped>
-/* OBJECTS = rem */
-/* SPACING = vw */
-#toomuch-body {
-    width: 100vw;
-    max-width: 100%;
-    overflow-x: hidden;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.497), rgba(255, 255, 255, 0.881)), url('src\\assets\\background_assets\\green_smoke.png');
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-}
 
-#toomuch-main {
-    margin: 4vw;
-}
-
-h1,
-#summary {
-    text-align: center;
-}
-
-#summary {
-    margin-bottom: 2vw;
-}
-
-h2 {
-    font-size: 1.2rem;
-}
-
-p {
-    font-size: 1.1rem;
-    margin: auto 8vw;
-}
-
-h3 {
-    font-size: 1.1rem;
-}
-
-#links {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
-.link {
-    font-size: 1.2rem;
-    font-weight: bolder;
-    margin-inline: 1vw;
-}
-
-.link:hover {
-    text-decoration: underline;
-}
 </style>

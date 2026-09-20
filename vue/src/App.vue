@@ -1,26 +1,53 @@
-<!-- TO RUN APPLICATION DIRECTIONS -->
-<!-- Install npm package in terminal: npm install -->
-<!-- Install axios package in terminal: npm i axios -->
-
-
-<!-- Install google maps package in terminal: npm i vue3-google-map -->
-<!-- OR npm install -S vue3-google-map @googlemaps/js-api-loader -->
-<!-- OR npm install -S @fawmi/vue-google-maps -->
-
-<!-- Install emailjs package: npm install emailjs-com --save -->
-<!-- npm run dev -->
-
+<!-- App.vue -->
 <template>
-  <div id="capstone-app">
-    <router-view />
+  <div id="app-container">
+
+    <!-- Global Header with Site-Wide Navbar -->
+    <header id="header" role="banner">
+      <AppHeader />
+    </header>  
+
+    <!-- The core content block of the page -->
+    <main id="main-content">
+
+      <!-- In-Page Table of Contents (Jump Links) -->
+      <nav id="jump-links" aria-label="On this page">
+        <JumpLinks />
+      </nav>
+
+      <!-- Dynamic Page Views -->
+      <router-view />
+
+      <!-- Global Page Quote -->
+      <section id="quote" aria-label="Page Quote">
+        <AppQuote />
+      </section>  
+
+    </main>
+
+    <!-- Global Footer -->
+    <footer id="footer" role="contentinfo">
+      <AppFooter />
+    </footer>
+
   </div>
 </template>
 
 <script>
-export default {
-  components: {
+import AppHeader from './components/layout/Header.vue';
+import JumpLinks from './components/layout/JumpLinks.vue';
+import AppQuote from './components/layout/Quote.vue';
+import AppFooter from './components/layout/Footer.vue';
 
+export default {
+
+  components: {
+    AppHeader,
+    JumpLinks,
+    AppQuote,
+    AppFooter
   },
+
   computed: {
     notification() {
       return this.$store.state.notification;
@@ -33,6 +60,7 @@ export default {
       };
     }
   },
+
   methods: {
     clearNotification() {
       this.$store.commit('CLEAR_NOTIFICATION');
@@ -42,39 +70,5 @@ export default {
 </script>
 
 <style>
-body {
-  margin: 0;
-  padding: 0;
-  caret-color: transparent;
-}
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: 'Raleway';
-}
-
-h1 {
-  font-size: 1.6rem;
-  font-weight: 700;
-}
-
-h2 {
-  font-size: 1.2rem;
-  font-weight: 650;
-}
-
-h3 {
-  font-size: 1.1rem;
-  font-weight: 650;
-}
-
-p {
-  font-family: 'Roboto';
-} 
-
-input {
-  caret-color: black;
-}
 </style>
