@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import CapstoneApp from './App.vue';
+import CapstoneApp from './BestBudsApp.vue';
 import { createStore } from './store';
 import router from './router';
 import axios from 'axios';

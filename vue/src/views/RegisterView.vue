@@ -11,7 +11,7 @@
     <main id="register-main">
 
       <!-- Display Logo -->
-      <img src="src\assets\logo_assets\cropped\best_buds_logo_black cropped.png"/>
+      <img :src="Logo"/>
 
       <!-- Display Body Title -->
       <h1>Create Account</h1>
@@ -57,18 +57,22 @@
 
 <script>
 import authService from '../services/AuthService.js';
+import Logo from '../assets/layout/logo/logo-dark-theme.png';
 
 export default {
   name: "RegisterView",
 
   data() {
     return {
+      Logo,
+
       user: {
         username: '',
         password: '',
         confirmPassword: '',
         role: 'user',
       },
+
       registrationErrors: false,
       registrationErrorMsg: 'There were problems registering this user.',
     };

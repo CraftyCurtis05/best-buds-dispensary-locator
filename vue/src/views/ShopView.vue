@@ -47,9 +47,9 @@
 </template>
 
 <script>
-import Cart from '../assets/shop/cart.jpg';
-import StrainGuideVisit from '../components/strain_guide/StrainGuideVisit.vue';
-import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
+import Cart from '../assets/shop/cart.webp';
+import StrainGuideVisit from '../components/strain-guide/Visit.vue';
+import ArticlesVisit from '../components/articles/Visit.vue';
 
 export default {
   name: "ShopView",

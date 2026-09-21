@@ -23,7 +23,7 @@
       <!-- Display Body Jump Links -->
       <section id="links">
         <div class="link"><a href="#strain-101">Strain 101</a></div>
-        <div class="link"><a href="#turpene-101">Turpene 101</a></div>
+        <div class="link"><a href="#terpene-101">terpene 101</a></div>
       </section>
 
       <!-- Display Guide Information -->
@@ -41,26 +41,26 @@
           <Strain101/>
         </article>
 
-        <!-- Display Turpene Jump Links -->
+        <!-- Display terpene Jump Links -->
         <section id="links">
-        <div class="turpene-link"><a href="#humulene">Humulene</a></div>
-        <div class="turpene-link"><a href="#limonene">Limonene</a></div>
-        <div class="turpene-link"><a href="#myrcene">Myrcene</a></div>
-        <div class="turpene-link"><a href="#caryophyllene">Caryophyllene</a></div>
-        <div class="turpene-link"><a href="#linalool">Linalool</a></div>
-        <div class="turpene-link"><a href="#apinene">Alpha-Pinene</a></div>
-        <div class="turpene-link"><a href="#bpinene">Beta-Pinene</a></div>
-        <div class="turpene-link"><a href="#terpinolene">Terpinolene</a></div>
-        <div class="turpene-link"><a href="#ocimene">Ocimene</a></div>
-        <div class="turpene-link"><a href="#eucalyptol">Eucalyptol</a></div>
-        <div class="turpene-link"><a href="#nerolidol">Nerolidol</a></div>
-        <div class="turpene-link"><a href="#borneol">Borneol</a></div>
-        <div class="turpene-link"><a href="#camphene">Camphene</a></div>
+        <div class="terpene-link"><a href="#humulene">Humulene</a></div>
+        <div class="terpene-link"><a href="#limonene">Limonene</a></div>
+        <div class="terpene-link"><a href="#myrcene">Myrcene</a></div>
+        <div class="terpene-link"><a href="#caryophyllene">Caryophyllene</a></div>
+        <div class="terpene-link"><a href="#linalool">Linalool</a></div>
+        <div class="terpene-link"><a href="#apinene">Alpha-Pinene</a></div>
+        <div class="terpene-link"><a href="#bpinene">Beta-Pinene</a></div>
+        <div class="terpene-link"><a href="#terpinolene">Terpinolene</a></div>
+        <div class="terpene-link"><a href="#ocimene">Ocimene</a></div>
+        <div class="terpene-link"><a href="#eucalyptol">Eucalyptol</a></div>
+        <div class="terpene-link"><a href="#nerolidol">Nerolidol</a></div>
+        <div class="terpene-link"><a href="#borneol">Borneol</a></div>
+        <div class="terpene-link"><a href="#camphene">Camphene</a></div>
       </section>
 
         <!-- Display Terpene Guide Component -->
-        <article id="turpene-101">
-          <Turpene101/>
+        <article id="terpene-101">
+          <Terpene101/>
         </article>
 
       </section>
@@ -77,16 +77,16 @@
 </template>
 
 <script>
-import Strain101 from '../components/strain_guide/Strain101Component.vue';
-import Turpene101 from '../components/strain_guide/Turpene101Component.vue';
-import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
+import Strain101 from '../components/strain-guide/Strain101.vue';
+import Terpene101 from '../components/strain-guide/Terpene101.vue';
+import ArticlesVisit from '../components/articles/Visit.vue';
 
 export default {
   name: "StrainGuideView",
 
   components: { 
     Strain101,
-    Turpene101,
+    Terpene101,
     ArticlesVisit
   }
 };

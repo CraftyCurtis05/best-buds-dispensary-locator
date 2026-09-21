@@ -98,8 +98,8 @@
 </template>
 
 <script>
-import StrainGuideVisit from '../components/strain_guide/StrainGuideVisit.vue';
-import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
+import StrainGuideVisit from '../components/strain-guide/Visit.vue';
+import ArticlesVisit from '../components/articles/Visit.vue';
 
 export default {
   name: "PrivacyPolicyView",

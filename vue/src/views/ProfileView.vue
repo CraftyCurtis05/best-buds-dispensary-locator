@@ -47,10 +47,10 @@
 </template>
 
 <script>
-import profilePictureSrc from '../assets/profile/default.png';
-import ProfilePicture from '../components/profile/ProfilePicture.vue';
-import Favorites from '../components/profile/favorite/FavoriteLocations.vue';
-import ProfileInfo from '../components/profile/ProfileInfo.vue';
+import profilePictureSrc from '../assets/profile/default.webp';
+import ProfilePicture from '../components/profile/Picture.vue';
+import Favorites from '../components/profile/favorite/Dispensaries.vue';
+import ProfileInfo from '../components/profile/Details.vue';
 
 export default {
     name: "ProfileView",

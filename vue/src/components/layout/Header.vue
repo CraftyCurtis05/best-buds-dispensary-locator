@@ -27,7 +27,7 @@
 
 <script>
 import Logo from '../../assets/layout/logo/logo-dark-theme.png';
-import Banner from '../../assets/layout/header/banner-cropped.png';
+import Banner from '../../assets/layout/header/banner.webp';
 import NavBar from "../../components/layout/NavBar.vue";
 
 export default {

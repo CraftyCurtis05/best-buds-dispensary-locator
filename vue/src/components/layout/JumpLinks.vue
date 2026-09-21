@@ -8,10 +8,10 @@
         <section id="links">
 
             <!-- Display Top Arrow and Reference Top ID -->
-            <div id="top-link"><a href="#top">Top<img :src="Up"/></a></div>
+            <div id="top-link"><a href="#top"><img :src="Up"/></a></div>
 
             <!-- Display Bottom Arrow and Reference Bottom ID -->
-            <div id="bottom-link"><a href="#bottom"><img :src="Down"/>Bottom</a></div>
+            <div id="bottom-link"><a href="#bottom"><img :src="Down"/></a></div>
 
         </section>
 
@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import Up from '../../assets/layout/jump_links/up.png';
-import Down from '../../assets/layout/jump_links/down.png';
+import Up from '../../assets/layout/jump-links/up (1).png';
+import Down from '../../assets/layout/jump-links/down (1).png';
 
 export default {
     name: "JumpLinks",

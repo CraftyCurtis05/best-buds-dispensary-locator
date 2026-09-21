@@ -32,10 +32,11 @@
 </template>
 
 <script>
-import ContactUsForm from '../components/contact_us/ContactUsForm.vue';
+import ContactUsForm from '../components/contact/Form.vue';
 
 export default {
   name: "ContactUsView",
+
   components: { 
     ContactUsForm
   }

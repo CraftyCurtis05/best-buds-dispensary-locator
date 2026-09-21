@@ -47,12 +47,13 @@
 </template>
 
 <script>
-import LegalityMap from '../components/legality/LegalityMap.vue';
-import StrainGuideVisit from '../components/strain_guide/StrainGuideVisit.vue';
-import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
+import LegalityMap from '../components/legality/Map.vue';
+import StrainGuideVisit from '../components/strain-guide/Visit.vue';
+import ArticlesVisit from '../components/articles/Visit.vue';
 
 export default {
     name: "LegalityView",
+
     components: { 
         LegalityMap,
         StrainGuideVisit,

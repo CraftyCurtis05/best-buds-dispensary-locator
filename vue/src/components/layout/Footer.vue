@@ -25,30 +25,23 @@
             <h2>Follow Us</h2>
             <div id="social-media-logos">
 
-                <!-- Facebook Logo and Link -->
-                <nav id="facebook">
-                    <a href="https://www.facebook.com/" target="_blank">
-                        <img :src="Facebook"/>
+                <!-- GitHub Logo and Link -->
+                <nav id="github">
+                    <a href="https://github.com/CraftyCurtis05" target="_blank">
+                        <img :src="GitHub"/>
                     </a>
                 </nav>
 
-                <!-- Instagram Logo and Link -->
-                <nav id="instagram">
-                    <a href="http://www.instagram.com/" target="_blank">
-                        <img :src="Instagram"/>
-                    </a>
-                </nav>
-
-                <!-- Twitter Logo and Link -->
-                <nav id="twitter">
-                    <a href="http://x.com/" target="_blank">
-                        <img :src="Twitter"/>
+                <!-- Portfolio Logo and Link -->
+                <nav id="portfolio">
+                    <a href="https://jennifercurtis.me/" target="_blank">
+                        <img :src="Portfolio"/>
                     </a>
                 </nav>
 
                 <!-- LinkedIn Logo and Link -->
                 <nav id="linkedin">
-                    <a href="http://www.linkedin.com/" target="_blank">
+                    <a href="https://www.linkedin.com/in/jcurtisdeveloper/" target="_blank">
                         <img :src="LinkedIn" />
                     </a>
                 </nav>
@@ -61,10 +54,9 @@
 
 <script>
 import Logo from '../../assets/layout/logo/logo-dark-theme.png';
-import Facebook from '../../assets/layout/social_media/facebook.png';
-import Instagram from '../../assets/layout/social_media/instagram.png';
-import Twitter from '../../assets/layout/social_media/twitter.png';
-import LinkedIn from '../../assets/layout/social_media/linkedin.png';
+import GitHub from '../../assets/layout/social-media/github.png';
+import Portfolio from '../../assets/layout/social-media/portfolio.png';
+import LinkedIn from '../../assets/layout/social-media/linkedin.png';
 
 export default {
     name: "AppFooter",
@@ -72,9 +64,8 @@ export default {
     data() {
       return {
         Logo,
-        Facebook,
-        Instagram,
-        Twitter,
+        GitHub,
+        Portfolio,
         LinkedIn,
 
         year: new Date().getFullYear(),  // Return Year and Company Name to use as Template Display for Trademark

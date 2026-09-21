@@ -52,8 +52,8 @@
 </template>
 
 <script>
-import TipsAndTricks from '../components/tips_tricks/TipsTricks.vue';
-import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
+import TipsAndTricks from '../components/tips/TipsTricks.vue';
+import ArticlesVisit from '../components/articles/Visit.vue';
 
 export default {
     name: "TipsTricksView",

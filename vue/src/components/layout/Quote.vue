@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import Quotes from '../../assets/layout/quote/quote.js';
+import Quotes from '../../data/quote/quote.js';
 
 export default {
     name: "AppQuote",

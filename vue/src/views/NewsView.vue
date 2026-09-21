@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import News from '../components/news/NewsComponent.vue';
+import News from '../components/news/News.vue';
 
 export default {
   name: "NewsView",

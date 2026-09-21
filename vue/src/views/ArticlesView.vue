@@ -47,12 +47,13 @@
 </template>
 
 <script>
-import SearchArticles from '../components/articles/SearchArticles.vue';
-import StrainGuideVisit from '../components/strain_guide/StrainGuideVisit.vue';
-import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
+import SearchArticles from '../components/articles/Search.vue';
+import StrainGuideVisit from '../components/strain-guide/Visit.vue';
+import ArticlesVisit from '../components/articles/Visit.vue';
 
 export default {
   name: "ArticlesView",
+
   components: { 
     SearchArticles,
     StrainGuideVisit,

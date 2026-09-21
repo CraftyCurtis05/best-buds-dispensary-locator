@@ -28,12 +28,13 @@
 </template>
 
 <script>
-import Featured from '../components/home/HomeFeatured.vue';
-import StrainGuideVisit from '../components/strain_guide/StrainGuideVisit.vue';
-import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
+import Featured from '../components/home/Featured.vue';
+import StrainGuideVisit from '../components/strain-guide/Visit.vue';
+import ArticlesVisit from '../components/articles/Visit.vue';
 
 export default {
   name: "HomeView",
+
   components: { 
     Featured,
     StrainGuideVisit,

@@ -63,6 +63,7 @@ import Logo from '../assets/layout/logo/logo-dark-theme.png';
 
 export default {
   name: "LoginView",
+
   data() {
     return {
       Logo,
@@ -74,6 +75,7 @@ export default {
       invalidCredentials: false
     };
   },
+
   methods: {
     login() {
       authService
