@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import Up from '../../assets/layout/jump-links/up (1).png';
-import Down from '../../assets/layout/jump-links/down (1).png';
+import Up from '../../assets/layout/jump-links/up.png';
+import Down from '../../assets/layout/jump-links/down.png';
 
 export default {
     name: "JumpLinks",

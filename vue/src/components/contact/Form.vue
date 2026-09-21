@@ -1,106 +1,170 @@
 <template>
 
-  <body>
+  <form @submit.prevent="submitForm">
 
-    <!-- Display Contact Us Information -->
-    <section id="contact-us">
+    <!-- Name -->
+    <div class="form-group">
+      <label for="contact-name">Name</label>
 
-      <!-- Display Contact Us Form -->
-      <article id="contact-us-form">
+      <input
+        id="contact-name"
+        v-model.trim="form.name"
+        class="form-input"
+        type="text"
+        name="name"
+        autocomplete="name"
+        maxlength="100"
+        required
+      />
+    </div>
 
-        <form ref="values" @submit.prevent="sendEmail">
+    <!-- Email -->
+    <div class="form-group">
+      <label for="contact-email">Email</label>
 
-          <div class="form-group">
-            <input
-              class="form-input"
-              name="name"
-              v-model="user_name"
-              placeholder="Name"
-              required
-            />
-          </div>
+      <input
+        id="contact-email"
+        v-model.trim="form.email"
+        class="form-input"
+        type="email"
+        name="email"
+        autocomplete="email"
+        maxlength="254"
+        required
+      />
+    </div>
 
-          <div class="form-group">
-            <input
-              class="form-input"
-              name="email"
-              v-model="user_email"
-              placeholder="Email"
-              required
-            />
-          </div>
+    <!-- Favorite Strain -->
+    <div class="form-group">
+      <label for="favorite-strain">Favorite Strain</label>
 
-          <div class="form-group">
-            <input
-              class="form-input"
-              name="favstrain"
-              v-model="fav_strain"
-              placeholder="Favorite Strain"
-              required
-            />
-          </div>
+      <input
+        id="favorite-strain"
+        v-model.trim="form.favoriteStrain"
+        class="form-input"
+        type="text"
+        name="favoriteStrain"
+        maxlength="100"
+      />
+    </div>
 
-          <div class="form-group">
-            <textarea
-              class="form-input"
-              name="message"
-              v-model="user_message"
-              placeholder="Message"
-              :rows="4"
-              required
-            />
-          </div>
+    <!-- Message -->
+    <div class="form-group">
+      <label for="contact-message">Message</label>
 
-          <Button type="submit">Submit</Button>
+      <textarea
+        id="contact-message"
+        v-model.trim="form.message"
+        class="form-input"
+        name="message"
+        rows="6"
+        maxlength="2000"
+        required
+      ></textarea>
+    </div>
 
-        </form>
+    <!-- Spam Protection -->
+    <div
+      class="honeypot"
+      aria-hidden="true"
+    >
+      <label for="contact-website">Website</label>
 
-      </article>
+      <input
+        id="contact-website"
+        v-model="form.website"
+        type="text"
+        name="website"
+        tabindex="-1"
+        autocomplete="off"
+      />
+    </div>
 
-    </section>
+    <!-- Form Status -->
+    <p
+      v-if="statusMessage"
+      role="status"
+      aria-live="polite"
+    >
+      {{ statusMessage }}
+    </p>
 
-  </body>
+    <button
+      type="submit"
+      :disabled="isSubmitting"
+    >
+      {{ isSubmitting ? "Sending..." : "Submit" }}
+    </button>
+
+  </form>
 
 </template>
 
 <script>
-import emailjs from 'emailjs-com';
+import axios from "axios";
 
 export default {
-    name: "ContactUsForm",
+  name: "ContactUsForm",
 
-    data() {
-        return {
-            user_name: "",
-            user_email: "",
-            fav_strain: "",
-            user_message: "",
-        };
+  data() {
+    return {
+
+      // Contact form values
+      form: {
+        name: "",
+        email: "",
+        favoriteStrain: "",
+        message: "",
+        website: ""
+      },
+
+      // Form submission state
+      isSubmitting: false,
+      statusMessage: ""
+    };
+  },
+
+  methods: {
+
+    // Submit the contact form
+    async submitForm() {
+
+      this.isSubmitting = true;
+      this.statusMessage = "";
+
+      try {
+
+        await axios.post("/api/contact.php", this.form);
+
+        this.statusMessage = "Your message was sent successfully.";
+
+        this.resetForm();
+
+      } catch (error) {
+
+        console.error("Contact form submission failed:", error);
+
+        this.statusMessage =
+          "Your message could not be sent. Please try again.";
+
+      } finally {
+
+        this.isSubmitting = false;
+
+      }
     },
 
-    methods: {
-        sendEmail() {
-            emailjs
-            .sendForm(
-                "service_bmvzxb3",
-                "template_jrn3z3o",
-                this.$refs.values,
-                "LtzYKLHpH1MiB7EPW"
-            )
-            .then(
-                (result) => {
-                    console.log("You have successfully submitted your message", result.text);
-                    location.reload(true);
-                },
-                (error) => {
-                    console.log("This form failed to submit, please kindly check your internet connection", error.text);
-                }
-            );
-        }
+    // Clear the contact form
+    resetForm() {
+      this.form = {
+        name: "",
+        email: "",
+        favoriteStrain: "",
+        message: "",
+        website: ""
+      };
     }
+
+  }
 };
 </script>
-
-<style scoped>
-
-</style>
