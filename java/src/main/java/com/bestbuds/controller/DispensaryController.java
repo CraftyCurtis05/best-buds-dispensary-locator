@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/dispensaries")
+@RequestMapping("/api/dispensaries")
 public class DispensaryController {
 
     private final YelpService yelpService;
@@ -22,7 +22,8 @@ public class DispensaryController {
     // Get dispensaries near a location
     @GetMapping("/search")
     public ResponseEntity<JsonNode> searchDispensaries(
-            @RequestParam String location) {
+            @RequestParam String location
+    ) {
 
         JsonNode results = yelpService.searchDispensaries(location);
 
@@ -32,10 +33,13 @@ public class DispensaryController {
     // Get the featured dispensary for the home page
     @GetMapping("/featured")
     public ResponseEntity<JsonNode> getFeaturedDispensary(
-            @RequestParam(required = false) String location) {
+            @RequestParam(required = false) String location
+    ) {
 
-        JsonNode featured = yelpService.getFeaturedDispensary(location);
+        JsonNode featured =
+                yelpService.getFeaturedDispensary(location);
 
         return ResponseEntity.ok(featured);
     }
+
 }
