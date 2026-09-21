@@ -8,7 +8,8 @@ export function createStore(currentToken, currentUser) {
     state: {
       token: currentToken || '',
       user: currentUser || {},
-      locationID: ''
+      locationID: '',
+      dispensaries: []
     },
 
     mutations: {
@@ -29,6 +30,11 @@ export function createStore(currentToken, currentUser) {
       // Store the current dispensary search location
       SET_LOCATION(state, locationID) {
         state.locationID = locationID;
+      },
+
+      // Store the current dispensary search results
+      SET_DISPENSARIES(state, dispensaries) {
+        state.dispensaries = dispensaries;
       },
 
       // Clear the current user session

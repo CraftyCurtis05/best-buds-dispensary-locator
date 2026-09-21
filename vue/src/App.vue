@@ -3,7 +3,7 @@
   <div id="app-container">
 
     <!-- Global Header with Site-Wide Navbar -->
-    <header id="header" role="banner">
+    <header id="top" role="banner">
       <AppHeader />
     </header>  
 
@@ -26,7 +26,7 @@
     </main>
 
     <!-- Global Footer -->
-    <footer id="footer" role="contentinfo">
+    <footer id="bottom" role="contentinfo">
       <AppFooter />
     </footer>
 

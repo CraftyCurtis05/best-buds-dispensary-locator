@@ -15,7 +15,7 @@
         <section id="results" v-else-if="results.length">
 
             <article
-                id="result-object"
+                class="result-object"
                 v-for="result in results"
                 v-bind:key="result.id"
             >
@@ -30,20 +30,20 @@
                 </a>
 
                 <!-- Display Dispensary Details -->
-                <div id="result-details">
+                <div class="result-details">
 
-                    <h3 id="result-address1">
+                    <h3 class="result-address">
                         {{ result.location.address1 }}
                         {{ result.location.address2 }}
                     </h3>
 
-                    <h3 id="result-address2">
+                    <h3 class="result-address">
                         {{ result.location.city }},
                         {{ result.location.state }}
                         {{ result.location.zip_code }}
                     </h3>
 
-                    <h3 id="result-phone">
+                    <h3 class="result-phone">
                         {{ result.display_phone }}
                     </h3>
 
@@ -70,7 +70,6 @@ export default {
 
     data() {
         return {
-            results: [],
             isLoading: false,
             hasSearched: false
         }
@@ -81,6 +80,11 @@ export default {
         // Get the current search location from the store
         locationID() {
             return this.$store.state.locationID;
+        },
+
+        // Get the current dispensary results from the store
+        results() {
+            return this.$store.state.dispensaries;
         }
 
     },
@@ -104,15 +108,27 @@ export default {
 
             this.isLoading = true;
             this.hasSearched = true;
-            this.results = [];
+
+            this.$store.commit('SET_DISPENSARIES', []);
 
             YelpService.getGreen(locationID)
             .then(response => {
-                this.results = response.data.businesses || [];
+
+                const dispensaries = response.data.businesses || [];
+
+                this.$store.commit(
+                    'SET_DISPENSARIES',
+                    dispensaries
+                );
             })
             .catch(error => {
-                console.error("Unable to load dispensaries:", error);
-                this.results = [];
+
+                console.error(
+                    "Unable to load dispensaries:",
+                    error
+                );
+
+                this.$store.commit('SET_DISPENSARIES', []);
             })
             .finally(() => {
                 this.isLoading = false;
