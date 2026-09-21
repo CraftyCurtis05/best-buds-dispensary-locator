@@ -12,7 +12,7 @@
         >
 
             <!-- Display Dispensary Markers -->
-            <Marker
+            <GoogleMapMarker
                 v-for="dispensary in mappedDispensaries"
                 v-bind:key="dispensary.id"
                 v-bind:options="{
@@ -81,17 +81,17 @@
 
 <script>
 import {
-    GoogleMap,
-    Marker,
-    InfoWindow
-} from 'vue3-google-map';
+  GoogleMap,
+  Marker as GoogleMapMarker,
+  InfoWindow
+} from "vue3-google-map";
 
 export default {
     name: "SearchMap",
 
     components: {
         GoogleMap,
-        Marker,
+        GoogleMapMarker,
         InfoWindow
     },
 

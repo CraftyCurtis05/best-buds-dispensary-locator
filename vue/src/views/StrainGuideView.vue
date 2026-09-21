@@ -38,7 +38,7 @@
 
         <!-- Display Strain Guide Component -->
         <article id="strain-101">
-          <Strain101/>
+          <StrainGuide />
         </article>
 
         <!-- Display terpene Jump Links -->
@@ -60,7 +60,7 @@
 
         <!-- Display Terpene Guide Component -->
         <article id="terpene-101">
-          <Terpene101/>
+          <TerpeneGuide />
         </article>
 
       </section>
@@ -69,7 +69,7 @@
 
     <!-- Display Articles Visit Component -->
     <section id="articles-visit">
-      <ArticlesVisit/>
+      <ArticlesVisit />
     </section>
 
   </body>
@@ -77,16 +77,16 @@
 </template>
 
 <script>
-import Strain101 from '../components/strain-guide/Strain101.vue';
-import Terpene101 from '../components/strain-guide/Terpene101.vue';
-import ArticlesVisit from '../components/articles/Visit.vue';
+import StrainGuide from '../components/strain-guide/StrainGuide.vue';
+import TerpeneGuide from '../components/strain-guide/TerpeneGuide.vue';
+import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
 
 export default {
   name: "StrainGuideView",
 
   components: { 
-    Strain101,
-    Terpene101,
+    StrainGuide,
+    TerpeneGuide,
     ArticlesVisit
   }
 };

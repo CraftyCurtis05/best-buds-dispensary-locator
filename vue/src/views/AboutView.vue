@@ -24,7 +24,7 @@
         <p>At Best Buds, your privacy and security are our top priorities. We adhere to stringent data protection measures to safeguard your personal information and ensure a secure browsing experience.</p>
         
         <h3>Get In Touch</h3>
-        <p>Have questions or feedback? We'd love to hear from you! Feel free to reach out to our friendly team from our <router-link v-bind:to="{ name:'contactus' }">contact page</router-link> for assistance or inquiries.</p>
+        <p>Have questions or feedback? We'd love to hear from you! Feel free to reach out to our friendly team from our <router-link v-bind:to="{ name:'contact-us' }">contact page</router-link> for assistance or inquiries.</p>
         
         <h4>Thank you for choosing Best Buds as your trusted guide in the world of cannabis. Together, let's explore, discover, and embrace the benefits of this remarkable plant.</h4>
       </section>
@@ -33,12 +33,12 @@
 
     <!-- Display Strain Guide Visit Component -->
     <section id="strain-guide-visit">
-      <StrainGuideVisit/>
+      <StrainGuideVisit />
     </section>
  
     <!-- Display Articles Visit Component -->
     <section id="articles-visit">
-      <ArticlesVisit/>
+      <ArticlesVisit />
     </section>
 
   </body>
@@ -46,8 +46,8 @@
 </template>
 
 <script>
-import StrainGuideVisit from '../components/strain-guide/Visit.vue';
-import ArticlesVisit from '../components/articles/Visit.vue';
+import StrainGuideVisit from '../components/strain-guide/StrainGuideVisit.vue';
+import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
 
 export default {
   name: "AboutView",

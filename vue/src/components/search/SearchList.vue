@@ -111,7 +111,7 @@ export default {
 
             this.$store.commit('SET_DISPENSARIES', []);
 
-            YelpService.getGreen(locationID)
+            YelpService.getDispensaries(locationID)
             .then(response => {
 
                 const dispensaries = response.data.businesses || [];

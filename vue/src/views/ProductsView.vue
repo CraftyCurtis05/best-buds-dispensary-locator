@@ -16,7 +16,7 @@
             <!-- Display Body Summary -->
              <section id="summary">
                 <h2>How To Choose Which Cannabis Product Is Right For You?</h2>
-                <p>Choosing the right cannabis product is like picking your vibe! First choose the strain that is best for you by using our <router-link v-bind:to="{ name:'strainguide' }">strain guide</router-link>. Next consider how you want to consume—smoke, vape, or snack on an edible. Start with a low dose and see how it feels. Explore and find your perfect match!</p>
+                <p>Choosing the right cannabis product is like picking your vibe! First choose the strain that is best for you by using our <router-link v-bind:to="{ name:'strain-guide' }">strain guide</router-link>. Next consider how you want to consume—smoke, vape, or snack on an edible. Start with a low dose and see how it feels. Explore and find your perfect match!</p>
                 <h3>Check out all the different types of cannabis products below!</h3>
             </section>
             
@@ -35,32 +35,32 @@
 
                 <!-- Display Flower Component -->
                 <article id="flower">
-                    <Flower/>
+                    <FlowerProducts />
                 </article>
 
                 <!-- Display Edible Component -->
                 <article id="edible">
-                    <Edible/>
+                    <EdibleProducts />
                 </article>
 
                 <!-- Display Wax Component -->
                 <article id="wax">
-                    <Wax/>
+                    <WaxProducts />
                 </article>
 
                 <!-- Display Oil Component -->
                 <article id="oil">
-                    <Oil/>
+                    <OilProducts />
                 </article>
 
                 <!-- Display Tincture Component -->
                 <article id="tincture">
-                    <Tincture/>
+                    <TinctureProducts />
                 </article>
 
                 <!-- Display Topical Component -->
                 <article id="topical">
-                    <Topical/>
+                    <TopicalProducts />
                 </article>
 
             </section>
@@ -69,12 +69,12 @@
 
         <!-- Display Strain Guide Visit Component -->
         <section id="strain-guide-visit">
-            <StrainGuideVisit/>
+            <StrainGuideVisit />
         </section>
  
         <!-- Display Articles Visit Component -->
         <section id="articles-visit">
-            <ArticlesVisit/>
+            <ArticlesVisit />
         </section>
 
     </body>
@@ -82,25 +82,25 @@
 </template>
 
 <script>
-import Flower from '../components/products/Flower.vue';
-import Edible from '../components/products/Edible.vue';
-import Wax from '../components/products/Wax.vue';
-import Oil from '../components/products/Oil.vue';
-import Tincture from '../components/products/Tincture.vue';
-import Topical from '../components/products/Topical.vue';
-import StrainGuideVisit from '../components/strain-guide/Visit.vue';
-import ArticlesVisit from '../components/articles/Visit.vue';
+import FlowerProducts from '../components/products/FlowerProducts.vue';
+import EdibleProducts from '../components/products/EdibleProducts.vue';
+import WaxProducts from '../components/products/WaxProducts.vue';
+import OilProducts from '../components/products/OilProducts.vue';
+import TinctureProducts from '../components/products/TinctureProducts.vue';
+import TopicalProducts from '../components/products/TopicalProducts.vue';
+import StrainGuideVisit from '../components/strain-guide/StrainGuideVisit.vue';
+import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
 
 export default {
     name: "ProductsView",
 
     components: { 
-        Flower,
-        Edible,
-        Wax,
-        Oil,
-        Tincture,
-        Topical,
+        FlowerProducts,
+        EdibleProducts,
+        WaxProducts,
+        OilProducts,
+        TinctureProducts,
+        TopicalProducts,
         StrainGuideVisit,
         ArticlesVisit
     }

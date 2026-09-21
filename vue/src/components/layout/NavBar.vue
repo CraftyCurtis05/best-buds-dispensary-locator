@@ -16,7 +16,7 @@
             <nav><router-link id="shop-nav" v-bind:to="{ name: 'shop' }" v-if="$store.state.token != ''">Shop</router-link></nav>
             
             <!-- Tips & Tricks -->
-            <nav><router-link id="tips-tricks-nav" v-bind:to="{ name: 'tipstricks' }" v-if="$store.state.token != ''">Tips & Tricks</router-link></nav>
+            <nav><router-link id="tips-tricks-nav" v-bind:to="{ name: 'tips-tricks' }" v-if="$store.state.token != ''">Tips & Tricks</router-link></nav>
             
             <!-- Articles -->
             <nav><router-link id="articles-nav" v-bind:to="{ name: 'articles' }" v-if="$store.state.token != ''">Articles</router-link></nav>
@@ -25,7 +25,7 @@
             <nav><router-link id="news-nav" v-bind:to="{ name: 'news' }" v-if="$store.state.token != ''">News</router-link></nav>
 
             <!-- About Us -->
-            <nav><router-link id="about-us-nav" v-bind:to="{ name: 'aboutus' }" v-if="$store.state.token != ''">About Us</router-link></nav>
+            <nav><router-link id="about-us-nav" v-bind:to="{ name: 'about' }" v-if="$store.state.token != ''">About Us</router-link></nav>
         </section>
 
         <!-- Display Right of Navigation Bar -->
@@ -34,7 +34,15 @@
             <nav><router-link id="profile-nav" v-bind:to="{ name: 'profile' }" v-if="$store.state.token != ''">Profile</router-link></nav>
 
             <!-- Logout -->
-            <nav><router-link id="logout-nav" v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link></nav>
+            <nav v-if="$store.state.token != ''">
+                <button
+                    id="logout-nav"
+                    type="button"
+                    v-on:click="logout"
+                >
+                    Logout
+                </button>
+            </nav>
         </section>
 
     </body>
@@ -43,10 +51,33 @@
 
 <script>
 export default {
-    name: "NavBar"
+    name: "NavBar",
+
+    methods: {
+
+        // Sign out the current user
+        logout() {
+            this.$store.commit("LOGOUT");
+
+            this.$router.push({
+                name: "login"
+            });
+        }
+
+    }
 };
 </script>
 
 <style scoped>
+#left-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
 
+#right-nav {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 1.5rem;
+}
 </style>

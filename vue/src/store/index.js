@@ -1,14 +1,14 @@
-import { createStore as _createStore } from 'vuex';
-import axios from 'axios';
+import { createStore as createVuexStore } from "vuex";
+import axios from "axios";
 
 export function createStore(currentToken, currentUser) {
 
-  const store = _createStore({
+  return createVuexStore({
 
     state: {
-      token: currentToken || '',
+      token: currentToken || "",
       user: currentUser || {},
-      locationID: '',
+      locationID: "",
       dispensaries: []
     },
 
@@ -17,14 +17,21 @@ export function createStore(currentToken, currentUser) {
       // Store the user's authorization token
       SET_AUTH_TOKEN(state, token) {
         state.token = token;
-        localStorage.setItem('token', token);
-        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
+        localStorage.setItem("token", token);
+
+        axios.defaults.headers.common["Authorization"] =
+                `Bearer ${token}`;
       },
 
       // Store the current user
       SET_USER(state, user) {
         state.user = user;
-        localStorage.setItem('user', JSON.stringify(user));
+
+        localStorage.setItem(
+          "user",
+          JSON.stringify(user)
+        );
       },
 
       // Store the current dispensary search location
@@ -39,18 +46,19 @@ export function createStore(currentToken, currentUser) {
 
       // Clear the current user session
       LOGOUT(state) {
-        localStorage.removeItem('token');
-        localStorage.removeItem('user');
-
-        state.token = '';
+        state.token = "";
         state.user = {};
+        state.locationID = "";
+        state.dispensaries = [];
 
-        delete axios.defaults.headers.common['Authorization'];
+        localStorage.removeItem("token");
+        localStorage.removeItem("user");
+
+        delete axios.defaults.headers.common["Authorization"];
       }
 
     }
 
   });
 
-  return store;
 }

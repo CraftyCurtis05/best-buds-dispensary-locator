@@ -44,12 +44,12 @@
 
     <!-- Display Strain Guide Visit Component -->
     <section id="strain-guide-visit">
-      <StrainGuideVisit/>
+      <StrainGuideVisit />
     </section>
 
     <!-- Display Articles Visit Component -->
     <section id="articles-visit">
-      <ArticlesVisit/>
+      <ArticlesVisit />
     </section>
 
   </body> 
@@ -60,8 +60,8 @@
 import SearchBar from '../components/search/SearchBar.vue';
 import SearchList from '../components/search/SearchList.vue';
 import SearchMap from '../components/search/SearchMap.vue';
-import StrainGuideVisit from '../components/strain-guide/Visit.vue';
-import ArticlesVisit from '../components/articles/Visit.vue';
+import StrainGuideVisit from '../components/strain-guide/StrainGuideVisit.vue';
+import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
    
 export default {
   name: "SearchView",

@@ -33,22 +33,22 @@
 
                 <!-- Display THC Consumption Tips Component -->
                 <article id="thc-consumption">
-                    <THCConsumption/>
+                    <ThcSafety />
                 </article>    
 
                 <!-- Display CBD Consumption Tips Component -->
                 <article id="cbd-consumption"> 
-                    <CBDConsumption/>
+                    <CbdSafety />
                 </article>
 
                 <!-- Display Cannabis Smoking Tips Component -->
                 <article id="smoking">
-                    <Smoking/>
+                    <SmokingSafety />
                 </article>
 
                 <!-- Display Topical Use Tips Component -->
                 <article id="topical">
-                    <Topical/>
+                    <TopicalSafety />
                 </article>    
 
                 <!-- Display Conclusion Information -->
@@ -65,12 +65,12 @@
 
         <!-- Display Strain Guide Visit Component -->
         <section id="strain-guide-visit">
-            <StrainGuideVisit/>
+            <StrainGuideVisit />
         </section>
 
         <!-- Display Articles Visit Component -->
         <section id="articles-visit">
-            <ArticlesVisit/>
+            <ArticlesVisit />
         </section>
 
     </body>
@@ -78,21 +78,21 @@
 </template>
 
 <script>
-import THCConsumption from '../components/safety/THC.vue';
-import CBDConsumption from '../components/safety/CBD.vue';
-import Smoking from '../components/safety/Smoking.vue';
-import Topical from '../components/safety/Topical.vue';
-import StrainGuideVisit from '../components/strain-guide/Visit.vue';
-import ArticlesVisit from '../components/articles/Visit.vue';
+import ThcSafety from '../components/safety/ThcSafety.vue';
+import CbdSafety from '../components/safety/CbdSafety.vue';
+import SmokingSafety from '../components/safety/SmokingSafety.vue';
+import TopicalSafety from '../components/safety/TopicalSafety.vue';
+import StrainGuideVisit from '../components/strain-guide/StrainGuideVisit.vue';
+import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
 
 export default {
     name: "SafetyView",
 
     components: { 
-        THCConsumption,
-        CBDConsumption,
-        Smoking,
-        Topical,
+        ThcSafety,
+        CbdSafety,
+        SmokingSafety,
+        TopicalSafety,
         StrainGuideVisit,
         ArticlesVisit
     }

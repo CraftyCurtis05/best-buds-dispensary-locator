@@ -1,10 +1,10 @@
-import axios from 'axios';
+import axios from "axios";
 
 export default {
 
   // Get dispensaries near the user's location
-  getGreen(locationID) {
-    return axios.get('/dispensaries/search', {
+  getDispensaries(locationID) {
+    return axios.get("/api/dispensaries/search", {
       params: {
         location: locationID
       }
@@ -22,7 +22,7 @@ export default {
       };
     }
 
-    return axios.get('/dispensaries/featured', config);
+    return axios.get("/api/dispensaries/featured", config);
   }
 
 };

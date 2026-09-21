@@ -85,12 +85,12 @@
 
     <!-- Display Strain Guide Visit Component -->
     <section id="strain-guide-visit">
-      <StrainGuideVisit/>
+      <StrainGuideVisit />
     </section>
 
     <!-- Display Articles Visit Component -->
     <section id="articles-visit">
-      <ArticlesVisit/>
+      <ArticlesVisit />
     </section>
 
   </body>
@@ -98,8 +98,8 @@
 </template>
 
 <script>
-import StrainGuideVisit from '../components/strain-guide/Visit.vue';
-import ArticlesVisit from '../components/articles/Visit.vue';
+import StrainGuideVisit from '../components/strain-guide/StrainGuideVisit.vue';
+import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
 
 export default {
   name: "PrivacyPolicyView",

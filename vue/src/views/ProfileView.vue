@@ -25,17 +25,12 @@
 
                 <!-- Display User Picture Component -->
                 <article id="profile-picture">
-                    <ProfilePicture :src="profilePictureSrc"/>
-                </article>
-
-                <!-- Display User's Favorite Locations Component -->
-                <article id="profile-favorites">
-                    <Favorites :locations="favoriteLocations"/>
+                    <ProfilePicture :src="DefaultUserImage" />
                 </article>
 
                 <!-- Display User Information Component -->
                 <article id="profile-info">
-                    <ProfileInfo :profile="profile"/>
+                    <ProfileInfo :profile="profile" />
                 </article>
 
             </section>
@@ -47,24 +42,19 @@
 </template>
 
 <script>
-import profilePictureSrc from '../assets/profile/default.webp';
-import ProfilePicture from '../components/profile/Picture.vue';
-import Favorites from '../components/profile/favorite/Dispensaries.vue';
-import ProfileInfo from '../components/profile/Details.vue';
+import ProfilePicture from '../components/profile/ProfilePicture.vue';
+import ProfileInfo from '../components/profile/ProfileInfo.vue';
 
 export default {
     name: "ProfileView",
 
     components: {
         ProfilePicture,
-        Favorites,
         ProfileInfo
     },
 
     data() {
         return {
-            profilePictureSrc: profilePictureSrc,
-            favoriteLocations: ['Location 1', 'Location 2', 'Location 3'],
             profile: {
                 name: 'John Doe',
                 age: 30,

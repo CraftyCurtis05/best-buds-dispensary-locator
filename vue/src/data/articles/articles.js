@@ -4,7 +4,7 @@ export default [
         author: "National Academies Press",
         date: "January 12, 2017",
         description: "In adults with chemotherapy-induced nausea and vomiting, oral cannabinoids are effective antiemetics. In adults with chronic pain, patients who were treated with cannabis or cannabinoids are more likely to experience a clinically significant reduction in pain symptoms.",
-        image: "01.png",
+        image: "01.webp",
         url: "https://www.ncbi.nlm.nih.gov/books/NBK425767/"
     },
     {
@@ -12,7 +12,7 @@ export default [
         author: "NIDA - National Institute on Drug Abuse",
         date: "December 24, 2019",
         description: "Marijuana refers to the dried leaves, flowers, stems, and seeds from the Cannabis sativa or Cannabis indica plant. The plant contains the mind-altering chemical THC and other similar compounds. Extracts can also be made from the cannabis plant.",
-        image: "02.jpg",
+        image: "02.webp",
         url: "https://nida.nih.gov/publications/drugfacts/cannabis-marijuana"
     },
     {
@@ -20,7 +20,7 @@ export default [
         author: "Sian Ferguson",
         date: "March 08, 2019",
         description: "Different strains of cannabis can produce different effects. Some strains may help reduce fatigue or make you feel happier while others may promote relaxation.",
-        image: "03.png",
+        image: "03.webp",
         url: "https://www.healthline.com/health/beginners-guide-to-marijuana-strains"
     },
     {
@@ -36,7 +36,7 @@ export default [
         author: "CDC - U.S. Centers For Disease Control And Prevention",
         date: "February 16, 2024",
         description: "Cannabis use may have a wide range of health effects on the body and brain. There are several risk factors and negative health outcomes associated with cannabis use.",
-        image: "05.png",
+        image: "05.webp",
         url: "https://www.cdc.gov/cannabis/health-effects/index.html"
     },
     {
@@ -52,7 +52,7 @@ export default [
         author: "SAMHSA - Substance Abuse and Mental Health Services Administration",
         date: "July 29, 2024",
         description: "Marijuana use comes with real risks that can impact a person’s health and life. Marijuana is the most commonly used illegal substance in the U.S. and its use is growing. Marijuana use among all adult age groups, both sexes, and pregnant women is going up.",
-        image: "07.jpg",
+        image: "07.webp",
         url: "https://www.samhsa.gov/marijuana"
     },
     {
@@ -60,7 +60,7 @@ export default [
         author: "Tom Rush",
         date: "January 29, 2024",
         description: "Many people use cannabis and cannabis products as a treatment for chronic pain, multiple sclerosis, and mental health conditions. However, research has identified both benefits and risks to using cannabis as a medicinal treatment.",
-        image: "08.png",
+        image: "08.webp",
         url: "https://www.medicalnewstoday.com/s/320984#medicinal-benefits"
     },
     {
@@ -84,7 +84,7 @@ export default [
         author: "Sian Ferguson",
         date: "February 14, 2024",
         description: "Delta-9 is a chemical in cannabis and hemp plants. It can have an intoxicating effect and may cause some side effects.",
-        image: "11.png",
+        image: "11.webp",
         url: "https://www.healthline.com/health/what-is-delta-9"
     },
     {
@@ -100,7 +100,7 @@ export default [
         author: "Kimberly Holland",
         date: "February 12, 2024",
         description: "CBD and THC are both found in cannabis plants, but they interact with your body differently. One main difference is that THC produces a high while CBD does not.",
-        image: "13.jpg",
+        image: "13.webp",
         url: "https://www.healthline.com/health/cbd-vs-thc"
     },
     {
@@ -108,7 +108,7 @@ export default [
         author: "FDA - U.S. Food and Drug Administration",
         date: "July 16, 2024",
         description: "FDA news releases and statements; Consumer information; FDA remarks and testimony; Science and research; Other regulatory resources; Questions and answers.",
-        image: "14.jpg",
+        image: "14.webp",
         url: "https://www.fda.gov/news-events/public-health-focus/fda-regulation-cannabis-and-cannabis-derived-products-including-cannabidiol-cbd"
     },
     {
@@ -116,7 +116,7 @@ export default [
         author: "Peter Grinspoon, MD",
         date: "August 08, 2024",
         description: "Cannabidiol products may be helpful for some conditions, but evidence is lacking for others.",
-        image: "15.jpg",
+        image: "15.webp",
         url: "https://www.health.harvard.edu/staying-healthy/cbd-products-are-everywhere-but-do-they-work"
     },
     {
@@ -124,7 +124,7 @@ export default [
         author: "Cannabis Control Division - Montana",
         date: "May 31, 2023",
         description: "Marijuana edibles are consumed rather than smoked. All marijuana edibles contain delta-9 THC, the active ingredient in marijuana that causes a person to experience feelings of being “high.”",
-        image: "16.jpg",
+        image: "16.webp",
         url: "https://mtrevenue.gov/cannabis/education/truth-about-ingested-marijuana-infused-products/"
     },
     {
@@ -132,7 +132,7 @@ export default [
         author: "NIH - National Center for Complementary and Integrative Health",
         date: "November 2019",
         description: "Is marijuana the same thing as cannabis? People often use the words “cannabis” and “marijuana” interchangeably, but they don’t mean exactly the same thing.",
-        image: "17.jpg",
+        image: "17.webp",
         url: "https://www.nccih.nih.gov/health/cannabis-marijuana-and-cannabinoids-what-you-need-to-know"
     },
     {
@@ -140,7 +140,7 @@ export default [
         author: "Ruth Eagle",
         date: "May 21, 2020",
         description: "The highs that people experience after smoking cannabis vary. Some people may feel anxious and nauseous. A person may want to get ‘unhigh’ sooner rather than later after smoking cannabis. Tips on how to get unhigh range from drinking water to taking CBD",
-        image: "18.png",
+        image: "18.webp",
         url: "https://www.medicalnewstoday.com/s/how-to-get-unhigh"
     },
     {
@@ -148,7 +148,7 @@ export default [
         author: "Peter Grinspoon, MD",
         date: "January 17, 2023",
         description: "It's fair to say that society's views on cannabis have been evolving. Today, adult recreational use is legal in 21 states and medical use is legal in most other states, to varying degrees. The use of cannabis doesn't seem to be going away. Given that, here is what you need to know to make using cannabis safer.",
-        image: "19.jpg",
+        image: "19.webp",
         url: "https://www.health.harvard.edu/blog/if-you-use-cannabis-do-it-safely-202301172876"
     },
     {
@@ -156,7 +156,7 @@ export default [
         author: "NYC Health",
         date: "July 2024",
         description: "Cannabis is a plant that can be consumed for both recreational and medicinal purposes. Cannabis may be used in its plant form or as an extract to produce feelings of relaxation and euphoria. It can be smoked, vaped or ingested as a food or beverage (edibles).",
-        image: "20.png",
+        image: "20.webp",
         url: "https://www.nyc.gov/site/doh/health/health-topics/marijuana.page"
     },
     {
@@ -172,7 +172,7 @@ export default [
         author: "Robert L. Page II",
         date: "August 5, 2020",
         description: "Cannabis, or marijuana, has potential therapeutic and medicinal properties related to multiple compounds, particularly Δ-9-tetrahydrocannabinol and cannabidiol.",
-        image: "22.jpg",
+        image: "22.webp",
         url: "https://www.ahajournals.org/doi/full/10.1161/CIR.0000000000000883"
     },
     {
@@ -180,7 +180,7 @@ export default [
         author: "Nicholas Lau BA",
         date: "March 19, 2021",
         description: "The prevalence of cannabis use is rising among the US population.1 As cannabis continues to be legalized throughout the USA, people are turning to the internet and social media for information about its potential health benefits.",
-        image: "23.png",
+        image: "23.webp",
         url: "https://link.springer.com//10.1007/s11606-020-06421-w"
     },
     {
@@ -188,7 +188,7 @@ export default [
         author: "Shivika Datta",
         date: "November 17, 2021",
         description: "Cannabis sativa, widely known as ‘Marijuana’ poses a dilemma for being a blend of both good and bad medicinal effects. The historical use of Cannabis for both medicinal and recreational purposes suggests it to be a friendly plant.",
-        image: "24.jpg",
+        image: "24.webp",
         url: "https://www.sciencedirect.com/science//pii/S1319562X2100721X"
     },
     {
@@ -204,7 +204,7 @@ export default [
         author: "John S. Luque",
         date: "January 15, 2021",
         description: "Medical marijuana patients were positive about the health benefits they received and the fact they were able to reduce or eliminate many prescription medications; however, there were concerns about the costs.",
-        image: "26.jpg",
+        image: "26.webp",
         url: "https://www.sciencedirect.com/science//pii/S0965229921000108"
     },
     {
@@ -212,7 +212,7 @@ export default [
         author: "Wayne Hall",
         date: "April 01, 2022",
         description: "As is the case for most drugs, cannabis use has costs and benefits, and so do the policies that attempt to minimize the first and maximize the second.",
-        image: "27.svg",
+        image: "27.webp",
         url: "https://www.tandfonline.com/doi/full/10.31887/DCNS.2020.22.3/whall#d1e111"
     },
     {
@@ -220,7 +220,7 @@ export default [
         author: "Khaled M Hasan",
         date: "June 20, 2023",
         description: "Marijuana, also known as cannabis, is a psychoactive drug that comes from the Cannabis plant. Marijuana can be smoked, vaporized, or consumed through edibles in a variety of ways.",
-        image: "28.svg",
+        image: "28.webp",
         url: "https://journals.sagepub.com/doi/full/10.1177/11782218231182553"
     },
     {
@@ -228,7 +228,7 @@ export default [
         author: "Nhung Nguyen",
         date: "April 15, 2022",
         description: "Cannabis use patterns among adolescents and young adults (AYAs) have changed recently, with increasing use of non-combustible cannabis products.",
-        image: "29.jpg",
+        image: "29.webp",
         url: "https://www.sciencedirect.com/science//abs/pii/S0306460322001022"
     },
     {
@@ -236,7 +236,7 @@ export default [
         author: "Kevin P. Hill, M.D., M.H.S.",
         date: "December 8, 2021",
         description: "There are currently no psychiatric indications approved by the U.S. Food and Drug Administration (FDA) for cannabinoids, and there is limited evidence supporting the therapeutic use of cannabinoids for treatment of psychiatric disorders.",
-        image: "30.svg",
+        image: "30.webp",
         url: "https://psychiatryonline.org/doi/full/10.1176/appi.ajp.2021.21030320"
     },
     {
@@ -244,7 +244,7 @@ export default [
         author: "DEA - Department of Drug Enforcement Administration",
         date: "April 2020",
         description: "Marijuana is a mind-altering (psychoactive) drug, produced by the Cannabis sativa plant. Marijuana has over 480 constituents.",
-        image: "31.png",
+        image: "31.webp",
         url: "https://www.dea.gov/sites/default/files/2020-06/Marijuana-Cannabis-2020_0.pdf"
     },
     {
@@ -252,7 +252,7 @@ export default [
         author: "CHOC at Mission Hospital",
         date: "October 5, 2022",
         description: "Experts from CHOC at Mission Hospital help parents keep their children safe from eating THC gummies that can make them sick.",
-        image: "32.png",
+        image: "32.webp",
         url: "https://health.choc.org/thc-gummies-and-other-cannabis-edibles-what-parents-should-know/"
     },
     {
@@ -268,7 +268,7 @@ export default [
         author: "Godfrey Junior",
         date: "July 17, 2024",
         description: "Whether you have a sweet tooth or are a medical marijuana user who cannot or chooses not to smoke, THC gummies may be the best choice for you. But which ones boast the best potency, flavor, and value for money?",
-        image: "34.jpg",
+        image: "34.webp",
         url: "https://www.mercedsunstar.com/health-wellness/cannabis/288586697.html"
     },
     {
@@ -276,7 +276,7 @@ export default [
         author: "CCSA - Canadian Centre on Substance Use and Addication",
         date: "2019",
         description: "Edible cannabis products (edibles for short) are products containing cannabinoids that you eat or drink. Cannabinoids are chemical compounds found in cannabis that can affect your mind and body when consumed.",
-        image: "35.png",
+        image: "35.webp",
         url: "https://www.ccsa.ca/sites/default/files/2019-06/CCSA-7-Things-About-Edible-Cannabis-2019-en.pdf"
     },
     {
@@ -300,7 +300,7 @@ export default [
         author: "Sari Harrar,   AARP",
         date: "May 30, 2024",
         description: "Carminetta Verner didn’t smoke pot in the 1960s. But when medical marijuana was legalized in Maryland in 2014, the 89-year-old retired accountant decided to learn everything she could about cannabis.",
-        image: "38.jpg",
+        image: "38.webp",
         url: "https://www.aarp.org/health/drugs-supplements/info-2024/weed-gummies-risks-benefits.html"
     },
     {
@@ -316,9 +316,11 @@ export default [
         author: "Denver Public Health",
         date: "March 20, 2024",
         description: "Marijuana edibles are food items made with marijuana or marijuana oils which can be used as an alternative to smoking or vaporizing marijuana.",
-        image: "40.jpg",
+        image: "40.webp",
         url: "https://www.phidenverhealth.org/community-health-promotion/substance-misuse/marijuana-edible-facts"
     },
+
+    /*
     {
         title: "",
         author: "",
@@ -639,4 +641,5 @@ export default [
         image: "60",
         url: ""
     }
+        */
 ]

@@ -32,17 +32,17 @@
 
                 <!-- Display Too Much Symptoms Component -->
                 <article id="symptoms">
-                    <Symptoms/>
+                    <CannabisOveruseSymptoms />
                 </article>
 
                 <!-- Display Too Much Coping Component -->
                 <article id="coping">
-                    <Coping/>
+                    <CannabisOveruseCoping />
                 </article>
 
                 <!-- Display Too Much What To Do Component -->
                 <article id="what">
-                    <WhatToDo/>
+                    <CannabisOveruseGuide />
                 </article>
 
             </section>    
@@ -51,7 +51,7 @@
 
         <!-- Display Strain Guide Visit Component -->
         <section id="strain-guide-visit">
-            <StrainGuideVisit/>
+            <StrainGuideVisit />
         </section>
  
         <!-- Display Articles Visit Component -->
@@ -64,19 +64,19 @@
 </template>
 
 <script>
-import Symptoms from '../components/too-much/Symptoms.vue';
-import Coping from '../components/too-much/Coping.vue';
-import WhatToDo from '../components/too-much/WhatToDo.vue';
-import StrainGuideVisit from '../components/strain-guide/Visit.vue';
-import ArticlesVisit from '../components/articles/Visit.vue';
+import CannabisOveruseSymptoms from '../components/too-much/CannabisOveruseSymptoms.vue';
+import CannabisOveruseCoping from '../components/too-much/CannabisOveruseCoping.vue';
+import CannabisOveruseGuide from '../components/too-much/CannabisOveruseGuide.vue';
+import StrainGuideVisit from '../components/strain-guide/StrainGuideVisit.vue';
+import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
 
 export default {
     name: "TooMuchView",
 
     components: { 
-        Symptoms,
-        Coping,
-        WhatToDo,
+        CannabisOveruseSymptoms,
+        CannabisOveruseCoping,
+        CannabisOveruseGuide,
         StrainGuideVisit,
         ArticlesVisit
     }

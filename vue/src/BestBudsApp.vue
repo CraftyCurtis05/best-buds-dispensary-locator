@@ -70,5 +70,15 @@ export default {
 </script>
 
 <style>
+#app-container {
+  font-size: 70%;
+}
 
+img {
+  height: 10rem;
+}
+
+#main-content {
+  margin-top: 11rem;
+}
 </style>

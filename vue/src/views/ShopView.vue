@@ -25,7 +25,7 @@
 
         <!-- Display Products Component -->
         <article id="products">
-          <img :src="Cart"/>
+          <img :src="ShoppingCart"/>
         </article>
 
       </section>
@@ -34,12 +34,12 @@
 
     <!-- Display Strain Guide Visit Component -->
     <section id="strain-guide-visit">
-      <StrainGuideVisit/>
+      <StrainGuideVisit />
     </section>
 
     <!-- Display Articles Visit Component -->
     <section id="articles-visit">
-      <ArticlesVisit/>
+      <ArticlesVisit />
     </section>
 
     </body>
@@ -47,16 +47,16 @@
 </template>
 
 <script>
-import Cart from '../assets/shop/cart.webp';
-import StrainGuideVisit from '../components/strain-guide/Visit.vue';
-import ArticlesVisit from '../components/articles/Visit.vue';
+import ShoppingCart from '../assets/shop/shopping-cart.webp';
+import StrainGuideVisit from '../components/strain-guide/StrainGuideVisit.vue';
+import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
 
 export default {
   name: "ShopView",
 
   data() {
     return {
-      Cart
+      ShoppingCart
     }
   },
 

@@ -15,8 +15,8 @@
         <!-- Display Helpful Links and Copyright in the Center -->
         <section id="footer-links">
             <h1>Helpful Links</h1>
-                <nav><router-link v-bind:to="{ name: 'privacypolicy' }" v-if="$store.state.token != ''">Privacy Policy</router-link></nav>
-                <nav><router-link v-bind:to="{ name: 'contactus' }" v-if="$store.state.token != ''">Contact Us</router-link></nav>
+                <nav><router-link v-bind:to="{ name: 'privacy-policy' }" v-if="$store.state.token != ''">Privacy Policy</router-link></nav>
+                <nav><router-link v-bind:to="{ name: 'contact-us' }" v-if="$store.state.token != ''">Contact Us</router-link></nav>
             <span id="copyright"> @{{ year }} {{ companyName }} </span>
         </section>
 

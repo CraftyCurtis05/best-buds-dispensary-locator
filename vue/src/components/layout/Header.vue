@@ -45,5 +45,8 @@ export default {
 </script>
 
 <style scoped>
-
+img {
+    position: absolute;
+    z-index: -1;
+}
 </style>

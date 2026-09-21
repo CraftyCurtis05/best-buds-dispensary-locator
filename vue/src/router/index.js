@@ -1,229 +1,199 @@
-import { createRouter, createWebHistory } from 'vue-router';
-import { useStore } from 'vuex';
+import { createRouter, createWebHistory } from "vue-router";
+import { useStore } from "vuex";
 
-// Import components
-import LoginView from '../views/LoginView.vue';
-import RegisterView from '../views/RegisterView.vue';
-import LogoutView from '../views/LogoutView.vue';
-import HomeView from '../views/HomeView.vue';
-import SearchView from '../views/SearchView.vue';
-import ShopView from '../views/ShopView.vue';
-import TipsTricksView from '../views/TipsTricksView.vue';
-import ArticlesView from '../views/ArticlesView.vue';
-import NewsView from '../views/NewsView.vue';
-import AboutUsView from '../views/AboutView.vue';
-import ProfileView from '../views/ProfileView.vue';
-import SafetyTipsView from '../views/SafetyView.vue';
-import CannabisProductsView from '../views/ProductsView.vue';
-import StrainGuideView from '../views/StrainGuideView.vue';
-import CommonQuestionsView from '../views/QuestionsView.vue';
-import TooMuchCannabisView from '../views/TooMuchView.vue';
-import LegalityView from '../views/LegalityView.vue';
-import PrivacyPolicyView from '../views/PrivacyPolicyView.vue';
-import ContactUsView from '../views/ContactUsView.vue';
-
-/**
- * The Vue Router is used to "direct" the browser to render a specific view component
- * inside of App.vue depending on the URL.
- *
- * It also is used to detect whether or not a route requires the user to have first authenticated.
- * If the user has not yet authenticated (and needs to) they are redirected to /login
- * If they have (or don't need to) they're allowed to go about their way.
- */
+// Application routes
 const routes = [
   {
-    path: "/login",
+    path: "/",
     name: "login",
-    component: LoginView,
+    component: () => import("../views/LoginView.vue"),
     meta: {
       requiresAuth: false,
-      title: 'Login | Best Buds'
+      title: "Login | Best Buds"
     }
   },
   {
     path: "/register",
     name: "register",
-    component: RegisterView,
+    component: () => import("../views/RegisterView.vue"),
     meta: {
       requiresAuth: false,
-      title: 'Register | Best Buds'
+      title: "Register | Best Buds"
     }
   },
   {
-    path: "/logout",
-    name: "logout",
-    component: LogoutView,
-    meta: {
-      requiresAuth: false,
-      title: 'Logout | Best Buds'
-    }
-  },
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView,
+    path: "/home",
+    name: "home",
+    component: () => import("../views/HomeView.vue"),
     meta: {
       requiresAuth: true,
-      title: 'Home | Best Buds'
+      title: "Home | Best Buds"
     }
   },
   {
     path: "/search",
     name: "search",
-    component: SearchView,
+    component: () => import("../views/SearchView.vue"),
     meta: {
       requiresAuth: true,
-      title: 'Search | Best Buds'
+      title: "Search | Best Buds"
     }
   },
   {
     path: "/shop",
     name: "shop",
-    component: ShopView,
+    component: () => import("../views/ShopView.vue"),
     meta: {
       requiresAuth: true,
-      title: 'Shop | Best Buds'
+      title: "Shop | Best Buds"
     }
   },
   {
     path: "/tips-tricks",
-    name: "tipstricks",
-    component: TipsTricksView,
+    name: "tips-tricks",
+    component: () => import("../views/TipsTricksView.vue"),
     meta: {
-      requiresAuth: true ,
-      title: 'Tips & Tricks | Best Buds'
+      requiresAuth: true,
+      title: "Tips & Tricks | Best Buds"
     }
   },
   {
     path: "/articles",
     name: "articles",
-    component: ArticlesView,
+    component: () => import("../views/ArticlesView.vue"),
     meta: {
       requiresAuth: true,
-      title: 'Articles | Best Buds'
+      title: "Articles | Best Buds"
     }
   },
   {
     path: "/news",
     name: "news",
-    component: NewsView,
+    component: () => import("../views/NewsView.vue"),
     meta: {
       requiresAuth: true,
-      title: 'News | Best Buds'
+      title: "News | Best Buds"
     }
   },
   {
-    path: "/about-us",
-    name: "aboutus",
-    component: AboutUsView,
+    path: "/about",
+    name: "about",
+    component: () => import("../views/AboutView.vue"),
     meta: {
       requiresAuth: true,
-      title: 'About Us | Best Buds'
-
+      title: "About Us | Best Buds"
     }
   },
   {
     path: "/profile",
     name: "profile",
-    component: ProfileView,
+    component: () => import("../views/ProfileView.vue"),
     meta: {
       requiresAuth: true,
-      title: 'Profile | Best Buds'
-  }
-},
-  {
-    path: "/safety-tips",
-    name: "safetytips",
-    component: SafetyTipsView,
-    meta: {
-      requiresAuth: true,
-      title: 'Safety Tips | Best Buds'
+      title: "Profile | Best Buds"
     }
   },
   {
-    path: "/cannabis-products",
-    name: "cannabisproducts",
-    component: CannabisProductsView,
+    path: "/safety",
+    name: "safety",
+    component: () => import("../views/SafetyView.vue"),
     meta: {
       requiresAuth: true,
-      title: 'Cannabis Products | Best Buds'
+      title: "Safety Tips | Best Buds"
+    }
+  },
+  {
+    path: "/products",
+    name: "products",
+    component: () => import("../views/ProductsView.vue"),
+    meta: {
+      requiresAuth: true,
+      title: "Cannabis Products | Best Buds"
     }
   },
   {
     path: "/strain-guide",
-    name: "strainguide",
-    component: StrainGuideView,
+    name: "strain-guide",
+    component: () => import("../views/StrainGuideView.vue"),
     meta: {
       requiresAuth: true,
-      title: 'Strain Guide | Best Buds'
+      title: "Strain Guide | Best Buds"
     }
   },
   {
-    path: "/common-questions",
-    name: "commonquestions",
-    component: CommonQuestionsView,
+    path: "/questions",
+    name: "questions",
+    component: () => import("../views/QuestionsView.vue"),
     meta: {
       requiresAuth: true,
-      title: 'Common Questions | Best Buds'
+      title: "Common Questions | Best Buds"
     }
   },
   {
-    path: "/too-much-cannabis",
-    name: "toomuchcannabis",
-    component: TooMuchCannabisView,
+    path: "/too-much",
+    name: "too-much",
+    component: () => import("../views/TooMuchView.vue"),
     meta: {
       requiresAuth: true,
-      title: 'Too Much Cannabis | Best Buds'
+      title: "Too Much Cannabis | Best Buds"
     }
   },
   {
-    path: "/legaity",
+    path: "/legality",
     name: "legality",
-    component: LegalityView,
+    component: () => import("../views/LegalityView.vue"),
     meta: {
       requiresAuth: true,
-      title: 'Legality | Best Buds'
+      title: "Legality | Best Buds"
     }
   },
   {
     path: "/privacy-policy",
-    name: "privacypolicy",
-    component: PrivacyPolicyView,
+    name: "privacy-policy",
+    component: () => import("../views/PrivacyPolicyView.vue"),
     meta: {
       requiresAuth: true,
-      title: 'Privacy Policy | Best Buds'
+      title: "Privacy Policy | Best Buds"
     }
   },
   {
     path: "/contact-us",
-    name: "contactus",
-    component: ContactUsView,
+    name: "contact-us",
+    component: () => import("../views/ContactUsView.vue"),
     meta: {
       requiresAuth: true,
-      title: 'Contact Us | Best Buds'
+      title: "Contact Us | Best Buds"
     }
   }
 ];
 
-// Create the router
+// Create the application router
 const router = createRouter({
   history: createWebHistory(),
-  routes: routes
+  routes
 });
 
+// Check authentication before loading protected routes
 router.beforeEach((to) => {
 
-  // Get the Vuex store
   const store = useStore();
+  const requiresAuth =
+          to.matched.some(route => route.meta.requiresAuth);
 
-  // Determine if the route requires Authentication
-  const requiresAuth = to.matched.some(x => x.meta.requiresAuth);
-
-  // If it does and they are not logged in, send the user to "/login"
-  if (requiresAuth && store.state.token === '') {
-    return {name: "login"};
+  if (requiresAuth && store.state.token === "") {
+    return {
+      name: "login"
+    };
   }
-  // Otherwise, do nothing and they'll go to their next destination
+
+});
+
+// Update the browser title after navigation
+router.afterEach((to) => {
+
+  document.title =
+          to.meta.title || "Best Buds";
+
 });
 
 export default router;

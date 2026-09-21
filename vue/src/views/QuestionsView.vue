@@ -41,62 +41,62 @@
 
                 <!-- Display Dispensaries Q&A Component -->
                 <article id="dispensaries">
-                    <DispensariesQA/>
+                    <DispensaryQuestions />
                 </article>
 
                 <!-- Display Cannabis Q&A Component -->
                 <article id="cannabis">
-                    <CannabisQA/>
+                    <CannabisQuestions />
                 </article>
 
                 <!-- Display CBD Q&A Component -->
                 <article id="cbd">
-                    <CBDQA/>
+                    <CbdQuestions />
                 </article>
 
                 <!-- Display Delta9 Q&A Component -->
                 <article id="delta9">
-                    <Delta9QA/>
+                    <Delta9Questions />
                 </article>
 
                 <!-- Display Flower Q&A Component -->
                 <article id="flower">
-                    <FlowerQA/>
+                    <FlowerQuestions />
                 </article>
 
                 <!-- Display Wax Q&A Component -->
                 <article id="wax">
-                    <WaxQA/>
+                    <WaxQuestions />
                 </article>
 
                 <!-- Display Oil Q&A Component -->
                 <article id="oil">
-                    <OilQA/>  
+                    <OilQuestions />  
                 </article>
 
                 <!-- Display Tincture Q&A Component -->
                 <article id="tincture">
-                    <TinctureQA/>
+                    <TinctureQuestions />
                 </article>
 
                 <!-- Display Smoking Q&A Component -->
                 <article id="smoking">
-                    <SmokingQA/>  
+                    <SmokingQuestions />  
                 </article>
                 
                 <!-- Display Vaporizing Q&A Component -->
                 <article id="vaporizing">
-                    <VaporizingQA/>
+                    <VaporizingQuestions />
                 </article>
 
                 <!-- Display Edibles Q&A Component -->
                 <article id="edibles">
-                    <EdiblesQA/>
+                    <EdibleQuestions />
                 </article>
 
                 <!-- Display Topicals Q&A Component -->
                 <article id="topicals">
-                    <TopicalsQA/>
+                    <TopicalQuestions />
                 </article>
 
             </section>
@@ -105,12 +105,12 @@
 
         <!-- Display Strain Guide Visit Component -->
         <section id="strain-guide-visit">
-            <StrainGuideVisit/>
+            <StrainGuideVisit />
         </section>
  
         <!-- Display Articles Visit Component -->
         <section id="articles-visit">
-            <ArticlesVisit/>
+            <ArticlesVisit />
         </section>
 
     </body>
@@ -118,37 +118,37 @@
 </template>
 
 <script>
-import DispensariesQA from '../components/questions/Dispensaries.vue';
-import CannabisQA from '../components/questions/Cannabis.vue';
-import CBDQA from '../components/questions/CBD.vue';
-import Delta9QA from '../components/questions/Delta9.vue';
-import FlowerQA from '../components/questions/Flower.vue';
-import WaxQA from '../components/questions/Wax.vue';
-import OilQA from '../components/questions/Oil.vue';
-import TinctureQA from '../components/questions/Tincture.vue';
-import SmokingQA from '../components/questions/Smoking.vue';
-import VaporizingQA from '../components/questions/Vaporizing.vue';
-import EdiblesQA from '../components/questions/Edibles.vue';
-import TopicalsQA from '../components/questions/Topicals.vue';
-import StrainGuideVisit from '../components/strain-guide/Visit.vue';
-import ArticlesVisit from '../components/articles/Visit.vue';
+import DispensaryQuestions from '../components/questions/DispensaryQuestions.vue';
+import CannabisQuestions from '../components/questions/CannabisQuestions.vue';
+import CbdQuestions from '../components/questions/CbdQuestions.vue';
+import Delta9Questions from '../components/questions/Delta9Questions.vue';
+import FlowerQuestions from '../components/questions/FlowerQuestions.vue';
+import WaxQuestions from '../components/questions/WaxQuestions.vue';
+import OilQuestions from '../components/questions/OilQuestions.vue';
+import TinctureQuestions from '../components/questions/TinctureQuestions.vue';
+import SmokingQuestions from '../components/questions/SmokingQuestions.vue';
+import VaporizingQuestions from '../components/questions/VaporizingQuestions.vue';
+import EdibleQuestions from '../components/questions/EdibleQuestions.vue';
+import TopicalQuestions from '../components/questions/TopicalQuestions.vue';
+import StrainGuideVisit from '../components/strain-guide/StrainGuideVisit.vue';
+import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
 
 export default {
     name: "QuestionsView",
 
     components: { 
-        DispensariesQA,
-        CannabisQA,
-        CBDQA,
-        Delta9QA,
-        FlowerQA,
-        WaxQA,
-        OilQA,
-        TinctureQA,
-        SmokingQA,
-        VaporizingQA,
-        EdiblesQA,
-        TopicalsQA,
+        DispensaryQuestions,
+        CannabisQuestions,
+        CbdQuestions,
+        Delta9Questions,
+        FlowerQuestions,
+        WaxQuestions,
+        OilQuestions,
+        TinctureQuestions,
+        SmokingQuestions,
+        VaporizingQuestions,
+        EdibleQuestions,
+        TopicalQuestions,
         StrainGuideVisit,
         ArticlesVisit
     }

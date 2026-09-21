@@ -12,7 +12,7 @@
     <!-- Main Feature -->
     <section id="featured-dispensary" aria-labelledby="featured-heading">
       <h2 id="featured-heading">Featured Dispensary</h2>
-      <article><Featured /></article>
+      <article><HomeFeatured /></article>
     </section>
 
     <!-- Visit Links -->
@@ -28,15 +28,15 @@
 </template>
 
 <script>
-import Featured from '../components/home/Featured.vue';
-import StrainGuideVisit from '../components/strain-guide/Visit.vue';
-import ArticlesVisit from '../components/articles/Visit.vue';
+import HomeFeatured from '../components/home/HomeFeatured.vue';
+import StrainGuideVisit from '../components/strain-guide/StrainGuideVisit.vue';
+import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
 
 export default {
   name: "HomeView",
 
   components: { 
-    Featured,
+    HomeFeatured,
     StrainGuideVisit,
     ArticlesVisit
   }

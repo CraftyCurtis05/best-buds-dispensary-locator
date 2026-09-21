@@ -20,7 +20,7 @@
             </section>
 
             <!-- Display News Component -->
-            <News/>
+            <NewsFeed />
 
         </main>
 
@@ -29,13 +29,13 @@
 </template>
 
 <script>
-import News from '../components/news/News.vue';
+import NewsFeed from '../components/news/NewsFeed.vue';
 
 export default {
   name: "NewsView",
 
   components: { 
-    News
+    NewsFeed
   }
 };
 </script>

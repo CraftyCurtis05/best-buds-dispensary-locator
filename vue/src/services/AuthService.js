@@ -1,13 +1,15 @@
-import axios from 'axios';
+import axios from "axios";
 
-//Use user information to interact with backend
 export default {
 
+  // Authenticate the user
   login(user) {
-    return axios.post('/login', user)
+    return axios.post("/api/auth/login", user);
   },
-  
+
+  // Register a new user
   register(user) {
-    return axios.post('/register', user)
+    return axios.post("/api/auth/register", user);
   }
-}
+
+};

@@ -35,7 +35,7 @@
 
                 <!-- Display Tips and Tricks Component -->
                 <article id="tips-tricks">
-                    <TipsAndTricks/>
+                    <TipsTricksGuide />
                 </article>
 
             </section>
@@ -52,14 +52,14 @@
 </template>
 
 <script>
-import TipsAndTricks from '../components/tips/TipsTricks.vue';
-import ArticlesVisit from '../components/articles/Visit.vue';
+import TipsTricksGuide from '../components/tips-tricks/TipsTricksGuide.vue';
+import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
 
 export default {
     name: "TipsTricksView",
 
     components: { 
-        TipsAndTricks,
+        TipsTricksGuide,
         ArticlesVisit
     }
 };
