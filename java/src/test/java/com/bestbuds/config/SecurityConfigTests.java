@@ -1,17 +1,20 @@
 package com.bestbuds.config;
 
+import com.bestbuds.dao.UserDao;
+import com.bestbuds.model.User;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.webmvc.test.autoconfigure.AutoConfigureMockMvc;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 
 @SpringBootTest(
         properties = {
@@ -23,6 +26,9 @@ public class SecurityConfigTests {
 
     @Autowired
     private MockMvc mockMvc;
+
+    @Autowired
+    private UserDao userDao;
 
     @Test
     public void protected_endpoint_rejects_unauthenticated_request()
@@ -40,15 +46,19 @@ public class SecurityConfigTests {
     public void protected_endpoint_allows_authenticated_user()
             throws Exception {
 
+        User user =
+                userDao.getUserByUsername(
+                        "user1"
+                );
+
+        userDao.confirmAge(
+                user.getId()
+        );
+
         mockMvc.perform(
                         get("/api/test")
                                 .with(
                                         user("user1")
-                                                .authorities(
-                                                        new SimpleGrantedAuthority(
-                                                                "ROLE_USER"
-                                                        )
-                                                )
                                 )
                 )
                 .andExpect(
@@ -56,89 +66,104 @@ public class SecurityConfigTests {
                 );
     }
 
-        @Test
-        public void auth_endpoint_allows_unauthenticated_request()
-                throws Exception {
+    @Test
+    public void protected_endpoint_rejects_user_without_age_confirmation()
+            throws Exception {
 
         mockMvc.perform(
-                        post("/api/auth/register")
-                                .contentType("application/json")
-                                .content(
-                                        """
-                                        {
-                                                "username": "",
-                                                "password": "",
-                                                "confirmPassword": ""
-                                        }
-                                        """
+                        get("/api/test")
+                                .with(
+                                        user("user2")
                                 )
                 )
                 .andExpect(
-                        status().isBadRequest()
-                )
-                .andExpect(
-                        jsonPath("$.status")
-                                .value(400)
-                )
-                .andExpect(
-                        jsonPath("$.error")
-                                .value("Bad Request")
-                )
-                .andExpect(
-                        jsonPath("$.message")
-                                .isNotEmpty()
-                )
-                .andExpect(
-                        jsonPath("$.path")
-                                .value("/api/auth/register")
-                )
-                .andExpect(
-                        jsonPath("$.timestamp")
-                                .isNotEmpty()
+                        status().isForbidden()
                 );
-        }
+    }
 
-        @Test
-        public void register_with_mismatched_passwords_returns_bad_request()
-                throws Exception {
-		
-        mockMvc.perform(
-                        post("/api/auth/register")
-                                .contentType("application/json")
-                                .content(
-                                        """
-                                        {
-                                                "username": "newuser",
-                                                "password": "password123",
-                                                "confirmPassword": "different123"
-                                        }
-                                        """
-                                )
-                )
-                .andExpect(
-                        status().isBadRequest()
-                )
-                .andExpect(
-                        jsonPath("$.status")
-                                .value(400)
-                )
-                .andExpect(
-                        jsonPath("$.error")
-                                .value("Bad Request")
-                )
-                .andExpect(
-                        jsonPath("$.message")
-                                .value("Passwords do not match.")
-                )
-                .andExpect(
-                        jsonPath("$.path")
-                                .value("/api/auth/register")
-                )
-                .andExpect(
-                        jsonPath("$.timestamp")
-                                .isNotEmpty()
-                );
-        }
+    @Test
+    public void auth_endpoint_allows_unauthenticated_request()
+            throws Exception {
+
+    mockMvc.perform(
+                    post("/api/auth/register")
+                            .contentType("application/json")
+                            .content(
+                                    """
+                                    {
+                                            "username": "",
+                                            "password": "",
+                                            "confirmPassword": ""
+                                    }
+                                    """
+                            )
+            )
+            .andExpect(
+                    status().isBadRequest()
+            )
+            .andExpect(
+                    jsonPath("$.status")
+                            .value(400)
+            )
+            .andExpect(
+                    jsonPath("$.error")
+                            .value("Bad Request")
+            )
+            .andExpect(
+                    jsonPath("$.message")
+                            .isNotEmpty()
+            )
+            .andExpect(
+                    jsonPath("$.path")
+                            .value("/api/auth/register")
+            )
+            .andExpect(
+                    jsonPath("$.timestamp")
+                            .isNotEmpty()
+            );
+    }
+
+    @Test
+    public void register_with_mismatched_passwords_returns_bad_request()
+            throws Exception {
+    
+    mockMvc.perform(
+                    post("/api/auth/register")
+                            .contentType("application/json")
+                            .content(
+                                    """
+                                    {
+                                            "username": "newuser",
+                                            "password": "password123",
+                                            "confirmPassword": "different123"
+                                    }
+                                    """
+                            )
+            )
+            .andExpect(
+                    status().isBadRequest()
+            )
+            .andExpect(
+                    jsonPath("$.status")
+                            .value(400)
+            )
+            .andExpect(
+                    jsonPath("$.error")
+                            .value("Bad Request")
+            )
+            .andExpect(
+                    jsonPath("$.message")
+                            .value("Passwords do not match.")
+            )
+            .andExpect(
+                    jsonPath("$.path")
+                            .value("/api/auth/register")
+            )
+            .andExpect(
+                    jsonPath("$.timestamp")
+                            .isNotEmpty()
+            );
+    }
 
     @Test
     public void register_with_existing_username_returns_conflict()

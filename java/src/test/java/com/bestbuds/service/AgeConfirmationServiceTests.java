@@ -2,11 +2,14 @@ package com.bestbuds.service;
 
 import com.bestbuds.model.User;
 import com.bestbuds.dao.UserDao;
+import com.bestbuds.exception.AgeConfirmationRequiredException;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -77,6 +80,41 @@ public class AgeConfirmationServiceTests {
 
         assertTrue(
                 result
+        );
+    }
+
+    @Test
+    public void requireAgeConfirmation_throws_exception_when_age_is_not_confirmed() {
+
+        User user =
+                new User();
+
+        user.setAgeConfirmed(
+                false
+        );
+
+        assertThrows(
+                AgeConfirmationRequiredException.class,
+                () -> sut.requireAgeConfirmation(
+                        user
+                )
+        );
+    }
+
+    @Test
+    public void requireAgeConfirmation_allows_user_when_age_is_confirmed() {
+
+        User user =
+                new User();
+
+        user.setAgeConfirmed(
+                true
+        );
+
+        assertDoesNotThrow(
+                () -> sut.requireAgeConfirmation(
+                        user
+                )
         );
     }
 }

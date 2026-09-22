@@ -1,6 +1,7 @@
 package com.bestbuds.controller;
 
 import com.bestbuds.service.YelpService;
+
 import tools.jackson.databind.JsonNode;
 
 import org.springframework.http.ResponseEntity;
@@ -15,7 +16,9 @@ public class DispensaryController {
 
     private final YelpService yelpService;
 
-    public DispensaryController(YelpService yelpService) {
+    public DispensaryController(
+            YelpService yelpService
+    ) {
         this.yelpService = yelpService;
     }
 
@@ -25,9 +28,14 @@ public class DispensaryController {
             @RequestParam String location
     ) {
 
-        JsonNode results = yelpService.searchDispensaries(location);
+        JsonNode results =
+                yelpService.searchDispensaries(
+                        location
+                );
 
-        return ResponseEntity.ok(results);
+        return ResponseEntity.ok(
+                results
+        );
     }
 
     // Get the featured dispensary for the home page
@@ -37,9 +45,12 @@ public class DispensaryController {
     ) {
 
         JsonNode featured =
-                yelpService.getFeaturedDispensary(location);
+                yelpService.getFeaturedDispensary(
+                        location
+                );
 
-        return ResponseEntity.ok(featured);
+        return ResponseEntity.ok(
+                featured
+        );
     }
-
 }

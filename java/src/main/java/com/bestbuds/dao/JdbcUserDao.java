@@ -121,6 +121,12 @@ public class JdbcUserDao implements UserDao {
         String normalizedUsername =
                 username.trim().toLowerCase();
 
+        if (usernameExists(normalizedUsername)) {
+            throw new UserAlreadyExistsException(
+                    "Username is already in use."
+            );
+        }
+
         String passwordHash =
                 passwordEncoder.encode(password);
 
@@ -174,6 +180,35 @@ public class JdbcUserDao implements UserDao {
                         )
                 );
             }
+
+        } catch (CannotGetJdbcConnectionException e) {
+            throw new DaoException(
+                    "Unable to connect to the database",
+                    e
+            );
+        }
+    }
+
+    // Check whether a username is already in use
+    private boolean usernameExists(
+            String username
+    ) {
+
+        String sql =
+                "SELECT COUNT(*) "
+                        + "FROM users "
+                        + "WHERE LOWER(username) = LOWER(?)";
+
+        try {
+            Integer count =
+                    jdbcTemplate.queryForObject(
+                            sql,
+                            Integer.class,
+                            username
+                    );
+
+            return count != null
+                    && count > 0;
 
         } catch (CannotGetJdbcConnectionException e) {
             throw new DaoException(

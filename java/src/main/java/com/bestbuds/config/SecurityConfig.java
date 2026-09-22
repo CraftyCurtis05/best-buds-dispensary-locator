@@ -3,6 +3,9 @@ package com.bestbuds.config;
 import com.bestbuds.security.JwtAccessDeniedHandler;
 import com.bestbuds.security.JwtAuthenticationEntryPoint;
 import com.bestbuds.security.JwtAuthenticationFilter;
+import com.bestbuds.security.AgeConfirmationFilter;
+import com.bestbuds.service.AgeConfirmationService;
+import com.bestbuds.service.AuthenticationService;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -114,7 +117,8 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(
-            HttpSecurity http
+            HttpSecurity http,
+            AgeConfirmationFilter ageConfirmationFilter
     ) throws Exception {
 
         http
@@ -158,8 +162,24 @@ public class SecurityConfig {
                 .addFilterBefore(
                         jwtAuthenticationFilter,
                         UsernamePasswordAuthenticationFilter.class
+                )
+                .addFilterAfter(
+                        ageConfirmationFilter,
+                        JwtAuthenticationFilter.class
                 );
 
         return http.build();
+    }
+
+    @Bean
+    public AgeConfirmationFilter ageConfirmationFilter(
+            AgeConfirmationService ageConfirmationService,
+            AuthenticationService authenticationService
+    ) {
+
+        return new AgeConfirmationFilter(
+                ageConfirmationService,
+                authenticationService
+        );
     }
 }

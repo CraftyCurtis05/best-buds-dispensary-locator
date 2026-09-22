@@ -2,6 +2,7 @@ package com.bestbuds.service;
 
 import com.bestbuds.model.User;
 import com.bestbuds.dao.UserDao;
+import com.bestbuds.exception.AgeConfirmationRequiredException;
 
 import org.springframework.stereotype.Service;
 
@@ -28,5 +29,17 @@ public class AgeConfirmationService {
             User user
     ) {
         return user.isAgeConfirmed();
+    }
+
+    // Require the user to confirm the app's age requirement
+    public void requireAgeConfirmation(
+            User user
+    ) {
+
+        if (!hasConfirmedAge(user)) {
+            throw new AgeConfirmationRequiredException(
+                    "Age confirmation is required."
+            );
+        }
     }
 }
