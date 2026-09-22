@@ -13,30 +13,8 @@ CREATE TABLE users (
     user_id SERIAL PRIMARY KEY,
     username VARCHAR(50) NOT NULL UNIQUE,
     password_hash VARCHAR(200) NOT NULL,
-    role VARCHAR(50) NOT NULL
-);
-
--- Favorites
-CREATE TABLE favorites (
-    favorite_id SERIAL PRIMARY KEY,
-    user_id INT NOT NULL,
-    business_id VARCHAR(100) NOT NULL,
-    business_name VARCHAR(100) NOT NULL,
-    business_address1 VARCHAR(100),
-    business_address2 VARCHAR(50),
-    business_city VARCHAR(100),
-    business_state VARCHAR(50),
-    business_zipcode VARCHAR(15),
-    business_image VARCHAR(255),
-    business_url VARCHAR(255),
-
-    CONSTRAINT uq_favorites_user_business
-        UNIQUE (user_id, business_id),
-
-    CONSTRAINT fk_favorites_users
-        FOREIGN KEY (user_id)
-        REFERENCES users (user_id)
-        ON DELETE CASCADE
+    role VARCHAR(50) NOT NULL,
+    age_confirmed BOOLEAN NOT NULL DEFAULT FALSE
 );
 
 -- Profiles

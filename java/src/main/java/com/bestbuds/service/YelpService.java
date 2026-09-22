@@ -1,14 +1,10 @@
 package com.bestbuds.service;
 
-import com.fasterxml.jackson.databind.JsonNode;
+import tools.jackson.databind.JsonNode;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.client.RestClient;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
@@ -18,8 +14,6 @@ import java.util.List;
 
 @Service
 public class YelpService {
-
-    private final RestTemplate restTemplate;
 
     private static final double MINIMUM_RATING = 4.0;
     private static final int MINIMUM_REVIEWS = 10;
@@ -35,20 +29,29 @@ public class YelpService {
             "Phoenix, AZ"
     );
 
-    @Value("${yelp.api.url}")
-    private String apiUrl;
+    private final RestClient restClient;
+    private final String apiUrl;
+    private final String apiKey;
 
-    @Value("${yelp.api.key}")
-    private String apiKey;
-
-    public YelpService() {
-        this.restTemplate = new RestTemplate();
+    public YelpService(
+            RestClient.Builder restClientBuilder,
+            @Value("${yelp.api.url}") String apiUrl,
+            @Value("${yelp.api.key}") String apiKey
+    ) {
+        this.restClient = restClientBuilder.build();
+        this.apiUrl = apiUrl;
+        this.apiKey = apiKey;
     }
 
     // Search Yelp for dispensaries near a location
     public JsonNode searchDispensaries(String location) {
 
-        URI uri = buildSearchUri(location, "distance", 20);
+        URI uri =
+                buildSearchUri(
+                        location,
+                        "distance",
+                        20
+                );
 
         return sendYelpRequest(uri);
     }
@@ -56,27 +59,34 @@ public class YelpService {
     // Get the featured dispensary for the home page
     public JsonNode getFeaturedDispensary(String location) {
 
-        List<JsonNode> featuredBusinesses = new ArrayList<>();
+        List<JsonNode> featuredBusinesses =
+                new ArrayList<>();
 
         // Try the user's location when one is available
         if (location != null && !location.isBlank()) {
-            featuredBusinesses = getFeaturedBusinesses(location);
+            featuredBusinesses =
+                    getFeaturedBusinesses(location);
         }
 
         // Use a nationwide location when no local results are available
         if (featuredBusinesses.isEmpty()) {
 
-            String fallbackLocation = getDailyFallbackLocation();
+            String fallbackLocation =
+                    getDailyFallbackLocation();
 
-            featuredBusinesses = getFeaturedBusinesses(fallbackLocation);
+            featuredBusinesses =
+                    getFeaturedBusinesses(fallbackLocation);
         }
 
         if (featuredBusinesses.isEmpty()) {
             return null;
         }
 
-        int dayOfYear = LocalDate.now().getDayOfYear();
-        int featuredIndex = (dayOfYear - 1) % featuredBusinesses.size();
+        int dayOfYear =
+                LocalDate.now().getDayOfYear();
+
+        int featuredIndex =
+                (dayOfYear - 1) % featuredBusinesses.size();
 
         return featuredBusinesses.get(featuredIndex);
     }
@@ -84,24 +94,51 @@ public class YelpService {
     // Get highly rated dispensaries that have an image
     private List<JsonNode> getFeaturedBusinesses(String location) {
 
-        URI uri = buildSearchUri(location, "rating", 20);
+        URI uri =
+                buildSearchUri(
+                        location,
+                        "rating",
+                        20
+                );
 
-        JsonNode results = sendYelpRequest(uri);
-        JsonNode businesses = results.path("businesses");
+        JsonNode results =
+                sendYelpRequest(uri);
 
-        List<JsonNode> featuredBusinesses = new ArrayList<>();
+        JsonNode businesses =
+                results.path("businesses");
+
+        List<JsonNode> featuredBusinesses =
+                new ArrayList<>();
 
         for (JsonNode business : businesses) {
 
-            String imageUrl = business.path("image_url").asText();
-            String country = business.path("location").path("country").asText();
-            double rating = business.path("rating").asDouble();
-            int reviewCount = business.path("review_count").asInt();
+            String imageUrl =
+                    business.path("image_url").stringValue();
 
-            boolean hasImage = !imageUrl.isBlank();
-            boolean isHighlyRated = rating >= MINIMUM_RATING;
-            boolean hasEnoughReviews = reviewCount >= MINIMUM_REVIEWS;
-            boolean isInUnitedStates = country.equals("US");
+            String country =
+                    business
+                            .path("location")
+                            .path("country")
+                            .stringValue();
+
+            double rating =
+                    business.path("rating").asDouble();
+
+            int reviewCount =
+                    business.path("review_count").asInt();
+
+            boolean hasImage =
+                    imageUrl != null
+                            && !imageUrl.isBlank();
+
+            boolean isHighlyRated =
+                    rating >= MINIMUM_RATING;
+
+            boolean hasEnoughReviews =
+                    reviewCount >= MINIMUM_REVIEWS;
+
+            boolean isInUnitedStates =
+                    "US".equals(country);
 
             if (hasImage
                     && isHighlyRated
@@ -118,8 +155,11 @@ public class YelpService {
     // Choose a different fallback location throughout the year
     private String getDailyFallbackLocation() {
 
-        int dayOfYear = LocalDate.now().getDayOfYear();
-        int locationIndex = (dayOfYear - 1) % FEATURED_LOCATIONS.size();
+        int dayOfYear =
+                LocalDate.now().getDayOfYear();
+
+        int locationIndex =
+                (dayOfYear - 1) % FEATURED_LOCATIONS.size();
 
         return FEATURED_LOCATIONS.get(locationIndex);
     }
@@ -128,13 +168,17 @@ public class YelpService {
     private URI buildSearchUri(
             String location,
             String sortBy,
-            int limit) {
+            int limit
+    ) {
 
         return UriComponentsBuilder
                 .fromUriString(apiUrl)
                 .path("/businesses/search")
                 .queryParam("location", location)
-                .queryParam("categories", "cannabis,cannabisdispensaries,dispensary")
+                .queryParam(
+                        "categories",
+                        "cannabis,cannabisdispensaries,dispensary"
+                )
                 .queryParam("radius", 40000)
                 .queryParam("sort_by", sortBy)
                 .queryParam("limit", limit)
@@ -146,18 +190,13 @@ public class YelpService {
     // Send an authenticated request to Yelp
     private JsonNode sendYelpRequest(URI uri) {
 
-        HttpHeaders headers = new HttpHeaders();
-        headers.setBearerAuth(apiKey);
-
-        HttpEntity<Void> request = new HttpEntity<>(headers);
-
-        ResponseEntity<JsonNode> response = restTemplate.exchange(
-                uri,
-                HttpMethod.GET,
-                request,
-                JsonNode.class
-        );
-
-        return response.getBody();
+        return restClient
+                .get()
+                .uri(uri)
+                .headers(headers ->
+                        headers.setBearerAuth(apiKey)
+                )
+                .retrieve()
+                .body(JsonNode.class);
     }
 }

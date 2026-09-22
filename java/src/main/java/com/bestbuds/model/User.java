@@ -1,11 +1,3 @@
-// For Profile:
-// Added to User Model - Birthday, Age, Email, Has Favorites?
-// Added to User Database - Birthday, Age, Email, Has Favorites?
-// Need to Create A Profile Pic DB blob (Binary Large OBject) Type; PK to USER FK
-// Add to/Create Repository(Dao) For Profile DB Interaction
-// Add To/Create Controller - Implement REST Endpoints (GET, POST, PUT)
-// Add Favorite Functionality
-
 package com.bestbuds.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -13,42 +5,36 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-import java.util.Date;
-
-// For Profile Picture
-import javax.imageio.ImageIO;
 
 public class User {
 
    private int id;
    private String username;
+
    @JsonIgnore
    private String password;
-   @JsonIgnore
-   private boolean activated;
-   private Set<Authority> authorities = new HashSet<>();
 
-   // Added for User Profile:
-   private Date birthday;
-   private int age;
-   private String email;
-   private int houseNumber;
-   private String streetName;
-   private String aptNumber;
-   private String city;
-   private String state;
-   private int zipCode;
-   private ImageIO profilePicture;
-   private boolean hasFavorites;
+   private Set<Authority> authorities =
+         new HashSet<>();
 
-   public User() { }
+   private boolean ageConfirmed;      
 
-   public User(int id, String username, String password, String authorities) {
+   public User() {
+   }
+
+   public User(
+         int id,
+         String username,
+         String password,
+         String authorities
+   ) {
       this.id = id;
       this.username = username;
       this.password = password;
-      if (authorities != null) this.setAuthorities(authorities);
-      this.activated = true;
+
+      if (authorities != null) {
+         setAuthorities(authorities);
+      }
    }
 
    public int getId() {
@@ -75,54 +61,93 @@ public class User {
       this.password = password;
    }
 
-   public boolean isActivated() {
-      return activated;
-   }
-
-   public void setActivated(boolean activated) {
-      this.activated = activated;
-   }
-
    public Set<Authority> getAuthorities() {
       return authorities;
    }
 
-   public void setAuthorities(Set<Authority> authorities) {
+   public void setAuthorities(
+         Set<Authority> authorities
+   ) {
       this.authorities = authorities;
    }
 
+   public boolean isAgeConfirmed() {
+        return ageConfirmed;
+    }
+
+    public void setAgeConfirmed(
+            boolean ageConfirmed
+    ) {
+        this.ageConfirmed = ageConfirmed;
+    }
+
+   // Convert stored roles into user authorities
    public void setAuthorities(String authorities) {
-      String[] roles = authorities.split(",");
+
+      this.authorities.clear();
+
+      String[] roles =
+               authorities.split(",");
+
       for (String role : roles) {
-         String authority = role.contains("ROLE_") ? role : "ROLE_" + role;
-         this.authorities.add(new Authority(authority));
+
+         String authority =
+                  role.startsWith("ROLE_")
+                           ? role
+                           : "ROLE_" + role;
+
+         this.authorities.add(
+                  new Authority(authority)
+         );
       }
    }
 
    @Override
-   public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
-      User user = (User) o;
-      return id == user.id &&
-              activated == user.activated &&
-              Objects.equals(username, user.username) &&
-              Objects.equals(password, user.password) &&
-              Objects.equals(authorities, user.authorities);
+   public boolean equals(Object object) {
+
+      if (this == object) {
+         return true;
+      }
+
+      if (object == null
+               || getClass() != object.getClass()) {
+         return false;
+      }
+
+      User user =
+               (User) object;
+
+      return id == user.id
+               && Objects.equals(
+                     username,
+                     user.username
+               )
+               && Objects.equals(
+                     password,
+                     user.password
+               )
+               && Objects.equals(
+                     authorities,
+                     user.authorities
+               );
    }
 
    @Override
    public int hashCode() {
-      return Objects.hash(id, username, password, activated, authorities);
+      return Objects.hash(
+               id,
+               username,
+               password,
+               authorities
+      );
    }
 
    @Override
    public String toString() {
       return "User{" +
-              "id=" + id +
-              ", username='" + username + '\'' +
-              ", activated=" + activated +
-              ", authorities=" + authorities +
-              '}';
+               "id=" + id +
+               ", username='" + username + '\'' +
+               ", authorities=" + authorities +
+               '}';
    }
 }
