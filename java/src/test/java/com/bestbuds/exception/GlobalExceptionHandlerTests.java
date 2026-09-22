@@ -172,4 +172,59 @@ public class GlobalExceptionHandlerTests {
                 response.getBody().getPath()
         );
     }
+
+    @Test
+    public void handleInvalidPasswordException_returns_bad_request() {
+
+        GlobalExceptionHandler handler =
+                new GlobalExceptionHandler();
+
+        HttpServletRequest request =
+                mock(HttpServletRequest.class);
+
+        when(request.getRequestURI())
+                .thenReturn(
+                        "/api/account/email"
+                );
+
+        InvalidPasswordException exception =
+                new InvalidPasswordException(
+                        "Current password is incorrect."
+                );
+
+        ResponseEntity<ApiError> response =
+                handler.handleInvalidPasswordException(
+                        exception,
+                        request
+                );
+
+        assertEquals(
+                HttpStatus.BAD_REQUEST,
+                response.getStatusCode()
+        );
+
+        assertNotNull(
+                response.getBody()
+        );
+
+        assertEquals(
+                HttpStatus.BAD_REQUEST.value(),
+                response.getBody().getStatus()
+        );
+
+        assertEquals(
+                "Bad Request",
+                response.getBody().getError()
+        );
+
+        assertEquals(
+                "Current password is incorrect.",
+                response.getBody().getMessage()
+        );
+
+        assertEquals(
+                "/api/account/email",
+                response.getBody().getPath()
+        );
+    }
 }

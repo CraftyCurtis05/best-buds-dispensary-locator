@@ -134,6 +134,7 @@ public class SecurityConfigTests {
                                     """
                                     {
                                             "username": "newuser",
+                                            "email": "newuser@bestbuds.local",
                                             "password": "password123",
                                             "confirmPassword": "different123"
                                     }
@@ -176,6 +177,7 @@ public class SecurityConfigTests {
                                         """
                                         {
                                             "username": "user1",
+                                            "email": "different@bestbuds.local",
                                             "password": "password123",
                                             "confirmPassword": "password123"
                                         }

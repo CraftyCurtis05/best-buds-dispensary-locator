@@ -117,4 +117,42 @@ public class GlobalExceptionHandler {
                 .status(HttpStatus.FORBIDDEN)
                 .body(error);
     }
+
+    @ExceptionHandler(InvalidPasswordException.class)
+    public ResponseEntity<ApiError> handleInvalidPasswordException(
+            InvalidPasswordException exception,
+            HttpServletRequest request
+    ) {
+
+        ApiError error =
+                new ApiError(
+                        HttpStatus.BAD_REQUEST.value(),
+                        HttpStatus.BAD_REQUEST.getReasonPhrase(),
+                        exception.getMessage(),
+                        request.getRequestURI()
+                );
+
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(error);
+    }
+
+    @ExceptionHandler(InvalidPasswordResetTokenException.class)
+    public ResponseEntity<ApiError> handleInvalidPasswordResetTokenException(
+            InvalidPasswordResetTokenException exception,
+            HttpServletRequest request
+    ) {
+
+        ApiError error =
+                new ApiError(
+                        HttpStatus.BAD_REQUEST.value(),
+                        HttpStatus.BAD_REQUEST.getReasonPhrase(),
+                        exception.getMessage(),
+                        request.getRequestURI()
+                );
+
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(error);
+    }
 }

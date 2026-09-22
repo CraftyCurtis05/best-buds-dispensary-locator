@@ -4,8 +4,11 @@ import com.bestbuds.model.LoginDto;
 import com.bestbuds.model.LoginResponseDto;
 import com.bestbuds.model.RegisterUserDto;
 import com.bestbuds.model.User;
+import com.bestbuds.model.ForgotPasswordDto;
+import com.bestbuds.model.ResetPasswordDto;
 import com.bestbuds.service.AuthenticationService;
 import com.bestbuds.security.TokenProvider;
+import com.bestbuds.service.PasswordResetService;
 
 import jakarta.validation.Valid;
 
@@ -26,13 +29,16 @@ public class AuthenticationController {
 
     private final AuthenticationService authenticationService;
     private final TokenProvider tokenProvider;
+    private final PasswordResetService passwordResetService;
 
     public AuthenticationController(
             AuthenticationService authenticationService,
-            TokenProvider tokenProvider
+            TokenProvider tokenProvider,
+            PasswordResetService passwordResetService
     ) {
         this.authenticationService = authenticationService;
         this.tokenProvider = tokenProvider;
+        this.passwordResetService = passwordResetService;
     }
 
     // Authenticate the user and return an authorization token
@@ -83,14 +89,36 @@ public class AuthenticationController {
     }
 
     // Register a new user
-	@PostMapping("/register")
-	@ResponseStatus(HttpStatus.CREATED)
-	public void register(
-			@Valid @RequestBody RegisterUserDto registration
-	) {
+    @PostMapping("/register")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void register(
+            @Valid @RequestBody RegisterUserDto registration
+    ) {
 
-		authenticationService.register(
-				registration
-		);
-	}
+        authenticationService.register(
+                registration
+        );
+    }
+
+    // Request a password reset
+    @PostMapping("/forgot-password")
+    public void forgotPassword(
+            @Valid @RequestBody ForgotPasswordDto forgotPassword
+    ) {
+
+        passwordResetService.createResetToken(
+                forgotPassword.getEmail()
+        );
+    }
+
+    // Reset a forgotten password
+    @PostMapping("/reset-password")
+    public void resetPassword(
+            @Valid @RequestBody ResetPasswordDto resetPassword
+    ) {
+
+        passwordResetService.resetPassword(
+                resetPassword
+        );
+    }
 }
