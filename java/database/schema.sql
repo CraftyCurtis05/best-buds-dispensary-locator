@@ -8,7 +8,7 @@ BEGIN TRANSACTION;
 -- Remove existing tables
 DROP TABLE IF EXISTS
     password_reset_tokens,
-    favorites,
+    saved_dispensaries,
     profile_images,
     profiles,
     profile,
@@ -65,6 +65,31 @@ CREATE TABLE profile_images (
     content_type VARCHAR(50) NOT NULL,
 
     CONSTRAINT fk_profile_images_users
+        FOREIGN KEY (user_id)
+        REFERENCES users (user_id)
+        ON DELETE CASCADE
+);
+
+-- Saved Dispensaries
+CREATE TABLE saved_dispensaries (
+    saved_dispensary_id SERIAL PRIMARY KEY,
+    user_id INT NOT NULL,
+    yelp_business_id VARCHAR(100) NOT NULL,
+    name VARCHAR(150) NOT NULL,
+    image_url TEXT,
+    address VARCHAR(200),
+    city VARCHAR(100),
+    state_abbr VARCHAR(2),
+    zipcode VARCHAR(10),
+    latitude DECIMAL(9, 6),
+    longitude DECIMAL(9, 6),
+    rating DECIMAL(2, 1),
+    saved_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT uq_saved_dispensaries_user_business
+        UNIQUE (user_id, yelp_business_id),
+
+    CONSTRAINT fk_saved_dispensaries_users
         FOREIGN KEY (user_id)
         REFERENCES users (user_id)
         ON DELETE CASCADE

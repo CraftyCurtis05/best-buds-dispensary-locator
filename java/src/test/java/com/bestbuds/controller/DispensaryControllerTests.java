@@ -284,15 +284,64 @@ public class DispensaryControllerTests {
     }
 
     @Test
-    public void getFeaturedDispensary_returns_featured_dispensary() {
+    public void getFeaturedDispensary_returns_featured_dispensary_near_home() {
+
+        User user =
+                new User();
+
+        user.setId(1);
+
+        Profile profile =
+                new Profile();
+
+        profile.setAddressLine1(
+                "123 Main Street"
+        );
+
+        profile.setCity(
+                "Columbus"
+        );
+
+        profile.setStateAbbr(
+                "OH"
+        );
+
+        profile.setZipcode(
+                "43215"
+        );
 
         JsonNode featured =
                 new ObjectMapper()
                         .createObjectNode();
 
         when(
+                authentication.getName()
+        )
+                .thenReturn(
+                        "testuser"
+                );
+
+        when(
+                authenticationService.getUser(
+                        "testuser"
+                )
+        )
+                .thenReturn(
+                        user
+                );
+
+        when(
+                profileService.getProfile(
+                        1
+                )
+        )
+                .thenReturn(
+                        profile
+                );
+
+        when(
                 yelpService.getFeaturedDispensary(
-                        "Columbus, OH"
+                        "123 Main Street, Columbus, OH 43215"
                 )
         )
                 .thenReturn(
@@ -301,7 +350,7 @@ public class DispensaryControllerTests {
 
         ResponseEntity<JsonNode> response =
                 sut.getFeaturedDispensary(
-                        "Columbus, OH"
+                        authentication
                 );
 
         assertEquals(
@@ -316,7 +365,7 @@ public class DispensaryControllerTests {
 
         verify(yelpService)
                 .getFeaturedDispensary(
-                        "Columbus, OH"
+                        "123 Main Street, Columbus, OH 43215"
                 );
     }
 }

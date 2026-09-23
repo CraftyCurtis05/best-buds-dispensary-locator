@@ -8,26 +8,11 @@ import org.springframework.web.client.RestClient;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import java.net.URI;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class YelpService {
 
     private static final double MINIMUM_RATING = 4.0;
-    private static final int MINIMUM_REVIEWS = 10;
-
-    private static final List<String> FEATURED_LOCATIONS = List.of(
-            "New York, NY",
-            "Los Angeles, CA",
-            "Chicago, IL",
-            "Denver, CO",
-            "Portland, OR",
-            "Boston, MA",
-            "Las Vegas, NV",
-            "Phoenix, AZ"
-    );
 
     private final RestClient restClient;
     private final String apiUrl;
@@ -56,49 +41,18 @@ public class YelpService {
         return sendYelpRequest(uri);
     }
 
-    // Get the featured dispensary for the home page
+    // Get the closest qualifying dispensary for the home page
     public JsonNode getFeaturedDispensary(String location) {
 
-        List<JsonNode> featuredBusinesses =
-                new ArrayList<>();
-
-        // Try the user's location when one is available
-        if (location != null && !location.isBlank()) {
-            featuredBusinesses =
-                    getFeaturedBusinesses(location);
-        }
-
-        // Use a nationwide location when no local results are available
-        if (featuredBusinesses.isEmpty()) {
-
-            String fallbackLocation =
-                    getDailyFallbackLocation();
-
-            featuredBusinesses =
-                    getFeaturedBusinesses(fallbackLocation);
-        }
-
-        if (featuredBusinesses.isEmpty()) {
+        if (location == null || location.isBlank()) {
             return null;
         }
-
-        int dayOfYear =
-                LocalDate.now().getDayOfYear();
-
-        int featuredIndex =
-                (dayOfYear - 1) % featuredBusinesses.size();
-
-        return featuredBusinesses.get(featuredIndex);
-    }
-
-    // Get highly rated dispensaries that have an image
-    private List<JsonNode> getFeaturedBusinesses(String location) {
 
         URI uri =
                 buildSearchUri(
                         location,
-                        "rating",
-                        20
+                        "distance",
+                        50
                 );
 
         JsonNode results =
@@ -107,61 +61,44 @@ public class YelpService {
         JsonNode businesses =
                 results.path("businesses");
 
-        List<JsonNode> featuredBusinesses =
-                new ArrayList<>();
-
         for (JsonNode business : businesses) {
 
-            String imageUrl =
-                    business.path("image_url").stringValue();
-
-            String country =
-                    business
-                            .path("location")
-                            .path("country")
-                            .stringValue();
-
-            double rating =
-                    business.path("rating").asDouble();
-
-            int reviewCount =
-                    business.path("review_count").asInt();
-
-            boolean hasImage =
-                    imageUrl != null
-                            && !imageUrl.isBlank();
-
-            boolean isHighlyRated =
-                    rating >= MINIMUM_RATING;
-
-            boolean hasEnoughReviews =
-                    reviewCount >= MINIMUM_REVIEWS;
-
-            boolean isInUnitedStates =
-                    "US".equals(country);
-
-            if (hasImage
-                    && isHighlyRated
-                    && hasEnoughReviews
-                    && isInUnitedStates) {
-
-                featuredBusinesses.add(business);
+            if (isFeaturedBusiness(business)) {
+                return business;
             }
         }
 
-        return featuredBusinesses;
+        return null;
     }
 
-    // Choose a different fallback location throughout the year
-    private String getDailyFallbackLocation() {
+    // Check whether a dispensary meets the home page requirements
+    private boolean isFeaturedBusiness(JsonNode business) {
 
-        int dayOfYear =
-                LocalDate.now().getDayOfYear();
+        String imageUrl =
+                business.path("image_url").stringValue();
 
-        int locationIndex =
-                (dayOfYear - 1) % FEATURED_LOCATIONS.size();
+        String country =
+                business
+                        .path("location")
+                        .path("country")
+                        .stringValue();
 
-        return FEATURED_LOCATIONS.get(locationIndex);
+        double rating =
+                business.path("rating").asDouble();
+
+        boolean hasImage =
+                imageUrl != null
+                        && !imageUrl.isBlank();
+
+        boolean isHighlyRated =
+                rating >= MINIMUM_RATING;
+
+        boolean isInUnitedStates =
+                "US".equals(country);
+
+        return hasImage
+                && isHighlyRated
+                && isInUnitedStates;
     }
 
     // Build a Yelp dispensary search URL
