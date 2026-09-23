@@ -14,7 +14,7 @@ INSERT INTO users (
 )
 VALUES (
     'user',
-    'user@bestbuds.local',
+    'user1@bestbuds.local',
     '$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC',
     'ROLE_USER'
 );
