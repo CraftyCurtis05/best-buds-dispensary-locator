@@ -1,18 +1,22 @@
 package com.bestbuds.controller;
 
 import com.bestbuds.model.Profile;
+import com.bestbuds.model.ProfileDto;
 import com.bestbuds.model.User;
 import com.bestbuds.service.AuthenticationService;
 import com.bestbuds.service.ProfileService;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -161,14 +165,14 @@ public class ProfileControllerTests {
                 1
         );
 
-        Profile profile =
-                new Profile();
+        ProfileDto profileDto =
+                new ProfileDto();
 
-        profile.setFirstName(
+        profileDto.setFirstName(
                 "Test"
         );
 
-        profile.setLastName(
+        profileDto.setLastName(
                 "User"
         );
 
@@ -203,8 +207,8 @@ public class ProfileControllerTests {
 
         when(
                 profileService.saveProfile(
-                        1,
-                        profile
+                        eq(1),
+                        any(Profile.class)
                 )
         )
                 .thenReturn(
@@ -214,7 +218,7 @@ public class ProfileControllerTests {
         ResponseEntity<Profile> response =
                 sut.saveProfile(
                         authentication,
-                        profile
+                        profileDto
                 );
 
         assertEquals(
@@ -231,9 +235,27 @@ public class ProfileControllerTests {
                 "user1"
         );
 
+        ArgumentCaptor<Profile> profileCaptor =
+                ArgumentCaptor.forClass(
+                        Profile.class
+                );
+
         verify(profileService).saveProfile(
-                1,
-                profile
+                eq(1),
+                profileCaptor.capture()
+        );
+
+        Profile profile =
+                profileCaptor.getValue();
+
+        assertEquals(
+                "Test",
+                profile.getFirstName()
+        );
+
+        assertEquals(
+                "User",
+                profile.getLastName()
         );
     }
 }
