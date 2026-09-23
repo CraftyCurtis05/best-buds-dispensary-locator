@@ -1,6 +1,11 @@
 package com.bestbuds.controller;
 
+import com.bestbuds.model.User;
+import com.bestbuds.model.Profile;
 import com.bestbuds.service.YelpService;
+import com.bestbuds.service.AuthenticationService;
+import com.bestbuds.service.ProfileService;
+
 
 import tools.jackson.databind.JsonNode;
 
@@ -9,17 +14,24 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.core.Authentication;
 
 @RestController
 @RequestMapping("/api/dispensaries")
 public class DispensaryController {
 
     private final YelpService yelpService;
+    private final ProfileService profileService;
+    private final AuthenticationService authenticationService;
 
     public DispensaryController(
-            YelpService yelpService
+            YelpService yelpService,
+            ProfileService profileService,
+            AuthenticationService authenticationService
     ) {
         this.yelpService = yelpService;
+        this.profileService = profileService;
+        this.authenticationService = authenticationService;
     }
 
     // Get dispensaries near a location
@@ -27,6 +39,54 @@ public class DispensaryController {
     public ResponseEntity<JsonNode> searchDispensaries(
             @RequestParam String location
     ) {
+
+        JsonNode results =
+                yelpService.searchDispensaries(
+                        location
+                );
+
+        return ResponseEntity.ok(
+                results
+        );
+    }
+
+    // Get dispensaries near the user's saved home address
+    @GetMapping("/near-home")
+    public ResponseEntity<JsonNode> searchDispensariesNearHome(
+            Authentication authentication
+    ) {
+
+        User user =
+                authenticationService.getUser(
+                        authentication.getName()
+                );
+
+        Profile profile =
+                profileService.getProfile(
+                        user.getId()
+                );
+
+        if (profile == null
+                || profile.getAddressLine1() == null
+                || profile.getAddressLine1().isBlank()
+                || profile.getCity() == null
+                || profile.getCity().isBlank()
+                || profile.getStateAbbr() == null
+                || profile.getStateAbbr().isBlank()
+                || profile.getZipcode() == null
+                || profile.getZipcode().isBlank()) {
+
+            return ResponseEntity.badRequest().build();
+        }
+
+        String location =
+                profile.getAddressLine1()
+                        + ", "
+                        + profile.getCity()
+                        + ", "
+                        + profile.getStateAbbr()
+                        + " "
+                        + profile.getZipcode();
 
         JsonNode results =
                 yelpService.searchDispensaries(

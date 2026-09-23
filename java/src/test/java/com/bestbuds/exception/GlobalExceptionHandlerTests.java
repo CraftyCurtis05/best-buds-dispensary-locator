@@ -227,4 +227,59 @@ public class GlobalExceptionHandlerTests {
                 response.getBody().getPath()
         );
     }
+
+    @Test
+    public void handleInvalidProfileImageException_returns_bad_request() {
+
+        GlobalExceptionHandler handler =
+                new GlobalExceptionHandler();
+
+        HttpServletRequest request =
+                mock(HttpServletRequest.class);
+
+        when(request.getRequestURI())
+                .thenReturn(
+                        "/api/profile/image"
+                );
+
+        InvalidProfileImageException exception =
+                new InvalidProfileImageException(
+                        "Uploaded file must be a valid image"
+                );
+
+        ResponseEntity<ApiError> response =
+                handler.handleInvalidProfileImageException(
+                        exception,
+                        request
+                );
+
+        assertEquals(
+                HttpStatus.BAD_REQUEST,
+                response.getStatusCode()
+        );
+
+        assertNotNull(
+                response.getBody()
+        );
+
+        assertEquals(
+                HttpStatus.BAD_REQUEST.value(),
+                response.getBody().getStatus()
+        );
+
+        assertEquals(
+                "Bad Request",
+                response.getBody().getError()
+        );
+
+        assertEquals(
+                "Uploaded file must be a valid image",
+                response.getBody().getMessage()
+        );
+
+        assertEquals(
+                "/api/profile/image",
+                response.getBody().getPath()
+        );
+    }
 }

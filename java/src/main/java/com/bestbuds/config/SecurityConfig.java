@@ -21,6 +21,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 
 import java.util.List;
 
@@ -151,7 +152,8 @@ public class SecurityConfig {
                 .authorizeHttpRequests(authorize ->
                         authorize
                                 .requestMatchers(
-                                        "/api/auth/**"
+                                        "/api/auth/**",
+                                        "/error"
                                 )
                                 .permitAll()
 
@@ -181,5 +183,23 @@ public class SecurityConfig {
                 ageConfirmationService,
                 authenticationService
         );
+    }
+
+    @Bean
+    public FilterRegistrationBean<AgeConfirmationFilter>
+    ageConfirmationFilterRegistration(
+            AgeConfirmationFilter ageConfirmationFilter
+    ) {
+
+        FilterRegistrationBean<AgeConfirmationFilter> registration =
+                new FilterRegistrationBean<>(
+                        ageConfirmationFilter
+                );
+
+        registration.setEnabled(
+                false
+        );
+
+        return registration;
     }
 }

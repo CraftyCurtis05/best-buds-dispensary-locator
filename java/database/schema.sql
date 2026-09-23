@@ -6,7 +6,14 @@
 BEGIN TRANSACTION;
 
 -- Remove existing tables
-DROP TABLE IF EXISTS password_reset_tokens, favorites, profiles, profile, image, users;
+DROP TABLE IF EXISTS
+    password_reset_tokens,
+    favorites,
+    profile_images,
+    profiles,
+    profile,
+    image,
+    users;
 
 -- Users
 CREATE TABLE users (
@@ -51,13 +58,13 @@ CREATE TABLE profiles (
 );
 
 -- Profile Images
-CREATE TABLE image (
+CREATE TABLE profile_images (
     image_id SERIAL PRIMARY KEY,
     user_id INT NOT NULL UNIQUE,
-    image_name VARCHAR(100),
-    image BYTEA,
+    image_data BYTEA NOT NULL,
+    content_type VARCHAR(50) NOT NULL,
 
-    CONSTRAINT fk_image_users
+    CONSTRAINT fk_profile_images_users
         FOREIGN KEY (user_id)
         REFERENCES users (user_id)
         ON DELETE CASCADE

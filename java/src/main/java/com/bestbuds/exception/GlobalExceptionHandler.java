@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.security.authentication.BadCredentialsException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
@@ -39,6 +40,25 @@ public class GlobalExceptionHandler {
 
         return ResponseEntity
                 .status(HttpStatus.BAD_REQUEST)
+                .body(error);
+    }
+
+    @ExceptionHandler(BadCredentialsException.class)
+    public ResponseEntity<ApiError> handleBadCredentialsException(
+            BadCredentialsException exception,
+            HttpServletRequest request
+    ) {
+
+        ApiError error =
+                new ApiError(
+                        HttpStatus.UNAUTHORIZED.value(),
+                        HttpStatus.UNAUTHORIZED.getReasonPhrase(),
+                        "Invalid username or password.",
+                        request.getRequestURI()
+                );
+
+        return ResponseEntity
+                .status(HttpStatus.UNAUTHORIZED)
                 .body(error);
     }
 
@@ -140,6 +160,25 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(InvalidPasswordResetTokenException.class)
     public ResponseEntity<ApiError> handleInvalidPasswordResetTokenException(
             InvalidPasswordResetTokenException exception,
+            HttpServletRequest request
+    ) {
+
+        ApiError error =
+                new ApiError(
+                        HttpStatus.BAD_REQUEST.value(),
+                        HttpStatus.BAD_REQUEST.getReasonPhrase(),
+                        exception.getMessage(),
+                        request.getRequestURI()
+                );
+
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(error);
+    }
+
+    @ExceptionHandler(InvalidProfileImageException.class)
+    public ResponseEntity<ApiError> handleInvalidProfileImageException(
+            InvalidProfileImageException exception,
             HttpServletRequest request
     ) {
 
