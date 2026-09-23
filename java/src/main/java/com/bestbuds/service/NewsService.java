@@ -5,22 +5,28 @@ import com.bestbuds.model.NewsArticle;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClient;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.web.client.RestClientException;
 
 import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneOffset;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Service
 public class NewsService {
 
     private final RestClient restClient;
     private final String apiKey;
+    private static final Logger logger =
+            LoggerFactory.getLogger(NewsService.class);
 
     private static final String NEWS_SEARCH =
             "cannabis | marijuana | \"medical marijuana\" | "
@@ -41,7 +47,7 @@ public class NewsService {
     private static final int NEWS_SEARCH_MAX_LENGTH = 100;
 
     private static final Duration NEWS_CACHE_DURATION =
-            Duration.ofHours(1);
+            Duration.ofDays(1);
 
     private List<NewsArticle> cachedNews =
             new ArrayList<>();
@@ -72,14 +78,14 @@ public class NewsService {
         LocalDate publishedAfter =
                 LocalDate.now(ZoneOffset.UTC).minusDays(30);
 
-        List<CompletableFuture<Map>> newsRequests =
+        List<CompletableFuture<Map<String, Object>>> newsRequests =
                 new ArrayList<>();
 
         for (int page = 1; page <= NEWS_PAGE_COUNT; page++) {
 
             int pageNumber = page;
 
-            CompletableFuture<Map> newsRequest =
+            CompletableFuture<Map<String, Object>> newsRequest =
                     CompletableFuture.supplyAsync(
                             () -> getNewsPage(
                                     publishedAfter,
@@ -93,9 +99,10 @@ public class NewsService {
         List<NewsArticle> newsArticles =
                 new ArrayList<>();
 
-        for (CompletableFuture<Map> newsRequest : newsRequests) {
+        for (CompletableFuture<Map<String, Object>> newsRequest
+                : newsRequests) {
 
-            Map response =
+            Map<String, Object> response =
                     newsRequest.join();
 
             newsArticles.addAll(
@@ -132,7 +139,7 @@ public class NewsService {
         LocalDate publishedAfter =
                 LocalDate.now(ZoneOffset.UTC).minusDays(30);
 
-        Map response = getNewsSearchPage(
+        Map<String, Object> response = getNewsSearchPage(
                 publishedAfter,
                 searchQuery,
                 1
@@ -166,37 +173,53 @@ public class NewsService {
     }
 
     // Get one page of cannabis news
-    private Map getNewsPage(
+    private Map<String, Object> getNewsPage(
             LocalDate publishedAfter,
             int page
     ) {
 
-        return restClient.get()
-                .uri(uriBuilder -> uriBuilder
-                        .path("/news/all")
-                        .queryParam("api_token", apiKey)
-                        .queryParam("search", NEWS_SEARCH)
-                        .queryParam(
-                                "search_fields",
-                                "title,description,keywords"
-                        )
-                        .queryParam("language", "en")
-                        .queryParam(
-                                "published_after",
-                                publishedAfter
-                        )
-                        .queryParam(
-                                "limit",
-                                NEWS_PAGE_LIMIT
-                        )
-                        .queryParam("page", page)
-                        .build())
-                .retrieve()
-                .body(Map.class);
+        try {
+            return restClient.get()
+                    .uri(uriBuilder -> uriBuilder
+                            .path("/news/all")
+                            .queryParam("api_token", apiKey)
+                            .queryParam("search", NEWS_SEARCH)
+                            .queryParam(
+                                    "search_fields",
+                                    "title,description,keywords"
+                            )
+                            .queryParam("language", "en")
+                            .queryParam(
+                                    "published_after",
+                                    publishedAfter
+                            )
+                            .queryParam(
+                                    "limit",
+                                    NEWS_PAGE_LIMIT
+                            )
+                            .queryParam("page", page)
+                            .build())
+                    .retrieve()
+                    .body(
+                            new ParameterizedTypeReference<
+                                    Map<String, Object>
+                            >() {
+                            }
+                    );
+
+        } catch (RestClientException e) {
+            logger.warn(
+                    "Unable to retrieve news page {}: {}",
+                    page,
+                    e.getMessage()
+            );
+
+            return null;
+        }
     }
 
     // Get one page of cannabis news search results
-    private Map getNewsSearchPage(
+    private Map<String, Object> getNewsSearchPage(
             LocalDate publishedAfter,
             String query,
             int page
@@ -205,31 +228,43 @@ public class NewsService {
         String combinedSearch =
                 "(" + NEWS_SEARCH + ") + (\"" + query + "\")";
 
-        return restClient.get()
-                .uri(uriBuilder -> uriBuilder
-                        .path("/news/all")
-                        .queryParam("api_token", apiKey)
-                        .queryParam(
-                                "search",
-                                combinedSearch
-                        )
-                        .queryParam(
-                                "search_fields",
-                                "title,description,keywords"
-                        )
-                        .queryParam("language", "en")
-                        .queryParam(
-                                "published_after",
-                                publishedAfter
-                        )
-                        .queryParam(
-                                "limit",
-                                NEWS_PAGE_LIMIT
-                        )
-                        .queryParam("page", page)
-                        .build())
-                .retrieve()
-                .body(Map.class);
+        try {
+            return restClient.get()
+                    .uri(uriBuilder -> uriBuilder
+                            .path("/news/all")
+                            .queryParam("api_token", apiKey)
+                            .queryParam("search", combinedSearch)
+                            .queryParam(
+                                    "search_fields",
+                                    "title,description,keywords"
+                            )
+                            .queryParam("language", "en")
+                            .queryParam(
+                                    "published_after",
+                                    publishedAfter
+                            )
+                            .queryParam(
+                                    "limit",
+                                    NEWS_PAGE_LIMIT
+                            )
+                            .queryParam("page", page)
+                            .build())
+                    .retrieve()
+                    .body(
+                            new ParameterizedTypeReference<
+                                    Map<String, Object>
+                            >() {
+                            }
+                    );
+
+        } catch (RestClientException e) {
+            logger.warn(
+                    "Unable to retrieve news search results: {}",
+                    e.getMessage()
+            );
+
+            return null;
+        }
     }
 
     // Sort news articles from newest to oldest
@@ -237,14 +272,18 @@ public class NewsService {
             List<NewsArticle> newsArticles
     ) {
         newsArticles.sort(
-                Comparator.comparing(
-                        NewsArticle::getPublishedAt
-                ).reversed()
+                (firstArticle, secondArticle) ->
+                        secondArticle.getPublishedAt()
+                                .compareTo(
+                                        firstArticle.getPublishedAt()
+                                )
         );
     }
 
     // Convert the news API response into Best Buds news articles
-    private List<NewsArticle> convertNews(Map response) {
+    private List<NewsArticle> convertNews(
+            Map<String, Object> response
+    ) {
 
         List<NewsArticle> newsArticles =
                 new ArrayList<>();
