@@ -7,6 +7,8 @@ BEGIN TRANSACTION;
 
 -- Remove existing tables
 DROP TABLE IF EXISTS
+    user_drops,
+    drops,
     password_reset_tokens,
     saved_dispensaries,
     profile_images,
@@ -92,6 +94,38 @@ CREATE TABLE saved_dispensaries (
     CONSTRAINT fk_saved_dispensaries_users
         FOREIGN KEY (user_id)
         REFERENCES users (user_id)
+        ON DELETE CASCADE
+);
+
+-- Drops
+CREATE TABLE drops (
+    drop_id SERIAL PRIMARY KEY,
+    code VARCHAR(50) NOT NULL UNIQUE,
+    name VARCHAR(100) NOT NULL,
+    description VARCHAR(250) NOT NULL,
+    rarity VARCHAR(20) NOT NULL,
+    category VARCHAR(30) NOT NULL,
+    is_secret BOOLEAN NOT NULL DEFAULT FALSE
+);
+
+-- User Drops
+CREATE TABLE user_drops (
+    user_drop_id SERIAL PRIMARY KEY,
+    user_id INT NOT NULL,
+    drop_id INT NOT NULL,
+    unlocked_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT uq_user_drops_user_drop
+        UNIQUE (user_id, drop_id),
+
+    CONSTRAINT fk_user_drops_users
+        FOREIGN KEY (user_id)
+        REFERENCES users (user_id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_user_drops_drops
+        FOREIGN KEY (drop_id)
+        REFERENCES drops (drop_id)
         ON DELETE CASCADE
 );
 

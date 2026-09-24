@@ -32,4 +32,47 @@ VALUES (
     'ROLE_ADMIN'
 );
 
+-- Best Buds Drops
+INSERT INTO drops (
+    code,
+    name,
+    description,
+    rarity,
+    category,
+    is_secret
+)
+VALUES
+    (
+        'BIRTHDAY_BUD',
+        'Birthday Bud',
+        'A little something from your Best Buds. Happy birthday!',
+        'SPECIAL',
+        'BIRTHDAY',
+        FALSE
+    ),
+    (
+        'TRAIL_BLAZER',
+        'Trail Blazer',
+        'There is always another trail to blaze.',
+        'COMMON',
+        'EXPLORATION',
+        FALSE
+    ),
+    (
+        'BUD_KEEPER',
+        'Bud Keeper',
+        'You know a good bud when you find one.',
+        'COMMON',
+        'COLLECTION',
+        FALSE
+    ),
+    (
+        'GOLDEN_BUD',
+        'Golden Bud',
+        'Some things are worth searching for.',
+        'RARE',
+        'SECRET',
+        TRUE
+    );
+
 COMMIT TRANSACTION;
