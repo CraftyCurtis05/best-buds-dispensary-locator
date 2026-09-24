@@ -32,8 +32,8 @@ VALUES (
     'ROLE_ADMIN'
 );
 
--- Best Buds Drops
-INSERT INTO drops (
+-- Best Buds Collectibles
+INSERT INTO collectibles (
     code,
     name,
     description,
