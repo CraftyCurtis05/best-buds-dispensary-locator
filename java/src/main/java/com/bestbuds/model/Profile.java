@@ -47,7 +47,9 @@ public class Profile {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(
+            int id
+    ) {
         this.id = id;
     }
 
@@ -55,7 +57,9 @@ public class Profile {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(
+            int userId
+    ) {
         this.userId = userId;
     }
 
@@ -140,7 +144,9 @@ public class Profile {
     }
 
     @Override
-    public boolean equals(Object object) {
+    public boolean equals(
+            Object object
+    ) {
 
         if (this == object) {
             return true;

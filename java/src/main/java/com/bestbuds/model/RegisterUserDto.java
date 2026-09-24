@@ -1,12 +1,14 @@
 package com.bestbuds.model;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import jakarta.validation.constraints.Email;
 
 public class RegisterUserDto {
 
-    @NotBlank(message = "Username is required.")
+    @NotBlank(
+            message = "Username is required."
+    )
     @Size(
             min = 3,
             max = 50,
@@ -15,7 +17,7 @@ public class RegisterUserDto {
     private String username;
 
     @NotBlank(
-        message = "Email is required."
+            message = "Email is required."
     )
     @Email(
             message = "Email must be valid."
@@ -26,7 +28,9 @@ public class RegisterUserDto {
     )
     private String email;
 
-    @NotBlank(message = "Password is required.")
+    @NotBlank(
+            message = "Password is required."
+    )
     @Size(
             min = 8,
             max = 100,
@@ -34,14 +38,18 @@ public class RegisterUserDto {
     )
     private String password;
 
-    @NotBlank(message = "Password confirmation is required.")
+    @NotBlank(
+            message = "Password confirmation is required."
+    )
     private String confirmPassword;
 
     public String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
+    public void setUsername(
+            String username
+    ) {
         this.username = username;
     }
 
@@ -59,7 +67,9 @@ public class RegisterUserDto {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(
+            String password
+    ) {
         this.password = password;
     }
 

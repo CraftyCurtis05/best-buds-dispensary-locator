@@ -1,43 +1,60 @@
 BEGIN TRANSACTION;
 
--- Users
+-- **************************************************************
+-- Test Users
+-- **************************************************************
+
+-- USER1
+-- Complete user used for normal DAO testing
 INSERT INTO users (
     username,
     email,
     password_hash,
-    role
+    role,
+    age_confirmed
 )
 VALUES (
     'user1',
     'user1@bestbuds.local',
     'password123',
-    'ROLE_USER'
+    'ROLE_USER',
+    FALSE
 );
 
+
+-- USER2
+-- Secondary user used for ownership and cross-user testing
 INSERT INTO users (
     username,
     email,
     password_hash,
-    role
+    role,
+    age_confirmed
 )
 VALUES (
     'user2',
     'user2@bestbuds.local',
     'password456',
-    'ROLE_USER'
+    'ROLE_USER',
+    FALSE
 );
 
+
+-- USER3
+-- Unconfirmed user used for age confirmation and security testing
 INSERT INTO users (
     username,
     email,
     password_hash,
-    role
+    role,
+    age_confirmed
 )
 VALUES (
     'user3',
     'user3@bestbuds.local',
     'password789',
-    'ROLE_USER'
+    'ROLE_USER',
+    FALSE
 );
 
 -- Profiles

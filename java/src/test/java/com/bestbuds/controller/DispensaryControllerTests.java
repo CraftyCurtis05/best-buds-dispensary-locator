@@ -1,7 +1,9 @@
 package com.bestbuds.controller;
 
+import com.bestbuds.model.Coordinates;
 import com.bestbuds.model.Profile;
 import com.bestbuds.model.User;
+import com.bestbuds.service.GeoapifyService;
 import com.bestbuds.service.YelpService;
 import com.bestbuds.service.AuthenticationService;
 import com.bestbuds.service.ProfileService;
@@ -16,15 +18,17 @@ import org.springframework.security.core.Authentication;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.mockito.ArgumentMatchers.anyDouble;
+import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import static org.mockito.Mockito.never;
-import static org.mockito.ArgumentMatchers.anyString;
 
 public class DispensaryControllerTests {
 
     private YelpService yelpService;
+    private GeoapifyService geoapifyService;
     private ProfileService profileService;
     private AuthenticationService authenticationService;
     private Authentication authentication;
@@ -35,6 +39,9 @@ public class DispensaryControllerTests {
 
         yelpService =
                 mock(YelpService.class);
+
+        geoapifyService =
+                mock(GeoapifyService.class);
 
         profileService =
                 mock(ProfileService.class);
@@ -48,6 +55,7 @@ public class DispensaryControllerTests {
         sut =
                 new DispensaryController(
                         yelpService,
+                        geoapifyService,
                         profileService,
                         authenticationService
                 );
@@ -310,6 +318,12 @@ public class DispensaryControllerTests {
                 "43215"
         );
 
+        Coordinates coordinates =
+                new Coordinates(
+                        39.961657,
+                        -83.006021
+                );
+
         JsonNode featured =
                 new ObjectMapper()
                         .createObjectNode();
@@ -340,8 +354,18 @@ public class DispensaryControllerTests {
                 );
 
         when(
-                yelpService.getFeaturedDispensary(
+                geoapifyService.geocodeAddress(
                         "123 Main Street, Columbus, OH 43215"
+                )
+        )
+                .thenReturn(
+                        coordinates
+                );
+
+        when(
+                yelpService.getFeaturedDispensary(
+                        39.961657,
+                        -83.006021
                 )
         )
                 .thenReturn(
@@ -363,9 +387,101 @@ public class DispensaryControllerTests {
                 response.getBody()
         );
 
+        verify(geoapifyService)
+                .geocodeAddress(
+                        "123 Main Street, Columbus, OH 43215"
+                );
+
         verify(yelpService)
                 .getFeaturedDispensary(
+                        39.961657,
+                        -83.006021
+                );
+    }
+
+    @Test
+    public void getFeaturedDispensary_returns_no_content_when_address_cannot_be_geocoded() {
+
+        User user =
+                new User();
+
+        user.setId(1);
+
+        Profile profile =
+                new Profile();
+
+        profile.setAddressLine1(
+                "123 Main Street"
+        );
+
+        profile.setCity(
+                "Columbus"
+        );
+
+        profile.setStateAbbr(
+                "OH"
+        );
+
+        profile.setZipcode(
+                "43215"
+        );
+
+        when(
+                authentication.getName()
+        )
+                .thenReturn(
+                        "testuser"
+                );
+
+        when(
+                authenticationService.getUser(
+                        "testuser"
+                )
+        )
+                .thenReturn(
+                        user
+                );
+
+        when(
+                profileService.getProfile(
+                        1
+                )
+        )
+                .thenReturn(
+                        profile
+                );
+
+        when(
+                geoapifyService.geocodeAddress(
                         "123 Main Street, Columbus, OH 43215"
+                )
+        )
+                .thenReturn(
+                        null
+                );
+
+        ResponseEntity<JsonNode> response =
+                sut.getFeaturedDispensary(
+                        authentication
+                );
+
+        assertEquals(
+                204,
+                response.getStatusCode().value()
+        );
+
+        verify(geoapifyService)
+                .geocodeAddress(
+                        "123 Main Street, Columbus, OH 43215"
+                );
+
+        verify(
+                yelpService,
+                never()
+        )
+                .getFeaturedDispensary(
+                        anyDouble(),
+                        anyDouble()
                 );
     }
 }

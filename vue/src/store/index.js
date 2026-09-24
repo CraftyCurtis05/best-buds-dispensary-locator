@@ -1,64 +1,82 @@
-import { createStore as createVuexStore } from "vuex";
+import { createStore as _createStore } from "vuex";
 import axios from "axios";
 
-export function createStore(currentToken, currentUser) {
+export function createStore(
+    currentToken = "",
+    currentUser = {}
+) {
+    return _createStore({
+        state: {
+            token: currentToken || "",
+            user: currentUser || {},
+            profile: null,
+            profileLoaded: false,
+            locationID: "",
+            dispensaries: []
+        },
 
-  return createVuexStore({
+        mutations: {
 
-    state: {
-      token: currentToken || "",
-      user: currentUser || {},
-      locationID: "",
-      dispensaries: []
-    },
+            // Store the authorization token
+            SET_AUTH_TOKEN(state, token) {
+                state.token = token;
 
-    mutations: {
+                localStorage.setItem(
+                    "token",
+                    token
+                );
 
-      // Store the user's authorization token
-      SET_AUTH_TOKEN(state, token) {
-        state.token = token;
+                axios.defaults.headers.common[
+                    "Authorization"
+                ] = `Bearer ${token}`;
+            },
 
-        localStorage.setItem("token", token);
+            // Store the authenticated user
+            SET_USER(state, user) {
+                state.user = user;
 
-        axios.defaults.headers.common["Authorization"] =
-                `Bearer ${token}`;
-      },
+                localStorage.setItem(
+                    "user",
+                    JSON.stringify(user)
+                );
+            },
 
-      // Store the current user
-      SET_USER(state, user) {
-        state.user = user;
+            // Store the authenticated user's profile
+            SET_PROFILE(state, profile) {
+                state.profile = profile;
+                state.profileLoaded = true;
+            },
 
-        localStorage.setItem(
-          "user",
-          JSON.stringify(user)
-        );
-      },
+            // Record that the user does not have a profile
+            SET_PROFILE_MISSING(state) {
+                state.profile = null;
+                state.profileLoaded = true;
+            },
 
-      // Store the current dispensary search location
-      SET_LOCATION(state, locationID) {
-        state.locationID = locationID;
-      },
+            SET_LOCATION(state, locationID) {
+                state.locationID = locationID;
+            },
 
-      // Store the current dispensary search results
-      SET_DISPENSARIES(state, dispensaries) {
-        state.dispensaries = dispensaries;
-      },
+            SET_DISPENSARIES(state, dispensaries) {
+                state.dispensaries = dispensaries;
+            },
 
-      // Clear the current user session
-      LOGOUT(state) {
-        state.token = "";
-        state.user = {};
-        state.locationID = "";
-        state.dispensaries = [];
+            // Clear the authenticated session
+            LOGOUT(state) {
+                state.token = "";
+                state.user = {};
+                state.profile = null;
+                state.profileLoaded = false;
+                state.locationID = "";
+                state.dispensaries = [];
 
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
+                localStorage.removeItem("token");
+                localStorage.removeItem("user");
 
-        delete axios.defaults.headers.common["Authorization"];
-      }
-
-    }
-
-  });
-
+                delete axios.defaults.headers.common[
+                    "Authorization"
+                ];
+            }
+        }
+    });
 }

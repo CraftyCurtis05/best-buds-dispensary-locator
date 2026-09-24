@@ -1,7 +1,9 @@
 package com.bestbuds.controller;
 
+import com.bestbuds.model.Coordinates;
 import com.bestbuds.model.User;
 import com.bestbuds.model.Profile;
+import com.bestbuds.service.GeoapifyService;
 import com.bestbuds.service.YelpService;
 import com.bestbuds.service.AuthenticationService;
 import com.bestbuds.service.ProfileService;
@@ -20,15 +22,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class DispensaryController {
 
     private final YelpService yelpService;
+    private final GeoapifyService geoapifyService;
     private final ProfileService profileService;
     private final AuthenticationService authenticationService;
 
     public DispensaryController(
             YelpService yelpService,
+            GeoapifyService geoapifyService,
             ProfileService profileService,
             AuthenticationService authenticationService
     ) {
         this.yelpService = yelpService;
+        this.geoapifyService = geoapifyService;
         this.profileService = profileService;
         this.authenticationService = authenticationService;
     }
@@ -94,14 +99,24 @@ public class DispensaryController {
             return ResponseEntity.badRequest().build();
         }
 
-        String location =
+        String homeLocation =
                 buildHomeLocation(
                         profile
                 );
 
+        Coordinates coordinates =
+                geoapifyService.geocodeAddress(
+                        homeLocation
+                );
+
+        if (coordinates == null) {
+            return ResponseEntity.noContent().build();
+        }
+
         JsonNode featured =
                 yelpService.getFeaturedDispensary(
-                        location
+                        coordinates.getLatitude(),
+                        coordinates.getLongitude()
                 );
 
         if (featured == null) {

@@ -130,14 +130,6 @@ Search nearby dispensaries using location-based business data.
 
 ---
 
-### Shop
-
-Demonstrates the product information interface and planned expansion area for future dispensary product integrations.
-
-![Shop](images/04-shop.png)
-
----
-
 ### User Profile
 
 Manage profile information and account settings.

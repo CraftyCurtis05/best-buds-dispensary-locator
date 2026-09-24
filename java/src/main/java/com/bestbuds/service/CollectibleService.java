@@ -90,6 +90,16 @@ public class CollectibleService {
             return null;
         }
 
+        UserCollectible birthdayBud =
+                getUserCollectible(
+                        userId,
+                        BIRTHDAY_BUD
+                );
+
+        if (birthdayBud != null) {
+            return null;
+        }
+
         return unlockBirthdayBud(
                 userId,
                 profile.getBirthday()

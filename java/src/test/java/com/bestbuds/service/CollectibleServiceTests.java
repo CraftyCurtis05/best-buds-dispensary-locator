@@ -330,6 +330,78 @@ public class CollectibleServiceTests {
     }
 
     @Test
+    public void checkForDrops_returns_null_when_birthday_bud_is_already_unlocked() {
+
+        Profile profile =
+                new Profile();
+
+        profile.setUserId(
+                1
+        );
+
+        profile.setBirthday(
+                LocalDate.now()
+                        .minusYears(
+                                30
+                        )
+        );
+
+        UserCollectible birthdayBud =
+                createUserCollectible(
+                        1,
+                        1,
+                        createCollectible(
+                                1,
+                                "BIRTHDAY_BUD",
+                                "Birthday Bud"
+                        )
+                );
+
+        when(
+                profileService.getProfile(
+                        1
+                )
+        ).thenReturn(
+                profile
+        );
+
+        when(
+                collectibleDao.getUserCollectible(
+                        1,
+                        "BIRTHDAY_BUD"
+                )
+        ).thenReturn(
+                birthdayBud
+        );
+
+        UserCollectible result =
+                collectibleService.checkForDrops(
+                        1
+                );
+
+        assertNull(
+                result
+        );
+
+        verify(profileService).getProfile(
+                1
+        );
+
+        verify(collectibleDao).getUserCollectible(
+                1,
+                "BIRTHDAY_BUD"
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                "BIRTHDAY_BUD"
+        );
+    }
+
+    @Test
     public void unlockBirthdayBud_unlocks_collectible_using_current_date() {
 
         LocalDate birthday =

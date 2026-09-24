@@ -93,9 +93,9 @@ public class AuthenticationService {
                 updateEmail.getCurrentPassword(),
                 user.getPassword()
         )) {
-        throw new InvalidPasswordException(
-                "Current password is incorrect."
-        );
+            throw new InvalidPasswordException(
+                    "Current password is incorrect."
+            );
         }
 
         String normalizedEmail =

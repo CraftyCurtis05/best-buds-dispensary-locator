@@ -1,33 +1,37 @@
 <template>
     <section
-        class="profile-info"
-        aria-labelledby="profile-info-heading"
+        id="profile-setup-view"
+        class="auth-view"
+        aria-labelledby="profile-setup-heading"
     >
-        <header class="profile-section-header">
-            <h2 id="profile-info-heading">
-                Profile Information
-            </h2>
+        <!-- Profile setup introduction -->
+        <header class="auth-header">
+            <img
+                :src="Logo"
+                class="auth-logo"
+                alt="Best Buds"
+            />
+
+            <h1 id="profile-setup-heading">
+                Set Up Your Profile
+            </h1>
 
             <p>
-                Update your personal information and home location.
+                Tell us a little about yourself and where you call home.
             </p>
         </header>
 
-        <!-- Loading state -->
-        <p
-            v-if="isLoading"
-            class="profile-status"
-            role="status"
+        <!-- Profile setup form -->
+        <section
+            class="auth-form-section"
+            aria-label="Profile setup"
         >
-            Loading your profile...
-        </p>
+            <p class="profile-setup-description">
+                Your home location helps Best Buds find dispensaries near you.
+                You can update this information later from your profile.
+            </p>
 
-        <form
-            v-else
-            class="profile-form"
-            @submit.prevent="saveProfile"
-        >
-            <!-- Error message -->
+            <!-- Profile setup error -->
             <p
                 v-if="profileError"
                 class="form-error"
@@ -36,154 +40,78 @@
                 {{ profileErrorMsg }}
             </p>
 
-            <!-- Success message -->
-            <p
-                v-if="profileSaved"
-                class="form-success"
-                role="status"
+            <form
+                class="auth-form"
+                @submit.prevent="saveProfile"
             >
-                Your profile has been updated.
-            </p>
-
-            <!-- Personal information -->
-            <section
-                class="profile-form-section"
-                aria-labelledby="personal-info-heading"
-            >
-                <h3 id="personal-info-heading">
-                    Personal Information
-                </h3>
-
+                <!-- First name -->
                 <div class="form-input-group">
-                    <label for="profile-first-name">
+                    <label for="first-name">
                         First Name
                     </label>
 
                     <input
-                        id="profile-first-name"
+                        id="first-name"
                         v-model.trim="profile.firstName"
                         name="firstName"
                         type="text"
                         autocomplete="given-name"
                         maxlength="50"
                         required
-                        @input="clearMessages"
+                        autofocus
+                        @input="clearError"
                     />
                 </div>
 
+                <!-- Address -->
                 <div class="form-input-group">
-                    <label for="profile-last-name">
-                        Last Name
+                    <label for="address-line-1">
+                        Home Address
                     </label>
 
                     <input
-                        id="profile-last-name"
-                        v-model.trim="profile.lastName"
-                        name="lastName"
-                        type="text"
-                        autocomplete="family-name"
-                        maxlength="50"
-                        @input="clearMessages"
-                    />
-                </div>
-
-                <div class="form-input-group">
-                    <label for="profile-birthday">
-                        Birthday
-                    </label>
-
-                    <input
-                        id="profile-birthday"
-                        v-model="profile.birthday"
-                        name="birthday"
-                        type="date"
-                        autocomplete="bday"
-                        @input="clearMessages"
-                    />
-
-                    <p class="form-help">
-                        Your birthday is optional and is separate from
-                        Best Buds' 21+ confirmation.
-                    </p>
-                </div>
-            </section>
-
-            <!-- Home location -->
-            <section
-                class="profile-form-section"
-                aria-labelledby="home-location-heading"
-            >
-                <h3 id="home-location-heading">
-                    Home Location
-                </h3>
-
-                <p>
-                    Your home location is used for nearby dispensary
-                    searches and personalized discovery.
-                </p>
-
-                <div class="form-input-group">
-                    <label for="profile-address-line-1">
-                        Address Line 1
-                    </label>
-
-                    <input
-                        id="profile-address-line-1"
+                        id="address-line-1"
                         v-model.trim="profile.addressLine1"
                         name="addressLine1"
                         type="text"
                         autocomplete="address-line1"
                         maxlength="150"
                         required
-                        @input="clearMessages"
+                        @input="clearError"
                     />
                 </div>
 
+                <!-- City -->
                 <div class="form-input-group">
-                    <label for="profile-address-line-2">
-                        Address Line 2
-                    </label>
-
-                    <input
-                        id="profile-address-line-2"
-                        v-model.trim="profile.addressLine2"
-                        name="addressLine2"
-                        type="text"
-                        autocomplete="address-line2"
-                        maxlength="150"
-                        @input="clearMessages"
-                    />
-                </div>
-
-                <div class="form-input-group">
-                    <label for="profile-city">
+                    <label for="city">
                         City
                     </label>
 
                     <input
-                        id="profile-city"
+                        id="city"
                         v-model.trim="profile.city"
                         name="city"
                         type="text"
                         autocomplete="address-level2"
                         maxlength="100"
                         required
-                        @input="clearMessages"
+                        @input="clearError"
                     />
                 </div>
 
+                <!-- State -->
                 <div class="form-input-group">
-                    <label for="profile-state">
+                    <label for="state">
                         State
                     </label>
 
                     <select
-                        id="profile-state"
+                        id="state"
                         v-model="profile.stateAbbr"
                         name="stateAbbr"
                         autocomplete="address-level1"
                         required
-                        @change="clearMessages"
+                        @change="clearError"
                     >
                         <option
                             value=""
@@ -202,13 +130,14 @@
                     </select>
                 </div>
 
+                <!-- ZIP code -->
                 <div class="form-input-group">
-                    <label for="profile-zipcode">
+                    <label for="zipcode">
                         ZIP Code
                     </label>
 
                     <input
-                        id="profile-zipcode"
+                        id="zipcode"
                         v-model.trim="profile.zipcode"
                         name="zipcode"
                         type="text"
@@ -217,41 +146,40 @@
                         pattern="[0-9]{5}"
                         maxlength="5"
                         required
-                        @input="clearMessages"
+                        @input="clearError"
                     />
                 </div>
-            </section>
 
-            <div class="profile-actions">
                 <button
                     type="submit"
                     :disabled="isSubmitting"
                 >
                     {{
                         isSubmitting
-                            ? "Saving Changes..."
-                            : "Save Changes"
+                            ? "Saving Profile..."
+                            : "Continue to Best Buds"
                     }}
                 </button>
-            </div>
-        </form>
+            </form>
+        </section>
     </section>
 </template>
 
 <script>
-import profileService from "../../services/ProfileService.js";
+import profileService from "../services/ProfileService.js";
+
+import Logo from "../assets/layout/logo/logo-dark-theme.png";
 
 export default {
-    name: "ProfileInfo",
+    name: "ProfileSetupView",
 
     data() {
         return {
+            Logo,
+
             profile: {
                 firstName: "",
-                lastName: "",
-                birthday: "",
                 addressLine1: "",
-                addressLine2: "",
                 city: "",
                 stateAbbr: "",
                 zipcode: ""
@@ -310,94 +238,38 @@ export default {
                 { abbreviation: "WY", name: "Wyoming" }
             ],
 
-            isLoading: true,
-            isSubmitting: false,
             profileError: false,
-            profileSaved: false,
             profileErrorMsg:
-                "Unable to load your profile. Please try again."
+                "Unable to save your profile. Please try again.",
+            isSubmitting: false
         };
     },
 
-    created() {
-        this.loadProfile();
-    },
-
     methods: {
-        loadProfile() {
-            this.isLoading = true;
-            this.clearMessages();
-
-            profileService
-                .getProfile()
-                .then((response) => {
-                    if (response.status === 200) {
-                        this.setProfile(
-                            response.data
-                        );
-                    }
-                })
-                .catch(() => {
-                    this.profileError = true;
-                    this.profileErrorMsg =
-                        "Unable to load your profile. Please try again.";
-                })
-                .finally(() => {
-                    this.isLoading = false;
-                });
-        },
-
         saveProfile() {
-            this.clearMessages();
+            this.clearError();
             this.isSubmitting = true;
 
             profileService
-                .saveProfile(
-                    this.profile
-                )
+                .saveProfile(this.profile)
                 .then((response) => {
                     if (response.status === 200) {
-                        this.setProfile(
-                            response.data
-                        );
-
                         this.$store.commit(
                             "SET_PROFILE",
                             response.data
                         );
 
-                        this.profileSaved = true;
+                        this.$router.push({
+                            name: "home"
+                        });
                     }
                 })
                 .catch((error) => {
-                    this.handleProfileError(
-                        error
-                    );
+                    this.handleProfileError(error);
                 })
                 .finally(() => {
                     this.isSubmitting = false;
                 });
-        },
-
-        setProfile(profile) {
-            this.profile = {
-                firstName:
-                    profile.firstName || "",
-                lastName:
-                    profile.lastName || "",
-                birthday:
-                    profile.birthday || "",
-                addressLine1:
-                    profile.addressLine1 || "",
-                addressLine2:
-                    profile.addressLine2 || "",
-                city:
-                    profile.city || "",
-                stateAbbr:
-                    profile.stateAbbr || "",
-                zipcode:
-                    profile.zipcode || ""
-            };
         },
 
         handleProfileError(error) {
@@ -449,9 +321,8 @@ export default {
             return "Please check your profile information and try again.";
         },
 
-        clearMessages() {
+        clearError() {
             this.profileError = false;
-            this.profileSaved = false;
             this.profileErrorMsg =
                 "Unable to save your profile. Please try again.";
         }

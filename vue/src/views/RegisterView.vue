@@ -1,58 +1,132 @@
-<!-- Register View Display -->
 <template>
+    <section
+        id="register-view"
+        class="auth-view"
+        aria-labelledby="register-heading"
+    >
+        <!-- Best Buds branding -->
+        <header class="auth-header">
+            <img
+                :src="Logo"
+                class="auth-logo"
+                alt="Best Buds"
+            />
 
-  <!-- Browser Tab Title -->
-  <title>Register | Best Buds</title>
+            <h1 id="register-heading">
+                Create Account
+            </h1>
 
-  <!-- Display View Body -->
-  <body id="register-body">
+            <p>
+                Create your Best Buds account to get started.
+            </p>
+        </header>
 
-    <!-- Display Body's Main Content -->
-    <main id="register-main">
+        <!-- Account registration form -->
+        <section
+            id="register-form"
+            class="auth-form-section"
+            aria-label="Account registration"
+        >
+            <form
+                class="auth-form"
+                @submit.prevent="register"
+            >
+                <!-- Registration error -->
+                <p
+                    v-if="registrationErrors"
+                    class="form-error"
+                    role="alert"
+                >
+                    {{ registrationErrorMsg }}
+                </p>
 
-      <!-- Display Logo -->
-      <img :src="Logo"/>
+                <!-- Username -->
+                <div class="form-input-group">
+                    <label for="username">
+                        Username
+                    </label>
 
-      <!-- Display Body Title -->
-      <h1>Create Account</h1>
+                    <input
+                        id="username"
+                        v-model.trim="user.username"
+                        name="username"
+                        type="text"
+                        autocomplete="username"
+                        required
+                        autofocus
+                        @input="clearErrors"
+                    />
+                </div>
 
-      <!-- Display Register Form -->
-      <section id="register-form">
-        <form v-on:submit.prevent="register">
+                <!-- Email -->
+                <div class="form-input-group">
+                    <label for="email">
+                        Email
+                    </label>
 
-          <!-- Alert If Invalid Registration Credentials -->
-          <div role="alert" v-if="registrationErrors">{{ registrationErrorMsg }}</div>
+                    <input
+                        id="email"
+                        v-model.trim="user.email"
+                        name="email"
+                        type="email"
+                        autocomplete="email"
+                        required
+                        @input="clearErrors"
+                    />
+                </div>
 
-          <!-- Username Text Input -->
-          <div class="form-input-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" v-model="user.username" required autofocus/>
-          </div>
+                <!-- Password -->
+                <div class="form-input-group">
+                    <label for="password">
+                        Password
+                    </label>
 
-          <!-- Password Text Input -->
-          <div class="form-input-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" v-model="user.password" required/>
-          </div>
+                    <input
+                        id="password"
+                        v-model="user.password"
+                        name="password"
+                        type="password"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                        @input="clearErrors"
+                    />
+                </div>
 
-          <!-- Confirm Password Text Input -->
-          <div class="form-input-group">
-            <label for="confirmPassword">Confirm Password</label>
-            <input type="password" id="confirm-password" v-model="user.confirmPassword" required/>
-          </div>
+                <!-- Confirm password -->
+                <div class="form-input-group">
+                    <label for="confirm-password">
+                        Confirm Password
+                    </label>
 
-          <!-- Submit Button -->
-          <button type="submit">Create Account</button>
+                    <input
+                        id="confirm-password"
+                        v-model="user.confirmPassword"
+                        name="confirmPassword"
+                        type="password"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                        @input="clearErrors"
+                    />
+                </div>
 
-          <!-- Link to Login Page If Already Have Account -->
-          <p><router-link v-bind:to="{ name: 'login' }">Already have an account? Log in.</router-link></p>
-        </form>
-      </section>
+                <button
+                    type="submit"
+                    :disabled="isSubmitting"
+                >
+                    {{ isSubmitting ? 'Creating Account...' : 'Create Account' }}
+                </button>
+            </form>
 
-    </main>  
-
-  </body>
-
+            <p class="auth-link">
+                Already have an account?
+                <router-link :to="{ name: 'login' }">
+                    Log in.
+                </router-link>
+            </p>
+        </section>
+    </section>
 </template>
 
 <script>
@@ -60,57 +134,121 @@ import authService from '../services/AuthService.js';
 import Logo from '../assets/layout/logo/logo-dark-theme.png';
 
 export default {
-  name: "RegisterView",
+    name: 'RegisterView',
 
-  data() {
-    return {
-      Logo,
+    data() {
+        return {
+            Logo,
 
-      user: {
-        username: '',
-        password: '',
-        confirmPassword: '',
-        role: 'user',
-      },
+            user: {
+                username: '',
+                email: '',
+                password: '',
+                confirmPassword: ''
+            },
 
-      registrationErrors: false,
-      registrationErrorMsg: 'There were problems registering this user.',
-    };
-  },
+            registrationErrors: false,
+            registrationErrorMsg: 'There were problems creating your account.',
+            isSubmitting: false
+        };
+    },
 
-  methods: {
-    register() {
-      if (this.user.password != this.user.confirmPassword) {
-        this.registrationErrors = true;
-        this.registrationErrorMsg = 'Password & Confirm Password do not match.';
-      } else {
-        authService
-          .register(this.user)
-          .then((response) => {
-            if (response.status == 201) {
-              this.$router.push({
-                path: '/',
-                query: { registration: 'success' },
-              });
+    methods: {
+        register() {
+            this.clearErrors();
+
+            if (this.user.password !== this.user.confirmPassword) {
+                this.registrationErrors = true;
+                this.registrationErrorMsg =
+                    'Password and Confirm Password do not match.';
+
+                return;
             }
-          })
-          .catch((error) => {
-            const response = error.response;
+
+            this.isSubmitting = true;
+
+            authService
+                .register(this.user)
+                .then((response) => {
+                    if (response.status === 201) {
+                        this.$router.push({
+                            name: 'login',
+                            query: {
+                                registration: 'success'
+                            }
+                        });
+                    }
+                })
+                .catch((error) => {
+                    this.handleRegistrationError(error);
+                })
+                .finally(() => {
+                    this.isSubmitting = false;
+                });
+        },
+
+        handleRegistrationError(error) {
             this.registrationErrors = true;
-            if (response.status === 400) {
-              this.registrationErrorMsg = 'Bad Request: Validation Errors';
+
+            if (!error.response) {
+                this.registrationErrorMsg =
+                    'Unable to connect to Best Buds. Please try again.';
+
+                return;
             }
-          });
-      }
-    },
-    clearErrors() {
-      this.registrationErrors = false;
-      this.registrationErrorMsg = 'There were problems registering this user.';
-    },
-  },
+
+            if (error.response.status === 400) {
+                this.registrationErrorMsg =
+                    this.getValidationErrorMessage(
+                        error.response.data
+                    );
+
+                return;
+            }
+
+            if (error.response.status === 409) {
+                this.registrationErrorMsg =
+                    'That username or email is already in use.';
+
+                return;
+            }
+
+            this.registrationErrorMsg =
+                'There were problems creating your account. Please try again.';
+        },
+
+        getValidationErrorMessage(responseData) {
+            if (typeof responseData === 'string'
+                    && responseData.trim()) {
+                return responseData;
+            }
+
+            if (responseData?.message) {
+                return responseData.message;
+            }
+
+            if (responseData?.errors) {
+                const validationErrors =
+                    Object.values(
+                        responseData.errors
+                    );
+
+                if (validationErrors.length > 0) {
+                    return validationErrors[0];
+                }
+            }
+
+            return 'Please check your registration information and try again.';
+        },
+
+        clearErrors() {
+            this.registrationErrors = false;
+            this.registrationErrorMsg =
+                'There were problems creating your account.';
+        }
+    }
 };
 </script>
 
 <style scoped>
-
 </style>

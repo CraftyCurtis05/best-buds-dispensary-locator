@@ -11,9 +11,6 @@
 
             <!-- Search -->
             <nav><router-link id="search-nav" v-bind:to="{ name: 'search' }" v-if="$store.state.token != ''">Search</router-link></nav>
-
-            <!-- Shop -->
-            <nav><router-link id="shop-nav" v-bind:to="{ name: 'shop' }" v-if="$store.state.token != ''">Shop</router-link></nav>
             
             <!-- Tips & Tricks -->
             <nav><router-link id="tips-tricks-nav" v-bind:to="{ name: 'tips-tricks' }" v-if="$store.state.token != ''">Tips & Tricks</router-link></nav>

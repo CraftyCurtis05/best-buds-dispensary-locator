@@ -20,7 +20,9 @@ public class LoginResponseDto {
         return token;
     }
 
-    public void setToken(String token) {
+    public void setToken(
+            String token
+    ) {
         this.token = token;
     }
 
@@ -28,7 +30,9 @@ public class LoginResponseDto {
         return user;
     }
 
-    public void setUser(User user) {
+    public void setUser(
+            User user
+    ) {
         this.user = user;
     }
 }

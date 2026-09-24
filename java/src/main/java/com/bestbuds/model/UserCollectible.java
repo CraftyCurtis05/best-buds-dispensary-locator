@@ -66,7 +66,9 @@ public class UserCollectible {
     }
 
     @Override
-    public boolean equals(Object object) {
+    public boolean equals(
+            Object object
+    ) {
 
         if (this == object) {
             return true;
