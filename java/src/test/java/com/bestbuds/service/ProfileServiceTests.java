@@ -13,6 +13,8 @@ import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import java.time.LocalDate;
+
 public class ProfileServiceTests {
 
     @Mock
@@ -184,6 +186,154 @@ public class ProfileServiceTests {
         assertEquals(
                 10,
                 profile.getId()
+        );
+
+        verify(
+                profileDao
+        ).updateProfile(
+                profile
+        );
+    }
+
+    @Test
+    public void saveProfile_keeps_existing_birthday_when_birthday_is_already_set() {
+
+        Profile existingProfile =
+                new Profile();
+
+        existingProfile.setId(
+                10
+        );
+
+        existingProfile.setUserId(
+                1
+        );
+
+        existingProfile.setBirthday(
+                LocalDate.of(
+                        1990,
+                        5,
+                        15
+                )
+        );
+
+        Profile profile =
+                new Profile();
+
+        profile.setBirthday(
+                LocalDate.of(
+                        2000,
+                        1,
+                        1
+                )
+        );
+
+        when(
+                profileDao.getProfileByUserId(
+                        1
+                )
+        ).thenReturn(
+                existingProfile
+        );
+
+        when(
+                profileDao.updateProfile(
+                        profile
+                )
+        ).thenReturn(
+                profile
+        );
+
+        Profile result =
+                profileService.saveProfile(
+                        1,
+                        profile
+                );
+
+        assertSame(
+                profile,
+                result
+        );
+
+        assertEquals(
+                LocalDate.of(
+                        1990,
+                        5,
+                        15
+                ),
+                profile.getBirthday()
+        );
+
+        verify(
+                profileDao
+        ).updateProfile(
+                profile
+        );
+    }
+
+    @Test
+    public void saveProfile_sets_birthday_when_existing_birthday_is_null() {
+
+        Profile existingProfile =
+                new Profile();
+
+        existingProfile.setId(
+                10
+        );
+
+        existingProfile.setUserId(
+                1
+        );
+
+        existingProfile.setBirthday(
+                null
+        );
+
+        Profile profile =
+                new Profile();
+
+        profile.setBirthday(
+                LocalDate.of(
+                        1990,
+                        5,
+                        15
+                )
+        );
+
+        when(
+                profileDao.getProfileByUserId(
+                        1
+                )
+        ).thenReturn(
+                existingProfile
+        );
+
+        when(
+                profileDao.updateProfile(
+                        profile
+                )
+        ).thenReturn(
+                profile
+        );
+
+        Profile result =
+                profileService.saveProfile(
+                        1,
+                        profile
+                );
+
+        assertSame(
+                profile,
+                result
+        );
+
+        assertEquals(
+                LocalDate.of(
+                        1990,
+                        5,
+                        15
+                ),
+                profile.getBirthday()
         );
 
         verify(

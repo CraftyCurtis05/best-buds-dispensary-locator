@@ -11,37 +11,52 @@
             </h1>
 
             <p>
-                Manage your personal information and personalize
+                Manage your information and personalize
                 your Best Buds experience.
             </p>
         </header>
 
         <!-- Profile content -->
         <div class="profile-content">
+
+            <!-- Profile image -->
             <aside
                 class="profile-sidebar"
                 aria-label="Profile picture"
             >
-                <ProfilePicture />
+                <ProfileImage />
             </aside>
 
+            <!-- Profile information -->
             <div class="profile-main">
                 <ProfileInfo />
             </div>
+
         </div>
+
+        <!-- Saved dispensaries -->
+        <SavedDispensaries />
+
+        <!-- My Stash -->
+        <MyStash />
     </section>
 </template>
 
 <script>
-import ProfilePicture from "../components/profile/ProfilePicture.vue";
+import ProfileImage from "../components/profile/ProfileImage.vue";
 import ProfileInfo from "../components/profile/ProfileInfo.vue";
+import SavedDispensaries
+    from "../components/profile/SavedDispensaries.vue";
+import MyStash from "../components/profile/MyStash.vue";
 
 export default {
     name: "ProfileView",
 
     components: {
-        ProfilePicture,
-        ProfileInfo
+        ProfileImage,
+        ProfileInfo,
+        SavedDispensaries,
+        MyStash
     }
 };
 </script>

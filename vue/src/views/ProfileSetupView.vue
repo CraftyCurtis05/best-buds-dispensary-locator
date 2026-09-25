@@ -28,7 +28,8 @@
         >
             <p class="profile-setup-description">
                 Your home location helps Best Buds find dispensaries near you.
-                You can update this information later from your profile.
+                Your birthday can only be set once, so make sure it is correct
+                before continuing.
             </p>
 
             <!-- Profile setup error -->
@@ -61,6 +62,28 @@
                         autofocus
                         @input="clearError"
                     />
+                </div>
+
+                <!-- Birthday -->
+                <div class="form-input-group">
+                    <label for="birthday">
+                        Birthday
+                    </label>
+
+                    <input
+                        id="birthday"
+                        v-model="profile.birthday"
+                        name="birthday"
+                        type="date"
+                        autocomplete="bday"
+                        :max="maximumBirthday"
+                        required
+                        @change="clearError"
+                    />
+
+                    <p class="form-help">
+                        Your birthday can only be set once.
+                    </p>
                 </div>
 
                 <!-- Address -->
@@ -179,6 +202,7 @@ export default {
 
             profile: {
                 firstName: "",
+                birthday: "",
                 addressLine1: "",
                 city: "",
                 stateAbbr: "",
@@ -243,6 +267,17 @@ export default {
                 "Unable to save your profile. Please try again.",
             isSubmitting: false
         };
+    },
+
+    computed: {
+
+        // Prevent future birthdays from being selected
+        maximumBirthday() {
+            return new Date()
+                .toISOString()
+                .split("T")[0];
+        }
+
     },
 
     methods: {

@@ -50,6 +50,13 @@ public class ProfileService {
                 existingProfile.getId()
         );
 
+        // Keep the original birthday once it has been set
+        if (existingProfile.getBirthday() != null) {
+            profile.setBirthday(
+                    existingProfile.getBirthday()
+            );
+        }
+
         return profileDao.updateProfile(
                 profile
         );

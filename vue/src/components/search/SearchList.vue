@@ -49,6 +49,21 @@
 
                 </div>
 
+                <!-- Display Saved Dispensary Control -->
+                <div class="result-save">
+
+                    <button
+                        type="button"
+                        v-bind:disabled="isSaving(result.id)"
+                        v-on:click="toggleSavedDispensary(result)"
+                    >
+                        {{
+                            getSaveButtonText(result)
+                        }}
+                    </button>
+
+                </div>
+
             </article>
 
         </section>
@@ -58,12 +73,22 @@
             No dispensaries were found near this location.
         </p>
 
+        <!-- Display Saved Dispensary Error -->
+        <p
+            v-if="savedDispensaryError"
+            role="alert"
+        >
+            {{ savedDispensaryError }}
+        </p>
+
     </section>
 
 </template>
 
 <script>
 import YelpService from '../../services/YelpService.js';
+import SavedDispensaryService
+    from '../../services/SavedDispensaryService.js';
 
 export default {
     name: "SearchList",
@@ -71,7 +96,10 @@ export default {
     data() {
         return {
             isLoading: false,
-            hasSearched: false
+            hasSearched: false,
+            savedDispensaries: [],
+            savingDispensaryID: null,
+            savedDispensaryError: ''
         }
     },
 
@@ -133,11 +161,163 @@ export default {
             .finally(() => {
                 this.isLoading = false;
             });
+        },
+
+        // Get the user's saved dispensaries
+        getSavedDispensaries() {
+
+            SavedDispensaryService.getSavedDispensaries()
+            .then(response => {
+
+                this.savedDispensaries =
+                    response.data || [];
+            })
+            .catch(error => {
+
+                console.error(
+                    "Unable to load saved dispensaries:",
+                    error
+                );
+
+                this.savedDispensaries = [];
+            });
+        },
+
+        // Check if a dispensary is already saved
+        isDispensarySaved(yelpBusinessId) {
+
+            return this.savedDispensaries.some(
+                dispensary =>
+                    dispensary.yelpBusinessId
+                        === yelpBusinessId
+            );
+        },
+
+        // Check if a dispensary is currently being saved or removed
+        isSaving(yelpBusinessId) {
+            return this.savingDispensaryID
+                === yelpBusinessId;
+        },
+
+        // Display the correct saved dispensary button text
+        getSaveButtonText(dispensary) {
+
+            if (this.isSaving(dispensary.id)) {
+
+                if (this.isDispensarySaved(dispensary.id)) {
+                    return "Removing...";
+                }
+
+                return "Saving...";
+            }
+
+            if (this.isDispensarySaved(dispensary.id)) {
+                return "Saved";
+            }
+
+            return "Save";
+        },
+
+        // Save or remove the selected dispensary
+        toggleSavedDispensary(dispensary) {
+
+            this.savedDispensaryError = '';
+            this.savingDispensaryID = dispensary.id;
+
+            if (this.isDispensarySaved(dispensary.id)) {
+                this.removeSavedDispensary(dispensary.id);
+                return;
+            }
+
+            this.saveDispensary(dispensary);
+        },
+
+        // Save a dispensary for the authenticated user
+        saveDispensary(dispensary) {
+
+            const savedDispensary = {
+                yelpBusinessId: dispensary.id,
+                name: dispensary.name,
+                imageUrl: dispensary.image_url,
+                address: dispensary.location.address1,
+                city: dispensary.location.city,
+                stateAbbr: dispensary.location.state,
+                zipcode: dispensary.location.zip_code,
+                latitude: dispensary.coordinates.latitude,
+                longitude: dispensary.coordinates.longitude,
+                rating: dispensary.rating
+            };
+
+            SavedDispensaryService.saveDispensary(
+                savedDispensary
+            )
+            .then(response => {
+
+                const alreadySaved =
+                    this.isDispensarySaved(
+                        response.data.yelpBusinessId
+                    );
+
+                if (!alreadySaved) {
+                    this.savedDispensaries.push(
+                        response.data
+                    );
+                }
+            })
+            .catch(error => {
+
+                console.error(
+                    "Unable to save dispensary:",
+                    error
+                );
+
+                this.savedDispensaryError =
+                    "Unable to save this dispensary.";
+            })
+            .finally(() => {
+                this.savingDispensaryID = null;
+            });
+        },
+
+        // Remove a dispensary from the user's saved dispensaries
+        removeSavedDispensary(yelpBusinessId) {
+
+            SavedDispensaryService.deleteSavedDispensary(
+                yelpBusinessId
+            )
+            .then(response => {
+
+                if (response.status === 204) {
+
+                    this.savedDispensaries =
+                        this.savedDispensaries.filter(
+                            dispensary =>
+                                dispensary.yelpBusinessId
+                                    !== yelpBusinessId
+                        );
+                }
+            })
+            .catch(error => {
+
+                console.error(
+                    "Unable to remove saved dispensary:",
+                    error
+                );
+
+                this.savedDispensaryError =
+                    "Unable to remove this dispensary.";
+            })
+            .finally(() => {
+                this.savingDispensaryID = null;
+            });
         }
 
     },
 
     created() {
+
+        // Load the user's saved dispensaries
+        this.getSavedDispensaries();
 
         // Load results when a search already exists
         if (this.locationID) {

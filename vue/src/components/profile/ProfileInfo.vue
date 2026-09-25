@@ -54,6 +54,7 @@
                     Personal Information
                 </h3>
 
+                <!-- First name -->
                 <div class="form-input-group">
                     <label for="profile-first-name">
                         First Name
@@ -71,6 +72,7 @@
                     />
                 </div>
 
+                <!-- Last name -->
                 <div class="form-input-group">
                     <label for="profile-last-name">
                         Last Name
@@ -87,23 +89,40 @@
                     />
                 </div>
 
+                <!-- Birthday -->
                 <div class="form-input-group">
                     <label for="profile-birthday">
                         Birthday
                     </label>
 
+                    <!-- Birthday can be set once for older profiles -->
                     <input
+                        v-if="!hasBirthday"
                         id="profile-birthday"
                         v-model="profile.birthday"
                         name="birthday"
                         type="date"
                         autocomplete="bday"
-                        @input="clearMessages"
+                        :max="maximumBirthday"
+                        required
+                        @change="clearMessages"
                     />
 
+                    <!-- Birthday is read-only after it has been set -->
+                    <p
+                        v-else
+                        id="profile-birthday"
+                        class="profile-read-only"
+                    >
+                        {{ formattedBirthday }}
+                    </p>
+
                     <p class="form-help">
-                        Your birthday is optional and is separate from
-                        Best Buds' 21+ confirmation.
+                        {{
+                            hasBirthday
+                                ? "Your birthday cannot be changed after it has been set."
+                                : "Your birthday can only be set once."
+                        }}
                     </p>
                 </div>
             </section>
@@ -122,6 +141,7 @@
                     searches and personalized discovery.
                 </p>
 
+                <!-- Address line 1 -->
                 <div class="form-input-group">
                     <label for="profile-address-line-1">
                         Address Line 1
@@ -139,6 +159,7 @@
                     />
                 </div>
 
+                <!-- Address line 2 -->
                 <div class="form-input-group">
                     <label for="profile-address-line-2">
                         Address Line 2
@@ -155,6 +176,7 @@
                     />
                 </div>
 
+                <!-- City -->
                 <div class="form-input-group">
                     <label for="profile-city">
                         City
@@ -172,6 +194,7 @@
                     />
                 </div>
 
+                <!-- State -->
                 <div class="form-input-group">
                     <label for="profile-state">
                         State
@@ -202,6 +225,7 @@
                     </select>
                 </div>
 
+                <!-- ZIP code -->
                 <div class="form-input-group">
                     <label for="profile-zipcode">
                         ZIP Code
@@ -317,6 +341,55 @@ export default {
             profileErrorMsg:
                 "Unable to load your profile. Please try again."
         };
+    },
+
+    computed: {
+
+        // Check whether the birthday has already been set
+        hasBirthday() {
+            return Boolean(
+                this.profile.birthday
+            );
+        },
+
+        // Prevent future birthdays from being selected
+        maximumBirthday() {
+            return new Date()
+                .toISOString()
+                .split("T")[0];
+        },
+
+        // Format the saved birthday for display
+        formattedBirthday() {
+
+            if (!this.profile.birthday) {
+                return "";
+            }
+
+            const birthdayParts =
+                this.profile.birthday.split("-");
+
+            if (birthdayParts.length !== 3) {
+                return this.profile.birthday;
+            }
+
+            const birthday =
+                new Date(
+                    Number(birthdayParts[0]),
+                    Number(birthdayParts[1]) - 1,
+                    Number(birthdayParts[2])
+                );
+
+            return birthday.toLocaleDateString(
+                undefined,
+                {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric"
+                }
+            );
+        }
+
     },
 
     created() {

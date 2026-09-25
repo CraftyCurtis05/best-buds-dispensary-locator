@@ -1,0 +1,119 @@
+USER1: complete Columbus profile and normal non-today birthday
+{
+    "username": "user1",
+    "email": "user1@bestbuds.local",
+    "password": "Password123!",
+    "confirmPassword": "Password123!"
+}
+
+{
+    "user_id": "1",
+    "firstName": "User",
+    "lastName": "One",
+    "birthday": "1990-05-15",
+    "addressLine1": "123 Main Street",
+    "addressLine2": "",
+    "city": "Columbus",
+    "stateAbbr": "OH",
+    "zipcode": "43215"
+}
+
+-----------------------------------------------------------------------------------
+
+USER2: different Columbus-area address for cross-user Saved Dispensary tests
+{
+    "username": "user2",
+    "email": "user2@bestbuds.local",
+    "password": "Password123!",
+    "confirmPassword": "Password123!"
+}
+
+{
+    "user_id": "2",
+    "first_name": "User",
+    "last_name": "Two",
+    "birthday": "1992-08-10",
+    "address_line_1": "456 High Street",
+    "address_line_2": "",
+    "city": "Worthington",
+    "state_abbr": "OH",
+    "zipcode": "43085"
+}
+
+------------------------------------------------------------------------------------
+
+NEW_USER: should have no profile row so we can test onboarding
+
+{
+    "username": "newuser",
+    "email": "newuser@bestbuds.local",
+    "password": "Password123!",
+    "confirmPassword": "Password123!"
+}
+
+{
+    "user_id": "3",
+    "first_name": "",
+    "last_name": "",
+    "birthday": "",
+    "address_line_1": "",
+    "address_line_2": "",
+    "city": "",
+    "state_abbr": "",
+    "zipcode": ""
+}
+
+------------------------------------------------------------------------------------
+
+ADMIN: complete profile but remain primarily our admin/security account
+
+{
+    "username": "admin",
+    "email": "admin@bestbuds.local",
+    "password": "Password123!",
+    "confirmPassword": "Password123!"
+}
+
+{
+    "user_id": "4",
+    "first_name": "Best Buds",
+    "last_name": "Admin",
+    "birthday": "1985-03-20",
+    "address_line_1": "789 Broad Street",
+    "address_line_2": "",
+    "city": "789 Broad Street",
+    "state_abbr": "OH",
+    "zipcode": "43228"
+}
+
+------------------------------------------------------------------------------------
+
+USER3:
+
+{
+    "username": "user3",
+    "email": "user3@bestbuds.local",
+    "password": "Password123!",
+    "confirmPassword": "Password123!"
+}
+
+{
+    "user_id": "5",
+    "first_name": "User",
+    "last_name": "Three",
+    "birthday": "1992-09-24",
+    "address_line_1": "384 Test Court",
+    "address_line_2": "",
+    "city": "Laurelville",
+    "state_abbr": "OH",
+    "zipcode": "43135"
+}
+
+
+
+
+
+
+
+
+
