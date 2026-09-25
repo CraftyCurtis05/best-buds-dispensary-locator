@@ -1,80 +1,101 @@
-<!-- Footer Component Display--->
+<!-- Application Footer Component -->
 <template>
+    <footer
+        v-if="isAuthenticated"
+        id="app-footer"
+    >
+        <!-- Best Buds Information -->
+        <section aria-labelledby="footer-brand-heading">
+            <h2 id="footer-brand-heading">
+                Best Buds
+            </h2>
 
-    <!-- Display Component Body -->
-    <body id="footer-body">
+            <p>
+                We're Good To Grow!
+            </p>
+        </section>
 
-        <!-- Display Logo and Slogan and Link to Home on the Left -->
-        <section id="logo">
-            <router-link v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''">
-                <img :src="Logo"/>
+        <!-- Helpful Links -->
+        <nav aria-labelledby="footer-links-heading">
+            <h2 id="footer-links-heading">
+                Helpful Links
+            </h2>
+
+            <router-link :to="{ name: 'about' }">
+                About Best Buds
             </router-link>
-            <p id="slogan">"We're Good To Grow!"</p>
-        </section>
 
-        <!-- Display Helpful Links and Copyright in the Center -->
-        <section id="footer-links">
-            <h1>Helpful Links</h1>
-                <nav><router-link v-bind:to="{ name: 'privacy-policy' }" v-if="$store.state.token != ''">Privacy Policy</router-link></nav>
-                <nav><router-link v-bind:to="{ name: 'contact-us' }" v-if="$store.state.token != ''">Contact Us</router-link></nav>
-            <span id="copyright"> @{{ year }} {{ companyName }} </span>
-        </section>
+            <router-link :to="{ name: 'privacy-policy' }">
+                Privacy Policy
+            </router-link>
 
-        <!-- Display Social Media Links to the Right -->
-        <section id="social-media">
-            <h2>Follow Us</h2>
-            <div id="social-media-logos">
+            <router-link :to="{ name: 'contact-us' }">
+                Contact Us
+            </router-link>
+        </nav>
 
-                <!-- GitHub Logo and Link -->
-                <nav id="github">
-                    <a href="https://github.com/CraftyCurtis05" target="_blank">
-                        <img :src="GitHub"/>
-                    </a>
-                </nav>
+        <!-- Social Links -->
+        <nav aria-labelledby="social-links-heading">
+            <h2 id="social-links-heading">
+                Follow Best Buds
+            </h2>
 
-                <!-- Portfolio Logo and Link -->
-                <nav id="portfolio">
-                    <a href="https://jennifercurtis.me/" target="_blank">
-                        <img :src="Portfolio"/>
-                    </a>
-                </nav>
+            <a
+                href="https://github.com/CraftyCurtis05"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                GitHub
+            </a>
 
-                <!-- LinkedIn Logo and Link -->
-                <nav id="linkedin">
-                    <a href="https://www.linkedin.com/in/jcurtisdeveloper/" target="_blank">
-                        <img :src="LinkedIn" />
-                    </a>
-                </nav>
-            </div>
-        </section>
+            <a
+                href="https://jennifercurtis.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Portfolio
+            </a>
 
-    </body>
+            <a
+                href="https://www.linkedin.com/in/jcurtisdeveloper/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                LinkedIn
+            </a>
+        </nav>
 
+        <!-- Copyright -->
+        <p>
+            &copy; {{ year }} {{ companyName }}
+        </p>
+    </footer>
 </template>
 
 <script>
-import Logo from '../../assets/layout/logo/logo-dark-theme.png';
-import GitHub from '../../assets/layout/social-media/github.png';
-import Portfolio from '../../assets/layout/social-media/portfolio.png';
-import LinkedIn from '../../assets/layout/social-media/linkedin.png';
-
 export default {
     name: "AppFooter",
-    
-    data() {
-      return {
-        Logo,
-        GitHub,
-        Portfolio,
-        LinkedIn,
 
-        year: new Date().getFullYear(),  // Return Year and Company Name to use as Template Display for Trademark
-        companyName: "Best Buds Locator"
-      }
+    data() {
+        return {
+
+            // Store the current year and application name
+            year: new Date().getFullYear(),
+            companyName: "Best Buds"
+
+        };
+    },
+
+    computed: {
+
+        // Check whether the user has an active session
+        isAuthenticated() {
+            return this.$store.state.token !== "";
+        }
+
     }
 };
 </script>
 
 <style scoped>
-
 </style>

@@ -1,52 +1,44 @@
-<!-- Header Component Display--->
+<!-- Application Header Component -->
 <template>
+    <header
+        v-if="isAuthenticated"
+        id="app-header"
+    >
+        <!-- Application Brand -->
+        <router-link
+            :to="{ name: 'home' }"
+            aria-label="Best Buds Home"
+        >
+            Best Buds
+        </router-link>
 
-    <!-- Display Component Body -->
-    <body id="header-body">
-
-        <!-- Display NavBar Component -->
-        <nav id="navbar" aria-label="Main Navigation">
-            <NavBar/>
+        <!-- Main Application Navigation -->
+        <nav aria-label="Main Navigation">
+            <NavBar />
         </nav>
-
-        <!-- Display Logo and Link to Home Page -->
-        <section id="logo">
-            <router-link v-bind:to="{ name: 'home' }" v-if="$store.state.token != ''">
-                <img :src="Logo" alt="logo">
-            </router-link>
-        </section>
-
-        <!-- Display Banner Image -->
-        <section id="banner">
-            <img :src="Banner" alt="banner">
-        </section>
-
-    </body>
-
+    </header>
 </template>
 
 <script>
-import Logo from '../../assets/layout/logo/logo-dark-theme.png';
-import Banner from '../../assets/layout/header/banner.webp';
-import NavBar from "../../components/layout/NavBar.vue";
+import NavBar from "./NavBar.vue";
 
 export default {
     name: "AppHeader",
 
-    components: { NavBar },
+    components: {
+        NavBar
+    },
 
-    data() {
-        return {
-            Logo,
-            Banner
+    computed: {
+
+        // Check whether the user has an active session
+        isAuthenticated() {
+            return this.$store.state.token !== "";
         }
+
     }
-}
+};
 </script>
 
 <style scoped>
-img {
-    position: absolute;
-    z-index: -1;
-}
 </style>

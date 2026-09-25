@@ -60,6 +60,15 @@ const routes = [
         }
     },
     {
+        path: "/saved-dispensaries",
+        name: "saved-dispensaries",
+        component: () => import("../views/SavedDispensariesView.vue"),
+        meta: {
+            requiresAuth: true,
+            title: "Saved Dispensaries | Best Buds"
+        }
+    },
+    {
         path: "/tips-tricks",
         name: "tips-tricks",
         component: () => import("../views/TipsTricksView.vue"),
@@ -102,6 +111,24 @@ const routes = [
         meta: {
             requiresAuth: true,
             title: "Profile | Best Buds"
+        }
+    },
+    {
+        path: "/my-stash",
+        name: "my-stash",
+        component: () => import("../views/MyStashView.vue"),
+        meta: {
+            requiresAuth: true,
+            title: "My Stash | Best Buds"
+        }
+    },
+    {
+        path: "/account-settings",
+        name: "account-settings",
+        component: () => import("../views/AccountSettingsView.vue"),
+        meta: {
+            requiresAuth: true,
+            title: "Account Settings | Best Buds"
         }
     },
     {

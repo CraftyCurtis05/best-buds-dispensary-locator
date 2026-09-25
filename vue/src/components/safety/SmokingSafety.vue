@@ -1,159 +1,113 @@
-<!-- Smoking Component Display -->
+<!-- CBD Consumption Component Display -->
 <template>
 
     <!-- Display Component Body -->
-    <body id="smoking-body">
+    <body id="cbd-body">
 
-        <!-- Display Cannabis Smoking Tips Information -->
-        <section id="smoking">
-            <h1>Safety Tips for Smoking Cannabis</h1>
-            <p>If you've found yourself asking, "What is the first feeling of weed?", it's important to understand that each person's reaction can be quite diverse. As you ponder, "Is it okay to start smoking weed?", remember that preparation is paramount. A comprehensive understanding of the varying cannabis strains, a cautious starting approach, and ensuring a comfortable, secure environment can lay the groundwork for an enjoyable and memorable first-time experience.</p>
+        <!-- Display CBD Consumption Tips Information -->
+        <section id="cbd"> 
+            <h1>Safety Tips for Cannabinol(CBD) Consumption</h1>
+            <p>Take it slow with CBD edibles—start small and see how you feel! Read labels, choose quality, and check with your doc if you’re on meds. Be patient, store them right, and enjoy the chill without overdoing it. Keep an eye out for any side effects, and make sure it's all legal. Relax, snack responsibly, and let the calm vibes roll! Check out more safety tips below:</p>
 
             <ol id="list">
                 <li>Start with a Low Dose</li>
                 <ul id="sub-list">
-                    <li>Begin Small:</li>
-                    <span>Start with a small amount, especially if you’re new or trying a new strain.</span>
-                    <li>Monitor Effects:</li>
-                    <span>Increase gradually based on your tolerance and desired effects.</span>
+                    <li>Initial Dose:</li>
+                    <span>Begin with a small amount (typically 5-10 mg) to gauge your tolerance.</span>
+                    <li>Gradual Increase:</li>
+                    <span>If needed, slowly increase the dose while monitoring how you feel.</span>
                 </ul>
 
-                <li>Know Your Strain</li>
+                <li>Consult Your Doctor</li>
                 <ul id="sub-list">
-                    <li>Research Strains:</li>
-                    <span>Understand the THC and CBD content and the strain type by using our <router-link v-bind:to="{ name:'strain-guide' }">strain guide</router-link>.</span>
-                    <li>Effects:</li>
-                    <span>Be aware of the effects associated with the strain, such as relaxation or stimulation.</span>
+                    <li>Medical Advice:</li>
+                    <span>Discuss CBD use with a healthcare professional, especially if you have medical conditions or are on other medications.</span>
                 </ul>
 
-                <li>Use Safe and Clean Devices</li>
+                <li>Choose Quality Products</li>
                 <ul id="sub-list">
-                    <li>Quality Gear:</li>
-                    <span>Use high-quality, safe smoking devices like pipes, bongs, or vaporizers.</span>
-                    <li>Regular Cleaning:</li>
-                    <span>Clean your devices regularly to prevent residue build-up and contamination.</span>
+                    <li>Third-Party Testing:</li>
+                    <span>Select products that are tested for purity and potency by independent labs.</span>
+                    <li>Check Ingredients:</li>
+                    <span>Ensure the product is free of contaminants and additives.</span>
+                </ul>
+
+                <li>Read Labels Carefully</li>
+                <ul id="sub-list">
+                    <li>Dosage Information:</li>
+                    <span>Follow the recommended serving size and THC/CBD content on the label.</span>
+                    <li>Serving Size:</li>
+                    <span>Be aware of how many servings are in a package.</span>
                 </ul>
 
                 <li>Be Patient with Effects</li>
                 <ul id="sub-list">
                     <li>Onset Time:</li>
-                    <span>Effects can begin quickly but may take a few minutes to reach their peak.</span>
-                    <li>Avoid Premature Use:</li>
-                    <span>Don’t consume more until you understand the effects of your initial dose.</span>
+                    <span>Effects of CBD edibles can take 30 minutes to 2 hours to be felt.</span>
+                    <li>Avoid Premature Consumption:</li>
+                    <span>Wait for the effects before taking more.</span>
                 </ul>
 
-                <li>Avoid Mixing Substances</li>
+                <li>Avoid Mixing with Other Substances</li>
                 <ul id="sub-list">
-                    <li>No Alcohol or Drugs:</li>
-                    <span>Avoid combining cannabis with alcohol or other substances to prevent adverse reactions.</span>
+                    <li>Interaction Risks:</li>
+                    <span>Be cautious about combining CBD with other substances or medications.</span>
                 </ul>
 
-                <li>Follow Legal Guidelines</li>
+                <li>Store Safely</li>
                 <ul id="sub-list">
-                    <li>Legal Status:</li>
-                    <span>Ensure cannabis use is legal in your area and follow local regulations on possession and consumption by using our <router-link v-bind:to="{ name:'legality' }">state law list</router-link>.</span>
+                    <li>Child and Pet Safety:</li>
+                    <span>Keep CBD edibles out of reach of children and pets.</span>
+                    <li>Proper Storage:</li>
+                    <span>Store in a cool, dark place to maintain potency.</span>
                 </ul>
 
-                <li>Practice Good Smoking Etiquette</li>
+                <li>Monitor for Side Effects</li>
                 <ul id="sub-list">
-                    <li>Designated Areas:</li>
-                    <span>Smoke in areas where it is allowed and avoid exposing non-smokers to secondhand smoke.</span>
-                    <li>Respect Others:</li>
-                    <span>Always ask for permission before smoking in someone else’s space.</span>
+                    <li>Watch for Reactions:</li>
+                    <span>Possible side effects include dry mouth, dizziness, or changes in appetite.</span>
+                    <li>Adjust Dosage:</li>
+                    <span>Reduce the dose if you experience adverse effects.</span>
                 </ul>
 
-                <li>Be Mindful of Secondhand Smoke</li>
+                <li>Know the Legal Status</li>
                 <ul id="sub-list">
-                    <li>Ventilation:</li>
-                    <span>Smoke in well-ventilated areas to minimize secondhand smoke exposure for others.</span>
+                    <li>Legal Compliance:</li>
+                    <span>Ensure CBD is legal in your area by using our <router-link v-bind:to="{ name:'legality' }">state law list</router-link> and that you’re purchasing from a reputable source.</span>
                 </ul>
 
-                <li>Store Cannabis Properly</li>
+                <li>Understand Individual Tolerance</li>
                 <ul id="sub-list">
-                    <li>Secure Storage:</li>
-                    <span>Keep cannabis in a cool, dark place, away from children and pets.</span>
-                    <li>Childproof Containers:</li>
-                    <span>Use child-resistant containers to prevent accidental ingestion.</span>
-                </ul>
-
-                <li>Stay Hydrated and Have Snacks</li>
-                <ul id="sub-list">
-                    <li>Hydration:</li>
-                    <span>Drink plenty of water to avoid dry mouth.</span>
-                    <li>Snacks:</li>
-                    <span>Have food available to manage increased appetite (the munchies).</span>
+                    <li>Personal Variation:</li>
+                    <span>Individual responses to CBD can vary, so adjust your dosage based on how you feel.</span>
                 </ul>
 
                 <li>Avoid Driving or Operating Machinery</li>
                 <ul id="sub-list">
                     <li>Impairment:</li>
-                    <span>Cannabis can impair coordination and reaction times. Avoid driving or using machinery.</span>
+                    <span>Although CBD is generally non-psychoactive, it’s best to avoid driving or using heavy machinery until you know how it affects you.</span>
                 </ul>
-
-                <li>Monitor for Side Effects</li>
-                <ul id="sub-list">
-                    <li>Common Reactions:</li>
-                    <span>Be aware of side effects like dry mouth, red eyes, and altered perception. Adjust consumption as needed.</span>
-                    <li>Seek Help:</li>
-                    <span>If experiencing severe adverse effects, seek medical assistance.</span>
-                </ul>
-
-                <li>Be Cautious with High-THC Products</li>
-                <ul id="sub-list">
-                    <li>Potency Awareness:</li>
-                    <span>High-THC strains or products can produce stronger effects. Start with lower-THC options if unfamiliar with high potency.</span>
-                </ul>
-
-                <li>Consult a Healthcare Professional</li>
-                <ul id="sub-list">
-                    <li>Medical Conditions:</li>
-                    <span>If you have health conditions or are on medication, consult your doctor before using cannabis.</span>
-                </ul>
-
-                <li>Avoid Smoking Near Sensitive Areas</li>
-                <ul id="sub-list">
-                    <li>Sensitive Areas:</li>
-                    <span>Avoid smoking in places with children, pets, or where smoking is prohibited.</span>
-                </ul>
-
-                <li>Use in a Safe Environment</li>
-                <ul id="sub-list">
-                    <li>Comfortable Setting:</li>
-                    <span>Smoke in a familiar, comfortable place where you feel safe and relaxed.</span>
-                </ul>
-
-                <li>Keep Track of Consumption</li>
-                <ul id="sub-list">
-                    <li>Monitor Use:</li>
-                    <span>Keep track of how much you smoke and how it affects you to prevent overconsumption.</span>
-                </ul>
-
-                <li>Educate Yourself on Cannabis Laws</li>
-                <ul id="sub-list">
-                    <li>Know the Rules:</li>
-                    <span>Stay informed about the legal status and regulations regarding cannabis in your area by using our <router-link v-bind:to="{ name:'legality' }">state law list</router-link>.</span>
-                </ul>
-            </ol>
+            </ol>  
         </section>
 
         <!-- Display Photo -->
         <aside id="photo">
-            <img :src="SmokingSafetyImage" />
+            <img :src="CbdSafetyImage" />
         </aside>
 
     </body>
-    
+
 </template>
 
 <script>
-import SmokingSafetyImage from '../../assets/safety/smoking-safety.webp';
+import CbdSafetyImage from '../../assets/safety/cbd-safety.webp';
 
 export default {
-    name: "SmokingSafety",
+    name: "CbdSafety",
 
     data() {
         return {
-            SmokingSafetyImage
+            CbdSafetyImage
         }
     }
 };

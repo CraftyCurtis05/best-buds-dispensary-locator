@@ -1,3 +1,4 @@
+<!-- Age Confirmation View -->
 <template>
     <section
         id="age-confirmation-view"
@@ -54,8 +55,8 @@
                     >
                         {{
                             isSubmitting
-                                ? 'Confirming...'
-                                : 'Yes, I Am 21 or Older'
+                                ? "Confirming..."
+                                : "Yes, I Am 21 or Older"
                         }}
                     </button>
 
@@ -73,29 +74,33 @@
 </template>
 
 <script>
-import axios from 'axios';
-import Logo from '../assets/layout/logo/logo-dark-theme.png';
+import authService from "../services/AuthService.js";
+
+import Logo from "../assets/layout/logo/logo-dark-theme.png";
 
 export default {
-    name: 'AgeConfirmationView',
+    name: "AgeConfirmationView",
 
     data() {
         return {
             Logo,
+
             confirmationError: false,
             confirmationErrorMsg:
-                'Unable to confirm your age. Please try again.',
+                "Unable to confirm your age. Please try again.",
             isSubmitting: false
         };
     },
 
     methods: {
+
+        // Confirm that the current user meets the age requirement
         confirmAge() {
             this.clearError();
             this.isSubmitting = true;
 
-            axios
-                .post('/api/age/confirm')
+            authService
+                .confirmAge()
                 .then((response) => {
                     if (response.status === 204) {
                         this.updateAgeConfirmation();
@@ -110,6 +115,7 @@ export default {
                 });
         },
 
+        // Update the user's age confirmation in the store
         updateAgeConfirmation() {
             const updatedUser = {
                 ...this.$store.state.user,
@@ -117,44 +123,49 @@ export default {
             };
 
             this.$store.commit(
-                'SET_USER',
+                "SET_USER",
                 updatedUser
             );
         },
 
+        // Continue to the next onboarding step
         continueOnboarding() {
             this.$router.push({
-                name: 'profile-setup'
+                name: "profile-setup"
             });
         },
 
+        // Sign out users who do not meet the age requirement
         logout() {
-            this.$store.commit('LOGOUT');
+            this.$store.commit("LOGOUT");
 
             this.$router.push({
-                name: 'login'
+                name: "login"
             });
         },
 
+        // Show an appropriate age confirmation error
         handleConfirmationError(error) {
             this.confirmationError = true;
 
             if (!error.response) {
                 this.confirmationErrorMsg =
-                    'Unable to connect to Best Buds. Please try again.';
+                    "Unable to connect to Best Buds. Please try again.";
 
                 return;
             }
 
             this.confirmationErrorMsg =
-                'Unable to confirm your age. Please try again.';
+                "Unable to confirm your age. Please try again.";
         },
 
+        // Clear the current age confirmation error
         clearError() {
             this.confirmationError = false;
             this.confirmationErrorMsg =
-                'Unable to confirm your age. Please try again.';
+                "Unable to confirm your age. Please try again.";
         }
+
     }
 };
 </script>
