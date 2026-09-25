@@ -1,0 +1,22 @@
+Drops tied to things people actually do
+
+Here are some examples I'd consider for your app:
+
+    Drop	                        Unlock	                                    Visual direction
+01  First Contact                   View your first dispensary                  One glowing location point surrounded by concentric rings
+02  Night Owl	                    Explore Best Buds late at night	            Near-black city/map geometry with a moon-like glow
+03  Off the Map	                    Explore outside your home area	            Topographic/map lines disappearing beyond the card
+04  Explorer	                    Use multiple areas of Best Buds	            Compass geometry built from your brand shapes
+05  Curator	                        Save 10 dispensaries	                    Gallery/archive-inspired composition
+06  Stashed	                        Earn your first Drop	                    Meta Drop: a minimal vault/archive symbol
+07  Deep Dive	                    Read several educational articles	        Layered typography disappearing downward into depth
+08  Well Informed	                Explore several education categories	    Editorial typography + interconnected information nodes
+09  Know Your Buds	                Explore cannabis/product education	        Sophisticated macro botanical forms rather than a literal pot leaf
+10  Read the Label	                Explore product/label information	        Packaging-label typography and microscopic detail
+11  Safety First	                Explore your safety content	                Minimal protective ring/shield geometry—not a superhero shield
+12  Clear Head	                    Complete several safety topics	            Translucent overlapping forms resolving into one clear shape
+13  Undiscovered                    Some things only appear after goes home                                        
+14  The Regular	                    Return to Best Buds over multiple days	    Repeating geometric forms becoming progressively sharper
+15  Completionist	                Reach a major exploration milestone	        Complex artwork combining motifs from earlier Drops
+16  Whole Picture                   Explored education, safety, products, etc
+17  Local	                        Explore 5 dispensaries near home	        Abstract street grid with five illuminated points
