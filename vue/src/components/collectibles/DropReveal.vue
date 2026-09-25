@@ -1,23 +1,27 @@
+<!-- Drop Reveal Component Display -->
 <template>
+
     <div
         v-if="isOpen"
         class="drop-reveal-overlay"
-        role="presentation"
-        v-on:click.self="closeReveal"
+        @click.self="closeReveal"
     >
+
         <section
             class="drop-reveal"
             role="dialog"
             aria-modal="true"
             aria-labelledby="drop-reveal-heading"
         >
-            <!-- Surprise state -->
+
+            <!-- Display Surprise -->
             <div
                 v-if="!isRevealed"
                 class="drop-surprise"
             >
+
                 <h2 id="drop-reveal-heading">
-                    You've got a drop. 👀
+                    You've got a Drop. 👀
                 </h2>
 
                 <p>
@@ -26,51 +30,54 @@
 
                 <button
                     type="button"
-                    v-on:click="revealDrop"
+                    @click="revealDrop"
                 >
                     Reveal My Drop
                 </button>
+
             </div>
 
-            <!-- Revealed Drop -->
+            <!-- Display Revealed Drop -->
             <div
                 v-else
                 class="drop-result"
             >
-                <p class="drop-label">
-                    Best Buds Drop
-                </p>
 
                 <h2 id="drop-reveal-heading">
-                    {{ collectibleName }}
+                    Drop Unlocked!
                 </h2>
 
-                <p
-                    v-if="collectibleDescription"
-                    class="drop-description"
-                >
-                    {{ collectibleDescription }}
-                </p>
+                <img
+                    v-if="dropArtwork"
+                    class="drop-reveal-artwork"
+                    :src="dropArtwork"
+                    :alt="dropArtworkAlt"
+                />
 
-                <p
-                    v-if="collectibleRarity"
-                    class="drop-rarity"
-                >
-                    {{ collectibleRarity }}
+                <p v-else>
+                    {{ collectibleName }}
                 </p>
 
                 <button
                     type="button"
-                    v-on:click="viewStash"
+                    @click="viewStash"
                 >
                     View My Stash
                 </button>
+
             </div>
+
         </section>
+
     </div>
+
 </template>
 
 <script>
+import {
+    getDropArtwork
+} from "../../data/collectibles/dropArtwork.js";
+
 export default {
     name: "DropReveal",
 
@@ -103,56 +110,38 @@ export default {
 
     computed: {
 
-        // Get the collectible from the user's unlocked collectible
+        // Get the collectible information
         collectible() {
 
             if (!this.userCollectible) {
-                return null;
+                return {};
             }
 
-            return this.userCollectible.collectible;
+            return this.userCollectible.collectible || {};
         },
 
         // Get the collectible name
         collectibleName() {
 
-            if (!this.collectible) {
-                return "New Drop";
-            }
+            return this.collectible.name
+                || "New Drop";
 
-            return this.collectible.name;
         },
 
-        // Get the collectible description
-        collectibleDescription() {
+        // Get the artwork for the collectible
+        dropArtwork() {
 
-            if (!this.collectible) {
-                return "";
-            }
+            return getDropArtwork(
+                this.collectibleName
+            );
 
-            return this.collectible.description;
         },
 
-        // Format the collectible rarity for display
-        collectibleRarity() {
+        // Get accessible text for the Drop artwork
+        dropArtworkAlt() {
 
-            if (
-                !this.collectible
-                || !this.collectible.rarity
-            ) {
-                return "";
-            }
+            return `${this.collectibleName} Best Buds Drop`;
 
-            return this.collectible.rarity
-                .toLowerCase()
-                .replace(
-                    /_/g,
-                    " "
-                )
-                .replace(
-                    /\b\w/g,
-                    letter => letter.toUpperCase()
-                );
         }
 
     },
@@ -165,6 +154,7 @@ export default {
             if (isOpen) {
                 this.isRevealed = false;
             }
+
         }
 
     },
@@ -178,16 +168,20 @@ export default {
 
         // Close the Drop reveal
         closeReveal() {
+
             this.$emit(
                 "close"
             );
+
         },
 
         // Continue to the user's My Stash collection
         viewStash() {
+
             this.$emit(
                 "view-stash"
             );
+
         }
 
     }
@@ -195,83 +189,5 @@ export default {
 </script>
 
 <style scoped>
-/* Full-screen background behind the Drop reveal */
-.drop-reveal-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 1.5rem;
-
-    background: rgba(0, 0, 0, 0.7);
-}
-
-/* Drop reveal modal */
-.drop-reveal {
-    width: 100%;
-    max-width: 32rem;
-
-    padding: 2.5rem;
-
-    background: #ffffff;
-    border-radius: 1rem;
-
-    text-align: center;
-
-    box-shadow:
-        0 1rem 3rem
-        rgba(0, 0, 0, 0.35);
-}
-
-/* Surprise and revealed Drop content */
-.drop-surprise,
-.drop-result {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-.drop-reveal h2,
-.drop-reveal p {
-    margin: 0;
-}
-
-/* Small label shown after revealing the Drop */
-.drop-label {
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-}
-
-/* Drop rarity */
-.drop-rarity {
-    font-weight: 700;
-}
-
-/* Drop reveal actions */
-.drop-reveal button {
-    margin-top: 0.75rem;
-    padding: 0.75rem 1.5rem;
-
-    border: none;
-    border-radius: 0.5rem;
-
-    cursor: pointer;
-}
-
-/* Keep the modal comfortable on smaller screens */
-@media (max-width: 600px) {
-    .drop-reveal-overlay {
-        padding: 1rem;
-    }
-
-    .drop-reveal {
-        padding: 2rem 1.5rem;
-    }
-}
 </style>

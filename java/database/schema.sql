@@ -8,6 +8,7 @@ BEGIN TRANSACTION;
 -- Remove existing tables
 DROP TABLE IF EXISTS
     user_collectibles,
+    user_activities,
     collectibles,
     password_reset_tokens,
     saved_dispensaries,
@@ -92,6 +93,21 @@ CREATE TABLE saved_dispensaries (
         UNIQUE (user_id, yelp_business_id),
 
     CONSTRAINT fk_saved_dispensaries_users
+        FOREIGN KEY (user_id)
+        REFERENCES users (user_id)
+        ON DELETE CASCADE
+);
+
+-- User Activities
+CREATE TABLE user_activities (
+    activity_id SERIAL PRIMARY KEY,
+    user_id INT NOT NULL,
+    activity_type VARCHAR(50) NOT NULL,
+    activity_value VARCHAR(150),
+    activity_date DATE NOT NULL DEFAULT CURRENT_DATE,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_user_activities_users
         FOREIGN KEY (user_id)
         REFERENCES users (user_id)
         ON DELETE CASCADE

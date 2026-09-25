@@ -20,3 +20,4 @@ Here are some examples I'd consider for your app:
 15  Completionist	                Reach a major exploration milestone	        Complex artwork combining motifs from earlier Drops
 16  Whole Picture                   Explored education, safety, products, etc
 17  Local	                        Explore 5 dispensaries near home	        Abstract street grid with five illuminated points
+18  Birthday                        Birthday Bud

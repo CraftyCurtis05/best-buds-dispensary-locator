@@ -174,7 +174,7 @@ VALUES (
 
 
 -- **************************************************************
--- Best Buds Collectibles
+-- Best Buds Drops
 -- **************************************************************
 
 INSERT INTO collectibles (
@@ -187,36 +187,132 @@ INSERT INTO collectibles (
 )
 VALUES
     (
-        'BIRTHDAY_BUD',
-        'Birthday Bud',
-        'A little something from your Best Buds. Happy birthday!',
+        'FIRST_CONTACT',
+        'First Contact',
+        'You viewed your first dispensary.',
+        'STANDARD',
+        'EXPLORE',
+        FALSE
+    ),
+    (
+        'NIGHT_OWL',
+        'Night Owl',
+        'You explored Best Buds late at night.',
+        'DISCOVERY',
+        'EXPLORE',
+        FALSE
+    ),
+    (
+        'OFF_THE_MAP',
+        'Off the Map',
+        'You explored outside your home area.',
+        'DISCOVERY',
+        'EXPLORE',
+        FALSE
+    ),
+    (
+        'EXPLORER',
+        'Explorer',
+        'You explored multiple areas of Best Buds.',
+        'MILESTONE',
+        'EXPLORE',
+        FALSE
+    ),
+    (
+        'CURATOR',
+        'Curator',
+        'You saved 10 dispensaries.',
+        'MILESTONE',
+        'STASH',
+        FALSE
+    ),
+    (
+        'STASHED',
+        'Stashed',
+        'You earned your first Drop.',
+        'STANDARD',
+        'STASH',
+        FALSE
+    ),
+    (
+        'DEEP_DIVE',
+        'Deep Dive',
+        'You explored multiple education articles.',
+        'STANDARD',
+        'LEARN',
+        FALSE
+    ),
+    (
+        'WELL_INFORMED',
+        'Well Informed',
+        'You explored several education categories.',
+        'DISCOVERY',
+        'LEARN',
+        FALSE
+    ),
+    (
+        'KNOW_YOUR_BUDS',
+        'Know Your Buds',
+        'You explored cannabis and product education.',
+        'MILESTONE',
+        'LEARN',
+        FALSE
+    ),
+    (
+        'READ_THE_LABEL',
+        'Read the Label',
+        'You explored product and label information.',
+        'DISCOVERY',
+        'LEARN',
+        FALSE
+    ),
+    (
+        'SAFETY_FIRST',
+        'Safety First',
+        'You explored your safety resources.',
+        'STANDARD',
+        'SAFETY',
+        FALSE
+    ),
+    (
+        'CLEAR_HEAD',
+        'Clear Head',
+        'You completed several safety topics.',
+        'MILESTONE',
+        'SAFETY',
+        FALSE
+    ),
+    (
+        'UNDISCOVERED',
+        'Undiscovered',
+        'Some things only appear after everyone else goes home.',
+        'HIDDEN',
         'SPECIAL',
-        'BIRTHDAY',
-        FALSE
-    ),
-    (
-        'TRAIL_BLAZER',
-        'Trail Blazer',
-        'There is always another trail to blaze.',
-        'COMMON',
-        'EXPLORATION',
-        FALSE
-    ),
-    (
-        'BUD_KEEPER',
-        'Bud Keeper',
-        'You know a good bud when you find one.',
-        'COMMON',
-        'COLLECTION',
-        FALSE
-    ),
-    (
-        'GOLDEN_BUD',
-        'Golden Bud',
-        'Some things are worth searching for.',
-        'RARE',
-        'SECRET',
         TRUE
+    ),
+    (
+        'THE_REGULAR',
+        'The Regular',
+        'You returned to Best Buds over multiple days.',
+        'MILESTONE',
+        'SPECIAL',
+        FALSE
+    ),
+    (
+        'COMPLETIONIST',
+        'Completionist',
+        'You reached a major exploration milestone.',
+        'MILESTONE',
+        'SPECIAL',
+        FALSE
+    ),
+    (
+        'THE_WHOLE_PICTURE',
+        'The Whole Picture',
+        'You explored across education, safety, and products.',
+        'MILESTONE',
+        'SPECIAL',
+        FALSE
     );
 
 COMMIT TRANSACTION;

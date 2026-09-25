@@ -1,11 +1,14 @@
-<!-- My Stash View -->
+<!-- My Stash View Display -->
 <template>
-    <section
+
+    <main
         id="my-stash-view"
         aria-labelledby="my-stash-heading"
     >
-        <!-- Page Header -->
+
+        <!-- Display View Header -->
         <header>
+
             <h1 id="my-stash-heading">
                 My Stash
             </h1>
@@ -13,15 +16,19 @@
             <p>
                 View the Best Buds Drops you have collected.
             </p>
+
         </header>
 
-        <!-- Best Buds Drops -->
+        <!-- Display Best Buds Drops -->
         <MyStash />
-    </section>
+
+    </main>
+
 </template>
 
 <script>
-import MyStash from "../components/profile/MyStash.vue";
+import MyStash
+    from "../components/collectibles/MyStash.vue";
 
 export default {
     name: "MyStashView",
@@ -33,4 +40,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

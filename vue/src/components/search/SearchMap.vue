@@ -1,104 +1,115 @@
 <!-- Search Map Component Display -->
 <template>
 
-    <section id="search-map">
+    <section
+        id="search-map"
+        aria-labelledby="search-map-title"
+    >
+
+        <!-- Display Component Title -->
+        <h2 id="search-map-title">
+            Dispensary Map
+        </h2>
 
         <!-- Display Google Map -->
         <GoogleMap
-            v-bind:api-key="googleMapsApiKey"
-            style="width: 60vw; height: 45vw"
-            v-bind:center="mapCenter"
-            v-bind:zoom="mapZoom"
+            :api-key="googleMapsApiKey"
+            class="dispensary-map"
+            :center="mapCenter"
+            :zoom="mapZoom"
         >
 
             <!-- Display Dispensary Markers -->
             <GoogleMapMarker
                 v-for="dispensary in mappedDispensaries"
-                v-bind:key="dispensary.id"
-                v-bind:options="{
+                :key="dispensary.id"
+                :options="{
                     position: dispensary.position
                 }"
-                v-on:click="selectDispensary(dispensary)"
+                @click="selectDispensary(dispensary)"
             />
 
             <!-- Display Selected Dispensary -->
             <InfoWindow
                 v-if="selectedDispensary"
-                v-bind:options="{
+                :options="{
                     position: selectedDispensary.position
                 }"
-                v-on:closeclick="clearSelectedDispensary"
+                @closeclick="clearSelectedDispensary"
             >
 
-                <div class="dispensary-info">
+                <div class="dispensary-map-info">
 
                     <!-- Display Dispensary Name -->
-                    <h2>
+                    <h3>
                         {{ selectedDispensary.name }}
-                    </h2>
+                    </h3>
 
                     <!-- Display Dispensary Rating -->
                     <p v-if="selectedDispensary.rating">
-                        {{ selectedDispensary.rating }} ★
-                        ({{ selectedDispensary.reviewCount }} reviews)
+                        {{ selectedDispensary.rating }} / 5
+
+                        <span
+                            v-if="
+                                selectedDispensary.reviewCount
+                            "
+                        >
+                            ·
+                            {{
+                                getReviewCountText(
+                                    selectedDispensary
+                                        .reviewCount
+                                )
+                            }}
+                        </span>
                     </p>
 
                     <!-- Display Dispensary Address -->
-                    <p>
-                        {{ selectedDispensary.address1 }}
-                    </p>
+                    <address>
 
-                    <p>
-                        {{ selectedDispensary.city }},
-                        {{ selectedDispensary.state }}
-                        {{ selectedDispensary.zipCode }}
-                    </p>
+                        <span
+                            v-if="
+                                selectedDispensary
+                                    .streetAddress
+                            "
+                        >
+                            {{
+                                selectedDispensary
+                                    .streetAddress
+                            }}
+                        </span>
+
+                        <span
+                            v-if="
+                                selectedDispensary
+                                    .cityStateZip
+                            "
+                        >
+                            {{
+                                selectedDispensary
+                                    .cityStateZip
+                            }}
+                        </span>
+
+                    </address>
 
                     <!-- Display Dispensary Phone Number -->
-                    <p v-if="selectedDispensary.phone">
+                    <a
+                        v-if="selectedDispensary.phone"
+                        :href="selectedDispensary.phoneLink"
+                    >
                         {{ selectedDispensary.phone }}
-                    </p>
+                    </a>
 
                     <!-- Display Yelp Link -->
                     <a
                         v-if="selectedDispensary.url"
-                        v-bind:href="selectedDispensary.url"
+                        :href="selectedDispensary.url"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         View on Yelp
                     </a>
-
-                    <!-- Display Saved Dispensary Control -->
-                    <div class="dispensary-save">
-
-                        <button
-                            type="button"
-                            v-bind:disabled="
-                                isSaving(selectedDispensary.id)
-                            "
-                            v-on:click="
-                                toggleSavedDispensary(
-                                    selectedDispensary
-                                )
-                            "
-                        >
-                            {{
-                                getSaveButtonText(
-                                    selectedDispensary
-                                )
-                            }}
-                        </button>
-
-                    </div>
-
-                    <!-- Display Saved Dispensary Error -->
-                    <p
-                        v-if="savedDispensaryError"
-                        role="alert"
-                    >
-                        {{ savedDispensaryError }}
-                    </p>
 
                 </div>
 
@@ -116,9 +127,6 @@ import {
     Marker as GoogleMapMarker,
     InfoWindow
 } from "vue3-google-map";
-
-import SavedDispensaryService
-    from "../../services/SavedDispensaryService.js";
 
 export default {
     name: "SearchMap",
@@ -138,18 +146,16 @@ export default {
                 lng: -82.9988
             },
 
-            selectedDispensary: null,
-            savedDispensaries: [],
-            savingDispensaryID: null,
-            savedDispensaryError: ''
-        }
+            selectedDispensary: null
+        };
     },
 
     computed: {
 
         // Get the Google Maps API key
         googleMapsApiKey() {
-            return import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+            return import.meta.env
+                .VITE_GOOGLE_MAPS_API_KEY;
         },
 
         // Get the current dispensary results from the store
@@ -161,33 +167,69 @@ export default {
         mappedDispensaries() {
 
             return this.dispensaries
-                .filter(dispensary => {
+                .filter((dispensary) => {
 
-                    return dispensary.coordinates
-                        && dispensary.coordinates.latitude
-                        && dispensary.coordinates.longitude;
+                    return (
+                        dispensary.coordinates
+                        && dispensary.coordinates
+                            .latitude !== undefined
+                        && dispensary.coordinates
+                            .longitude !== undefined
+                    );
+
                 })
-                .map(dispensary => {
+                .map((dispensary) => {
+
+                    const location =
+                        dispensary.location || {};
+
+                    const streetAddress = [
+                        location.address1,
+                        location.address2
+                    ]
+                        .filter(Boolean)
+                        .join(" ");
+
+                    const cityState = [
+                        location.city,
+                        location.state
+                    ]
+                        .filter(Boolean)
+                        .join(", ");
+
+                    const cityStateZip = [
+                        cityState,
+                        location.zip_code
+                    ]
+                        .filter(Boolean)
+                        .join(" ");
 
                     return {
                         id: dispensary.id,
                         name: dispensary.name,
-                        imageUrl: dispensary.image_url,
                         rating: dispensary.rating,
-                        reviewCount: dispensary.review_count,
-                        phone: dispensary.display_phone,
+                        reviewCount:
+                            dispensary.review_count,
+                        phone:
+                            dispensary.display_phone,
+                        phoneLink:
+                            dispensary.phone
+                                ? `tel:${dispensary.phone}`
+                                : "",
                         url: dispensary.url,
-
-                        address1: dispensary.location.address1,
-                        city: dispensary.location.city,
-                        state: dispensary.location.state,
-                        zipCode: dispensary.location.zip_code,
+                        streetAddress,
+                        cityStateZip,
 
                         position: {
-                            lat: dispensary.coordinates.latitude,
-                            lng: dispensary.coordinates.longitude
+                            lat:
+                                dispensary.coordinates
+                                    .latitude,
+                            lng:
+                                dispensary.coordinates
+                                    .longitude
                         }
                     };
+
                 });
         },
 
@@ -195,7 +237,8 @@ export default {
         mapCenter() {
 
             if (this.mappedDispensaries.length) {
-                return this.mappedDispensaries[0].position;
+                return this.mappedDispensaries[0]
+                    .position;
             }
 
             return this.defaultCenter;
@@ -213,179 +256,47 @@ export default {
 
     },
 
+    watch: {
+
+        // Close the selected marker when search results change
+        dispensaries() {
+            this.clearSelectedDispensary();
+        }
+
+    },
+
     methods: {
 
         // Display information for the selected dispensary
         selectDispensary(dispensary) {
             this.selectedDispensary = dispensary;
-            this.savedDispensaryError = '';
         },
 
         // Close the selected dispensary information
         clearSelectedDispensary() {
             this.selectedDispensary = null;
-            this.savedDispensaryError = '';
         },
 
-        // Get the user's saved dispensaries
-        getSavedDispensaries() {
+        // Format the dispensary review count
+        getReviewCountText(reviewCount) {
 
-            SavedDispensaryService.getSavedDispensaries()
-            .then(response => {
-
-                this.savedDispensaries =
-                    response.data || [];
-            })
-            .catch(error => {
-
-                console.error(
-                    "Unable to load saved dispensaries:",
-                    error
-                );
-
-                this.savedDispensaries = [];
-            });
-        },
-
-        // Check if a dispensary is already saved
-        isDispensarySaved(yelpBusinessId) {
-
-            return this.savedDispensaries.some(
-                dispensary =>
-                    dispensary.yelpBusinessId
-                        === yelpBusinessId
-            );
-        },
-
-        // Check if a dispensary is currently being saved or removed
-        isSaving(yelpBusinessId) {
-            return this.savingDispensaryID
-                === yelpBusinessId;
-        },
-
-        // Display the correct saved dispensary button text
-        getSaveButtonText(dispensary) {
-
-            if (this.isSaving(dispensary.id)) {
-
-                if (this.isDispensarySaved(dispensary.id)) {
-                    return "Removing...";
-                }
-
-                return "Saving...";
+            if (reviewCount === 1) {
+                return "1 review";
             }
 
-            if (this.isDispensarySaved(dispensary.id)) {
-                return "Saved";
-            }
-
-            return "Save";
-        },
-
-        // Save or remove the selected dispensary
-        toggleSavedDispensary(dispensary) {
-
-            this.savedDispensaryError = '';
-            this.savingDispensaryID = dispensary.id;
-
-            if (this.isDispensarySaved(dispensary.id)) {
-                this.removeSavedDispensary(dispensary.id);
-                return;
-            }
-
-            this.saveDispensary(dispensary);
-        },
-
-        // Save a dispensary for the authenticated user
-        saveDispensary(dispensary) {
-
-            const savedDispensary = {
-                yelpBusinessId: dispensary.id,
-                name: dispensary.name,
-                imageUrl: dispensary.imageUrl,
-                address: dispensary.address1,
-                city: dispensary.city,
-                stateAbbr: dispensary.state,
-                zipcode: dispensary.zipCode,
-                latitude: dispensary.position.lat,
-                longitude: dispensary.position.lng,
-                rating: dispensary.rating
-            };
-
-            SavedDispensaryService.saveDispensary(
-                savedDispensary
-            )
-            .then(response => {
-
-                const alreadySaved =
-                    this.isDispensarySaved(
-                        response.data.yelpBusinessId
-                    );
-
-                if (!alreadySaved) {
-                    this.savedDispensaries.push(
-                        response.data
-                    );
-                }
-            })
-            .catch(error => {
-
-                console.error(
-                    "Unable to save dispensary:",
-                    error
-                );
-
-                this.savedDispensaryError =
-                    "Unable to save this dispensary.";
-            })
-            .finally(() => {
-                this.savingDispensaryID = null;
-            });
-        },
-
-        // Remove a dispensary from the user's saved dispensaries
-        removeSavedDispensary(yelpBusinessId) {
-
-            SavedDispensaryService.deleteSavedDispensary(
-                yelpBusinessId
-            )
-            .then(response => {
-
-                if (response.status === 204) {
-
-                    this.savedDispensaries =
-                        this.savedDispensaries.filter(
-                            dispensary =>
-                                dispensary.yelpBusinessId
-                                    !== yelpBusinessId
-                        );
-                }
-            })
-            .catch(error => {
-
-                console.error(
-                    "Unable to remove saved dispensary:",
-                    error
-                );
-
-                this.savedDispensaryError =
-                    "Unable to remove this dispensary.";
-            })
-            .finally(() => {
-                this.savingDispensaryID = null;
-            });
+            return `${reviewCount} reviews`;
         }
 
-    },
-
-    created() {
-
-        // Load the user's saved dispensaries
-        this.getSavedDispensaries();
     }
 };
 </script>
 
 <style scoped>
+
+/* Display the dispensary map */
+.dispensary-map {
+    width: 100%;
+    height: 32rem;
+}
 
 </style>

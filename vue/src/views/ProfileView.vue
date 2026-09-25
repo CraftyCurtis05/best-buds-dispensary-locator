@@ -45,9 +45,8 @@
 <script>
 import ProfileImage from "../components/profile/ProfileImage.vue";
 import ProfileInfo from "../components/profile/ProfileInfo.vue";
-import SavedDispensaries
-    from "../components/profile/SavedDispensaries.vue";
-import MyStash from "../components/profile/MyStash.vue";
+import SavedDispensaries from "../components/dispensaries/SavedDispensaries.vue";
+import MyStash from "../components/collectibles/MyStash.vue";
 
 export default {
     name: "ProfileView",

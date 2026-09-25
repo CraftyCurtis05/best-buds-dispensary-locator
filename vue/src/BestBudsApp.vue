@@ -140,7 +140,7 @@ export default {
             this.isDropRevealOpen = false;
 
             this.$router.push({
-                name: "profile"
+                name: "my-stash"
             });
         }
 

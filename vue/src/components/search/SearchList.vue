@@ -4,73 +4,50 @@
     <section id="search-list">
 
         <!-- Display Component Title -->
-        <h1>List of dispensaries near you:</h1>
+        <h2>
+            Dispensaries near you
+        </h2>
 
         <!-- Display Loading Message -->
-        <p v-if="isLoading">
+        <p
+            v-if="isLoading"
+            role="status"
+        >
             Finding dispensaries...
         </p>
 
         <!-- Display Search Results -->
-        <section id="results" v-else-if="results.length">
+        <div
+            v-else-if="results.length"
+            id="results"
+        >
 
-            <article
-                class="result-object"
-                v-for="result in results"
-                v-bind:key="result.id"
-            >
+            <DispensaryCard
+                v-for="dispensary in results"
+                :key="dispensary.id"
+                :dispensary="dispensary"
+                :is-saved="isDispensarySaved(
+                    dispensary.id
+                )"
+                :is-saving="isSaving(
+                    dispensary.id
+                )"
+                @toggle-saved="toggleSavedDispensary"
+            />
 
-                <!-- Display Dispensary Name -->
-                <a
-                    v-bind:href="result.url"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <h2>{{ result.name }}</h2>
-                </a>
-
-                <!-- Display Dispensary Details -->
-                <div class="result-details">
-
-                    <h3 class="result-address">
-                        {{ result.location.address1 }}
-                        {{ result.location.address2 }}
-                    </h3>
-
-                    <h3 class="result-address">
-                        {{ result.location.city }},
-                        {{ result.location.state }}
-                        {{ result.location.zip_code }}
-                    </h3>
-
-                    <h3 class="result-phone">
-                        {{ result.display_phone }}
-                    </h3>
-
-                </div>
-
-                <!-- Display Saved Dispensary Control -->
-                <div class="result-save">
-
-                    <button
-                        type="button"
-                        v-bind:disabled="isSaving(result.id)"
-                        v-on:click="toggleSavedDispensary(result)"
-                    >
-                        {{
-                            getSaveButtonText(result)
-                        }}
-                    </button>
-
-                </div>
-
-            </article>
-
-        </section>
+        </div>
 
         <!-- Display No Results Message -->
         <p v-else-if="hasSearched">
             No dispensaries were found near this location.
+        </p>
+
+        <!-- Display Search Error -->
+        <p
+            v-if="searchError"
+            role="alert"
+        >
+            {{ searchError }}
         </p>
 
         <!-- Display Saved Dispensary Error -->
@@ -86,12 +63,16 @@
 </template>
 
 <script>
-import YelpService from '../../services/YelpService.js';
-import SavedDispensaryService
-    from '../../services/SavedDispensaryService.js';
+import DispensaryCard from "../dispensaries/DispensaryCard.vue";
+import YelpService from "../../services/YelpService.js";
+import SavedDispensaryService from "../../services/SavedDispensaryService.js";
 
 export default {
     name: "SearchList",
+
+    components: {
+        DispensaryCard
+    },
 
     data() {
         return {
@@ -99,8 +80,9 @@ export default {
             hasSearched: false,
             savedDispensaries: [],
             savingDispensaryID: null,
-            savedDispensaryError: ''
-        }
+            searchError: "",
+            savedDispensaryError: ""
+        };
     },
 
     computed: {
@@ -125,6 +107,7 @@ export default {
             if (newLocation) {
                 this.getResults(newLocation);
             }
+
         }
 
     },
@@ -136,100 +119,112 @@ export default {
 
             this.isLoading = true;
             this.hasSearched = true;
+            this.searchError = "";
 
-            this.$store.commit('SET_DISPENSARIES', []);
+            this.$store.commit(
+                "SET_DISPENSARIES",
+                []
+            );
 
-            YelpService.getDispensaries(locationID)
-            .then(response => {
+            YelpService
+                .getDispensaries(locationID)
+                .then((response) => {
 
-                const dispensaries = response.data.businesses || [];
+                    const dispensaries =
+                        response.data.businesses || [];
 
-                this.$store.commit(
-                    'SET_DISPENSARIES',
-                    dispensaries
-                );
-            })
-            .catch(error => {
+                    this.$store.commit(
+                        "SET_DISPENSARIES",
+                        dispensaries
+                    );
 
-                console.error(
-                    "Unable to load dispensaries:",
-                    error
-                );
+                })
+                .catch((error) => {
 
-                this.$store.commit('SET_DISPENSARIES', []);
-            })
-            .finally(() => {
-                this.isLoading = false;
-            });
+                    console.error(
+                        "Unable to load dispensaries:",
+                        error
+                    );
+
+                    this.$store.commit(
+                        "SET_DISPENSARIES",
+                        []
+                    );
+
+                    this.searchError =
+                        "Unable to load dispensaries. Please try again.";
+
+                })
+                .finally(() => {
+                    this.isLoading = false;
+                });
+
         },
 
         // Get the user's saved dispensaries
         getSavedDispensaries() {
 
-            SavedDispensaryService.getSavedDispensaries()
-            .then(response => {
+            SavedDispensaryService
+                .getSavedDispensaries()
+                .then((response) => {
 
-                this.savedDispensaries =
-                    response.data || [];
-            })
-            .catch(error => {
+                    this.savedDispensaries =
+                        response.data || [];
 
-                console.error(
-                    "Unable to load saved dispensaries:",
-                    error
-                );
+                })
+                .catch((error) => {
 
-                this.savedDispensaries = [];
-            });
+                    console.error(
+                        "Unable to load saved dispensaries:",
+                        error
+                    );
+
+                    this.savedDispensaries = [];
+
+                });
+
         },
 
         // Check if a dispensary is already saved
         isDispensarySaved(yelpBusinessId) {
 
             return this.savedDispensaries.some(
-                dispensary =>
+                (dispensary) =>
                     dispensary.yelpBusinessId
                         === yelpBusinessId
             );
+
         },
 
         // Check if a dispensary is currently being saved or removed
         isSaving(yelpBusinessId) {
+
             return this.savingDispensaryID
                 === yelpBusinessId;
-        },
 
-        // Display the correct saved dispensary button text
-        getSaveButtonText(dispensary) {
-
-            if (this.isSaving(dispensary.id)) {
-
-                if (this.isDispensarySaved(dispensary.id)) {
-                    return "Removing...";
-                }
-
-                return "Saving...";
-            }
-
-            if (this.isDispensarySaved(dispensary.id)) {
-                return "Saved";
-            }
-
-            return "Save";
         },
 
         // Save or remove the selected dispensary
         toggleSavedDispensary(dispensary) {
 
-            this.savedDispensaryError = '';
-            this.savingDispensaryID = dispensary.id;
+            this.savedDispensaryError = "";
+            this.savingDispensaryID =
+                dispensary.id;
 
-            if (this.isDispensarySaved(dispensary.id)) {
-                this.removeSavedDispensary(dispensary.id);
+            if (
+                this.isDispensarySaved(
+                    dispensary.id
+                )
+            ) {
+                this.removeSavedDispensary(
+                    dispensary.id
+                );
+
                 return;
             }
 
             this.saveDispensary(dispensary);
+
         },
 
         // Save a dispensary for the authenticated user
@@ -238,78 +233,93 @@ export default {
             const savedDispensary = {
                 yelpBusinessId: dispensary.id,
                 name: dispensary.name,
-                imageUrl: dispensary.image_url,
-                address: dispensary.location.address1,
-                city: dispensary.location.city,
-                stateAbbr: dispensary.location.state,
-                zipcode: dispensary.location.zip_code,
-                latitude: dispensary.coordinates.latitude,
-                longitude: dispensary.coordinates.longitude,
-                rating: dispensary.rating
+                imageUrl:
+                    dispensary.image_url || "",
+                address:
+                    dispensary.location?.address1 || "",
+                city:
+                    dispensary.location?.city || "",
+                stateAbbr:
+                    dispensary.location?.state || "",
+                zipcode:
+                    dispensary.location?.zip_code || "",
+                latitude:
+                    dispensary.coordinates?.latitude,
+                longitude:
+                    dispensary.coordinates?.longitude,
+                rating:
+                    dispensary.rating
             };
 
-            SavedDispensaryService.saveDispensary(
-                savedDispensary
-            )
-            .then(response => {
+            SavedDispensaryService
+                .saveDispensary(savedDispensary)
+                .then((response) => {
 
-                const alreadySaved =
-                    this.isDispensarySaved(
-                        response.data.yelpBusinessId
+                    const alreadySaved =
+                        this.isDispensarySaved(
+                            response.data.yelpBusinessId
+                        );
+
+                    if (!alreadySaved) {
+                        this.savedDispensaries.push(
+                            response.data
+                        );
+                    }
+
+                })
+                .catch((error) => {
+
+                    console.error(
+                        "Unable to save dispensary:",
+                        error
                     );
 
-                if (!alreadySaved) {
-                    this.savedDispensaries.push(
-                        response.data
-                    );
-                }
-            })
-            .catch(error => {
+                    this.savedDispensaryError =
+                        "Unable to save this dispensary.";
 
-                console.error(
-                    "Unable to save dispensary:",
-                    error
-                );
+                })
+                .finally(() => {
+                    this.savingDispensaryID = null;
+                });
 
-                this.savedDispensaryError =
-                    "Unable to save this dispensary.";
-            })
-            .finally(() => {
-                this.savingDispensaryID = null;
-            });
         },
 
         // Remove a dispensary from the user's saved dispensaries
         removeSavedDispensary(yelpBusinessId) {
 
-            SavedDispensaryService.deleteSavedDispensary(
-                yelpBusinessId
-            )
-            .then(response => {
+            SavedDispensaryService
+                .deleteSavedDispensary(
+                    yelpBusinessId
+                )
+                .then((response) => {
 
-                if (response.status === 204) {
+                    if (response.status === 204) {
 
-                    this.savedDispensaries =
-                        this.savedDispensaries.filter(
-                            dispensary =>
-                                dispensary.yelpBusinessId
-                                    !== yelpBusinessId
-                        );
-                }
-            })
-            .catch(error => {
+                        this.savedDispensaries =
+                            this.savedDispensaries.filter(
+                                (dispensary) =>
+                                    dispensary.yelpBusinessId
+                                        !== yelpBusinessId
+                            );
 
-                console.error(
-                    "Unable to remove saved dispensary:",
-                    error
-                );
+                    }
 
-                this.savedDispensaryError =
-                    "Unable to remove this dispensary.";
-            })
-            .finally(() => {
-                this.savingDispensaryID = null;
-            });
+                })
+                .catch((error) => {
+
+                    console.error(
+                        "Unable to remove saved dispensary:",
+                        error
+                    );
+
+                    this.savedDispensaryError =
+                        "Unable to remove this dispensary.";
+
+                })
+                .finally(() => {
+                    this.savingDispensaryID = null;
+                });
+
         }
 
     },
@@ -321,8 +331,11 @@ export default {
 
         // Load results when a search already exists
         if (this.locationID) {
-            this.getResults(this.locationID);
+            this.getResults(
+                this.locationID
+            );
         }
+
     }
 };
 </script>

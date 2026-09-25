@@ -1,11 +1,14 @@
-<!-- Saved Dispensaries View -->
+<!-- Saved Dispensaries View Display -->
 <template>
-    <section
+
+    <main
         id="saved-dispensaries-view"
         aria-labelledby="saved-dispensaries-heading"
     >
-        <!-- Page Header -->
+
+        <!-- Display View Header -->
         <header>
+
             <h1 id="saved-dispensaries-heading">
                 Saved Dispensaries
             </h1>
@@ -13,15 +16,18 @@
             <p>
                 View and manage the dispensaries you have saved.
             </p>
+
         </header>
 
-        <!-- Saved Dispensaries -->
+        <!-- Display Saved Dispensaries -->
         <SavedDispensaries />
-    </section>
+
+    </main>
+
 </template>
 
 <script>
-import SavedDispensaries from "../components/profile/SavedDispensaries.vue";
+import SavedDispensaries from "../components/dispensaries/SavedDispensaries.vue";
 
 export default {
     name: "SavedDispensariesView",
@@ -33,4 +39,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>
