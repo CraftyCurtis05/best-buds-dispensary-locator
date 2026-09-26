@@ -1,12 +1,15 @@
-<!-- Profile Setup View -->
+<!-- Profile Setup View Display -->
 <template>
-    <section
+
+    <div
         id="profile-setup-view"
         class="auth-view"
         aria-labelledby="profile-setup-heading"
     >
-        <!-- Profile setup introduction -->
+
+        <!-- Display Page Introduction -->
         <header class="auth-header">
+
             <img
                 :src="Logo"
                 class="auth-logo"
@@ -20,12 +23,16 @@
             <p>
                 Tell us a little about yourself and where you call home.
             </p>
+
         </header>
 
+        <!-- Display Profile Setup Form -->
         <ProfileSetupForm
             @profile-saved="handleProfileSaved"
         />
-    </section>
+
+    </div>
+
 </template>
 
 <script>
@@ -50,6 +57,7 @@ export default {
 
         // Store the completed profile and continue to Best Buds
         handleProfileSaved(profile) {
+
             this.$store.commit(
                 "SET_PROFILE",
                 profile
@@ -58,6 +66,7 @@ export default {
             this.$router.push({
                 name: "home"
             });
+
         }
 
     }
@@ -65,4 +74,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

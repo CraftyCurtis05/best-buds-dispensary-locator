@@ -1,29 +1,37 @@
+<!-- Profile Image Component Display -->
 <template>
+
     <section
+        id="profile-image"
         class="profile-image"
         aria-labelledby="profile-image-heading"
     >
-        <!-- Profile picture heading -->
+
+        <!-- Display Profile Image Introduction -->
         <header class="profile-image-header">
-            <h2 id="profile-image-heading">
+
+            <h3 id="profile-image-heading">
                 Profile Picture
-            </h2>
+            </h3>
 
             <p>
                 Add a picture to personalize your Best Buds profile.
             </p>
+
         </header>
 
-        <!-- Profile picture display -->
+        <!-- Display Profile Image -->
         <div class="profile-image-display">
+
             <img
                 :src="profileImageUrl"
                 alt="User profile"
                 class="profile-image-picture"
-            >
+            />
+
         </div>
 
-        <!-- Profile picture status -->
+        <!-- Display Loading Status -->
         <p
             v-if="isLoading"
             class="profile-image-status"
@@ -32,6 +40,7 @@
             Loading profile picture...
         </p>
 
+        <!-- Display Processing Status -->
         <p
             v-if="isProcessing"
             class="profile-image-status"
@@ -40,6 +49,7 @@
             Preparing your image...
         </p>
 
+        <!-- Display Profile Image Error -->
         <p
             v-if="errorMessage"
             class="profile-image-error"
@@ -48,6 +58,7 @@
             {{ errorMessage }}
         </p>
 
+        <!-- Display Profile Image Success -->
         <p
             v-if="successMessage"
             class="profile-image-success"
@@ -56,11 +67,12 @@
             {{ successMessage }}
         </p>
 
-        <!-- Profile picture controls -->
+        <!-- Display Profile Image Controls -->
         <div
             v-if="!isLoading"
             class="profile-image-controls"
         >
+
             <label
                 for="profile-image-input"
                 class="profile-image-label"
@@ -75,7 +87,7 @@
                 accept="image/*"
                 :disabled="isProcessing || isSubmitting"
                 @change="selectImage"
-            >
+            />
 
             <p class="profile-image-help">
                 Choose an image up to 20 MB.
@@ -91,7 +103,11 @@
                 "
                 @click="saveProfileImage"
             >
-                {{ isSubmitting ? "Uploading..." : uploadButtonText }}
+                {{
+                    isSubmitting
+                        ? "Uploading..."
+                        : uploadButtonText
+                }}
             </button>
 
             <button
@@ -102,13 +118,17 @@
             >
                 Remove Picture
             </button>
+
         </div>
+
     </section>
+
 </template>
 
 <script>
 import DefaultUserImage from "../../assets/profile/default-user.webp";
-import profileImageService from "../../services/ProfileImageService";
+
+import ProfileImageService from "../../services/ProfileImageService";
 
 export default {
     name: "ProfileImage",
@@ -116,24 +136,32 @@ export default {
     data() {
         return {
             DefaultUserImage,
+
             profileImageUrl: DefaultUserImage,
             objectUrl: null,
             selectedImage: null,
+
             hasProfileImage: false,
             isLoading: true,
             isProcessing: false,
             isSubmitting: false,
+
             errorMessage: "",
             successMessage: ""
         };
     },
 
     computed: {
+
+        // Get the appropriate profile image upload button text
         uploadButtonText() {
+
             return this.hasProfileImage
-                    ? "Replace Picture"
-                    : "Upload Picture";
+                ? "Replace Picture"
+                : "Upload Picture";
+
         }
+
     },
 
     created() {
@@ -145,6 +173,7 @@ export default {
     },
 
     methods: {
+
         // Load the user's saved profile picture
         async loadProfileImage() {
 
@@ -152,16 +181,21 @@ export default {
             this.errorMessage = "";
 
             try {
+
                 const response =
-                        await profileImageService.getProfileImage();
+                    await ProfileImageService
+                        .getProfileImage();
 
                 if (
                     response.status === 204
                     || !response.data
                     || response.data.size === 0
                 ) {
+
                     this.showDefaultImage();
+
                     return;
+
                 }
 
                 this.showProfileImage(
@@ -169,14 +203,18 @@ export default {
                 );
 
             } catch (error) {
+
                 this.showDefaultImage();
 
                 this.errorMessage =
-                        "Unable to load your profile picture.";
+                    "Unable to load your profile picture.";
 
             } finally {
+
                 this.isLoading = false;
+
             }
+
         },
 
         // Validate and prepare the image selected by the user
@@ -187,82 +225,95 @@ export default {
             this.successMessage = "";
 
             const imageFile =
-                    event.target.files[0];
+                event.target.files[0];
 
             if (!imageFile) {
                 return;
             }
 
             if (!imageFile.type.startsWith("image/")) {
+
                 this.errorMessage =
-                        "Please choose a valid image file.";
+                    "Please choose a valid image file.";
 
                 this.clearImageInput();
+
                 return;
+
             }
 
             if (imageFile.size > 20 * 1024 * 1024) {
+
                 this.errorMessage =
-                        "Profile image must be 20 MB or smaller.";
+                    "Profile image must be 20 MB or smaller.";
 
                 this.clearImageInput();
+
                 return;
+
             }
 
             this.isProcessing = true;
 
             try {
+
                 this.selectedImage =
-                        await this.compressImage(
-                            imageFile
-                        );
+                    await this.compressImage(
+                        imageFile
+                    );
 
             } catch (error) {
+
                 this.errorMessage =
-                        "Unable to prepare this image. Please try another image.";
+                    "Unable to prepare this image. Please try another image.";
 
                 this.clearImageInput();
 
             } finally {
+
                 this.isProcessing = false;
+
             }
+
         },
 
         // Resize and compress an image before uploading it
         async compressImage(imageFile) {
 
             const image =
-                    await this.loadImage(
-                        imageFile
-                    );
+                await this.loadImage(
+                    imageFile
+                );
 
             const dimensions =
-                    this.calculateImageDimensions(
-                        image.width,
-                        image.height,
-                        1000
-                    );
+                this.calculateImageDimensions(
+                    image.width,
+                    image.height,
+                    1000
+                );
 
             const canvas =
-                    document.createElement(
-                        "canvas"
-                    );
+                document.createElement(
+                    "canvas"
+                );
 
             canvas.width =
-                    dimensions.width;
+                dimensions.width;
 
             canvas.height =
-                    dimensions.height;
+                dimensions.height;
 
             const context =
-                    canvas.getContext(
-                        "2d"
-                    );
+                canvas.getContext(
+                    "2d"
+                );
 
             if (!context) {
+
                 throw new Error(
                     "Unable to prepare image canvas."
                 );
+
             }
 
             context.drawImage(
@@ -274,14 +325,16 @@ export default {
             );
 
             const imageBlob =
-                    await this.createImageBlob(
-                        canvas
-                    );
+                await this.createImageBlob(
+                    canvas
+                );
 
             if (imageBlob.size > 5 * 1024 * 1024) {
+
                 throw new Error(
                     "Compressed image is too large."
                 );
+
             }
 
             return new File(
@@ -291,6 +344,7 @@ export default {
                     type: "image/jpeg"
                 }
             );
+
         },
 
         // Load a selected file into a browser image
@@ -300,14 +354,15 @@ export default {
                 (resolve, reject) => {
 
                     const image =
-                            new Image();
+                        new Image();
 
                     const imageUrl =
-                            URL.createObjectURL(
-                                imageFile
-                            );
+                        URL.createObjectURL(
+                            imageFile
+                        );
 
                     image.onload = () => {
+
                         URL.revokeObjectURL(
                             imageUrl
                         );
@@ -315,9 +370,11 @@ export default {
                         resolve(
                             image
                         );
+
                     };
 
                     image.onerror = () => {
+
                         URL.revokeObjectURL(
                             imageUrl
                         );
@@ -327,12 +384,15 @@ export default {
                                 "Unable to load image."
                             )
                         );
+
                     };
 
                     image.src =
-                            imageUrl;
+                        imageUrl;
+
                 }
             );
+
         },
 
         // Calculate new dimensions without changing aspect ratio
@@ -343,14 +403,14 @@ export default {
         ) {
 
             const scale =
-                    Math.min(
-                        1,
-                        maximumDimension
-                                / Math.max(
-                                    originalWidth,
-                                    originalHeight
-                                )
-                    );
+                Math.min(
+                    1,
+                    maximumDimension
+                        / Math.max(
+                            originalWidth,
+                            originalHeight
+                        )
+                );
 
             return {
                 width: Math.round(
@@ -361,6 +421,7 @@ export default {
                     originalHeight * scale
                 )
             };
+
         },
 
         // Convert the resized canvas into a compressed JPEG
@@ -373,6 +434,7 @@ export default {
                         (imageBlob) => {
 
                             if (!imageBlob) {
+
                                 reject(
                                     new Error(
                                         "Unable to compress image."
@@ -380,17 +442,21 @@ export default {
                                 );
 
                                 return;
+
                             }
 
                             resolve(
                                 imageBlob
                             );
+
                         },
                         "image/jpeg",
                         0.85
                     );
+
                 }
             );
+
         },
 
         // Upload or replace the user's profile picture
@@ -405,8 +471,10 @@ export default {
             this.successMessage = "";
 
             try {
+
                 const response =
-                        await profileImageService.saveProfileImage(
+                    await ProfileImageService
+                        .saveProfileImage(
                             this.selectedImage
                         );
 
@@ -415,27 +483,34 @@ export default {
                     && response.data
                     && response.data.size > 0
                 ) {
+
                     this.showProfileImage(
                         response.data
                     );
 
                     this.selectedImage = null;
+
                     this.clearImageInput();
 
                     this.successMessage =
-                            "Profile picture updated.";
+                        "Profile picture updated.";
+
                 }
 
             } catch (error) {
+
                 this.errorMessage =
-                        this.getErrorMessage(
-                            error,
-                            "Unable to update your profile picture."
-                        );
+                    this.getErrorMessage(
+                        error,
+                        "Unable to update your profile picture."
+                    );
 
             } finally {
+
                 this.isSubmitting = false;
+
             }
+
         },
 
         // Delete the user's saved profile picture
@@ -446,26 +521,35 @@ export default {
             this.successMessage = "";
 
             try {
+
                 const response =
-                        await profileImageService.deleteProfileImage();
+                    await ProfileImageService
+                        .deleteProfileImage();
 
                 if (response.status === 204) {
+
                     this.showDefaultImage();
 
                     this.selectedImage = null;
+
                     this.clearImageInput();
 
                     this.successMessage =
-                            "Profile picture removed.";
+                        "Profile picture removed.";
+
                 }
 
             } catch (error) {
+
                 this.errorMessage =
-                        "Unable to remove your profile picture.";
+                    "Unable to remove your profile picture.";
 
             } finally {
+
                 this.isSubmitting = false;
+
             }
+
         },
 
         // Display an image returned by the profile image API
@@ -474,15 +558,15 @@ export default {
             this.revokeObjectUrl();
 
             this.objectUrl =
-                    URL.createObjectURL(
-                        imageBlob
-                    );
+                URL.createObjectURL(
+                    imageBlob
+                );
 
             this.profileImageUrl =
-                    this.objectUrl;
+                this.objectUrl;
 
-            this.hasProfileImage =
-                    true;
+            this.hasProfileImage = true;
+
         },
 
         // Return to the default profile image
@@ -491,30 +575,36 @@ export default {
             this.revokeObjectUrl();
 
             this.profileImageUrl =
-                    this.DefaultUserImage;
+                this.DefaultUserImage;
 
-            this.hasProfileImage =
-                    false;
+            this.hasProfileImage = false;
+
         },
 
         // Release temporary browser image URLs
         revokeObjectUrl() {
 
             if (this.objectUrl) {
+
                 URL.revokeObjectURL(
                     this.objectUrl
                 );
 
                 this.objectUrl = null;
+
             }
+
         },
 
         // Clear the file input after upload or removal
         clearImageInput() {
 
             if (this.$refs.imageInput) {
+
                 this.$refs.imageInput.value = "";
+
             }
+
         },
 
         // Get a safe message from an upload error
@@ -524,7 +614,7 @@ export default {
         ) {
 
             const responseMessage =
-                    error.response?.data?.message;
+                error.response?.data?.message;
 
             if (
                 typeof responseMessage === "string"
@@ -534,10 +624,13 @@ export default {
             }
 
             return defaultMessage;
+
         }
+
     }
 };
 </script>
 
 <style scoped>
+
 </style>

@@ -1,94 +1,247 @@
 <!-- Strain Guide View Display -->
 <template>
 
-  <!-- Browser Tab Title -->
-  <title>Strain Guide | Best Buds</title>
+    <div
+        id="strain-guide-view"
+        aria-labelledby="strain-guide-heading"
+    >
 
-  <!-- Display View Body -->
-  <body id="guide-body">
+        <!-- Display Page Introduction -->
+        <header
+            id="strain-guide-header"
+            aria-labelledby="strain-guide-heading"
+        >
 
-    <!-- Display Body's Main Content -->
-    <main id="guide-main">
+            <h1 id="strain-guide-heading">
+                Strain and Terpene Guide
+            </h1>
 
-      <!-- Display Body Title -->
-      <h1>Strain and Terpene Guide</h1>
+            <h2>
+                Ever wondered if your ideal strain is out
+                there, just waiting to make your day?
+            </h2>
 
-      <!-- Display Body Summary -->
-      <section id="summary">
-        <h2>Ever wondered if your ideal strain is out there, just waiting to make your day?</h2>
-        <p>Finding the perfect strain or terpene is like dating—sometimes you need a few awkward encounters before you find "the one." Our guide helps you swipe right on the ideal match for your mood, whether you’re seeking blissful relaxation or an energy boost to conquer your Netflix marathon. It’s all about finding your cannabis soulmate!</p>
-        <h3>Find the right one for you by using our complete guide below!</h3>
-      </section>
-      
-      <!-- Display Body Jump Links -->
-      <section id="links">
-        <div class="link"><a href="#strain-101">Strain 101</a></div>
-        <div class="link"><a href="#terpene-101">terpene 101</a></div>
-      </section>
+            <p>
+                Finding the perfect strain or terpene is like
+                dating—sometimes you need a few awkward
+                encounters before you find "the one." Our
+                guide helps you swipe right on the ideal match
+                for your mood, whether you’re seeking blissful
+                relaxation or an energy boost to conquer your
+                Netflix marathon. It’s all about finding your
+                cannabis soulmate!
+            </p>
 
-      <!-- Display Guide Information -->
-       <section id="guide">
+            <p>
+                Find the right one for you by using our
+                complete guide below!
+            </p>
 
-        <!-- Display Strain Jump Links -->
-        <section id="links">
-          <div class="strain-link"><a href="#indica">Indica</a></div>
-          <div class="strain-link"><a href="#sativa">Sativa</a></div>
-          <div class="strain-link"><a href="#hybrid">Hybrid</a></div>
+        </header>
+
+        <!-- Display Guide Jump Links -->
+        <nav
+            id="guide-links"
+            aria-label="Strain and terpene guide topics"
+        >
+
+            <ul>
+
+                <li>
+                    <a href="#strain-101">
+                        Strain 101
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#terpene-101">
+                        Terpene 101
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <!-- Display Strain Guide -->
+        <section
+            id="strain-guide"
+            aria-labelledby="strain-guide-section-heading"
+        >
+
+            <h2 id="strain-guide-section-heading">
+                Strain Guide
+            </h2>
+
+            <!-- Display Strain Jump Links -->
+            <nav
+                id="strain-links"
+                aria-label="Cannabis strain types"
+            >
+
+                <ul>
+
+                    <li>
+                        <a href="#indica">
+                            Indica
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#sativa">
+                            Sativa
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#hybrid">
+                            Hybrid
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <StrainGuide />
+
         </section>
 
-        <!-- Display Strain Guide Component -->
-        <article id="strain-101">
-          <StrainGuide />
-        </article>
+        <!-- Display Terpene Guide -->
+        <section
+            id="terpene-guide"
+            aria-labelledby="terpene-guide-section-heading"
+        >
 
-        <!-- Display terpene Jump Links -->
-        <section id="links">
-        <div class="terpene-link"><a href="#humulene">Humulene</a></div>
-        <div class="terpene-link"><a href="#limonene">Limonene</a></div>
-        <div class="terpene-link"><a href="#myrcene">Myrcene</a></div>
-        <div class="terpene-link"><a href="#caryophyllene">Caryophyllene</a></div>
-        <div class="terpene-link"><a href="#linalool">Linalool</a></div>
-        <div class="terpene-link"><a href="#apinene">Alpha-Pinene</a></div>
-        <div class="terpene-link"><a href="#bpinene">Beta-Pinene</a></div>
-        <div class="terpene-link"><a href="#terpinolene">Terpinolene</a></div>
-        <div class="terpene-link"><a href="#ocimene">Ocimene</a></div>
-        <div class="terpene-link"><a href="#eucalyptol">Eucalyptol</a></div>
-        <div class="terpene-link"><a href="#nerolidol">Nerolidol</a></div>
-        <div class="terpene-link"><a href="#borneol">Borneol</a></div>
-        <div class="terpene-link"><a href="#camphene">Camphene</a></div>
-      </section>
+            <h2 id="terpene-guide-section-heading">
+                Terpene Guide
+            </h2>
 
-        <!-- Display Terpene Guide Component -->
-        <article id="terpene-101">
-          <TerpeneGuide />
-        </article>
+            <!-- Display Terpene Jump Links -->
+            <nav
+                id="terpene-links"
+                aria-label="Cannabis terpenes"
+            >
 
-      </section>
+                <ul>
 
-    </main>
+                    <li>
+                        <a href="#humulene">
+                            Humulene
+                        </a>
+                    </li>
 
-    <!-- Display Articles Visit Component -->
-    <section id="articles-visit">
-      <ArticlesVisit />
-    </section>
+                    <li>
+                        <a href="#limonene">
+                            Limonene
+                        </a>
+                    </li>
 
-  </body>
+                    <li>
+                        <a href="#myrcene">
+                            Myrcene
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#caryophyllene">
+                            Caryophyllene
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#linalool">
+                            Linalool
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#apinene">
+                            Alpha-Pinene
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#bpinene">
+                            Beta-Pinene
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#terpinolene">
+                            Terpinolene
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#ocimene">
+                            Ocimene
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#eucalyptol">
+                            Eucalyptol
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#nerolidol">
+                            Nerolidol
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#borneol">
+                            Borneol
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#camphene">
+                            Camphene
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <TerpeneGuide />
+
+        </section>
+
+        <!-- Display Latest Articles -->
+        <section
+            id="strain-guide-articles"
+            aria-labelledby="strain-guide-articles-heading"
+        >
+
+            <h2 id="strain-guide-articles-heading">
+                Latest Cannabis Articles
+            </h2>
+
+            <ArticlesVisit />
+
+        </section>
+
+    </div>
 
 </template>
 
 <script>
-import StrainGuide from '../components/strain-guide/StrainGuide.vue';
-import TerpeneGuide from '../components/strain-guide/TerpeneGuide.vue';
-import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
+import StrainGuide from "../components/strain-guide/StrainGuide.vue";
+import TerpeneGuide from "../components/strain-guide/TerpeneGuide.vue";
+import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
 
 export default {
-  name: "StrainGuideView",
+    name: "StrainGuideView",
 
-  components: { 
-    StrainGuide,
-    TerpeneGuide,
-    ArticlesVisit
-  }
+    components: {
+        StrainGuide,
+        TerpeneGuide,
+        ArticlesVisit
+    }
 };
 </script>
 

@@ -1,183 +1,620 @@
 <!-- Strain 101 Component Display -->
 <template>
 
-    <!-- Display Component Body -->
-    <body id="strain-body">
+    <section
+        id="strain-101"
+        aria-labelledby="strain-101-heading"
+    >
 
-        <!-- Display Strain 101 Information -->
-        <section id="strain-101">
-            <h1>Strain 101</h1>
-            <p>Strains are like flavors of cannabis, each with unique effects. Sativas boost energy and creativity, indicas help you chill, and hybrids mix the best of both worlds. From Pineapple Express to Blue Dream, each strain has its own vibe and aroma. Explore and find the one that hits just right! </p>
+        <!-- Display Strain 101 Introduction -->
+        <h3 id="strain-101-heading">
+            Strain 101
+        </h3>
 
-            <!-- Display Indica Strain Information -->
-            <article id="indica">
-                <h2>Indica</h2>
-                <p>Great for evening use or when you need a break from the hustle and bustle!</p>
-                <h3>Effects:</h3>
-                <ul id="indica-effects">
-                    <li>Relaxation</li>
-                    <span>Deeply calming, often leading to a sense of tranquility.</span>
-                    <li>Sleepiness</li>
-                    <span>Aids in falling asleep and improving sleep quality.</span>
-                    <li>Pain Relief</li>
-                    <span>Effective in alleviating chronic pain and muscle tension.</span>
-                    <li>Increased Appetite</li>
-                    <span>Often causes the munchies, enhancing appetite.</span>
-                    <li>Euphoria</li>
-                    <span>Can produce a mild, comforting euphoria.</span>
-                    <li>Sedation</li>
-                    <span>May lead to drowsiness or heaviness in the body.</span>
-                    <li>Stress Reduction</li>
-                    <span>Helps in reducing anxiety and stress levels.</span>
-                    <li>Muscle Relaxation</li>
-                    <span>Provides relief from muscle spasms and tension.</span>
-                    <li>Anti-nausea effects</li>
-                    <span>Helps reduce feelings of queasiness and settle the stomach.</span>
-                </ul>  
-                <h3>Common Strains:</h3>
-                <ul id="strains">
-                    <a href="https://www.leafly.com/strains/granddaddy-purple" target="_blank"><li>Granddaddy Purple</li></a>
-                    <a href="https://www.leafly.com/strains/granddaddy-purple" target="_blank"><img :src="GranddaddyPurple"/></a>
+        <p>
+            Strains are like flavors of cannabis, each with
+            unique effects. Sativas boost energy and
+            creativity, indicas help you chill, and hybrids
+            mix the best of both worlds. From Pineapple
+            Express to Blue Dream, each strain has its own
+            vibe and aroma. Explore and find the one that hits
+            just right!
+        </p>
 
-                    <a href="https://www.leafly.com/strains/zkittlez" target="_blank"><li>The Original Z</li></a>
-                    <a href="https://www.leafly.com/strains/zkittlez" target="_blank"><img :src="OriginalZ"/></a>
+        <!-- Display Indica Strain Information -->
+        <article
+            id="indica"
+            aria-labelledby="indica-heading"
+        >
 
-                    <a href="https://www.leafly.com/strains/blueberry" target="_blank"><li>Blueberry</li></a>
-                    <a href="https://www.leafly.com/strains/blueberry" target="_blank"><img :src="Blueberry"/></a>
+            <h4 id="indica-heading">
+                Indica
+            </h4>
 
-                    <a href="https://www.leafly.com/strains/rainbow-runtz" target="_blank"><li>Rainbow Runtz</li></a>
-                    <a href="https://www.leafly.com/strains/rainbow-runtz" target="_blank"><img :src="RainbowRuntz"/></a>
+            <p>
+                Great for evening use or when you need a break
+                from the hustle and bustle!
+            </p>
 
-                    <a href="https://www.leafly.com/strains/king-louis" target="_blank"><li>King Louis</li></a>
-                    <a href="https://www.leafly.com/strains/king-louis" target="_blank"><img :src="KingLouis"/></a>           
+            <h5>
+                Effects
+            </h5>
 
-                    <a href="https://www.leafly.com/strains/watermelon" target="_blank"><li>Watermelon</li></a>  
-                    <a href="https://www.leafly.com/strains/watermelon" target="_blank"><img :src="Watermelon"/></a>
-                </ul>
-            </article>
+            <ul class="strain-effects">
 
-            <!-- Display Sativa Strain Information -->
-            <article id="sativa">
-                <h2>Sativa</h2>
-                <p>Perfect for daytime use, creative projects, or socializing!</p>
-                <h3>Effects:</h3>
-                <ul id="sativa-effects">
-                    <li>Increased Energy</li>
-                    <span>Boosts motivation and helps you stay active.</span>
-                    <li>Enhanced Focus</li>
-                    <span>Sharpens concentration and creativity.</span>
-                    <li>Euphoria</li>
-                    <span>Creates a happy, uplifting feeling.</span>
-                    <li>Mood Enhancement</li>
-                    <span>Can improve mood and reduce feelings of depression.</span>
-                    <li>Increased Sociability</li>
-                    <span>Encourages conversation and social interaction.</span>
-                    <li>Heightened Creativity</li>
-                    <span>Sparks creative thinking and ideas.</span>
-                    <li>Stress Relief</li>
-                    <span>Eases mental tension while keeping you alert.</span>
-                    <li>Mild Physical Relief</li>
-                    <span>Can help with headaches and light pain without heavy sedation.</span>
-                    <li>Increased Appetite</li>
-                    <span>Stimulates hunger, useful for those with appetite loss.</span>
-                </ul>
-                <h3>Common Strains:</h3>
-                <ul id="strains">
-                    <a href="https://www.leafly.com/strains/durban-poison" target="_blank"><li>Durban Poison</li></a>
-                    <a href="https://www.leafly.com/strains/durban-poison" target="_blank"><img :src="DurbanPoison"/></a>
-                    
-                    <a href="https://www.leafly.com/strains/tropicana-cookies" target="_blank"><li>Tropicana Cookies</li></a>
-                    <a href="https://www.leafly.com/strains/tropicana-cookies" target="_blank"><img :src="TropicanaCookies"/></a>
+                <li>
+                    <strong>Relaxation:</strong>
+                    Deeply calming, often leading to a sense
+                    of tranquility.
+                </li>
 
-                    <a href="https://www.leafly.com/strains/maui-wowie" target="_blank"><li>Maui Wowie</li></a>  
-                    <a href="https://www.leafly.com/strains/maui-wowie" target="_blank"><img :src="MauiWowie"/></a>
+                <li>
+                    <strong>Sleepiness:</strong>
+                    Aids in falling asleep and improving sleep
+                    quality.
+                </li>
 
-                    <a href="https://www.leafly.com/strains/acapulco-gold" target="_blank"><li>Acapulco Gold</li></a>  
-                    <a href="https://www.leafly.com/strains/acapulco-gold" target="_blank"><img :src="AcapulcoGold"/></a>
+                <li>
+                    <strong>Pain Relief:</strong>
+                    Effective in alleviating chronic pain and
+                    muscle tension.
+                </li>
 
-                    <a href="https://www.leafly.com/strains/tangie" target="_blank"><li>Tangie</li></a>  
-                    <a href="https://www.leafly.com/strains/tangie" target="_blank"><img :src="Tangie"/></a>
+                <li>
+                    <strong>Increased Appetite:</strong>
+                    Often causes the munchies, enhancing
+                    appetite.
+                </li>
 
-                    <a href="https://www.leafly.com/strains/super-lemon-haze" target="_blank"><li>Super Lemon Haze</li></a>  
-                    <a href="https://www.leafly.com/strains/super-lemon-haze" target="_blank"><img :src="SuperLemonHaze"/></a>
-                </ul>
-            </article>
+                <li>
+                    <strong>Euphoria:</strong>
+                    Can produce a mild, comforting euphoria.
+                </li>
 
-            <!-- Display Hybrid Strain Information -->
-            <article id="hybrid">
-                <h2>Hybrid</h2>
-                <p>Hybrids offer versatility, making them perfect for anytime use, depending on the specific balance of sativa and indica effects!</p>
-                <h3>Effects:</h3>
-                <ul id="hybrid-effects">
-                    <li>Balanced Relaxation</li>
-                    <span>Offers a mix of calmness without extreme sedation.</span>
-                    <li>Euphoric Uplift</li>
-                    <span>Provides mood-boosting effects, often leading to feelings of happiness and contentment.</span>
-                    <li>Mental Clarity</li>
-                    <span>Enhances focus and creativity while maintaining a relaxed state.</span>
-                    <li>Pain Relief</li>
-                    <span>Eases both physical and mental discomfort without overwhelming drowsiness.</span>
-                    <li>Stress Reduction</li>
-                    <span>Helps alleviate anxiety and stress, combining the relaxing effects of indica with the uplifting nature of sativa.</span>
-                    <li>Social Boost</li>
-                    <span>Can enhance sociability and interaction, making it great for social settings.</span>
-                    <li>Moderate Energy</li>
-                    <span>Offers a mild energy boost, ideal for daytime use without feeling overstimulated or sluggish.</span>
-                    <li>Focus and Creativity</li>
-                    <span>Enhanced mental clarity and inspiration.</span>
-                    <li>Appetite Stimulation</li>
-                    <span>Triggers the munchies, making it helpful for those with appetite issues.</span>
-                </ul>
-                <h3>Common Strains</h3>
-                <ul id="strains">
-                    <a href="https://www.leafly.com/strains/original-glue" target="_blank"><li>CG4</li></a>
-                    <a href="https://www.leafly.com/strains/original-glue" target="_blank"><img :src="CG4"/></a>
+                <li>
+                    <strong>Sedation:</strong>
+                    May lead to drowsiness or heaviness in the
+                    body.
+                </li>
 
-                    <a href="https://www.leafly.com/strains/wedding-cake" target="_blank"><li>Wedding Cake</li></a>
-                    <a href="https://www.leafly.com/strains/wedding-cake" target="_blank"><img :src="WeddingCake"/></a>
+                <li>
+                    <strong>Stress Reduction:</strong>
+                    Helps in reducing anxiety and stress
+                    levels.
+                </li>
 
-                    <a href="https://www.leafly.com/strains/blue-dream" target="_blank"><li>Blue Dream</li></a>
-                    <a href="https://www.leafly.com/strains/blue-dream" target="_blank"><img :src="BlueDream"/></a>
+                <li>
+                    <strong>Muscle Relaxation:</strong>
+                    Provides relief from muscle spasms and
+                    tension.
+                </li>
 
-                    <a href="https://www.leafly.com/strains/lemon-cherry-gelato" target="_blank"><li>Lemon Cherry Gelato</li></a>
-                    <a href="https://www.leafly.com/strains/lemon-cherry-gelato" target="_blank"><img :src="LemonCherryGelato"/></a>
+                <li>
+                    <strong>Anti-nausea effects:</strong>
+                    Helps reduce feelings of queasiness and
+                    settle the stomach.
+                </li>
 
-                    <a href="https://www.leafly.com/strains/runtz" target="_blank"><li>Runtz</li></a>
-                    <a href="https://www.leafly.com/strains/runtz" target="_blank"><img :src="Runtz"/></a>
+            </ul>
 
-                    <a href="https://www.leafly.com/strains/ice-cream-cake" target="_blank"><li>Ice Cream Cake</li></a>
-                    <a href="https://www.leafly.com/strains/ice-cream-cake" target="_blank"><img :src="IceCreamCake"/></a>
-                </ul>
-            </article>
+            <h5>
+                Common Strains
+            </h5>
 
-        </section>
+            <ul class="strain-list">
 
-    </body>
+                <li>
+                    <a
+                        href="https://www.leafly.com/strains/granddaddy-purple"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>
+                            Granddaddy Purple
+                        </span>
+
+                        <img
+                            :src="GranddaddyPurple"
+                            alt="Granddaddy Purple cannabis strain"
+                        />
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.leafly.com/strains/zkittlez"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>
+                            The Original Z
+                        </span>
+
+                        <img
+                            :src="OriginalZ"
+                            alt="The Original Z cannabis strain"
+                        />
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.leafly.com/strains/blueberry"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>
+                            Blueberry
+                        </span>
+
+                        <img
+                            :src="Blueberry"
+                            alt="Blueberry cannabis strain"
+                        />
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.leafly.com/strains/rainbow-runtz"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>
+                            Rainbow Runtz
+                        </span>
+
+                        <img
+                            :src="RainbowRuntz"
+                            alt="Rainbow Runtz cannabis strain"
+                        />
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.leafly.com/strains/king-louis"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>
+                            King Louis
+                        </span>
+
+                        <img
+                            :src="KingLouis"
+                            alt="King Louis cannabis strain"
+                        />
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.leafly.com/strains/watermelon"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>
+                            Watermelon
+                        </span>
+
+                        <img
+                            :src="Watermelon"
+                            alt="Watermelon cannabis strain"
+                        />
+                    </a>
+                </li>
+
+            </ul>
+
+        </article>
+
+        <!-- Display Sativa Strain Information -->
+        <article
+            id="sativa"
+            aria-labelledby="sativa-heading"
+        >
+
+            <h4 id="sativa-heading">
+                Sativa
+            </h4>
+
+            <p>
+                Perfect for daytime use, creative projects, or
+                socializing!
+            </p>
+
+            <h5>
+                Effects
+            </h5>
+
+            <ul class="strain-effects">
+
+                <li>
+                    <strong>Increased Energy:</strong>
+                    Boosts motivation and helps you stay
+                    active.
+                </li>
+
+                <li>
+                    <strong>Enhanced Focus:</strong>
+                    Sharpens concentration and creativity.
+                </li>
+
+                <li>
+                    <strong>Euphoria:</strong>
+                    Creates a happy, uplifting feeling.
+                </li>
+
+                <li>
+                    <strong>Mood Enhancement:</strong>
+                    Can improve mood and reduce feelings of
+                    depression.
+                </li>
+
+                <li>
+                    <strong>Increased Sociability:</strong>
+                    Encourages conversation and social
+                    interaction.
+                </li>
+
+                <li>
+                    <strong>Heightened Creativity:</strong>
+                    Sparks creative thinking and ideas.
+                </li>
+
+                <li>
+                    <strong>Stress Relief:</strong>
+                    Eases mental tension while keeping you
+                    alert.
+                </li>
+
+                <li>
+                    <strong>Mild Physical Relief:</strong>
+                    Can help with headaches and light pain
+                    without heavy sedation.
+                </li>
+
+                <li>
+                    <strong>Increased Appetite:</strong>
+                    Stimulates hunger, useful for those with
+                    appetite loss.
+                </li>
+
+            </ul>
+
+            <h5>
+                Common Strains
+            </h5>
+
+            <ul class="strain-list">
+
+                <li>
+                    <a
+                        href="https://www.leafly.com/strains/durban-poison"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>
+                            Durban Poison
+                        </span>
+
+                        <img
+                            :src="DurbanPoison"
+                            alt="Durban Poison cannabis strain"
+                        />
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.leafly.com/strains/tropicana-cookies"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>
+                            Tropicana Cookies
+                        </span>
+
+                        <img
+                            :src="TropicanaCookies"
+                            alt="Tropicana Cookies cannabis strain"
+                        />
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.leafly.com/strains/maui-wowie"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>
+                            Maui Wowie
+                        </span>
+
+                        <img
+                            :src="MauiWowie"
+                            alt="Maui Wowie cannabis strain"
+                        />
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.leafly.com/strains/acapulco-gold"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>
+                            Acapulco Gold
+                        </span>
+
+                        <img
+                            :src="AcapulcoGold"
+                            alt="Acapulco Gold cannabis strain"
+                        />
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.leafly.com/strains/tangie"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>
+                            Tangie
+                        </span>
+
+                        <img
+                            :src="Tangie"
+                            alt="Tangie cannabis strain"
+                        />
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.leafly.com/strains/super-lemon-haze"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>
+                            Super Lemon Haze
+                        </span>
+
+                        <img
+                            :src="SuperLemonHaze"
+                            alt="Super Lemon Haze cannabis strain"
+                        />
+                    </a>
+                </li>
+
+            </ul>
+
+        </article>
+
+        <!-- Display Hybrid Strain Information -->
+        <article
+            id="hybrid"
+            aria-labelledby="hybrid-heading"
+        >
+
+            <h4 id="hybrid-heading">
+                Hybrid
+            </h4>
+
+            <p>
+                Hybrids offer versatility, making them perfect
+                for anytime use, depending on the specific
+                balance of sativa and indica effects!
+            </p>
+
+            <h5>
+                Effects
+            </h5>
+
+            <ul class="strain-effects">
+
+                <li>
+                    <strong>Balanced Relaxation:</strong>
+                    Offers a mix of calmness without extreme
+                    sedation.
+                </li>
+
+                <li>
+                    <strong>Euphoric Uplift:</strong>
+                    Provides mood-boosting effects, often
+                    leading to feelings of happiness and
+                    contentment.
+                </li>
+
+                <li>
+                    <strong>Mental Clarity:</strong>
+                    Enhances focus and creativity while
+                    maintaining a relaxed state.
+                </li>
+
+                <li>
+                    <strong>Pain Relief:</strong>
+                    Eases both physical and mental discomfort
+                    without overwhelming drowsiness.
+                </li>
+
+                <li>
+                    <strong>Stress Reduction:</strong>
+                    Helps alleviate anxiety and stress,
+                    combining the relaxing effects of indica
+                    with the uplifting nature of sativa.
+                </li>
+
+                <li>
+                    <strong>Social Boost:</strong>
+                    Can enhance sociability and interaction,
+                    making it great for social settings.
+                </li>
+
+                <li>
+                    <strong>Moderate Energy:</strong>
+                    Offers a mild energy boost, ideal for
+                    daytime use without feeling overstimulated
+                    or sluggish.
+                </li>
+
+                <li>
+                    <strong>Focus and Creativity:</strong>
+                    Enhanced mental clarity and inspiration.
+                </li>
+
+                <li>
+                    <strong>Appetite Stimulation:</strong>
+                    Triggers the munchies, making it helpful
+                    for those with appetite issues.
+                </li>
+
+            </ul>
+
+            <h5>
+                Common Strains
+            </h5>
+
+            <ul class="strain-list">
+
+                <li>
+                    <a
+                        href="https://www.leafly.com/strains/original-glue"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>
+                            CG4
+                        </span>
+
+                        <img
+                            :src="CG4"
+                            alt="CG4 cannabis strain"
+                        />
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.leafly.com/strains/wedding-cake"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>
+                            Wedding Cake
+                        </span>
+
+                        <img
+                            :src="WeddingCake"
+                            alt="Wedding Cake cannabis strain"
+                        />
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.leafly.com/strains/blue-dream"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>
+                            Blue Dream
+                        </span>
+
+                        <img
+                            :src="BlueDream"
+                            alt="Blue Dream cannabis strain"
+                        />
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.leafly.com/strains/lemon-cherry-gelato"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>
+                            Lemon Cherry Gelato
+                        </span>
+
+                        <img
+                            :src="LemonCherryGelato"
+                            alt="Lemon Cherry Gelato cannabis strain"
+                        />
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.leafly.com/strains/runtz"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>
+                            Runtz
+                        </span>
+
+                        <img
+                            :src="Runtz"
+                            alt="Runtz cannabis strain"
+                        />
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.leafly.com/strains/ice-cream-cake"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span>
+                            Ice Cream Cake
+                        </span>
+
+                        <img
+                            :src="IceCreamCake"
+                            alt="Ice Cream Cake cannabis strain"
+                        />
+                    </a>
+                </li>
+
+            </ul>
+
+        </article>
+
+    </section>
 
 </template>
 
 <script>
 // Indica
-import GranddaddyPurple from '../../assets/strain-guide/strains/indica/granddaddy-purple.webp';
-import OriginalZ from '../../assets/strain-guide/strains/indica/original-z.webp';
-import Blueberry from '../../assets/strain-guide/strains/indica/blueberry.webp';
-import RainbowRuntz from '../../assets/strain-guide/strains/indica/rainbow-runtz.webp';
-import KingLouis from '../../assets/strain-guide/strains/indica/king-louis.webp';
-import Watermelon from '../../assets/strain-guide/strains/indica/watermelon.webp';
+import GranddaddyPurple from "../../assets/strain-guide/strains/indica/granddaddy-purple.webp";
+import OriginalZ from "../../assets/strain-guide/strains/indica/original-z.webp";
+import Blueberry from "../../assets/strain-guide/strains/indica/blueberry.webp";
+import RainbowRuntz from "../../assets/strain-guide/strains/indica/rainbow-runtz.webp";
+import KingLouis from "../../assets/strain-guide/strains/indica/king-louis.webp";
+import Watermelon from "../../assets/strain-guide/strains/indica/watermelon.webp";
+
 // Sativa
-import DurbanPoison from '../../assets/strain-guide/strains/sativa/durban-poison.webp';
-import TropicanaCookies from '../../assets/strain-guide/strains/sativa/tropicana-cookies.webp';
-import MauiWowie from '../../assets/strain-guide/strains/sativa/maui-wowie.webp';
-import AcapulcoGold from '../../assets/strain-guide/strains/sativa/acapulco-gold.webp';
-import Tangie from '../../assets/strain-guide/strains/sativa/tangie.webp';
-import SuperLemonHaze from '../../assets/strain-guide/strains/sativa/super-lemon-haze.webp';
+import DurbanPoison from "../../assets/strain-guide/strains/sativa/durban-poison.webp";
+import TropicanaCookies from "../../assets/strain-guide/strains/sativa/tropicana-cookies.webp";
+import MauiWowie from "../../assets/strain-guide/strains/sativa/maui-wowie.webp";
+import AcapulcoGold from "../../assets/strain-guide/strains/sativa/acapulco-gold.webp";
+import Tangie from "../../assets/strain-guide/strains/sativa/tangie.webp";
+import SuperLemonHaze from "../../assets/strain-guide/strains/sativa/super-lemon-haze.webp";
+
 // Hybrid
-import CG4 from '../../assets/strain-guide/strains/hybrid/cg4.webp';
-import WeddingCake from '../../assets/strain-guide/strains/hybrid/wedding-cake.webp';
-import BlueDream from '../../assets/strain-guide/strains/hybrid/blue-dream.webp';
-import LemonCherryGelato from '../../assets/strain-guide/strains/hybrid/lemon-cherry-gelato.webp';
-import Runtz from '../../assets/strain-guide/strains/hybrid/runtz.webp';
-import IceCreamCake from '../../assets/strain-guide/strains/hybrid/ice-cream-cake.webp';
+import CG4 from "../../assets/strain-guide/strains/hybrid/cg4.webp";
+import WeddingCake from "../../assets/strain-guide/strains/hybrid/wedding-cake.webp";
+import BlueDream from "../../assets/strain-guide/strains/hybrid/blue-dream.webp";
+import LemonCherryGelato from "../../assets/strain-guide/strains/hybrid/lemon-cherry-gelato.webp";
+import Runtz from "../../assets/strain-guide/strains/hybrid/runtz.webp";
+import IceCreamCake from "../../assets/strain-guide/strains/hybrid/ice-cream-cake.webp";
 
 export default {
     name: "StrainGuide",
@@ -204,9 +641,9 @@ export default {
             LemonCherryGelato,
             Runtz,
             IceCreamCake
-        }
+        };
     }
-}
+};
 </script>
 
 <style scoped>

@@ -1,12 +1,12 @@
 <!-- My Stash View Display -->
 <template>
 
-    <main
+    <div
         id="my-stash-view"
         aria-labelledby="my-stash-heading"
     >
 
-        <!-- Display View Header -->
+        <!-- Display Page Introduction -->
         <header>
 
             <h1 id="my-stash-heading">
@@ -22,13 +22,12 @@
         <!-- Display Best Buds Drops -->
         <MyStash />
 
-    </main>
+    </div>
 
 </template>
 
 <script>
-import MyStash
-    from "../components/collectibles/MyStash.vue";
+import MyStash from "../components/collectibles/MyStash.vue";
 
 export default {
     name: "MyStashView",

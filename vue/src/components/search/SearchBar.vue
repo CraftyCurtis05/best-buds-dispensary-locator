@@ -20,7 +20,6 @@
             type="text"
             name="user-location"
             placeholder="Enter city, state, or ZIP code"
-            autocomplete="postal-code"
         />
 
         <button
@@ -38,6 +37,10 @@
 export default {
     name: "SearchBar",
 
+    emits: [
+        "search"
+    ],
+
     data() {
         return {
             locationID: ""
@@ -46,7 +49,7 @@ export default {
 
     methods: {
 
-        // Store the user's dispensary search location
+        // Start a dispensary search for the entered location
         search() {
 
             const location =
@@ -60,6 +63,12 @@ export default {
                 "SET_LOCATION",
                 location
             );
+
+            this.$emit(
+                "search",
+                location
+            );
+
         }
 
     }

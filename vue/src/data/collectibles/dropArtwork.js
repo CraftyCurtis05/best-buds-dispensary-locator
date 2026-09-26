@@ -17,7 +17,6 @@ import theWholePicture from "../../assets/collectibles/16-the-whole-picture.png"
 import localExplore from "../../assets/collectibles/17-local-explore.png";
 import birthdayBud from "../../assets/collectibles/18-birthday-bud.png";
 
-
 const dropArtwork = {
     FIRST_CONTACT: firstContact,
     NIGHT_OWL: nightOwl,
@@ -39,12 +38,13 @@ const dropArtwork = {
     BIRTHDAY_BUD: birthdayBud
 };
 
-
 // Get the artwork for a collectible
 export function getDropArtwork(
     collectibleCode
 ) {
+
     return dropArtwork[
         collectibleCode
     ] || null;
+
 }

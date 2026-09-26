@@ -1,12 +1,15 @@
-<!-- Login View -->
+<!-- Login View Display -->
 <template>
-    <section
+
+    <div
         id="login-view"
         class="auth-view"
         aria-labelledby="login-heading"
     >
-        <!-- Best Buds branding -->
+
+        <!-- Display Page Introduction -->
         <header class="auth-header">
+
             <img
                 :src="Logo"
                 class="auth-logo"
@@ -20,19 +23,23 @@
             <p>
                 Sign in to continue to Best Buds.
             </p>
+
         </header>
 
+        <!-- Display Login Form -->
         <LoginForm
             :registration-successful="registrationSuccessful"
             @authenticated="handleAuthentication"
         />
-    </section>
+
+    </div>
+
 </template>
 
 <script>
 import LoginForm from "../components/auth/LoginForm.vue";
 
-import profileService from "../services/ProfileService.js";
+import ProfileService from "../services/ProfileService.js";
 
 import Logo from "../assets/layout/logo/logo-dark-theme.png";
 
@@ -62,6 +69,7 @@ export default {
 
         // Store the user session and continue onboarding
         handleAuthentication(loginResponse) {
+
             this.saveUserSession(
                 loginResponse
             );
@@ -69,10 +77,12 @@ export default {
             return this.continueOnboarding(
                 loginResponse.user
             );
+
         },
 
         // Store the authenticated user and authorization token
         saveUserSession(loginResponse) {
+
             this.$store.commit(
                 "SET_AUTH_TOKEN",
                 loginResponse.token
@@ -82,10 +92,12 @@ export default {
                 "SET_USER",
                 loginResponse.user
             );
+
         },
 
         // Send the user to the next required onboarding step
         continueOnboarding(user) {
+
             if (!user.ageConfirmed) {
                 return this.$router.push({
                     name: "age-confirmation"
@@ -93,14 +105,18 @@ export default {
             }
 
             return this.checkProfile();
+
         },
 
         // Check whether the user has completed profile setup
         checkProfile() {
-            return profileService
+
+            return ProfileService
                 .getProfile()
                 .then((response) => {
+
                     if (response.status === 204) {
+
                         this.$store.commit(
                             "SET_PROFILE_MISSING"
                         );
@@ -108,6 +124,7 @@ export default {
                         return this.$router.push({
                             name: "profile-setup"
                         });
+
                     }
 
                     this.$store.commit(
@@ -118,7 +135,9 @@ export default {
                     return this.$router.push({
                         name: "home"
                     });
+
                 });
+
         }
 
     }
@@ -126,4 +145,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

@@ -1,64 +1,80 @@
 <!-- Articles View Display -->
 <template>
 
-  <!-- Browser Tab Title -->
-  <title>Articles | Best Buds</title>
+    <div
+        id="articles-view"
+        aria-labelledby="articles-heading"
+    >
 
-  <!-- Display View Body -->
-  <body id="articles-body">
+        <!-- Display Page Introduction -->
+        <header id="articles-header">
 
-    <!-- Display Body's Main Content -->
-    <main id="articles-main">
+            <h1 id="articles-heading">
+                The Cannabis Resource Center
+            </h1>
 
-      <!-- Display Body Title -->
-      <h1>The Cannabis Resource Center</h1>
+            <h2>
+                Explore the World of Cannabis
+            </h2>
 
-      <section id="summary">
-        <h2>Explore the World of Cannabis: Search Articles and Expand Your Mind!</h2>
-        <p>Our articles cover everything from strain breakdowns to the latest trends, so you can navigate the world of cannabis with confidence. Whether you're a beginner or a seasoned enthusiast, we've got something for everyone!</p>
-        <h3>Looking for more info? Dive into our library of cannabis articles below!</h3>
-      </section>  
-      
+            <p>
+                Our articles cover everything from strain
+                breakdowns to the latest trends, so you can
+                navigate the world of cannabis with confidence.
+                Whether you're a beginner or a seasoned
+                enthusiast, we've got something for everyone!
+            </p>
 
-      <!-- Display About Us Information -->
-      <section id="articles">
+            <p>
+                Looking for more info? Dive into our library
+                of cannabis articles below!
+            </p>
 
-          <!-- Display Articles Search Component -->
-          <article id="search">
+        </header>
+
+        <!-- Display Cannabis Articles -->
+        <section
+            id="cannabis-articles"
+            aria-labelledby="cannabis-articles-heading"
+        >
+
+            <h2 id="cannabis-articles-heading">
+                Cannabis Articles
+            </h2>
+
             <ArticlesSearch />
-          </article>
 
-      </section>
+        </section>
 
-    </main>
+        <!-- Display Strain Guide -->
+        <section
+            id="articles-strain-guide"
+            aria-labelledby="articles-strain-guide-heading"
+        >
 
-    <!-- Display Strain Guide Visit Component -->
-    <section id="strain-guide-visit">
-      <StrainGuideVisit />
-    </section>
+            <h2 id="articles-strain-guide-heading">
+                Explore Our Strain Guide
+            </h2>
 
-    <!-- Display Articles Visit Component -->
-    <section id="articles-visit">
-      <ArticlesVisit />
-    </section>
+            <StrainGuideVisit />
 
-  </body>
+        </section>
+
+    </div>
 
 </template>
 
 <script>
-import ArticlesSearch from '../components/articles/ArticlesSearch.vue';
-import StrainGuideVisit from '../components/strain-guide/StrainGuideVisit.vue';
-import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
+import ArticlesSearch from "../components/articles/ArticlesSearch.vue";
+import StrainGuideVisit from "../components/strain-guide/StrainGuideVisit.vue";
 
 export default {
-  name: "ArticlesView",
+    name: "ArticlesView",
 
-  components: { 
-    ArticlesSearch,
-    StrainGuideVisit,
-    ArticlesVisit
-  }
+    components: {
+        ArticlesSearch,
+        StrainGuideVisit
+    }
 };
 </script>
 

@@ -1,9 +1,9 @@
 <!-- Saved Dispensaries Component Display -->
 <template>
 
-    <section
+    <div
+        id="saved-dispensaries-list"
         class="saved-dispensaries"
-        aria-label="Saved dispensaries"
     >
 
         <!-- Display Loading Message -->
@@ -69,13 +69,14 @@
 
         </ul>
 
-    </section>
+    </div>
 
 </template>
 
 <script>
 import SavedDispensaryCard
     from "./SavedDispensaryCard.vue";
+
 import SavedDispensaryService
     from "../../services/SavedDispensaryService.js";
 
@@ -89,17 +90,16 @@ export default {
     data() {
         return {
             savedDispensaries: [],
+
             isLoading: true,
             deletingDispensaryID: null,
+
             errorMessage: ""
         };
     },
 
     created() {
-
-        // Load the user's saved dispensaries
         this.loadSavedDispensaries();
-
     },
 
     methods: {
@@ -117,8 +117,10 @@ export default {
                         .getSavedDispensaries();
 
                 if (response.status === 200) {
+
                     this.savedDispensaries =
                         response.data || [];
+
                 }
 
             } catch (error) {
@@ -132,7 +134,9 @@ export default {
                     "Unable to load your saved dispensaries.";
 
             } finally {
+
                 this.isLoading = false;
+
             }
 
         },
@@ -185,7 +189,9 @@ export default {
                     "Unable to remove this dispensary.";
 
             } finally {
+
                 this.deletingDispensaryID = null;
+
             }
 
         }

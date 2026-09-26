@@ -1,245 +1,554 @@
-# Final Vue Capstone Project Seed
-​
-This is the Vue starter project for the final capstone. This document walks you through how to set up and run the project. It also explains the project's features, such as Vue Router, Vuex, and authentication.
-​
-## Project setup
-​
-The first thing you'll need to do is to download any dependencies by running this command:
-​
-```
-npm install
-```
-​
-Next take a moment to review the `.env` file that's located in the root of the project. You can store environment variables that you want to use throughout your application in this file. When you open it, it'll look like this:
-​
-```
-VITE_REMOTE_API=http://localhost:9000
-```
-​
-*Note:* The Java Spring Boot application is configured to run on port 9000 instead of 8080.
-​
-Start your Vue application with the following command:
-​
-```
-npm run dev
-```
-​
-## Authentication
-​
-When you first run the project and visit the base URL, you're taken to a login page. This is because the home route `/` is secured by default. If you look in `src/router/index.js`, you'll see the following code:
-​
-```js
-router.beforeEach((to) => {
+# Best Buds Frontend
 
-  // Vuex code...
+The frontend for **Best Buds**, a Vue 3 web application designed to help users discover dispensaries, explore cannabis information, manage saved content, and interact with their personal Best Buds profile.
 
-  // Determine if the route requires Authentication
-  const requiresAuth = to.matched.some(x => x.meta.requiresAuth);
-​
-  // If it does and they are not logged in, send the user to "/login"
-  if (requiresAuth && store.state.token === '') {
-    return {name: "login"};
-  }
-  // Otherwise, do nothing and they'll go to their next destination
-});
+This directory contains the complete client-side application. It handles the user interface, navigation, application state, frontend validation, API communication, and interactive features while communicating with the separate Best Buds Spring Boot backend.
+
+---
+
+## Frontend Features
+
+The Best Buds frontend includes:
+
+- User registration and login
+- Age confirmation and onboarding
+- User profile setup and management
+- Profile image management
+- Account settings
+- Dispensary search
+- Interactive dispensary map
+- Featured dispensaries
+- Saved dispensaries
+- Cannabis articles
+- Cannabis news and news search
+- Cannabis product information
+- Strain and terpene guides
+- Cannabis safety information
+- Common cannabis questions
+- Cannabis overuse information
+- Cannabis legality information
+- Tips and tricks
+- Contact form
+- Best Buds Drops collectible system
+- Personal My Stash collection
+- Responsive navigation
+- Protected application routes
+- Persistent authenticated sessions
+
+---
+
+## Technologies
+
+### Core
+
+- Vue 3
+- JavaScript
+- Vite
+- HTML5
+- CSS3
+
+### Application
+
+- Vue Router
+- Vuex
+- Axios
+- vue3-google-map
+
+### Development
+
+- ESLint
+- Vite development server
+- Vite API proxy
+
+---
+
+## Project Structure
+
+```text
+vue/
+├── public/
+├── src/
+│   ├── api/
+│   ├── assets/
+│   ├── components/
+│   ├── data/
+│   ├── router/
+│   ├── services/
+│   ├── store/
+│   ├── views/
+│   ├── BestBudsApp.vue
+│   └── main.js
+├── .gitignore
+├── eslint.config.mjs
+├── index.html
+├── package.json
+├── package-lock.json
+├── README.md
+└── vite.config.mjs
 ```
-​
-This is a feature of Vue Router called [Navigation Guards](https://router.vuejs.org/guide/advanced/navigation-guards.html). You may not have learned about this in class, so take some time to read through the documentation to learn what they are and how they work.
-​
-The above code runs before each route. It first checks to see if the route requires authentication that is defined per route using the meta object key `requiresAuth`.
-​
-In the following configuration, you must be authenticated to view the home route while anyone can visit the login, logout, and registration routes:
-​
-```js
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView,
-    meta: {
-      requiresAuth: true
-    }
-  },
-  {
-    path: "/login",
-    name: "login",
-    component: LoginView,
-    meta: {
-      requiresAuth: false
-    }
-  },
-  {
-    path: "/logout",
-    name: "logout",
-    component: LogoutView,
-    meta: {
-      requiresAuth: false
-    }
-  },
-  {
-    path: "/register",
-    name: "register",
-    component: RegisterView,
-    meta: {
-      requiresAuth: false
-    }
-  }
-];
+
+### `components`
+
+Contains reusable and feature-specific Vue components.
+
+Components handle focused pieces of the user interface and feature behavior while allowing views to remain responsible for page composition.
+
+### `data`
+
+Contains frontend data used by application features and informational content.
+
+### `router`
+
+Contains the Vue Router configuration.
+
+The router controls application navigation, protected routes, page titles, and required onboarding steps.
+
+### `services`
+
+Contains the frontend API service layer.
+
+Services use Axios to communicate with the Best Buds backend and keep API requests separate from Vue components and views.
+
+### `store`
+
+Contains the Vuex store used for application-wide state.
+
+The store manages information such as:
+
+- Authentication token
+- Authenticated user
+- User profile
+- Profile loading state
+- Selected location
+- Dispensary search results
+
+### `views`
+
+Contains the application's routed pages.
+
+Views are responsible for page-level structure and composition while feature-specific behavior is kept inside components when appropriate.
+
+### `BestBudsApp.vue`
+
+The root Vue component.
+
+It manages the global application structure, including:
+
+- Application header
+- Main content
+- Page navigation helpers
+- Suggested destinations
+- Application footer
+- Best Buds Drop reveals
+
+### `main.js`
+
+The frontend application entry point.
+
+It restores saved authentication information, creates the Vuex store, creates the Vue Router instance, and mounts the Vue application.
+
+---
+
+## Frontend Architecture
+
+Best Buds follows a straightforward Vue structure:
+
+```text
+Views
+  ↓
+Components
+  ↓
+Services
+  ↓
+Best Buds Backend API
 ```
-​
-Next, the navigation guard checks to see if the route requires authentication and if an authentication token exists.
-​
-If authentication is not required, *or* the authentication token does exist—meaning it isn't an empty string—the user is routed to the requested route.
-​
-However, if authentication is required *and* the authentication token doesn't exist—meaning it's an empty string—the user is redirected to the `/login` route:
-​
-```js
-// If it does and they are not logged in, send the user to "/login"
-if (requiresAuth && store.state.token === '') {
-  return {name: "login"};
-}
-// Otherwise, do nothing and they'll go to their next destination
+
+Application-wide state is handled separately through Vuex:
+
+```text
+Vue Components
+      ↕
+   Vuex Store
 ```
-> Note: the application stores the current user (if any) and their authentication token in a centralized store using Vuex.
-​
-### Vuex
-​
-The state for this application is stored in `src/store/index.js` using Vuex. The state object has two values: `token` and `user`. When you log in, the back-end service returns an authentication token along with your user credentials.
-​
-The authentication token is sent in the `Authorization` header to verify your identify. To persist this token when the application is closed or the page is refreshed, you'll store the token in local storage.
-​
-The default token either comes from local storage or it's set to an empty string. As you learned in the previous section, if the route requires authentication and this token is empty, it redirects the user to the login page:
-​
-```js
-// src/main.js
-const currentToken = localStorage.getItem('token');
-if (currentToken) {
-  // Set token axios requests
-  axios.defaults.headers.common['Authorization'] = `Bearer ${currentToken}`;
-}
-​
-// src/store/index.js
-export function createStore(currentToken, currentUser) {
-  let store = _createStore({
-    state: {
-      token: currentToken || '',
-      user: currentUser || {}
-    },
-    // ...
-  });
-}
+
+The general responsibilities are:
+
+- **App** — global application structure and state
+- **Views** — page composition
+- **Components** — feature behavior and user interface
+- **Services** — backend API communication
+- **Store** — application-wide state
+- **Router** — navigation and route protection
+- **Data** — frontend content and configuration
+
+The project intentionally keeps these responsibilities separated without introducing unnecessary abstractions.
+
+---
+
+## API Services
+
+Frontend API requests are organized into focused service files.
+
+Current services include:
+
+```text
+AccountService.js
+AuthService.js
+CollectibleService.js
+NewsService.js
+ProfileImageService.js
+ProfileService.js
+SavedDispensaryService.js
+UserActivityService.js
+YelpService.js
 ```
-​
-### Login
-​
-When you reach the `/login` route, you'll see a bare login page. This is intentional. It's up to you to style this page to fit within your application.
-​
-When you fill in a username and password and click the "Sign In" button, the method `login()` is called. The `login()` method uses the `src/services/AuthService.js` to send a `POST` request to your API's `/login` route.
-​
-If you look at `AuthService`, you'll notice that there's no base URL set for Axios:
-​
+
+Each service is responsible for communicating with a related group of backend endpoints.
+
+For example:
+
 ```js
-import axios from 'axios';
-​
+import axios from "axios";
+
 export default {
-​
-  login(user) {
-    return axios.post('/login', user)
-  }
-​
-}
-```
-​
-This is because this value is set in `src/main.js` and the value comes from the `.env` property file you saw earlier:
-​
-```js
-axios.defaults.baseURL = import.meta.env.VITE_REMOTE_API;
-```
-​
-If you get a successful response (200), it contains the authentication token and user object. You'll set these in Vuex by committing mutations:
-​
-```js
-// src/views/LoginView.vue
-login() {
-  authService
-    .login(this.user)
-    .then(response => {
-      if (response.status == 200) {
-        this.$store.commit("SET_AUTH_TOKEN", response.data.token);
-        this.$store.commit("SET_USER", response.data.user);
-        this.$router.push("/");
-      }
-    })
-  // ...
-}
-```
-​
-When you call the `SET_AUTH_TOKEN` mutation, several things happen.
-​
-First, you set the `state.token` value to what was returned from the API's `/login` method. Next, you store that same value in local storage so that it persists across refreshes. Finally, you set the `Authorization` header in Axios so that every subsequent request contains the token. This way, you don't have to manually do this on every request:
-​
-```js
-mutations: {
-  SET_AUTH_TOKEN(state, token) {
-    state.token = token;
-    localStorage.setItem('token', token);
-    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-  }
-}
-```
-​
-Once the `login()` method finishes updating the store by committing the mutations, it forwards the user back to the homepage. They'll be able to see the homepage because they're authenticated.
-​
-### Logout
-​
-There's a logout link in `App.vue` that forwards the user to the `/logout` route. When the user reaches this route, you'll commit this mutation in the store called `LOGOUT`:
-​
-```js
-// src/views/LogoutView.vue
-export default {
-  created() {
-    this.$store.commit("LOGOUT");
-    this.$router.push("/login");
-  }
+
+    // Get the authenticated user's profile
+    getProfile() {
+        return axios.get(
+            "/api/profile"
+        );
+    }
+
 };
 ```
-​
-When the mutation is called, the token is removed from local storage, the token and user state are cleared, and the user is redirected back to the homepage. The homepage then forwards the user to the login page because they're no longer logged in:
-​
-```js
-mutations: {
-  LOGOUT(state) {
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
-    state.token = '';
-    state.user = {};
-    axios.defaults.headers.common = {};
-  }
-}
+
+Services return the Axios request so the component or view using the service can decide how to handle the response, loading state, and errors.
+
+---
+
+## Authentication
+
+Best Buds uses token-based authentication.
+
+After a successful login, the frontend stores the authentication token and authenticated user in Vuex and local storage.
+
+The token is also added to the default Axios authorization header:
+
+```text
+Authorization: Bearer <token>
 ```
-​
-### Register
-​
-When you reach the `/register` route, you'll see a bare registration page. Like the login page, this is intentional. You'll need to style this page to fit within your application.
-​
-When you fill in a username, password, confirm the password role, and click the "Create Account" button, the method `register()` is called. This calls the `register()` method in `src/services/AuthService.js`. This passes your user details to your back-end application's REST API to create a new user:
-​
-```js
-// src/views/RegisterView.vue
-methods: {
-  register() {
-  // ...
-  authService
-    .register(this.user)
-    .then((response) => {
-      if (response.status == 201) {
-        this.$router.push({
-          path: '/login',
-          query: { registration: 'success' },
-        });
-      }
-    })
-    // ...
-  }
-}
+
+When the application starts, `main.js` checks local storage for an existing authenticated session.
+
+If a valid saved session exists, the frontend restores the user and authentication token before creating the application.
+
+Logging out clears the authenticated state and removes the saved session information.
+
+---
+
+## Protected Routes
+
+Vue Router navigation guards protect authenticated pages.
+
+Before allowing access to a protected route, the application checks:
+
+1. The user is authenticated.
+2. The user has confirmed the age requirement.
+3. The user's profile has been loaded.
+4. The user has completed profile setup.
+
+This creates the following onboarding flow:
+
+```text
+Login / Register
+       ↓
+Age Confirmation
+       ↓
+Profile Setup
+       ↓
+Best Buds Application
 ```
+
+Users who have already completed a required onboarding step are redirected past that step.
+
+---
+
+## Application State
+
+Vuex manages state that needs to be available across multiple areas of the frontend.
+
+The main application state includes:
+
+```text
+token
+user
+profile
+profileLoaded
+locationID
+dispensaries
+```
+
+Authentication information is also stored in local storage so the user's session can survive a browser refresh.
+
+Feature-specific state remains inside the component that owns the feature whenever application-wide storage is unnecessary.
+
+---
+
+## Dispensary Search
+
+The dispensary search interface allows users to search for dispensaries based on location.
+
+The frontend communicates with the Best Buds backend rather than communicating directly with the external business API.
+
+```text
+Vue Frontend
+     ↓
+YelpService
+     ↓
+Best Buds Backend
+     ↓
+External Business API
+```
+
+Search results can be displayed as both dispensary information and map locations.
+
+Authenticated users can also save dispensaries to their account.
+
+---
+
+## Cannabis News
+
+The frontend retrieves cannabis news through the Best Buds backend.
+
+```text
+Vue Frontend
+     ↓
+NewsService
+     ↓
+Best Buds Backend
+     ↓
+External News API
+```
+
+Users can view recent cannabis news and perform their own news searches without exposing external API credentials in the browser.
+
+---
+
+## Best Buds Drops
+
+Best Buds Drops are collectible rewards that can be unlocked through application activity.
+
+The frontend periodically checks the backend for newly earned Drops.
+
+When one or more Drops are returned, they are placed into a reveal queue and displayed to the user individually.
+
+```text
+User Activity
+     ↓
+Backend Activity Record
+     ↓
+Drop Check
+     ↓
+Drop Reveal
+     ↓
+My Stash
+```
+
+Unlocked collectibles can be viewed later in the user's **My Stash** collection.
+
+The backend determines when a collectible has been earned, while the frontend handles the reveal and collection experience.
+
+---
+
+## Local Development
+
+### Requirements
+
+Before running the frontend, install:
+
+- Node.js
+- npm
+
+The Best Buds backend should also be available when testing features that require API requests.
+
+### Install Dependencies
+
+From the Vue project directory:
+
+```bash
+npm install
+```
+
+### Start the Development Server
+
+```bash
+npm run dev
+```
+
+Vite starts the frontend development server and provides the local development URL in the terminal.
+
+---
+
+## Backend API Proxy
+
+During local development, Vite proxies frontend requests beginning with:
+
+```text
+/api
+```
+
+to the local Best Buds Spring Boot backend:
+
+```text
+http://localhost:9000
+```
+
+This allows frontend services to use requests such as:
+
+```js
+axios.get(
+    "/api/profile"
+);
+```
+
+instead of placing the backend host directly inside every service.
+
+The development proxy is configured in:
+
+```text
+vite.config.mjs
+```
+
+Production API routing is handled separately by the deployment environment.
+
+---
+
+## Available Commands
+
+### Start Development Server
+
+```bash
+npm run dev
+```
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+Running the preview command automatically creates a production build first.
+
+### Run ESLint
+
+```bash
+npm run lint
+```
+
+---
+
+## Production Build
+
+Create the production frontend with:
+
+```bash
+npm run build
+```
+
+Vite creates the compiled application in:
+
+```text
+dist/
+```
+
+The `dist` directory contains the frontend files intended for production deployment and is excluded from Git.
+
+---
+
+## Code Organization
+
+The frontend is intentionally written with readability and maintainability in mind.
+
+The project generally follows these conventions:
+
+- Vue Options API
+- Four-space indentation
+- Descriptive variable and method names
+- Straightforward conditional logic
+- Early returns where they improve readability
+- Purpose-based comments
+- Semantic HTML
+- Accessible page and component structure
+- Feature-specific components
+- Thin API services
+- Application-wide state only when necessary
+- Minimal abstraction
+
+The goal is to keep the code understandable while maintaining clear separation between the major parts of the application.
+
+---
+
+## Accessibility
+
+Accessibility is considered throughout the frontend structure.
+
+The application uses features such as:
+
+- Semantic HTML elements
+- Logical heading hierarchy
+- Descriptive image alternative text
+- Keyboard-accessible controls
+- Accessible navigation landmarks
+- Form labels
+- Status messages
+- Meaningful link and button text
+- Page jump links
+- Focusable main content
+
+ARIA attributes are used when they provide additional meaning rather than as a replacement for semantic HTML.
+
+---
+
+## Frontend Dependencies
+
+The primary frontend dependencies are:
+
+```text
+axios
+vue
+vue-router
+vue3-google-map
+vuex
+```
+
+Development dependencies include:
+
+```text
+@eslint/js
+@vitejs/plugin-vue
+eslint
+eslint-plugin-vue
+globals
+vite
+```
+
+See `package.json` for the currently installed versions.
+
+---
+
+## Related Best Buds Projects
+
+This README documents only the **Best Buds Vue 3 frontend**.
+
+The Best Buds project also contains separate documentation for:
+
+- The Spring Boot backend
+- The complete Best Buds application
+
+Refer to those README files for backend architecture, database configuration, backend API implementation, and full-project documentation.

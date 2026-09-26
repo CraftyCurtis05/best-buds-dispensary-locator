@@ -1,23 +1,24 @@
-<!-- Articles Visit Component Body -->
+<!-- Articles Visit Component Display -->
 <template>
 
-    <!-- Display Component Body -->
-    <body id="articles-body">
+    <div id="articles-visit">
 
-        <!-- Display Articles Visit Information -->
-        <section id="articles-visit">
+        <!-- Display Articles Invitation -->
+        <h3>
+            Want to elevate your knowledge?
+        </h3>
 
-            <!-- Display Component Title -->
-            <h1>Want to elevate your knowledge?</h1>
+        <p>
+            Please
+            <router-link
+                :to="{ name: 'articles' }"
+            >
+                visit our articles page
+            </router-link>
+            to learn more.
+        </p>
 
-            <!-- Display Visit Articles Link That Routes To Articles View -->
-            <article id="articles-link">
-                <router-link v-bind:to="{ name:'articles' }">Visit our articles page</router-link>
-            </article>
-            
-        </section>
-
-    </body>
+    </div>
 
 </template>
 

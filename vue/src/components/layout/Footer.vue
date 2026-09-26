@@ -1,11 +1,14 @@
-<!-- Application Footer Component -->
+<!-- Application Footer Component Display -->
 <template>
+
     <footer
         v-if="isAuthenticated"
         id="app-footer"
     >
-        <!-- Best Buds Information -->
+
+        <!-- Display Best Buds Information -->
         <section aria-labelledby="footer-brand-heading">
+
             <h2 id="footer-brand-heading">
                 Best Buds
             </h2>
@@ -13,63 +16,90 @@
             <p>
                 We're Good To Grow!
             </p>
+
         </section>
 
-        <!-- Helpful Links -->
+        <!-- Display Helpful Links -->
         <nav aria-labelledby="footer-links-heading">
+
             <h2 id="footer-links-heading">
                 Helpful Links
             </h2>
 
-            <router-link :to="{ name: 'about' }">
-                About Best Buds
-            </router-link>
+            <ul>
 
-            <router-link :to="{ name: 'privacy-policy' }">
-                Privacy Policy
-            </router-link>
+                <li>
+                    <router-link :to="{ name: 'about' }">
+                        About Best Buds
+                    </router-link>
+                </li>
 
-            <router-link :to="{ name: 'contact-us' }">
-                Contact Us
-            </router-link>
+                <li>
+                    <router-link :to="{ name: 'privacy-policy' }">
+                        Privacy Policy
+                    </router-link>
+                </li>
+
+                <li>
+                    <router-link :to="{ name: 'contact-us' }">
+                        Contact Us
+                    </router-link>
+                </li>
+
+            </ul>
+
         </nav>
 
-        <!-- Social Links -->
+        <!-- Display Social Links -->
         <nav aria-labelledby="social-links-heading">
+
             <h2 id="social-links-heading">
                 Follow Best Buds
             </h2>
 
-            <a
-                href="https://github.com/CraftyCurtis05"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                GitHub
-            </a>
+            <ul>
 
-            <a
-                href="https://jennifercurtis.me/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Portfolio
-            </a>
+                <li>
+                    <a
+                        href="https://github.com/CraftyCurtis05"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        GitHub
+                    </a>
+                </li>
 
-            <a
-                href="https://www.linkedin.com/in/jcurtisdeveloper/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                LinkedIn
-            </a>
+                <li>
+                    <a
+                        href="https://jennifercurtis.me/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Portfolio
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="https://www.linkedin.com/in/jcurtisdeveloper/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        LinkedIn
+                    </a>
+                </li>
+
+            </ul>
+
         </nav>
 
-        <!-- Copyright -->
+        <!-- Display Copyright -->
         <p>
             &copy; {{ year }} {{ companyName }}
         </p>
+
     </footer>
+
 </template>
 
 <script>
@@ -98,4 +128,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

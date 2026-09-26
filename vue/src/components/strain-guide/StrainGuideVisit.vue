@@ -1,25 +1,24 @@
-<!-- Strain Guide Visit Component Body -->
+<!-- Strain Guide Visit Component Display -->
 <template>
 
-    <!-- Display Component Body -->
-    <body id="visit-body">
+    <div id="strain-guide-visit">
 
-        <!-- Display Strain Guide Visit Link -->
-        <section id="visit">
+        <!-- Display Strain Guide Invitation -->
+        <h3>
+            Eager to learn what’s behind the leaf?
+        </h3>
 
-            <h1>Eager to learn what’s behind the leaf?</h1>
+        <p>
+            Please check out our
+            <router-link
+                :to="{ name: 'strain-guide' }"
+            >
+                Strain Guide
+            </router-link>
+            for information.
+        </p>
 
-            <p id="guide-link">
-                Please check out our
-                <router-link :to="{ name: 'strain-guide' }">
-                    Strain Guide
-                </router-link>
-                for information.
-            </p>
-            
-        </section>
-
-    </body>
+    </div>
 
 </template>
 

@@ -1,9 +1,9 @@
 <!-- My Stash Component Display -->
 <template>
 
-    <section
+    <div
+        id="my-stash-list"
         class="my-stash"
-        aria-label="Best Buds Drops"
     >
 
         <!-- Display Loading Message -->
@@ -61,12 +61,13 @@
 
         </ul>
 
-    </section>
+    </div>
 
 </template>
 
 <script>
-import DropCard from "../collectibles/DropCard.vue";
+import DropCard from "./DropCard.vue";
+
 import CollectibleService from "../../services/CollectibleService.js";
 
 export default {
@@ -79,16 +80,15 @@ export default {
     data() {
         return {
             collectibles: [],
+
             isLoading: true,
+
             errorMessage: ""
         };
     },
 
     created() {
-
-        // Load the user's unlocked Drops
         this.loadCollectibles();
-
     },
 
     methods: {
@@ -119,7 +119,9 @@ export default {
 
                 })
                 .finally(() => {
+
                     this.isLoading = false;
+
                 });
 
         }

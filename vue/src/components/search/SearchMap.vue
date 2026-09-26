@@ -3,28 +3,30 @@
 
     <section
         id="search-map"
-        aria-labelledby="search-map-title"
+        aria-labelledby="search-map-heading"
     >
 
         <!-- Display Component Title -->
-        <h2 id="search-map-title">
+        <h3 id="search-map-heading">
             Dispensary Map
-        </h2>
+        </h3>
 
         <!-- Display Google Map -->
         <GoogleMap
             :api-key="googleMapsApiKey"
+            map-id="DEMO_MAP_ID"
             class="dispensary-map"
             :center="mapCenter"
             :zoom="mapZoom"
         >
 
             <!-- Display Dispensary Markers -->
-            <GoogleMapMarker
+            <AdvancedMarker
                 v-for="dispensary in mappedDispensaries"
                 :key="dispensary.id"
                 :options="{
-                    position: dispensary.position
+                    position: dispensary.position,
+                    title: dispensary.name
                 }"
                 @click="selectDispensary(dispensary)"
             />
@@ -41,12 +43,12 @@
                 <div class="dispensary-map-info">
 
                     <!-- Display Dispensary Name -->
-                    <h3>
+                    <h4>
                         {{ selectedDispensary.name }}
-                    </h3>
+                    </h4>
 
                     <!-- Display Dispensary Rating -->
-                    <p v-if="selectedDispensary.rating">
+                    <p v-if="hasSelectedRating">
                         {{ selectedDispensary.rating }} / 5
 
                         <span
@@ -124,19 +126,18 @@
 <script>
 import {
     GoogleMap,
-    Marker as GoogleMapMarker,
+    AdvancedMarker,
     InfoWindow
 } from "vue3-google-map";
 
-import UserActivityService
-    from "../../services/UserActivityService.js";
+import UserActivityService from "../../services/UserActivityService.js";
 
 export default {
     name: "SearchMap",
 
     components: {
         GoogleMap,
-        GoogleMapMarker,
+        AdvancedMarker,
         InfoWindow
     },
 
@@ -161,13 +162,29 @@ export default {
 
         // Get the Google Maps API key
         googleMapsApiKey() {
+
             return import.meta.env
                 .VITE_GOOGLE_MAPS_API_KEY;
+
         },
 
         // Get the current dispensary results from the store
         dispensaries() {
+
             return this.$store.state.dispensaries;
+
+        },
+
+        // Check if the selected dispensary has a rating
+        hasSelectedRating() {
+
+            return (
+                this.selectedDispensary?.rating
+                    !== null
+                && this.selectedDispensary?.rating
+                    !== undefined
+            );
+
         },
 
         // Get dispensaries that have valid map coordinates
@@ -212,18 +229,29 @@ export default {
                         .join(" ");
 
                     return {
-                        id: dispensary.id,
-                        name: dispensary.name,
-                        rating: dispensary.rating,
+                        id:
+                            dispensary.id,
+
+                        name:
+                            dispensary.name,
+
+                        rating:
+                            dispensary.rating,
+
                         reviewCount:
                             dispensary.review_count,
+
                         phone:
                             dispensary.display_phone,
+
                         phoneLink:
                             dispensary.phone
                                 ? `tel:${dispensary.phone}`
                                 : "",
-                        url: dispensary.url,
+
+                        url:
+                            dispensary.url,
+
                         streetAddress,
                         cityStateZip,
 
@@ -231,6 +259,7 @@ export default {
                             lat:
                                 dispensary.coordinates
                                     .latitude,
+
                             lng:
                                 dispensary.coordinates
                                     .longitude
@@ -238,27 +267,34 @@ export default {
                     };
 
                 });
+
         },
 
         // Center the map on the first search result
         mapCenter() {
 
-            if (this.mappedDispensaries.length) {
+            if (
+                this.mappedDispensaries.length
+            ) {
                 return this.mappedDispensaries[0]
                     .position;
             }
 
             return this.defaultCenter;
+
         },
 
         // Adjust the zoom when search results are displayed
         mapZoom() {
 
-            if (this.mappedDispensaries.length) {
+            if (
+                this.mappedDispensaries.length
+            ) {
                 return 11;
             }
 
             return 10;
+
         }
 
     },
@@ -267,7 +303,9 @@ export default {
 
         // Close the selected marker when search results change
         dispensaries() {
+
             this.clearSelectedDispensary();
+
         }
 
     },
@@ -283,10 +321,13 @@ export default {
             this.recordDispensaryView(
                 dispensary.id
             );
+
         },
 
         // Record that the user viewed a dispensary
-        recordDispensaryView(dispensaryID) {
+        recordDispensaryView(
+            dispensaryID
+        ) {
 
             if (!dispensaryID) {
                 return;
@@ -312,21 +353,27 @@ export default {
                     );
 
                 });
+
         },
 
         // Close the selected dispensary information
         clearSelectedDispensary() {
+
             this.selectedDispensary = null;
+
         },
 
         // Format the dispensary review count
-        getReviewCountText(reviewCount) {
+        getReviewCountText(
+            reviewCount
+        ) {
 
             if (reviewCount === 1) {
                 return "1 review";
             }
 
             return `${reviewCount} reviews`;
+
         }
 
     }

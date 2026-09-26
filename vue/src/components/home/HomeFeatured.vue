@@ -1,45 +1,54 @@
-<!-- Home Page Featured Component Display -->
+<!-- Home Featured Component Display -->
 <template>
 
-    <section id="featured">
+    <div id="home-featured">
 
         <!-- Display Featured Dispensary -->
-        <article id="details" v-if="featuredDispensary">
+        <article
+            v-if="featuredDispensary"
+            id="featured-details"
+            aria-labelledby="featured-dispensary-name"
+        >
 
             <!-- Display Dispensary Name -->
-            <h1>{{ featuredDispensary.name }}</h1>
+            <h3 id="featured-dispensary-name">
+                {{ featuredDispensary.name }}
+            </h3>
 
             <!-- Display Dispensary Image -->
             <a
-                v-bind:href="featuredDispensary.url"
+                v-if="featuredDispensary.url"
+                :href="featuredDispensary.url"
                 target="_blank"
                 rel="noopener noreferrer"
             >
                 <img
-                    v-bind:src="featuredDispensary.image_url"
-                    v-bind:alt="featuredDispensary.name"
+                    v-if="featuredDispensary.image_url"
+                    :src="featuredDispensary.image_url"
+                    :alt="`${featuredDispensary.name} dispensary`"
                 />
             </a>
 
             <!-- Display Dispensary Address -->
-            <h2 id="address1">
-                {{ featuredDispensary.location.address1 }}
-                {{ featuredDispensary.location.address2 }}
-            </h2>
+            <address v-if="featuredDispensary.location">
 
-            <h2 id="address2">
-                {{ featuredDispensary.location.city }},
-                {{ featuredDispensary.location.state }}
-                {{ featuredDispensary.location.zip_code }}
-            </h2>
+                <p v-if="streetAddress">
+                    {{ streetAddress }}
+                </p>
+
+                <p v-if="cityStateZip">
+                    {{ cityStateZip }}
+                </p>
+
+            </address>
 
             <!-- Display Dispensary Phone Number -->
-            <h3 id="phone">
+            <p v-if="featuredDispensary.display_phone">
                 {{ featuredDispensary.display_phone }}
-            </h3>
+            </p>
 
             <!-- Display Dispensary Rating -->
-            <p id="rating">
+            <p v-if="featuredDispensary.rating">
                 {{ featuredDispensary.rating }} ★
                 ({{ featuredDispensary.review_count }} reviews)
             </p>
@@ -47,21 +56,27 @@
         </article>
 
         <!-- Display Loading Message -->
-        <p v-else-if="isLoading">
+        <p
+            v-else-if="isLoading"
+            role="status"
+        >
             Finding today's featured dispensary...
         </p>
 
         <!-- Display Error Message -->
-        <p v-else>
+        <p
+            v-else
+            role="status"
+        >
             Featured dispensary is unavailable right now.
         </p>
 
-    </section>
+    </div>
 
 </template>
 
 <script>
-import YelpService from '../../services/YelpService.js';
+import YelpService from "../../services/YelpService.js";
 
 export default {
     name: "HomeFeatured",
@@ -70,7 +85,57 @@ export default {
         return {
             featuredDispensary: null,
             isLoading: true
+        };
+    },
+
+    computed: {
+
+        // Format the dispensary street address
+        streetAddress() {
+
+            if (!this.featuredDispensary?.location) {
+                return "";
+            }
+
+            return [
+                this.featuredDispensary.location.address1,
+                this.featuredDispensary.location.address2
+            ]
+                .filter(Boolean)
+                .join(" ");
+
+        },
+
+        // Format the dispensary city, state, and ZIP code
+        cityStateZip() {
+
+            if (!this.featuredDispensary?.location) {
+                return "";
+            }
+
+            const location =
+                this.featuredDispensary.location;
+
+            const cityState = [
+                location.city,
+                location.state
+            ]
+                .filter(Boolean)
+                .join(", ");
+
+            return [
+                cityState,
+                location.zip_code
+            ]
+                .filter(Boolean)
+                .join(" ");
+
         }
+
+    },
+
+    created() {
+        this.getFeaturedDispensary();
     },
 
     methods: {
@@ -78,21 +143,30 @@ export default {
         // Get today's featured dispensary
         getFeaturedDispensary() {
 
-            YelpService.getFeatured()
-            .then(response => {
-                this.featuredDispensary = response.data;
-            })
-            .catch(error => {
-                console.error("Unable to load featured dispensary:", error);
-            })
-            .finally(() => {
-                this.isLoading = false;
-            });
-        }
-    },
+            YelpService
+                .getFeatured()
+                .then((response) => {
 
-    created() {
-        this.getFeaturedDispensary();
+                    this.featuredDispensary =
+                        response.data;
+
+                })
+                .catch((error) => {
+
+                    console.error(
+                        "Unable to load featured dispensary:",
+                        error
+                    );
+
+                })
+                .finally(() => {
+
+                    this.isLoading = false;
+
+                });
+
+        }
+
     }
 };
 </script>

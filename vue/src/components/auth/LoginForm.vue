@@ -1,11 +1,12 @@
-<!-- Login Form -->
+<!-- Login Form Component Display -->
 <template>
-    <section
+
+    <div
         id="login-form"
         class="auth-form-section"
-        aria-label="Account login"
     >
-        <!-- Successful registration message -->
+
+        <!-- Display Successful Registration Message -->
         <p
             v-if="registrationSuccessful"
             class="form-success"
@@ -14,7 +15,7 @@
             Your account was created successfully. Please sign in.
         </p>
 
-        <!-- Login error -->
+        <!-- Display Login Error -->
         <p
             v-if="loginError"
             class="form-error"
@@ -23,12 +24,15 @@
             {{ loginErrorMsg }}
         </p>
 
+        <!-- Display Login Form -->
         <form
             class="auth-form"
             @submit.prevent="login"
         >
-            <!-- Username -->
+
+            <!-- Display Username Field -->
             <div class="form-input-group">
+
                 <label for="username">
                     Username
                 </label>
@@ -43,10 +47,12 @@
                     autofocus
                     @input="clearError"
                 />
+
             </div>
 
-            <!-- Password -->
+            <!-- Display Password Field -->
             <div class="form-input-group">
+
                 <label for="password">
                     Password
                 </label>
@@ -60,8 +66,10 @@
                     required
                     @input="clearError"
                 />
+
             </div>
 
+            <!-- Display Submit Button -->
             <button
                 type="submit"
                 :disabled="isSubmitting"
@@ -72,29 +80,37 @@
                         : "Sign In"
                 }}
             </button>
+
         </form>
 
+        <!-- Display Registration Link -->
         <p class="auth-link">
             Need an account?
 
-            <router-link :to="{ name: 'register' }">
+            <router-link
+                :to="{ name: 'register' }"
+            >
                 Create one.
             </router-link>
         </p>
-    </section>
+
+    </div>
+
 </template>
 
 <script>
-import authService from "../../services/AuthService.js";
+import AuthService from "../../services/AuthService.js";
 
 export default {
     name: "LoginForm",
 
     props: {
+
         registrationSuccessful: {
             type: Boolean,
             default: false
         }
+
     },
 
     emits: [
@@ -119,54 +135,76 @@ export default {
 
         // Sign in the user
         login() {
+
             this.clearError();
+
             this.isSubmitting = true;
 
-            authService
+            AuthService
                 .login(this.user)
                 .then((response) => {
+
                     if (response.status === 200) {
+
                         this.$emit(
                             "authenticated",
                             response.data
                         );
+
                     }
+
                 })
                 .catch((error) => {
-                    this.handleLoginError(error);
+
+                    this.handleLoginError(
+                        error
+                    );
+
                 })
                 .finally(() => {
+
                     this.isSubmitting = false;
+
                 });
+
         },
 
         // Show an appropriate login error
         handleLoginError(error) {
+
             this.loginError = true;
 
             if (!error.response) {
+
                 this.loginErrorMsg =
                     "Unable to connect to Best Buds. Please try again.";
 
                 return;
+
             }
 
             if (error.response.status === 401) {
+
                 this.loginErrorMsg =
                     "The username or password you entered is incorrect.";
 
                 return;
+
             }
 
             this.loginErrorMsg =
                 "Unable to sign in. Please try again.";
+
         },
 
         // Clear the current login error
         clearError() {
+
             this.loginError = false;
+
             this.loginErrorMsg =
                 "Unable to sign in.";
+
         }
 
     }
@@ -174,4 +212,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

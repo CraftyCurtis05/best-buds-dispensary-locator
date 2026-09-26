@@ -1,10 +1,12 @@
-<!-- Application Header Component -->
+<!-- Application Header Component Display -->
 <template>
+
     <header
         v-if="isAuthenticated"
         id="app-header"
     >
-        <!-- Application Brand -->
+
+        <!-- Display Application Brand -->
         <router-link
             :to="{ name: 'home' }"
             aria-label="Best Buds Home"
@@ -12,11 +14,13 @@
             Best Buds
         </router-link>
 
-        <!-- Main Application Navigation -->
+        <!-- Display Main Application Navigation -->
         <nav aria-label="Main Navigation">
             <NavBar />
         </nav>
+
     </header>
+
 </template>
 
 <script>
@@ -41,4 +45,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

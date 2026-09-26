@@ -1,21 +1,29 @@
 <!-- Main Navigation Component -->
 <template>
+
     <div
         v-if="isAuthenticated"
+        id="nav-bar"
         ref="navContainer"
         @keydown.esc="closeMenu"
     >
-        <!-- Primary Navigation -->
+
+        <!-- Display Primary Navigation -->
         <ul>
-            <!-- Home -->
+
+            <!-- Display Home Link -->
             <li>
-                <router-link :to="{ name: 'home' }">
+                <router-link
+                    :to="{ name: 'home' }"
+                    @click="closeMenu"
+                >
                     Home
                 </router-link>
             </li>
 
-            <!-- Discover Menu -->
+            <!-- Display Discover Menu -->
             <li>
+
                 <button
                     type="button"
                     aria-haspopup="true"
@@ -24,13 +32,16 @@
                     @click="toggleMenu('discover')"
                 >
                     Discover
-                    <span aria-hidden="true">▾</span>
+                    <span aria-hidden="true">
+                        ▾
+                    </span>
                 </button>
 
                 <ul
                     v-if="openMenu === 'discover'"
                     id="discover-menu"
                 >
+
                     <li>
                         <router-link
                             :to="{ name: 'search' }"
@@ -48,11 +59,14 @@
                             Saved Dispensaries
                         </router-link>
                     </li>
+
                 </ul>
+
             </li>
 
-            <!-- Learn Menu -->
+            <!-- Display Learn Menu -->
             <li>
+
                 <button
                     type="button"
                     aria-haspopup="true"
@@ -61,13 +75,16 @@
                     @click="toggleMenu('learn')"
                 >
                     Learn
-                    <span aria-hidden="true">▾</span>
+                    <span aria-hidden="true">
+                        ▾
+                    </span>
                 </button>
 
                 <ul
                     v-if="openMenu === 'learn'"
                     id="learn-menu"
                 >
+
                     <li>
                         <router-link
                             :to="{ name: 'tips-tricks' }"
@@ -130,21 +147,29 @@
                             Legality
                         </router-link>
                     </li>
+
                 </ul>
+
             </li>
 
-            <!-- News -->
+            <!-- Display News Link -->
             <li>
-                <router-link :to="{ name: 'news' }">
+                <router-link
+                    :to="{ name: 'news' }"
+                    @click="closeMenu"
+                >
                     News
                 </router-link>
             </li>
+
         </ul>
 
-        <!-- User Navigation -->
+        <!-- Display User Navigation -->
         <ul>
-            <!-- Profile Menu -->
+
+            <!-- Display Profile Menu -->
             <li>
+
                 <button
                     type="button"
                     aria-haspopup="true"
@@ -153,13 +178,16 @@
                     @click="toggleMenu('profile')"
                 >
                     Profile
-                    <span aria-hidden="true">▾</span>
+                    <span aria-hidden="true">
+                        ▾
+                    </span>
                 </button>
 
                 <ul
                     v-if="openMenu === 'profile'"
                     id="profile-menu"
                 >
+
                     <li>
                         <router-link
                             :to="{ name: 'profile' }"
@@ -186,10 +214,12 @@
                             Account Settings
                         </router-link>
                     </li>
+
                 </ul>
+
             </li>
 
-            <!-- Logout -->
+            <!-- Display Logout Button -->
             <li>
                 <button
                     type="button"
@@ -198,8 +228,11 @@
                     Logout
                 </button>
             </li>
+
         </ul>
+
     </div>
+
 </template>
 
 <script>
@@ -240,6 +273,7 @@ export default {
             "click",
             this.handleOutsideClick
         );
+
     },
 
     beforeUnmount() {
@@ -249,18 +283,21 @@ export default {
             "click",
             this.handleOutsideClick
         );
+
     },
 
     methods: {
 
         // Open the selected menu or close it if it is already open
         toggleMenu(menuName) {
+
             if (this.openMenu === menuName) {
                 this.openMenu = null;
                 return;
             }
 
             this.openMenu = menuName;
+
         },
 
         // Close the currently open dropdown menu
@@ -270,16 +307,19 @@ export default {
 
         // Close open menus when clicking outside the navigation
         handleOutsideClick(event) {
+
             if (
                 this.$refs.navContainer &&
                 !this.$refs.navContainer.contains(event.target)
             ) {
                 this.closeMenu();
             }
+
         },
 
         // Sign out the current user
         logout() {
+
             this.closeMenu();
 
             this.$store.commit("LOGOUT");
@@ -287,6 +327,7 @@ export default {
             this.$router.push({
                 name: "login"
             });
+
         }
 
     }
@@ -294,4 +335,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

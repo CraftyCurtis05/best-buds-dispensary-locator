@@ -16,12 +16,13 @@
 
             <header class="dispensary-header">
 
-                <h2>
+                <h4>
                     {{ dispensary.name }}
-                </h2>
+                </h4>
 
+                <!-- Display Dispensary Rating -->
                 <p
-                    v-if="dispensary.rating"
+                    v-if="hasRating"
                     class="dispensary-rating"
                 >
                     {{ dispensary.rating }} / 5
@@ -86,7 +87,10 @@
                 <button
                     type="button"
                     :disabled="isSaving"
-                    @click="$emit('toggle-saved', dispensary)"
+                    @click="$emit(
+                        'toggle-saved',
+                        dispensary
+                    )"
                 >
                     {{ saveButtonText }}
                 </button>
@@ -100,7 +104,8 @@
 </template>
 
 <script>
-import defaultDispensaryImage from "../../assets/search/default-dispensary-image.png";
+import DefaultDispensaryImage
+    from "../../assets/search/default-dispensary-image.png";
 
 export default {
     name: "DispensaryCard",
@@ -136,6 +141,16 @@ export default {
 
     computed: {
 
+        // Check if the dispensary has a rating
+        hasRating() {
+
+            return (
+                this.dispensary.rating !== null
+                && this.dispensary.rating !== undefined
+            );
+
+        },
+
         // Get the dispensary image or use the default image
         dispensaryImage() {
 
@@ -146,7 +161,8 @@ export default {
                 return this.dispensary.image_url;
             }
 
-            return defaultDispensaryImage;
+            return DefaultDispensaryImage;
+
         },
 
         // Get accessible text for the dispensary image
@@ -160,6 +176,7 @@ export default {
             }
 
             return "";
+
         },
 
         // Format the dispensary review count
@@ -173,6 +190,7 @@ export default {
             }
 
             return `${reviewCount} reviews`;
+
         },
 
         // Format the dispensary categories
@@ -182,9 +200,13 @@ export default {
                 this.dispensary.categories || [];
 
             return categories
-                .map(category => category.title)
+                .map(
+                    (category) =>
+                        category.title
+                )
                 .filter(Boolean)
                 .join(" · ");
+
         },
 
         // Format the dispensary street address
@@ -199,6 +221,7 @@ export default {
             ]
                 .filter(Boolean)
                 .join(" ");
+
         },
 
         // Format the dispensary city, state, and ZIP code
@@ -220,6 +243,7 @@ export default {
             ]
                 .filter(Boolean)
                 .join(" ");
+
         },
 
         // Convert the dispensary distance from meters to miles
@@ -233,9 +257,11 @@ export default {
             }
 
             const miles =
-                this.dispensary.distance / 1609.344;
+                this.dispensary.distance
+                / 1609.344;
 
             return `${miles.toFixed(1)} mi away`;
+
         },
 
         // Create a phone link from the dispensary phone number
@@ -246,6 +272,7 @@ export default {
             }
 
             return `tel:${this.dispensary.phone}`;
+
         },
 
         // Display the correct saved dispensary button text
@@ -258,6 +285,7 @@ export default {
                 }
 
                 return "Saving...";
+
             }
 
             if (this.isSaved) {
@@ -265,6 +293,7 @@ export default {
             }
 
             return "Save";
+
         }
 
     },
@@ -273,7 +302,9 @@ export default {
 
         // Use the default image if the dispensary image cannot load
         useDefaultImage() {
+
             this.imageLoadFailed = true;
+
         }
 
     }

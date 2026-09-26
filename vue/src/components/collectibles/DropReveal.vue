@@ -7,14 +7,14 @@
         @click.self="closeReveal"
     >
 
-        <section
+        <div
             class="drop-reveal"
             role="dialog"
             aria-modal="true"
             aria-labelledby="drop-reveal-heading"
         >
 
-            <!-- Display Surprise -->
+            <!-- Display Drop Surprise -->
             <div
                 v-if="!isRevealed"
                 class="drop-surprise"
@@ -47,6 +47,7 @@
                     Drop Unlocked!
                 </h2>
 
+                <!-- Display Drop Artwork -->
                 <img
                     v-if="dropArtwork"
                     class="drop-reveal-artwork"
@@ -54,10 +55,12 @@
                     :alt="dropArtworkAlt"
                 />
 
+                <!-- Display Drop Name -->
                 <p v-else>
                     {{ collectibleName }}
                 </p>
 
+                <!-- Display Stash Link -->
                 <button
                     type="button"
                     @click="viewStash"
@@ -67,7 +70,7 @@
 
             </div>
 
-        </section>
+        </div>
 
     </div>
 
@@ -83,13 +86,11 @@ export default {
 
     props: {
 
-        // Control whether the Drop reveal is displayed
         isOpen: {
             type: Boolean,
             default: false
         },
 
-        // Newly unlocked collectible returned by the backend
         userCollectible: {
             type: Object,
             default: null
@@ -117,7 +118,9 @@ export default {
                 return {};
             }
 
-            return this.userCollectible.collectible || {};
+            return this.userCollectible.collectible
+                || {};
+
         },
 
         // Get the collectible name
@@ -148,7 +151,7 @@ export default {
 
     watch: {
 
-        // Reset the reveal when a new Drop is opened
+        // Reset the reveal when a Drop is opened
         isOpen(isOpen) {
 
             if (isOpen) {
@@ -163,7 +166,9 @@ export default {
 
         // Reveal the newly unlocked Drop
         revealDrop() {
+
             this.isRevealed = true;
+
         },
 
         // Close the Drop reveal

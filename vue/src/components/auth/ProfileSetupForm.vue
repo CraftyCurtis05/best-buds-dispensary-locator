@@ -1,16 +1,19 @@
-<!-- Profile Setup Form -->
+<!-- Profile Setup Form Component Display -->
 <template>
-    <section
+
+    <div
+        id="profile-setup-form"
         class="auth-form-section"
-        aria-label="Profile setup"
     >
+
+        <!-- Display Profile Setup Information -->
         <p class="profile-setup-description">
             Your home location helps Best Buds find dispensaries near you.
             Your birthday can only be set once, so make sure it is correct
             before continuing.
         </p>
 
-        <!-- Profile setup error -->
+        <!-- Display Profile Setup Error -->
         <p
             v-if="profileError"
             class="form-error"
@@ -19,12 +22,15 @@
             {{ profileErrorMsg }}
         </p>
 
+        <!-- Display Profile Setup Form -->
         <form
             class="auth-form"
             @submit.prevent="saveProfile"
         >
-            <!-- First name -->
+
+            <!-- Display First Name Field -->
             <div class="form-input-group">
+
                 <label for="first-name">
                     First Name
                 </label>
@@ -40,10 +46,12 @@
                     autofocus
                     @input="clearError"
                 />
+
             </div>
 
-            <!-- Birthday -->
+            <!-- Display Birthday Field -->
             <div class="form-input-group">
+
                 <label for="birthday">
                     Birthday
                 </label>
@@ -62,10 +70,12 @@
                 <p class="form-help">
                     Your birthday can only be set once.
                 </p>
+
             </div>
 
-            <!-- Address -->
+            <!-- Display Address Field -->
             <div class="form-input-group">
+
                 <label for="address-line-1">
                     Home Address
                 </label>
@@ -80,10 +90,12 @@
                     required
                     @input="clearError"
                 />
+
             </div>
 
-            <!-- City -->
+            <!-- Display City Field -->
             <div class="form-input-group">
+
                 <label for="city">
                     City
                 </label>
@@ -98,10 +110,12 @@
                     required
                     @input="clearError"
                 />
+
             </div>
 
-            <!-- State -->
+            <!-- Display State Field -->
             <div class="form-input-group">
+
                 <label for="state">
                     State
                 </label>
@@ -129,10 +143,12 @@
                         {{ state.name }}
                     </option>
                 </select>
+
             </div>
 
-            <!-- ZIP code -->
+            <!-- Display ZIP Code Field -->
             <div class="form-input-group">
+
                 <label for="zipcode">
                     ZIP Code
                 </label>
@@ -149,8 +165,10 @@
                     required
                     @input="clearError"
                 />
+
             </div>
 
+            <!-- Display Submit Button -->
             <button
                 type="submit"
                 :disabled="isSubmitting"
@@ -161,12 +179,15 @@
                         : "Continue to Best Buds"
                 }}
             </button>
+
         </form>
-    </section>
+
+    </div>
+
 </template>
 
 <script>
-import profileService from "../../services/ProfileService.js";
+import ProfileService from "../../services/ProfileService.js";
 
 import states from "../../data/forms/states.js";
 
@@ -201,9 +222,11 @@ export default {
 
         // Prevent future birthdays from being selected
         maximumBirthday() {
+
             return new Date()
                 .toISOString()
                 .split("T")[0];
+
         }
 
     },
@@ -212,53 +235,73 @@ export default {
 
         // Save the user's initial profile information
         saveProfile() {
+
             this.clearError();
+
             this.isSubmitting = true;
 
-            profileService
+            ProfileService
                 .saveProfile(this.profile)
                 .then((response) => {
+
                     if (response.status === 200) {
+
                         this.$emit(
                             "profile-saved",
                             response.data
                         );
+
                     }
+
                 })
                 .catch((error) => {
-                    this.handleProfileError(error);
+
+                    this.handleProfileError(
+                        error
+                    );
+
                 })
                 .finally(() => {
+
                     this.isSubmitting = false;
+
                 });
+
         },
 
         // Show an appropriate profile setup error
         handleProfileError(error) {
+
             this.profileError = true;
 
             if (!error.response) {
+
                 this.profileErrorMsg =
                     "Unable to connect to Best Buds. Please try again.";
 
                 return;
+
             }
 
             if (error.response.status === 400) {
+
                 this.profileErrorMsg =
                     this.getValidationErrorMessage(
                         error.response.data
                     );
 
                 return;
+
             }
 
             this.profileErrorMsg =
                 "Unable to save your profile. Please try again.";
+
         },
 
         // Get a useful validation message from the server response
         getValidationErrorMessage(responseData) {
+
             if (
                 typeof responseData === "string"
                 && responseData.trim()
@@ -271,6 +314,7 @@ export default {
             }
 
             if (responseData?.errors) {
+
                 const validationErrors =
                     Object.values(
                         responseData.errors
@@ -279,16 +323,21 @@ export default {
                 if (validationErrors.length > 0) {
                     return validationErrors[0];
                 }
+
             }
 
             return "Please check your profile information and try again.";
+
         },
 
         // Clear the current profile setup error
         clearError() {
+
             this.profileError = false;
+
             this.profileErrorMsg =
                 "Unable to save your profile. Please try again.";
+
         }
 
     }
@@ -296,4 +345,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

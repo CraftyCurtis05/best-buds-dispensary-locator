@@ -1,48 +1,55 @@
 <!-- Search View Display -->
 <template>
 
-    <main id="search-main">
+    <div
+        id="search-view"
+        aria-labelledby="search-heading"
+    >
 
-        <!-- Display View Header -->
+        <!-- Display Page Introduction -->
         <header id="search-header">
 
-            <h1>Dispensary Locator</h1>
+            <h1 id="search-heading">
+                Dispensary Locator
+            </h1>
 
-            <section
-                id="summary"
-                aria-labelledby="search-summary-title"
-            >
-                <h2 id="search-summary-title">
-                    Need to find a dispensary?
-                </h2>
+            <h2>
+                Need to find a dispensary?
+            </h2>
 
-                <p>
-                    Lost in the sea of "where can I get my hands
-                    on some top-shelf green"? Fear not! Our
-                    dispensary locator is here to rescue you from
-                    your herbless woes. Just enter your location
-                    and let Best Buds help you find dispensaries
-                    nearby.
-                </p>
+            <p>
+                Lost in the sea of "where can I get my hands
+                on some top-shelf green"? Fear not! Our
+                dispensary locator is here to rescue you from
+                your herbless woes. Just enter your location
+                and let Best Buds help you find dispensaries
+                nearby.
+            </p>
 
-                <p>
-                    Use the search below to find dispensaries
-                    near you!
-                </p>
-            </section>
+            <p>
+                Use the search below to find dispensaries
+                near you!
+            </p>
 
         </header>
 
         <!-- Display Dispensary Search -->
         <section
-            id="search"
-            aria-label="Dispensary search"
+            id="dispensary-search"
+            aria-labelledby="dispensary-search-heading"
         >
 
-            <SearchBar />
+            <h2 id="dispensary-search-heading">
+                Find Dispensaries
+            </h2>
+
+            <SearchBar
+                @search="searchDispensaries"
+            />
 
             <SearchList
                 v-if="hasSearchLocation"
+                ref="searchList"
             />
 
             <SearchMap
@@ -51,12 +58,35 @@
 
         </section>
 
-        <!-- Display Additional Resources -->
-        <StrainGuideVisit />
+        <!-- Display Strain Guide -->
+        <section
+            id="search-strain-guide"
+            aria-labelledby="search-strain-guide-heading"
+        >
 
-        <ArticlesVisit />
+            <h2 id="search-strain-guide-heading">
+                Explore Our Strain Guide
+            </h2>
 
-    </main>
+            <StrainGuideVisit />
+
+        </section>
+
+        <!-- Display Latest Articles -->
+        <section
+            id="search-articles"
+            aria-labelledby="search-articles-heading"
+        >
+
+            <h2 id="search-articles-heading">
+                Latest Cannabis Articles
+            </h2>
+
+            <ArticlesVisit />
+
+        </section>
+
+    </div>
 
 </template>
 
@@ -86,14 +116,29 @@ export default {
 
         // Check if the user has entered a search location
         hasSearchLocation() {
+
             return Boolean(
                 this.$store.state.locationID
             );
+
         }
 
     },
 
     methods: {
+
+        // Start a dispensary search
+        searchDispensaries(location) {
+
+            this.$nextTick(() => {
+
+                this.$refs.searchList?.search(
+                    location
+                );
+
+            });
+
+        },
 
         // Pass the recorded activity to the application
         activityRecorded() {

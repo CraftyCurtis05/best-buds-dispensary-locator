@@ -14,6 +14,7 @@
         <!-- Display Drop Information -->
         <div class="drop-information">
 
+            <!-- Display Unlock Date -->
             <p
                 v-if="formattedUnlockedDate"
                 class="drop-unlocked-date"
@@ -48,14 +49,19 @@ export default {
 
         // Get the collectible information
         collectible() {
-            return this.userCollectible.collectible || {};
+
+            return this.userCollectible.collectible
+                || {};
+
         },
 
         // Get the artwork for the collectible
         dropArtwork() {
+
             return getDropArtwork(
                 this.collectible.code
             );
+
         },
 
         // Get accessible text for the Drop artwork
@@ -66,6 +72,7 @@ export default {
             }
 
             return `${this.collectible.name} Best Buds Drop`;
+
         },
 
         // Format the date the collectible was unlocked

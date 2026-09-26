@@ -1,25 +1,29 @@
-<!-- Register Form -->
+<!-- Register Form Component Display -->
 <template>
-    <section
+
+    <div
         id="register-form"
         class="auth-form-section"
-        aria-label="Account registration"
     >
+
+        <!-- Display Registration Error -->
+        <p
+            v-if="registrationErrors"
+            class="form-error"
+            role="alert"
+        >
+            {{ registrationErrorMsg }}
+        </p>
+
+        <!-- Display Registration Form -->
         <form
             class="auth-form"
             @submit.prevent="register"
         >
-            <!-- Registration error -->
-            <p
-                v-if="registrationErrors"
-                class="form-error"
-                role="alert"
-            >
-                {{ registrationErrorMsg }}
-            </p>
 
-            <!-- Username -->
+            <!-- Display Username Field -->
             <div class="form-input-group">
+
                 <label for="username">
                     Username
                 </label>
@@ -34,10 +38,12 @@
                     autofocus
                     @input="clearErrors"
                 />
+
             </div>
 
-            <!-- Email -->
+            <!-- Display Email Field -->
             <div class="form-input-group">
+
                 <label for="email">
                     Email
                 </label>
@@ -51,10 +57,12 @@
                     required
                     @input="clearErrors"
                 />
+
             </div>
 
-            <!-- Password -->
+            <!-- Display Password Field -->
             <div class="form-input-group">
+
                 <label for="password">
                     Password
                 </label>
@@ -69,10 +77,12 @@
                     required
                     @input="clearErrors"
                 />
+
             </div>
 
-            <!-- Confirm password -->
+            <!-- Display Confirm Password Field -->
             <div class="form-input-group">
+
                 <label for="confirm-password">
                     Confirm Password
                 </label>
@@ -87,8 +97,10 @@
                     required
                     @input="clearErrors"
                 />
+
             </div>
 
+            <!-- Display Submit Button -->
             <button
                 type="submit"
                 :disabled="isSubmitting"
@@ -99,20 +111,26 @@
                         : "Create Account"
                 }}
             </button>
+
         </form>
 
+        <!-- Display Login Link -->
         <p class="auth-link">
             Already have an account?
 
-            <router-link :to="{ name: 'login' }">
+            <router-link
+                :to="{ name: 'login' }"
+            >
                 Log in.
             </router-link>
         </p>
-    </section>
+
+    </div>
+
 </template>
 
 <script>
-import authService from "../../services/AuthService.js";
+import AuthService from "../../services/AuthService.js";
 
 export default {
     name: "RegisterForm",
@@ -141,69 +159,95 @@ export default {
 
         // Create a new Best Buds account
         register() {
+
             this.clearErrors();
 
             if (
                 this.user.password
                 !== this.user.confirmPassword
             ) {
+
                 this.registrationErrors = true;
+
                 this.registrationErrorMsg =
                     "Password and Confirm Password do not match.";
 
                 return;
+
             }
 
             this.isSubmitting = true;
 
-            authService
+            AuthService
                 .register(this.user)
                 .then((response) => {
+
                     if (response.status === 201) {
-                        this.$emit("registered");
+
+                        this.$emit(
+                            "registered"
+                        );
+
                     }
+
                 })
                 .catch((error) => {
-                    this.handleRegistrationError(error);
+
+                    this.handleRegistrationError(
+                        error
+                    );
+
                 })
                 .finally(() => {
+
                     this.isSubmitting = false;
+
                 });
+
         },
 
         // Show an appropriate account registration error
         handleRegistrationError(error) {
+
             this.registrationErrors = true;
 
             if (!error.response) {
+
                 this.registrationErrorMsg =
                     "Unable to connect to Best Buds. Please try again.";
 
                 return;
+
             }
 
             if (error.response.status === 400) {
+
                 this.registrationErrorMsg =
                     this.getValidationErrorMessage(
                         error.response.data
                     );
 
                 return;
+
             }
 
             if (error.response.status === 409) {
+
                 this.registrationErrorMsg =
                     "That username or email is already in use.";
 
                 return;
+
             }
 
             this.registrationErrorMsg =
                 "There were problems creating your account. Please try again.";
+
         },
 
         // Get a useful validation message from the server response
         getValidationErrorMessage(responseData) {
+
             if (
                 typeof responseData === "string"
                 && responseData.trim()
@@ -216,6 +260,7 @@ export default {
             }
 
             if (responseData?.errors) {
+
                 const validationErrors =
                     Object.values(
                         responseData.errors
@@ -224,16 +269,21 @@ export default {
                 if (validationErrors.length > 0) {
                     return validationErrors[0];
                 }
+
             }
 
             return "Please check your registration information and try again.";
+
         },
 
         // Clear the current account registration error
         clearErrors() {
+
             this.registrationErrors = false;
+
             this.registrationErrorMsg =
                 "There were problems creating your account.";
+
         }
 
     }
@@ -241,4 +291,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

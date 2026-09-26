@@ -1,40 +1,96 @@
 <!-- Search Articles Component Display -->
 <template>
 
-    <!-- Display Component Body -->
-     
-    <body id="search-body">
+    <div id="articles-search">
 
-        <!-- Display Search Bar that Takes in User Input as 'keyword' and Runs the searchArticles Function in Real-Time-->
-        <section id="search-bar">
-            <input id="user-input" name="user-input" type="text" v-model="keyword" placeholder="Enter Search Keyword"/>
-        </section>
+        <!-- Display Article Search -->
+        <form
+            id="article-search-bar"
+            role="search"
+            @submit.prevent
+        >
 
-        <!-- Display Error Message If Articles Array Is Empty After Keyword Search -->
-        <div id="error">{{ this.error }}</div>
+            <label
+                for="article-search-input"
+                class="visually-hidden"
+            >
+                Search cannabis articles
+            </label>
 
-        <!-- Display Results List from Array of Objects Created in searchArticles Function -->
-        <section id="search-list">
+            <input
+                id="article-search-input"
+                v-model="keyword"
+                type="search"
+                name="article-search"
+                placeholder="Enter search keyword"
+            />
 
-            <!-- Loop Through Results Array and Bind Each Result Object By It's Title For Loop Function -->
-            <article id="results" v-for="result in searchArticles(keyword)" :key="result.title">
+        </form>
 
-                <!-- Display Result Image and Bind to Result URL -->
-                <a v-bind:href="result.url" target="_blank">
-                    <img :src="(`src/assets/articles/${result.image}`)"/>
+        <!-- Display No Results Message -->
+        <p
+            v-if="hasNoResults"
+            role="status"
+        >
+            No articles match. Please try again.
+        </p>
+
+        <!-- Display Article Results -->
+        <div
+            v-else
+            id="article-results"
+        >
+
+            <article
+                v-for="article in filteredArticles"
+                :key="article.url"
+                class="article-result"
+            >
+
+                <!-- Display Article Image -->
+                <a
+                    :href="article.url"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        :src="getArticleImage(article.image)"
+                        :alt="article.title"
+                    />
                 </a>
 
-                <!-- Display Result Title, Author, Date and Description -->
-                <h3>{{ result.title }}</h3>
-                <h4>{{ result.author }}</h4>
-                <h5>{{ result.date }}</h5>
-                <h6>{{ result.description }}</h6>
+                <!-- Display Article Information -->
+                <div class="article-information">
+
+                    <h3>
+                        <a
+                            :href="article.url"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {{ article.title }}
+                        </a>
+                    </h3>
+
+                    <p class="article-author">
+                        {{ article.author }}
+                    </p>
+
+                    <p class="article-date">
+                        {{ article.date }}
+                    </p>
+
+                    <p class="article-description">
+                        {{ article.description }}
+                    </p>
+
+                </div>
 
             </article>
-            
-        </section>
 
-    </body>
+        </div>
+
+    </div>
 
 </template>
 
@@ -42,60 +98,76 @@
 import ArticlesList from "../../data/articles/articles.js";
 
 export default {
-  name: "ArticlesSearch",
+    name: "ArticlesSearch",
 
-  data() {
-    return {
-      articles: ArticlesList,
-      keyword: '',
-      results: [],
-      error: ''
-    }
-  },
+    data() {
+        return {
+            articles: ArticlesList,
+            keyword: ""
+        };
+    },
 
-  methods: {
+    computed: {
 
-    searchArticles(keyword) {
+        // Filter articles using the search keyword
+        filteredArticles() {
 
-      // Resets Error Message
-      this.error = "";
+            const keyword =
+                this.keyword
+                    .toLowerCase()
+                    .trim();
 
-      // User Input/Keyword is Converted to Lower Case and Whitespace is Removed
-      keyword = keyword.toLowerCase().trim();
-
-      // Variable Initialized Containing an Empty Array to Store Matched Results
-      let results = [];
-
-      // Loop Through Articles Array = article object [{}]
-      this.articles.forEach((article) => {
-
-        // Loop Through Article Object = article key [{key:}]
-        Object.keys(article).forEach((key) => {
-
-          // Loop Through Value String and Search for Keyword
-          if(article[key].includes(keyword)) {   
-
-            // Checks if Results Array Does Not Already Contain Article 
-            if(!results.includes(article)) {
-
-              // If Article Contains Keyword, Add Article Object to Results Array         
-              results.push(article);
+            if (!keyword) {
+                return this.articles;
             }
-          }
-        })
-      })
 
-      // Checks and Verifies if Results Array is Empty and Sets Error Message Variable If It Is
-      if(results.length === 0) {
+            return this.articles.filter(
+                (article) => {
 
-        results = [];
-        this.error = "No articles match. Please try again.";
-        return results;
-      }
+                    const searchableText = [
+                        article.title,
+                        article.author,
+                        article.date,
+                        article.description
+                    ]
+                        .filter(Boolean)
+                        .join(" ")
+                        .toLowerCase();
 
-      return results;
+                    return searchableText.includes(
+                        keyword
+                    );
+
+                }
+            );
+
+        },
+
+        // Check if the search returned no articles
+        hasNoResults() {
+
+            return (
+                this.keyword.trim() !== ""
+                && this.filteredArticles.length === 0
+            );
+
+        }
+
+    },
+
+    methods: {
+
+        // Get the local image for an article
+        getArticleImage(image) {
+
+            return new URL(
+                `../../assets/articles/${image}`,
+                import.meta.url
+            ).href;
+
+        }
+
     }
-  }
 };
 </script>
 

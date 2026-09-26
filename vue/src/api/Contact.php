@@ -10,6 +10,7 @@ header("Content-Type: application/json");
 
 // Allow POST requests only
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    header("Allow: POST");
     http_response_code(405);
 
     echo json_encode([
@@ -73,7 +74,11 @@ if (
 
 
 // Validate the email address
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+if (
+    !filter_var($email, FILTER_VALIDATE_EMAIL) ||
+    str_contains($email, "\r") ||
+    str_contains($email, "\n")
+) {
     http_response_code(400);
 
     echo json_encode([

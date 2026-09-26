@@ -1,113 +1,323 @@
-<!-- Privacy Policy View Display --->
+<!-- Privacy Policy View Display -->
 <template>
 
-  <!-- Browser Tab Title -->
-  <title>Privacy Policy | Best Buds</title>
+    <div
+        id="privacy-policy-view"
+        aria-labelledby="privacy-policy-heading"
+    >
 
-  <!-- Display View Body -->
-  <body id="privacy-body">
+        <!-- Display Page Introduction -->
+        <header id="privacy-policy-header">
 
-    <!-- Display Body's Main Content -->
-    <main id="privacy-main">
+            <h1 id="privacy-policy-heading">
+                Best Buds Privacy Policy
+            </h1>
 
-      <!-- Display Body Title -->
-      <h1>Best Buds Privacy Policy</h1>
+            <p>
+                <strong>Effective Date:</strong>
+                September 24, 2024
+            </p>
 
-      <!-- Display Body Summary -->
-      <section id="summary">
-        <h2>Effective Date: 9/24/2024</h2>
-        <p>At Best Buds, we are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and safeguard your information when you use our website.</p>
-        <h3></h3>
-      </section>
+            <p>
+                At Best Buds, we are committed to protecting
+                your privacy. This Privacy Policy outlines how
+                we collect, use, and safeguard your information
+                when you use our website.
+            </p>
 
-      <!-- Display Privacy Policy Information -->
-      <section id="privacy">
+        </header>
 
-        <!-- Display Policy Component -->
-        <!-- <article id="policy">***CREATE PRIVACY POLICY COMPONENT***</article> -->
-        <h2>Effective Date: 9/20/2024</h2>
-          <li>Information We Collect</li>
-                <ul id="sub-list">
-                    <li>Personal Information:</li>
-                    <span>When you create an account, we may collect personal information such as your name, email address, and location.
-                    </span>
-                    <li>Usage Data:</li>
-                    <span>We may collect information about how you access and use our website, including your IP address, browser type, pages viewed, and the time and date of your visits.</span>
+        <!-- Display Privacy Policy -->
+        <section
+            id="privacy-policy"
+            aria-labelledby="privacy-policy-content-heading"
+        >
+
+            <h2 id="privacy-policy-content-heading">
+                Privacy Policy
+            </h2>
+
+            <!-- Display Information We Collect -->
+            <section
+                id="information-we-collect"
+                aria-labelledby="information-we-collect-heading"
+            >
+
+                <h3 id="information-we-collect-heading">
+                    Information We Collect
+                </h3>
+
+                <h4>
+                    Personal Information
+                </h4>
+
+                <p>
+                    When you create an account, we may collect
+                    personal information such as your name,
+                    email address, and location.
+                </p>
+
+                <h4>
+                    Usage Data
+                </h4>
+
+                <p>
+                    We may collect information about how you
+                    access and use our website, including your
+                    IP address, browser type, pages viewed, and
+                    the time and date of your visits.
+                </p>
+
+            </section>
+
+            <!-- Display How We Use Your Information -->
+            <section
+                id="information-use"
+                aria-labelledby="information-use-heading"
+            >
+
+                <h3 id="information-use-heading">
+                    How We Use Your Information
+                </h3>
+
+                <ul>
+                    <li>
+                        To create and manage your account.
+                    </li>
+
+                    <li>
+                        To provide and maintain our services,
+                        including search functionality and
+                        saving your favorite dispensaries.
+                    </li>
+
+                    <li>
+                        To send you newsletters, updates, and
+                        promotional content if you have opted in.
+                    </li>
+
+                    <li>
+                        To improve our website and enhance user
+                        experience.
+                    </li>
+
+                    <li>
+                        To understand user behavior and
+                        preferences for analytics and research
+                        purposes.
+                    </li>
                 </ul>
-          <li>How We Use Your Information</li>
-                <ul id="sub-list">
-                    <li>To create and manage your account.</li>
-                    <li>To provide and maintain our services, including search functionality and saving your favorite dispensaries. </li>
-                    <li>To send you newsletters, updates, and promotional content (if you have opted in). </li>
-                    <li>To improve our website and enhance user experience. </li>
-                    <li>To understand user behavior and preferences for analytics and research purposes.</li>
-                    </ul>
-          <li>Data Security</li>
-                <ul id="sub-list">
-                    <span>We take data security seriously and implement reasonable measures to protect your personal information. This includes encryption and secure server hosting. However, please be aware that no method of transmission over the Internet or method of electronic storage is 100% secure.</span></ul>   
 
-          <li>Sharing Your Information</li>
-                <ul id="sub-list">
-                  <span>Best Buds does not sell, rent, or trade your personal information to third parties. We may share your information in the following situations:</span>
-                  <li>Service Providers: We may employ third-party companies and individuals to facilitate our service, provide the service on our behalf, or perform service-related services (e.g., payment processing).</li>
-                  <li>Legal Requirements: We may disclose your information if required to do so by law or in response to valid requests by public authorities.</li>
-                  </ul>
+            </section>
 
-          <li>Your Rights</li>
-                <ul id="sub-list">
-                  <span>You have the right to:</span>
-                  <li>Access the personal information we hold about you.</li>
-                  <li>Request correction of any inaccurate or incomplete information.</li>
-                  <li>Delete your account and personal information upon request.</li>
-                  <li>Opt out of receiving marketing communications at any time.</li>
+            <!-- Display Data Security Information -->
+            <section
+                id="data-security"
+                aria-labelledby="data-security-heading"
+            >
+
+                <h3 id="data-security-heading">
+                    Data Security
+                </h3>
+
+                <p>
+                    We take data security seriously and
+                    implement reasonable measures to protect
+                    your personal information. This includes
+                    encryption and secure server hosting.
+                    However, please be aware that no method of
+                    transmission over the Internet or method of
+                    electronic storage is 100% secure.
+                </p>
+
+            </section>
+
+            <!-- Display Information Sharing Policy -->
+            <section
+                id="information-sharing"
+                aria-labelledby="information-sharing-heading"
+            >
+
+                <h3 id="information-sharing-heading">
+                    Sharing Your Information
+                </h3>
+
+                <p>
+                    Best Buds does not sell, rent, or trade your
+                    personal information to third parties. We
+                    may share your information in the following
+                    situations:
+                </p>
+
+                <ul>
+                    <li>
+                        <strong>Service Providers:</strong>
+                        We may employ third-party companies and
+                        individuals to facilitate our service,
+                        provide the service on our behalf, or
+                        perform service-related services, such
+                        as payment processing.
+                    </li>
+
+                    <li>
+                        <strong>Legal Requirements:</strong>
+                        We may disclose your information if
+                        required to do so by law or in response
+                        to valid requests by public authorities.
+                    </li>
                 </ul>
 
-          <li>Third-Party Links</li>
-                <ul id="sub-list">
-                  <span>Our website may contain links to third-party websites. We are not responsible for the privacy practices or the content of those websites. We encourage you to review the privacy policies of any third-party sites you visit.
-                  </span>
+            </section>
+
+            <!-- Display User Rights -->
+            <section
+                id="privacy-rights"
+                aria-labelledby="privacy-rights-heading"
+            >
+
+                <h3 id="privacy-rights-heading">
+                    Your Rights
+                </h3>
+
+                <p>
+                    You have the right to:
+                </p>
+
+                <ul>
+                    <li>
+                        Access the personal information we hold
+                        about you.
+                    </li>
+
+                    <li>
+                        Request correction of any inaccurate or
+                        incomplete information.
+                    </li>
+
+                    <li>
+                        Delete your account and personal
+                        information upon request.
+                    </li>
+
+                    <li>
+                        Opt out of receiving marketing
+                        communications at any time.
+                    </li>
                 </ul>
 
-          <li>Changes to this Privacy Policy</li>
-                <ul id="sub-list">
-                  <span>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page. You are advised to review this Privacy Policy periodically for any changes.
-                  </span>
-                </ul>
-        
-          <li>Contact Us</li>
-                <ul id="sub-list">
-                  <span>If you have any questions about this Privacy Policy, please email us at ourbudsarebest@gmail.com. </span>
-                  <span>Thank you for using Best Buds! We appreciate your trust and are dedicated to protecting your privacy. </span>
-                </ul>
-      </section>
+            </section>
 
-    </main>
+            <!-- Display Third-Party Link Information -->
+            <section
+                id="third-party-links"
+                aria-labelledby="third-party-links-heading"
+            >
 
-    <!-- Display Strain Guide Visit Component -->
-    <section id="strain-guide-visit">
-      <StrainGuideVisit />
-    </section>
+                <h3 id="third-party-links-heading">
+                    Third-Party Links
+                </h3>
 
-    <!-- Display Articles Visit Component -->
-    <section id="articles-visit">
-      <ArticlesVisit />
-    </section>
+                <p>
+                    Our website may contain links to third-party
+                    websites. We are not responsible for the
+                    privacy practices or the content of those
+                    websites. We encourage you to review the
+                    privacy policies of any third-party sites
+                    you visit.
+                </p>
 
-  </body>
+            </section>
+
+            <!-- Display Policy Change Information -->
+            <section
+                id="privacy-policy-changes"
+                aria-labelledby="privacy-policy-changes-heading"
+            >
+
+                <h3 id="privacy-policy-changes-heading">
+                    Changes to This Privacy Policy
+                </h3>
+
+                <p>
+                    We may update our Privacy Policy from time
+                    to time. We will notify you of any changes
+                    by posting the new policy on this page. You
+                    are advised to review this Privacy Policy
+                    periodically for any changes.
+                </p>
+
+            </section>
+
+            <!-- Display Contact Information -->
+            <section
+                id="privacy-contact"
+                aria-labelledby="privacy-contact-heading"
+            >
+
+                <h3 id="privacy-contact-heading">
+                    Contact Us
+                </h3>
+
+                <p>
+                    If you have any questions about this Privacy
+                    Policy, please email us at
+                    ourbudsarebest@gmail.com.
+                </p>
+
+                <p>
+                    Thank you for using Best Buds! We appreciate
+                    your trust and are dedicated to protecting
+                    your privacy.
+                </p>
+
+            </section>
+
+        </section>
+
+        <!-- Display Strain Guide -->
+        <section
+            id="privacy-strain-guide"
+            aria-labelledby="privacy-strain-guide-heading"
+        >
+
+            <h2 id="privacy-strain-guide-heading">
+                Explore Our Strain Guide
+            </h2>
+
+            <StrainGuideVisit />
+
+        </section>
+
+        <!-- Display Latest Articles -->
+        <section
+            id="privacy-articles"
+            aria-labelledby="privacy-articles-heading"
+        >
+
+            <h2 id="privacy-articles-heading">
+                Latest Cannabis Articles
+            </h2>
+
+            <ArticlesVisit />
+
+        </section>
+
+    </div>
 
 </template>
 
 <script>
-import StrainGuideVisit from '../components/strain-guide/StrainGuideVisit.vue';
-import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
+import StrainGuideVisit from "../components/strain-guide/StrainGuideVisit.vue";
+
+import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
 
 export default {
-  name: "PrivacyPolicyView",
+    name: "PrivacyPolicyView",
 
-  components: { 
-    StrainGuideVisit,
-    ArticlesVisit
-  }
+    components: {
+        StrainGuideVisit,
+        ArticlesVisit
+    }
 };
 </script>
 

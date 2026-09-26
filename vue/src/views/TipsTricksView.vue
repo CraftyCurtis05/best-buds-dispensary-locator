@@ -1,64 +1,131 @@
 <!-- Tips and Tricks View Display -->
 <template>
 
-    <!-- Browser Tab Title -->
-    <title>Tips & Tricks | Best Buds</title>   
+    <div
+        id="tips-tricks-view"
+        aria-labelledby="tips-tricks-heading"
+    >
 
-    <!-- Display View Body -->
-    <body id="tips-body">
+        <!-- Display Page Introduction -->
+        <header
+            id="tips-tricks-header"
+            aria-labelledby="tips-tricks-heading"
+        >
 
-        <!-- Display Body's Main Content -->
-        <main id="tips-main">
+            <h1 id="tips-tricks-heading">
+                Tips & Tricks For Cannabis Use
+            </h1>
 
-            <!-- Display Body Title -->
-            <h1>Tips & Tricks For Cannabis Use</h1>
+            <h2>
+                Cannabis confusion got you burnt out?
+            </h2>
 
-            <!-- Display Page Summary -->
-             <section id="summary">
-                <h2>Cannabis confusion got you burnt out?</h2>
-                <p>You're not alone! With so many strains, products, and effects, it can feel like a wild, green maze. But don't stress—it's all part of the fun! Think of it as a choose-your-own-adventure. Whether you're giggling over strain names or puzzled by potency, embrace the journey. The key is to explore, experiment, and enjoy the ride!</p>
-                <h3>Check out some of the Tips and Tricks we've compiled below!</h3>
-            </section>
+            <p>
+                You're not alone! With so many strains,
+                products, and effects, it can feel like a
+                wild, green maze. But don't stress—it's all
+                part of the fun! Think of it as a
+                choose-your-own-adventure. Whether you're
+                giggling over strain names or puzzled by
+                potency, embrace the journey. The key is to
+                explore, experiment, and enjoy the ride!
+            </p>
 
-            <!-- Display Jump Links -->
-            <section id="links">
-                <div class="link"><a href="#choose-products">Choose a Product</a></div>
-                <div class="link"><a href="#strain-guide">Strain Guide</a></div>
-                <div class="link"><a href="#safety-tips">Safety Tips</a></div>
-                <div class="link"><a href="#too-much">If You Have Too Much</a></div>
-                <div class="link"><a href="#legality">State Laws</a></div>
-                <div class="link"><a href="#questions">Common Questions</a></div>
-            </section> 
+            <p>
+                Check out some of the Tips and Tricks we've
+                compiled below!
+            </p>
 
-            <!-- Display Tips and Tricks Information -->
-            <section id="tips">
+        </header>
 
-                <!-- Display Tips and Tricks Component -->
-                <article id="tips-tricks">
-                    <TipsTricksGuide />
-                </article>
+        <!-- Display Tips and Tricks Jump Links -->
+        <nav
+            id="tips-tricks-links"
+            aria-label="Cannabis tips and tricks topics"
+        >
 
-            </section>
+            <ul>
 
-        </main>
+                <li>
+                    <a href="#choose-products">
+                        Choose a Product
+                    </a>
+                </li>
 
-        <!-- Display Articles Visit Component -->
-        <section id="articles-visit">
-            <ArticlesVisit/>
+                <li>
+                    <a href="#strain-guide">
+                        Strain Guide
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#safety-tips">
+                        Safety Tips
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#too-much">
+                        If You Have Too Much
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#legality">
+                        State Laws
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#questions">
+                        Common Questions
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <!-- Display Tips and Tricks Guide -->
+        <section
+            id="tips-tricks"
+            aria-labelledby="tips-tricks-guide-heading"
+        >
+
+            <h2 id="tips-tricks-guide-heading">
+                Cannabis Tips & Tricks
+            </h2>
+
+            <TipsTricksGuide />
+
         </section>
 
-    </body>
+        <!-- Display Latest Articles -->
+        <section
+            id="tips-tricks-articles"
+            aria-labelledby="tips-tricks-articles-heading"
+        >
+
+            <h2 id="tips-tricks-articles-heading">
+                Latest Cannabis Articles
+            </h2>
+
+            <ArticlesVisit />
+
+        </section>
+
+    </div>
 
 </template>
 
 <script>
-import TipsTricksGuide from '../components/tips-tricks/TipsTricksGuide.vue';
-import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
+import TipsTricksGuide from "../components/tips-tricks/TipsTricksGuide.vue";
+import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
 
 export default {
     name: "TipsTricksView",
 
-    components: { 
+    components: {
         TipsTricksGuide,
         ArticlesVisit
     }

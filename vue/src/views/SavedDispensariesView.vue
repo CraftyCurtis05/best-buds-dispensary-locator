@@ -1,12 +1,12 @@
 <!-- Saved Dispensaries View Display -->
 <template>
 
-    <main
+    <div
         id="saved-dispensaries-view"
         aria-labelledby="saved-dispensaries-heading"
     >
 
-        <!-- Display View Header -->
+        <!-- Display Page Introduction -->
         <header>
 
             <h1 id="saved-dispensaries-heading">
@@ -22,7 +22,7 @@
         <!-- Display Saved Dispensaries -->
         <SavedDispensaries />
 
-    </main>
+    </div>
 
 </template>
 

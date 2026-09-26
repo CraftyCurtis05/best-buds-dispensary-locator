@@ -1,42 +1,72 @@
+<!-- News View Display -->
 <template>
 
-    <!-- Browser Tab Title -->
-    <title>News | Best Buds</title>
+    <div
+        id="news-view"
+        aria-labelledby="news-heading"
+    >
 
-    <!-- Display View Body -->
-    <body id="news-body">
+        <!-- Display Page Introduction -->
+        <header id="news-header">
 
-        <!-- Display Body's Main Content -->
-        <main id="news-main">
+            <h1 id="news-heading">
+                Cannabis News
+            </h1>
 
-            <!-- Display Body Title -->
-            <h1>Cannabis News</h1>
+            <h2>
+                Breaking the Stigma: Explore the World of Cannabis
+            </h2>
 
-            <!-- Display Body Summary -->
-             <section id="summary">
-                <h2>Breaking the Stigma: Explore the World of Cannabis</h2>
-                <p>Welcome to Best Buds, your go-to source for the latest news and trends in the ever-evolving world of cannabis. Whether you're interested in the medicinal benefits, the latest legislative changes, or the growing culture around cannabis, we've got you covered. Dive into our carefully curated articles to stay informed and ahead of the curve in this dynamic industry.</p>
-                <h3>Stay informed, stay curious, and explore the multifaceted world of cannabis through our curated news articles. Whether you’re a casual reader or a cannabis connoisseur, this page is designed to keep you up-to-date and engaged with the latest developments and insights.</h3>
-            </section>
+            <p>
+                Welcome to Best Buds, your go-to source for the
+                latest news and trends in the ever-evolving
+                world of cannabis. Whether you're interested
+                in the medicinal benefits, the latest
+                legislative changes, or the growing culture
+                around cannabis, we've got you covered. Dive
+                into our carefully curated articles to stay
+                informed and ahead of the curve in this
+                dynamic industry.
+            </p>
 
-            <!-- Display News Component -->
+            <p>
+                Stay informed, stay curious, and explore the
+                multifaceted world of cannabis through our
+                curated news articles. Whether you're a casual
+                reader or a cannabis connoisseur, this page is
+                designed to keep you up-to-date and engaged
+                with the latest developments and insights.
+            </p>
+
+        </header>
+
+        <!-- Display Cannabis News -->
+        <section
+            id="cannabis-news"
+            aria-labelledby="cannabis-news-heading"
+        >
+
+            <h2 id="cannabis-news-heading">
+                Latest Cannabis News
+            </h2>
+
             <NewsFeed />
 
-        </main>
+        </section>
 
-    </body>
+    </div>
 
 </template>
 
 <script>
-import NewsFeed from '../components/news/NewsFeed.vue';
+import NewsFeed from "../components/news/NewsFeed.vue";
 
 export default {
-  name: "NewsView",
+    name: "NewsView",
 
-  components: { 
-    NewsFeed
-  }
+    components: {
+        NewsFeed
+    }
 };
 </script>
 

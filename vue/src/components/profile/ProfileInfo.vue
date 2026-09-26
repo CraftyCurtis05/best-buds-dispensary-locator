@@ -1,19 +1,26 @@
+<!-- Profile Information Component Display -->
 <template>
+
     <section
+        id="profile-info"
         class="profile-info"
         aria-labelledby="profile-info-heading"
     >
+
+        <!-- Display Profile Information Introduction -->
         <header class="profile-section-header">
-            <h2 id="profile-info-heading">
+
+            <h3 id="profile-info-heading">
                 Profile Information
-            </h2>
+            </h3>
 
             <p>
                 Update your personal information and home location.
             </p>
+
         </header>
 
-        <!-- Loading state -->
+        <!-- Display Loading Status -->
         <p
             v-if="isLoading"
             class="profile-status"
@@ -22,12 +29,14 @@
             Loading your profile...
         </p>
 
+        <!-- Display Profile Form -->
         <form
             v-else
             class="profile-form"
             @submit.prevent="saveProfile"
         >
-            <!-- Error message -->
+
+            <!-- Display Profile Error -->
             <p
                 v-if="profileError"
                 class="form-error"
@@ -36,7 +45,7 @@
                 {{ profileErrorMsg }}
             </p>
 
-            <!-- Success message -->
+            <!-- Display Profile Success -->
             <p
                 v-if="profileSaved"
                 class="form-success"
@@ -45,17 +54,19 @@
                 Your profile has been updated.
             </p>
 
-            <!-- Personal information -->
+            <!-- Display Personal Information -->
             <section
                 class="profile-form-section"
                 aria-labelledby="personal-info-heading"
             >
-                <h3 id="personal-info-heading">
-                    Personal Information
-                </h3>
 
-                <!-- First name -->
+                <h4 id="personal-info-heading">
+                    Personal Information
+                </h4>
+
+                <!-- Display First Name Field -->
                 <div class="form-input-group">
+
                     <label for="profile-first-name">
                         First Name
                     </label>
@@ -70,10 +81,12 @@
                         required
                         @input="clearMessages"
                     />
+
                 </div>
 
-                <!-- Last name -->
+                <!-- Display Last Name Field -->
                 <div class="form-input-group">
+
                     <label for="profile-last-name">
                         Last Name
                     </label>
@@ -87,15 +100,17 @@
                         maxlength="50"
                         @input="clearMessages"
                     />
+
                 </div>
 
-                <!-- Birthday -->
+                <!-- Display Birthday Field -->
                 <div class="form-input-group">
+
                     <label for="profile-birthday">
                         Birthday
                     </label>
 
-                    <!-- Birthday can be set once for older profiles -->
+                    <!-- Display Editable Birthday -->
                     <input
                         v-if="!hasBirthday"
                         id="profile-birthday"
@@ -108,7 +123,7 @@
                         @change="clearMessages"
                     />
 
-                    <!-- Birthday is read-only after it has been set -->
+                    <!-- Display Saved Birthday -->
                     <p
                         v-else
                         id="profile-birthday"
@@ -124,25 +139,29 @@
                                 : "Your birthday can only be set once."
                         }}
                     </p>
+
                 </div>
+
             </section>
 
-            <!-- Home location -->
+            <!-- Display Home Location -->
             <section
                 class="profile-form-section"
                 aria-labelledby="home-location-heading"
             >
-                <h3 id="home-location-heading">
+
+                <h4 id="home-location-heading">
                     Home Location
-                </h3>
+                </h4>
 
                 <p>
                     Your home location is used for nearby dispensary
                     searches and personalized discovery.
                 </p>
 
-                <!-- Address line 1 -->
+                <!-- Display Address Line 1 Field -->
                 <div class="form-input-group">
+
                     <label for="profile-address-line-1">
                         Address Line 1
                     </label>
@@ -157,10 +176,12 @@
                         required
                         @input="clearMessages"
                     />
+
                 </div>
 
-                <!-- Address line 2 -->
+                <!-- Display Address Line 2 Field -->
                 <div class="form-input-group">
+
                     <label for="profile-address-line-2">
                         Address Line 2
                     </label>
@@ -174,10 +195,12 @@
                         maxlength="150"
                         @input="clearMessages"
                     />
+
                 </div>
 
-                <!-- City -->
+                <!-- Display City Field -->
                 <div class="form-input-group">
+
                     <label for="profile-city">
                         City
                     </label>
@@ -192,10 +215,12 @@
                         required
                         @input="clearMessages"
                     />
+
                 </div>
 
-                <!-- State -->
+                <!-- Display State Field -->
                 <div class="form-input-group">
+
                     <label for="profile-state">
                         State
                     </label>
@@ -223,10 +248,12 @@
                             {{ state.name }}
                         </option>
                     </select>
+
                 </div>
 
-                <!-- ZIP code -->
+                <!-- Display ZIP Code Field -->
                 <div class="form-input-group">
+
                     <label for="profile-zipcode">
                         ZIP Code
                     </label>
@@ -243,10 +270,14 @@
                         required
                         @input="clearMessages"
                     />
+
                 </div>
+
             </section>
 
+            <!-- Display Profile Actions -->
             <div class="profile-actions">
+
                 <button
                     type="submit"
                     :disabled="isSubmitting"
@@ -257,19 +288,27 @@
                             : "Save Changes"
                     }}
                 </button>
+
             </div>
+
         </form>
+
     </section>
+
 </template>
 
 <script>
-import profileService from "../../services/ProfileService.js";
+import ProfileService from "../../services/ProfileService.js";
+
+import states from "../../data/forms/states.js";
 
 export default {
     name: "ProfileInfo",
 
     data() {
         return {
+            states,
+
             profile: {
                 firstName: "",
                 lastName: "",
@@ -281,61 +320,9 @@ export default {
                 zipcode: ""
             },
 
-            states: [
-                { abbreviation: "AL", name: "Alabama" },
-                { abbreviation: "AK", name: "Alaska" },
-                { abbreviation: "AZ", name: "Arizona" },
-                { abbreviation: "AR", name: "Arkansas" },
-                { abbreviation: "CA", name: "California" },
-                { abbreviation: "CO", name: "Colorado" },
-                { abbreviation: "CT", name: "Connecticut" },
-                { abbreviation: "DE", name: "Delaware" },
-                { abbreviation: "FL", name: "Florida" },
-                { abbreviation: "GA", name: "Georgia" },
-                { abbreviation: "HI", name: "Hawaii" },
-                { abbreviation: "ID", name: "Idaho" },
-                { abbreviation: "IL", name: "Illinois" },
-                { abbreviation: "IN", name: "Indiana" },
-                { abbreviation: "IA", name: "Iowa" },
-                { abbreviation: "KS", name: "Kansas" },
-                { abbreviation: "KY", name: "Kentucky" },
-                { abbreviation: "LA", name: "Louisiana" },
-                { abbreviation: "ME", name: "Maine" },
-                { abbreviation: "MD", name: "Maryland" },
-                { abbreviation: "MA", name: "Massachusetts" },
-                { abbreviation: "MI", name: "Michigan" },
-                { abbreviation: "MN", name: "Minnesota" },
-                { abbreviation: "MS", name: "Mississippi" },
-                { abbreviation: "MO", name: "Missouri" },
-                { abbreviation: "MT", name: "Montana" },
-                { abbreviation: "NE", name: "Nebraska" },
-                { abbreviation: "NV", name: "Nevada" },
-                { abbreviation: "NH", name: "New Hampshire" },
-                { abbreviation: "NJ", name: "New Jersey" },
-                { abbreviation: "NM", name: "New Mexico" },
-                { abbreviation: "NY", name: "New York" },
-                { abbreviation: "NC", name: "North Carolina" },
-                { abbreviation: "ND", name: "North Dakota" },
-                { abbreviation: "OH", name: "Ohio" },
-                { abbreviation: "OK", name: "Oklahoma" },
-                { abbreviation: "OR", name: "Oregon" },
-                { abbreviation: "PA", name: "Pennsylvania" },
-                { abbreviation: "RI", name: "Rhode Island" },
-                { abbreviation: "SC", name: "South Carolina" },
-                { abbreviation: "SD", name: "South Dakota" },
-                { abbreviation: "TN", name: "Tennessee" },
-                { abbreviation: "TX", name: "Texas" },
-                { abbreviation: "UT", name: "Utah" },
-                { abbreviation: "VT", name: "Vermont" },
-                { abbreviation: "VA", name: "Virginia" },
-                { abbreviation: "WA", name: "Washington" },
-                { abbreviation: "WV", name: "West Virginia" },
-                { abbreviation: "WI", name: "Wisconsin" },
-                { abbreviation: "WY", name: "Wyoming" }
-            ],
-
             isLoading: true,
             isSubmitting: false,
+
             profileError: false,
             profileSaved: false,
             profileErrorMsg:
@@ -347,16 +334,20 @@ export default {
 
         // Check whether the birthday has already been set
         hasBirthday() {
+
             return Boolean(
                 this.profile.birthday
             );
+
         },
 
         // Prevent future birthdays from being selected
         maximumBirthday() {
+
             return new Date()
                 .toISOString()
                 .split("T")[0];
+
         },
 
         // Format the saved birthday for display
@@ -375,9 +366,15 @@ export default {
 
             const birthday =
                 new Date(
-                    Number(birthdayParts[0]),
-                    Number(birthdayParts[1]) - 1,
-                    Number(birthdayParts[2])
+                    Number(
+                        birthdayParts[0]
+                    ),
+                    Number(
+                        birthdayParts[1]
+                    ) - 1,
+                    Number(
+                        birthdayParts[2]
+                    )
                 );
 
             return birthday.toLocaleDateString(
@@ -388,6 +385,7 @@ export default {
                     day: "numeric"
                 }
             );
+
         }
 
     },
@@ -397,39 +395,58 @@ export default {
     },
 
     methods: {
+
+        // Load the user's saved profile information
         loadProfile() {
+
             this.isLoading = true;
+
             this.clearMessages();
 
-            profileService
+            ProfileService
                 .getProfile()
                 .then((response) => {
+
                     if (response.status === 200) {
+
                         this.setProfile(
                             response.data
                         );
+
                     }
+
                 })
                 .catch(() => {
+
                     this.profileError = true;
+
                     this.profileErrorMsg =
                         "Unable to load your profile. Please try again.";
+
                 })
                 .finally(() => {
+
                     this.isLoading = false;
+
                 });
+
         },
 
+        // Save changes to the user's profile information
         saveProfile() {
+
             this.clearMessages();
+
             this.isSubmitting = true;
 
-            profileService
+            ProfileService
                 .saveProfile(
                     this.profile
                 )
                 .then((response) => {
+
                     if (response.status === 200) {
+
                         this.setProfile(
                             response.data
                         );
@@ -440,63 +457,89 @@ export default {
                         );
 
                         this.profileSaved = true;
+
                     }
+
                 })
                 .catch((error) => {
+
                     this.handleProfileError(
                         error
                     );
+
                 })
                 .finally(() => {
+
                     this.isSubmitting = false;
+
                 });
+
         },
 
+        // Store profile information for editing
         setProfile(profile) {
+
             this.profile = {
                 firstName:
                     profile.firstName || "",
+
                 lastName:
                     profile.lastName || "",
+
                 birthday:
                     profile.birthday || "",
+
                 addressLine1:
                     profile.addressLine1 || "",
+
                 addressLine2:
                     profile.addressLine2 || "",
+
                 city:
                     profile.city || "",
+
                 stateAbbr:
                     profile.stateAbbr || "",
+
                 zipcode:
                     profile.zipcode || ""
             };
+
         },
 
+        // Show an appropriate profile error
         handleProfileError(error) {
+
             this.profileError = true;
 
             if (!error.response) {
+
                 this.profileErrorMsg =
                     "Unable to connect to Best Buds. Please try again.";
 
                 return;
+
             }
 
             if (error.response.status === 400) {
+
                 this.profileErrorMsg =
                     this.getValidationErrorMessage(
                         error.response.data
                     );
 
                 return;
+
             }
 
             this.profileErrorMsg =
                 "Unable to save your profile. Please try again.";
+
         },
 
+        // Get a useful validation message from the server response
         getValidationErrorMessage(responseData) {
+
             if (
                 typeof responseData === "string"
                 && responseData.trim()
@@ -509,6 +552,7 @@ export default {
             }
 
             if (responseData?.errors) {
+
                 const validationErrors =
                     Object.values(
                         responseData.errors
@@ -517,20 +561,28 @@ export default {
                 if (validationErrors.length > 0) {
                     return validationErrors[0];
                 }
+
             }
 
             return "Please check your profile information and try again.";
+
         },
 
+        // Clear the current profile messages
         clearMessages() {
+
             this.profileError = false;
             this.profileSaved = false;
+
             this.profileErrorMsg =
                 "Unable to save your profile. Please try again.";
+
         }
+
     }
 };
 </script>
 
 <style scoped>
+
 </style>

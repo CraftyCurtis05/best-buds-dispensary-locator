@@ -53,10 +53,12 @@ export function createStore(
                 state.profileLoaded = true;
             },
 
+            // Store the selected location
             SET_LOCATION(state, locationID) {
                 state.locationID = locationID;
             },
 
+            // Store the current dispensary search results
             SET_DISPENSARIES(state, dispensaries) {
                 state.dispensaries = dispensaries;
             },

@@ -1,12 +1,15 @@
-<!-- Age Confirmation View -->
+<!-- Age Confirmation View Display -->
 <template>
-    <section
+
+    <div
         id="age-confirmation-view"
         class="auth-view"
         aria-labelledby="age-confirmation-heading"
     >
-        <!-- Best Buds branding -->
+
+        <!-- Display Page Introduction -->
         <header class="auth-header">
+
             <img
                 :src="Logo"
                 class="auth-logo"
@@ -20,14 +23,14 @@
             <p>
                 You must be at least 21 years old to use Best Buds.
             </p>
+
         </header>
 
-        <!-- Age confirmation -->
-        <section
-            class="auth-form-section"
-            aria-label="Age confirmation"
-        >
+        <!-- Display Age Confirmation -->
+        <div class="auth-form-section">
+
             <div class="age-confirmation-content">
+
                 <p>
                     By continuing, you confirm that you are 21 years of age
                     or older.
@@ -38,7 +41,7 @@
                     age-appropriate content and features.
                 </p>
 
-                <!-- Confirmation error -->
+                <!-- Display Confirmation Error -->
                 <p
                     v-if="confirmationError"
                     class="form-error"
@@ -47,7 +50,9 @@
                     {{ confirmationErrorMsg }}
                 </p>
 
+                <!-- Display Confirmation Actions -->
                 <div class="age-confirmation-actions">
+
                     <button
                         type="button"
                         :disabled="isSubmitting"
@@ -67,14 +72,19 @@
                     >
                         No, I Am Under 21
                     </button>
+
                 </div>
+
             </div>
-        </section>
-    </section>
+
+        </div>
+
+    </div>
+
 </template>
 
 <script>
-import authService from "../services/AuthService.js";
+import AuthService from "../services/AuthService.js";
 
 import Logo from "../assets/layout/logo/logo-dark-theme.png";
 
@@ -96,27 +106,42 @@ export default {
 
         // Confirm that the current user meets the age requirement
         confirmAge() {
+
             this.clearError();
+
             this.isSubmitting = true;
 
-            authService
+            AuthService
                 .confirmAge()
                 .then((response) => {
+
                     if (response.status === 204) {
+
                         this.updateAgeConfirmation();
+
                         this.continueOnboarding();
+
                     }
+
                 })
                 .catch((error) => {
-                    this.handleConfirmationError(error);
+
+                    this.handleConfirmationError(
+                        error
+                    );
+
                 })
                 .finally(() => {
+
                     this.isSubmitting = false;
+
                 });
+
         },
 
         // Update the user's age confirmation in the store
         updateAgeConfirmation() {
+
             const updatedUser = {
                 ...this.$store.state.user,
                 ageConfirmed: true
@@ -126,44 +151,58 @@ export default {
                 "SET_USER",
                 updatedUser
             );
+
         },
 
         // Continue to the next onboarding step
         continueOnboarding() {
+
             this.$router.push({
                 name: "profile-setup"
             });
+
         },
 
         // Sign out users who do not meet the age requirement
         logout() {
-            this.$store.commit("LOGOUT");
+
+            this.$store.commit(
+                "LOGOUT"
+            );
 
             this.$router.push({
                 name: "login"
             });
+
         },
 
         // Show an appropriate age confirmation error
         handleConfirmationError(error) {
+
             this.confirmationError = true;
 
             if (!error.response) {
+
                 this.confirmationErrorMsg =
                     "Unable to connect to Best Buds. Please try again.";
 
                 return;
+
             }
 
             this.confirmationErrorMsg =
                 "Unable to confirm your age. Please try again.";
+
         },
 
         // Clear the current age confirmation error
         clearError() {
+
             this.confirmationError = false;
+
             this.confirmationErrorMsg =
                 "Unable to confirm your age. Please try again.";
+
         }
 
     }
@@ -171,4 +210,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

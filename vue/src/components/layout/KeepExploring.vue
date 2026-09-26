@@ -1,26 +1,31 @@
-<!-- Keep Exploring Component -->
+<!-- Keep Exploring Component Display -->
 <template>
+
     <section
         v-if="exploration"
+        id="keep-exploring"
         aria-labelledby="keep-exploring-heading"
     >
-        <!-- Exploration Category -->
+
+        <!-- Display Exploration Category -->
         <h2 id="keep-exploring-heading">
             {{ exploration.category }}
         </h2>
 
-        <!-- Exploration Message -->
+        <!-- Display Exploration Message -->
         <p>
             {{ currentMessage }}
         </p>
 
-        <!-- Suggested Next Destination -->
+        <!-- Display Suggested Next Destination -->
         <router-link
             :to="{ name: exploration.nextRoute }"
         >
             {{ exploration.nextLabel }} →
         </router-link>
+
     </section>
+
 </template>
 
 <script>
@@ -52,6 +57,7 @@ export default {
         // Select a new message whenever the user visits another page
         $route: {
             immediate: true,
+
             handler() {
                 this.selectMessage();
             }
@@ -63,6 +69,7 @@ export default {
 
         // Select one of the messages available for the current page
         selectMessage() {
+
             if (
                 !this.exploration ||
                 this.exploration.messages.length === 0
@@ -78,6 +85,7 @@ export default {
 
             this.currentMessage =
                 this.exploration.messages[randomIndex];
+
         }
 
     }
@@ -85,4 +93,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

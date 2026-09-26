@@ -1,79 +1,134 @@
-<!-- Too Much Cananbis View Display -->
+<!-- Too Much Cannabis View Display -->
 <template>
 
-    <!-- Browser Tab Title -->
-    <title>Too Much? | Best Buds</title>
+    <div
+        id="too-much-view"
+        aria-labelledby="too-much-heading"
+    >
 
-    <!-- Display View Body -->
-    <body id="toomuch-body">
+        <!-- Display Page Introduction -->
+        <header
+            id="too-much-header"
+            aria-labelledby="too-much-heading"
+        >
 
-        <!-- Display Body's Main Content -->
-        <main id="toomuch-main">
+            <h1 id="too-much-heading">
+                Too Much Cannabis
+            </h1>
 
-            <!-- Display Body Title -->
-            <h1>Too Much Cannabis</h1>
+            <h2>
+                Think you may have overdone it?
+            </h2>
 
-            <!-- Display Body Summary -->
-            <section id="summary">
-                <h2>Think you may have overdone it?</h2>
-                <p>Using too much cannabis can lead to overthinking and heightened anxiety, making simple tasks seem overwhelming. It’s like your mind gets stuck in overdrive—what started as a relaxing evening can turn into a marathon of introspection. The key is moderation and knowing your limits to keep your experience enjoyable and stress-free.</p>
-                <h3>If you think you've had too much, please check out below to ease your mind!</h3>
-            </section>
+            <p>
+                Using too much cannabis can lead to
+                overthinking and heightened anxiety, making
+                simple tasks seem overwhelming. It’s like your
+                mind gets stuck in overdrive—what started as a
+                relaxing evening can turn into a marathon of
+                introspection. The key is moderation and
+                knowing your limits to keep your experience
+                enjoyable and stress-free.
+            </p>
 
-            <!-- Display Body Jump Links -->
-            <section id="links">
-                <div class="link"><a href="#symptoms">Signs and Symptoms</a></div>
-                <div class="link"><a href="#coping">How to Cope</a></div>
-                <div class="link"><a href="#what-to-do">What To Do</a></div>
-            </section> 
+            <p>
+                If you think you've had too much, please check
+                out below to ease your mind!
+            </p>
 
-            <!-- Display Too Much Cannabis Information -->
-             <section id="toomuch">
+        </header>
 
-                <!-- Display Too Much Symptoms Component -->
-                <article id="symptoms">
-                    <CannabisOveruseSymptoms />
-                </article>
+        <!-- Display Cannabis Overuse Jump Links -->
+        <nav
+            id="too-much-links"
+            aria-label="Cannabis overuse topics"
+        >
 
-                <!-- Display Too Much Coping Component -->
-                <article id="coping">
-                    <CannabisOveruseCoping />
-                </article>
+            <ul>
 
-                <!-- Display Too Much What To Do Component -->
-                <article id="what">
-                    <CannabisOveruseGuide />
-                </article>
+                <li>
+                    <a href="#symptoms">
+                        Signs and Symptoms
+                    </a>
+                </li>
 
-            </section>    
+                <li>
+                    <a href="#coping">
+                        How to Cope
+                    </a>
+                </li>
 
-        </main>
+                <li>
+                    <a href="#what-to-do">
+                        What To Do
+                    </a>
+                </li>
 
-        <!-- Display Strain Guide Visit Component -->
-        <section id="strain-guide-visit">
-            <StrainGuideVisit />
+            </ul>
+
+        </nav>
+
+        <!-- Display Cannabis Overuse Information -->
+        <section
+            id="cannabis-overuse"
+            aria-labelledby="cannabis-overuse-heading"
+        >
+
+            <h2 id="cannabis-overuse-heading">
+                Cannabis Overuse Guide
+            </h2>
+
+            <CannabisOveruseSymptoms />
+
+            <CannabisOveruseCoping />
+
+            <CannabisOveruseGuide />
+
         </section>
- 
-        <!-- Display Articles Visit Component -->
-        <section id="articles-visit">
-            <ArticlesVisit/>
-        </section> 
 
-    </body>
+        <!-- Display Strain Guide -->
+        <section
+            id="too-much-strain-guide"
+            aria-labelledby="too-much-strain-guide-heading"
+        >
+
+            <h2 id="too-much-strain-guide-heading">
+                Explore Our Strain Guide
+            </h2>
+
+            <StrainGuideVisit />
+
+        </section>
+
+        <!-- Display Latest Articles -->
+        <section
+            id="too-much-articles"
+            aria-labelledby="too-much-articles-heading"
+        >
+
+            <h2 id="too-much-articles-heading">
+                Latest Cannabis Articles
+            </h2>
+
+            <ArticlesVisit />
+
+        </section>
+
+    </div>
 
 </template>
 
 <script>
-import CannabisOveruseSymptoms from '../components/too-much/CannabisOveruseSymptoms.vue';
-import CannabisOveruseCoping from '../components/too-much/CannabisOveruseCoping.vue';
-import CannabisOveruseGuide from '../components/too-much/CannabisOveruseGuide.vue';
-import StrainGuideVisit from '../components/strain-guide/StrainGuideVisit.vue';
-import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
+import CannabisOveruseSymptoms from "../components/too-much/CannabisOveruseSymptoms.vue";
+import CannabisOveruseCoping from "../components/too-much/CannabisOveruseCoping.vue";
+import CannabisOveruseGuide from "../components/too-much/CannabisOveruseGuide.vue";
+import StrainGuideVisit from "../components/strain-guide/StrainGuideVisit.vue";
+import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
 
 export default {
     name: "TooMuchView",
 
-    components: { 
+    components: {
         CannabisOveruseSymptoms,
         CannabisOveruseCoping,
         CannabisOveruseGuide,

@@ -1,94 +1,191 @@
-<!-- Safety Tips View Display --->
+<!-- Safety Tips View Display -->
 <template>
 
-    <!-- Browser Tab Title -->
-    <title>Safety Tips | Best Buds</title>
+    <div
+        id="safety-view"
+        aria-labelledby="safety-heading"
+    >
 
-    <!-- Display View Body -->
-    <body id="tips-body">
+        <!-- Display Page Introduction -->
+        <header id="safety-header">
 
-        <!-- Display Body's Main Content -->
-        <main id="tips-main">
+            <h1 id="safety-heading">
+                Tips for Safer Cannabis Consumption, Smoking
+                and Topicals
+            </h1>
 
-            <!-- Display Body Title -->
-            <h1>Tips for Safer Cannabis Consumption, Smoking and Topicals</h1>
+            <h2>
+                Want to keep your high smooth and groovy?
+            </h2>
 
-            <!-- Display Body Summary -->
-            <section id="summary">
-                <h2>Want to keep your high smooth and groovy?</h2>
-                <p>Cannabis use safety is like mastering the art of throwing a great party—keep the vibes positive, don’t overdo it, and have a plan to get home safely if needed. Balance your snacks with hydration, and remember: moderation is key. So, enjoy the high, but don’t let it turn into a wild rave without a designated driver!</p>
-                <h3>Take a gander at the safety tips for cannabis use below!</h3>
-            </section>
+            <p>
+                Cannabis use safety is like mastering the art
+                of throwing a great party—keep the vibes
+                positive, don’t overdo it, and have a plan to
+                get home safely if needed. Balance your snacks
+                with hydration, and remember: moderation is
+                key. So, enjoy the high, but don’t let it turn
+                into a wild rave without a designated driver!
+            </p>
 
-            <!-- Display Body Jump Links -->
-            <section id="links">
-                <div class="link"><a href="#thc-consumption">THC Consumption</a></div>
-                <div class="link"><a href="#cbd-consumption">CBD Consumption</a></div>
-                <div class="link"><a href="#smoking">Cannabis Smoking</a></div>
-                <div class="link"><a href="#topical">Topical Use</a></div>
-            </section>
+            <p>
+                Take a gander at the safety tips for cannabis
+                use below!
+            </p>
 
-            <!-- Display Safety Tips Information -->
-             <section id="tips">
+        </header>
 
-                <!-- Display THC Consumption Tips Component -->
-                <article id="thc-consumption">
-                    <ThcSafety />
-                </article>    
+        <!-- Display Safety Tip Jump Links -->
+        <nav
+            id="safety-links"
+            aria-label="Cannabis safety topics"
+        >
 
-                <!-- Display CBD Consumption Tips Component -->
-                <article id="cbd-consumption"> 
-                    <CbdSafety />
-                </article>
+            <ul>
 
-                <!-- Display Cannabis Smoking Tips Component -->
-                <article id="smoking">
-                    <SmokingSafety />
-                </article>
+                <li>
+                    <a href="#thc-consumption">
+                        THC Consumption
+                    </a>
+                </li>
 
-                <!-- Display Topical Use Tips Component -->
-                <article id="topical">
-                    <TopicalSafety />
-                </article>    
+                <li>
+                    <a href="#cbd-consumption">
+                        CBD Consumption
+                    </a>
+                </li>
 
-                <!-- Display Conclusion Information -->
-                <article id="conclusion"> 
-                    <h3>Conclusion:</h3>
-                    <p>Your first cannabis experience can be a wonderful journey when approached with care and responsibility. As for the question, "Is it better to use weed the first time alone or in company?", having a trusted, sober friend nearby can make the experience more comforting and enjoyable. By following the tips shared in this guide, first-time cannabis smokers can look forward to a positive and memorable first high. If you are contemplating using cannabis for the first time, undertake comprehensive research and connect with experienced cannabis users for their insights. This can empower you to make an informed decision about whether cannabis is the right choice for you.</p>
-                    <h4>Cannabis comes in a variety of forms including edibles and concentrates but they are not the best choice for your first time. Extracts including vape cartridges are too potent and hard to handle for a novice and edibles are not that predictable in terms of dosage and effects (which depend on numerous factors like tolerance and the time of onset) the buzz may start hours from ingestion and last for up to 8 hours.</h4>
-                    <h5>Remember, responsible consumption is crucial for any enjoyable cannabis experience.</h5>
-                </article> 
-             
-            </section>    
+                <li>
+                    <a href="#smoking-safety">
+                        Cannabis Smoking
+                    </a>
+                </li>
 
-        </main>        
+                <li>
+                    <a href="#topical-use">
+                        Topical Use
+                    </a>
+                </li>
 
-        <!-- Display Strain Guide Visit Component -->
-        <section id="strain-guide-visit">
+            </ul>
+
+        </nav>
+
+        <!-- Display Safety Tips -->
+        <section
+            id="safety-tips"
+            aria-labelledby="safety-tips-heading"
+        >
+
+            <h2 id="safety-tips-heading">
+                Cannabis Safety Tips
+            </h2>
+
+            <ThcSafety />
+
+            <CbdSafety />
+
+            <SmokingSafety />
+
+            <TopicalSafety />
+
+        </section>
+
+        <!-- Display Conclusion -->
+        <section
+            id="safety-conclusion"
+            aria-labelledby="safety-conclusion-heading"
+        >
+
+            <h2 id="safety-conclusion-heading">
+                Conclusion
+            </h2>
+
+            <p>
+                Your first cannabis experience can be a
+                wonderful journey when approached with care
+                and responsibility. As for the question, "Is
+                it better to use weed the first time alone or
+                in company?", having a trusted, sober friend
+                nearby can make the experience more comforting
+                and enjoyable. By following the tips shared in
+                this guide, first-time cannabis smokers can
+                look forward to a positive and memorable first
+                high. If you are contemplating using cannabis
+                for the first time, undertake comprehensive
+                research and connect with experienced cannabis
+                users for their insights. This can empower you
+                to make an informed decision about whether
+                cannabis is the right choice for you.
+            </p>
+
+            <p>
+                Cannabis comes in a variety of forms including
+                edibles and concentrates but they are not the
+                best choice for your first time. Extracts
+                including vape cartridges are too potent and
+                hard to handle for a novice and edibles are
+                not that predictable in terms of dosage and
+                effects (which depend on numerous factors like
+                tolerance and the time of onset) the buzz may
+                start hours from ingestion and last for up to
+                8 hours.
+            </p>
+
+            <p>
+                <strong>
+                    Remember, responsible consumption is
+                    crucial for any enjoyable cannabis
+                    experience.
+                </strong>
+            </p>
+
+        </section>
+
+        <!-- Display Strain Guide -->
+        <section
+            id="safety-strain-guide"
+            aria-labelledby="safety-strain-guide-heading"
+        >
+
+            <h2 id="safety-strain-guide-heading">
+                Explore Our Strain Guide
+            </h2>
+
             <StrainGuideVisit />
+
         </section>
 
-        <!-- Display Articles Visit Component -->
-        <section id="articles-visit">
+        <!-- Display Latest Articles -->
+        <section
+            id="safety-articles"
+            aria-labelledby="safety-articles-heading"
+        >
+
+            <h2 id="safety-articles-heading">
+                Latest Cannabis Articles
+            </h2>
+
             <ArticlesVisit />
+
         </section>
 
-    </body>
+    </div>
 
 </template>
 
 <script>
-import ThcSafety from '../components/safety/ThcSafety.vue';
-import CbdSafety from '../components/safety/CbdSafety.vue';
-import SmokingSafety from '../components/safety/SmokingSafety.vue';
-import TopicalSafety from '../components/safety/TopicalSafety.vue';
-import StrainGuideVisit from '../components/strain-guide/StrainGuideVisit.vue';
-import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
+import ThcSafety from "../components/safety/ThcSafety.vue";
+import CbdSafety from "../components/safety/CbdSafety.vue";
+import SmokingSafety from "../components/safety/SmokingSafety.vue";
+import TopicalSafety from "../components/safety/TopicalSafety.vue";
+import StrainGuideVisit from "../components/strain-guide/StrainGuideVisit.vue";
+import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
 
 export default {
     name: "SafetyView",
 
-    components: { 
+    components: {
         ThcSafety,
         CbdSafety,
         SmokingSafety,

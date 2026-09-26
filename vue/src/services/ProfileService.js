@@ -4,7 +4,9 @@ export default {
 
     // Get the authenticated user's profile
     getProfile() {
-        return axios.get("/api/profile");
+        return axios.get(
+            "/api/profile"
+        );
     },
 
     // Create or update the authenticated user's profile

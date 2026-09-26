@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export default {
+
     // Get the authenticated user's profile image
     getProfileImage() {
         return axios.get(
@@ -15,11 +16,11 @@ export default {
     saveProfileImage(imageFile) {
 
         const formData =
-                new FormData();
+            new FormData();
 
         formData.append(
-                "image",
-                imageFile
+            "image",
+            imageFile
         );
 
         return axios.put(
@@ -37,4 +38,5 @@ export default {
             "/api/profile/image"
         );
     }
+
 };

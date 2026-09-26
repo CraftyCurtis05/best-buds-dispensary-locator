@@ -1,5 +1,7 @@
-import { createRouter, createWebHistory } from "vue-router";
-import { useStore } from "vuex";
+import {
+    createRouter as _createRouter,
+    createWebHistory
+} from "vue-router";
 
 import profileService from "../services/ProfileService.js";
 
@@ -206,101 +208,102 @@ const routes = [
 ];
 
 // Create the application router
-const router = createRouter({
-    history: createWebHistory(),
-    routes
-});
+export function createRouter(store) {
+    const router = _createRouter({
+        history: createWebHistory(),
+        routes
+    });
 
-// Protect authenticated routes and required onboarding steps
-router.beforeEach(async (to) => {
-    const store = useStore();
+    // Protect authenticated routes and required onboarding steps
+    router.beforeEach(async (to) => {
 
-    const requiresAuth =
-        to.matched.some(
-            (route) => route.meta.requiresAuth
-        );
+        const requiresAuth =
+            to.matched.some(
+                (route) => route.meta.requiresAuth
+            );
 
-    // Protected routes require an authenticated session
-    if (
-        requiresAuth
-        && store.state.token === ""
-    ) {
-        return {
-            name: "login"
-        };
-    }
-
-    // Public routes do not require onboarding checks
-    if (!requiresAuth) {
-        return true;
-    }
-
-    // Users must confirm they are 21 or older
-    if (!store.state.user.ageConfirmed) {
-        if (to.name !== "age-confirmation") {
-            return {
-                name: "age-confirmation"
-            };
-        }
-
-        return true;
-    }
-
-    // Age-confirmed users no longer need the age gate
-    if (to.name === "age-confirmation") {
-        return {
-            name: "home"
-        };
-    }
-
-    // Load the user's profile once when needed
-    if (!store.state.profileLoaded) {
-        try {
-            const response =
-                await profileService.getProfile();
-
-            if (response.status === 204) {
-                store.commit(
-                    "SET_PROFILE_MISSING"
-                );
-            } else {
-                store.commit(
-                    "SET_PROFILE",
-                    response.data
-                );
-            }
-        } catch {
+        // Protected routes require an authenticated session
+        if (
+            requiresAuth
+            && store.state.token === ""
+        ) {
             return {
                 name: "login"
             };
         }
-    }
 
-    // Users without a profile must complete profile setup
-    if (!store.state.profile) {
-        if (to.name !== "profile-setup") {
+        // Public routes do not require onboarding checks
+        if (!requiresAuth) {
+            return true;
+        }
+
+        // Users must confirm they are 21 or older
+        if (!store.state.user.ageConfirmed) {
+            if (to.name !== "age-confirmation") {
+                return {
+                    name: "age-confirmation"
+                };
+            }
+
+            return true;
+        }
+
+        // Age-confirmed users no longer need the age gate
+        if (to.name === "age-confirmation") {
             return {
-                name: "profile-setup"
+                name: "home"
+            };
+        }
+
+        // Load the user's profile once when needed
+        if (!store.state.profileLoaded) {
+            try {
+                const response =
+                    await profileService.getProfile();
+
+                if (response.status === 204) {
+                    store.commit(
+                        "SET_PROFILE_MISSING"
+                    );
+                } else {
+                    store.commit(
+                        "SET_PROFILE",
+                        response.data
+                    );
+                }
+            } catch {
+                return {
+                    name: "login"
+                };
+            }
+        }
+
+        // Users without a profile must complete profile setup
+        if (!store.state.profile) {
+            if (to.name !== "profile-setup") {
+                return {
+                    name: "profile-setup"
+                };
+            }
+
+            return true;
+        }
+
+        // Users with a profile no longer need profile setup
+        if (to.name === "profile-setup") {
+            return {
+                name: "home"
             };
         }
 
         return true;
-    }
+    });
 
-    // Users with a profile no longer need profile setup
-    if (to.name === "profile-setup") {
-        return {
-            name: "home"
-        };
-    }
+    // Update the browser title after navigation
+    router.afterEach((to) => {
+        document.title =
+            to.meta.title || "Best Buds";
+    });
 
-    return true;
-});
-
-// Update the browser title after navigation
-router.afterEach((to) => {
-    document.title =
-        to.meta.title || "Best Buds";
-});
-
-export default router;
+    return router;
+}

@@ -1,12 +1,15 @@
-<!-- Register View -->
+<!-- Register View Display -->
 <template>
-    <section
+
+    <div
         id="register-view"
         class="auth-view"
         aria-labelledby="register-heading"
     >
-        <!-- Best Buds branding -->
+
+        <!-- Display Page Introduction -->
         <header class="auth-header">
+
             <img
                 :src="Logo"
                 class="auth-logo"
@@ -20,12 +23,16 @@
             <p>
                 Create your Best Buds account to get started.
             </p>
+
         </header>
 
+        <!-- Display Registration Form -->
         <RegisterForm
             @registered="handleRegistration"
         />
-    </section>
+
+    </div>
+
 </template>
 
 <script>
@@ -50,12 +57,14 @@ export default {
 
         // Continue to login after successful registration
         handleRegistration() {
+
             this.$router.push({
                 name: "login",
                 query: {
                     registration: "success"
                 }
             });
+
         }
 
     }
@@ -63,4 +72,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>

@@ -1,36 +1,53 @@
-<!-- Best Buds Application -->
+<!-- Best Buds Application Display -->
 <template>
-    <div id="app-container">
-        <!-- Global application header -->
-        <AppHeader />
 
-        <!-- Main application content -->
-        <main
-            id="main-content"
-            tabindex="-1"
-        >
-            <JumpLinks />
+    <div id="top">
 
-            <!-- Current page -->
-            <router-view
-                @activity-recorded="activityRecorded"
+        <div id="app-container">
+
+            <!-- Display Application Header -->
+            <AppHeader />
+
+            <!-- Display Main Application Content -->
+            <main
+                id="main-content"
+                tabindex="-1"
+            >
+
+                <!-- Display Page Jump Links -->
+                <JumpLinks />
+
+                <!-- Display Current Page -->
+                <router-view
+                    @activity-recorded="activityRecorded"
+                />
+
+                <!-- Display Suggested Next Destination -->
+                <KeepExploring />
+
+            </main>
+
+            <!-- Display Bottom Page Target -->
+            <div
+                id="bottom"
+                aria-hidden="true"
+            ></div>
+
+            <!-- Display Application Footer -->
+            <AppFooter />
+
+            <!-- Display Best Buds Drop Reveal -->
+            <DropReveal
+                :is-open="isDropRevealOpen"
+                :user-collectible="newDrop"
+                @close="closeDropReveal"
+                @view-stash="viewStash"
             />
 
-            <!-- Suggested next destination -->
-            <KeepExploring />
-        </main>
+        </div>
 
-        <!-- Global application footer -->
-        <AppFooter />
-
-        <!-- Best Buds Drop reveal -->
-        <DropReveal
-            :is-open="isDropRevealOpen"
-            :user-collectible="newDrop"
-            @close="closeDropReveal"
-            @view-stash="viewStash"
-        />
     </div>
+
 </template>
 
 <script>
@@ -123,6 +140,7 @@ export default {
             CollectibleService
                 .checkForDrops()
                 .then((response) => {
+
                     if (
                         response.status !== 200
                         || !Array.isArray(
@@ -138,12 +156,15 @@ export default {
                     );
 
                     this.showNextDrop();
+
                 })
                 .catch((error) => {
+
                     console.error(
                         "Unable to check for new Drops:",
                         error
                     );
+
                 });
         },
 

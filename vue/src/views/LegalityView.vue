@@ -1,60 +1,101 @@
-<!-- Legality View Display --->
+<!-- Legality View Display -->
 <template>
 
-    <!-- Browser Tab Title -->
-    <title>Legality | Best Buds</title>
+    <div
+        id="legality-view"
+        aria-labelledby="legality-heading"
+    >
 
-    <!-- Display View Body -->
-    <body id="legality-body">
+        <!-- Display Page Introduction -->
+        <header id="legality-header">
 
-        <!-- Display Body's Main Content -->
-        <main id="legality-main">
+            <h1 id="legality-heading">
+                Cannabis Legality In Each State
+            </h1>
 
-            <!-- Display Body Title -->
-            <h1>Cannabis Legality In Each State</h1>
+            <h2>
+                Ever wondered if your cannabis stash is legal
+                or if you're just a really optimistic rebel?
+            </h2>
 
-            <!-- Display Body Summary -->
-            <section id="summary">
-                <h2>Ever wondered if your cannabis stash is legal or if you’re just a really optimistic rebel?</h2>
-                <p>States like California and Colorado are rolling out the green carpet for adults 21+, with legal shops and chill vibes. Many states have medical programs where patients get the green light with a doctor's thumbs-up. Some states have turned down the legal heat, making minor offenses more about a fine than a felony. States are dancing to their own beat, while federal rules are like the old-school DJ trying to keep things under control. In short, it’s a legal jamboree with states setting their own rules while federal law lingers in the background!</p>
-                <h3>Click Interactive Map To View The Cannabis Laws In Each State!</h3>
-            </section>
+            <p>
+                States like California and Colorado are rolling
+                out the green carpet for adults 21+, with legal
+                shops and chill vibes. Many states have medical
+                programs where patients get the green light
+                with a doctor's thumbs-up. Some states have
+                turned down the legal heat, making minor
+                offenses more about a fine than a felony.
+                States are dancing to their own beat, while
+                federal rules are like the old-school DJ trying
+                to keep things under control. In short, it's a
+                legal jamboree with states setting their own
+                rules while federal law lingers in the
+                background!
+            </p>
 
-            <!-- Display Legality Inoformation -->
-             <section id="legality">
+            <p>
+                Select a state on the interactive map below
+                to view its cannabis laws.
+            </p>
 
-                <!-- Display Interactive Legality Map Component -->
-                <article id="map">
-                    <LegalityMap />
-                </article>
+        </header>
 
-            </section>    
+        <!-- Display Cannabis Legality -->
+        <section
+            id="cannabis-legality"
+            aria-labelledby="cannabis-legality-heading"
+        >
 
-        </main>
+            <h2 id="cannabis-legality-heading">
+                Cannabis Laws By State
+            </h2>
 
-        <!-- Display Strain Guide Visit Component -->
-        <section id="strain-guide-visit">
+            <LegalityMap />
+
+        </section>
+
+        <!-- Display Strain Guide -->
+        <section
+            id="legality-strain-guide"
+            aria-labelledby="legality-strain-guide-heading"
+        >
+
+            <h2 id="legality-strain-guide-heading">
+                Explore Our Strain Guide
+            </h2>
+
             <StrainGuideVisit />
-        </section>
- 
-        <!-- Display Articles Visit Component -->
-        <section id="articles-visit">
-            <ArticlesVisit />
+
         </section>
 
-    </body>
+        <!-- Display Latest Articles -->
+        <section
+            id="legality-articles"
+            aria-labelledby="legality-articles-heading"
+        >
+
+            <h2 id="legality-articles-heading">
+                Latest Cannabis Articles
+            </h2>
+
+            <ArticlesVisit />
+
+        </section>
+
+    </div>
 
 </template>
 
 <script>
-import LegalityMap from '../components/legality/LegalityMap.vue';
-import StrainGuideVisit from '../components/strain-guide/StrainGuideVisit.vue';
-import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
+import LegalityMap from "../components/legality/LegalityMap.vue";
+import StrainGuideVisit from "../components/strain-guide/StrainGuideVisit.vue";
+import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
 
 export default {
     name: "LegalityView",
 
-    components: { 
+    components: {
         LegalityMap,
         StrainGuideVisit,
         ArticlesVisit

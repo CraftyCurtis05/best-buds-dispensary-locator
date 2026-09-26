@@ -14,9 +14,9 @@
         <!-- Display Dispensary Information -->
         <div class="saved-dispensary-content">
 
-            <h2>
+            <h3>
                 {{ dispensary.name }}
-            </h2>
+            </h3>
 
             <!-- Display Dispensary Rating -->
             <p
@@ -70,7 +70,7 @@
 </template>
 
 <script>
-import defaultDispensaryImage
+import DefaultDispensaryImage
     from "../../assets/search/default-dispensary-image.png";
 
 export default {
@@ -122,7 +122,8 @@ export default {
                 return this.dispensary.imageUrl;
             }
 
-            return defaultDispensaryImage;
+            return DefaultDispensaryImage;
+
         },
 
         // Get accessible text for the dispensary image
@@ -136,6 +137,7 @@ export default {
             }
 
             return "";
+
         },
 
         // Format the dispensary city, state, and ZIP code
@@ -165,7 +167,9 @@ export default {
             }
 
             const savedDate =
-                new Date(this.dispensary.savedAt);
+                new Date(
+                    this.dispensary.savedAt
+                );
 
             if (
                 Number.isNaN(
@@ -192,7 +196,9 @@ export default {
 
         // Use the default image if the saved image cannot load
         useDefaultImage() {
+
             this.imageLoadFailed = true;
+
         }
 
     }

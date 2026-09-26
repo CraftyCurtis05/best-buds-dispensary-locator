@@ -1,142 +1,210 @@
 <!-- Common Questions View Display -->
 <template>
 
-    <!-- Browser Tab Title -->
-    <title>Questions | Best Buds</title>
+    <div
+        id="questions-view"
+        aria-labelledby="questions-heading"
+    >
 
-    <!-- Display View Body -->
-    <body id="questions-body">
+        <!-- Display Page Introduction -->
+        <header id="questions-header">
 
-        <!-- Display Body's Main Content -->
-        <main id="questions-main">
+            <h1 id="questions-heading">
+                Commonly Asked Questions About Cannabis
+            </h1>
 
-            <!-- Display Body Title -->
-            <h1>Commonly Asked Questions About Cannabis</h1>
+            <h2>
+                Got cannabis questions? No worries!
+            </h2>
 
-            <!-- Display Body Summary -->
-            <section id="summary">
-                <h2>Got cannabis questions? No worries!</h2>
-                <p>Whether you're curious about legality, how it works, or the best ways to use it, the plant’s got answers. From getting high or just chilling with CBD, to understanding health impacts and legal stuff, dive in and explore. Stay informed, use responsibly, and enjoy the journey!</p>
-                <h3>We've got all your questions answered below!</h3>
-            </section>
+            <p>
+                Whether you're curious about legality, how it
+                works, or the best ways to use it, the plant’s
+                got answers. From getting high or just chilling
+                with CBD, to understanding health impacts and
+                legal stuff, dive in and explore. Stay
+                informed, use responsibly, and enjoy the
+                journey!
+            </p>
 
-            <!-- Display Body Jump Links -->
-             <section id="links">
-                <div class="link"><a href="#dispensaries">Dispensaries</a></div>
-                <div class="link"><a href="#cannabis">Cannabis</a></div>
-                <div class="link"><a href="#cbd">CBD</a></div>
-                <div class="link"><a href="#delta9">Delta-9</a></div>
-                <div class="link"><a href="#flower">Flower</a></div>
-                <div class="link"><a href="#wax">Wax</a></div>
-                <div class="link"><a href="#oil">Oil</a></div>
-                <div class="link"><a href="#tincture">Tincture</a></div>
-                <div class="link"><a href="#smoking">Smoking</a></div>
-                <div class="link"><a href="#vaporizing">Vaporizing</a></div>
-                <div class="link"><a href="#edibles">Edibles</a></div>
-                <div class="link"><a href="#topicals">Topicals</a></div>
-             </section>
+            <p>
+                We've got all your questions answered below!
+            </p>
 
-            <!-- Display Questions and Answers Information-->
-            <section id="questions">
+        </header>
 
-                <!-- Display Dispensaries Q&A Component -->
-                <article id="dispensaries">
-                    <DispensaryQuestions />
-                </article>
+        <!-- Display Question Jump Links -->
+        <nav
+            id="question-links"
+            aria-label="Cannabis question topics"
+        >
 
-                <!-- Display Cannabis Q&A Component -->
-                <article id="cannabis">
-                    <CannabisQuestions />
-                </article>
+            <ul>
 
-                <!-- Display CBD Q&A Component -->
-                <article id="cbd">
-                    <CbdQuestions />
-                </article>
+                <li>
+                    <a href="#dispensaries">
+                        Dispensaries
+                    </a>
+                </li>
 
-                <!-- Display Delta9 Q&A Component -->
-                <article id="delta9">
-                    <Delta9Questions />
-                </article>
+                <li>
+                    <a href="#cannabis">
+                        Cannabis
+                    </a>
+                </li>
 
-                <!-- Display Flower Q&A Component -->
-                <article id="flower">
-                    <FlowerQuestions />
-                </article>
+                <li>
+                    <a href="#cbd">
+                        CBD
+                    </a>
+                </li>
 
-                <!-- Display Wax Q&A Component -->
-                <article id="wax">
-                    <WaxQuestions />
-                </article>
+                <li>
+                    <a href="#delta9">
+                        Delta-9
+                    </a>
+                </li>
 
-                <!-- Display Oil Q&A Component -->
-                <article id="oil">
-                    <OilQuestions />  
-                </article>
+                <li>
+                    <a href="#flower">
+                        Flower
+                    </a>
+                </li>
 
-                <!-- Display Tincture Q&A Component -->
-                <article id="tincture">
-                    <TinctureQuestions />
-                </article>
+                <li>
+                    <a href="#wax">
+                        Wax
+                    </a>
+                </li>
 
-                <!-- Display Smoking Q&A Component -->
-                <article id="smoking">
-                    <SmokingQuestions />  
-                </article>
-                
-                <!-- Display Vaporizing Q&A Component -->
-                <article id="vaporizing">
-                    <VaporizingQuestions />
-                </article>
+                <li>
+                    <a href="#oil">
+                        Oil
+                    </a>
+                </li>
 
-                <!-- Display Edibles Q&A Component -->
-                <article id="edibles">
-                    <EdibleQuestions />
-                </article>
+                <li>
+                    <a href="#tincture">
+                        Tincture
+                    </a>
+                </li>
 
-                <!-- Display Topicals Q&A Component -->
-                <article id="topicals">
-                    <TopicalQuestions />
-                </article>
+                <li>
+                    <a href="#smoking">
+                        Smoking
+                    </a>
+                </li>
 
-            </section>
+                <li>
+                    <a href="#vaporizing">
+                        Vaporizing
+                    </a>
+                </li>
 
-        </main>
+                <li>
+                    <a href="#edibles">
+                        Edibles
+                    </a>
+                </li>
 
-        <!-- Display Strain Guide Visit Component -->
-        <section id="strain-guide-visit">
+                <li>
+                    <a href="#topicals">
+                        Topicals
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <!-- Display Questions and Answers -->
+        <section
+            id="questions"
+            aria-labelledby="questions-topics-heading"
+        >
+
+            <h2 id="questions-topics-heading">
+                Cannabis Questions & Answers
+            </h2>
+
+            <DispensaryQuestions />
+
+            <CannabisQuestions />
+
+            <CbdQuestions />
+
+            <Delta9Questions />
+
+            <FlowerQuestions />
+
+            <WaxQuestions />
+
+            <OilQuestions />
+
+            <TinctureQuestions />
+
+            <SmokingQuestions />
+
+            <VaporizingQuestions />
+
+            <EdibleQuestions />
+
+            <TopicalQuestions />
+
+        </section>
+
+        <!-- Display Strain Guide -->
+        <section
+            id="questions-strain-guide"
+            aria-labelledby="questions-strain-guide-heading"
+        >
+
+            <h2 id="questions-strain-guide-heading">
+                Explore Our Strain Guide
+            </h2>
+
             <StrainGuideVisit />
-        </section>
- 
-        <!-- Display Articles Visit Component -->
-        <section id="articles-visit">
-            <ArticlesVisit />
+
         </section>
 
-    </body>
+        <!-- Display Latest Articles -->
+        <section
+            id="questions-articles"
+            aria-labelledby="questions-articles-heading"
+        >
+
+            <h2 id="questions-articles-heading">
+                Latest Cannabis Articles
+            </h2>
+
+            <ArticlesVisit />
+
+        </section>
+
+    </div>
 
 </template>
 
 <script>
-import DispensaryQuestions from '../components/questions/DispensaryQuestions.vue';
-import CannabisQuestions from '../components/questions/CannabisQuestions.vue';
-import CbdQuestions from '../components/questions/CbdQuestions.vue';
-import Delta9Questions from '../components/questions/Delta9Questions.vue';
-import FlowerQuestions from '../components/questions/FlowerQuestions.vue';
-import WaxQuestions from '../components/questions/WaxQuestions.vue';
-import OilQuestions from '../components/questions/OilQuestions.vue';
-import TinctureQuestions from '../components/questions/TinctureQuestions.vue';
-import SmokingQuestions from '../components/questions/SmokingQuestions.vue';
-import VaporizingQuestions from '../components/questions/VaporizingQuestions.vue';
-import EdibleQuestions from '../components/questions/EdibleQuestions.vue';
-import TopicalQuestions from '../components/questions/TopicalQuestions.vue';
-import StrainGuideVisit from '../components/strain-guide/StrainGuideVisit.vue';
-import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
+import DispensaryQuestions from "../components/questions/DispensaryQuestions.vue";
+import CannabisQuestions from "../components/questions/CannabisQuestions.vue";
+import CbdQuestions from "../components/questions/CbdQuestions.vue";
+import Delta9Questions from "../components/questions/Delta9Questions.vue";
+import FlowerQuestions from "../components/questions/FlowerQuestions.vue";
+import WaxQuestions from "../components/questions/WaxQuestions.vue";
+import OilQuestions from "../components/questions/OilQuestions.vue";
+import TinctureQuestions from "../components/questions/TinctureQuestions.vue";
+import SmokingQuestions from "../components/questions/SmokingQuestions.vue";
+import VaporizingQuestions from "../components/questions/VaporizingQuestions.vue";
+import EdibleQuestions from "../components/questions/EdibleQuestions.vue";
+import TopicalQuestions from "../components/questions/TopicalQuestions.vue";
+import StrainGuideVisit from "../components/strain-guide/StrainGuideVisit.vue";
+import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
 
 export default {
     name: "QuestionsView",
 
-    components: { 
+    components: {
         DispensaryQuestions,
         CannabisQuestions,
         CbdQuestions,

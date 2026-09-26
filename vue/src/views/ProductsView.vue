@@ -1,100 +1,175 @@
-<!-- Cannabis Products View Display --->
+<!-- Cannabis Products View Display -->
 <template>
 
-    <!-- Browser Tab Title -->
-    <title>Which Products? | Best Buds</title>
+    <div
+        id="products-view"
+        aria-labelledby="products-heading"
+    >
 
-    <!-- Display View Body -->
-    <body id="products-body">
+        <!-- Display Page Introduction -->
+        <header id="products-header">
 
-        <!-- Display Body's Main Content -->
-        <main id="products-main">
+            <h1 id="products-heading">
+                Cannabis Products
+            </h1>
 
-            <!-- Display Body Title -->
-            <h1>Cannabis Products</h1>
+            <h2>
+                How To Choose Which Cannabis Product Is Right For You?
+            </h2>
 
-            <!-- Display Body Summary -->
-             <section id="summary">
-                <h2>How To Choose Which Cannabis Product Is Right For You?</h2>
-                <p>Choosing the right cannabis product is like picking your vibe! First choose the strain that is best for you by using our <router-link v-bind:to="{ name:'strain-guide' }">strain guide</router-link>. Next consider how you want to consume—smoke, vape, or snack on an edible. Start with a low dose and see how it feels. Explore and find your perfect match!</p>
-                <h3>Check out all the different types of cannabis products below!</h3>
-            </section>
-            
-            <!-- Display Body Jump Links -->
-            <section id="links">
-                <div class="link"><a href="#flower">Flower</a></div>
-                <div class="link"><a href="#edible">Edibles</a></div>
-                <div class="link"><a href="#wax">Wax</a></div>
-                <div class="link"><a href="#oil">Oil</a></div>
-                <div class="link"><a href="#tincture">Tinctures</a></div>
-                <div class="link"><a href="#topical">Topicals</a></div>
-            </section>
+            <p>
+                Choosing the right cannabis product is like
+                picking your vibe! First choose the strain that
+                is best for you by using our
+                <router-link
+                    :to="{ name: 'strain-guide' }"
+                >
+                    strain guide
+                </router-link>.
+                Next consider how you want to consume—smoke,
+                vape, or snack on an edible. Start with a low
+                dose and see how it feels. Explore and find
+                your perfect match!
+            </p>
 
-            <!-- Display Cannabis Products Information -->
-            <section id="products">
+            <p>
+                Check out all the different types of cannabis
+                products below!
+            </p>
 
-                <!-- Display Flower Component -->
-                <article id="flower">
-                    <FlowerProducts />
-                </article>
+        </header>
 
-                <!-- Display Edible Component -->
-                <article id="edible">
-                    <EdibleProducts />
-                </article>
+        <!-- Display Product Jump Links -->
+        <nav
+            id="product-links"
+            aria-label="Cannabis product sections"
+        >
 
-                <!-- Display Wax Component -->
-                <article id="wax">
-                    <WaxProducts />
-                </article>
+            <ul>
 
-                <!-- Display Oil Component -->
-                <article id="oil">
-                    <OilProducts />
-                </article>
+                <li>
+                    <a href="#flower">
+                        Flower
+                    </a>
+                </li>
 
-                <!-- Display Tincture Component -->
-                <article id="tincture">
-                    <TinctureProducts />
-                </article>
+                <li>
+                    <a href="#edible">
+                        Edibles
+                    </a>
+                </li>
 
-                <!-- Display Topical Component -->
-                <article id="topical">
-                    <TopicalProducts />
-                </article>
+                <li>
+                    <a href="#wax">
+                        Wax
+                    </a>
+                </li>
 
-            </section>
+                <li>
+                    <a href="#oil">
+                        Oil
+                    </a>
+                </li>
 
-        </main>
+                <li>
+                    <a href="#tincture">
+                        Tinctures
+                    </a>
+                </li>
 
-        <!-- Display Strain Guide Visit Component -->
-        <section id="strain-guide-visit">
+                <li>
+                    <a href="#topical">
+                        Topicals
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <!-- Display Cannabis Products -->
+        <section
+            id="cannabis-products"
+            aria-labelledby="cannabis-products-heading"
+        >
+
+            <h2 id="cannabis-products-heading">
+                Types of Cannabis Products
+            </h2>
+
+            <!-- Display Flower Products -->
+            <FlowerProducts />
+
+            <!-- Display Edible Products -->
+            <EdibleProducts />
+
+            <!-- Display Wax Products -->
+            <WaxProducts />
+
+            <!-- Display Oil Products -->
+            <OilProducts />
+
+            <!-- Display Tincture Products -->
+            <TinctureProducts />
+
+            <!-- Display Topical Products -->
+            <TopicalProducts />
+
+        </section>
+
+        <!-- Display Strain Guide -->
+        <section
+            id="products-strain-guide"
+            aria-labelledby="products-strain-guide-heading"
+        >
+
+            <h2 id="products-strain-guide-heading">
+                Explore Our Strain Guide
+            </h2>
+
             <StrainGuideVisit />
-        </section>
- 
-        <!-- Display Articles Visit Component -->
-        <section id="articles-visit">
-            <ArticlesVisit />
+
         </section>
 
-    </body>
+        <!-- Display Latest Articles -->
+        <section
+            id="products-articles"
+            aria-labelledby="products-articles-heading"
+        >
+
+            <h2 id="products-articles-heading">
+                Latest Cannabis Articles
+            </h2>
+
+            <ArticlesVisit />
+
+        </section>
+
+    </div>
 
 </template>
 
 <script>
-import FlowerProducts from '../components/products/FlowerProducts.vue';
-import EdibleProducts from '../components/products/EdibleProducts.vue';
-import WaxProducts from '../components/products/WaxProducts.vue';
-import OilProducts from '../components/products/OilProducts.vue';
-import TinctureProducts from '../components/products/TinctureProducts.vue';
-import TopicalProducts from '../components/products/TopicalProducts.vue';
-import StrainGuideVisit from '../components/strain-guide/StrainGuideVisit.vue';
-import ArticlesVisit from '../components/articles/ArticlesVisit.vue';
+import FlowerProducts from "../components/products/FlowerProducts.vue";
+
+import EdibleProducts from "../components/products/EdibleProducts.vue";
+
+import WaxProducts from "../components/products/WaxProducts.vue";
+
+import OilProducts from "../components/products/OilProducts.vue";
+
+import TinctureProducts from "../components/products/TinctureProducts.vue";
+
+import TopicalProducts from "../components/products/TopicalProducts.vue";
+
+import StrainGuideVisit from "../components/strain-guide/StrainGuideVisit.vue";
+
+import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
 
 export default {
     name: "ProductsView",
 
-    components: { 
+    components: {
         FlowerProducts,
         EdibleProducts,
         WaxProducts,
