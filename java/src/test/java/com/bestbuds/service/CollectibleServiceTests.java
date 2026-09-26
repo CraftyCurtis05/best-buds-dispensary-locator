@@ -14,6 +14,7 @@ import org.mockito.MockitoAnnotations;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -155,7 +156,16 @@ public class CollectibleServiceTests {
 
         List<UserCollectible> result =
                 collectibleService.checkForDrops(
-                        1
+                        1,
+                        LocalDate.of(
+                                2026,
+                                9,
+                                24
+                        ),
+                        LocalTime.of(
+                                12,
+                                0
+                        )
                 );
 
         assertEquals(
@@ -205,7 +215,16 @@ public class CollectibleServiceTests {
 
         List<UserCollectible> result =
                 collectibleService.checkForDrops(
-                        1
+                        1,
+                        LocalDate.of(
+                                2026,
+                                9,
+                                24
+                        ),
+                        LocalTime.of(
+                                12,
+                                0
+                        )
                 );
 
         assertTrue(
@@ -225,6 +244,247 @@ public class CollectibleServiceTests {
         ).unlockCollectible(
                 1,
                 "FIRST_CONTACT"
+        );
+    }
+
+    @Test
+    public void checkForDrops_unlocks_night_owl_during_early_morning() {
+
+        UserCollectible nightOwl =
+                createUserCollectible(
+                        2,
+                        1,
+                        createCollectible(
+                                2,
+                                "NIGHT_OWL",
+                                "Night Owl"
+                        )
+                );
+
+        when(
+                collectibleDao.unlockCollectible(
+                        1,
+                        "NIGHT_OWL"
+                )
+        ).thenReturn(
+                nightOwl
+        );
+
+        when(
+                profileService.getProfile(
+                        1
+                )
+        ).thenReturn(
+                null
+        );
+
+        List<UserCollectible> result =
+                collectibleService.checkForDrops(
+                        1,
+                        LocalDate.of(
+                                2026,
+                                9,
+                                24
+                        ),
+                        LocalTime.of(
+                                2,
+                                30
+                        )
+                );
+
+        assertEquals(
+                1,
+                result.size()
+        );
+
+        assertSame(
+                nightOwl,
+                result.get(0)
+        );
+
+        verify(
+                collectibleDao
+        ).unlockCollectible(
+                1,
+                "NIGHT_OWL"
+        );
+    }
+
+    @Test
+    public void unlockNightOwl_unlocks_collectible_at_midnight() {
+
+        LocalTime currentTime =
+                LocalTime.of(
+                        0,
+                        0
+                );
+
+        UserCollectible nightOwl =
+                createUserCollectible(
+                        2,
+                        1,
+                        createCollectible(
+                                2,
+                                "NIGHT_OWL",
+                                "Night Owl"
+                        )
+                );
+
+        when(
+                collectibleDao.unlockCollectible(
+                        1,
+                        "NIGHT_OWL"
+                )
+        ).thenReturn(
+                nightOwl
+        );
+
+        UserCollectible result =
+                collectibleService.unlockNightOwl(
+                        1,
+                        currentTime
+                );
+
+        assertSame(
+                nightOwl,
+                result
+        );
+
+        verify(
+                collectibleDao
+        ).unlockCollectible(
+                1,
+                "NIGHT_OWL"
+        );
+    }
+
+
+    @Test
+    public void unlockNightOwl_unlocks_collectible_at_459_am() {
+
+        LocalTime currentTime =
+                LocalTime.of(
+                        4,
+                        59
+                );
+
+        UserCollectible nightOwl =
+                createUserCollectible(
+                        2,
+                        1,
+                        createCollectible(
+                                2,
+                                "NIGHT_OWL",
+                                "Night Owl"
+                        )
+                );
+
+        when(
+                collectibleDao.unlockCollectible(
+                        1,
+                        "NIGHT_OWL"
+                )
+        ).thenReturn(
+                nightOwl
+        );
+
+        UserCollectible result =
+                collectibleService.unlockNightOwl(
+                        1,
+                        currentTime
+                );
+
+        assertSame(
+                nightOwl,
+                result
+        );
+
+        verify(
+                collectibleDao
+        ).unlockCollectible(
+                1,
+                "NIGHT_OWL"
+        );
+    }
+
+
+    @Test
+    public void unlockNightOwl_returns_null_at_5_am() {
+
+        LocalTime currentTime =
+                LocalTime.of(
+                        5,
+                        0
+                );
+
+        UserCollectible result =
+                collectibleService.unlockNightOwl(
+                        1,
+                        currentTime
+                );
+
+        assertNull(
+                result
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                "NIGHT_OWL"
+        );
+    }
+
+
+    @Test
+    public void unlockNightOwl_returns_null_during_day() {
+
+        LocalTime currentTime =
+                LocalTime.of(
+                        14,
+                        30
+                );
+
+        UserCollectible result =
+                collectibleService.unlockNightOwl(
+                        1,
+                        currentTime
+                );
+
+        assertNull(
+                result
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                "NIGHT_OWL"
+        );
+    }
+
+
+    @Test
+    public void unlockNightOwl_returns_null_when_time_is_missing() {
+
+        UserCollectible result =
+                collectibleService.unlockNightOwl(
+                        1,
+                        null
+                );
+
+        assertNull(
+                result
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                "NIGHT_OWL"
         );
     }
 
@@ -391,10 +651,11 @@ public class CollectibleServiceTests {
         );
 
         profile.setBirthday(
-                LocalDate.now()
-                        .minusYears(
-                                30
-                        )
+                LocalDate.of(
+                        1996,
+                        9,
+                        24
+                )
         );
 
         UserCollectible birthdayBud =
@@ -427,7 +688,16 @@ public class CollectibleServiceTests {
 
         List<UserCollectible> result =
                 collectibleService.checkForDrops(
-                        1
+                        1,
+                        LocalDate.of(
+                                2026,
+                                9,
+                                24
+                        ),
+                        LocalTime.of(
+                                12,
+                                0
+                        )
                 );
 
         assertEquals(
@@ -467,7 +737,16 @@ public class CollectibleServiceTests {
 
         List<UserCollectible> result =
                 collectibleService.checkForDrops(
-                        1
+                        1,
+                        LocalDate.of(
+                                2026,
+                                9,
+                                24
+                        ),
+                        LocalTime.of(
+                                12,
+                                0
+                        )
                 );
 
         assertTrue(
@@ -514,7 +793,16 @@ public class CollectibleServiceTests {
 
         List<UserCollectible> result =
                 collectibleService.checkForDrops(
-                        1
+                        1,
+                        LocalDate.of(
+                                2026,
+                                9,
+                                24
+                        ),
+                        LocalTime.of(
+                                12,
+                                0
+                        )
                 );
 
         assertTrue(
@@ -570,10 +858,11 @@ public class CollectibleServiceTests {
         );
 
         profile.setBirthday(
-                LocalDate.now()
-                        .minusYears(
-                                30
-                        )
+                LocalDate.of(
+                        1996,
+                        9,
+                        24
+                )
         );
 
         UserCollectible firstContact =
@@ -637,7 +926,16 @@ public class CollectibleServiceTests {
 
         List<UserCollectible> result =
                 collectibleService.checkForDrops(
-                        1
+                        1,
+                        LocalDate.of(
+                                2026,
+                                9,
+                                24
+                        ),
+                        LocalTime.of(
+                                12,
+                                0
+                        )
                 );
 
         assertEquals(

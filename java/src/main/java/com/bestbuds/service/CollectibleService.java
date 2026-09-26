@@ -10,6 +10,7 @@ import com.bestbuds.model.UserCollectible;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +19,9 @@ public class CollectibleService {
 
     private static final String FIRST_CONTACT =
             "FIRST_CONTACT";
+
+    private static final String NIGHT_OWL =
+            "NIGHT_OWL";
 
     private static final String BIRTHDAY_BUD =
             "BIRTHDAY_BUD";
@@ -96,9 +100,23 @@ public class CollectibleService {
     }
 
 
-    // Check whether a user has any automatic collectibles to unlock
+    // Check for automatic collectibles using the current date and time
     public List<UserCollectible> checkForDrops(
             int userId
+    ) {
+        return checkForDrops(
+                userId,
+                LocalDate.now(),
+                LocalTime.now()
+        );
+    }
+
+
+    // Check whether a user has any automatic collectibles to unlock
+    public List<UserCollectible> checkForDrops(
+            int userId,
+            LocalDate today,
+            LocalTime currentTime
     ) {
 
         List<UserCollectible> newDrops =
@@ -115,9 +133,22 @@ public class CollectibleService {
             );
         }
 
+        UserCollectible nightOwl =
+                checkNightOwl(
+                        userId,
+                        currentTime
+                );
+
+        if (nightOwl != null) {
+            newDrops.add(
+                    nightOwl
+            );
+        }
+
         UserCollectible birthdayBud =
                 checkBirthdayBud(
-                        userId
+                        userId,
+                        today
                 );
 
         if (birthdayBud != null) {
@@ -162,9 +193,70 @@ public class CollectibleService {
     }
 
 
+    // Check whether Night Owl is available to unlock
+    private UserCollectible checkNightOwl(
+            int userId,
+            LocalTime currentTime
+    ) {
+
+        UserCollectible nightOwl =
+                getUserCollectible(
+                        userId,
+                        NIGHT_OWL
+                );
+
+        if (nightOwl != null) {
+            return null;
+        }
+
+        return unlockNightOwl(
+                userId,
+                currentTime
+        );
+    }
+
+    // Unlock Night Owl using the current time
+    public UserCollectible unlockNightOwl(
+            int userId
+    ) {
+        return unlockNightOwl(
+                userId,
+                LocalTime.now()
+        );
+    }
+
+
+    // Unlock Night Owl during the early morning hours
+    public UserCollectible unlockNightOwl(
+            int userId,
+            LocalTime currentTime
+    ) {
+
+        if (currentTime == null) {
+            return null;
+        }
+
+        LocalTime nightOwlEnd =
+                LocalTime.of(
+                        5,
+                        0
+                );
+
+        if (!currentTime.isBefore(nightOwlEnd)) {
+            return null;
+        }
+
+        return unlockCollectible(
+                userId,
+                NIGHT_OWL
+        );
+    }
+
+
     // Check whether Birthday Bud is available to unlock
     private UserCollectible checkBirthdayBud(
-            int userId
+            int userId,
+            LocalDate today
     ) {
 
         UserCollectible birthdayBud =
@@ -188,7 +280,8 @@ public class CollectibleService {
 
         return unlockBirthdayBud(
                 userId,
-                profile.getBirthday()
+                profile.getBirthday(),
+                today
         );
     }
 
