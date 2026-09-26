@@ -45,7 +45,9 @@
                 v-if="hasSearchLocation"
             />
 
-            <SearchMap />
+            <SearchMap
+                @activity-recorded="activityRecorded"
+            />
 
         </section>
 
@@ -76,6 +78,10 @@ export default {
         ArticlesVisit
     },
 
+    emits: [
+        "activity-recorded"
+    ],
+
     computed: {
 
         // Check if the user has entered a search location
@@ -83,6 +89,19 @@ export default {
             return Boolean(
                 this.$store.state.locationID
             );
+        }
+
+    },
+
+    methods: {
+
+        // Pass the recorded activity to the application
+        activityRecorded() {
+
+            this.$emit(
+                "activity-recorded"
+            );
+
         }
 
     }

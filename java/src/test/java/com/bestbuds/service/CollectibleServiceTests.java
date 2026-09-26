@@ -4,6 +4,8 @@ import com.bestbuds.dao.CollectibleDao;
 import com.bestbuds.model.Collectible;
 import com.bestbuds.model.UserCollectible;
 import com.bestbuds.model.Profile;
+import com.bestbuds.model.UserActivity;
+import com.bestbuds.model.UserActivityType;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,6 +18,8 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.never;
@@ -27,6 +31,9 @@ public class CollectibleServiceTests {
 
     @Mock
     private ProfileService profileService;
+
+    @Mock
+    private UserActivityService userActivityService;
 
     private CollectibleService collectibleService;
 
@@ -40,8 +47,18 @@ public class CollectibleServiceTests {
         collectibleService =
                 new CollectibleService(
                         collectibleDao,
-                        profileService
+                        profileService,
+                        userActivityService
                 );
+
+        when(
+                userActivityService.getUserActivitiesByType(
+                        1,
+                        UserActivityType.DISPENSARY_VIEW
+                )
+        ).thenReturn(
+                List.of()
+        );
     }
 
     @Test
@@ -76,6 +93,138 @@ public class CollectibleServiceTests {
                 collectibleDao
         ).getCollectibleByCode(
                 "BIRTHDAY_BUD"
+        );
+    }
+
+    @Test
+    public void checkForDrops_unlocks_first_contact_after_first_dispensary_view() {
+
+        UserActivity dispensaryView =
+                new UserActivity();
+
+        dispensaryView.setUserId(
+                1
+        );
+
+        dispensaryView.setActivityType(
+                UserActivityType.DISPENSARY_VIEW
+        );
+
+        dispensaryView.setActivityValue(
+                "test-dispensary"
+        );
+
+        UserCollectible firstContact =
+                createUserCollectible(
+                        1,
+                        1,
+                        createCollectible(
+                                1,
+                                "FIRST_CONTACT",
+                                "First Contact"
+                        )
+                );
+
+        when(
+                userActivityService.getUserActivitiesByType(
+                        1,
+                        UserActivityType.DISPENSARY_VIEW
+                )
+        ).thenReturn(
+                List.of(
+                        dispensaryView
+                )
+        );
+
+        when(
+                collectibleDao.unlockCollectible(
+                        1,
+                        "FIRST_CONTACT"
+                )
+        ).thenReturn(
+                firstContact
+        );
+
+        when(
+                profileService.getProfile(
+                        1
+                )
+        ).thenReturn(
+                null
+        );
+
+        List<UserCollectible> result =
+                collectibleService.checkForDrops(
+                        1
+                );
+
+        assertEquals(
+                1,
+                result.size()
+        );
+
+        assertSame(
+                firstContact,
+                result.get(0)
+        );
+
+        verify(
+                userActivityService
+        ).getUserActivitiesByType(
+                1,
+                UserActivityType.DISPENSARY_VIEW
+        );
+
+        verify(
+                collectibleDao
+        ).unlockCollectible(
+                1,
+                "FIRST_CONTACT"
+        );
+    }
+
+    @Test
+    public void checkForDrops_does_not_unlock_first_contact_without_dispensary_view() {
+
+        when(
+                userActivityService.getUserActivitiesByType(
+                        1,
+                        UserActivityType.DISPENSARY_VIEW
+                )
+        ).thenReturn(
+                List.of()
+        );
+
+        when(
+                profileService.getProfile(
+                        1
+                )
+        ).thenReturn(
+                null
+        );
+
+        List<UserCollectible> result =
+                collectibleService.checkForDrops(
+                        1
+                );
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                userActivityService
+        ).getUserActivitiesByType(
+                1,
+                UserActivityType.DISPENSARY_VIEW
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                "FIRST_CONTACT"
         );
     }
 
@@ -248,7 +397,7 @@ public class CollectibleServiceTests {
                         )
         );
 
-        UserCollectible userCollectible =
+        UserCollectible birthdayBud =
                 createUserCollectible(
                         1,
                         1,
@@ -273,31 +422,40 @@ public class CollectibleServiceTests {
                         "BIRTHDAY_BUD"
                 )
         ).thenReturn(
-                userCollectible
+                birthdayBud
         );
 
-        UserCollectible result =
+        List<UserCollectible> result =
                 collectibleService.checkForDrops(
                         1
                 );
 
-        assertSame(
-                userCollectible,
-                result
+        assertEquals(
+                1,
+                result.size()
         );
 
-        verify(profileService).getProfile(
+        assertSame(
+                birthdayBud,
+                result.get(0)
+        );
+
+        verify(
+                profileService
+        ).getProfile(
                 1
         );
 
-        verify(collectibleDao).unlockCollectible(
+        verify(
+                collectibleDao
+        ).unlockCollectible(
                 1,
                 "BIRTHDAY_BUD"
         );
     }
 
     @Test
-    public void checkForDrops_returns_null_when_profile_does_not_exist() {
+    public void checkForDrops_returns_empty_list_when_profile_does_not_exist() {
 
         when(
                 profileService.getProfile(
@@ -307,16 +465,18 @@ public class CollectibleServiceTests {
                 null
         );
 
-        UserCollectible result =
+        List<UserCollectible> result =
                 collectibleService.checkForDrops(
                         1
                 );
 
-        assertNull(
-                result
+        assertTrue(
+                result.isEmpty()
         );
 
-        verify(profileService).getProfile(
+        verify(
+                profileService
+        ).getProfile(
                 1
         );
 
@@ -330,7 +490,77 @@ public class CollectibleServiceTests {
     }
 
     @Test
-    public void checkForDrops_returns_null_when_birthday_bud_is_already_unlocked() {
+    public void checkForDrops_returns_empty_list_when_birthday_bud_is_already_unlocked() {
+
+        UserCollectible birthdayBud =
+                createUserCollectible(
+                        1,
+                        1,
+                        createCollectible(
+                                1,
+                                "BIRTHDAY_BUD",
+                                "Birthday Bud"
+                        )
+                );
+
+        when(
+                collectibleDao.getUserCollectible(
+                        1,
+                        "BIRTHDAY_BUD"
+                )
+        ).thenReturn(
+                birthdayBud
+        );
+
+        List<UserCollectible> result =
+                collectibleService.checkForDrops(
+                        1
+                );
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                collectibleDao
+        ).getUserCollectible(
+                1,
+                "BIRTHDAY_BUD"
+        );
+
+        verify(
+                profileService,
+                never()
+        ).getProfile(
+                1
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                "BIRTHDAY_BUD"
+        );
+    }
+
+    @Test
+    public void checkForDrops_unlocks_first_contact_and_birthday_bud_together() {
+
+        UserActivity dispensaryView =
+                new UserActivity();
+
+        dispensaryView.setUserId(
+                1
+        );
+
+        dispensaryView.setActivityType(
+                UserActivityType.DISPENSARY_VIEW
+        );
+
+        dispensaryView.setActivityValue(
+                "test-dispensary"
+        );
 
         Profile profile =
                 new Profile();
@@ -346,16 +576,38 @@ public class CollectibleServiceTests {
                         )
         );
 
-        UserCollectible birthdayBud =
+        UserCollectible firstContact =
                 createUserCollectible(
                         1,
                         1,
                         createCollectible(
                                 1,
+                                "FIRST_CONTACT",
+                                "First Contact"
+                        )
+                );
+
+        UserCollectible birthdayBud =
+                createUserCollectible(
+                        2,
+                        1,
+                        createCollectible(
+                                18,
                                 "BIRTHDAY_BUD",
                                 "Birthday Bud"
                         )
                 );
+
+        when(
+                userActivityService.getUserActivitiesByType(
+                        1,
+                        UserActivityType.DISPENSARY_VIEW
+                )
+        ).thenReturn(
+                List.of(
+                        dispensaryView
+                )
+        );
 
         when(
                 profileService.getProfile(
@@ -366,7 +618,16 @@ public class CollectibleServiceTests {
         );
 
         when(
-                collectibleDao.getUserCollectible(
+                collectibleDao.unlockCollectible(
+                        1,
+                        "FIRST_CONTACT"
+                )
+        ).thenReturn(
+                firstContact
+        );
+
+        when(
+                collectibleDao.unlockCollectible(
                         1,
                         "BIRTHDAY_BUD"
                 )
@@ -374,27 +635,35 @@ public class CollectibleServiceTests {
                 birthdayBud
         );
 
-        UserCollectible result =
+        List<UserCollectible> result =
                 collectibleService.checkForDrops(
                         1
                 );
 
-        assertNull(
-                result
+        assertEquals(
+                2,
+                result.size()
         );
 
-        verify(profileService).getProfile(
-                1
+        assertSame(
+                firstContact,
+                result.get(0)
         );
 
-        verify(collectibleDao).getUserCollectible(
-                1,
-                "BIRTHDAY_BUD"
+        assertSame(
+                birthdayBud,
+                result.get(1)
         );
 
         verify(
-                collectibleDao,
-                never()
+                collectibleDao
+        ).unlockCollectible(
+                1,
+                "FIRST_CONTACT"
+        );
+
+        verify(
+                collectibleDao
         ).unlockCollectible(
                 1,
                 "BIRTHDAY_BUD"

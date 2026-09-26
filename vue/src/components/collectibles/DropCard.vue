@@ -53,11 +53,9 @@ export default {
 
         // Get the artwork for the collectible
         dropArtwork() {
-
             return getDropArtwork(
-                this.collectible.name
+                this.collectible.code
             );
-
         },
 
         // Get accessible text for the Drop artwork

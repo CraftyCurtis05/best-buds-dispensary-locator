@@ -132,7 +132,7 @@ export default {
         dropArtwork() {
 
             return getDropArtwork(
-                this.collectibleName
+                this.collectible.code
             );
 
         },
@@ -189,5 +189,57 @@ export default {
 </script>
 
 <style scoped>
+
+/* Cover the application while a Drop is being revealed */
+.drop-reveal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1.5rem;
+
+    background: rgba(0, 0, 0, 0.75);
+}
+
+/* Display the Drop reveal modal */
+.drop-reveal {
+    width: min(100%, 32rem);
+    max-height: calc(100vh - 3rem);
+    overflow-y: auto;
+
+    padding: 2rem;
+
+    background: #ffffff;
+    border-radius: 1rem;
+
+    text-align: center;
+}
+
+/* Organize the surprise and revealed Drop content */
+.drop-surprise,
+.drop-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Display the unlocked Drop artwork */
+.drop-reveal-artwork {
+    display: block;
+
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Display modal actions */
+.drop-reveal button {
+    cursor: pointer;
+}
 
 </style>

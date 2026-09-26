@@ -131,7 +131,7 @@ public class CollectibleControllerTests {
     }
 
     @Test
-    public void checkForDrops_returns_collectible_when_drop_is_available() {
+    public void checkForDrops_returns_collectibles_when_drops_are_available() {
 
         User user =
                 new User();
@@ -140,35 +140,71 @@ public class CollectibleControllerTests {
                 1
         );
 
-        Collectible collectible =
+        Collectible firstContactCollectible =
                 new Collectible();
 
-        collectible.setId(
-                10
-        );
-
-        collectible.setCode(
-                "BIRTHDAY_BUD"
-        );
-
-        collectible.setName(
-                "Birthday Bud"
-        );
-
-        UserCollectible userCollectible =
-                new UserCollectible();
-
-        userCollectible.setId(
-                20
-        );
-
-        userCollectible.setUserId(
+        firstContactCollectible.setId(
                 1
         );
 
-        userCollectible.setCollectible(
-                collectible
+        firstContactCollectible.setCode(
+                "FIRST_CONTACT"
         );
+
+        firstContactCollectible.setName(
+                "First Contact"
+        );
+
+        UserCollectible firstContact =
+                new UserCollectible();
+
+        firstContact.setId(
+                20
+        );
+
+        firstContact.setUserId(
+                1
+        );
+
+        firstContact.setCollectible(
+                firstContactCollectible
+        );
+
+        Collectible birthdayCollectible =
+                new Collectible();
+
+        birthdayCollectible.setId(
+                18
+        );
+
+        birthdayCollectible.setCode(
+                "BIRTHDAY_BUD"
+        );
+
+        birthdayCollectible.setName(
+                "Birthday Bud"
+        );
+
+        UserCollectible birthdayBud =
+                new UserCollectible();
+
+        birthdayBud.setId(
+                21
+        );
+
+        birthdayBud.setUserId(
+                1
+        );
+
+        birthdayBud.setCollectible(
+                birthdayCollectible
+        );
+
+        List<UserCollectible> newDrops =
+                List.of(
+                        firstContact,
+                        birthdayBud
+                );
 
         when(authentication.getName())
                 .thenReturn(
@@ -182,10 +218,10 @@ public class CollectibleControllerTests {
 
         when(collectibleService.checkForDrops(1))
                 .thenReturn(
-                        userCollectible
+                        newDrops
                 );
 
-        ResponseEntity<UserCollectible> response =
+        ResponseEntity<List<UserCollectible>> response =
                 sut.checkForDrops(
                         authentication
                 );
@@ -196,7 +232,7 @@ public class CollectibleControllerTests {
         );
 
         assertSame(
-                userCollectible,
+                newDrops,
                 response.getBody()
         );
 
@@ -210,7 +246,7 @@ public class CollectibleControllerTests {
     }
 
     @Test
-    public void checkForDrops_returns_no_content_when_no_drop_is_available() {
+    public void checkForDrops_returns_no_content_when_no_drops_are_available() {
 
         User user =
                 new User();
@@ -231,10 +267,10 @@ public class CollectibleControllerTests {
 
         when(collectibleService.checkForDrops(1))
                 .thenReturn(
-                        null
+                        List.of()
                 );
 
-        ResponseEntity<UserCollectible> response =
+        ResponseEntity<List<UserCollectible>> response =
                 sut.checkForDrops(
                         authentication
                 );

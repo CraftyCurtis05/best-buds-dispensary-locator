@@ -12,7 +12,9 @@
             <JumpLinks />
 
             <!-- Current page -->
-            <router-view />
+            <router-view
+                @activity-recorded="activityRecorded"
+            />
 
             <!-- Suggested next destination -->
             <KeepExploring />
@@ -56,6 +58,7 @@ export default {
 
             // Store the current Drop reveal state
             newDrop: null,
+            dropQueue: [],
             isDropRevealOpen: false,
             hasCheckedForDrops: false
 
@@ -99,6 +102,7 @@ export default {
 
                 if (!isUserReady) {
                     this.hasCheckedForDrops = false;
+                    this.clearDropQueue();
                 }
             }
         }
@@ -107,7 +111,12 @@ export default {
 
     methods: {
 
-        // Check whether the authenticated user has earned a new Drop
+        // Check for new Drops after an activity is recorded
+        activityRecorded() {
+            this.checkForDrops();
+        },
+
+        // Check whether the authenticated user has earned new Drops
         checkForDrops() {
             this.hasCheckedForDrops = true;
 
@@ -115,12 +124,20 @@ export default {
                 .checkForDrops()
                 .then((response) => {
                     if (
-                        response.status === 200
-                        && response.data
+                        response.status !== 200
+                        || !Array.isArray(
+                            response.data
+                        )
+                        || response.data.length === 0
                     ) {
-                        this.newDrop = response.data;
-                        this.isDropRevealOpen = true;
+                        return;
                     }
+
+                    this.addDropsToQueue(
+                        response.data
+                    );
+
+                    this.showNextDrop();
                 })
                 .catch((error) => {
                     console.error(
@@ -130,18 +147,77 @@ export default {
                 });
         },
 
-        // Close the Drop reveal
+        // Add newly unlocked Drops to the reveal queue
+        addDropsToQueue(newDrops) {
+
+            newDrops.forEach((drop) => {
+
+                const isCurrentDrop =
+                    this.newDrop?.id
+                    === drop.id;
+
+                const isAlreadyQueued =
+                    this.dropQueue.some(
+                        (queuedDrop) =>
+                            queuedDrop.id
+                            === drop.id
+                    );
+
+                if (
+                    !isCurrentDrop
+                    && !isAlreadyQueued
+                ) {
+                    this.dropQueue.push(
+                        drop
+                    );
+                }
+
+            });
+
+        },
+
+        // Display the next Drop waiting to be revealed
+        showNextDrop() {
+
+            if (
+                this.isDropRevealOpen
+                || this.dropQueue.length === 0
+            ) {
+                return;
+            }
+
+            this.newDrop =
+                this.dropQueue.shift();
+
+            this.isDropRevealOpen = true;
+        },
+
+        // Close the current Drop and reveal the next one
         closeDropReveal() {
             this.isDropRevealOpen = false;
+            this.newDrop = null;
+
+            this.$nextTick(() => {
+                this.showNextDrop();
+            });
         },
 
         // Continue to the user's My Stash collection
         viewStash() {
             this.isDropRevealOpen = false;
+            this.newDrop = null;
+            this.dropQueue = [];
 
             this.$router.push({
                 name: "my-stash"
             });
+        },
+
+        // Clear the Drop reveal state
+        clearDropQueue() {
+            this.newDrop = null;
+            this.dropQueue = [];
+            this.isDropRevealOpen = false;
         }
 
     }
@@ -149,5 +225,7 @@ export default {
 </script>
 
 <style>
-
+img {
+    max-height: 10rem;
+}
 </style>

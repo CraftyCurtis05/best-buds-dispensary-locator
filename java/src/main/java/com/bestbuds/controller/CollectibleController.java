@@ -26,9 +26,13 @@ public class CollectibleController {
             CollectibleService collectibleService,
             AuthenticationService authenticationService
     ) {
-        this.collectibleService = collectibleService;
-        this.authenticationService = authenticationService;
+        this.collectibleService =
+                collectibleService;
+
+        this.authenticationService =
+                authenticationService;
     }
+
 
     // Get all collectibles unlocked by the authenticated user
     @GetMapping
@@ -51,9 +55,10 @@ public class CollectibleController {
         );
     }
 
+
     // Check for automatic collectibles available to the authenticated user
     @PostMapping("/check")
-    public ResponseEntity<UserCollectible> checkForDrops(
+    public ResponseEntity<List<UserCollectible>> checkForDrops(
             Authentication authentication
     ) {
 
@@ -62,19 +67,20 @@ public class CollectibleController {
                         authentication.getName()
                 );
 
-        UserCollectible userCollectible =
+        List<UserCollectible> newDrops =
                 collectibleService.checkForDrops(
                         user.getId()
                 );
 
-        if (userCollectible == null) {
+        if (newDrops.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
 
         return ResponseEntity.ok(
-                userCollectible
+                newDrops
         );
     }
+
 
     // Get a specific collectible unlocked by the authenticated user
     @GetMapping("/{code}")

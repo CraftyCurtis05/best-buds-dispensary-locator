@@ -128,6 +128,9 @@ import {
     InfoWindow
 } from "vue3-google-map";
 
+import UserActivityService
+    from "../../services/UserActivityService.js";
+
 export default {
     name: "SearchMap",
 
@@ -136,6 +139,10 @@ export default {
         GoogleMapMarker,
         InfoWindow
     },
+
+    emits: [
+        "activity-recorded"
+    ],
 
     data() {
         return {
@@ -269,7 +276,42 @@ export default {
 
         // Display information for the selected dispensary
         selectDispensary(dispensary) {
-            this.selectedDispensary = dispensary;
+
+            this.selectedDispensary =
+                dispensary;
+
+            this.recordDispensaryView(
+                dispensary.id
+            );
+        },
+
+        // Record that the user viewed a dispensary
+        recordDispensaryView(dispensaryID) {
+
+            if (!dispensaryID) {
+                return;
+            }
+
+            UserActivityService
+                .createUserActivity(
+                    "DISPENSARY_VIEW",
+                    dispensaryID
+                )
+                .then(() => {
+
+                    this.$emit(
+                        "activity-recorded"
+                    );
+
+                })
+                .catch((error) => {
+
+                    console.error(
+                        "Unable to record dispensary view:",
+                        error
+                    );
+
+                });
         },
 
         // Close the selected dispensary information

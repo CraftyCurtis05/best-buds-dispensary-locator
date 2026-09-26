@@ -313,6 +313,22 @@ VALUES
         'MILESTONE',
         'SPECIAL',
         FALSE
+    ),
+    (
+        'LOCAL_EXPLORE',
+        'Local Explore',
+        'You explored 5 dispensaries near home.',
+        'MILESTONE',
+        'EXPLORE',
+        FALSE
+    ),
+    (
+        'BIRTHDAY_BUD',
+        'Birthday Bud',
+        'Happy Birthday! You celebrated another trip around the sun.',
+        'SPECIAL',
+        'CELEBRATE',
+        FALSE
     );
 
 COMMIT TRANSACTION;
