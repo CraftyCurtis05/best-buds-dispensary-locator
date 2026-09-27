@@ -6,7 +6,9 @@
         <div id="app-container">
 
             <!-- Display Application Header -->
-            <AppHeader />
+            <AppHeader
+                v-if="showAppLayout"
+            />
 
             <!-- Display Main Application Content -->
             <main
@@ -15,7 +17,9 @@
             >
 
                 <!-- Display Page Jump Links -->
-                <JumpLinks />
+                <JumpLinks
+                    v-if="showAppLayout"
+                />
 
                 <!-- Display Current Page -->
                 <router-view
@@ -23,7 +27,9 @@
                 />
 
                 <!-- Display Suggested Next Destination -->
-                <KeepExploring />
+                <KeepExploring
+                    v-if="showAppLayout"
+                />
 
             </main>
 
@@ -34,10 +40,13 @@
             ></div>
 
             <!-- Display Application Footer -->
-            <AppFooter />
+            <AppFooter
+                v-if="showAppLayout"
+            />
 
             <!-- Display Best Buds Drop Reveal -->
             <DropReveal
+                v-if="showAppLayout"
                 :is-open="isDropRevealOpen"
                 :user-collectible="newDrop"
                 @close="closeDropReveal"
@@ -83,6 +92,11 @@ export default {
     },
 
     computed: {
+
+        // Check whether the current page uses the application layout
+        showAppLayout() {
+            return !this.$route.meta.hideAppLayout;
+        },
 
         // Check whether the user is ready to use the application
         isUserReady() {

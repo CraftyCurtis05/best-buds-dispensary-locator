@@ -21,7 +21,8 @@
             </h1>
 
             <p>
-                You must be at least 21 years old to use Best Buds.
+                Best Buds is intended for adults
+                21 years of age or older.
             </p>
 
         </header>
@@ -32,22 +33,24 @@
             <div class="age-confirmation-content">
 
                 <p>
-                    By continuing, you confirm that you are 21 years of age
-                    or older.
+                    Please confirm that you are at least
+                    21 years old before continuing.
                 </p>
 
                 <p>
-                    Best Buds uses this confirmation to restrict access to
-                    age-appropriate content and features.
+                    You must confirm your age before you
+                    can enter Best Buds, log in, or create
+                    an account.
                 </p>
 
-                <!-- Display Confirmation Error -->
+                <!-- Display Age Restriction Message -->
                 <p
-                    v-if="confirmationError"
+                    v-if="ageRestricted"
                     class="form-error"
                     role="alert"
                 >
-                    {{ confirmationErrorMsg }}
+                    Best Buds is intended for adults
+                    21 years of age or older.
                 </p>
 
                 <!-- Display Confirmation Actions -->
@@ -55,20 +58,14 @@
 
                     <button
                         type="button"
-                        :disabled="isSubmitting"
-                        @click="confirmAge"
+                        @click="confirmVisitorAge"
                     >
-                        {{
-                            isSubmitting
-                                ? "Confirming..."
-                                : "Yes, I Am 21 or Older"
-                        }}
+                        Yes, I Am 21 or Older
                     </button>
 
                     <button
                         type="button"
-                        :disabled="isSubmitting"
-                        @click="logout"
+                        @click="denyAccess"
                     >
                         No, I Am Under 21
                     </button>
@@ -84,8 +81,6 @@
 </template>
 
 <script>
-import AuthService from "../services/AuthService.js";
-
 import Logo from "../assets/layout/logo/logo-dark-theme.png";
 
 export default {
@@ -94,114 +89,51 @@ export default {
     data() {
         return {
             Logo,
-
-            confirmationError: false,
-            confirmationErrorMsg:
-                "Unable to confirm your age. Please try again.",
-            isSubmitting: false
+            ageRestricted: false
         };
     },
 
     methods: {
 
-        // Confirm that the current user meets the age requirement
-        confirmAge() {
+        // Confirm that the visitor meets the age requirement
+        confirmVisitorAge() {
 
-            this.clearError();
+            sessionStorage.setItem(
+                "best-buds-age-confirmed",
+                "true"
+            );
 
-            this.isSubmitting = true;
+            this.ageRestricted = false;
 
-            AuthService
-                .confirmAge()
-                .then((response) => {
+            this.continueToBestBuds();
 
-                    if (response.status === 204) {
+        },
 
-                        this.updateAgeConfirmation();
+        // Continue to the appropriate Best Buds page
+        continueToBestBuds() {
 
-                        this.continueOnboarding();
-
-                    }
-
-                })
-                .catch((error) => {
-
-                    this.handleConfirmationError(
-                        error
-                    );
-
-                })
-                .finally(() => {
-
-                    this.isSubmitting = false;
-
+            if (this.$store.state.token !== "") {
+                this.$router.replace({
+                    name: "home"
                 });
 
-        },
+                return;
+            }
 
-        // Update the user's age confirmation in the store
-        updateAgeConfirmation() {
-
-            const updatedUser = {
-                ...this.$store.state.user,
-                ageConfirmed: true
-            };
-
-            this.$store.commit(
-                "SET_USER",
-                updatedUser
-            );
-
-        },
-
-        // Continue to the next onboarding step
-        continueOnboarding() {
-
-            this.$router.push({
-                name: "profile-setup"
-            });
-
-        },
-
-        // Sign out users who do not meet the age requirement
-        logout() {
-
-            this.$store.commit(
-                "LOGOUT"
-            );
-
-            this.$router.push({
+            this.$router.replace({
                 name: "login"
             });
 
         },
 
-        // Show an appropriate age confirmation error
-        handleConfirmationError(error) {
+        // Keep underage visitors outside of the application
+        denyAccess() {
 
-            this.confirmationError = true;
+            sessionStorage.removeItem(
+                "best-buds-age-confirmed"
+            );
 
-            if (!error.response) {
-
-                this.confirmationErrorMsg =
-                    "Unable to connect to Best Buds. Please try again.";
-
-                return;
-
-            }
-
-            this.confirmationErrorMsg =
-                "Unable to confirm your age. Please try again.";
-
-        },
-
-        // Clear the current age confirmation error
-        clearError() {
-
-            this.confirmationError = false;
-
-            this.confirmationErrorMsg =
-                "Unable to confirm your age. Please try again.";
+            this.ageRestricted = true;
 
         }
 

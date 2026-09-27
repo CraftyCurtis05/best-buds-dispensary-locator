@@ -74,9 +74,7 @@ export default {
                 loginResponse
             );
 
-            return this.continueOnboarding(
-                loginResponse.user
-            );
+            return this.continueOnboarding();
 
         },
 
@@ -96,13 +94,7 @@ export default {
         },
 
         // Send the user to the next required onboarding step
-        continueOnboarding(user) {
-
-            if (!user.ageConfirmed) {
-                return this.$router.push({
-                    name: "age-confirmation"
-                });
-            }
+        continueOnboarding() {
 
             return this.checkProfile();
 

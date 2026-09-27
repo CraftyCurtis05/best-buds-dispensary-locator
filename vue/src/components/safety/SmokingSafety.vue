@@ -8,20 +8,28 @@
 
         <!-- Display Smoking Safety Introduction -->
         <h3 id="smoking-safety-heading">
-            Safety Tips for Smoking Cannabis
+            Cannabis Smoking Safety
         </h3>
 
         <p>
-            If you've found yourself asking, "What is the
-            first feeling of weed?", it's important to
-            understand that each person's reaction can be
-            quite diverse. As you ponder, "Is it okay to start
-            smoking weed?", remember that preparation is
-            paramount. A comprehensive understanding of the
-            varying cannabis strains, a cautious starting
-            approach, and ensuring a comfortable, secure
-            environment can lay the groundwork for an
-            enjoyable and memorable first-time experience.
+            If you choose to smoke cannabis, knowing what can
+            affect your experience can help you make safer
+            decisions. Potency, how much you use, how often
+            you use it, your surroundings, other substances,
+            and your own body can all make a difference.
+        </p>
+
+        <p>
+            Smoking cannabis is not risk-free. Cannabis smoke
+            contains many of the same toxins, irritants, and
+            cancer-causing chemicals found in tobacco smoke,
+            and breathing smoke can harm your lungs.
+        </p>
+
+        <p>
+            This guide is about understanding the risks,
+            avoiding a few common myths, and knowing what you
+            can do to reduce harm if you choose to smoke.
         </p>
 
         <!-- Display Smoking Safety Tips -->
@@ -30,21 +38,39 @@
             <li>
 
                 <h4>
-                    Start with a Low Dose
+                    Know What You're Smoking
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Begin Small:</strong>
-                        Start with a small amount, especially
-                        if you’re new or trying a new strain.
+                        <strong>Check THC and CBD:</strong>
+                        Look at the cannabinoid information
+                        instead of relying only on a strain
+                        name.
                     </li>
 
                     <li>
-                        <strong>Monitor Effects:</strong>
-                        Increase gradually based on your
-                        tolerance and desired effects.
+                        <strong>Potency Matters:</strong>
+                        Higher-THC cannabis can produce
+                        stronger effects and make it easier to
+                        consume more THC than intended.
                     </li>
+
+                    <li>
+                        <strong>Names Aren't Guarantees:</strong>
+                        Indica, sativa, hybrid, and strain
+                        names do not guarantee exactly how a
+                        product will affect you.
+                    </li>
+
+                    <li>
+                        <strong>Know the Source:</strong>
+                        Regulated products can provide
+                        labeling and testing information that
+                        unknown products may not.
+                    </li>
+
                 </ul>
 
             </li>
@@ -52,27 +78,29 @@
             <li>
 
                 <h4>
-                    Know Your Strain
+                    Give Yourself Time Between Hits
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Research Strains:</strong>
-                        Understand the THC and CBD content and
-                        the strain type by using our
-                        <router-link
-                            :to="{ name: 'strainguide' }"
-                        >
-                            strain guide
-                        </router-link>.
+                        Inhaled THC can begin producing
+                        effects quickly.
                     </li>
 
                     <li>
-                        <strong>Effects:</strong>
-                        Be aware of the effects associated with
-                        the strain, such as relaxation or
-                        stimulation.
+                        Taking repeated hits before paying
+                        attention to how you feel can make it
+                        easier to become more intoxicated than
+                        intended.
                     </li>
+
+                    <li>
+                        An unfamiliar product may affect you
+                        differently from one you've used
+                        before.
+                    </li>
+
                 </ul>
 
             </li>
@@ -80,21 +108,32 @@
             <li>
 
                 <h4>
-                    Use Safe and Clean Devices
+                    Remember That Smoke Is Still Smoke
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Quality Gear:</strong>
-                        Use high-quality, safe smoking devices
-                        like pipes, bongs, or vaporizers.
+                        Burning cannabis creates smoke that
+                        contains toxins, irritants, and
+                        cancer-causing chemicals.
                     </li>
 
                     <li>
-                        <strong>Regular Cleaning:</strong>
-                        Clean your devices regularly to prevent
-                        residue build-up and contamination.
+                        Smoking cannabis can harm lung tissue
+                        and is associated with coughing,
+                        mucus production, and bronchitis
+                        symptoms.
                     </li>
+
+                    <li>
+                        Research is still developing around
+                        some long-term respiratory outcomes,
+                        so avoid treating cannabis smoke as
+                        either harmless or identical to every
+                        known risk of tobacco.
+                    </li>
+
                 </ul>
 
             </li>
@@ -102,21 +141,27 @@
             <li>
 
                 <h4>
-                    Be Patient with Effects
+                    A Bong Doesn't Make Smoke Harmless
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Onset Time:</strong>
-                        Effects can begin quickly but may take
-                        a few minutes to reach their peak.
+                        Water can cool smoke and change the
+                        smoking experience.
                     </li>
 
                     <li>
-                        <strong>Avoid Premature Use:</strong>
-                        Don’t consume more until you understand
-                        the effects of your initial dose.
+                        It does not remove all of the harmful
+                        substances created by combustion.
                     </li>
+
+                    <li>
+                        Pipes, joints, blunts, and bongs all
+                        involve breathing smoke from burning
+                        material.
+                    </li>
+
                 </ul>
 
             </li>
@@ -124,16 +169,28 @@
             <li>
 
                 <h4>
-                    Avoid Mixing Substances
+                    Don't Hold Smoke in Your Lungs
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>No Alcohol or Drugs:</strong>
-                        Avoid combining cannabis with alcohol
-                        or other substances to prevent adverse
-                        reactions.
+                        Holding cannabis smoke for a long time
+                        is not necessary to make cannabis
+                        work.
                     </li>
+
+                    <li>
+                        Holding smoke simply keeps combustion
+                        products in contact with your lungs
+                        longer.
+                    </li>
+
+                    <li>
+                        Deep, exaggerated inhalation is not a
+                        safety technique.
+                    </li>
+
                 </ul>
 
             </li>
@@ -141,21 +198,31 @@
             <li>
 
                 <h4>
-                    Follow Legal Guidelines
+                    Keep Smoking Devices Clean
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Legal Status:</strong>
-                        Ensure cannabis use is legal in your
-                        area and follow local regulations on
-                        possession and consumption by using our
-                        <router-link
-                            :to="{ name: 'legality' }"
-                        >
-                            state law list
-                        </router-link>.
+                        Residue can build up in pipes, bongs,
+                        and other reusable equipment.
                     </li>
+
+                    <li>
+                        Follow appropriate cleaning
+                        instructions for the device.
+                    </li>
+
+                    <li>
+                        Avoid sharing mouthpieces when illness
+                        or infection is a concern.
+                    </li>
+
+                    <li>
+                        Do not use cracked, damaged, or unsafe
+                        equipment.
+                    </li>
+
                 </ul>
 
             </li>
@@ -163,22 +230,32 @@
             <li>
 
                 <h4>
-                    Practice Good Smoking Etiquette
+                    Think About Secondhand Smoke
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Designated Areas:</strong>
-                        Smoke in areas where it is allowed and
-                        avoid exposing non-smokers to
-                        secondhand smoke.
+                        Secondhand cannabis smoke contains
+                        toxic and cancer-causing chemicals.
                     </li>
 
                     <li>
-                        <strong>Respect Others:</strong>
-                        Always ask for permission before
-                        smoking in someone else’s space.
+                        It can also contain THC.
                     </li>
+
+                    <li>
+                        Avoid smoking around children,
+                        pregnant people, and anyone who does
+                        not want to breathe cannabis smoke.
+                    </li>
+
+                    <li>
+                        Opening a window or smoking in another
+                        room does not make secondhand smoke
+                        disappear.
+                    </li>
+
                 </ul>
 
             </li>
@@ -186,16 +263,27 @@
             <li>
 
                 <h4>
-                    Be Mindful of Secondhand Smoke
+                    Remember That Blunts Can Add Tobacco
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Ventilation:</strong>
-                        Smoke in well-ventilated areas to
-                        minimize secondhand smoke exposure for
-                        others.
+                        Blunts commonly use cigar or tobacco
+                        wrappers.
                     </li>
+
+                    <li>
+                        That can add tobacco and nicotine
+                        exposure to the cannabis smoking
+                        experience.
+                    </li>
+
+                    <li>
+                        Know what the wrapper or product
+                        actually contains.
+                    </li>
+
                 </ul>
 
             </li>
@@ -203,21 +291,28 @@
             <li>
 
                 <h4>
-                    Store Cannabis Properly
+                    Be Careful Mixing Cannabis and Alcohol
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Secure Storage:</strong>
-                        Keep cannabis in a cool, dark place,
-                        away from children and pets.
+                        Both cannabis and alcohol can affect
+                        coordination, judgment, reaction time,
+                        and decision-making.
                     </li>
 
                     <li>
-                        <strong>Childproof Containers:</strong>
-                        Use child-resistant containers to
-                        prevent accidental ingestion.
+                        Combining substances can make
+                        impairment harder to predict.
                     </li>
+
+                    <li>
+                        Avoid driving or doing anything where
+                        impairment could put you or someone
+                        else at risk.
+                    </li>
+
                 </ul>
 
             </li>
@@ -225,21 +320,29 @@
             <li>
 
                 <h4>
-                    Stay Hydrated and Have Snacks
+                    Don't Drive High
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Hydration:</strong>
-                        Drink plenty of water to avoid dry
-                        mouth.
+                        THC can affect attention,
+                        coordination, judgment, perception,
+                        and reaction time.
                     </li>
 
                     <li>
-                        <strong>Snacks:</strong>
-                        Have food available to manage increased
-                        appetite (the munchies).
+                        Feeling less high does not
+                        automatically prove that every driving
+                        skill has returned to normal.
                     </li>
+
+                    <li>
+                        There is no single waiting period that
+                        guarantees everyone is safe to drive
+                        after cannabis use.
+                    </li>
+
                 </ul>
 
             </li>
@@ -247,16 +350,36 @@
             <li>
 
                 <h4>
-                    Avoid Driving or Operating Machinery
+                    Pay Attention to Your Mental State
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Impairment:</strong>
-                        Cannabis can impair coordination and
-                        reaction times. Avoid driving or using
-                        machinery.
+                        THC can sometimes cause anxiety,
+                        panic, paranoia, confusion, or other
+                        uncomfortable mental effects.
                     </li>
+
+                    <li>
+                        Higher THC exposure can make intense
+                        effects more likely.
+                    </li>
+
+                    <li>
+                        If cannabis repeatedly makes your
+                        mental health worse, that is worth
+                        paying attention to rather than
+                        pushing through it.
+                    </li>
+
+                    <li>
+                        People with personal or family mental
+                        health concerns may want to discuss
+                        cannabis use with a healthcare
+                        professional.
+                    </li>
+
                 </ul>
 
             </li>
@@ -264,23 +387,36 @@
             <li>
 
                 <h4>
-                    Monitor for Side Effects
+                    Pay Attention to How Often You Use
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Common Reactions:</strong>
-                        Be aware of side effects like dry
-                        mouth, red eyes, and altered
-                        perception. Adjust consumption as
-                        needed.
+                        Frequent cannabis use can lead to
+                        tolerance, meaning more may be needed
+                        to produce the same effects.
                     </li>
 
                     <li>
-                        <strong>Seek Help:</strong>
-                        If experiencing severe adverse effects,
-                        seek medical assistance.
+                        Some people develop cannabis use
+                        disorder.
                     </li>
+
+                    <li>
+                        Warning signs can include cravings,
+                        difficulty cutting back, continuing
+                        despite problems, or giving up
+                        important activities because of
+                        cannabis use.
+                    </li>
+
+                    <li>
+                        Needing increasingly stronger products
+                        is worth noticing rather than treating
+                        as an achievement.
+                    </li>
+
                 </ul>
 
             </li>
@@ -288,17 +424,34 @@
             <li>
 
                 <h4>
-                    Be Cautious with High-THC Products
+                    Know What "Too High" Can Look Like
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Potency Awareness:</strong>
-                        High-THC strains or products can
-                        produce stronger effects. Start with
-                        lower-THC options if unfamiliar with
-                        high potency.
+                        Too much THC can cause severe anxiety,
+                        panic, paranoia, confusion, dizziness,
+                        nausea, or other intense effects.
                     </li>
+
+                    <li>
+                        Stop using more cannabis if you're
+                        already uncomfortable.
+                    </li>
+
+                    <li>
+                        Move somewhere safe and avoid driving,
+                        cooking, swimming, climbing, or other
+                        activities where impairment creates
+                        additional risk.
+                    </li>
+
+                    <li>
+                        Get medical help for severe or
+                        concerning symptoms.
+                    </li>
+
                 </ul>
 
             </li>
@@ -306,16 +459,24 @@
             <li>
 
                 <h4>
-                    Consult a Healthcare Professional
+                    Pregnancy and Breastfeeding Need Extra
+                    Caution
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Medical Conditions:</strong>
-                        If you have health conditions or are on
-                        medication, consult your doctor before
-                        using cannabis.
+                        FDA advises against marijuana, THC,
+                        and CBD during pregnancy and
+                        breastfeeding.
                     </li>
+
+                    <li>
+                        Cannabis smoke should also not be
+                        treated as harmless secondhand
+                        exposure around babies or children.
+                    </li>
+
                 </ul>
 
             </li>
@@ -323,83 +484,196 @@
             <li>
 
                 <h4>
-                    Avoid Smoking Near Sensitive Areas
+                    Store Cannabis Securely
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Sensitive Areas:</strong>
-                        Avoid smoking in places with children,
-                        pets, or where smoking is prohibited.
+                        Keep cannabis, pre-rolls, infused
+                        flower, and smoking supplies away from
+                        children and pets.
                     </li>
-                </ul>
 
-            </li>
-
-            <li>
-
-                <h4>
-                    Use in a Safe Environment
-                </h4>
-
-                <ul class="safety-details">
                     <li>
-                        <strong>Comfortable Setting:</strong>
-                        Smoke in a familiar, comfortable place
-                        where you feel safe and relaxed.
+                        Keep products clearly labeled.
                     </li>
-                </ul>
 
-            </li>
-
-            <li>
-
-                <h4>
-                    Keep Track of Consumption
-                </h4>
-
-                <ul class="safety-details">
                     <li>
-                        <strong>Monitor Use:</strong>
-                        Keep track of how much you smoke and
-                        how it affects you to prevent
-                        overconsumption.
+                        Do not leave cannabis where someone
+                        could mistake it for an ordinary
+                        product.
                     </li>
-                </ul>
 
-            </li>
-
-            <li>
-
-                <h4>
-                    Educate Yourself on Cannabis Laws
-                </h4>
-
-                <ul class="safety-details">
-                    <li>
-                        <strong>Know the Rules:</strong>
-                        Stay informed about the legal status
-                        and regulations regarding cannabis in
-                        your area by using our
-                        <router-link
-                            :to="{ name: 'legality' }"
-                        >
-                            state law list
-                        </router-link>.
-                    </li>
                 </ul>
 
             </li>
 
         </ol>
 
+        <!-- Display Smoking Safety Questions -->
+        <section
+            class="safety-questions"
+            aria-labelledby="smoking-safety-questions-heading"
+        >
+
+            <h4 id="smoking-safety-questions-heading">
+                Quick Questions
+            </h4>
+
+            <dl>
+
+                <dt>
+                    Is cannabis smoke harmless because it
+                    isn't tobacco?
+                </dt>
+
+                <dd>
+                    No. Cannabis smoke contains many of the
+                    same toxins, irritants, and
+                    cancer-causing chemicals found in tobacco
+                    smoke.
+                </dd>
+
+                <dt>
+                    Does a bong filter out everything harmful?
+                </dt>
+
+                <dd>
+                    No. Water can change and cool the smoke,
+                    but using a bong does not make combustion
+                    harmless.
+                </dd>
+
+                <dt>
+                    Should I hold a hit in longer?
+                </dt>
+
+                <dd>
+                    No. Holding smoke in your lungs longer is
+                    not a recommended way to improve the
+                    experience and increases exposure to
+                    smoke.
+                </dd>
+
+                <dt>
+                    Is secondhand cannabis smoke a concern?
+                </dt>
+
+                <dd>
+                    Yes. It contains toxic chemicals and can
+                    contain THC.
+                </dd>
+
+                <dt>
+                    Is dry-herb vaporizing the same as
+                    smoking?
+                </dt>
+
+                <dd>
+                    No. Smoking intentionally burns flower.
+                    Dry-herb vaporizing heats it without
+                    intentionally combusting it. That
+                    difference does not make inhalation
+                    completely risk-free.
+                </dd>
+
+                <dt>
+                    How do I know if my cannabis use is
+                    becoming a problem?
+                </dt>
+
+                <dd>
+                    Cravings, needing more for the same
+                    effect, difficulty cutting back, or
+                    continuing despite problems at work,
+                    home, school, or in relationships are
+                    signs worth taking seriously.
+                </dd>
+
+            </dl>
+
+        </section>
+
+        <!-- Display Smoking Law Information -->
+        <section
+            class="safety-legal"
+            aria-labelledby="smoking-law-heading"
+        >
+
+            <h4 id="smoking-law-heading">
+                Smoking Cannabis & U.S. Law in 2026
+            </h4>
+
+            <p>
+                Cannabis laws differ throughout the United
+                States, and legal possession does not
+                automatically mean cannabis can be smoked
+                anywhere.
+            </p>
+
+            <p>
+                States and local governments can have
+                different rules for possession, adult use,
+                medical use, public consumption, smoking,
+                impaired driving, and other activities.
+                Property owners, employers, campuses, hotels,
+                and rental agreements may also impose
+                restrictions.
+            </p>
+
+            <p>
+                Marijuana also remains subject to federal
+                controlled-substance law. Federal proceedings
+                in 2026 concern a proposed transfer of
+                marijuana from Schedule I to Schedule III.
+                That proposal should not be treated as
+                completed rescheduling.
+            </p>
+
+            <p>
+                Check our
+                <router-link
+                    :to="{ name: 'legality' }"
+                >
+                    U.S. cannabis law guide
+                </router-link>
+                for current federal and state information.
+            </p>
+
+            <p class="legal-review-date">
+                Legal information last reviewed:
+                September 2026
+            </p>
+
+        </section>
+
+        <!-- Display Smoking Safety Image -->
+        <figure class="safety-image">
+
+            <img
+                :src="SmokingSafetyImage"
+                alt="Cannabis smoking safety"
+            />
+
+        </figure>
+
     </section>
 
 </template>
 
 <script>
+import SmokingSafetyImage
+    from "../../assets/safety/smoking-safety.webp";
+
 export default {
-    name: "SmokingSafety"
+    name: "SmokingSafety",
+
+    data() {
+        return {
+            SmokingSafetyImage
+        };
+    }
 };
 </script>
 

@@ -1,4 +1,4 @@
-<!-- THC Consumption Component Display -->
+<!-- THC Safety Component Display -->
 <template>
 
     <section
@@ -6,44 +6,71 @@
         aria-labelledby="thc-safety-heading"
     >
 
-        <!-- Display THC Consumption Introduction -->
+        <!-- Display THC Safety Introduction -->
         <h3 id="thc-safety-heading">
-            Safety Tips for Cannabis (THC) Consumption
+            THC Safety
         </h3>
 
         <p>
-            Start low, go slow — THC edibles are no joke!
-            Wait for the magic (it takes a while), keep snacks
-            and water handy, and chill in your happy place.
-            No mixing with booze, and definitely no driving.
-            And remember, stash those treats safely! If you
-            overdo it, just relax—time is your friend. By
-            following these safety tips, you can enjoy a more
-            positive and controlled experience with THC
-            edibles:
+            THC is the main cannabinoid responsible for the
+            "high" associated with cannabis. It can affect
+            memory, attention, coordination, reaction time,
+            judgment, mood, and perception.
         </p>
 
-        <!-- Display THC Consumption Safety Tips -->
+        <p>
+            How THC affects you can depend on much more than
+            whether you've used cannabis before. Potency, how
+            much you use, how you use it, how often you use
+            cannabis, other substances, medications, and
+            individual differences can all matter.
+        </p>
+
+        <p>
+            The goal isn't to make THC sound scary or
+            harmless. It's to understand what you're using,
+            recognize the risks, and know what to do if
+            something doesn't go as planned.
+        </p>
+
+        <!-- Display THC Safety Tips -->
         <ol class="safety-list">
 
             <li>
 
                 <h4>
-                    Start Low, Go Slow
+                    Know How Much THC You're Using
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Initial Dose:</strong>
-                        Begin with a low dose (2.5-5 mg of THC)
-                        to gauge your tolerance.
+                        <strong>Check the Label:</strong>
+                        Look for the amount or concentration of
+                        THC instead of judging a product by
+                        its name or appearance.
                     </li>
 
                     <li>
-                        <strong>Wait Time:</strong>
-                        Wait at least 2 hours before taking
-                        more to avoid overconsumption.
+                        <strong>Serving vs. Package:</strong>
+                        THC in one serving can be very
+                        different from the total THC in the
+                        entire package.
                     </li>
+
+                    <li>
+                        <strong>Potency Matters:</strong>
+                        Higher concentrations can produce
+                        stronger effects and make
+                        overconsumption easier.
+                    </li>
+
+                    <li>
+                        <strong>More Isn't Better:</strong>
+                        Higher THC does not automatically mean
+                        higher quality or a better experience.
+                    </li>
+
                 </ul>
 
             </li>
@@ -51,23 +78,33 @@
             <li>
 
                 <h4>
-                    Understand Delayed Effects
+                    Remember That Products Behave Differently
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Onset Time:</strong>
-                        Edibles can take 30 minutes to 2 hours
-                        to take effect.
+                        Smoking or vaping can produce effects
+                        quickly.
                     </li>
 
                     <li>
-                        <strong>
-                            Avoid Premature Consumption:
-                        </strong>
-                        Resist taking additional edibles if you
-                        don’t feel the effects immediately.
+                        Edibles can take much longer to
+                        produce intoxicating effects.
                     </li>
+
+                    <li>
+                        Concentrates can contain much higher
+                        THC concentrations than flower.
+                    </li>
+
+                    <li>
+                        A familiar amount from one product
+                        should not automatically be treated as
+                        equivalent to the same-looking amount
+                        of another product.
+                    </li>
+
                 </ul>
 
             </li>
@@ -75,21 +112,34 @@
             <li>
 
                 <h4>
-                    Read and Follow Labels
+                    Be Patient with Edibles
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Dosage:</strong>
-                        Check the THC content and serving size
-                        on the label.
+                        Swallowed THC can have a delayed
+                        onset.
                     </li>
 
                     <li>
-                        <strong>Servings:</strong>
-                        Be aware of how many servings are in
-                        each package.
+                        Taking more because "nothing is
+                        happening yet" is a common way people
+                        consume more THC than intended.
                     </li>
+
+                    <li>
+                        Read both the serving amount and the
+                        total package amount before eating or
+                        drinking a THC product.
+                    </li>
+
+                    <li>
+                        Do not treat the number of gummies,
+                        chocolates, or sips as a standardized
+                        THC measurement.
+                    </li>
+
                 </ul>
 
             </li>
@@ -97,17 +147,33 @@
             <li>
 
                 <h4>
-                    Avoid Mixing with Alcohol or Other
-                    Substances
+                    Be Cautious with High-THC Products
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Increased Effects:</strong>
-                        Combining edibles with alcohol or other
-                        substances can intensify effects and
-                        lead to unwanted reactions.
+                        Greater THC concentration can produce
+                        stronger effects on the brain.
                     </li>
+
+                    <li>
+                        Concentrates, infused products, and
+                        some flower can contain substantial
+                        amounts of THC.
+                    </li>
+
+                    <li>
+                        A physically small amount of
+                        concentrate can still contain a large
+                        amount of THC.
+                    </li>
+
+                    <li>
+                        Product appearance is not a reliable
+                        way to judge potency.
+                    </li>
+
                 </ul>
 
             </li>
@@ -115,16 +181,36 @@
             <li>
 
                 <h4>
-                    Consume in a Safe Environment
+                    Know What Too Much THC Can Feel Like
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Comfortable Setting:</strong>
-                        Use edibles in a familiar and
-                        comfortable place to minimize anxiety
-                        and manage unexpected effects.
+                        Too much THC can cause anxiety,
+                        panic, paranoia, confusion,
+                        dizziness, or severe nausea.
                     </li>
+
+                    <li>
+                        More intense reactions can include
+                        extreme confusion, hallucinations,
+                        delusions, or other concerning
+                        symptoms.
+                    </li>
+
+                    <li>
+                        A racing heart or feeling very
+                        intoxicated can also make an already
+                        uncomfortable experience feel more
+                        frightening.
+                    </li>
+
+                    <li>
+                        Stop consuming more THC if you're
+                        already uncomfortable.
+                    </li>
+
                 </ul>
 
             </li>
@@ -132,16 +218,40 @@
             <li>
 
                 <h4>
-                    Don’t Drive or Operate Machinery
+                    Know What to Do If You're Too High
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Impairment:</strong>
-                        THC can impair your coordination and
-                        reaction time, so avoid driving or
-                        operating heavy machinery.
+                        Stop using more cannabis.
                     </li>
+
+                    <li>
+                        Move to a safe, calm environment.
+                    </li>
+
+                    <li>
+                        Avoid driving, cooking, swimming,
+                        climbing, or other activities where
+                        impairment adds another risk.
+                    </li>
+
+                    <li>
+                        Stay with a trusted sober person when
+                        possible.
+                    </li>
+
+                    <li>
+                        There is no proven instant trick that
+                        simply switches THC intoxication off.
+                    </li>
+
+                    <li>
+                        Get medical help when symptoms are
+                        severe or concerning.
+                    </li>
+
                 </ul>
 
             </li>
@@ -149,21 +259,27 @@
             <li>
 
                 <h4>
-                    Stay Hydrated and Have Snacks
+                    Don't Mix THC and Alcohol Casually
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Hydrate:</strong>
-                        Keep water nearby to counteract dry
-                        mouth.
+                        THC and alcohol can both affect
+                        judgment, coordination, reaction time,
+                        and decision-making.
                     </li>
 
                     <li>
-                        <strong>Snacks:</strong>
-                        Have snacks on hand for managing
-                        increased appetite (the munchies).
+                        Using them together can make
+                        impairment more difficult to predict.
                     </li>
+
+                    <li>
+                        Other sedating or intoxicating
+                        substances can add additional risks.
+                    </li>
+
                 </ul>
 
             </li>
@@ -171,21 +287,36 @@
             <li>
 
                 <h4>
-                    Store Edibles Safely
+                    Don't Drive High
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Child and Pet Safety:</strong>
-                        Keep edibles out of reach of children
-                        and pets.
+                        THC can affect skills needed for
+                        driving, including attention,
+                        coordination, judgment, and reaction
+                        time.
                     </li>
 
                     <li>
-                        <strong>Proper Storage:</strong>
-                        Store in a cool, dark place to maintain
-                        potency and freshness.
+                        Do not use how "normal" you feel as
+                        the only test of whether you're safe
+                        to drive.
                     </li>
+
+                    <li>
+                        There is no universal number of hours
+                        that guarantees every person is safe
+                        to drive after using THC.
+                    </li>
+
+                    <li>
+                        Plan transportation before using
+                        cannabis when driving might otherwise
+                        become necessary.
+                    </li>
+
                 </ul>
 
             </li>
@@ -193,22 +324,36 @@
             <li>
 
                 <h4>
-                    Know How to Handle Overconsumption
+                    Pay Attention to Mental Health Effects
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Stay Calm:</strong>
-                        If you overconsume, find a quiet place
-                        to relax and wait for the effects to
-                        subside.
+                        THC can cause anxiety, panic,
+                        paranoia, confusion, and other
+                        uncomfortable mental effects in some
+                        people.
                     </li>
 
                     <li>
-                        <strong>Hydrate:</strong>
-                        Drink water and stay calm—effects will
-                        wear off with time.
+                        Higher THC exposure can make intense
+                        effects more likely.
                     </li>
+
+                    <li>
+                        Cannabis use has also been associated
+                        with psychosis-related risks, although
+                        individual risk is not the same for
+                        everyone.
+                    </li>
+
+                    <li>
+                        If cannabis repeatedly makes your
+                        mental health worse, talk with a
+                        qualified healthcare professional.
+                    </li>
+
                 </ul>
 
             </li>
@@ -216,25 +361,37 @@
             <li>
 
                 <h4>
-                    Consult a Healthcare Professional
+                    Watch for Tolerance and Changes in Use
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Medical Conditions:</strong>
-                        If you have any health conditions or
-                        are on medication, consult your doctor
-                        before using THC edibles.
+                        <strong>Tolerance:</strong>
+                        Needing more THC to produce the same
+                        effects can develop with repeated use.
                     </li>
 
                     <li>
-                        <strong>
-                            Avoid If Pregnant Or Nursing:
-                        </strong>
-                        THC can potentially affect fetal
-                        development and may pass into breast
-                        milk, impacting your baby’s health.
+                        <strong>Cravings:</strong>
+                        Strong urges to use cannabis can be a
+                        warning sign.
                     </li>
+
+                    <li>
+                        <strong>Difficulty Cutting Back:</strong>
+                        Repeatedly trying and failing to use
+                        less deserves attention.
+                    </li>
+
+                    <li>
+                        <strong>Continued Problems:</strong>
+                        Continuing to use despite problems at
+                        work, school, home, or in
+                        relationships can be a sign of
+                        cannabis use disorder.
+                    </li>
+
                 </ul>
 
             </li>
@@ -242,15 +399,29 @@
             <li>
 
                 <h4>
-                    Avoid Sharing with Others
+                    Experience Doesn't Make You Immune
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Dosage Control:</strong>
-                        If sharing, make sure everyone knows
-                        the potency and effects of the edibles.
+                        Tolerance can change how intoxicated
+                        someone feels, but it does not make
+                        THC risk-free.
                     </li>
+
+                    <li>
+                        Product potency, medications,
+                        alcohol, health, sleep, food, and
+                        other factors can change an
+                        experience.
+                    </li>
+
+                    <li>
+                        An experienced cannabis user can still
+                        consume too much or become impaired.
+                    </li>
+
                 </ul>
 
             </li>
@@ -258,28 +429,31 @@
             <li>
 
                 <h4>
-                    Check Legal Status
+                    Pregnancy and Breastfeeding Need Extra
+                    Caution
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Legal Compliance:</strong>
-                        Ensure that THC edibles are legal in
-                        your area and purchase from licensed
-                        dispensaries.
+                        FDA advises against THC, CBD, and
+                        marijuana during pregnancy and while
+                        breastfeeding.
                     </li>
 
                     <li>
-                        <strong>Laws In Each State:</strong>
-                        If you would like to check out the
-                        legality of THC consumption in any U.S.
-                        state, check out our
-                        <router-link
-                            :to="{ name: 'legality' }"
-                        >
-                            state law list
-                        </router-link>.
+                        THC can cross into the developing
+                        baby's environment during pregnancy
+                        and can also be present in breast
+                        milk.
                     </li>
+
+                    <li>
+                        Talk with a healthcare professional
+                        about safer alternatives for symptoms
+                        during pregnancy.
+                    </li>
+
                 </ul>
 
             </li>
@@ -287,22 +461,175 @@
             <li>
 
                 <h4>
-                    Understand Individual Tolerance
+                    Keep THC Away from Children and Pets
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Personal Variation:</strong>
-                        THC effects can vary widely between
-                        individuals, so what works for one
-                        person might not be suitable for
-                        another.
+                        Store THC products securely and out of
+                        sight and reach.
                     </li>
+
+                    <li>
+                        Edibles that look like ordinary candy,
+                        baked goods, or drinks can be
+                        especially easy to mistake for normal
+                        food.
+                    </li>
+
+                    <li>
+                        Keep products in their original,
+                        clearly labeled packaging when
+                        possible.
+                    </li>
+
+                    <li>
+                        Do not assume cannabis products made
+                        for people are safe for animals.
+                    </li>
+
                 </ul>
 
             </li>
 
         </ol>
+
+        <!-- Display THC Safety Questions -->
+        <section
+            class="safety-questions"
+            aria-labelledby="thc-safety-questions-heading"
+        >
+
+            <h4 id="thc-safety-questions-heading">
+                Quick Questions
+            </h4>
+
+            <dl>
+
+                <dt>
+                    Does higher THC mean better cannabis?
+                </dt>
+
+                <dd>
+                    No. THC concentration tells you something
+                    about potency, not whether a product is
+                    higher quality or a better fit for
+                    someone.
+                </dd>
+
+                <dt>
+                    Can experienced users still get too high?
+                </dt>
+
+                <dd>
+                    Yes. Tolerance and experience do not make
+                    someone immune to overconsumption,
+                    impairment, or an unexpectedly strong
+                    product.
+                </dd>
+
+                <dt>
+                    Can CBD instantly cancel a THC high?
+                </dt>
+
+                <dd>
+                    Don't treat CBD as a guaranteed antidote
+                    for THC intoxication. There is no proven
+                    instant "off switch" for being too high.
+                </dd>
+
+                <dt>
+                    Does eating food sober you up?
+                </dt>
+
+                <dd>
+                    Food or water may help someone feel more
+                    comfortable, but they do not instantly
+                    remove THC or end intoxication.
+                </dd>
+
+                <dt>
+                    When should I get help?
+                </dt>
+
+                <dd>
+                    Get medical help for severe or concerning
+                    symptoms. In the United States, Poison
+                    Control can be reached at
+                    1-800-222-1222. Call 911 for a medical
+                    emergency.
+                </dd>
+
+                <dt>
+                    Can THC affect a drug test?
+                </dt>
+
+                <dd>
+                    Yes. THC use can result in THC or its
+                    metabolites being detected by drug
+                    testing.
+                </dd>
+
+            </dl>
+
+        </section>
+
+        <!-- Display THC Law Information -->
+        <section
+            class="safety-legal"
+            aria-labelledby="thc-law-heading"
+        >
+
+            <h4 id="thc-law-heading">
+                THC & U.S. Law in 2026
+            </h4>
+
+            <p>
+                THC laws are not the same throughout the
+                United States.
+            </p>
+
+            <p>
+                States can have different rules for medical
+                cannabis, adult-use cannabis, hemp-derived
+                cannabinoids, age, purchasing, possession,
+                product types, THC limits, public use,
+                driving, testing, and sales.
+            </p>
+
+            <p>
+                Legal possession does not automatically mean
+                cannabis can be used in public, at work, on
+                federal property, in a rental, in a hotel, or
+                anywhere else someone chooses.
+            </p>
+
+            <p>
+                Marijuana remains subject to federal
+                controlled-substance law. Federal proceedings
+                in 2026 concern a proposed transfer of
+                marijuana from Schedule I to Schedule III.
+                The proposal should not be treated as
+                completed rescheduling.
+            </p>
+
+            <p>
+                Check our
+                <router-link
+                    :to="{ name: 'legality' }"
+                >
+                    U.S. cannabis law guide
+                </router-link>
+                for current federal and state information.
+            </p>
+
+            <p class="legal-review-date">
+                Legal information last reviewed:
+                September 2026
+            </p>
+
+        </section>
 
         <!-- Display THC Safety Image -->
         <figure class="safety-image">

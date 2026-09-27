@@ -12,14 +12,369 @@
         </h3>
 
         <p>
-            Terpenes are the aromatic oils in cannabis that
-            give strains their unique flavors and scents. They
-            also influence effects—like limonene for a
-            citrusy, uplifting kick or myrcene for a relaxing,
-            earthy vibe. Think of them as the spice of the
-            cannabis world, adding flavor and personality to
-            your experience.
+            Ever notice how one cannabis product smells
+            citrusy while another smells earthy, piney,
+            floral, spicy, or a little funky? Terpenes are
+            a big part of the reason why.
         </p>
+
+        <p>
+            Terpenes are aromatic compounds found throughout
+            nature — not just in cannabis. They're also
+            found in fruits, herbs, flowers, trees, spices,
+            and many other plants.
+        </p>
+
+        <p>
+            Cannabis can contain a mixture of different
+            terpenes in different amounts. Together, they
+            help shape a product's aroma, flavor, and
+            overall chemical profile.
+        </p>
+
+        <p>
+            You'll also hear plenty of claims that certain
+            terpenes make cannabis relaxing, energizing,
+            sleepy, focused, happy, or better for specific
+            health conditions. Some terpene research is
+            interesting, including a small amount of human
+            research, but many popular claims still come
+            from laboratory studies, animal research,
+            traditional use, or cannabis marketing.
+        </p>
+
+        <p>
+            Think of a terpene profile as
+            <strong>useful information, not an effects chart</strong>.
+            It can tell you more about the product, but it
+            can't promise exactly how that product will
+            make you feel.
+        </p>
+
+        <!-- Display Terpene Basics -->
+        <article
+            id="terpene-basics"
+            aria-labelledby="terpene-basics-heading"
+        >
+
+            <h4 id="terpene-basics-heading">
+                What Should I Know About Terpenes?
+            </h4>
+
+            <ul class="terpene-details">
+
+                <li>
+                    <strong>They aren't unique to cannabis:</strong>
+                    Many of the same terpenes found in
+                    cannabis are also found in completely
+                    unrelated plants.
+                </li>
+
+                <li>
+                    <strong>They help create aroma and flavor:</strong>
+                    Citrus, pine, pepper, flowers, herbs,
+                    fruit, and earthy smells can all be
+                    connected to different terpene
+                    combinations.
+                </li>
+
+                <li>
+                    <strong>Cannabis contains mixtures:</strong>
+                    A product usually contains several
+                    terpenes rather than one terpene working
+                    by itself.
+                </li>
+
+                <li>
+                    <strong>Terpenes can vary:</strong>
+                    Genetics, growing conditions, harvest,
+                    processing, curing, and storage can all
+                    influence the terpene profile of a
+                    cannabis product.
+                </li>
+
+                <li>
+                    <strong>The same strain name can vary:</strong>
+                    Two products carrying the same strain
+                    name don't necessarily have identical
+                    terpene profiles.
+                </li>
+
+                <li>
+                    <strong>Effects aren't guaranteed:</strong>
+                    A product high in limonene isn't
+                    guaranteed to make you happy, and one
+                    high in myrcene isn't guaranteed to
+                    make you sleepy.
+                </li>
+
+                <li>
+                    <strong>More research is needed:</strong>
+                    Many terpenes show interesting biological
+                    activity in laboratory or animal
+                    research, but that doesn't automatically
+                    mean the same effect happens when a
+                    person uses a cannabis product.
+                </li>
+
+                <li>
+                    <strong>The whole product matters:</strong>
+                    THC and CBD levels, other cannabinoids,
+                    terpene combinations, product type,
+                    amount used, and individual differences
+                    can all affect the experience.
+                </li>
+
+            </ul>
+
+        </article>
+
+        <!-- Display Terpene Profile Information -->
+        <article
+            id="terpene-profiles"
+            aria-labelledby="terpene-profiles-heading"
+        >
+
+            <h4 id="terpene-profiles-heading">
+                Understanding a Terpene Profile
+            </h4>
+
+            <p>
+                If a cannabis product includes laboratory
+                terpene information, you may see several
+                terpene names followed by percentages or
+                amounts.
+            </p>
+
+            <p>
+                You don't need to memorize every terpene.
+                Understanding what those numbers mean is
+                more useful than trying to turn each
+                terpene into an effect.
+            </p>
+
+            <ul class="terpene-details">
+
+                <li>
+                    <strong>Dominant Terpene:</strong>
+                    This usually means the terpene found in
+                    the highest measured amount in that
+                    product or batch. It doesn't mean that
+                    terpene controls the entire experience.
+                </li>
+
+                <li>
+                    <strong>Total Terpenes:</strong>
+                    Some product information lists the
+                    combined amount of measured terpenes.
+                    A higher total can tell you something
+                    about the measured terpene content, but
+                    it isn't automatically a measure of
+                    quality or stronger effects.
+                </li>
+
+                <li>
+                    <strong>Percentages:</strong>
+                    Flower labels may report individual
+                    terpenes as percentages. Other products
+                    may use different units, so compare
+                    numbers carefully.
+                </li>
+
+                <li>
+                    <strong>Batch Results:</strong>
+                    A batch-specific laboratory result is
+                    more useful for understanding the
+                    product in front of you than a generic
+                    terpene chart for a strain name.
+                </li>
+
+                <li>
+                    <strong>Not Every Lab Tests the Same Way:</strong>
+                    The number of terpenes measured and the
+                    way results are reported can differ, so
+                    profiles from different products or
+                    laboratories aren't always perfect
+                    apples-to-apples comparisons.
+                </li>
+
+            </ul>
+
+        </article>
+
+        <!-- Display Added Terpene Information -->
+        <article
+            id="added-terpenes"
+            aria-labelledby="added-terpenes-heading"
+        >
+
+            <h4 id="added-terpenes-heading">
+                Cannabis-Derived, Botanical & Added Terpenes
+            </h4>
+
+            <p>
+                Terpenes in a cannabis product don't always
+                come directly from the cannabis plant used
+                to make that product.
+            </p>
+
+            <ul class="terpene-details">
+
+                <li>
+                    <strong>Cannabis-Derived Terpenes:</strong>
+                    These are collected from cannabis plant
+                    material.
+                </li>
+
+                <li>
+                    <strong>Botanically Derived Terpenes:</strong>
+                    These can come from other plants that
+                    naturally produce the same terpene
+                    compounds.
+                </li>
+
+                <li>
+                    <strong>Added Terpenes:</strong>
+                    Some concentrates and vape products have
+                    terpenes added during manufacturing to
+                    create or restore aroma and flavor.
+                </li>
+
+                <li>
+                    <strong>"Natural" Doesn't Mean Risk-Free:</strong>
+                    A compound being naturally found in a
+                    plant doesn't automatically mean every
+                    concentration, product, or method of
+                    using it is harmless.
+                </li>
+
+            </ul>
+
+            <p>
+                If you're looking at a manufactured cannabis
+                product, the ingredient list and available
+                testing information can help you understand
+                what's actually in it.
+            </p>
+
+        </article>
+
+        <!-- Display Terpene Inhalation Information -->
+        <article
+            id="terpenes-and-inhalation"
+            aria-labelledby="terpenes-and-inhalation-heading"
+        >
+
+            <h4 id="terpenes-and-inhalation-heading">
+                What Happens When Terpenes Are Heated?
+            </h4>
+
+            <p>
+                Smelling a terpene in a fruit or flower
+                isn't the same thing as heating and
+                inhaling it.
+            </p>
+
+            <p>
+                When cannabis, concentrates, or vape
+                liquids are heated, their chemicals can
+                change. Research has found that heating
+                terpene-containing materials can create
+                additional compounds, including irritating
+                or potentially harmful breakdown products.
+            </p>
+
+            <p>
+                That doesn't mean every terpene-containing
+                product creates the same exposure. Device
+                design, temperature, ingredients, product
+                composition, and how the product is used
+                can all matter.
+            </p>
+
+            <p>
+                The important takeaway is simple:
+                <strong>
+                    don't assume something is safe to inhale
+                    just because the ingredient originally
+                    came from a plant.
+                </strong>
+            </p>
+
+        </article>
+
+        <!-- Display Entourage Effect Information -->
+        <article
+            id="entourage-effect"
+            aria-labelledby="entourage-effect-heading"
+        >
+
+            <h4 id="entourage-effect-heading">
+                What Is the "Entourage Effect"?
+            </h4>
+
+            <p>
+                You may hear that cannabinoids, terpenes,
+                and other cannabis compounds work together
+                to create something called the
+                <strong>entourage effect</strong>.
+            </p>
+
+            <p>
+                The basic idea is that compounds in
+                cannabis may interact and change the
+                overall biological effects or experience
+                compared with those compounds being used
+                alone.
+            </p>
+
+            <p>
+                Researchers are still testing that idea.
+                Some individual interactions have produced
+                interesting results, including limited
+                human research, but science hasn't
+                established one consistent and predictable
+                "entourage effect" that can explain how
+                every cannabis product will affect a
+                person.
+            </p>
+
+            <p>
+                So it's worth knowing about, but don't treat
+                "full spectrum," "entourage effect," or a
+                terpene combination on a product label as a
+                guarantee of stronger, safer, or better
+                effects.
+            </p>
+
+        </article>
+
+        <!-- Display Common Terpenes Introduction -->
+        <article
+            id="common-terpenes"
+            aria-labelledby="common-terpenes-heading"
+        >
+
+            <h4 id="common-terpenes-heading">
+                Common Cannabis Terpenes
+            </h4>
+
+            <p>
+                Cannabis contains many terpenes. The ones
+                below are some you'll commonly see on
+                cannabis labels, laboratory reports, and
+                terpene profiles.
+            </p>
+
+            <p>
+                The strain examples are products commonly
+                associated with each terpene. They're
+                examples, not guarantees. The actual
+                terpene profile can change between growers,
+                harvests, and batches.
+            </p>
+
+        </article>
 
         <!-- Display Humulene Information -->
         <article
@@ -32,62 +387,48 @@
             </h4>
 
             <p>
-                Humulene is a terpene found in cannabis with
-                various potential effects that adds unique
-                therapeutic benefits to cannabis, offering a
-                well-rounded experience without stimulating
-                appetite.
+                Humulene has an earthy, woody, herbal aroma
+                and is also found in hops, which are used
+                to make beer.
             </p>
 
             <h5>
-                Effects
+                What to Know
             </h5>
 
-            <ul class="terpene-effects">
+            <ul class="terpene-details">
 
                 <li>
-                    <strong>Appetite Suppression:</strong>
-                    Helps reduce hunger, a rare trait among
-                    cannabis compounds.
+                    <strong>Aroma:</strong>
+                    Earthy, woody, herbal, and sometimes
+                    spicy.
                 </li>
 
                 <li>
-                    <strong>Anti-Inflammatory:</strong>
-                    Reduces inflammation, making it useful for
-                    pain relief and treating conditions like
-                    arthritis.
+                    <strong>Also Found In:</strong>
+                    Hops, basil, sage, and other plants.
                 </li>
 
                 <li>
-                    <strong>Anti-Bacterial:</strong>
-                    Exhibits antibacterial properties,
-                    potentially aiding in the fight against
-                    infections.
+                    <strong>Research:</strong>
+                    Humulene has been studied for possible
+                    anti-inflammatory and other biological
+                    activity, mostly in preclinical
+                    research.
                 </li>
 
                 <li>
-                    <strong>Anti-Cancer:</strong>
-                    Early research suggests it may inhibit
-                    tumor growth and support cancer treatment.
-                </li>
-
-                <li>
-                    <strong>Anti-Allergic:</strong>
-                    May help reduce allergic reactions by
-                    suppressing certain immune responses.
-                </li>
-
-                <li>
-                    <strong>Relaxation:</strong>
-                    Provides calming effects, contributing to
-                    an overall sense of relaxation and stress
-                    relief.
+                    <strong>What We Don't Know:</strong>
+                    There isn't enough human evidence to say
+                    humulene in cannabis reliably
+                    suppresses appetite, relieves pain, or
+                    treats inflammation or disease.
                 </li>
 
             </ul>
 
             <h5>
-                Common Strains
+                Strains Commonly Associated With Humulene
             </h5>
 
             <ul class="terpene-strains">
@@ -99,7 +440,7 @@
                         rel="noopener noreferrer"
                     >
                         <span>
-                            GSC(Girl Scout Cookies)
+                            GSC (Girl Scout Cookies)
                         </span>
 
                         <img
@@ -158,74 +499,58 @@
             </h4>
 
             <p>
-                Limonene, a citrusy terpene found in cannabis,
-                offers a variety of effects and adds a zesty,
-                uplifting touch to your cannabis experience,
-                making it great for boosting mood and reducing
-                stress!
+                Limonene is known for its bright citrus
+                aroma. It's common in citrus fruit peels
+                and is one of the easier terpene smells to
+                recognize.
             </p>
 
             <h5>
-                Effects
+                What to Know
             </h5>
 
-            <ul class="terpene-effects">
+            <ul class="terpene-details">
 
                 <li>
-                    <strong>Mood Elevation:</strong>
-                    Boosts mood and promotes feelings of
-                    happiness, often helping with anxiety and
-                    depression.
+                    <strong>Aroma:</strong>
+                    Lemon, orange, citrus, and fresh.
                 </li>
 
                 <li>
-                    <strong>Stress Relief:</strong>
-                    Reduces stress and induces a sense of calm.
+                    <strong>Also Found In:</strong>
+                    Lemons, oranges, limes, and other citrus
+                    fruits.
                 </li>
 
                 <li>
-                    <strong>Anti-Inflammatory:</strong>
-                    May help reduce inflammation, aiding in
-                    pain relief.
+                    <strong>Research:</strong>
+                    Limonene has been studied for several
+                    possible biological effects. Small
+                    human studies have also started
+                    examining whether it can influence
+                    certain effects of THC.
                 </li>
 
                 <li>
-                    <strong>Antioxidant:</strong>
-                    Protects cells from damage by neutralizing
-                    free radicals.
+                    <strong>What We Don't Know:</strong>
+                    Early research doesn't mean a
+                    limonene-rich cannabis product is
+                    proven to treat anxiety, depression,
+                    pain, digestive problems, cancer, or
+                    other health conditions.
                 </li>
 
                 <li>
-                    <strong>Anti-Anxiety:</strong>
-                    Eases anxiety and nervousness, promoting
-                    relaxation.
-                </li>
-
-                <li>
-                    <strong>Digestive Aid:</strong>
-                    May help with digestion and reduce
-                    heartburn or gastric discomfort.
-                </li>
-
-                <li>
-                    <strong>Anti-Cancer:</strong>
-                    Early studies suggest it has anti-cancer
-                    properties by inhibiting the growth of
-                    certain cancer cells.
-                </li>
-
-                <li>
-                    <strong>
-                        Antibacterial and Antifungal:
-                    </strong>
-                    Helps fight off bacteria and fungi,
-                    offering potential antimicrobial benefits.
+                    <strong>Don't Assume:</strong>
+                    Limonene isn't guaranteed to make a
+                    cannabis product feel uplifting or
+                    energetic.
                 </li>
 
             </ul>
 
             <h5>
-                Common Strains
+                Strains Commonly Associated With Limonene
             </h5>
 
             <ul class="terpene-strains">
@@ -296,74 +621,58 @@
             </h4>
 
             <p>
-                Myrcene, a common terpene in cannabis, is
-                known for its earthy, musky aroma and a range
-                of effects and is perfect for relaxing,
-                relieving pain, and ensuring a restful night's
-                sleep!
+                Myrcene is one of the terpenes commonly
+                found in cannabis. Its aroma is usually
+                described as earthy, musky, herbal, or
+                slightly fruity.
             </p>
 
             <h5>
-                Effects
+                What to Know
             </h5>
 
-            <ul class="terpene-effects">
+            <ul class="terpene-details">
 
                 <li>
-                    <strong>Relaxation:</strong>
-                    Promotes deep relaxation and can help with
-                    winding down after a long day.
+                    <strong>Aroma:</strong>
+                    Earthy, musky, herbal, and sometimes
+                    fruity.
                 </li>
 
                 <li>
-                    <strong>Sedation:</strong>
-                    Has sedative properties, making it
-                    effective for improving sleep and
-                    combating insomnia.
+                    <strong>Also Found In:</strong>
+                    Hops, mangoes, lemongrass, and thyme.
                 </li>
 
                 <li>
-                    <strong>Pain Relief:</strong>
-                    Offers analgesic effects, helping to
-                    relieve chronic pain and muscle tension.
+                    <strong>Research:</strong>
+                    Myrcene has been studied for possible
+                    anti-inflammatory, pain-related, and
+                    sedative activity, with much of the
+                    evidence coming from preclinical
+                    research.
                 </li>
 
                 <li>
-                    <strong>Anti-Inflammatory:</strong>
-                    Reduces inflammation, beneficial for
-                    conditions like arthritis.
+                    <strong>What We Don't Know:</strong>
+                    Human evidence is limited. Myrcene
+                    content alone can't tell you whether
+                    cannabis will make you sleepy, relieve
+                    pain, or reduce anxiety.
                 </li>
 
                 <li>
-                    <strong>Muscle Relaxation:</strong>
-                    Helps soothe muscle spasms and tension.
-                </li>
-
-                <li>
-                    <strong>Anxiety Reduction:</strong>
-                    Eases anxiety and promotes a calm state of
-                    mind.
-                </li>
-
-                <li>
-                    <strong>
-                        Enhances Cannabinoid Absorption:
-                    </strong>
-                    Increases the absorption of cannabinoids
-                    like THC, potentially enhancing their
-                    effects.
-                </li>
-
-                <li>
-                    <strong>Appetite Stimulation:</strong>
-                    Can trigger hunger, often leading to the
-                    munchies.
+                    <strong>Common Myth:</strong>
+                    Claims that myrcene reliably makes THC
+                    cross into the brain more easily or
+                    guarantees stronger effects shouldn't
+                    be treated as established fact.
                 </li>
 
             </ul>
 
             <h5>
-                Common Strains
+                Strains Commonly Associated With Myrcene
             </h5>
 
             <ul class="terpene-strains">
@@ -430,85 +739,55 @@
         >
 
             <h4 id="caryophyllene-heading">
-                Caryophyllene
+                Beta-Caryophyllene
             </h4>
 
             <p>
-                Caryophyllene, a spicy, peppery terpene found
-                in cannabis, offers a range of effects and
-                potential health benefits and is a powerful
-                terpene that not only enhances your cannabis
-                experience but also offers a wide array of
-                therapeutic benefits!
+                Beta-caryophyllene has a peppery, spicy,
+                woody aroma. One thing that makes it
+                especially interesting to researchers is
+                that it can interact with CB2 cannabinoid
+                receptors.
             </p>
 
             <h5>
-                Effects
+                What to Know
             </h5>
 
-            <ul class="terpene-effects">
+            <ul class="terpene-details">
 
                 <li>
-                    <strong>Anti-Inflammatory:</strong>
-                    Reduces inflammation, making it beneficial
-                    for conditions like arthritis and
-                    inflammatory disorders.
+                    <strong>Aroma:</strong>
+                    Peppery, spicy, woody, and warm.
                 </li>
 
                 <li>
-                    <strong>Pain Relief:</strong>
-                    Acts as an analgesic, helping to alleviate
-                    chronic pain.
+                    <strong>Also Found In:</strong>
+                    Black pepper, cloves, cinnamon, and
+                    hops.
                 </li>
 
                 <li>
-                    <strong>Anxiety and Stress Relief:</strong>
-                    Eases anxiety and stress, promoting
-                    relaxation without sedation.
+                    <strong>Research:</strong>
+                    Beta-caryophyllene can interact with
+                    CB2 receptors and is being studied for
+                    possible effects involving inflammation
+                    and pain.
                 </li>
 
                 <li>
-                    <strong>Anti-Cancer:</strong>
-                    Early studies suggest potential
-                    anti-cancer properties by inhibiting
-                    cancer cell growth.
-                </li>
-
-                <li>
-                    <strong>Gastroprotective:</strong>
-                    Helps protect the digestive tract,
-                    potentially aiding in conditions like
-                    ulcers.
-                </li>
-
-                <li>
-                    <strong>Antioxidant:</strong>
-                    Neutralizes free radicals, protecting
-                    cells from damage.
-                </li>
-
-                <li>
-                    <strong>
-                        Anti-Bacterial and Anti-Fungal:
-                    </strong>
-                    Offers antimicrobial properties, helping
-                    to fight infections.
-                </li>
-
-                <li>
-                    <strong>
-                        Interaction with CB2 Receptors:
-                    </strong>
-                    Uniquely binds to CB2 receptors in the
-                    endocannabinoid system, contributing to
-                    its anti-inflammatory and pain-relieving
-                    effects.
+                    <strong>What We Don't Know:</strong>
+                    That research doesn't mean a
+                    caryophyllene-rich cannabis product is
+                    proven to treat arthritis, chronic
+                    pain, anxiety, cancer, or digestive
+                    conditions.
                 </li>
 
             </ul>
 
             <h5>
-                Common Strains
+                Strains Commonly Associated With Beta-Caryophyllene
             </h5>
 
             <ul class="terpene-strains">
@@ -579,72 +858,50 @@
             </h4>
 
             <p>
-                Linalool, a floral, lavender-scented terpene
-                found in cannabis, has several notable effects
-                and potential health benefits and adds a
-                soothing, therapeutic dimension to cannabis,
-                perfect for relaxation and stress relief!
+                Linalool has a soft floral aroma that's
+                often associated with lavender. It can also
+                have light herbal or spicy notes.
             </p>
 
             <h5>
-                Effects
+                What to Know
             </h5>
 
-            <ul class="terpene-effects">
+            <ul class="terpene-details">
 
                 <li>
-                    <strong>Anxiolytic:</strong>
-                    Reduces anxiety and promotes a calming
-                    effect, helping to ease stress.
+                    <strong>Aroma:</strong>
+                    Floral, lavender-like, herbal, and
+                    lightly spicy.
                 </li>
 
                 <li>
-                    <strong>Sedative:</strong>
-                    Promotes relaxation and can assist with
-                    improving sleep quality and treating
-                    insomnia.
+                    <strong>Also Found In:</strong>
+                    Lavender, basil, mint, and other
+                    aromatic plants.
                 </li>
 
                 <li>
-                    <strong>Anti-Inflammatory:</strong>
-                    Helps reduce inflammation, beneficial for
-                    conditions like arthritis.
+                    <strong>Research:</strong>
+                    Linalool has been studied for possible
+                    effects involving the nervous system,
+                    stress, sleep, inflammation, and pain.
+                    Much of this evidence doesn't come from
+                    people using linalool-rich cannabis.
                 </li>
 
                 <li>
-                    <strong>Analgesic:</strong>
-                    Provides pain relief, making it useful for
-                    chronic pain management.
-                </li>
-
-                <li>
-                    <strong>Antioxidant:</strong>
-                    Protects cells from oxidative stress and
-                    damage.
-                </li>
-
-                <li>
-                    <strong>Antibacterial:</strong>
-                    Offers antimicrobial properties, aiding in
-                    the fight against bacterial infections.
-                </li>
-
-                <li>
-                    <strong>Mood Enhancement:</strong>
-                    Enhances mood and provides a sense of
-                    well-being.
-                </li>
-
-                <li>
-                    <strong>Skin Health:</strong>
-                    May support skin health by soothing
-                    irritations and reducing inflammation.
+                    <strong>What We Don't Know:</strong>
+                    A cannabis product containing linalool
+                    isn't proven to treat anxiety,
+                    insomnia, chronic pain, or other
+                    medical conditions.
                 </li>
 
             </ul>
 
             <h5>
-                Common Strains
+                Strains Commonly Associated With Linalool
             </h5>
 
             <ul class="terpene-strains">
@@ -715,68 +972,50 @@
             </h4>
 
             <p>
-                Alpha-Pinene, a prominent terpene found in
-                cannabis, has a range of notable effects and
-                benefits that make it a versatile and valuable
-                component in cannabis, supporting respiratory
-                health, cognitive function, and overall
-                comfort.
+                Alpha-pinene has the sharp, fresh pine
+                aroma its name suggests. It's one of the
+                most common terpenes found throughout the
+                plant world.
             </p>
 
             <h5>
-                Effects
+                What to Know
             </h5>
 
-            <ul class="terpene-effects">
+            <ul class="terpene-details">
 
                 <li>
-                    <strong>Bronchodilator:</strong>
-                    Helps open up the airways, potentially
-                    improving breathing and providing relief
-                    for respiratory conditions like asthma.
+                    <strong>Aroma:</strong>
+                    Piney, fresh, woody, and herbal.
                 </li>
 
                 <li>
-                    <strong>Memory Enhancement:</strong>
-                    May support cognitive function and improve
-                    memory retention.
+                    <strong>Also Found In:</strong>
+                    Pine trees, rosemary, basil, and other
+                    plants.
                 </li>
 
                 <li>
-                    <strong>Anti-Inflammatory:</strong>
-                    Reduces inflammation, useful for managing
-                    conditions like arthritis.
+                    <strong>Research:</strong>
+                    Alpha-pinene has been studied for
+                    several possible biological effects,
+                    including anti-inflammatory and
+                    antimicrobial activity.
                 </li>
 
                 <li>
-                    <strong>Anxiolytic:</strong>
-                    Provides calming effects that can help
-                    reduce anxiety and stress.
-                </li>
-
-                <li>
-                    <strong>Antimicrobial:</strong>
-                    Exhibits antibacterial and antifungal
-                    properties, aiding in the prevention and
-                    treatment of infections.
-                </li>
-
-                <li>
-                    <strong>Mood Enhancement:</strong>
-                    Contributes to a more uplifting mood and
-                    can help elevate overall well-being.
-                </li>
-
-                <li>
-                    <strong>Digestive Support:</strong>
-                    May assist in alleviating digestive
-                    issues, such as nausea or indigestion.
+                    <strong>What We Don't Know:</strong>
+                    Claims that pinene reliably improves
+                    memory, opens airways, prevents THC
+                    memory problems, or treats asthma
+                    aren't established for cannabis use in
+                    humans.
                 </li>
 
             </ul>
 
             <h5>
-                Common Strains
+                Strains Commonly Associated With Alpha-Pinene
             </h5>
 
             <ul class="terpene-strains">
@@ -847,62 +1086,49 @@
             </h4>
 
             <p>
-                Beta-Pinene, a terpene found in cannabis and
-                other plants, offers several effects and
-                benefits including relief from inflammation
-                and pain, mood enhancement, and support for
-                respiratory and digestive health.
+                Beta-pinene is related to alpha-pinene but
+                has a slightly different aroma that's often
+                described as woody, green, herbal, or
+                forest-like.
             </p>
 
             <h5>
-                Effects
+                What to Know
             </h5>
 
-            <ul class="terpene-effects">
+            <ul class="terpene-details">
 
                 <li>
-                    <strong>Anti-Inflammatory:</strong>
-                    Reduces inflammation, which can help with
-                    conditions like arthritis and other
-                    inflammatory disorders.
+                    <strong>Aroma:</strong>
+                    Woody, green, herbal, and pine-like.
                 </li>
 
                 <li>
-                    <strong>Pain Relief:</strong>
-                    Provides analgesic effects, making it
-                    useful for managing pain.
+                    <strong>Also Found In:</strong>
+                    Pine, parsley, basil, dill, and other
+                    plants.
                 </li>
 
                 <li>
-                    <strong>Mood Enhancement:</strong>
-                    Can improve mood and contribute to a sense
-                    of relaxation and well-being.
+                    <strong>Research:</strong>
+                    Beta-pinene has been studied in
+                    laboratory research for several kinds
+                    of biological activity.
                 </li>
 
                 <li>
-                    <strong>Antimicrobial:</strong>
-                    Exhibits antibacterial and antifungal
-                    properties, which can help prevent and
-                    fight infections.
-                </li>
-
-                <li>
-                    <strong>Bronchodilator:</strong>
-                    Similar to alpha-pinene, it may help open
-                    the airways and improve respiratory
-                    function.
-                </li>
-
-                <li>
-                    <strong>Digestive Aid:</strong>
-                    May support digestive health and alleviate
-                    digestive discomfort.
+                    <strong>What We Don't Know:</strong>
+                    There isn't enough human evidence to say
+                    beta-pinene in cannabis reliably treats
+                    pain, inflammation, infections,
+                    digestive problems, or breathing
+                    problems.
                 </li>
 
             </ul>
 
             <h5>
-                Common Strains
+                Strains Commonly Associated With Beta-Pinene
             </h5>
 
             <ul class="terpene-strains">
@@ -973,67 +1199,49 @@
             </h4>
 
             <p>
-                Terpinolene, a terpene found in cannabis and
-                various herbs, has a range of effects and
-                potential health benefits that make it
-                valuable for relaxation, stress relief, and
-                supporting overall health.
+                Terpinolene can be hard to describe with
+                one word. Its aroma can combine floral,
+                herbal, piney, citrusy, and slightly sweet
+                notes.
             </p>
 
             <h5>
-                Effects
+                What to Know
             </h5>
 
-            <ul class="terpene-effects">
+            <ul class="terpene-details">
 
                 <li>
-                    <strong>Sedative:</strong>
-                    Promotes relaxation and can help with
-                    sleep, making it useful for managing
-                    insomnia.
+                    <strong>Aroma:</strong>
+                    Floral, herbal, piney, citrusy, and
+                    sweet.
                 </li>
 
                 <li>
-                    <strong>Anti-Anxiety:</strong>
-                    Reduces anxiety and stress, contributing
-                    to a calming effect.
+                    <strong>Also Found In:</strong>
+                    Nutmeg, tea tree, apples, cumin, and
+                    lilacs.
                 </li>
 
                 <li>
-                    <strong>Antioxidant:</strong>
-                    Protects cells from oxidative stress and
-                    damage, supporting overall health.
+                    <strong>Research:</strong>
+                    Terpinolene has been studied for
+                    possible antioxidant, antimicrobial,
+                    and other biological activity.
                 </li>
 
                 <li>
-                    <strong>Anti-Inflammatory:</strong>
-                    Helps reduce inflammation, which can
-                    benefit conditions like arthritis.
-                </li>
-
-                <li>
-                    <strong>Antimicrobial:</strong>
-                    Exhibits antibacterial and antifungal
-                    properties, aiding in the prevention and
-                    treatment of infections.
-                </li>
-
-                <li>
-                    <strong>Mood Enhancement:</strong>
-                    Contributes to a positive mood and overall
-                    sense of well-being.
-                </li>
-
-                <li>
-                    <strong>Appetite Stimulation:</strong>
-                    May increase appetite, useful for
-                    individuals with reduced appetite.
+                    <strong>What We Don't Know:</strong>
+                    A terpinolene-rich cannabis product
+                    isn't guaranteed to be sedating,
+                    energizing, anxiety-relieving, or
+                    helpful for sleep.
                 </li>
 
             </ul>
 
             <h5>
-                Common Strains
+                Strains Commonly Associated With Terpinolene
             </h5>
 
             <ul class="terpene-strains">
@@ -1104,68 +1312,50 @@
             </h4>
 
             <p>
-                Ocimene, a terpene found in cannabis and
-                various other plants, has a range of diverse
-                effects make it a valuable terpene for
-                supporting immune health, mood enhancement,
-                and overall comfort.
+                Ocimene has a sweet, herbal, floral aroma
+                that can also have citrus or woody notes.
+                It's found in cannabis as well as many
+                fragrant plants.
             </p>
 
             <h5>
-                Effects
+                What to Know
             </h5>
 
-            <ul class="terpene-effects">
+            <ul class="terpene-details">
 
                 <li>
-                    <strong>Anti-Inflammatory:</strong>
-                    Reduces inflammation, which can help with
-                    conditions like arthritis and other
-                    inflammatory disorders.
+                    <strong>Aroma:</strong>
+                    Sweet, herbal, floral, citrusy, and
+                    woody.
                 </li>
 
                 <li>
-                    <strong>Anti-Fungal:</strong>
-                    Exhibits antifungal properties, aiding in
-                    the treatment and prevention of fungal
-                    infections.
+                    <strong>Also Found In:</strong>
+                    Basil, mint, parsley, orchids, and
+                    other plants.
                 </li>
 
                 <li>
-                    <strong>Anti-Viral:</strong>
-                    May have antiviral effects, helping to
-                    combat certain viruses.
+                    <strong>Research:</strong>
+                    Ocimene has been investigated in
+                    preclinical research for antimicrobial,
+                    antifungal, and other biological
+                    activity.
                 </li>
 
                 <li>
-                    <strong>Anti-Bacterial:</strong>
-                    Offers antibacterial properties,
-                    contributing to infection prevention.
-                </li>
-
-                <li>
-                    <strong>Mood Enhancement:</strong>
-                    Can improve mood and provide a sense of
-                    well-being.
-                </li>
-
-                <li>
-                    <strong>Digestive Support:</strong>
-                    May assist in alleviating digestive
-                    discomfort and support overall digestive
-                    health.
-                </li>
-
-                <li>
-                    <strong>Sedative:</strong>
-                    Provides mild calming effects, which can
-                    help with relaxation and stress relief.
+                    <strong>What We Don't Know:</strong>
+                    There isn't enough evidence to say
+                    ocimene-rich cannabis improves
+                    immunity, treats infections, improves
+                    mood, or supports digestive health.
                 </li>
 
             </ul>
 
             <h5>
-                Common Strains
+                Strains Commonly Associated With Ocimene
             </h5>
 
             <ul class="terpene-strains">
@@ -1236,70 +1426,55 @@
             </h4>
 
             <p>
-                Eucalyptol, also known as 1,8-cineole, is a
-                terpene with a variety of effects and
-                potential health benefits that include
-                support for respiratory health, pain relief,
-                and cognitive function, making it a versatile
-                and valuable terpene.
+                Eucalyptol, also called 1,8-cineole, has a
+                cool, minty, eucalyptus-like aroma.
             </p>
 
             <h5>
-                Effects
+                What to Know
             </h5>
 
-            <ul class="terpene-effects">
+            <ul class="terpene-details">
 
                 <li>
-                    <strong>Anti-Inflammatory:</strong>
-                    Reduces inflammation, beneficial for
-                    conditions like arthritis and other
-                    inflammatory disorders.
+                    <strong>Aroma:</strong>
+                    Minty, cooling, herbal, and
+                    eucalyptus-like.
                 </li>
 
                 <li>
-                    <strong>Bronchodilator:</strong>
-                    Opens up the airways, aiding in respiratory
-                    health and helping with conditions like
-                    asthma or bronchitis.
+                    <strong>Also Found In:</strong>
+                    Eucalyptus, rosemary, sage, bay leaves,
+                    and other plants.
                 </li>
 
                 <li>
-                    <strong>Antimicrobial:</strong>
-                    Exhibits antibacterial and antifungal
-                    properties, assisting in the prevention
-                    and treatment of infections.
+                    <strong>Research:</strong>
+                    Eucalyptol has been studied for several
+                    biological and respiratory-related
+                    effects in contexts outside cannabis
+                    as well as cannabis-related research.
                 </li>
 
                 <li>
-                    <strong>Analgesic:</strong>
-                    Provides pain relief, which can help
-                    manage discomfort and pain.
+                    <strong>What We Don't Know:</strong>
+                    Its presence in cannabis doesn't mean
+                    smoking or vaping that product treats
+                    asthma, bronchitis, congestion, pain,
+                    or cognitive problems.
                 </li>
 
                 <li>
-                    <strong>Cognitive Enhancement:</strong>
-                    May improve mental clarity and focus,
-                    supporting cognitive function.
-                </li>
-
-                <li>
-                    <strong>Decongestant:</strong>
-                    Helps clear nasal passages and relieve
-                    congestion, useful for colds and sinus
-                    issues.
-                </li>
-
-                <li>
-                    <strong>Mood Uplift:</strong>
-                    Can contribute to a more positive mood and
-                    overall sense of well-being.
+                    <strong>Important:</strong>
+                    A terpene associated with respiratory
+                    research doesn't make cannabis smoke a
+                    respiratory treatment.
                 </li>
 
             </ul>
 
             <h5>
-                Common Strains
+                Strains Commonly Associated With Eucalyptol
             </h5>
 
             <ul class="terpene-strains">
@@ -1370,69 +1545,48 @@
             </h4>
 
             <p>
-                Nerolidol, a terpene found in cannabis and
-                various plants, has several notable effects
-                that make it valuable for relaxation, anxiety
-                reduction, and supporting overall health and
-                well-being.
+                Nerolidol has a woody, floral aroma that can
+                remind people of fresh bark, flowers, or
+                lightly sweet herbs.
             </p>
 
             <h5>
-                Effects
+                What to Know
             </h5>
 
-            <ul class="terpene-effects">
+            <ul class="terpene-details">
 
                 <li>
-                    <strong>Sedative:</strong>
-                    Promotes relaxation and helps with sleep,
-                    making it useful for managing insomnia and
-                    improving sleep quality.
+                    <strong>Aroma:</strong>
+                    Woody, floral, herbal, and lightly
+                    sweet.
                 </li>
 
                 <li>
-                    <strong>Anti-Anxiety:</strong>
-                    Reduces anxiety and stress, contributing
-                    to a sense of calm and well-being.
+                    <strong>Also Found In:</strong>
+                    Jasmine, lemongrass, tea tree, and other
+                    plants.
                 </li>
 
                 <li>
-                    <strong>Anti-Fungal:</strong>
-                    Exhibits antifungal properties, aiding in
-                    the treatment and prevention of fungal
-                    infections.
+                    <strong>Research:</strong>
+                    Nerolidol has been studied in
+                    preclinical research for several
+                    possible biological effects.
                 </li>
 
                 <li>
-                    <strong>Anti-Cancer:</strong>
-                    Early studies suggest it may inhibit
-                    cancer cell growth and have potential
-                    anti-cancer effects.
-                </li>
-
-                <li>
-                    <strong>Anti-Inflammatory:</strong>
-                    Reduces inflammation, which can be
-                    beneficial for inflammatory conditions.
-                </li>
-
-                <li>
-                    <strong>Analgesic:</strong>
-                    Provides pain relief, helping to alleviate
-                    discomfort and pain.
-                </li>
-
-                <li>
-                    <strong>Skin Health:</strong>
-                    Supports skin health by soothing
-                    irritations and providing antioxidant
-                    benefits.
+                    <strong>What We Don't Know:</strong>
+                    There isn't enough human evidence to say
+                    nerolidol in cannabis treats anxiety,
+                    insomnia, pain, inflammation, cancer,
+                    or skin conditions.
                 </li>
 
             </ul>
 
             <h5>
-                Common Strains
+                Strains Commonly Associated With Nerolidol
             </h5>
 
             <ul class="terpene-strains">
@@ -1503,69 +1657,49 @@
             </h4>
 
             <p>
-                Borneol, a terpene found in cannabis, as well
-                as in essential oils like camphor, has several
-                notable effects and potential benefits that
-                make it a valuable terpene for pain relief,
-                relaxation, cognitive support, and overall
-                health.
+                Borneol has a fresh, woody, camphor-like
+                aroma. It's found in several herbs and has
+                a long history of use in traditional
+                products outside cannabis.
             </p>
 
             <h5>
-                Effects
+                What to Know
             </h5>
 
-            <ul class="terpene-effects">
+            <ul class="terpene-details">
 
                 <li>
-                    <strong>Analgesic:</strong>
-                    Provides pain relief, making it useful for
-                    managing discomfort and pain.
+                    <strong>Aroma:</strong>
+                    Woody, herbal, cooling, and
+                    camphor-like.
                 </li>
 
                 <li>
-                    <strong>Anti-Inflammatory:</strong>
-                    Reduces inflammation, which can help with
-                    conditions like arthritis and other
-                    inflammatory disorders.
+                    <strong>Also Found In:</strong>
+                    Camphor, rosemary, ginger, and other
+                    aromatic plants.
                 </li>
 
                 <li>
-                    <strong>Sedative:</strong>
-                    Promotes relaxation and helps with sleep,
-                    contributing to improved sleep quality and
-                    managing insomnia.
+                    <strong>Research:</strong>
+                    Borneol has been investigated for
+                    several possible biological effects,
+                    primarily in preclinical research.
                 </li>
 
                 <li>
-                    <strong>Cognitive Enhancement:</strong>
-                    May improve mental clarity and cognitive
-                    function.
-                </li>
-
-                <li>
-                    <strong>Antimicrobial:</strong>
-                    Exhibits antibacterial and antifungal
-                    properties, aiding in the prevention and
-                    treatment of infections.
-                </li>
-
-                <li>
-                    <strong>Digestive Aid:</strong>
-                    Supports digestive health by alleviating
-                    nausea and aiding digestion.
-                </li>
-
-                <li>
-                    <strong>Respiratory Support:</strong>
-                    Can help relieve symptoms of respiratory
-                    conditions like coughs and colds.
+                    <strong>What We Don't Know:</strong>
+                    Its presence in cannabis isn't proof
+                    that the product relieves pain,
+                    improves cognition, treats infections,
+                    helps digestion, or improves sleep.
                 </li>
 
             </ul>
 
             <h5>
-                Common Strains
+                Strains Commonly Associated With Borneol
             </h5>
 
             <ul class="terpene-strains">
@@ -1636,67 +1770,47 @@
             </h4>
 
             <p>
-                Camphene, a terpene found in cannabis and
-                other plants, has a range of diverse effects
-                make it valuable for managing inflammation,
-                pain, and infections, while supporting overall
-                health.
+                Camphene has a sharp, herbal, earthy aroma
+                that's sometimes compared with pine needles
+                or camphor.
             </p>
 
             <h5>
-                Effects
+                What to Know
             </h5>
 
-            <ul class="terpene-effects">
+            <ul class="terpene-details">
 
                 <li>
-                    <strong>Anti-Inflammatory:</strong>
-                    Reduces inflammation, which can help
-                    manage conditions like arthritis and other
-                    inflammatory disorders.
+                    <strong>Aroma:</strong>
+                    Herbal, earthy, piney, and camphor-like.
                 </li>
 
                 <li>
-                    <strong>Antibacterial:</strong>
-                    Exhibits antibacterial properties, aiding
-                    in the prevention and treatment of
-                    bacterial infections.
+                    <strong>Also Found In:</strong>
+                    Fir trees, rosemary, nutmeg, fennel,
+                    and other plants.
                 </li>
 
                 <li>
-                    <strong>Analgesic:</strong>
-                    Provides pain relief, making it useful for
-                    alleviating discomfort and pain.
+                    <strong>Research:</strong>
+                    Camphene has been investigated for
+                    antioxidant, antimicrobial, and other
+                    possible biological activity.
                 </li>
 
                 <li>
-                    <strong>Antifungal:</strong>
-                    Has antifungal properties, helping to
-                    combat fungal infections.
-                </li>
-
-                <li>
-                    <strong>Antioxidant:</strong>
-                    Protects cells from oxidative stress and
-                    damage, supporting overall health.
-                </li>
-
-                <li>
-                    <strong>Respiratory Support:</strong>
-                    May help with respiratory issues by
-                    providing mild decongestant effects.
-                </li>
-
-                <li>
-                    <strong>Mood Enhancement:</strong>
-                    Contributes to an uplifting mood and
-                    overall sense of well-being.
+                    <strong>What We Don't Know:</strong>
+                    There isn't enough human evidence to say
+                    camphene in cannabis treats pain,
+                    inflammation, infections, respiratory
+                    problems, or other health conditions.
                 </li>
 
             </ul>
 
             <h5>
-                Common Strains
+                Strains Commonly Associated With Camphene
             </h5>
 
             <ul class="terpene-strains">
@@ -1756,6 +1870,283 @@
 
         </article>
 
+        <!-- Display Terpene Shopping Guide -->
+        <article
+            id="reading-terpenes"
+            aria-labelledby="reading-terpenes-heading"
+        >
+
+            <h4 id="reading-terpenes-heading">
+                How Do I Actually Use Terpene Information?
+            </h4>
+
+            <p>
+                Terpene information is most useful when you
+                treat it as one part of the product instead
+                of trying to choose cannabis by one terpene
+                alone.
+            </p>
+
+            <ol class="terpene-steps">
+
+                <li>
+                    <strong>Start with the Product Type:</strong>
+                    Flower, concentrates, edibles, oils,
+                    and vape products can provide very
+                    different experiences even when they
+                    use the same strain or terpene names.
+                </li>
+
+                <li>
+                    <strong>Check THC and CBD:</strong>
+                    These cannabinoids generally tell you
+                    more about a product's intoxicating
+                    potential than a terpene name does.
+                </li>
+
+                <li>
+                    <strong>Then Look at the Terpenes:</strong>
+                    A terpene profile can tell you more
+                    about aroma, flavor, and the product's
+                    overall chemical makeup.
+                </li>
+
+                <li>
+                    <strong>Look at the Whole Profile:</strong>
+                    Don't focus on one terpene while
+                    ignoring everything else in the
+                    product.
+                </li>
+
+                <li>
+                    <strong>Check the Actual Batch:</strong>
+                    Terpene levels can vary between growers,
+                    harvests, and products carrying the
+                    same strain name.
+                </li>
+
+                <li>
+                    <strong>Don't Chase a Medical Claim:</strong>
+                    A terpene being researched for a
+                    possible biological effect isn't the
+                    same as a cannabis product being proven
+                    to treat a health condition.
+                </li>
+
+                <li>
+                    <strong>Don't Assume More Is Better:</strong>
+                    A higher terpene percentage doesn't
+                    automatically mean a better product or
+                    a better experience.
+                </li>
+
+                <li>
+                    <strong>Pay Attention to Yourself:</strong>
+                    If you're trying to learn your
+                    preferences, remember the whole
+                    product, amount used, method of use,
+                    and how you responded — not just the
+                    name of one terpene.
+                </li>
+
+            </ol>
+
+        </article>
+
+        <!-- Display Terpene Questions -->
+        <article
+            id="terpene-questions"
+            aria-labelledby="terpene-questions-heading"
+        >
+
+            <h4 id="terpene-questions-heading">
+                Quick Questions
+            </h4>
+
+            <dl>
+
+                <dt>
+                    Do terpenes get you high?
+                </dt>
+
+                <dd>
+                    Terpenes aren't the main compounds
+                    responsible for the cannabis high.
+                    THC is the primary intoxicating
+                    cannabinoid in cannabis.
+                </dd>
+
+                <dt>
+                    Do terpenes determine how a strain will
+                    make me feel?
+                </dt>
+
+                <dd>
+                    Not by themselves. Terpenes are one
+                    part of a much larger chemical profile,
+                    and research hasn't established a
+                    simple terpene-to-effect formula that
+                    works for everyone.
+                </dd>
+
+                <dt>
+                    Does limonene always make you feel
+                    uplifted?
+                </dt>
+
+                <dd>
+                    No. Limonene has a citrus aroma and is
+                    often marketed as uplifting. There is
+                    some interesting research involving
+                    limonene and THC, but its presence in a
+                    cannabis product doesn't guarantee a
+                    particular mood or experience.
+                </dd>
+
+                <dt>
+                    Does myrcene always make you sleepy?
+                </dt>
+
+                <dd>
+                    No. Myrcene is often associated with
+                    relaxing cannabis products, but there
+                    isn't enough human evidence to use its
+                    concentration as a reliable sleepiness
+                    predictor.
+                </dd>
+
+                <dt>
+                    Can pinene stop THC from affecting my
+                    memory?
+                </dt>
+
+                <dd>
+                    Don't count on it. That's a popular
+                    cannabis claim, but it hasn't been
+                    established as a reliable effect in
+                    humans.
+                </dd>
+
+                <dt>
+                    What is the entourage effect?
+                </dt>
+
+                <dd>
+                    It's the idea that cannabinoids,
+                    terpenes, and other cannabis compounds
+                    may interact and change the overall
+                    effects of a product. Researchers are
+                    studying those interactions, but a
+                    consistent and predictable entourage
+                    effect hasn't been established in
+                    humans.
+                </dd>
+
+                <dt>
+                    Does a higher terpene percentage mean
+                    better cannabis?
+                </dt>
+
+                <dd>
+                    No. It tells you something about the
+                    amount of measured terpenes, not whether
+                    the product is automatically
+                    higher-quality or a better fit for you.
+                </dd>
+
+                <dt>
+                    What does "dominant terpene" mean?
+                </dt>
+
+                <dd>
+                    It usually means that terpene was
+                    measured at a higher amount than the
+                    other terpenes reported for that
+                    product. It doesn't mean that one
+                    terpene determines the entire
+                    experience.
+                </dd>
+
+                <dt>
+                    Can the same strain have different
+                    terpenes?
+                </dt>
+
+                <dd>
+                    Yes. Terpene profiles can vary between
+                    growers, harvests, batches, and
+                    products carrying the same strain name.
+                </dd>
+
+                <dt>
+                    Are cannabis-derived terpenes different
+                    from botanical terpenes?
+                </dt>
+
+                <dd>
+                    The same terpene molecule can occur in
+                    cannabis and other plants. The source
+                    may be different even when the
+                    individual chemical compound is the
+                    same.
+                </dd>
+
+                <dt>
+                    Can manufacturers add terpenes to
+                    cannabis products?
+                </dt>
+
+                <dd>
+                    Yes. Some manufactured products,
+                    especially concentrates and vape
+                    products, can contain added terpenes.
+                    Check the ingredient and product
+                    information when it's available.
+                </dd>
+
+                <dt>
+                    Does "natural terpene" mean safe to
+                    inhale?
+                </dt>
+
+                <dd>
+                    No. "Natural" describes where something
+                    comes from, not whether every way of
+                    using it is risk-free. Heating can
+                    change chemicals and create additional
+                    compounds.
+                </dd>
+
+                <dt>
+                    Can I choose cannabis by terpene alone?
+                </dt>
+
+                <dd>
+                    You can use terpene information as one
+                    clue, especially for aroma and flavor,
+                    but look at THC, CBD, product type,
+                    potency, the whole terpene profile,
+                    batch information, and your own
+                    experience too.
+                </dd>
+
+                <dt>
+                    Are terpene medical claims proven?
+                </dt>
+
+                <dd>
+                    Usually not in the way cannabis
+                    marketing can make them sound.
+                    Laboratory, animal, or early human
+                    research can be interesting without
+                    proving that a terpene-rich cannabis
+                    product treats a medical condition.
+                </dd>
+
+            </dl>
+
+        </article>
+
     </section>
 
 </template>
@@ -1776,7 +2167,7 @@ import OGKush from "../../assets/strain-guide/terpenes/myrcene/og-kush.webp";
 import MangoKush from "../../assets/strain-guide/terpenes/myrcene/mango-kush.webp";
 import SkywalkerOG from "../../assets/strain-guide/terpenes/myrcene/skywalker-og.webp";
 
-// Caryophyllene
+// Beta-Caryophyllene
 import GaryPayton from "../../assets/strain-guide/terpenes/caryophyllene/gary-payton.webp";
 import Chemdawg from "../../assets/strain-guide/terpenes/caryophyllene/chemdawg.webp";
 import GMOCookies from "../../assets/strain-guide/terpenes/caryophyllene/gmo-cookies.webp";

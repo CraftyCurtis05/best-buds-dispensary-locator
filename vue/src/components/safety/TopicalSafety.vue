@@ -1,4 +1,4 @@
-<!-- Topical Use Component Display -->
+<!-- Topical Safety Component Display -->
 <template>
 
     <section
@@ -6,39 +6,73 @@
         aria-labelledby="topical-safety-heading"
     >
 
-        <!-- Display Topical Use Introduction -->
+        <!-- Display Topical Safety Introduction -->
         <h3 id="topical-safety-heading">
-            Safety Tips for Topical Use
+            Cannabis Topical Safety
         </h3>
 
         <p>
-            For smooth sailing with cannabis topicals, start
-            small, follow the label, and keep it clean. Patch
-            test first, store safely, and skip sensitive
-            spots. If irritation hits, wash off and chill.
-            Enjoy the soothing vibes while keeping things
-            simple and safe. By following these safety tips,
-            you can use cannabis topicals effectively and
-            safely while minimizing potential risks:
+            Cannabis topicals include creams, lotions, balms,
+            salves, gels, oils, patches, and other products
+            used on the skin. Depending on the product, they
+            may contain CBD, THC, other cannabinoids, or a
+            combination of cannabis and non-cannabis
+            ingredients.
         </p>
 
-        <!-- Display Topical Use Safety Tips -->
+        <p>
+            Topicals are different from cannabis you smoke,
+            vape, eat, or drink, but not every skin product
+            works the same way. A conventional topical and a
+            product specifically designed for transdermal
+            absorption should not automatically be treated as
+            the same thing.
+        </p>
+
+        <p>
+            The easiest rule is simple: know what you have,
+            read the ingredients and directions, use it the
+            way it was designed to be used, and pay attention
+            to how your skin and body respond.
+        </p>
+
+        <!-- Display Topical Safety Tips -->
         <ol class="safety-list">
 
             <li>
 
                 <h4>
-                    Patch Test First
+                    Know What Kind of Topical You Have
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Initial Test:</strong>
-                        Apply a small amount of the topical to
-                        a small area of skin to check for any
-                        allergic reactions or irritation
-                        before using it more broadly.
+                        <strong>Conventional Topicals:</strong>
+                        Creams, lotions, balms, salves, and
+                        similar products are generally applied
+                        to a particular area of skin.
                     </li>
+
+                    <li>
+                        <strong>Transdermal Products:</strong>
+                        These are specifically formulated to
+                        move ingredients through the skin for
+                        systemic absorption.
+                    </li>
+
+                    <li>
+                        <strong>Don't Assume:</strong>
+                        Two products that look similar may be
+                        designed to work very differently.
+                    </li>
+
+                    <li>
+                        Follow the directions for the actual
+                        product rather than assuming all
+                        cannabis topicals are interchangeable.
+                    </li>
+
                 </ul>
 
             </li>
@@ -46,23 +80,34 @@
             <li>
 
                 <h4>
-                    Choose the Right Product
+                    Check What's Actually in It
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Purpose:</strong>
-                        Select topicals intended for your
-                        specific needs, such as pain relief,
-                        moisturizing, or skin conditions.
+                        Look for THC, CBD, and other
+                        cannabinoid information.
                     </li>
 
                     <li>
-                        <strong>THC vs. CBD:</strong>
-                        Know whether the product contains THC,
-                        CBD, or both, and choose according to
-                        your preference and needs.
+                        Check the complete ingredient list,
+                        not just the cannabis ingredients.
                     </li>
+
+                    <li>
+                        Topicals may also contain menthol,
+                        camphor, fragrances, essential oils,
+                        botanical extracts, preservatives,
+                        or other ingredients.
+                    </li>
+
+                    <li>
+                        Another ingredient may be responsible
+                        for an effect or skin reaction rather
+                        than CBD or THC.
+                    </li>
+
                 </ul>
 
             </li>
@@ -70,21 +115,34 @@
             <li>
 
                 <h4>
-                    Read Ingredients Carefully
+                    Follow the Product Directions
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Avoid Allergens:</strong>
-                        Check for potential allergens or
-                        irritating ingredients.
+                        Use the product only on the areas and
+                        in the way described by its
+                        instructions.
                     </li>
 
                     <li>
-                        <strong>Product Quality:</strong>
-                        Opt for products with high-quality,
-                        natural ingredients.
+                        More product does not automatically
+                        mean a better result.
                     </li>
+
+                    <li>
+                        Pay attention to instructions about
+                        how often the product should be
+                        applied.
+                    </li>
+
+                    <li>
+                        Do not swallow, vape, or otherwise use
+                        a topical product in a way it was not
+                        designed to be used.
+                    </li>
+
                 </ul>
 
             </li>
@@ -92,21 +150,30 @@
             <li>
 
                 <h4>
-                    Follow Application Instructions
+                    Consider a Small Patch Test
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Dosage:</strong>
-                        Use the recommended amount as directed
-                        on the label.
+                        Trying a small amount on a limited area
+                        first can help you notice irritation
+                        before applying the product more
+                        widely.
                     </li>
 
                     <li>
-                        <strong>Frequency:</strong>
-                        Apply as directed, usually several
-                        times a day or as needed.
+                        This can be especially useful for
+                        people with sensitive skin or a
+                        history of reactions to cosmetics or
+                        skin-care products.
                     </li>
+
+                    <li>
+                        Stop using the product if you develop
+                        a concerning reaction.
+                    </li>
+
                 </ul>
 
             </li>
@@ -114,16 +181,28 @@
             <li>
 
                 <h4>
-                    Apply to Clean, Dry Skin
+                    Be Careful with Broken or Irritated Skin
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Preparation:</strong>
-                        Ensure the skin is clean and dry before
-                        applying the topical to enhance
-                        absorption and effectiveness.
+                        Do not assume a cannabis topical is
+                        safe for cuts, burns, rashes, sores,
+                        or infected skin.
                     </li>
+
+                    <li>
+                        Damaged skin can react differently to
+                        ingredients.
+                    </li>
+
+                    <li>
+                        Follow the product warnings and seek
+                        medical advice for wounds or skin
+                        conditions that need treatment.
+                    </li>
+
                 </ul>
 
             </li>
@@ -131,16 +210,29 @@
             <li>
 
                 <h4>
-                    Avoid Sensitive Areas
+                    Keep Topicals Away from Sensitive Areas
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Sensitive Zones:</strong>
-                        Keep topicals away from sensitive areas
-                        such as the eyes, mouth, and open
-                        wounds.
+                        Avoid getting ordinary cannabis
+                        topicals in your eyes, mouth, or other
+                        sensitive areas.
                     </li>
+
+                    <li>
+                        Ingredients such as menthol, camphor,
+                        fragrances, or essential oils can be
+                        especially irritating.
+                    </li>
+
+                    <li>
+                        Only use a product on a sensitive area
+                        when it is specifically designed and
+                        labeled for that use.
+                    </li>
+
                 </ul>
 
             </li>
@@ -148,15 +240,25 @@
             <li>
 
                 <h4>
-                    Start with a Small Amount
+                    Wash Your Hands When Appropriate
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Initial Application:</strong>
-                        Begin with a small amount to gauge how
-                        your skin reacts before applying more.
+                        Washing your hands after application
+                        can help prevent accidentally
+                        transferring the product to your eyes,
+                        mouth, another person, or another
+                        surface.
                     </li>
+
+                    <li>
+                        Follow different instructions when the
+                        hands themselves are the intended
+                        application area.
+                    </li>
+
                 </ul>
 
             </li>
@@ -164,17 +266,35 @@
             <li>
 
                 <h4>
-                    Wash Hands After Use
+                    Understand THC and Absorption
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Avoid Transfer:</strong>
-                        Wash your hands thoroughly after
-                        application to prevent accidental
-                        transfer to other areas (like your
-                        eyes).
+                        Do not assume every THC-containing
+                        skin product behaves the same way.
                     </li>
+
+                    <li>
+                        Conventional surface topicals and
+                        products specifically designed for
+                        transdermal delivery are different.
+                    </li>
+
+                    <li>
+                        A transdermal THC product may be
+                        intended to produce systemic exposure,
+                        which can create different impairment
+                        and safety concerns.
+                    </li>
+
+                    <li>
+                        Read the product type and directions
+                        instead of deciding based only on the
+                        word "topical."
+                    </li>
+
                 </ul>
 
             </li>
@@ -182,20 +302,34 @@
             <li>
 
                 <h4>
-                    Store Properly
+                    Remember That CBD Still Has Safety
+                    Considerations
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Temperature:</strong>
-                        Store topicals in a cool, dry place,
-                        away from direct sunlight.
+                        CBD does not produce the same
+                        intoxicating high associated with THC.
                     </li>
 
                     <li>
-                        <strong>Child and Pet Safety:</strong>
-                        Keep out of reach of children and pets.
+                        That does not mean every CBD product
+                        is automatically safe.
                     </li>
+
+                    <li>
+                        CBD has known safety concerns,
+                        including potential medication
+                        interactions.
+                    </li>
+
+                    <li>
+                        Research is still developing around
+                        how different routes and formulations
+                        affect CBD exposure.
+                    </li>
+
                 </ul>
 
             </li>
@@ -203,16 +337,38 @@
             <li>
 
                 <h4>
-                    Be Aware of Absorption
+                    Don't Treat Marketing Like Medical Proof
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Localized Effect:</strong>
-                        Remember that cannabis topicals
-                        typically do not enter the bloodstream
-                        but work locally where applied.
+                        Cannabis and CBD topicals are commonly
+                        marketed for pain, soreness,
+                        inflammation, arthritis, and skin
+                        conditions.
                     </li>
+
+                    <li>
+                        A marketing claim does not prove that
+                        an individual retail product safely or
+                        effectively treats a medical
+                        condition.
+                    </li>
+
+                    <li>
+                        Be cautious with products claiming to
+                        cure diseases or replace established
+                        medical treatment.
+                    </li>
+
+                    <li>
+                        Talk with a healthcare professional
+                        about persistent pain, inflammation,
+                        rashes, wounds, or other medical
+                        concerns.
+                    </li>
+
                 </ul>
 
             </li>
@@ -220,16 +376,34 @@
             <li>
 
                 <h4>
-                    Monitor for Side Effects
+                    Pay Attention to Skin Reactions
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Watch for Reactions:</strong>
-                        Be alert for any signs of irritation,
-                        redness, or rash. Discontinue use if
-                        adverse effects occur.
+                        Possible reactions can include
+                        redness, itching, burning, swelling,
+                        dryness, or a rash.
                     </li>
+
+                    <li>
+                        The reaction may be caused by a
+                        cannabinoid or by another ingredient
+                        in the product.
+                    </li>
+
+                    <li>
+                        Stop using a product if it causes a
+                        concerning reaction.
+                    </li>
+
+                    <li>
+                        Seek medical help for severe swelling,
+                        breathing problems, or other signs of
+                        a serious allergic reaction.
+                    </li>
+
                 </ul>
 
             </li>
@@ -237,17 +411,33 @@
             <li>
 
                 <h4>
-                    Consult a Healthcare Professional
+                    Keep Topicals Away from Children and Pets
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Medical Conditions:</strong>
-                        If you have pre-existing skin
-                        conditions or are unsure about using
-                        cannabis topicals, consult with a
-                        healthcare provider.
+                        Store cannabis topicals securely out
+                        of reach of children and animals.
                     </li>
+
+                    <li>
+                        Do not let pets lick freshly applied
+                        cannabis products from your skin.
+                    </li>
+
+                    <li>
+                        Do not assume a human topical is safe
+                        to use on an animal.
+                    </li>
+
+                    <li>
+                        Keep the original label and packaging
+                        so you know what ingredients are in
+                        the product if an accidental exposure
+                        occurs.
+                    </li>
+
                 </ul>
 
             </li>
@@ -255,79 +445,172 @@
             <li>
 
                 <h4>
-                    Check Legal Status
+                    Store the Product Properly
                 </h4>
 
                 <ul class="safety-details">
+
                     <li>
-                        <strong>Legal Compliance:</strong>
-                        Ensure that cannabis topicals are legal
-                        in your area by using our
-                        <router-link
-                            :to="{ name: 'legality' }"
-                        >
-                            state law list
-                        </router-link>
-                        and purchased from reputable sources.
+                        Follow the manufacturer's storage
+                        instructions.
                     </li>
-                </ul>
 
-            </li>
-
-            <li>
-
-                <h4>
-                    Educate Yourself on Product Efficacy
-                </h4>
-
-                <ul class="safety-details">
                     <li>
-                        <strong>Research:</strong>
-                        Understand how different cannabinoids
-                        and terpenes in topicals can affect
-                        your condition and choose products
-                        accordingly.
+                        Keep containers securely closed and
+                        clearly labeled.
                     </li>
-                </ul>
 
-            </li>
-
-            <li>
-
-                <h4>
-                    Avoid Applying Near Open Wounds
-                </h4>
-
-                <ul class="safety-details">
                     <li>
-                        <strong>Infection Risk:</strong>
-                        Avoid applying topicals to broken or
-                        irritated skin to reduce the risk of
-                        infection or further irritation.
+                        Protect products from conditions that
+                        the label says to avoid, such as
+                        excessive heat or direct sunlight.
                     </li>
-                </ul>
 
-            </li>
-
-            <li>
-
-                <h4>
-                    Be Cautious with High-THC Products
-                </h4>
-
-                <ul class="safety-details">
                     <li>
-                        <strong>Psychoactive Effects:</strong>
-                        Be aware that some topicals may contain
-                        THC, which might cause psychoactive
-                        effects if absorbed into the
-                        bloodstream, though this is rare.
+                        Do not transfer cannabis topicals into
+                        an unlabeled container where they can
+                        be mistaken for another product.
                     </li>
+
                 </ul>
 
             </li>
 
         </ol>
+
+        <!-- Display Topical Safety Questions -->
+        <section
+            class="safety-questions"
+            aria-labelledby="topical-safety-questions-heading"
+        >
+
+            <h4 id="topical-safety-questions-heading">
+                Quick Questions
+            </h4>
+
+            <dl>
+
+                <dt>
+                    Are topical and transdermal cannabis
+                    products the same?
+                </dt>
+
+                <dd>
+                    No. A transdermal product is specifically
+                    formulated to move ingredients through
+                    the skin for systemic absorption.
+                </dd>
+
+                <dt>
+                    Can a THC topical get me high?
+                </dt>
+
+                <dd>
+                    Product type matters. Do not treat an
+                    ordinary surface topical and a
+                    THC-containing transdermal product as
+                    though they have the same absorption or
+                    impairment potential.
+                </dd>
+
+                <dt>
+                    Does CBD cream treat pain or arthritis?
+                </dt>
+
+                <dd>
+                    CBD topicals are marketed for pain and
+                    soreness, but an ordinary retail CBD
+                    cream is not automatically a proven or
+                    FDA-approved treatment for pain,
+                    arthritis, or another medical condition.
+                </dd>
+
+                <dt>
+                    Why should I check ingredients besides
+                    CBD and THC?
+                </dt>
+
+                <dd>
+                    Fragrances, menthol, essential oils,
+                    preservatives, and other ingredients can
+                    produce effects or cause skin irritation
+                    of their own.
+                </dd>
+
+                <dt>
+                    Should I use cannabis cream on a cut?
+                </dt>
+
+                <dd>
+                    Don't assume that you can. Follow the
+                    product warnings and directions because
+                    damaged skin can respond differently to
+                    ingredients.
+                </dd>
+
+                <dt>
+                    What should I do if my skin reacts badly?
+                </dt>
+
+                <dd>
+                    Stop using the product. Seek medical help
+                    for severe swelling, breathing problems,
+                    or another serious reaction.
+                </dd>
+
+            </dl>
+
+        </section>
+
+        <!-- Display Topical Law Information -->
+        <section
+            class="safety-legal"
+            aria-labelledby="topical-law-heading"
+        >
+
+            <h4 id="topical-law-heading">
+                Cannabis Topicals & U.S. Law in 2026
+            </h4>
+
+            <p>
+                There is not one nationwide rule covering
+                every cannabis or CBD topical.
+            </p>
+
+            <p>
+                A product's cannabinoid content, source,
+                intended use, formulation, and marketing
+                claims can affect how it is regulated.
+                States can also create different rules for
+                marijuana products, hemp-derived
+                cannabinoids, THC content, age requirements,
+                testing, labeling, licensing, and sales.
+            </p>
+
+            <p>
+                State-legal marijuana products should not
+                automatically be treated as federally legal.
+                Federal proceedings in 2026 concern proposed
+                marijuana rescheduling rather than a
+                completed transfer to Schedule III.
+            </p>
+
+            <p>
+                Check our
+                <router-link
+                    :to="{ name: 'legality' }"
+                >
+                    U.S. cannabis law guide
+                </router-link>
+                for current federal and state information.
+            </p>
+
+            <p class="legal-review-date">
+                Legal information last reviewed:
+                September 2026
+            </p>
+
+        </section>
 
         <!-- Display Topical Safety Image -->
         <figure class="safety-image">
@@ -344,7 +627,8 @@
 </template>
 
 <script>
-import TopicalSafetyImage from "../../assets/safety/topical-safety.webp";
+import TopicalSafetyImage
+    from "../../assets/safety/topical-safety.webp";
 
 export default {
     name: "TopicalSafety",

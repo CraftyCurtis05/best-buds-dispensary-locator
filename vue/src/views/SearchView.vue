@@ -47,6 +47,38 @@
                 @search="searchDispensaries"
             />
 
+            <!-- Display Travel & Legal Reminder -->
+            <aside
+                id="search-legal-reminder"
+                aria-labelledby="search-legal-reminder-heading"
+            >
+
+                <h3 id="search-legal-reminder-heading">
+                    Before You Travel
+                </h3>
+
+                <p>
+                    Cannabis laws can change when you cross a
+                    state line. A product that is legal in one
+                    state may not be legal in another, and
+                    transporting cannabis across state lines can
+                    violate federal law.
+                </p>
+
+                <p>
+                    State legalization also doesn't mean cannabis
+                    is permitted on federal property or everywhere
+                    within that state.
+                </p>
+
+                <p>
+                    Always check the laws where you are,
+                    where you're going, and anywhere you'll
+                    travel through before taking cannabis with you.
+                </p>
+
+            </aside>
+
             <SearchList
                 v-if="hasSearchLocation"
                 ref="searchList"
