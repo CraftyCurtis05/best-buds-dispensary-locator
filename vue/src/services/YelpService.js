@@ -2,14 +2,17 @@ import axios from "axios";
 
 export default {
 
-    // Get dispensaries near the user's location
-    getDispensaries(locationID) {
+    // Get dispensaries near the requested location
+    getDispensaries(
+        searchLocation
+    ) {
 
         return axios.get(
             "/api/dispensaries/search",
             {
                 params: {
-                    location: locationID
+                    location:
+                        searchLocation
                 }
             }
         );

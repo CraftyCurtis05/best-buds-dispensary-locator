@@ -148,10 +148,10 @@ export default {
     data() {
         return {
 
-            // Use Columbus before a dispensary search is made
+            // Use a national view before a dispensary search is made
             defaultCenter: {
-                lat: 39.9612,
-                lng: -82.9988
+                lat: 39.50,
+                lng: -98.35
             },
 
             selectedDispensary: null
@@ -293,7 +293,7 @@ export default {
                 return 11;
             }
 
-            return 10;
+            return 4;
 
         }
 

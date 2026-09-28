@@ -16,7 +16,7 @@
 
         <input
             id="input-location"
-            v-model="locationID"
+            v-model="searchLocation"
             type="text"
             name="user-location"
             placeholder="Enter city, state, or ZIP code"
@@ -43,7 +43,7 @@ export default {
 
     data() {
         return {
-            locationID: ""
+            searchLocation: ""
         };
     },
 
@@ -52,21 +52,16 @@ export default {
         // Start a dispensary search for the entered location
         search() {
 
-            const location =
-                this.locationID.trim();
+            const searchLocation =
+                this.searchLocation.trim();
 
-            if (!location) {
+            if (!searchLocation) {
                 return;
             }
 
-            this.$store.commit(
-                "SET_LOCATION",
-                location
-            );
-
             this.$emit(
                 "search",
-                location
+                searchLocation
             );
 
         }

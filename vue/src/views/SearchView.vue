@@ -150,7 +150,7 @@ export default {
         hasSearchLocation() {
 
             return Boolean(
-                this.$store.state.locationID
+                this.$store.state.searchLocation
             );
 
         }
@@ -160,12 +160,19 @@ export default {
     methods: {
 
         // Start a dispensary search
-        searchDispensaries(location) {
+        searchDispensaries(
+            searchLocation
+        ) {
+
+            this.$store.commit(
+                "SET_SEARCH_LOCATION",
+                searchLocation
+            );
 
             this.$nextTick(() => {
 
                 this.$refs.searchList?.search(
-                    location
+                    searchLocation
                 );
 
             });

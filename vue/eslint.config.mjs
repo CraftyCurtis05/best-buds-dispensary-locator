@@ -31,11 +31,8 @@ export default [
             globals: {
                 ...globals.browser
             }
-        },
-
-        rules: {
-            "no-unused-vars": "off"
         }
+
     }
 
 ];

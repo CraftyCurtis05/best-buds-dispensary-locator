@@ -202,7 +202,7 @@ export default {
                     response.data
                 );
 
-            } catch (error) {
+            } catch {
 
                 this.showDefaultImage();
 
@@ -262,7 +262,7 @@ export default {
                         imageFile
                     );
 
-            } catch (error) {
+            } catch {
 
                 this.errorMessage =
                     "Unable to prepare this image. Please try another image.";
@@ -539,7 +539,7 @@ export default {
 
                 }
 
-            } catch (error) {
+            } catch {
 
                 this.errorMessage =
                     "Unable to remove your profile picture.";

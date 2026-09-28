@@ -97,13 +97,6 @@ export default {
 
     computed: {
 
-        // Get the current search location from the store
-        locationID() {
-
-            return this.$store.state.locationID;
-
-        },
-
         // Get the current dispensary results from the store
         results() {
 
@@ -113,52 +106,31 @@ export default {
 
     },
 
-    watch: {
-
-        // Search again when the location changes
-        locationID(newLocation) {
-
-            if (newLocation) {
-                this.getResults(
-                    newLocation
-                );
-            }
-
-        }
-
-    },
-
     created() {
         this.getSavedDispensaries();
-
-        if (this.locationID) {
-            this.getResults(
-                this.locationID
-            );
-        }
     },
 
     methods: {
 
         // Search for dispensaries at the requested location
-        search(location) {
+        search(
+            searchLocation
+        ) {
 
-            if (!location) {
+            if (!searchLocation) {
                 return;
             }
 
-            if (
-                location === this.locationID
-            ) {
-                this.getResults(
-                    location
-                );
-            }
+            this.getResults(
+                searchLocation
+            );
 
         },
 
         // Get dispensaries near the current location
-        getResults(locationID) {
+        getResults(
+            searchLocation
+        ) {
 
             this.isLoading = true;
             this.hasSearched = true;
@@ -170,7 +142,9 @@ export default {
             );
 
             YelpService
-                .getDispensaries(locationID)
+                .getDispensaries(
+                    searchLocation
+                )
                 .then((response) => {
 
                     const dispensaries =

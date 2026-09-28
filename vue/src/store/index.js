@@ -11,7 +11,7 @@ export function createStore(
             user: currentUser || {},
             profile: null,
             profileLoaded: false,
-            locationID: "",
+            searchLocation: "",
             dispensaries: []
         },
 
@@ -53,9 +53,13 @@ export function createStore(
                 state.profileLoaded = true;
             },
 
-            // Store the selected location
-            SET_LOCATION(state, locationID) {
-                state.locationID = locationID;
+            // Store the current dispensary search location
+            SET_SEARCH_LOCATION(
+                state,
+                searchLocation
+            ) {
+                state.searchLocation =
+                    searchLocation;
             },
 
             // Store the current dispensary search results
@@ -69,7 +73,7 @@ export function createStore(
                 state.user = {};
                 state.profile = null;
                 state.profileLoaded = false;
-                state.locationID = "";
+                state.searchLocation = "";
                 state.dispensaries = [];
 
                 localStorage.removeItem("token");
