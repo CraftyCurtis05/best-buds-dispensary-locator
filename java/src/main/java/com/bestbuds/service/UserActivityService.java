@@ -2,6 +2,7 @@ package com.bestbuds.service;
 
 import com.bestbuds.dao.UserActivityDao;
 import com.bestbuds.model.UserActivity;
+import com.bestbuds.model.UserActivityType;
 
 import org.springframework.stereotype.Service;
 
@@ -19,15 +20,20 @@ public class UserActivityService {
     }
 
 
+    // Record an activity completed by a user
     public UserActivity createUserActivity(
             int userId,
             String activityType,
             String activityValue
     ) {
 
-        if (userId <= 0
-                || activityType == null
-                || activityType.isBlank()) {
+        if (
+                userId <= 0
+                || !UserActivityType.isValidValue(
+                        activityType,
+                        activityValue
+                )
+        ) {
             return null;
         }
 
@@ -57,6 +63,57 @@ public class UserActivityService {
         return userActivityDao.getUserActivitiesByType(
                 userId,
                 activityType
+        );
+    }
+
+
+    // Count activities of a specific type completed by a user
+    public int countUserActivitiesByType(
+            int userId,
+            String activityType
+    ) {
+
+        return userActivityDao.countUserActivitiesByType(
+                userId,
+                activityType
+        );
+    }
+
+
+    // Count unique activity values of a specific type
+    public int countDistinctActivityValuesByType(
+            int userId,
+            String activityType
+    ) {
+
+        return userActivityDao
+                .countDistinctActivityValuesByType(
+                        userId,
+                        activityType
+                );
+    }
+
+
+    // Count unique activity dates of a specific type
+    public int countDistinctActivityDatesByType(
+            int userId,
+            String activityType
+    ) {
+
+        return userActivityDao
+                .countDistinctActivityDatesByType(
+                        userId,
+                        activityType
+                );
+    }
+
+    // Count unique activity types completed by a user
+    public int countDistinctActivityTypes(
+            int userId
+    ) {
+
+        return userActivityDao.countDistinctActivityTypes(
+                userId
         );
     }
 }

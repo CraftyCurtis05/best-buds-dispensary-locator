@@ -24,4 +24,27 @@ public interface UserActivityDao {
             String activityType
     );
 
+    // Count activities of a specific type completed by a user
+    int countUserActivitiesByType(
+            int userId,
+            String activityType
+    );
+
+    // Count unique activity values of a specific type
+    int countDistinctActivityValuesByType(
+            int userId,
+            String activityType
+    );
+
+    // Count unique activity dates of a specific type
+    int countDistinctActivityDatesByType(
+            int userId,
+            String activityType
+    );
+
+    // Count unique activity types completed by a user
+    int countDistinctActivityTypes(
+            int userId
+    );
+
 }

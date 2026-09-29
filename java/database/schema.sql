@@ -113,6 +113,19 @@ CREATE TABLE user_activities (
         ON DELETE CASCADE
 );
 
+-- User activity lookup indexes
+CREATE INDEX idx_user_activities_user_type
+    ON user_activities (
+        user_id,
+        activity_type
+    );
+
+CREATE INDEX idx_user_activities_user_date
+    ON user_activities (
+        user_id,
+        activity_date
+    );
+
 -- Collectibles
 CREATE TABLE collectibles (
     collectible_id SERIAL PRIMARY KEY,

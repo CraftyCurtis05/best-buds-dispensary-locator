@@ -132,6 +132,8 @@ import {
 
 import UserActivityService from "../../services/UserActivityService.js";
 
+import {USER_ACTIVITY_TYPES} from "../../constants/userActivityTypes.js";
+
 export default {
     name: "SearchMap",
 
@@ -335,7 +337,7 @@ export default {
 
             UserActivityService
                 .createUserActivity(
-                    "DISPENSARY_VIEW",
+                    USER_ACTIVITY_TYPES.DISPENSARY_VIEW,
                     dispensaryID
                 )
                 .then(() => {

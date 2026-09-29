@@ -5,7 +5,7 @@ export default {
     // Record an activity completed by the authenticated user
     createUserActivity(
         activityType,
-        activityValue = null
+        activityValue
     ) {
 
         return axios.post(

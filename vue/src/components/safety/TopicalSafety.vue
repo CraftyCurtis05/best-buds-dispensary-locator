@@ -627,8 +627,7 @@
 </template>
 
 <script>
-import TopicalSafetyImage
-    from "../../assets/safety/topical-safety.webp";
+import TopicalSafetyImage from "../../assets/safety/topical-safety.webp";
 
 export default {
     name: "TopicalSafety",

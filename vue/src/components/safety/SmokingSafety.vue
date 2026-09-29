@@ -663,8 +663,7 @@
 </template>
 
 <script>
-import SmokingSafetyImage
-    from "../../assets/safety/smoking-safety.webp";
+import SmokingSafetyImage from "../../assets/safety/smoking-safety.webp";
 
 export default {
     name: "SmokingSafety",

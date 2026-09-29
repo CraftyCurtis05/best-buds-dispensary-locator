@@ -182,6 +182,12 @@ import TopicalSafety from "../components/safety/TopicalSafety.vue";
 import StrainGuideVisit from "../components/strain-guide/StrainGuideVisit.vue";
 import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
 
+import UserActivityService from "../services/UserActivityService.js";
+
+import {
+    USER_ACTIVITY_TYPES
+} from "../constants/userActivityTypes.js";
+
 export default {
     name: "SafetyView",
 
@@ -192,6 +198,151 @@ export default {
         TopicalSafety,
         StrainGuideVisit,
         ArticlesVisit
+    },
+
+    emits: [
+        "activity-recorded"
+    ],
+
+    data() {
+        return {
+
+            // Track safety topics viewed during this page visit
+            safetyObserver: null,
+            viewedSafetyTopics: new Set()
+
+        };
+    },
+
+    mounted() {
+        this.observeSafetySections();
+    },
+
+    beforeUnmount() {
+
+        if (this.safetyObserver) {
+            this.safetyObserver.disconnect();
+        }
+
+    },
+
+    methods: {
+
+        // Watch safety sections as the user explores the page
+        observeSafetySections() {
+
+            const safetySections = [
+                {
+                    id: "thc-consumption",
+                    value: "thc"
+                },
+                {
+                    id: "cbd-consumption",
+                    value: "cbd"
+                },
+                {
+                    id: "smoking-safety",
+                    value: "smoking"
+                },
+                {
+                    id: "topical-use",
+                    value: "topical"
+                }
+            ];
+
+            this.safetyObserver =
+                new IntersectionObserver(
+                    (entries) => {
+
+                        entries.forEach(
+                            (entry) => {
+
+                                if (!entry.isIntersecting) {
+                                    return;
+                                }
+
+                                const safetyTopic =
+                                    safetySections.find(
+                                        (item) =>
+                                            item.id
+                                            === entry.target.id
+                                    );
+
+                                if (!safetyTopic) {
+                                    return;
+                                }
+
+                                this.recordSafetyView(
+                                    safetyTopic.value
+                                );
+
+                            }
+                        );
+
+                    },
+                    {
+                        threshold: 0.25
+                    }
+                );
+
+            safetySections.forEach(
+                (safetyTopic) => {
+
+                    const section =
+                        document.getElementById(
+                            safetyTopic.id
+                        );
+
+                    if (section) {
+                        this.safetyObserver.observe(
+                            section
+                        );
+                    }
+
+                }
+            );
+
+        },
+
+        // Record a safety topic once during this page visit
+        recordSafetyView(
+            safetyTopic
+        ) {
+
+            if (
+                this.viewedSafetyTopics.has(
+                    safetyTopic
+                )
+            ) {
+                return;
+            }
+
+            this.viewedSafetyTopics.add(
+                safetyTopic
+            );
+
+            UserActivityService
+                .createUserActivity(
+                    USER_ACTIVITY_TYPES.SAFETY_VIEW,
+                    safetyTopic
+                )
+                .then(() => {
+
+                    this.$emit(
+                        "activity-recorded"
+                    );
+
+                })
+                .catch(() => {
+
+                    this.viewedSafetyTopics.delete(
+                        safetyTopic
+                    );
+
+                });
+
+        }
+
     }
 };
 </script>

@@ -234,6 +234,12 @@ import StrainGuide from "../components/strain-guide/StrainGuide.vue";
 import TerpeneGuide from "../components/strain-guide/TerpeneGuide.vue";
 import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
 
+import UserActivityService from "../services/UserActivityService.js";
+
+import {
+    USER_ACTIVITY_TYPES
+} from "../constants/userActivityTypes.js";
+
 export default {
     name: "StrainGuideView",
 
@@ -241,6 +247,143 @@ export default {
         StrainGuide,
         TerpeneGuide,
         ArticlesVisit
+    },
+
+    emits: [
+        "activity-recorded"
+    ],
+
+    data() {
+        return {
+
+            // Track strain guide topics viewed during this page visit
+            strainGuideObserver: null,
+            viewedStrainGuideTopics: new Set()
+
+        };
+    },
+
+    mounted() {
+        this.observeStrainGuideSections();
+    },
+
+    beforeUnmount() {
+
+        if (this.strainGuideObserver) {
+            this.strainGuideObserver.disconnect();
+        }
+
+    },
+
+    methods: {
+
+        // Watch strain guide sections as the user explores the page
+        observeStrainGuideSections() {
+
+            const strainGuideSections = [
+                {
+                    id: "strain-101",
+                    value: "strain-guide"
+                },
+                {
+                    id: "terpene-101",
+                    value: "terpenes"
+                }
+            ];
+
+            this.strainGuideObserver =
+                new IntersectionObserver(
+                    (entries) => {
+
+                        entries.forEach(
+                            (entry) => {
+
+                                if (!entry.isIntersecting) {
+                                    return;
+                                }
+
+                                const strainGuideTopic =
+                                    strainGuideSections.find(
+                                        (item) =>
+                                            item.id
+                                            === entry.target.id
+                                    );
+
+                                if (!strainGuideTopic) {
+                                    return;
+                                }
+
+                                this.recordEducationView(
+                                    strainGuideTopic.value
+                                );
+
+                            }
+                        );
+
+                    },
+                    {
+                        threshold: 0.25
+                    }
+                );
+
+            strainGuideSections.forEach(
+                (strainGuideTopic) => {
+
+                    const section =
+                        document.getElementById(
+                            strainGuideTopic.id
+                        );
+
+                    if (section) {
+                        this.strainGuideObserver.observe(
+                            section
+                        );
+                    }
+
+                }
+            );
+
+        },
+
+        // Record an education topic once during this page visit
+        recordEducationView(
+            educationTopic
+        ) {
+
+            if (
+                this.viewedStrainGuideTopics.has(
+                    educationTopic
+                )
+            ) {
+                return;
+            }
+
+            this.viewedStrainGuideTopics.add(
+                educationTopic
+            );
+
+            UserActivityService
+                .createUserActivity(
+                    USER_ACTIVITY_TYPES.EDUCATION_VIEW,
+                    educationTopic
+                )
+                .then(() => {
+
+                    this.$emit(
+                        "activity-recorded"
+                    );
+
+                })
+                .catch(() => {
+
+                    this.viewedStrainGuideTopics.delete(
+                        educationTopic
+                    );
+
+                });
+
+        }
+
     }
 };
 </script>

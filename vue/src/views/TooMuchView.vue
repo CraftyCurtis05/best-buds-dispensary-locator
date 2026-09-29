@@ -125,6 +125,12 @@ import CannabisOveruseGuide from "../components/too-much/CannabisOveruseGuide.vu
 import StrainGuideVisit from "../components/strain-guide/StrainGuideVisit.vue";
 import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
 
+import UserActivityService from "../services/UserActivityService.js";
+
+import {
+    USER_ACTIVITY_TYPES
+} from "../constants/userActivityTypes.js";
+
 export default {
     name: "TooMuchView",
 
@@ -134,6 +140,39 @@ export default {
         CannabisOveruseGuide,
         StrainGuideVisit,
         ArticlesVisit
+    },
+
+    emits: [
+        "activity-recorded"
+    ],
+
+    mounted() {
+        this.recordEducationView();
+    },
+
+    methods: {
+
+        // Record that the user explored cannabis overuse education
+        recordEducationView() {
+
+            UserActivityService
+                .createUserActivity(
+                    USER_ACTIVITY_TYPES.EDUCATION_VIEW,
+                    "too-much"
+                )
+                .then(() => {
+
+                    this.$emit(
+                        "activity-recorded"
+                    );
+
+                })
+                .catch(() => {
+                    // Activity tracking should not block education content
+                });
+
+        }
+
     }
 };
 </script>

@@ -92,6 +92,12 @@ import LegalityMap from "../components/legality/LegalityMap.vue";
 import StrainGuideVisit from "../components/strain-guide/StrainGuideVisit.vue";
 import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
 
+import UserActivityService from "../services/UserActivityService.js";
+
+import {
+    USER_ACTIVITY_TYPES
+} from "../constants/userActivityTypes.js";
+
 export default {
     name: "LegalityView",
 
@@ -99,6 +105,39 @@ export default {
         LegalityMap,
         StrainGuideVisit,
         ArticlesVisit
+    },
+
+    emits: [
+        "activity-recorded"
+    ],
+
+    mounted() {
+        this.recordEducationView();
+    },
+
+    methods: {
+
+        // Record that the user explored cannabis legality education
+        recordEducationView() {
+
+            UserActivityService
+                .createUserActivity(
+                    USER_ACTIVITY_TYPES.EDUCATION_VIEW,
+                    "legality"
+                )
+                .then(() => {
+
+                    this.$emit(
+                        "activity-recorded"
+                    );
+
+                })
+                .catch(() => {
+                    // Activity tracking should not block education content
+                });
+
+        }
+
     }
 };
 </script>

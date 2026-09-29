@@ -151,20 +151,19 @@
 
 <script>
 import FlowerProducts from "../components/products/FlowerProducts.vue";
-
 import EdibleProducts from "../components/products/EdibleProducts.vue";
-
 import WaxProducts from "../components/products/WaxProducts.vue";
-
 import OilProducts from "../components/products/OilProducts.vue";
-
 import TinctureProducts from "../components/products/TinctureProducts.vue";
-
 import TopicalProducts from "../components/products/TopicalProducts.vue";
-
 import StrainGuideVisit from "../components/strain-guide/StrainGuideVisit.vue";
-
 import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
+
+import UserActivityService from "../services/UserActivityService.js";
+
+import {
+    USER_ACTIVITY_TYPES
+} from "../constants/userActivityTypes.js";
 
 export default {
     name: "ProductsView",
@@ -178,6 +177,159 @@ export default {
         TopicalProducts,
         StrainGuideVisit,
         ArticlesVisit
+    },
+
+    emits: [
+        "activity-recorded"
+    ],
+
+    data() {
+        return {
+
+            // Track product sections viewed during this page visit
+            productObserver: null,
+            viewedProducts: new Set()
+
+        };
+    },
+
+    mounted() {
+        this.observeProductsSections();
+    },
+
+    beforeUnmount() {
+
+        if (this.productObserver) {
+            this.productObserver.disconnect();
+        }
+
+    },
+
+    methods: {
+
+        // Watch product sections as the user explores the page
+        observeProductsSections() {
+
+            const productSections = [
+                {
+                    id: "flower",
+                    value: "flower"
+                },
+                {
+                    id: "edible",
+                    value: "edible"
+                },
+                {
+                    id: "wax",
+                    value: "wax"
+                },
+                {
+                    id: "oil",
+                    value: "oil"
+                },
+                {
+                    id: "tincture",
+                    value: "tincture"
+                },
+                {
+                    id: "topical",
+                    value: "topical"
+                }
+            ];
+
+            this.productObserver =
+                new IntersectionObserver(
+                    (entries) => {
+
+                        entries.forEach(
+                            (entry) => {
+
+                                if (!entry.isIntersecting) {
+                                    return;
+                                }
+
+                                const product =
+                                    productSections.find(
+                                        (item) =>
+                                            item.id
+                                            === entry.target.id
+                                    );
+
+                                if (!product) {
+                                    return;
+                                }
+
+                                this.recordProductsView(
+                                    product.value
+                                );
+
+                            }
+                        );
+
+                    },
+                    {
+                        threshold: 0.25
+                    }
+                );
+
+            productSections.forEach(
+                (product) => {
+
+                    const section =
+                        document.getElementById(
+                            product.id
+                        );
+
+                    if (section) {
+                        this.productObserver.observe(
+                            section
+                        );
+                    }
+
+                }
+            );
+
+        },
+
+        // Record a product section once during this page visit
+        recordProductsView(
+            product
+        ) {
+
+            if (
+                this.viewedProducts.has(
+                    product
+                )
+            ) {
+                return;
+            }
+
+            this.viewedProducts.add(
+                product
+            );
+
+            UserActivityService
+                .createUserActivity(
+                    USER_ACTIVITY_TYPES.PRODUCT_VIEW,
+                    product
+                )
+                .then(() => {
+
+                    this.$emit(
+                        "activity-recorded"
+                    );
+
+                })
+                .catch(() => {
+
+                    this.viewedProducts.delete(
+                        product
+                    );
+
+                });
+
+        }
+
     }
 };
 </script>

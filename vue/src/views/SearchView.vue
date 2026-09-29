@@ -129,6 +129,12 @@ import SearchMap from "../components/search/SearchMap.vue";
 import StrainGuideVisit from "../components/strain-guide/StrainGuideVisit.vue";
 import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
 
+import UserActivityService from "../services/UserActivityService.js";
+
+import {
+    USER_ACTIVITY_TYPES
+} from "../constants/userActivityTypes.js";
+
 export default {
     name: "SearchView",
 
@@ -168,6 +174,18 @@ export default {
                 "SET_SEARCH_LOCATION",
                 searchLocation
             );
+
+            UserActivityService
+                .createUserActivity(
+                    USER_ACTIVITY_TYPES.AREA_SEARCH,
+                    searchLocation
+                )
+                .then(() => {
+                    this.activityRecorded();
+                })
+                .catch(() => {
+                    // Activity tracking should not block the search
+                });
 
             this.$nextTick(() => {
 

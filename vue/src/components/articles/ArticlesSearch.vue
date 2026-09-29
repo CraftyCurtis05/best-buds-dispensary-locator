@@ -52,6 +52,7 @@
                     :href="article.url"
                     target="_blank"
                     rel="noopener noreferrer"
+                    @click="recordArticleView(article)"
                 >
                     <img
                         :src="getArticleImage(article.image)"
@@ -67,6 +68,7 @@
                             :href="article.url"
                             target="_blank"
                             rel="noopener noreferrer"
+                            @click="recordArticleView(article)"
                         >
                             {{ article.title }}
                         </a>
@@ -97,8 +99,18 @@
 <script>
 import ArticlesList from "../../data/articles/articles.js";
 
+import UserActivityService from "../../services/UserActivityService.js";
+
+import {
+    USER_ACTIVITY_TYPES
+} from "../../constants/userActivityTypes.js";
+
 export default {
     name: "ArticlesSearch",
+
+    emits: [
+        "activity-recorded"
+    ],
 
     data() {
         return {
@@ -164,6 +176,29 @@ export default {
                 `../../assets/articles/${image}`,
                 import.meta.url
             ).href;
+
+        },
+
+        // Record that the user opened an article
+        recordArticleView(
+            article
+        ) {
+
+            UserActivityService
+                .createUserActivity(
+                    USER_ACTIVITY_TYPES.ARTICLES_VIEW,
+                    article.url
+                )
+                .then(() => {
+
+                    this.$emit(
+                        "activity-recorded"
+                    );
+
+                })
+                .catch(() => {
+                    // Activity tracking should not block article viewing
+                });
 
         }
 

@@ -645,8 +645,7 @@
 </template>
 
 <script>
-import CbdSafetyImage
-    from "../../assets/safety/cbd-safety.webp";
+import CbdSafetyImage from "../../assets/safety/cbd-safety.webp";
 
 export default {
     name: "CbdSafety",

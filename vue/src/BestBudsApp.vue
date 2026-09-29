@@ -67,6 +67,11 @@ import AppFooter from "./components/layout/Footer.vue";
 import DropReveal from "./components/collectibles/DropReveal.vue";
 
 import CollectibleService from "./services/CollectibleService.js";
+import UserActivityService from "./services/UserActivityService.js";
+
+import {
+    USER_ACTIVITY_TYPES
+} from "./constants/userActivityTypes.js";
 
 export default {
     name: "App",
@@ -86,7 +91,9 @@ export default {
             newDrop: null,
             dropQueue: [],
             isDropRevealOpen: false,
-            hasCheckedForDrops: false
+            hasCheckedForDrops: false,
+            isCheckingForDrops: false,
+            shouldCheckForDropsAgain: false
 
         };
     },
@@ -124,23 +131,62 @@ export default {
             immediate: true,
 
             handler(isUserReady) {
+
                 if (
                     isUserReady
                     && !this.hasCheckedForDrops
                 ) {
-                    this.checkForDrops();
+                    this.recordAppVisit()
+                        .finally(() => {
+                            this.checkForDrops();
+                        });
                 }
 
                 if (!isUserReady) {
                     this.hasCheckedForDrops = false;
+                    this.isCheckingForDrops = false;
+                    this.shouldCheckForDropsAgain = false;
+
                     this.clearDropQueue();
                 }
+
             }
         }
 
     },
 
     methods: {
+
+        // Record one Best Buds visit for the current browser session
+        recordAppVisit() {
+
+            const visitRecorded =
+                sessionStorage.getItem(
+                    "best-buds-app-visit-recorded"
+                ) === "true";
+
+            if (
+                visitRecorded
+                || !this.isUserReady
+            ) {
+                return Promise.resolve();
+            }
+
+            return UserActivityService
+                .createUserActivity(
+                    USER_ACTIVITY_TYPES.APP_VISIT,
+                    "best-buds"
+                )
+                .then(() => {
+                    sessionStorage.setItem(
+                        "best-buds-app-visit-recorded",
+                        "true"
+                    );
+                })
+                .catch(() => {
+                    // Activity tracking should not block the app
+                });
+        },
 
         // Check for new Drops after an activity is recorded
         activityRecorded() {
@@ -149,6 +195,13 @@ export default {
 
         // Check whether the authenticated user has earned new Drops
         checkForDrops() {
+
+            if (this.isCheckingForDrops) {
+                this.shouldCheckForDropsAgain = true;
+                return;
+            }
+
+            this.isCheckingForDrops = true;
             this.hasCheckedForDrops = true;
 
             CollectibleService
@@ -178,6 +231,16 @@ export default {
                         "Unable to check for new Drops:",
                         error
                     );
+
+                })
+                .finally(() => {
+
+                    this.isCheckingForDrops = false;
+
+                    if (this.shouldCheckForDropsAgain) {
+                        this.shouldCheckForDropsAgain = false;
+                        this.checkForDrops();
+                    }
 
                 });
         },

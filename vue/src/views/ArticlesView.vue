@@ -42,7 +42,9 @@
                 Cannabis Articles
             </h2>
 
-            <ArticlesSearch />
+            <ArticlesSearch
+                @activity-recorded="activityRecorded"
+            />
 
         </section>
 
@@ -74,6 +76,23 @@ export default {
     components: {
         ArticlesSearch,
         StrainGuideVisit
+    },
+
+    emits: [
+        "activity-recorded"
+    ],
+
+    methods: {
+
+        // Pass the recorded activity to the application
+        activityRecorded() {
+
+            this.$emit(
+                "activity-recorded"
+            );
+
+        }
+
     }
 };
 </script>

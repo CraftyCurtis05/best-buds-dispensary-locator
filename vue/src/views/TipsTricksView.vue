@@ -122,12 +122,51 @@
 import TipsTricksGuide from "../components/tips-tricks/TipsTricksGuide.vue";
 import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
 
+import UserActivityService from "../services/UserActivityService.js";
+
+import {
+    USER_ACTIVITY_TYPES
+} from "../constants/userActivityTypes.js";
+
 export default {
     name: "TipsTricksView",
 
     components: {
         TipsTricksGuide,
         ArticlesVisit
+    },
+
+    emits: [
+        "activity-recorded"
+    ],
+
+    mounted() {
+        this.recordEducationView();
+    },
+
+    methods: {
+
+        // Record that the user explored tips and tricks
+        recordEducationView() {
+
+            UserActivityService
+                .createUserActivity(
+                    USER_ACTIVITY_TYPES.EDUCATION_VIEW,
+                    "tips-tricks"
+                )
+                .then(() => {
+
+                    this.$emit(
+                        "activity-recorded"
+                    );
+
+                })
+                .catch(() => {
+                    // Activity tracking should not block education content
+                });
+
+        }
+
     }
 };
 </script>

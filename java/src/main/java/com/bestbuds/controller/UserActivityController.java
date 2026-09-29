@@ -7,6 +7,7 @@ import com.bestbuds.service.AuthenticationService;
 import com.bestbuds.service.UserActivityService;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,9 +31,8 @@ public class UserActivityController {
 
 
     // Record an activity for the authenticated user
-    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    public UserActivity createUserActivity(
+    public ResponseEntity<UserActivity> createUserActivity(
             @RequestBody UserActivityRequest request,
             Authentication authentication
     ) {
@@ -42,10 +42,25 @@ public class UserActivityController {
                         authentication.getName()
                 );
 
-        return userActivityService.createUserActivity(
-                user.getId(),
-                request.getActivityType(),
-                request.getActivityValue()
-        );
+        UserActivity userActivity =
+                userActivityService.createUserActivity(
+                        user.getId(),
+                        request.getActivityType(),
+                        request.getActivityValue()
+                );
+
+        if (userActivity == null) {
+            return ResponseEntity
+                    .badRequest()
+                    .build();
+        }
+
+        return ResponseEntity
+                .status(
+                        HttpStatus.CREATED
+                )
+                .body(
+                        userActivity
+                );
     }
 }

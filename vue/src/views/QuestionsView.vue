@@ -201,6 +201,12 @@ import TopicalQuestions from "../components/questions/TopicalQuestions.vue";
 import StrainGuideVisit from "../components/strain-guide/StrainGuideVisit.vue";
 import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
 
+import UserActivityService from "../services/UserActivityService.js";
+
+import {
+    USER_ACTIVITY_TYPES
+} from "../constants/userActivityTypes.js";
+
 export default {
     name: "QuestionsView",
 
@@ -219,6 +225,183 @@ export default {
         TopicalQuestions,
         StrainGuideVisit,
         ArticlesVisit
+    },
+
+    emits: [
+        "activity-recorded"
+    ],
+
+    data() {
+        return {
+
+            // Track question topics viewed during this page visit
+            questionObserver: null,
+            viewedQuestionTopics: new Set()
+
+        };
+    },
+
+    mounted() {
+        this.observeQuestionSections();
+    },
+
+    beforeUnmount() {
+
+        if (this.questionObserver) {
+            this.questionObserver.disconnect();
+        }
+
+    },
+
+    methods: {
+
+        // Watch question sections as the user explores the page
+        observeQuestionSections() {
+
+            const questionSections = [
+                {
+                    id: "dispensaries",
+                    value: "dispensary"
+                },
+                {
+                    id: "cannabis",
+                    value: "cannabis"
+                },
+                {
+                    id: "cbd",
+                    value: "cbd"
+                },
+                {
+                    id: "delta9",
+                    value: "delta-9"
+                },
+                {
+                    id: "flower",
+                    value: "flower"
+                },
+                {
+                    id: "wax",
+                    value: "wax"
+                },
+                {
+                    id: "oil",
+                    value: "oil"
+                },
+                {
+                    id: "tincture",
+                    value: "tincture"
+                },
+                {
+                    id: "smoking",
+                    value: "smoking"
+                },
+                {
+                    id: "vaporizing",
+                    value: "vaporizing"
+                },
+                {
+                    id: "edibles",
+                    value: "edible"
+                },
+                {
+                    id: "topicals",
+                    value: "topical"
+                }
+            ];
+
+            this.questionObserver =
+                new IntersectionObserver(
+                    (entries) => {
+
+                        entries.forEach(
+                            (entry) => {
+
+                                if (!entry.isIntersecting) {
+                                    return;
+                                }
+
+                                const questionTopic =
+                                    questionSections.find(
+                                        (item) =>
+                                            item.id
+                                            === entry.target.id
+                                    );
+
+                                if (!questionTopic) {
+                                    return;
+                                }
+
+                                this.recordEducationView(
+                                    questionTopic.value
+                                );
+
+                            }
+                        );
+
+                    },
+                    {
+                        threshold: 0.25
+                    }
+                );
+
+            questionSections.forEach(
+                (questionTopic) => {
+
+                    const section =
+                        document.getElementById(
+                            questionTopic.id
+                        );
+
+                    if (section) {
+                        this.questionObserver.observe(
+                            section
+                        );
+                    }
+
+                }
+            );
+
+        },
+
+        // Record an education topic once during this page visit
+        recordEducationView(
+            educationTopic
+        ) {
+
+            if (
+                this.viewedQuestionTopics.has(
+                    educationTopic
+                )
+            ) {
+                return;
+            }
+
+            this.viewedQuestionTopics.add(
+                educationTopic
+            );
+
+            UserActivityService
+                .createUserActivity(
+                    USER_ACTIVITY_TYPES.EDUCATION_VIEW,
+                    educationTopic
+                )
+                .then(() => {
+
+                    this.$emit(
+                        "activity-recorded"
+                    );
+
+                })
+                .catch(() => {
+
+                    this.viewedQuestionTopics.delete(
+                        educationTopic
+                    );
+
+                });
+
+        }
+
     }
 };
 </script>
