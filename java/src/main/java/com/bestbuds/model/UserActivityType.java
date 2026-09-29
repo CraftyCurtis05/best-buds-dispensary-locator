@@ -1,5 +1,7 @@
 package com.bestbuds.model;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.Set;
 
 public class UserActivityType {
@@ -31,6 +33,13 @@ public class UserActivityType {
     // User explored safety information
     public static final String SAFETY_VIEW =
             "SAFETY_VIEW";
+
+    // Education values used by collectible requirements
+    public static final String EDUCATION_STRAIN_GUIDE =
+            "strain-guide";
+
+    public static final String EDUCATION_TERPENES =
+            "terpenes";
 
 
     private static final Set<String> SUPPORTED_TYPES =
@@ -79,8 +88,8 @@ public class UserActivityType {
                     "vaporizing",
                     "edible",
                     "topical",
-                    "strain-guide",
-                    "terpenes",
+                    EDUCATION_STRAIN_GUIDE,
+                    EDUCATION_TERPENES,
                     "tips-tricks",
                     "too-much",
                     "legality"
@@ -123,8 +132,8 @@ public class UserActivityType {
         return switch (activityType) {
 
             case APP_VISIT ->
-                    activityValue.equals(
-                            "best-buds"
+                    isValidActivityDate(
+                            activityValue
                     );
 
             case PRODUCTS_VIEW ->
@@ -150,5 +159,23 @@ public class UserActivityType {
             default ->
                     false;
         };
+    }
+
+    // Check whether an activity value contains a valid calendar date
+    private static boolean isValidActivityDate(
+            String activityValue
+    ) {
+
+        try {
+
+            LocalDate.parse(
+                    activityValue
+            );
+
+            return true;
+
+        } catch (DateTimeParseException e) {
+            return false;
+        }
     }
 }

@@ -171,26 +171,218 @@ public class UserActivityServiceTests {
     }
 
     @Test
-    public void countDistinctActivityDatesByType_returns_dao_count() {
+    public void createUserActivity_creates_valid_app_visit_date() {
+
+        UserActivity activity =
+                new UserActivity();
 
         when(
-                userActivityDao.countDistinctActivityDatesByType(
+                userActivityDao.createUserActivity(
                         1,
-                        UserActivityType.APP_VISIT
+                        UserActivityType.APP_VISIT,
+                        "2026-09-29"
                 )
         ).thenReturn(
-                5
+                activity
+        );
+
+        UserActivity result =
+                userActivityService.createUserActivity(
+                        1,
+                        UserActivityType.APP_VISIT,
+                        "2026-09-29"
+                );
+
+        assertSame(
+                activity,
+                result
+        );
+
+        verify(
+                userActivityDao
+        ).createUserActivity(
+                1,
+                UserActivityType.APP_VISIT,
+                "2026-09-29"
+        );
+    }
+
+
+    @Test
+    public void createUserActivity_returns_null_for_invalid_app_visit_date() {
+
+        UserActivity result =
+                userActivityService.createUserActivity(
+                        1,
+                        UserActivityType.APP_VISIT,
+                        "2026-02-30"
+                );
+
+        assertNull(
+                result
+        );
+
+        verify(
+                userActivityDao,
+                never()
+        ).createUserActivity(
+                1,
+                UserActivityType.APP_VISIT,
+                "2026-02-30"
+        );
+    }
+
+    @Test
+    public void createUserActivity_creates_valid_products_view() {
+
+        UserActivity activity =
+                new UserActivity();
+
+        when(
+                userActivityDao.createUserActivity(
+                        1,
+                        UserActivityType.PRODUCTS_VIEW,
+                        "flower"
+                )
+        ).thenReturn(
+                activity
+        );
+
+        UserActivity result =
+                userActivityService.createUserActivity(
+                        1,
+                        UserActivityType.PRODUCTS_VIEW,
+                        "flower"
+                );
+
+        assertSame(
+                activity,
+                result
+        );
+
+        verify(
+                userActivityDao
+        ).createUserActivity(
+                1,
+                UserActivityType.PRODUCTS_VIEW,
+                "flower"
+        );
+    }
+
+    @Test
+    public void createUserActivity_returns_null_for_invalid_products_value() {
+
+        UserActivity result =
+                userActivityService.createUserActivity(
+                        1,
+                        UserActivityType.PRODUCTS_VIEW,
+                        "banana"
+                );
+
+        assertNull(
+                result
+        );
+
+        verify(
+                userActivityDao,
+                never()
+        ).createUserActivity(
+                1,
+                UserActivityType.PRODUCTS_VIEW,
+                "banana"
+        );
+    }
+
+    @Test
+    public void createUserActivity_returns_null_for_invalid_safety_value() {
+
+        UserActivity result =
+                userActivityService.createUserActivity(
+                        1,
+                        UserActivityType.SAFETY_VIEW,
+                        "banana"
+                );
+
+        assertNull(
+                result
+        );
+
+        verify(
+                userActivityDao,
+                never()
+        ).createUserActivity(
+                1,
+                UserActivityType.SAFETY_VIEW,
+                "banana"
+        );
+    }
+
+    @Test
+    public void createUserActivity_returns_null_for_invalid_education_value() {
+
+        UserActivity result =
+                userActivityService.createUserActivity(
+                        1,
+                        UserActivityType.EDUCATION_VIEW,
+                        "made-up-topic"
+                );
+
+        assertNull(
+                result
+        );
+
+        verify(
+                userActivityDao,
+                never()
+        ).createUserActivity(
+                1,
+                UserActivityType.EDUCATION_VIEW,
+                "made-up-topic"
+        );
+    }
+
+    @Test
+    public void createUserActivity_returns_null_for_blank_activity_value() {
+
+        UserActivity result =
+                userActivityService.createUserActivity(
+                        1,
+                        UserActivityType.AREA_SEARCH,
+                        "   "
+                );
+
+        assertNull(
+                result
+        );
+
+        verify(
+                userActivityDao,
+                never()
+        ).createUserActivity(
+                1,
+                UserActivityType.AREA_SEARCH,
+                "   "
+        );
+    }
+
+    @Test
+    public void countDistinctActivityTypes_returns_dao_count() {
+
+        when(
+                userActivityDao.countDistinctActivityTypes(
+                        1
+                )
+        ).thenReturn(
+                4
         );
 
         int result =
-                userActivityService
-                        .countDistinctActivityDatesByType(
-                                1,
-                                UserActivityType.APP_VISIT
-                        );
+                userActivityService.countDistinctActivityTypes(
+                        1
+                );
 
         assertEquals(
-                5,
+                4,
                 result
         );
     }

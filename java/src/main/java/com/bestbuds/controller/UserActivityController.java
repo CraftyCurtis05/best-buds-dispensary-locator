@@ -6,10 +6,15 @@ import com.bestbuds.model.UserActivityRequest;
 import com.bestbuds.service.AuthenticationService;
 import com.bestbuds.service.UserActivityService;
 
+import jakarta.validation.Valid;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/activities")
@@ -33,7 +38,7 @@ public class UserActivityController {
     // Record an activity for the authenticated user
     @PostMapping
     public ResponseEntity<UserActivity> createUserActivity(
-            @RequestBody UserActivityRequest request,
+            @Valid @RequestBody UserActivityRequest request,
             Authentication authentication
     ) {
 

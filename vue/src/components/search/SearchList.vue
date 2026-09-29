@@ -82,6 +82,10 @@ export default {
         DispensaryCard
     },
 
+    emits: [
+        "drop-check-requested"
+    ],
+
     data() {
         return {
             savedDispensaries: [],
@@ -305,6 +309,10 @@ export default {
                         );
 
                     }
+
+                    this.$emit(
+                        "drop-check-requested"
+                    );
 
                 })
                 .catch((error) => {

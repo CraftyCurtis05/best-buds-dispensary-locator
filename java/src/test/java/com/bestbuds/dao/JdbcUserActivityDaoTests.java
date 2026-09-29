@@ -85,7 +85,7 @@ public class JdbcUserActivityDaoTests
         jdbcUserActivityDao.createUserActivity(
                 1,
                 UserActivityType.SAFETY_VIEW,
-                "safety-one"
+                "cbd"
         );
 
         int activityCount =
@@ -135,29 +135,39 @@ public class JdbcUserActivityDaoTests
     }
 
     @Test
-    public void countDistinctActivityDatesByType_counts_unique_dates() {
+    public void countDistinctActivityTypes_counts_unique_types() {
 
         jdbcUserActivityDao.createUserActivity(
                 1,
                 UserActivityType.APP_VISIT,
-                "home"
+                "best-buds"
         );
 
         jdbcUserActivityDao.createUserActivity(
                 1,
-                UserActivityType.APP_VISIT,
-                "home"
+                UserActivityType.PRODUCTS_VIEW,
+                "flower"
+        );
+
+        jdbcUserActivityDao.createUserActivity(
+                1,
+                UserActivityType.SAFETY_VIEW,
+                "cbd"
+        );
+
+        jdbcUserActivityDao.createUserActivity(
+                1,
+                UserActivityType.PRODUCTS_VIEW,
+                "edible"
         );
 
         int activityCount =
-                jdbcUserActivityDao
-                        .countDistinctActivityDatesByType(
-                                1,
-                                UserActivityType.APP_VISIT
-                        );
+                jdbcUserActivityDao.countDistinctActivityTypes(
+                        1
+                );
 
         assertEquals(
-                1,
+                3,
                 activityCount
         );
     }

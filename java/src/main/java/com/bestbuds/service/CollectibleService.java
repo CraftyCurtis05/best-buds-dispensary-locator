@@ -2,6 +2,7 @@ package com.bestbuds.service;
 
 import com.bestbuds.dao.CollectibleDao;
 import com.bestbuds.model.Collectible;
+import com.bestbuds.model.CollectibleCode;
 import com.bestbuds.model.Profile;
 import com.bestbuds.model.UserActivity;
 import com.bestbuds.model.UserActivityType;
@@ -17,23 +18,59 @@ import java.util.List;
 @Service
 public class CollectibleService {
 
-    private static final String FIRST_CONTACT =
-            "FIRST_CONTACT";
+    private static final int EXPLORER_ACTIVITY_TYPE_COUNT =
+            5;
 
-    private static final String NIGHT_OWL =
-            "NIGHT_OWL";
+    private static final int CURATOR_SAVED_DISPENSARY_COUNT =
+            10;
 
-    private static final String BIRTHDAY_BUD =
-            "BIRTHDAY_BUD";
+    private static final int STASHED_COLLECTIBLE_COUNT =
+            1;
+
+    private static final int THE_REGULAR_VISIT_DATE_COUNT =
+            5;
+
+    private static final int COMPLETIONIST_COLLECTIBLE_COUNT =
+            12;
+
+    private static final int THE_WHOLE_PICTURE_ACTIVITY_COUNT =
+            1;
+
+    private static final int DEEP_DIVE_ARTICLE_COUNT =
+            3;
+
+    private static final int WELL_INFORMED_TOPIC_COUNT =
+            5;
+
+    private static final int KNOW_YOUR_BUDS_PRODUCT_COUNT =
+            3;
+
+    private static final int READ_THE_LABEL_PRODUCT_COUNT =
+            6;
+
+    private static final int SAFETY_FIRST_TOPIC_COUNT =
+            1;
+
+    private static final int CLEAR_HEAD_TOPIC_COUNT =
+            4;
+
+    private static final LocalTime NIGHT_OWL_END =
+            LocalTime.of(
+                    5,
+                    0
+            );
+
 
     private final CollectibleDao collectibleDao;
     private final ProfileService profileService;
     private final UserActivityService userActivityService;
+    private final SavedDispensaryService savedDispensaryService;
 
     public CollectibleService(
             CollectibleDao collectibleDao,
             ProfileService profileService,
-            UserActivityService userActivityService
+            UserActivityService userActivityService,
+            SavedDispensaryService savedDispensaryService
     ) {
         this.collectibleDao =
                 collectibleDao;
@@ -43,6 +80,9 @@ public class CollectibleService {
 
         this.userActivityService =
                 userActivityService;
+
+        this.savedDispensaryService =
+                savedDispensaryService;        
     }
 
 
@@ -122,6 +162,9 @@ public class CollectibleService {
         List<UserCollectible> newDrops =
                 new ArrayList<>();
 
+
+        // Check activity-based Drops first
+
         UserCollectible firstContact =
                 checkFirstContact(
                         userId
@@ -132,6 +175,131 @@ public class CollectibleService {
                     firstContact
             );
         }
+
+
+        UserCollectible explorer =
+                checkExplorer(
+                        userId
+                );
+
+        if (explorer != null) {
+            newDrops.add(
+                    explorer
+            );
+        }
+
+
+        UserCollectible deepDive =
+                checkDeepDive(
+                        userId
+                );
+
+        if (deepDive != null) {
+            newDrops.add(
+                    deepDive
+            );
+        }
+
+
+        UserCollectible wellInformed =
+                checkWellInformed(
+                        userId
+                );
+
+        if (wellInformed != null) {
+            newDrops.add(
+                    wellInformed
+            );
+        }
+
+
+        UserCollectible knowYourBuds =
+                checkKnowYourBuds(
+                        userId
+                );
+
+        if (knowYourBuds != null) {
+            newDrops.add(
+                    knowYourBuds
+            );
+        }
+
+
+        UserCollectible readTheLabel =
+                checkReadTheLabel(
+                        userId
+                );
+
+        if (readTheLabel != null) {
+            newDrops.add(
+                    readTheLabel
+            );
+        }
+
+
+        UserCollectible safetyFirst =
+                checkSafetyFirst(
+                        userId
+                );
+
+        if (safetyFirst != null) {
+            newDrops.add(
+                    safetyFirst
+            );
+        }
+
+
+        UserCollectible clearHead =
+                checkClearHead(
+                        userId
+                );
+
+        if (clearHead != null) {
+            newDrops.add(
+                    clearHead
+            );
+        }
+
+
+        UserCollectible theRegular =
+                checkTheRegular(
+                        userId
+                );
+
+        if (theRegular != null) {
+            newDrops.add(
+                    theRegular
+            );
+        }
+
+
+        UserCollectible theWholePicture =
+                checkTheWholePicture(
+                        userId
+                );
+
+        if (theWholePicture != null) {
+            newDrops.add(
+                    theWholePicture
+            );
+        }
+
+
+        // Check saved-dispensary Drops
+
+        UserCollectible curator =
+                checkCurator(
+                        userId
+                );
+
+        if (curator != null) {
+            newDrops.add(
+                    curator
+            );
+        }
+
+
+        // Check time-based Drops
 
         UserCollectible nightOwl =
                 checkNightOwl(
@@ -145,6 +313,9 @@ public class CollectibleService {
             );
         }
 
+
+        // Check profile-based Drops
+
         UserCollectible birthdayBud =
                 checkBirthdayBud(
                         userId,
@@ -156,6 +327,33 @@ public class CollectibleService {
                     birthdayBud
             );
         }
+
+
+        // Check meta Drops last
+
+        UserCollectible stashed =
+                checkStashed(
+                        userId
+                );
+
+        if (stashed != null) {
+            newDrops.add(
+                    stashed
+            );
+        }
+
+
+        UserCollectible completionist =
+                checkCompletionist(
+                        userId
+                );
+
+        if (completionist != null) {
+            newDrops.add(
+                    completionist
+            );
+        }
+
 
         return newDrops;
     }
@@ -169,7 +367,7 @@ public class CollectibleService {
         UserCollectible firstContact =
                 getUserCollectible(
                         userId,
-                        FIRST_CONTACT
+                        CollectibleCode.FIRST_CONTACT
                 );
 
         if (firstContact != null) {
@@ -188,7 +386,440 @@ public class CollectibleService {
 
         return unlockCollectible(
                 userId,
-                FIRST_CONTACT
+                CollectibleCode.FIRST_CONTACT
+        );
+    }
+
+    // Unlock Explorer after completing five different activity types
+    private UserCollectible checkExplorer(
+            int userId
+    ) {
+
+        UserCollectible explorer =
+                getUserCollectible(
+                        userId,
+                        CollectibleCode.EXPLORER
+                );
+
+        if (explorer != null) {
+            return null;
+        }
+
+        int activityTypeCount =
+                userActivityService
+                        .countDistinctActivityTypes(
+                                userId
+                        );
+
+        if (
+            activityTypeCount
+                    < EXPLORER_ACTIVITY_TYPE_COUNT
+        ) {
+            return null;
+        }
+
+        return unlockCollectible(
+                userId,
+                CollectibleCode.EXPLORER
+        );
+    }
+
+
+    // Unlock Deep Dive after opening three different articles
+    private UserCollectible checkDeepDive(
+            int userId
+    ) {
+
+        UserCollectible deepDive =
+                getUserCollectible(
+                        userId,
+                        CollectibleCode.DEEP_DIVE
+                );
+
+        if (deepDive != null) {
+            return null;
+        }
+
+        int articleCount =
+                userActivityService
+                        .countDistinctActivityValuesByType(
+                                userId,
+                                UserActivityType.ARTICLES_VIEW
+                        );
+
+        if (articleCount < DEEP_DIVE_ARTICLE_COUNT) {
+            return null;
+        }
+
+        return unlockCollectible(
+                userId,
+                CollectibleCode.DEEP_DIVE
+        );
+    }
+
+
+    // Unlock Well Informed after exploring five education topics
+    private UserCollectible checkWellInformed(
+            int userId
+    ) {
+
+        UserCollectible wellInformed =
+                getUserCollectible(
+                        userId,
+                        CollectibleCode.WELL_INFORMED
+                );
+
+        if (wellInformed != null) {
+            return null;
+        }
+
+        int educationTopicCount =
+                userActivityService
+                        .countDistinctActivityValuesByType(
+                                userId,
+                                UserActivityType.EDUCATION_VIEW
+                        );
+
+        if (
+            educationTopicCount
+                    < WELL_INFORMED_TOPIC_COUNT
+        ) {
+            return null;
+        }
+
+        return unlockCollectible(
+                userId,
+                CollectibleCode.WELL_INFORMED
+        );
+    }
+
+
+    // Unlock Know Your Buds after exploring strains, terpenes,
+    // and at least three different product categories
+    private UserCollectible checkKnowYourBuds(
+            int userId
+    ) {
+
+        UserCollectible knowYourBuds =
+                getUserCollectible(
+                        userId,
+                        CollectibleCode.KNOW_YOUR_BUDS
+                );
+
+        if (knowYourBuds != null) {
+            return null;
+        }
+
+        List<UserActivity> educationActivities =
+                userActivityService
+                        .getUserActivitiesByType(
+                                userId,
+                                UserActivityType.EDUCATION_VIEW
+                        );
+
+        boolean viewedStrainGuide =
+                false;
+
+        boolean viewedTerpenes =
+                false;
+
+        for (UserActivity activity : educationActivities) {
+
+            if (
+                UserActivityType.EDUCATION_STRAIN_GUIDE
+                        .equals(
+                                activity.getActivityValue()
+                        )
+            ) {
+                viewedStrainGuide =
+                        true;
+            }
+
+            if (
+                UserActivityType.EDUCATION_TERPENES
+                        .equals(
+                                activity.getActivityValue()
+                        )
+            ) {
+                viewedTerpenes =
+                        true;
+            }
+        }
+
+        if (
+            !viewedStrainGuide
+            || !viewedTerpenes
+        ) {
+            return null;
+        }
+
+        int productCount =
+                userActivityService
+                        .countDistinctActivityValuesByType(
+                                userId,
+                                UserActivityType.PRODUCTS_VIEW
+                        );
+
+        if (
+            productCount
+                    < KNOW_YOUR_BUDS_PRODUCT_COUNT
+        ) {
+            return null;
+        }
+
+        return unlockCollectible(
+                userId,
+                CollectibleCode.KNOW_YOUR_BUDS
+        );
+    }
+
+
+    // Unlock Read the Label after exploring every product category
+    private UserCollectible checkReadTheLabel(
+            int userId
+    ) {
+
+        UserCollectible readTheLabel =
+                getUserCollectible(
+                        userId,
+                        CollectibleCode.READ_THE_LABEL
+                );
+
+        if (readTheLabel != null) {
+            return null;
+        }
+
+        int productCount =
+                userActivityService
+                        .countDistinctActivityValuesByType(
+                                userId,
+                                UserActivityType.PRODUCTS_VIEW
+                        );
+
+        if (
+            productCount
+                    < READ_THE_LABEL_PRODUCT_COUNT
+        ) {
+            return null;
+        }
+
+        return unlockCollectible(
+                userId,
+                CollectibleCode.READ_THE_LABEL
+        );
+    }
+
+
+    // Unlock Safety First after exploring a safety topic
+    private UserCollectible checkSafetyFirst(
+            int userId
+    ) {
+
+        UserCollectible safetyFirst =
+                getUserCollectible(
+                        userId,
+                        CollectibleCode.SAFETY_FIRST
+                );
+
+        if (safetyFirst != null) {
+            return null;
+        }
+
+        int safetyTopicCount =
+                userActivityService
+                        .countDistinctActivityValuesByType(
+                                userId,
+                                UserActivityType.SAFETY_VIEW
+                        );
+
+        if (
+            safetyTopicCount
+                    < SAFETY_FIRST_TOPIC_COUNT
+        ) {
+            return null;
+        }
+
+        return unlockCollectible(
+                userId,
+                CollectibleCode.SAFETY_FIRST
+        );
+    }
+
+
+    // Unlock Clear Head after exploring every safety topic
+    private UserCollectible checkClearHead(
+            int userId
+    ) {
+
+        UserCollectible clearHead =
+                getUserCollectible(
+                        userId,
+                        CollectibleCode.CLEAR_HEAD
+                );
+
+        if (clearHead != null) {
+            return null;
+        }
+
+        int safetyTopicCount =
+                userActivityService
+                        .countDistinctActivityValuesByType(
+                                userId,
+                                UserActivityType.SAFETY_VIEW
+                        );
+
+        if (
+            safetyTopicCount
+                    < CLEAR_HEAD_TOPIC_COUNT
+        ) {
+            return null;
+        }
+
+        return unlockCollectible(
+                userId,
+                CollectibleCode.CLEAR_HEAD
+        );
+    }
+
+    // Unlock The Regular after visiting Best Buds on five different dates
+    private UserCollectible checkTheRegular(
+            int userId
+    ) {
+
+        UserCollectible theRegular =
+                getUserCollectible(
+                        userId,
+                        CollectibleCode.THE_REGULAR
+                );
+
+        if (theRegular != null) {
+            return null;
+        }
+
+        int visitDateCount =
+                userActivityService
+                        .countDistinctActivityValuesByType(
+                                userId,
+                                UserActivityType.APP_VISIT
+                        );
+
+        if (
+            visitDateCount
+                    < THE_REGULAR_VISIT_DATE_COUNT
+        ) {
+            return null;
+        }
+
+        return unlockCollectible(
+                userId,
+                CollectibleCode.THE_REGULAR
+        );
+    }
+
+
+    // Unlock The Whole Picture after exploring every major content area
+    private UserCollectible checkTheWholePicture(
+            int userId
+    ) {
+
+        UserCollectible theWholePicture =
+                getUserCollectible(
+                        userId,
+                        CollectibleCode.THE_WHOLE_PICTURE
+                );
+
+        if (theWholePicture != null) {
+            return null;
+        }
+
+        int dispensaryViewCount =
+                userActivityService
+                        .countUserActivitiesByType(
+                                userId,
+                                UserActivityType.DISPENSARY_VIEW
+                        );
+
+        int articlesViewCount =
+                userActivityService
+                        .countUserActivitiesByType(
+                                userId,
+                                UserActivityType.ARTICLES_VIEW
+                        );
+
+        int educationViewCount =
+                userActivityService
+                        .countUserActivitiesByType(
+                                userId,
+                                UserActivityType.EDUCATION_VIEW
+                        );
+
+        int productsViewCount =
+                userActivityService
+                        .countUserActivitiesByType(
+                                userId,
+                                UserActivityType.PRODUCTS_VIEW
+                        );
+
+        int safetyViewCount =
+                userActivityService
+                        .countUserActivitiesByType(
+                                userId,
+                                UserActivityType.SAFETY_VIEW
+                        );
+
+        if (
+            dispensaryViewCount
+                    < THE_WHOLE_PICTURE_ACTIVITY_COUNT
+            || articlesViewCount
+                    < THE_WHOLE_PICTURE_ACTIVITY_COUNT
+            || educationViewCount
+                    < THE_WHOLE_PICTURE_ACTIVITY_COUNT
+            || productsViewCount
+                    < THE_WHOLE_PICTURE_ACTIVITY_COUNT
+            || safetyViewCount
+                    < THE_WHOLE_PICTURE_ACTIVITY_COUNT
+        ) {
+            return null;
+        }
+
+        return unlockCollectible(
+                userId,
+                CollectibleCode.THE_WHOLE_PICTURE
+        );
+    }
+
+
+    // Unlock Curator after saving at least ten dispensaries
+    private UserCollectible checkCurator(
+            int userId
+    ) {
+
+        UserCollectible curator =
+                getUserCollectible(
+                        userId,
+                        CollectibleCode.CURATOR
+                );
+
+        if (curator != null) {
+            return null;
+        }
+
+        int savedDispensaryCount =
+                savedDispensaryService
+                        .countSavedDispensaries(
+                                userId
+                        );
+
+        if (
+            savedDispensaryCount
+                    < CURATOR_SAVED_DISPENSARY_COUNT
+        ) {
+            return null;
+        }
+
+        return unlockCollectible(
+                userId,
+                CollectibleCode.CURATOR
         );
     }
 
@@ -202,7 +833,7 @@ public class CollectibleService {
         UserCollectible nightOwl =
                 getUserCollectible(
                         userId,
-                        NIGHT_OWL
+                        CollectibleCode.NIGHT_OWL
                 );
 
         if (nightOwl != null) {
@@ -214,6 +845,7 @@ public class CollectibleService {
                 currentTime
         );
     }
+
 
     // Unlock Night Owl using the current time
     public UserCollectible unlockNightOwl(
@@ -236,19 +868,13 @@ public class CollectibleService {
             return null;
         }
 
-        LocalTime nightOwlEnd =
-                LocalTime.of(
-                        5,
-                        0
-                );
-
-        if (!currentTime.isBefore(nightOwlEnd)) {
+        if (!currentTime.isBefore(NIGHT_OWL_END)) {
             return null;
         }
 
         return unlockCollectible(
                 userId,
-                NIGHT_OWL
+                CollectibleCode.NIGHT_OWL
         );
     }
 
@@ -262,7 +888,7 @@ public class CollectibleService {
         UserCollectible birthdayBud =
                 getUserCollectible(
                         userId,
-                        BIRTHDAY_BUD
+                        CollectibleCode.BIRTHDAY_BUD
                 );
 
         if (birthdayBud != null) {
@@ -306,7 +932,10 @@ public class CollectibleService {
             LocalDate today
     ) {
 
-        if (birthday == null) {
+        if (
+            birthday == null
+            || today == null
+        ) {
             return null;
         }
 
@@ -322,7 +951,74 @@ public class CollectibleService {
 
         return unlockCollectible(
                 userId,
-                BIRTHDAY_BUD
+                CollectibleCode.BIRTHDAY_BUD
+        );
+    }
+
+
+    // Unlock Stashed after earning at least one other Drop
+    private UserCollectible checkStashed(
+            int userId
+    ) {
+
+        UserCollectible stashed =
+                getUserCollectible(
+                        userId,
+                        CollectibleCode.STASHED
+                );
+
+        if (stashed != null) {
+            return null;
+        }
+
+        int collectibleCount =
+                collectibleDao.countUserCollectibles(
+                        userId
+                );
+
+        if (
+            collectibleCount
+                    < STASHED_COLLECTIBLE_COUNT
+        ) {
+            return null;
+        }
+
+        return unlockCollectible(
+                userId,
+                CollectibleCode.STASHED
+        );
+    }
+
+    // Unlock Completionist after earning at least twelve other Drops
+    private UserCollectible checkCompletionist(
+            int userId
+    ) {
+
+        UserCollectible completionist =
+                getUserCollectible(
+                        userId,
+                        CollectibleCode.COMPLETIONIST
+                );
+
+        if (completionist != null) {
+            return null;
+        }
+
+        int collectibleCount =
+                collectibleDao.countUserCollectibles(
+                        userId
+                );
+
+        if (
+            collectibleCount
+                    < COMPLETIONIST_COLLECTIBLE_COUNT
+        ) {
+            return null;
+        }
+
+        return unlockCollectible(
+                userId,
+                CollectibleCode.COMPLETIONIST
         );
     }
 }

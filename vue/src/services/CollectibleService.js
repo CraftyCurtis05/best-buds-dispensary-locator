@@ -11,22 +11,11 @@ export default {
 
     },
 
-    // Check for a new automatic collectible
+    // Check whether the authenticated user has earned new Drops
     checkForDrops() {
 
         return axios.post(
             "/api/collectibles/check"
-        );
-
-    },
-
-    // Get a specific collectible unlocked by the authenticated user
-    getCollectible(code) {
-
-        return axios.get(
-            `/api/collectibles/${encodeURIComponent(
-                code
-            )}`
         );
 
     }

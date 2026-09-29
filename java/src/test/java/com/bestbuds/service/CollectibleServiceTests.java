@@ -2,10 +2,11 @@ package com.bestbuds.service;
 
 import com.bestbuds.dao.CollectibleDao;
 import com.bestbuds.model.Collectible;
-import com.bestbuds.model.UserCollectible;
+import com.bestbuds.model.CollectibleCode;
 import com.bestbuds.model.Profile;
 import com.bestbuds.model.UserActivity;
 import com.bestbuds.model.UserActivityType;
+import com.bestbuds.model.UserCollectible;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -36,6 +37,9 @@ public class CollectibleServiceTests {
     @Mock
     private UserActivityService userActivityService;
 
+    @Mock
+    private SavedDispensaryService savedDispensaryService;
+
     private CollectibleService collectibleService;
 
     @BeforeEach
@@ -49,7 +53,8 @@ public class CollectibleServiceTests {
                 new CollectibleService(
                         collectibleDao,
                         profileService,
-                        userActivityService
+                        userActivityService,
+                        savedDispensaryService
                 );
 
         when(
@@ -1169,6 +1174,147 @@ public class CollectibleServiceTests {
         );
     }
 
+    @Test
+    public void checkForDrops_unlocks_deep_dive_at_three_distinct_articles() {
+
+        UserCollectible deepDive =
+                createUserCollectible(
+                        7,
+                        1,
+                        createCollectible(
+                                7,
+                                CollectibleCode.DEEP_DIVE,
+                                "Deep Dive"
+                        )
+                );
+
+        when(
+                userActivityService
+                        .countDistinctActivityValuesByType(
+                                1,
+                                UserActivityType.ARTICLES_VIEW
+                        )
+        ).thenReturn(
+                3
+        );
+
+        when(
+                collectibleDao.unlockCollectible(
+                        1,
+                        CollectibleCode.DEEP_DIVE
+                )
+        ).thenReturn(
+                deepDive
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertEquals(
+                1,
+                result.size()
+        );
+
+        assertSame(
+                deepDive,
+                result.get(0)
+        );
+
+        verify(
+                collectibleDao
+        ).unlockCollectible(
+                1,
+                CollectibleCode.DEEP_DIVE
+        );
+    }
+
+
+    @Test
+    public void checkForDrops_does_not_unlock_deep_dive_before_three_articles() {
+
+        when(
+                userActivityService
+                        .countDistinctActivityValuesByType(
+                                1,
+                                UserActivityType.ARTICLES_VIEW
+                        )
+        ).thenReturn(
+                2
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.DEEP_DIVE
+        );
+    }
+
+
+    @Test
+    public void checkForDrops_does_not_unlock_deep_dive_when_already_owned() {
+
+        UserCollectible deepDive =
+                createUserCollectible(
+                        7,
+                        1,
+                        createCollectible(
+                                7,
+                                CollectibleCode.DEEP_DIVE,
+                                "Deep Dive"
+                        )
+                );
+
+        when(
+                collectibleDao.getUserCollectible(
+                        1,
+                        CollectibleCode.DEEP_DIVE
+                )
+        ).thenReturn(
+                deepDive
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.DEEP_DIVE
+        );
+    }
+
+    // Check Drops at a daytime hour without triggering Night Owl
+    private List<UserCollectible> checkForDropsAtNoon() {
+
+        return collectibleService.checkForDrops(
+                1,
+                LocalDate.of(
+                        2026,
+                        9,
+                        24
+                ),
+                LocalTime.of(
+                        12,
+                        0
+                )
+        );
+    }
+
     // Create collectible data used by service tests
     private Collectible createCollectible(
             int collectibleId,
@@ -1227,5 +1373,1783 @@ public class CollectibleServiceTests {
         );
 
         return userCollectible;
+    }
+
+    // Create user activity data used by service tests
+    private UserActivity createUserActivity(
+            int userId,
+            String activityType,
+            String activityValue
+    ) {
+
+        UserActivity userActivity =
+                new UserActivity();
+
+        userActivity.setUserId(
+                userId
+        );
+
+        userActivity.setActivityType(
+                activityType
+        );
+
+        userActivity.setActivityValue(
+                activityValue
+        );
+
+        return userActivity;
+    }
+
+    @Test
+    public void checkForDrops_unlocks_well_informed_at_five_education_topics() {
+
+        UserCollectible wellInformed =
+                createUserCollectible(
+                        8,
+                        1,
+                        createCollectible(
+                                8,
+                                CollectibleCode.WELL_INFORMED,
+                                "Well Informed"
+                        )
+                );
+
+        when(
+                userActivityService
+                        .countDistinctActivityValuesByType(
+                                1,
+                                UserActivityType.EDUCATION_VIEW
+                        )
+        ).thenReturn(
+                5
+        );
+
+        when(
+                collectibleDao.unlockCollectible(
+                        1,
+                        CollectibleCode.WELL_INFORMED
+                )
+        ).thenReturn(
+                wellInformed
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertEquals(
+                1,
+                result.size()
+        );
+
+        assertSame(
+                wellInformed,
+                result.get(0)
+        );
+    }
+
+
+    @Test
+    public void checkForDrops_does_not_unlock_well_informed_before_five_topics() {
+
+        when(
+                userActivityService
+                        .countDistinctActivityValuesByType(
+                                1,
+                                UserActivityType.EDUCATION_VIEW
+                        )
+        ).thenReturn(
+                4
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.WELL_INFORMED
+        );
+    }
+
+
+    @Test
+    public void checkForDrops_does_not_unlock_well_informed_when_already_owned() {
+
+        UserCollectible wellInformed =
+                createUserCollectible(
+                        8,
+                        1,
+                        createCollectible(
+                                8,
+                                CollectibleCode.WELL_INFORMED,
+                                "Well Informed"
+                        )
+                );
+
+        when(
+                collectibleDao.getUserCollectible(
+                        1,
+                        CollectibleCode.WELL_INFORMED
+                )
+        ).thenReturn(
+                wellInformed
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.WELL_INFORMED
+        );
+    }
+
+    @Test
+    public void checkForDrops_unlocks_read_the_label_at_six_product_categories() {
+
+        UserCollectible readTheLabel =
+                createUserCollectible(
+                        10,
+                        1,
+                        createCollectible(
+                                10,
+                                CollectibleCode.READ_THE_LABEL,
+                                "Read the Label"
+                        )
+                );
+
+        when(
+                userActivityService
+                        .countDistinctActivityValuesByType(
+                                1,
+                                UserActivityType.PRODUCTS_VIEW
+                        )
+        ).thenReturn(
+                6
+        );
+
+        when(
+                collectibleDao.unlockCollectible(
+                        1,
+                        CollectibleCode.READ_THE_LABEL
+                )
+        ).thenReturn(
+                readTheLabel
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertEquals(
+                1,
+                result.size()
+        );
+
+        assertSame(
+                readTheLabel,
+                result.get(0)
+        );
+    }
+
+
+    @Test
+    public void checkForDrops_does_not_unlock_read_the_label_before_six_products() {
+
+        when(
+                userActivityService
+                        .countDistinctActivityValuesByType(
+                                1,
+                                UserActivityType.PRODUCTS_VIEW
+                        )
+        ).thenReturn(
+                5
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.READ_THE_LABEL
+        );
+    }
+
+
+    @Test
+    public void checkForDrops_does_not_unlock_read_the_label_when_already_owned() {
+
+        UserCollectible readTheLabel =
+                createUserCollectible(
+                        10,
+                        1,
+                        createCollectible(
+                                10,
+                                CollectibleCode.READ_THE_LABEL,
+                                "Read the Label"
+                        )
+                );
+
+        when(
+                collectibleDao.getUserCollectible(
+                        1,
+                        CollectibleCode.READ_THE_LABEL
+                )
+        ).thenReturn(
+                readTheLabel
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.READ_THE_LABEL
+        );
+    }
+
+    @Test
+    public void checkForDrops_unlocks_safety_first_after_one_safety_topic() {
+
+        UserCollectible safetyFirst =
+                createUserCollectible(
+                        11,
+                        1,
+                        createCollectible(
+                                11,
+                                CollectibleCode.SAFETY_FIRST,
+                                "Safety First"
+                        )
+                );
+
+        when(
+                userActivityService
+                        .countDistinctActivityValuesByType(
+                                1,
+                                UserActivityType.SAFETY_VIEW
+                        )
+        ).thenReturn(
+                1
+        );
+
+        when(
+                collectibleDao.unlockCollectible(
+                        1,
+                        CollectibleCode.SAFETY_FIRST
+                )
+        ).thenReturn(
+                safetyFirst
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertEquals(
+                1,
+                result.size()
+        );
+
+        assertSame(
+                safetyFirst,
+                result.get(0)
+        );
+    }
+
+
+    @Test
+    public void checkForDrops_does_not_unlock_safety_first_without_safety_topic() {
+
+        when(
+                userActivityService
+                        .countDistinctActivityValuesByType(
+                                1,
+                                UserActivityType.SAFETY_VIEW
+                        )
+        ).thenReturn(
+                0
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.SAFETY_FIRST
+        );
+    }
+
+
+    @Test
+    public void checkForDrops_does_not_unlock_safety_first_when_already_owned() {
+
+        UserCollectible safetyFirst =
+                createUserCollectible(
+                        11,
+                        1,
+                        createCollectible(
+                                11,
+                                CollectibleCode.SAFETY_FIRST,
+                                "Safety First"
+                        )
+                );
+
+        when(
+                collectibleDao.getUserCollectible(
+                        1,
+                        CollectibleCode.SAFETY_FIRST
+                )
+        ).thenReturn(
+                safetyFirst
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.SAFETY_FIRST
+        );
+    }
+
+    @Test
+    public void checkForDrops_unlocks_clear_head_at_four_safety_topics() {
+
+        UserCollectible safetyFirst =
+                createUserCollectible(
+                        11,
+                        1,
+                        createCollectible(
+                                11,
+                                CollectibleCode.SAFETY_FIRST,
+                                "Safety First"
+                        )
+                );
+
+        UserCollectible clearHead =
+                createUserCollectible(
+                        12,
+                        1,
+                        createCollectible(
+                                12,
+                                CollectibleCode.CLEAR_HEAD,
+                                "Clear Head"
+                        )
+                );
+
+        when(
+                collectibleDao.getUserCollectible(
+                        1,
+                        CollectibleCode.SAFETY_FIRST
+                )
+        ).thenReturn(
+                safetyFirst
+        );
+
+        when(
+                userActivityService
+                        .countDistinctActivityValuesByType(
+                                1,
+                                UserActivityType.SAFETY_VIEW
+                        )
+        ).thenReturn(
+                4
+        );
+
+        when(
+                collectibleDao.unlockCollectible(
+                        1,
+                        CollectibleCode.CLEAR_HEAD
+                )
+        ).thenReturn(
+                clearHead
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertEquals(
+                1,
+                result.size()
+        );
+
+        assertSame(
+                clearHead,
+                result.get(0)
+        );
+    }
+
+
+    @Test
+    public void checkForDrops_does_not_unlock_clear_head_before_four_topics() {
+
+        UserCollectible safetyFirst =
+                createUserCollectible(
+                        11,
+                        1,
+                        createCollectible(
+                                11,
+                                CollectibleCode.SAFETY_FIRST,
+                                "Safety First"
+                        )
+                );
+
+        when(
+                collectibleDao.getUserCollectible(
+                        1,
+                        CollectibleCode.SAFETY_FIRST
+                )
+        ).thenReturn(
+                safetyFirst
+        );
+
+        when(
+                userActivityService
+                        .countDistinctActivityValuesByType(
+                                1,
+                                UserActivityType.SAFETY_VIEW
+                        )
+        ).thenReturn(
+                3
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.CLEAR_HEAD
+        );
+    }
+
+
+    @Test
+    public void checkForDrops_does_not_unlock_clear_head_when_already_owned() {
+
+        UserCollectible safetyFirst =
+                createUserCollectible(
+                        11,
+                        1,
+                        createCollectible(
+                                11,
+                                CollectibleCode.SAFETY_FIRST,
+                                "Safety First"
+                        )
+                );
+
+        UserCollectible clearHead =
+                createUserCollectible(
+                        12,
+                        1,
+                        createCollectible(
+                                12,
+                                CollectibleCode.CLEAR_HEAD,
+                                "Clear Head"
+                        )
+                );
+
+        when(
+                collectibleDao.getUserCollectible(
+                        1,
+                        CollectibleCode.SAFETY_FIRST
+                )
+        ).thenReturn(
+                safetyFirst
+        );
+
+        when(
+                collectibleDao.getUserCollectible(
+                        1,
+                        CollectibleCode.CLEAR_HEAD
+                )
+        ).thenReturn(
+                clearHead
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.CLEAR_HEAD
+        );
+    }
+
+    @Test
+    public void checkForDrops_unlocks_explorer_at_five_distinct_activity_types() {
+
+        UserCollectible explorer =
+                createUserCollectible(
+                        4,
+                        1,
+                        createCollectible(
+                                4,
+                                CollectibleCode.EXPLORER,
+                                "Explorer"
+                        )
+                );
+
+        when(
+                userActivityService
+                        .countDistinctActivityTypes(
+                                1
+                        )
+        ).thenReturn(
+                5
+        );
+
+        when(
+                collectibleDao.unlockCollectible(
+                        1,
+                        CollectibleCode.EXPLORER
+                )
+        ).thenReturn(
+                explorer
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertEquals(
+                1,
+                result.size()
+        );
+
+        assertSame(
+                explorer,
+                result.get(0)
+        );
+
+        verify(
+                userActivityService
+        ).countDistinctActivityTypes(
+                1
+        );
+
+        verify(
+                collectibleDao
+        ).unlockCollectible(
+                1,
+                CollectibleCode.EXPLORER
+        );
+    }
+
+
+    @Test
+    public void checkForDrops_does_not_unlock_explorer_before_five_activity_types() {
+
+        when(
+                userActivityService
+                        .countDistinctActivityTypes(
+                                1
+                        )
+        ).thenReturn(
+                4
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                userActivityService
+        ).countDistinctActivityTypes(
+                1
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.EXPLORER
+        );
+    }
+
+
+    @Test
+    public void checkForDrops_does_not_unlock_explorer_when_already_owned() {
+
+        UserCollectible explorer =
+                createUserCollectible(
+                        4,
+                        1,
+                        createCollectible(
+                                4,
+                                CollectibleCode.EXPLORER,
+                                "Explorer"
+                        )
+                );
+
+        when(
+                collectibleDao.getUserCollectible(
+                        1,
+                        CollectibleCode.EXPLORER
+                )
+        ).thenReturn(
+                explorer
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                userActivityService,
+                never()
+        ).countDistinctActivityTypes(
+                1
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.EXPLORER
+        );
+    }
+
+    @Test
+    public void checkForDrops_unlocks_the_regular_at_five_visit_dates() {
+
+        UserCollectible theRegular =
+                createUserCollectible(
+                        14,
+                        1,
+                        createCollectible(
+                                14,
+                                CollectibleCode.THE_REGULAR,
+                                "The Regular"
+                        )
+                );
+
+        when(
+                userActivityService
+                        .countDistinctActivityValuesByType(
+                                1,
+                                UserActivityType.APP_VISIT
+                        )
+        ).thenReturn(
+                5
+        );
+
+        when(
+                collectibleDao.unlockCollectible(
+                        1,
+                        CollectibleCode.THE_REGULAR
+                )
+        ).thenReturn(
+                theRegular
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertEquals(
+                1,
+                result.size()
+        );
+
+        assertSame(
+                theRegular,
+                result.get(0)
+        );
+
+        verify(
+                userActivityService
+        ).countDistinctActivityValuesByType(
+                1,
+                UserActivityType.APP_VISIT
+        );
+
+        verify(
+                collectibleDao
+        ).unlockCollectible(
+                1,
+                CollectibleCode.THE_REGULAR
+        );
+    }
+
+
+    @Test
+    public void checkForDrops_does_not_unlock_the_regular_before_five_visit_dates() {
+
+        when(
+                userActivityService
+                        .countDistinctActivityValuesByType(
+                                1,
+                                UserActivityType.APP_VISIT
+                        )
+        ).thenReturn(
+                4
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                userActivityService
+        ).countDistinctActivityValuesByType(
+                1,
+                UserActivityType.APP_VISIT
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.THE_REGULAR
+        );
+    }
+
+
+    @Test
+    public void checkForDrops_does_not_unlock_the_regular_when_already_owned() {
+
+        UserCollectible theRegular =
+                createUserCollectible(
+                        14,
+                        1,
+                        createCollectible(
+                                14,
+                                CollectibleCode.THE_REGULAR,
+                                "The Regular"
+                        )
+                );
+
+        when(
+                collectibleDao.getUserCollectible(
+                        1,
+                        CollectibleCode.THE_REGULAR
+                )
+        ).thenReturn(
+                theRegular
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                userActivityService,
+                never()
+        ).countDistinctActivityValuesByType(
+                1,
+                UserActivityType.APP_VISIT
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.THE_REGULAR
+        );
+    }
+
+    @Test
+    public void checkForDrops_unlocks_the_whole_picture_after_all_major_areas() {
+
+        UserCollectible theWholePicture =
+                createUserCollectible(
+                        16,
+                        1,
+                        createCollectible(
+                                16,
+                                CollectibleCode.THE_WHOLE_PICTURE,
+                                "The Whole Picture"
+                        )
+                );
+
+        when(
+                userActivityService.countUserActivitiesByType(
+                        1,
+                        UserActivityType.DISPENSARY_VIEW
+                )
+        ).thenReturn(
+                1
+        );
+
+        when(
+                userActivityService.countUserActivitiesByType(
+                        1,
+                        UserActivityType.ARTICLES_VIEW
+                )
+        ).thenReturn(
+                1
+        );
+
+        when(
+                userActivityService.countUserActivitiesByType(
+                        1,
+                        UserActivityType.EDUCATION_VIEW
+                )
+        ).thenReturn(
+                1
+        );
+
+        when(
+                userActivityService.countUserActivitiesByType(
+                        1,
+                        UserActivityType.PRODUCTS_VIEW
+                )
+        ).thenReturn(
+                1
+        );
+
+        when(
+                userActivityService.countUserActivitiesByType(
+                        1,
+                        UserActivityType.SAFETY_VIEW
+                )
+        ).thenReturn(
+                1
+        );
+
+        when(
+                collectibleDao.unlockCollectible(
+                        1,
+                        CollectibleCode.THE_WHOLE_PICTURE
+                )
+        ).thenReturn(
+                theWholePicture
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertEquals(
+                1,
+                result.size()
+        );
+
+        assertSame(
+                theWholePicture,
+                result.get(0)
+        );
+
+        verify(
+                collectibleDao
+        ).unlockCollectible(
+                1,
+                CollectibleCode.THE_WHOLE_PICTURE
+        );
+    }
+
+    @Test
+    public void checkForDrops_does_not_unlock_the_whole_picture_when_area_is_missing() {
+
+        when(
+                userActivityService.countUserActivitiesByType(
+                        1,
+                        UserActivityType.DISPENSARY_VIEW
+                )
+        ).thenReturn(
+                1
+        );
+
+        when(
+                userActivityService.countUserActivitiesByType(
+                        1,
+                        UserActivityType.ARTICLES_VIEW
+                )
+        ).thenReturn(
+                1
+        );
+
+        when(
+                userActivityService.countUserActivitiesByType(
+                        1,
+                        UserActivityType.EDUCATION_VIEW
+                )
+        ).thenReturn(
+                1
+        );
+
+        when(
+                userActivityService.countUserActivitiesByType(
+                        1,
+                        UserActivityType.PRODUCTS_VIEW
+                )
+        ).thenReturn(
+                1
+        );
+
+        when(
+                userActivityService.countUserActivitiesByType(
+                        1,
+                        UserActivityType.SAFETY_VIEW
+                )
+        ).thenReturn(
+                0
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.THE_WHOLE_PICTURE
+        );
+    }
+
+    @Test
+    public void checkForDrops_does_not_unlock_the_whole_picture_when_already_owned() {
+
+        UserCollectible theWholePicture =
+                createUserCollectible(
+                        16,
+                        1,
+                        createCollectible(
+                                16,
+                                CollectibleCode.THE_WHOLE_PICTURE,
+                                "The Whole Picture"
+                        )
+                );
+
+        when(
+                collectibleDao.getUserCollectible(
+                        1,
+                        CollectibleCode.THE_WHOLE_PICTURE
+                )
+        ).thenReturn(
+                theWholePicture
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                userActivityService,
+                never()
+        ).countUserActivitiesByType(
+                1,
+                UserActivityType.DISPENSARY_VIEW
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.THE_WHOLE_PICTURE
+        );
+    }
+
+    @Test
+    public void checkForDrops_unlocks_know_your_buds_after_required_learning() {
+
+        UserActivity strainGuide =
+                createUserActivity(
+                        1,
+                        UserActivityType.EDUCATION_VIEW,
+                        UserActivityType.EDUCATION_STRAIN_GUIDE
+                );
+
+        UserActivity terpenes =
+                createUserActivity(
+                        1,
+                        UserActivityType.EDUCATION_VIEW,
+                        UserActivityType.EDUCATION_TERPENES
+                );
+
+        UserCollectible knowYourBuds =
+                createUserCollectible(
+                        9,
+                        1,
+                        createCollectible(
+                                9,
+                                CollectibleCode.KNOW_YOUR_BUDS,
+                                "Know Your Buds"
+                        )
+                );
+
+        when(
+                userActivityService
+                        .getUserActivitiesByType(
+                                1,
+                                UserActivityType.EDUCATION_VIEW
+                        )
+        ).thenReturn(
+                List.of(
+                        strainGuide,
+                        terpenes
+                )
+        );
+
+        when(
+                userActivityService
+                        .countDistinctActivityValuesByType(
+                                1,
+                                UserActivityType.PRODUCTS_VIEW
+                        )
+        ).thenReturn(
+                3
+        );
+
+        when(
+                collectibleDao.unlockCollectible(
+                        1,
+                        CollectibleCode.KNOW_YOUR_BUDS
+                )
+        ).thenReturn(
+                knowYourBuds
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertEquals(
+                1,
+                result.size()
+        );
+
+        assertSame(
+                knowYourBuds,
+                result.get(0)
+        );
+
+        verify(
+                collectibleDao
+        ).unlockCollectible(
+                1,
+                CollectibleCode.KNOW_YOUR_BUDS
+        );
+    }
+
+    @Test
+    public void checkForDrops_does_not_unlock_know_your_buds_before_three_products() {
+
+        UserActivity strainGuide =
+                createUserActivity(
+                        1,
+                        UserActivityType.EDUCATION_VIEW,
+                        UserActivityType.EDUCATION_STRAIN_GUIDE
+                );
+
+        UserActivity terpenes =
+                createUserActivity(
+                        1,
+                        UserActivityType.EDUCATION_VIEW,
+                        UserActivityType.EDUCATION_TERPENES
+                );
+
+        when(
+                userActivityService
+                        .getUserActivitiesByType(
+                                1,
+                                UserActivityType.EDUCATION_VIEW
+                        )
+        ).thenReturn(
+                List.of(
+                        strainGuide,
+                        terpenes
+                )
+        );
+
+        when(
+                userActivityService
+                        .countDistinctActivityValuesByType(
+                                1,
+                                UserActivityType.PRODUCTS_VIEW
+                        )
+        ).thenReturn(
+                2
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.KNOW_YOUR_BUDS
+        );
+    }
+
+    @Test
+    public void checkForDrops_does_not_unlock_know_your_buds_without_both_guides() {
+
+        UserActivity strainGuide =
+                createUserActivity(
+                        1,
+                        UserActivityType.EDUCATION_VIEW,
+                        UserActivityType.EDUCATION_STRAIN_GUIDE
+                );
+
+        when(
+                userActivityService
+                        .getUserActivitiesByType(
+                                1,
+                                UserActivityType.EDUCATION_VIEW
+                        )
+        ).thenReturn(
+                List.of(
+                        strainGuide
+                )
+        );
+
+        when(
+                userActivityService
+                        .countDistinctActivityValuesByType(
+                                1,
+                                UserActivityType.PRODUCTS_VIEW
+                        )
+        ).thenReturn(
+                3
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.KNOW_YOUR_BUDS
+        );
+    }
+
+    @Test
+    public void checkForDrops_does_not_unlock_know_your_buds_when_already_owned() {
+
+        UserCollectible knowYourBuds =
+                createUserCollectible(
+                        9,
+                        1,
+                        createCollectible(
+                                9,
+                                CollectibleCode.KNOW_YOUR_BUDS,
+                                "Know Your Buds"
+                        )
+                );
+
+        when(
+                collectibleDao.getUserCollectible(
+                        1,
+                        CollectibleCode.KNOW_YOUR_BUDS
+                )
+        ).thenReturn(
+                knowYourBuds
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                userActivityService,
+                never()
+        ).getUserActivitiesByType(
+                1,
+                UserActivityType.EDUCATION_VIEW
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.KNOW_YOUR_BUDS
+        );
+    }
+
+    @Test
+    public void checkForDrops_unlocks_curator_at_ten_saved_dispensaries() {
+
+        UserCollectible curator =
+                createUserCollectible(
+                        5,
+                        1,
+                        createCollectible(
+                                5,
+                                CollectibleCode.CURATOR,
+                                "Curator"
+                        )
+                );
+
+        when(
+                savedDispensaryService
+                        .countSavedDispensaries(
+                                1
+                        )
+        ).thenReturn(
+                10
+        );
+
+        when(
+                collectibleDao.unlockCollectible(
+                        1,
+                        CollectibleCode.CURATOR
+                )
+        ).thenReturn(
+                curator
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertEquals(
+                1,
+                result.size()
+        );
+
+        assertSame(
+                curator,
+                result.get(0)
+        );
+
+        verify(
+                savedDispensaryService
+        ).countSavedDispensaries(
+                1
+        );
+
+        verify(
+                collectibleDao
+        ).unlockCollectible(
+                1,
+                CollectibleCode.CURATOR
+        );
+    }
+
+    @Test
+    public void checkForDrops_does_not_unlock_curator_before_ten_saved_dispensaries() {
+
+        when(
+                savedDispensaryService
+                        .countSavedDispensaries(
+                                1
+                        )
+        ).thenReturn(
+                9
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                savedDispensaryService
+        ).countSavedDispensaries(
+                1
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.CURATOR
+        );
+    }
+
+    @Test
+    public void checkForDrops_does_not_unlock_curator_when_already_owned() {
+
+        UserCollectible curator =
+                createUserCollectible(
+                        5,
+                        1,
+                        createCollectible(
+                                5,
+                                CollectibleCode.CURATOR,
+                                "Curator"
+                        )
+                );
+
+        when(
+                collectibleDao.getUserCollectible(
+                        1,
+                        CollectibleCode.CURATOR
+                )
+        ).thenReturn(
+                curator
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                savedDispensaryService,
+                never()
+        ).countSavedDispensaries(
+                1
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.CURATOR
+        );
+    }
+
+    @Test
+    public void checkForDrops_unlocks_stashed_after_first_other_drop() {
+
+        UserCollectible stashed =
+                createUserCollectible(
+                        6,
+                        1,
+                        createCollectible(
+                                6,
+                                CollectibleCode.STASHED,
+                                "Stashed"
+                        )
+                );
+
+        when(
+                collectibleDao.countUserCollectibles(
+                        1
+                )
+        ).thenReturn(
+                1
+        );
+
+        when(
+                collectibleDao.unlockCollectible(
+                        1,
+                        CollectibleCode.STASHED
+                )
+        ).thenReturn(
+                stashed
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertEquals(
+                1,
+                result.size()
+        );
+
+        assertSame(
+                stashed,
+                result.get(0)
+        );
+
+        verify(
+                collectibleDao
+        ).unlockCollectible(
+                1,
+                CollectibleCode.STASHED
+        );
+    }
+
+    @Test
+    public void checkForDrops_does_not_unlock_stashed_without_other_drop() {
+
+        when(
+                collectibleDao.countUserCollectibles(
+                        1
+                )
+        ).thenReturn(
+                0
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.STASHED
+        );
+    }
+
+    @Test
+    public void checkForDrops_does_not_unlock_stashed_when_already_owned() {
+
+        UserCollectible stashed =
+                createUserCollectible(
+                        6,
+                        1,
+                        createCollectible(
+                                6,
+                                CollectibleCode.STASHED,
+                                "Stashed"
+                        )
+                );
+
+        when(
+                collectibleDao.getUserCollectible(
+                        1,
+                        CollectibleCode.STASHED
+                )
+        ).thenReturn(
+                stashed
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.STASHED
+        );
+    }
+
+    @Test
+    public void checkForDrops_unlocks_completionist_at_twelve_other_drops() {
+
+        UserCollectible stashed =
+                createUserCollectible(
+                        6,
+                        1,
+                        createCollectible(
+                                6,
+                                CollectibleCode.STASHED,
+                                "Stashed"
+                        )
+                );
+
+        UserCollectible completionist =
+                createUserCollectible(
+                        15,
+                        1,
+                        createCollectible(
+                                15,
+                                CollectibleCode.COMPLETIONIST,
+                                "Completionist"
+                        )
+                );
+
+        when(
+                collectibleDao.getUserCollectible(
+                        1,
+                        CollectibleCode.STASHED
+                )
+        ).thenReturn(
+                stashed
+        );
+
+        when(
+                collectibleDao.countUserCollectibles(
+                        1
+                )
+        ).thenReturn(
+                12
+        );
+
+        when(
+                collectibleDao.unlockCollectible(
+                        1,
+                        CollectibleCode.COMPLETIONIST
+                )
+        ).thenReturn(
+                completionist
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertEquals(
+                1,
+                result.size()
+        );
+
+        assertSame(
+                completionist,
+                result.get(0)
+        );
+
+        verify(
+                collectibleDao
+        ).unlockCollectible(
+                1,
+                CollectibleCode.COMPLETIONIST
+        );
+    }
+
+    @Test
+    public void checkForDrops_does_not_unlock_completionist_before_twelve_other_drops() {
+
+        UserCollectible stashed =
+                createUserCollectible(
+                        6,
+                        1,
+                        createCollectible(
+                                6,
+                                CollectibleCode.STASHED,
+                                "Stashed"
+                        )
+                );
+
+        when(
+                collectibleDao.getUserCollectible(
+                        1,
+                        CollectibleCode.STASHED
+                )
+        ).thenReturn(
+                stashed
+        );
+
+        when(
+                collectibleDao.countUserCollectibles(
+                        1
+                )
+        ).thenReturn(
+                11
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.COMPLETIONIST
+        );
+    }
+
+    @Test
+    public void checkForDrops_does_not_unlock_completionist_when_already_owned() {
+
+        UserCollectible stashed =
+                createUserCollectible(
+                        6,
+                        1,
+                        createCollectible(
+                                6,
+                                CollectibleCode.STASHED,
+                                "Stashed"
+                        )
+                );
+
+        UserCollectible completionist =
+                createUserCollectible(
+                        15,
+                        1,
+                        createCollectible(
+                                15,
+                                CollectibleCode.COMPLETIONIST,
+                                "Completionist"
+                        )
+                );
+
+        when(
+                collectibleDao.getUserCollectible(
+                        1,
+                        CollectibleCode.STASHED
+                )
+        ).thenReturn(
+                stashed
+        );
+
+        when(
+                collectibleDao.getUserCollectible(
+                        1,
+                        CollectibleCode.COMPLETIONIST
+                )
+        ).thenReturn(
+                completionist
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertTrue(
+                result.isEmpty()
+        );
+
+        verify(
+                collectibleDao,
+                never()
+        ).unlockCollectible(
+                1,
+                CollectibleCode.COMPLETIONIST
+        );
+    }
+
+    @Test
+    public void checkForDrops_can_unlock_stashed_and_completionist_in_same_check() {
+
+        UserCollectible stashed =
+                createUserCollectible(
+                        6,
+                        1,
+                        createCollectible(
+                                6,
+                                CollectibleCode.STASHED,
+                                "Stashed"
+                        )
+                );
+
+        UserCollectible completionist =
+                createUserCollectible(
+                        15,
+                        1,
+                        createCollectible(
+                                15,
+                                CollectibleCode.COMPLETIONIST,
+                                "Completionist"
+                        )
+                );
+
+        when(
+                collectibleDao.countUserCollectibles(
+                        1
+                )
+        ).thenReturn(
+                11,
+                12
+        );
+
+        when(
+                collectibleDao.unlockCollectible(
+                        1,
+                        CollectibleCode.STASHED
+                )
+        ).thenReturn(
+                stashed
+        );
+
+        when(
+                collectibleDao.unlockCollectible(
+                        1,
+                        CollectibleCode.COMPLETIONIST
+                )
+        ).thenReturn(
+                completionist
+        );
+
+        List<UserCollectible> result =
+                checkForDropsAtNoon();
+
+        assertEquals(
+                2,
+                result.size()
+        );
+
+        assertSame(
+                stashed,
+                result.get(0)
+        );
+
+        assertSame(
+                completionist,
+                result.get(1)
+        );
     }
 }

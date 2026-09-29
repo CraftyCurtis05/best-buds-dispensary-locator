@@ -268,7 +268,7 @@ export default {
 
                     },
                     {
-                        threshold: 0.25
+                        threshold: 0.1
                     }
                 );
 
@@ -310,7 +310,7 @@ export default {
 
             UserActivityService
                 .createUserActivity(
-                    USER_ACTIVITY_TYPES.PRODUCT_VIEW,
+                    USER_ACTIVITY_TYPES.PRODUCTS_VIEW,
                     product
                 )
                 .then(() => {

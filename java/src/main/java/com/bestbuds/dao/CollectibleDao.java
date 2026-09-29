@@ -15,6 +15,10 @@ public interface CollectibleDao {
             int userId
     );
 
+    int countUserCollectibles(
+            int userId
+    );
+
     UserCollectible getUserCollectible(
             int userId,
             String code

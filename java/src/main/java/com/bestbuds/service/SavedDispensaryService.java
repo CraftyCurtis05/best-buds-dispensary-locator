@@ -27,6 +27,16 @@ public class SavedDispensaryService {
         );
     }
 
+    // Count saved dispensaries for a user
+    public int countSavedDispensaries(
+            int userId
+    ) {
+        return savedDispensaryDao
+                .countSavedDispensariesByUserId(
+                        userId
+                );
+    }
+
     // Save a dispensary for a user
     public SavedDispensary saveDispensary(
             int userId,

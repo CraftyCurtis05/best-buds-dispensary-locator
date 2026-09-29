@@ -10,6 +10,10 @@ public interface SavedDispensaryDao {
             int userId
     );
 
+    int countSavedDispensariesByUserId(
+            int userId
+    );
+
     SavedDispensary getSavedDispensaryByUserIdAndYelpBusinessId(
             int userId,
             String yelpBusinessId

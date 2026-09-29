@@ -156,6 +156,44 @@ public class JdbcCollectibleDaoTests
     }
 
     @Test
+    public void countUserCollectibles_returns_user_collectible_count() {
+
+        jdbcCollectibleDao.unlockCollectible(
+                1,
+                "BIRTHDAY_BUD"
+        );
+
+        jdbcCollectibleDao.unlockCollectible(
+                1,
+                "TRAIL_BLAZER"
+        );
+
+        int collectibleCount =
+                jdbcCollectibleDao.countUserCollectibles(
+                        1
+                );
+
+        assertEquals(
+                2,
+                collectibleCount
+        );
+    }
+
+    @Test
+    public void countUserCollectibles_returns_zero_when_none_exist() {
+
+        int collectibleCount =
+                jdbcCollectibleDao.countUserCollectibles(
+                        3
+                );
+
+        assertEquals(
+                0,
+                collectibleCount
+        );
+    }
+
+    @Test
     public void getUserCollectible_returns_user_collectible() {
 
         UserCollectible unlockedCollectible =
@@ -293,13 +331,8 @@ public class JdbcCollectibleDaoTests
                 firstUnlock
         );
 
-        assertNotNull(
+        assertNull(
                 secondUnlock
-        );
-
-        assertEquals(
-                firstUnlock.getId(),
-                secondUnlock.getId()
         );
 
         assertEquals(

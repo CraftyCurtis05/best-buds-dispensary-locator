@@ -86,6 +86,43 @@ public class JdbcSavedDispensaryDaoTests
     }
 
     @Test
+    public void countSavedDispensariesByUserId_returns_saved_dispensary_count() {
+
+        SavedDispensary firstDispensary =
+                createSavedDispensary(
+                        1,
+                        "count-yelp-business-1",
+                        "First Counted Dispensary"
+                );
+
+        SavedDispensary secondDispensary =
+                createSavedDispensary(
+                        1,
+                        "count-yelp-business-2",
+                        "Second Counted Dispensary"
+                );
+
+        jdbcSavedDispensaryDao.createSavedDispensary(
+                firstDispensary
+        );
+
+        jdbcSavedDispensaryDao.createSavedDispensary(
+                secondDispensary
+        );
+
+        int savedDispensaryCount =
+                jdbcSavedDispensaryDao
+                        .countSavedDispensariesByUserId(
+                                1
+                        );
+
+        assertEquals(
+                2,
+                savedDispensaryCount
+        );
+    }
+
+    @Test
     public void getSavedDispensaryByUserIdAndYelpBusinessId_returns_saved_dispensary() {
 
         SavedDispensary savedDispensary =

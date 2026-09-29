@@ -219,40 +219,6 @@ public class JdbcUserActivityDao implements UserActivityDao {
         }
     }
 
-    // Count unique activity dates of a specific type
-    @Override
-    public int countDistinctActivityDatesByType(
-            int userId,
-            String activityType
-    ) {
-
-        String sql =
-                "SELECT COUNT(DISTINCT activity_date) "
-                        + "FROM user_activities "
-                        + "WHERE user_id = ? "
-                        + "AND activity_type = ?";
-
-        try {
-            Integer activityCount =
-                    jdbcTemplate.queryForObject(
-                            sql,
-                            Integer.class,
-                            userId,
-                            activityType
-                    );
-
-            return activityCount == null
-                    ? 0
-                    : activityCount;
-
-        } catch (DataAccessException e) {
-            throw new DaoException(
-                    "Unable to count unique user activity dates",
-                    e
-            );
-        }
-    }
-
     // Count unique activity types completed by a user
     @Override
     public int countDistinctActivityTypes(

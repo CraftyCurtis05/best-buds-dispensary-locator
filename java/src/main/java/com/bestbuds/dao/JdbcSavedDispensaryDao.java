@@ -64,6 +64,37 @@ public class JdbcSavedDispensaryDao implements SavedDispensaryDao {
         return savedDispensaries;
     }
 
+    // Count saved dispensaries for a user
+    @Override
+    public int countSavedDispensariesByUserId(
+            int userId
+    ) {
+
+        String sql =
+                "SELECT COUNT(*) "
+                        + "FROM saved_dispensaries "
+                        + "WHERE user_id = ?";
+
+        try {
+            Integer savedDispensaryCount =
+                    jdbcTemplate.queryForObject(
+                            sql,
+                            Integer.class,
+                            userId
+                    );
+
+            return savedDispensaryCount == null
+                    ? 0
+                    : savedDispensaryCount;
+
+        } catch (DataAccessException e) {
+            throw new DaoException(
+                    "Unable to count saved dispensaries",
+                    e
+            );
+        }
+    }
+
     // Find a saved dispensary by its user and Yelp business ID
     @Override
     public SavedDispensary getSavedDispensaryByUserIdAndYelpBusinessId(

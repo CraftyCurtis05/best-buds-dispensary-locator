@@ -103,6 +103,37 @@ public class JdbcCollectibleDao implements CollectibleDao {
         return userCollectibles;
     }
 
+    // Count collectibles unlocked by a user
+    @Override
+    public int countUserCollectibles(
+            int userId
+    ) {
+
+        String sql =
+                "SELECT COUNT(*) "
+                        + "FROM user_collectibles "
+                        + "WHERE user_id = ?";
+
+        try {
+            Integer collectibleCount =
+                    jdbcTemplate.queryForObject(
+                            sql,
+                            Integer.class,
+                            userId
+                    );
+
+            return collectibleCount == null
+                    ? 0
+                    : collectibleCount;
+
+        } catch (DataAccessException e) {
+            throw new DaoException(
+                    "Unable to count user Collectibles",
+                    e
+            );
+        }
+    }
+
     // Find a specific collectible unlocked by a user
     @Override
     public UserCollectible getUserCollectible(
@@ -169,11 +200,16 @@ public class JdbcCollectibleDao implements CollectibleDao {
                         + "ON CONFLICT (user_id, collectible_id) DO NOTHING";
 
         try {
-            jdbcTemplate.update(
-                    sql,
-                    userId,
-                    collectible.getId()
-            );
+            int rowsAffected =
+                    jdbcTemplate.update(
+                            sql,
+                            userId,
+                            collectible.getId()
+                    );
+
+            if (rowsAffected == 0) {
+                return null;
+            }
 
             return getUserCollectible(
                     userId,

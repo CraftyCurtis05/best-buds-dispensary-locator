@@ -82,6 +82,7 @@
             <SearchList
                 v-if="hasSearchLocation"
                 ref="searchList"
+                @drop-check-requested="dropCheckRequested"
             />
 
             <SearchMap
@@ -147,7 +148,8 @@ export default {
     },
 
     emits: [
-        "activity-recorded"
+        "activity-recorded",
+        "drop-check-requested"
     ],
 
     computed: {
@@ -202,6 +204,15 @@ export default {
 
             this.$emit(
                 "activity-recorded"
+            );
+
+        },
+
+        // Request a new Drop check after collectible-related data changes
+        dropCheckRequested() {
+
+            this.$emit(
+                "drop-check-requested"
             );
 
         }

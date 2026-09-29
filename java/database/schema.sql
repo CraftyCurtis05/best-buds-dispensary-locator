@@ -103,7 +103,7 @@ CREATE TABLE user_activities (
     activity_id SERIAL PRIMARY KEY,
     user_id INT NOT NULL,
     activity_type VARCHAR(50) NOT NULL,
-    activity_value VARCHAR(150),
+    activity_value TEXT,
     activity_date DATE NOT NULL DEFAULT CURRENT_DATE,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 

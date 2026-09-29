@@ -93,6 +93,36 @@ public class SavedDispensaryServiceTests {
     }
 
     @Test
+    public void countSavedDispensaries_returns_saved_dispensary_count() {
+
+        when(
+                savedDispensaryDao
+                        .countSavedDispensariesByUserId(
+                                1
+                        )
+        ).thenReturn(
+                10
+        );
+
+        int result =
+                savedDispensaryService
+                        .countSavedDispensaries(
+                                1
+                        );
+
+        assertEquals(
+                10,
+                result
+        );
+
+        verify(
+                savedDispensaryDao
+        ).countSavedDispensariesByUserId(
+                1
+        );
+    }
+
+    @Test
     public void saveDispensary_creates_dispensary_when_not_already_saved() {
 
         SavedDispensary savedDispensary =

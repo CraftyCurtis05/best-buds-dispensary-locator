@@ -24,6 +24,7 @@
                 <!-- Display Current Page -->
                 <router-view
                     @activity-recorded="activityRecorded"
+                    @drop-check-requested="dropCheckRequested"
                 />
 
                 <!-- Display Suggested Next Destination -->
@@ -157,31 +158,62 @@ export default {
 
     methods: {
 
-        // Record one Best Buds visit for the current browser session
+        // Record one Best Buds visit for the current user each day
         recordAppVisit() {
 
-            const visitRecorded =
-                sessionStorage.getItem(
-                    "best-buds-app-visit-recorded"
-                ) === "true";
+            const userId =
+                this.$store.state.user?.id;
 
             if (
-                visitRecorded
+                !userId
                 || !this.isUserReady
             ) {
+                return Promise.resolve();
+            }
+
+            const today =
+                new Date();
+
+            const visitDate = [
+                today.getFullYear(),
+                String(
+                    today.getMonth() + 1
+                ).padStart(
+                    2,
+                    "0"
+                ),
+                String(
+                    today.getDate()
+                ).padStart(
+                    2,
+                    "0"
+                )
+            ].join("-");
+
+            const visitKey =
+                `best-buds-last-visit-${userId}`;
+
+            const lastVisitDate =
+                localStorage.getItem(
+                    visitKey
+                );
+
+            if (lastVisitDate === visitDate) {
                 return Promise.resolve();
             }
 
             return UserActivityService
                 .createUserActivity(
                     USER_ACTIVITY_TYPES.APP_VISIT,
-                    "best-buds"
+                    "visitDate"
                 )
                 .then(() => {
-                    sessionStorage.setItem(
-                        "best-buds-app-visit-recorded",
-                        "true"
+
+                    localStorage.setItem(
+                        visitKey,
+                        visitDate
                     );
+
                 })
                 .catch(() => {
                     // Activity tracking should not block the app
@@ -190,6 +222,11 @@ export default {
 
         // Check for new Drops after an activity is recorded
         activityRecorded() {
+            this.checkForDrops();
+        },
+
+        // Check for new Drops after collectible-related data changes
+        dropCheckRequested() {
             this.checkForDrops();
         },
 

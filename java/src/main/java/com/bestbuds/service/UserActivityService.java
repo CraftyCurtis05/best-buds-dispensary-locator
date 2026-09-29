@@ -94,19 +94,6 @@ public class UserActivityService {
     }
 
 
-    // Count unique activity dates of a specific type
-    public int countDistinctActivityDatesByType(
-            int userId,
-            String activityType
-    ) {
-
-        return userActivityDao
-                .countDistinctActivityDatesByType(
-                        userId,
-                        activityType
-                );
-    }
-
     // Count unique activity types completed by a user
     public int countDistinctActivityTypes(
             int userId

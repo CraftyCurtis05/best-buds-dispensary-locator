@@ -20,19 +20,10 @@ export default {
     },
 
     // Get the featured dispensary for the home page
-    getFeatured(state) {
-
-        const config = {};
-
-        if (state) {
-            config.params = {
-                location: state
-            };
-        }
+    getFeatured() {
 
         return axios.get(
-            "/api/dispensaries/featured",
-            config
+            "/api/dispensaries/featured"
         );
 
     }
