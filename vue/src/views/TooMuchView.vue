@@ -17,23 +17,24 @@
             </h1>
 
             <h2>
-                Think you may have overdone it?
+                Think You May Have Had Too Much?
             </h2>
 
             <p>
-                Using too much cannabis can lead to
-                overthinking and heightened anxiety, making
-                simple tasks seem overwhelming. It’s like your
-                mind gets stuck in overdrive—what started as a
-                relaxing evening can turn into a marathon of
-                introspection. The key is moderation and
-                knowing your limits to keep your experience
-                enjoyable and stress-free.
+                Too much THC can cause uncomfortable effects such
+                as anxiety, panic, confusion, dizziness, nausea,
+                paranoia, or a fast heart rate.
             </p>
 
             <p>
-                If you think you've had too much, please check
-                out below to ease your mind!
+                Many uncomfortable cannabis reactions improve with
+                time, but serious symptoms can require medical help.
+            </p>
+
+            <p>
+                Use the guide below to understand possible symptoms,
+                what you can do next, and when it may be important
+                to get additional help.
             </p>
 
         </header>
@@ -63,6 +64,12 @@
             <CannabisOveruseCoping />
 
         </section>
+
+        <!-- Display Health Information Review Date -->
+        <p class="health-review-date">
+            Health and safety information last reviewed:
+            October 2026
+        </p>
 
     </div>
 

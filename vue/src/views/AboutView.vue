@@ -10,17 +10,20 @@
         <header id="about-header">
 
             <h1 id="about-heading">
-                We Are Best Buds
+                About Best Buds
             </h1>
 
             <p>
-                At Best Buds, we're dedicated to providing a seamless
-                experience for individuals seeking access to legal cannabis
-                products. Our platform serves as a comprehensive guide,
-                connecting consumers with dispensaries that meet their
-                specific needs and preferences. Whether you're a seasoned
-                cannabis enthusiast or exploring its benefits for the first
-                time, we're here to help you navigate the landscape with ease.
+                Best Buds is designed to make cannabis
+                information easier to find, understand, and
+                explore.
+            </p>
+
+            <p>
+                The app combines dispensary discovery,
+                cannabis education, safety information,
+                legal context, news, and helpful resources
+                in one place.
             </p>
 
         </header>
@@ -36,12 +39,90 @@
             </h2>
 
             <p>
-                Our mission is simple: to empower individuals with accurate
-                information and resources to make informed decisions about
-                cannabis consumption. We believe in the transformative power
-                of cannabis and its potential to enhance wellness and improve
-                lives. By offering a user-friendly platform, we strive to
-                foster a supportive community and promote responsible usage.
+                Our mission is to give people clear,
+                approachable information that can help them
+                make more informed decisions about cannabis.
+            </p>
+
+            <p>
+                Cannabis products, effects, laws, and research
+                continue to change. Best Buds focuses on
+                explaining what is known, what can vary, and
+                where users can find additional reliable
+                information.
+            </p>
+
+        </section>
+
+        <!-- Display What Best Buds Offers -->
+        <section
+            id="what-we-offer"
+            aria-labelledby="what-we-offer-heading"
+        >
+
+            <h2 id="what-we-offer-heading">
+                What You Can Do With Best Buds
+            </h2>
+
+            <ul>
+
+                <li>
+                    Find dispensaries near a location or
+                    near your saved home address.
+                </li>
+
+                <li>
+                    Save dispensaries you want to visit
+                    again.
+                </li>
+
+                <li>
+                    Learn about cannabis products, strains,
+                    terpenes, safety, and common questions.
+                </li>
+
+                <li>
+                    Explore cannabis laws and legal
+                    differences across the United States.
+                </li>
+
+                <li>
+                    Read cannabis-related articles and news.
+                </li>
+
+                <li>
+                    Discover collectible Drops as you
+                    explore the app.
+                </li>
+
+            </ul>
+
+        </section>
+
+        <!-- Display Information Disclaimer -->
+        <section
+            id="information-disclaimer"
+            aria-labelledby="information-disclaimer-heading"
+        >
+
+            <h2 id="information-disclaimer-heading">
+                Educational Information
+            </h2>
+
+            <p>
+                Best Buds provides general educational
+                information. It is not a substitute for
+                professional medical, legal, or emergency
+                advice.
+            </p>
+
+            <p>
+                Cannabis can affect people differently.
+                Product contents, local laws, health risks,
+                and individual circumstances can also vary.
+                When something matters to your health or
+                legal situation, verify it with a qualified
+                professional or current government source.
             </p>
 
         </section>
@@ -53,14 +134,23 @@
         >
 
             <h2 id="privacy-security-heading">
-                Our Commitment to Privacy and Security
+                Privacy and Security
             </h2>
 
             <p>
-                At Best Buds, your privacy and security are our top
-                priorities. We adhere to stringent data protection measures
-                to safeguard your personal information and ensure a secure
-                browsing experience.
+                Best Buds is designed to protect the personal
+                information users provide while using the
+                application.
+            </p>
+
+            <p>
+                You can learn more about how information is
+                handled in our
+                <router-link
+                    :to="{ name: 'privacy-policy' }"
+                >
+                    privacy policy
+                </router-link>.
             </p>
 
         </section>
@@ -76,24 +166,18 @@
             </h2>
 
             <p>
-                Have questions or feedback? We'd love to hear from you!
-                Feel free to reach out to our friendly team from our
+                Have a question, suggestion, or feedback about
+                Best Buds?
+                Visit our
                 <router-link
                     :to="{ name: 'contact-us' }"
                 >
                     contact page
                 </router-link>
-                for assistance or inquiries.
+                to get in touch.
             </p>
 
         </section>
-
-        <!-- Display Closing Message -->
-        <p id="about-closing">
-            Thank you for choosing Best Buds as your trusted guide in the
-            world of cannabis. Together, let's explore, discover, and embrace
-            the benefits of this remarkable plant.
-        </p>
 
     </div>
 

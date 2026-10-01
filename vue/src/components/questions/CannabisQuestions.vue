@@ -982,9 +982,9 @@
                     <li>
                         Cannabis smoke contains many of the
                         same toxins, irritants, and
-                        carcinogens found in tobacco smoke,
-                        and smoking cannabis can damage lung
-                        tissue.
+                        cancer-causing chemicals found in
+                        tobacco smoke, and smoking cannabis
+                        can damage lung tissue.
                     </li>
 
                     <li>
@@ -1066,11 +1066,12 @@
                     </li>
 
                     <li>
-                        Cannabis use has also been associated
-                        with psychosis and other mental
-                        health concerns, particularly with
-                        more frequent use and in people who
-                        may already be vulnerable.
+                        Cannabis use has been associated with
+                        psychosis-related risks and other mental
+                        health concerns. The association with
+                        psychosis is stronger among people who
+                        begin using cannabis at a younger age
+                        and people who use it more frequently.
                     </li>
 
                     <li>
@@ -1094,6 +1095,81 @@
             <li>
 
                 <h4>
+                    Can cannabis affect a developing brain?
+                </h4>
+
+                <ul class="answer-list">
+
+                    <li>
+                        Yes. The brain continues developing
+                        through adolescence and into young
+                        adulthood.
+                    </li>
+
+                    <li>
+                        Cannabis can affect attention, memory,
+                        learning, decision-making,
+                        coordination, and reaction time.
+                    </li>
+
+                    <li>
+                        Starting cannabis use at a younger age
+                        and using cannabis more frequently are
+                        associated with a greater risk of
+                        cannabis use disorder.
+                    </li>
+
+                    <li>
+                        Scientists are still studying the
+                        long-term effects of cannabis exposure
+                        on developing brains.
+                    </li>
+
+                </ul>
+
+            </li>
+
+            <li>
+
+                <h4>
+                    Can cannabis affect heart health?
+                </h4>
+
+                <ul class="answer-list">
+
+                    <li>
+                        Yes. Cannabis can make the heart beat
+                        faster and can raise blood pressure
+                        shortly after use.
+                    </li>
+
+                    <li>
+                        Research is continuing into possible
+                        links between cannabis use and stroke,
+                        heart disease, and other cardiovascular
+                        problems.
+                    </li>
+
+                    <li>
+                        Smoking cannabis also exposes the body
+                        to many of the same harmful substances
+                        found in tobacco smoke.
+                    </li>
+
+                    <li>
+                        People with heart or cardiovascular
+                        conditions should discuss cannabis use
+                        with a qualified healthcare
+                        professional.
+                    </li>
+
+                </ul>
+
+            </li>
+
+            <li>
+
+                <h4>
                     Is cannabis safe during pregnancy or
                     breastfeeding?
                 </h4>
@@ -1102,30 +1178,36 @@
 
                     <li>
                         Health agencies recommend avoiding
-                        cannabis during pregnancy and
+                        cannabis during pregnancy and while
                         breastfeeding.
                     </li>
 
                     <li>
-                        That includes THC products, and FDA
-                        also advises against CBD during
-                        pregnancy and breastfeeding.
+                        FDA strongly advises against using CBD,
+                        THC, or marijuana in any form during
+                        pregnancy or while breastfeeding.
                     </li>
 
                     <li>
-                        This isn't limited to smoking.
-                        Cannabis products can be used in many
-                        different ways, and changing the
-                        method doesn't make pregnancy-related
-                        concerns disappear.
+                        THC can pass from a pregnant person to
+                        the developing baby and can also be
+                        present in breast milk after cannabis
+                        use.
+                    </li>
+
+                    <li>
+                        Pregnancy-related concerns are not
+                        limited to smoking. Edibles, vaping,
+                        concentrates, oils, and other cannabis
+                        products can still expose the body to
+                        THC or other cannabinoids.
                     </li>
 
                     <li>
                         If you're pregnant, breastfeeding,
-                        planning a pregnancy, or currently
-                        using cannabis or CBD, talk with a
-                        healthcare professional about your
-                        situation.
+                        planning a pregnancy, or currently using
+                        cannabis or CBD, talk with a healthcare
+                        professional about your situation.
                     </li>
 
                 </ul>
@@ -1266,46 +1348,37 @@
             <li>
 
                 <h4>
-                    Is marijuana Schedule III now?
+                    What is marijuana's federal scheduling
+                    status in 2026?
                 </h4>
 
                 <ul class="answer-list">
 
                     <li>
-                        No completed federal Schedule III
-                        change should be assumed just because
-                        you've heard about rescheduling in
-                        the news.
+                        There is not one simple yes-or-no
+                        answer. Federal rules changed in 2026,
+                        and different marijuana products can
+                        have different federal scheduling
+                        treatment.
                     </li>
 
                     <li>
-                        In 2026, federal proceedings have
-                        continued over a proposal to move
-                        marijuana from Schedule I to
-                        Schedule III under the Controlled
-                        Substances Act.
-                    </li>
-
-                    <li>
-                        DEA held formal hearing proceedings
-                        on the proposed rescheduling from
-                        June 29 through July 15, 2026.
-                    </li>
-
-                    <li>
-                        A proposal, hearing, or recommendation
-                        isn't the same thing as a completed
-                        change in federal law.
+                        Because federal cannabis law can
+                        continue to change, Best Buds keeps the
+                        detailed explanation in one place.
                     </li>
 
                     <li>
                         Check our
                         <router-link
-                            :to="{ name: 'legality' }"
+                            :to="{
+                                name: 'legality',
+                                hash: '#federal-cannabis-status'
+                            }"
                         >
-                            legality guide
+                            federal cannabis status
                         </router-link>
-                        for the latest federal status.
+                        for the current explanation.
                     </li>
 
                 </ul>
@@ -1521,13 +1594,19 @@
             </p>
 
             <p>
-                Marijuana also remains subject to federal
-                controlled-substance law. DEA held formal
-                proceedings from June 29 through July 15,
-                2026 concerning a proposal to transfer
-                marijuana from Schedule I to Schedule III.
-                A proposal or hearing shouldn't be treated
-                as a completed change in federal law.
+                Federal marijuana law changed in 2026, and
+                different products can be treated differently
+                under federal scheduling rules. Because that
+                status can continue to change, check our
+                <router-link
+                    :to="{
+                        name: 'legality',
+                        hash: '#federal-cannabis-status'
+                    }"
+                >
+                    federal cannabis status
+                </router-link>
+                for the current explanation.
             </p>
 
             <p>
@@ -1560,6 +1639,12 @@
             </p>
 
         </aside>
+
+        <!-- Display Health Information Review Date -->
+        <p class="health-review-date">
+            Health and safety information last reviewed:
+            October 2026
+        </p>
 
     </section>
 

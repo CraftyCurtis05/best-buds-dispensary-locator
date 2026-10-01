@@ -10,36 +10,80 @@
         <header id="legality-header">
 
             <h1 id="legality-heading">
-                Cannabis Legality In Each State
+                Cannabis Laws in the United States
             </h1>
 
             <h2>
-                Ever wondered if your cannabis stash is legal
-                or if you're just a really optimistic rebel?
+                Cannabis Laws Can Change Depending on Where You Are
             </h2>
 
             <p>
-                States like California and Colorado are rolling
-                out the green carpet for adults 21+, with legal
-                shops and chill vibes. Many states have medical
-                programs where patients get the green light
-                with a doctor's thumbs-up. Some states have
-                turned down the legal heat, making minor
-                offenses more about a fine than a felony.
-                States are dancing to their own beat, while
-                federal rules are like the old-school DJ trying
-                to keep things under control. In short, it's a
-                legal jamboree with states setting their own
-                rules while federal law lingers in the
-                background!
+                Cannabis laws differ across the United States.
+                Some states allow adult-use cannabis, some allow
+                medical cannabis, some permit only limited products,
+                and others remain more restrictive.
             </p>
 
             <p>
-                Select a state on the interactive map below
-                to view its cannabis laws.
+                State legality also does not mean cannabis is
+                allowed everywhere. Rules can differ for age,
+                possession, purchasing, home growing, public use,
+                driving, employment, housing, federal property,
+                and crossing state lines.
+            </p>
+
+            <p>
+                Use the interactive map below as a starting point,
+                and verify important legal information with current
+                state, local, and federal government sources.
             </p>
 
         </header>
+
+        <!-- Display Federal Cannabis Status -->
+        <section
+            id="federal-cannabis-status"
+            aria-labelledby="federal-cannabis-status-heading"
+        >
+
+            <h2 id="federal-cannabis-status-heading">
+                Federal Cannabis Status in 2026
+            </h2>
+
+            <p>
+                Federal marijuana law changed in 2026, but not all
+                marijuana products are treated the same way.
+            </p>
+
+            <p>
+                In April 2026, the U.S. Department of Justice and
+                Drug Enforcement Administration placed FDA-approved
+                marijuana products and marijuana products regulated
+                under qualifying state medical-marijuana licenses
+                into Schedule III of the federal Controlled
+                Substances Act.
+            </p>
+
+            <p>
+                The broader rescheduling process should not be
+                described as complete unless the federal government
+                issues a final change.
+            </p>
+
+            <p>
+                State cannabis laws remain separate from federal law
+                and can be more permissive or more restrictive
+                depending on the activity, product, and location.
+            </p>
+
+            <p>
+                <small>
+                    Federal information last reviewed:
+                    September 2026.
+                </small>
+            </p>
+
+        </section>
 
         <!-- Display Cannabis Legality -->
         <section

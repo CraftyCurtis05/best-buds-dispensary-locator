@@ -590,19 +590,19 @@
             <p>
                 State-legal marijuana products should not
                 automatically be treated as federally legal.
-                Federal proceedings in 2026 concern proposed
-                marijuana rescheduling rather than a
-                completed transfer to Schedule III.
-            </p>
-
-            <p>
+                Federal scheduling rules changed in 2026 and
+                can treat different marijuana products
+                differently.
                 Check our
                 <router-link
-                    :to="{ name: 'legality' }"
+                    :to="{
+                        name: 'legality',
+                        hash: '#federal-cannabis-status'
+                    }"
                 >
-                    U.S. cannabis law guide
+                    federal cannabis status
                 </router-link>
-                for current federal and state information.
+                for the current explanation.
             </p>
 
             <p class="legal-review-date">
@@ -611,6 +611,12 @@
             </p>
 
         </section>
+
+        <!-- Display Health Information Review Date -->
+        <p class="health-review-date">
+            Health and safety information last reviewed:
+            October 2026
+        </p>
 
         <!-- Display Topical Safety Image -->
         <figure class="safety-image">

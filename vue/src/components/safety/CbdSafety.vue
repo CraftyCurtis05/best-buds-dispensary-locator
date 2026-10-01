@@ -174,8 +174,8 @@
                     </li>
 
                     <li>
-                        CBD has also been associated with
-                        potential liver injury.
+                        CBD can cause liver injury, including
+                        changes in liver enzymes in some people.
                     </li>
 
                     <li>
@@ -206,22 +206,29 @@
                     <li>
                         <strong>CBD Can Interact:</strong>
                         CBD can affect how some medications
-                        work, and some medications can affect
-                        how CBD behaves in the body.
+                        are processed by the body.
                     </li>
 
                     <li>
-                        <strong>Effects Can Change:</strong>
-                        An interaction may increase side
-                        effects or change how well a
-                        medication works.
+                        <strong>Medication Effects Can Change:</strong>
+                        An interaction can increase side effects
+                        or change the amount or effect of a
+                        medication in the body.
+                    </li>
+
+                    <li>
+                        <strong>Other Products Matter:</strong>
+                        Prescription medications,
+                        over-the-counter medications, and
+                        supplements can all be important when
+                        checking for possible interactions.
                     </li>
 
                     <li>
                         <strong>Ask When Unsure:</strong>
-                        A doctor or pharmacist can help check
-                        for interactions with medications you
-                        already take.
+                        A doctor or pharmacist can help review
+                        medications and possible CBD
+                        interactions.
                     </li>
 
                 </ul>
@@ -283,11 +290,19 @@
                     </li>
 
                     <li>
-                        FDA has approved a prescription CBD
-                        drug for specific seizure disorders.
-                        That is different from ordinary retail
-                        CBD oils, gummies, creams, and similar
-                        products.
+                        FDA has approved Epidiolex, a
+                        prescription medication containing
+                        purified CBD, for certain seizure
+                        disorders in patients 1 year of age
+                        and older.
+                    </li>
+
+                    <li>
+                        That approval applies to that specific
+                        prescription medication. It does not
+                        mean ordinary retail CBD oils, gummies,
+                        drinks, creams, or similar products are
+                        FDA-approved treatments.
                     </li>
 
                     <li>
@@ -407,25 +422,41 @@
                 <ul class="safety-details">
 
                     <li>
-                        FDA advises against using CBD, THC,
-                        and marijuana during pregnancy or
-                        while breastfeeding.
+                        FDA strongly advises against using
+                        CBD, THC, or marijuana in any form
+                        during pregnancy or while
+                        breastfeeding.
                     </li>
 
                     <li>
-                        There are still major unanswered
-                        questions about CBD exposure during
-                        pregnancy and breastfeeding.
+                        THC can pass from a pregnant person
+                        to the developing baby and can also
+                        be present in breast milk after
+                        cannabis use.
+                    </li>
+
+                    <li>
+                        Cannabis use during pregnancy has
+                        been associated with concerns
+                        involving fetal development,
+                        pregnancy complications, and some
+                        newborn health outcomes.
+                    </li>
+
+                    <li>
+                        Changing from smoking to an edible,
+                        vape, concentrate, or another form
+                        does not remove pregnancy-related
+                        concerns.
                     </li>
 
                     <li>
                         Talk with a healthcare professional
-                        about alternatives if you're using CBD
-                        for symptoms during pregnancy.
+                        about safer options for symptoms
+                        during pregnancy or breastfeeding.
                     </li>
 
                 </ul>
-
             </li>
 
             <li>
@@ -629,6 +660,13 @@
             </p>
 
         </section>
+
+        <!-- Display Health Information Review Date -->
+        <p class="health-review-date">
+            Health and safety information last reviewed:
+            October 2026
+        </p>
+
 
         <!-- Display CBD Safety Image -->
         <figure class="safety-image">

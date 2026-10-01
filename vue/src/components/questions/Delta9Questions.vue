@@ -1470,44 +1470,37 @@
             <li>
 
                 <h4>
-                    Is marijuana Schedule III now?
+                    What is marijuana's federal scheduling
+                    status in 2026?
                 </h4>
 
                 <ul class="answer-list">
 
                     <li>
-                        No. Don't confuse a proposed federal
-                        change with a completed one.
+                        There is not one simple yes-or-no
+                        answer. Federal rules changed in 2026,
+                        and different marijuana products can
+                        have different federal scheduling
+                        treatment.
                     </li>
 
                     <li>
-                        Federal proceedings in 2026 concern
-                        a proposal to move marijuana from
-                        Schedule I to Schedule III under the
-                        Controlled Substances Act.
+                        Because federal cannabis law can
+                        continue to change, Best Buds keeps the
+                        detailed explanation in one place.
                     </li>
 
                     <li>
-                        DEA held formal hearings on that
-                        proposed rescheduling from June 29
-                        through July 15, 2026.
-                    </li>
-
-                    <li>
-                        The proposal shouldn't be described
-                        as a completed rescheduling unless
-                        the federal process actually makes
-                        the change final.
-                    </li>
-
-                    <li>
-                        Check the
+                        Check our
                         <router-link
-                            :to="{ name: 'legality' }"
+                            :to="{
+                                name: 'legality',
+                                hash: '#federal-cannabis-status'
+                            }"
                         >
-                            legality guide
+                            federal cannabis status
                         </router-link>
-                        for the latest federal status.
+                        for the current explanation.
                     </li>
 
                 </ul>
@@ -1604,14 +1597,19 @@
             </p>
 
             <p>
-                Federal marijuana rescheduling is separate
-                from those hemp changes. DEA held formal
-                hearings from June 29 through July 15, 2026
-                concerning the proposal to transfer
-                marijuana from Schedule I to Schedule III.
-                That proposed change shouldn't be described
-                as completed unless the federal process
-                makes it final.
+                Federal marijuana law changed in 2026, and
+                different products can be treated differently
+                under federal scheduling rules. Because that
+                status can continue to change, check our
+                <router-link
+                    :to="{
+                        name: 'legality',
+                        hash: '#federal-cannabis-status'
+                    }"
+                >
+                    federal cannabis status
+                </router-link>
+                for the current explanation.
             </p>
 
             <p>

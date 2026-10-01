@@ -193,8 +193,8 @@
 
                     <li>
                         CBD can cause side effects, interact
-                        with medications, and may affect the
-                        liver.
+                        with medications, and can cause liver
+                        injury.
                     </li>
 
                     <li>
@@ -236,8 +236,9 @@
                     </li>
 
                     <li>
-                        CBD has also been associated with
-                        potential liver injury.
+                        CBD can cause liver injury, including
+                        changes in liver enzymes that may require
+                        medical monitoring in some situations.
                     </li>
 
                     <li>
@@ -345,11 +346,11 @@
                     </li>
 
                     <li>
-                        It is approved for seizures
-                        associated with Lennox-Gastaut
-                        syndrome, Dravet syndrome, and
-                        tuberous sclerosis complex in
-                        specific patients.
+                        It is approved for seizures associated
+                        with Lennox-Gastaut syndrome, Dravet
+                        syndrome, and tuberous sclerosis
+                        complex in patients 1 year of age
+                        and older.
                     </li>
 
                     <li>
@@ -793,21 +794,30 @@
 
                     <li>
                         FDA strongly advises against using
-                        CBD, THC, and marijuana in any form
+                        CBD, THC, or marijuana in any form
                         during pregnancy or while
                         breastfeeding.
                     </li>
 
                     <li>
-                        There are still important unanswered
-                        questions about CBD exposure during
-                        pregnancy and breastfeeding.
+                        The effects of CBD exposure during
+                        pregnancy are not fully understood,
+                        and important safety questions remain.
                     </li>
 
                     <li>
-                        Consumer CBD products can also have
-                        additional quality, labeling, and
-                        contamination concerns.
+                        Some CBD is expected to pass into
+                        breast milk. How much transfers and
+                        what effects that exposure may have on
+                        a breastfed baby are not well
+                        understood.
+                    </li>
+
+                    <li>
+                        Consumer CBD products can have
+                        additional concerns involving
+                        labeling, unexpected THC, ingredients,
+                        and contaminants.
                     </li>
 
                     <li>
@@ -836,11 +846,17 @@
                     </li>
 
                     <li>
-                        The FDA-approved prescription CBD
-                        medication used for certain seizure
-                        disorders is very different from an
-                        ordinary CBD gummy or oil sold in a
-                        store.
+                        Epidiolex, the FDA-approved prescription
+                        CBD medication, can be prescribed for
+                        certain seizure disorders in patients
+                        1 year of age and older.
+                    </li>
+
+                    <li>
+                        That approval does not mean ordinary
+                        CBD gummies, oils, drinks, or other
+                        consumer products have been proven safe
+                        or effective for children.
                     </li>
 
                     <li>
@@ -1496,6 +1512,12 @@
             </p>
 
         </aside>
+
+        <!-- Display Health Information Review Date -->
+        <p class="health-review-date">
+            Health and safety information last reviewed:
+            October 2026
+        </p>
 
     </section>
 

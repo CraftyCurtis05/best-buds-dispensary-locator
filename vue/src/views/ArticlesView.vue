@@ -14,20 +14,29 @@
             </h1>
 
             <h2>
-                Explore the World of Cannabis
+                Trusted Information for Learning More
             </h2>
 
             <p>
-                Our articles cover everything from strain
-                breakdowns to the latest trends, so you can
-                navigate the world of cannabis with confidence.
-                Whether you're a beginner or a seasoned
-                enthusiast, we've got something for everyone!
+                This resource center brings together cannabis
+                information from government agencies, medical
+                organizations, researchers, public health
+                programs, and other educational sources.
             </p>
 
             <p>
-                Looking for more info? Dive into our library
-                of cannabis articles below!
+                Topics include cannabis basics, health and
+                safety, CBD, THC, edibles, medical research,
+                cannabis use disorder, laws, and other areas
+                that can help you explore the subject in more
+                detail.
+            </p>
+
+            <p>
+                Cannabis research and laws continue to change.
+                Best Buds prioritizes sources that explain both
+                what is currently known and where evidence is
+                still developing.
             </p>
 
         </header>

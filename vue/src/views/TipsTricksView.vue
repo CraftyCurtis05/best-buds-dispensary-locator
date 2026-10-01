@@ -13,27 +13,29 @@
         >
 
             <h1 id="tips-tricks-heading">
-                Tips & Tricks For Cannabis Use
+                Getting Started With Cannabis
             </h1>
 
             <h2>
-                Cannabis confusion got you burnt out?
+                Not sure where to begin?
             </h2>
 
             <p>
-                You're not alone! With so many strains,
-                products, and effects, it can feel like a
-                wild, green maze. But don't stress—it's all
-                part of the fun! Think of it as a
-                choose-your-own-adventure. Whether you're
-                giggling over strain names or puzzled by
-                potency, embrace the journey. The key is to
-                explore, experiment, and enjoy the ride!
+                Cannabis can feel complicated when you're learning
+                about it for the first time. Products, potency,
+                labels, laws, and effects can all vary.
             </p>
 
             <p>
-                Check out some of the Tips and Tricks we've
-                compiled below!
+                This guide covers practical things to know before
+                choosing a product, reading a label, using cannabis,
+                driving, understanding the law, or deciding where
+                to learn more.
+            </p>
+
+            <p>
+                Start with the topics that matter to you and take
+                your time exploring.
             </p>
 
         </header>

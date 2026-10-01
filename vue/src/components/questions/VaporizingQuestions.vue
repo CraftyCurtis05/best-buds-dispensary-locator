@@ -1942,48 +1942,38 @@
 
                 <li>
 
-                    <h5>
-                        Is marijuana Schedule III now?
-                    </h5>
+                    <h4>
+                        What is marijuana's federal scheduling
+                        status in 2026?
+                    </h4>
 
                     <ul class="answer-list">
 
                         <li>
-                            The federal Schedule III change
-                            should still be described as a
-                            proposal, not completed
-                            rescheduling.
+                            There is not one simple yes-or-no
+                            answer. Federal rules changed in 2026,
+                            and different marijuana products can
+                            have different federal scheduling
+                            treatment.
                         </li>
 
                         <li>
-                            Federal proceedings in 2026
-                            concern a proposal to transfer
-                            marijuana from Schedule I to
-                            Schedule III under the
-                            Controlled Substances Act.
-                        </li>
-
-                        <li>
-                            DEA held formal hearing
-                            proceedings on the proposal from
-                            June 29 through July 15, 2026.
-                        </li>
-
-                        <li>
-                            Until a final legal change takes
-                            effect, don't treat marijuana as
-                            though it has already been moved
-                            to Schedule III.
+                            Because federal cannabis law can
+                            continue to change, Best Buds keeps the
+                            detailed explanation in one place.
                         </li>
 
                         <li>
                             Check our
                             <router-link
-                                :to="{ name: 'legality' }"
+                                :to="{
+                                    name: 'legality',
+                                    hash: '#federal-cannabis-status'
+                                }"
                             >
-                                U.S. cannabis law guide
+                                federal cannabis status
                             </router-link>
-                            for the latest federal status.
+                            for the current explanation.
                         </li>
 
                     </ul>
@@ -2047,27 +2037,27 @@
             </p>
 
             <p>
-                Marijuana also remains subject to federal
-                controlled-substance law. Federal
-                proceedings in 2026 concern a proposal to
-                transfer marijuana from Schedule I to
-                Schedule III under the Controlled
-                Substances Act. The proposed change
-                shouldn't be described as completed
-                rescheduling unless and until a final
-                change takes effect.
+                Federal marijuana law changed in 2026, and
+                different marijuana products can be treated
+                differently under federal scheduling rules.
+                Check our
+                <router-link
+                    :to="{
+                        name: 'legality',
+                        hash: '#federal-cannabis-status'
+                    }"
+                >
+                    federal cannabis status
+                </router-link>
+                for the current explanation.
             </p>
 
             <p>
-                Check our
-                <router-link
-                    :to="{ name: 'legality' }"
-                >
-                    U.S. cannabis law guide
-                </router-link>
-                and current government information for the
-                rules that apply to your product and
-                location.
+                Vape product rules can also depend on the
+                cannabinoid source, ingredients, product type,
+                and state or local law. Check current
+                government information for the rules that
+                apply to your product and location.
             </p>
 
             <p>

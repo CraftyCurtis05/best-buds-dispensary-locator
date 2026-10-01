@@ -1800,17 +1800,6 @@
                             layer of rules.
                         </li>
 
-                        <li>
-                            Check our
-                            <router-link
-                                :to="{ name: 'legality' }"
-                            >
-                                U.S. cannabis law guide
-                            </router-link>
-                            for current federal and state
-                            information.
-                        </li>
-
                     </ul>
 
                 </li>
@@ -1951,46 +1940,38 @@
 
                 <li>
 
-                    <h5>
-                        Is marijuana Schedule III now?
-                    </h5>
+                    <h4>
+                        What is marijuana's federal scheduling
+                        status in 2026?
+                    </h4>
 
                     <ul class="answer-list">
 
                         <li>
-                            Don't confuse a proposed federal
-                            change with completed
-                            rescheduling.
+                            There is not one simple yes-or-no
+                            answer. Federal rules changed in 2026,
+                            and different marijuana products can
+                            have different federal scheduling
+                            treatment.
                         </li>
 
                         <li>
-                            Federal proceedings in 2026
-                            concern a proposal to transfer
-                            marijuana from Schedule I to
-                            Schedule III under the
-                            Controlled Substances Act.
-                        </li>
-
-                        <li>
-                            DEA held formal hearing
-                            proceedings on that proposal from
-                            June 29 through July 15, 2026.
-                        </li>
-
-                        <li>
-                            A proposal and completed
-                            rescheduling aren't the same
-                            thing.
+                            Because federal cannabis law can
+                            continue to change, Best Buds keeps the
+                            detailed explanation in one place.
                         </li>
 
                         <li>
                             Check our
                             <router-link
-                                :to="{ name: 'legality' }"
+                                :to="{
+                                    name: 'legality',
+                                    hash: '#federal-cannabis-status'
+                                }"
                             >
-                                U.S. cannabis law guide
+                                federal cannabis status
                             </router-link>
-                            for the latest federal status.
+                            for the current explanation.
                         </li>
 
                     </ul>
@@ -2081,34 +2062,29 @@
             </p>
 
             <p>
-                Marijuana also remains subject to federal
-                controlled-substance law. Federal
-                proceedings in 2026 concern a proposal to
-                transfer marijuana from Schedule I to
-                Schedule III under the Controlled
-                Substances Act. DEA held formal hearings on
-                that proposal from June 29 through
-                July 15, 2026. A proposed change shouldn't
-                be treated as completed rescheduling.
-            </p>
-
-            <p>
-                A cannabis edible being legal to purchase
-                somewhere also doesn't automatically mean it
-                can legally be carried across state lines,
-                mailed, taken onto federal property, or
-                possessed at your destination.
-            </p>
-
-            <p>
+                Federal marijuana law changed in 2026, and
+                different marijuana products can be treated
+                differently under federal scheduling rules.
                 Check our
                 <router-link
-                    :to="{ name: 'legality' }"
+                    :to="{
+                        name: 'legality',
+                        hash: '#federal-cannabis-status'
+                    }"
                 >
-                    U.S. cannabis law guide
+                    federal cannabis status
                 </router-link>
-                and current government information for the
-                rules that apply where you are.
+                for the current explanation.
+            </p>
+
+            <p>
+                A cannabis edible being legal in one place
+                does not automatically mean it can be carried
+                across state lines, mailed, taken onto federal
+                property, or legally possessed at your
+                destination. Check current government
+                information for the rules that apply where
+                you are.
             </p>
 
             <p>

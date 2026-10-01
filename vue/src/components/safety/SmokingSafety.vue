@@ -115,15 +115,16 @@
 
                     <li>
                         Burning cannabis creates smoke that
-                        contains toxins, irritants, and
-                        cancer-causing chemicals.
+                        contains many of the same toxins,
+                        irritants, and cancer-causing
+                        chemicals found in tobacco smoke.
                     </li>
 
                     <li>
                         Smoking cannabis can harm lung tissue
-                        and is associated with coughing,
-                        mucus production, and bronchitis
-                        symptoms.
+                        and small blood vessels and is
+                        associated with coughing, mucus
+                        production, and bronchitis symptoms.
                     </li>
 
                     <li>
@@ -374,9 +375,11 @@
                     </li>
 
                     <li>
-                        People with personal or family mental
-                        health concerns may want to discuss
-                        cannabis use with a healthcare
+                        People with a history of psychosis or
+                        other serious mental health concerns,
+                        or whose symptoms become worse with
+                        cannabis, should discuss cannabis use
+                        with a qualified healthcare
                         professional.
                     </li>
 
@@ -466,15 +469,27 @@
                 <ul class="safety-details">
 
                     <li>
-                        FDA advises against marijuana, THC,
-                        and CBD during pregnancy and
-                        breastfeeding.
+                        FDA strongly advises against using CBD,
+                        THC, or marijuana in any form during
+                        pregnancy or while breastfeeding.
                     </li>
 
                     <li>
-                        Cannabis smoke should also not be
-                        treated as harmless secondhand
-                        exposure around babies or children.
+                        Smoking cannabis can expose a pregnant
+                        person and developing baby to THC and
+                        combustion-related chemicals.
+                    </li>
+
+                    <li>
+                        Cannabis smoke should not be treated as
+                        harmless secondhand exposure around
+                        babies, children, or pregnant people.
+                    </li>
+
+                    <li>
+                        Talk with a healthcare professional
+                        about safer options for symptoms during
+                        pregnancy or breastfeeding.
                     </li>
 
                 </ul>
@@ -623,22 +638,19 @@
             </p>
 
             <p>
-                Marijuana also remains subject to federal
-                controlled-substance law. Federal proceedings
-                in 2026 concern a proposed transfer of
-                marijuana from Schedule I to Schedule III.
-                That proposal should not be treated as
-                completed rescheduling.
-            </p>
-
-            <p>
+                Federal marijuana law changed in 2026, and
+                different products can be treated differently
+                under federal scheduling rules.
                 Check our
                 <router-link
-                    :to="{ name: 'legality' }"
+                    :to="{
+                        name: 'legality',
+                        hash: '#federal-cannabis-status'
+                    }"
                 >
-                    U.S. cannabis law guide
+                    federal cannabis status
                 </router-link>
-                for current federal and state information.
+                for the current explanation.
             </p>
 
             <p class="legal-review-date">
@@ -647,6 +659,12 @@
             </p>
 
         </section>
+
+        <!-- Display Health Information Review Date -->
+        <p class="health-review-date">
+            Health and safety information last reviewed:
+            October 2026
+        </p>
 
         <!-- Display Smoking Safety Image -->
         <figure class="safety-image">

@@ -524,12 +524,9 @@
             </p>
 
             <p>
-                Marijuana remains subject to federal
-                controlled-substance law. Federal
-                proceedings in 2026 concern a proposed
-                transfer of marijuana from Schedule I to
-                Schedule III. That proposal should not be
-                treated as completed rescheduling.
+                Federal marijuana law changed in 2026, and
+                different products can be treated differently
+                under federal scheduling rules.
             </p>
 
             <p>
@@ -542,11 +539,15 @@
             <p>
                 Check our
                 <router-link
-                    :to="{ name: 'legality' }"
+                    :to="{
+                        name: 'legality',
+                        hash: '#federal-cannabis-status'
+                    }"
                 >
-                    U.S. cannabis law guide
+                    federal cannabis status
                 </router-link>
-                for current federal and state information.
+                for the current explanation, along with our
+                broader state cannabis law information.
             </p>
 
             <p class="legal-review-date">

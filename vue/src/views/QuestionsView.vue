@@ -10,25 +10,28 @@
         <header id="questions-header">
 
             <h1 id="questions-heading">
-                Commonly Asked Questions About Cannabis
+                Common Cannabis Questions
             </h1>
 
             <h2>
-                Got cannabis questions? No worries!
+                Clear Answers to Questions People Commonly Ask
             </h2>
 
             <p>
-                Whether you're curious about legality, how it
-                works, or the best ways to use it, the plant’s
-                got answers. From getting high or just chilling
-                with CBD, to understanding health impacts and
-                legal stuff, dive in and explore. Stay
-                informed, use responsibly, and enjoy the
-                journey!
+                Cannabis terminology, products, laws, effects, and
+                safety information can be confusing.
             </p>
 
             <p>
-                We've got all your questions answered below!
+                This section answers common questions about cannabis,
+                CBD, Delta-9 THC, dispensaries, flower, concentrates,
+                oils, tinctures, smoking, vaporizing, edibles, and
+                topicals.
+            </p>
+
+            <p>
+                Choose a topic below and explore the questions that
+                are most useful to you.
             </p>
 
         </header>

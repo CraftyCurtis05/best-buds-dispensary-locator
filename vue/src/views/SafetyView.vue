@@ -7,30 +7,37 @@
     >
 
         <!-- Display Page Introduction -->
-        <header id="safety-header">
+        <header
+            id="safety-header"
+            aria-labelledby="safety-heading"
+        >
 
             <h1 id="safety-heading">
-                Tips for Safer Cannabis Consumption, Smoking
-                and Topicals
+                Cannabis Safety
             </h1>
 
             <h2>
-                Want to keep your high smooth and groovy?
+                Understanding Risks Can Help You Make More
+                Informed Decisions
             </h2>
 
             <p>
-                Cannabis use safety is like mastering the art
-                of throwing a great party—keep the vibes
-                positive, don’t overdo it, and have a plan to
-                get home safely if needed. Balance your snacks
-                with hydration, and remember: moderation is
-                key. So, enjoy the high, but don’t let it turn
-                into a wild rave without a designated driver!
+                Cannabis products can differ widely in potency,
+                ingredients, how they are used, how quickly effects
+                begin, and how long those effects may last.
             </p>
 
             <p>
-                Take a gander at the safety tips for cannabis
-                use below!
+                THC, CBD, smoking, vaping, edibles, concentrates,
+                tinctures, and topicals can also involve different
+                safety considerations.
+            </p>
+
+            <p>
+                Use the topics below to learn about common risks,
+                ways to reduce avoidable harm, and situations where
+                extra caution or professional medical guidance may
+                be important.
             </p>
 
         </header>
@@ -60,53 +67,70 @@
 
         </section>
 
-        <!-- Display Conclusion -->
+        <!-- Display Additional Safety Considerations -->
         <section
-            id="safety-conclusion"
-            aria-labelledby="safety-conclusion-heading"
+            id="additional-safety"
+            aria-labelledby="additional-safety-heading"
         >
 
-            <h2 id="safety-conclusion-heading">
-                Conclusion
+            <h2 id="additional-safety-heading">
+                When Extra Caution May Be Important
             </h2>
 
             <p>
-                Your first cannabis experience can be a
-                wonderful journey when approached with care
-                and responsibility. As for the question, "Is
-                it better to use weed the first time alone or
-                in company?", having a trusted, sober friend
-                nearby can make the experience more comforting
-                and enjoyable. By following the tips shared in
-                this guide, first-time cannabis smokers can
-                look forward to a positive and memorable first
-                high. If you are contemplating using cannabis
-                for the first time, undertake comprehensive
-                research and connect with experienced cannabis
-                users for their insights. This can empower you
-                to make an informed decision about whether
-                cannabis is the right choice for you.
+                Cannabis can carry additional risks in some
+                situations. Consider speaking with a qualified
+                healthcare professional when cannabis use may
+                involve:
             </p>
 
-            <p>
-                Cannabis comes in a variety of forms including
-                edibles and concentrates but they are not the
-                best choice for your first time. Extracts
-                including vape cartridges are too potent and
-                hard to handle for a novice and edibles are
-                not that predictable in terms of dosage and
-                effects (which depend on numerous factors like
-                tolerance and the time of onset) the buzz may
-                start hours from ingestion and last for up to
-                8 hours.
-            </p>
+            <ul>
+
+                <li>
+                    Pregnancy or breastfeeding.
+                </li>
+
+                <li>
+                    Children, teenagers, or young adults whose
+                    brains are still developing.
+                </li>
+
+                <li>
+                    A history of anxiety, panic, psychosis, or
+                    other mental health concerns.
+                </li>
+
+                <li>
+                    Heart or cardiovascular conditions.
+                </li>
+
+                <li>
+                    Prescription medications or other substances
+                    that may interact with cannabis or CBD.
+                </li>
+
+                <li>
+                    Frequent use, difficulty cutting back, or other
+                    signs of cannabis use disorder.
+                </li>
+
+                <li>
+                    Driving, operating machinery, or performing
+                    tasks that require full attention and
+                    coordination.
+                </li>
+
+                <li>
+                    Children or pets who could accidentally reach
+                    cannabis products.
+                </li>
+
+            </ul>
 
             <p>
-                <strong>
-                    Remember, responsible consumption is
-                    crucial for any enjoyable cannabis
-                    experience.
-                </strong>
+                Safety depends on more than the product itself.
+                Health history, age, medications, dose, frequency
+                of use, and other substances can all matter.
             </p>
 
         </section>

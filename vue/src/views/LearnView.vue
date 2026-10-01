@@ -29,6 +29,13 @@
                 into the topics that interest you.
             </p>
 
+            <p>
+                Best Buds explains both what is currently known
+                and where cannabis information can still be
+                uncertain, changing, or different from person
+                to person.
+            </p>
+
         </header>
 
 

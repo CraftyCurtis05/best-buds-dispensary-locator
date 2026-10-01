@@ -14,27 +14,27 @@
             </h1>
 
             <h2>
-                How To Choose Which Cannabis Product Is Right For You?
+                Cannabis Comes in Many Different Forms
             </h2>
 
             <p>
-                Choosing the right cannabis product is like
-                picking your vibe! First choose the strain that
-                is best for you by using our
-                <router-link
-                    :to="{ name: 'strain-guide' }"
-                >
-                    strain guide
-                </router-link>.
-                Next consider how you want to consume—smoke,
-                vape, or snack on an edible. Start with a low
-                dose and see how it feels. Explore and find
-                your perfect match!
+                Cannabis products can differ in how they are used,
+                how quickly their effects may begin, how long those
+                effects may last, and how much THC, CBD, or other
+                cannabinoids they contain.
             </p>
 
             <p>
-                Check out all the different types of cannabis
-                products below!
+                A product name or strain label does not guarantee
+                how someone will feel. Individual response can vary
+                based on the product, dose, tolerance, body,
+                environment, and other factors.
+            </p>
+
+            <p>
+                Explore the common product types below to learn how
+                they differ and what to consider when reading labels
+                or choosing a product.
             </p>
 
         </header>

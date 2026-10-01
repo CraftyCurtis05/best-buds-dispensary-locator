@@ -17,24 +17,27 @@
             </h1>
 
             <h2>
-                Ever wondered if your ideal strain is out
-                there, just waiting to make your day?
+                Understanding Cannabis Labels Beyond the Name
             </h2>
 
             <p>
-                Finding the perfect strain or terpene is like
-                dating—sometimes you need a few awkward
-                encounters before you find "the one." Our
-                guide helps you swipe right on the ideal match
-                for your mood, whether you’re seeking blissful
-                relaxation or an energy boost to conquer your
-                Netflix marathon. It’s all about finding your
-                cannabis soulmate!
+                Cannabis products are often described using strain
+                names, Indica, Sativa, Hybrid, cannabinoid content,
+                and terpene profiles.
             </p>
 
             <p>
-                Find the right one for you by using our
-                complete guide below!
+                These labels can help describe a product, but they
+                do not guarantee a specific effect. Products with
+                the same strain name can differ in their chemical
+                makeup, and people can respond differently to the
+                same product.
+            </p>
+
+            <p>
+                Use this guide to understand common strain terms,
+                cannabinoids, terpenes, aromas, and other information
+                you may see on cannabis labels.
             </p>
 
         </header>

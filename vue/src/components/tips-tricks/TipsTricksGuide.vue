@@ -482,12 +482,24 @@
             </p>
 
             <p>
-                Marijuana also has not simply become
-                federally legal because rescheduling has been
-                discussed. Federal proceedings in 2026
-                concern a proposed transfer of marijuana from
-                Schedule I to Schedule III under the
-                Controlled Substances Act.
+                Federal marijuana law changed in 2026, but
+                federal scheduling is not the same for every
+                marijuana product. State legalization also
+                does not automatically make marijuana
+                federally legal.
+            </p>
+
+            <p>
+                Check our
+                <router-link
+                    :to="{
+                        name: 'legality',
+                        hash: '#federal-cannabis-status'
+                    }"
+                >
+                    federal cannabis status
+                </router-link>
+                for the current explanation.
             </p>
 
             <p>

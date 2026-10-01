@@ -361,6 +361,80 @@
             <li>
 
                 <h4>
+                    Developing Brains Need Extra Caution
+                </h4>
+
+                <ul class="safety-details">
+
+                    <li>
+                        The brain continues developing through
+                        adolescence and into young adulthood.
+                    </li>
+
+                    <li>
+                        Cannabis can affect attention, memory,
+                        learning, decision-making, coordination,
+                        and reaction time.
+                    </li>
+
+                    <li>
+                        Starting cannabis use at a younger age
+                        and using it more frequently are also
+                        associated with a greater risk of
+                        cannabis use disorder.
+                    </li>
+
+                    <li>
+                        Young people should understand that
+                        cannabis can carry different risks
+                        while the brain is still developing.
+                    </li>
+
+                </ul>
+
+            </li>
+
+            <li>
+
+                <h4>
+                    Consider Heart and Cardiovascular Health
+                </h4>
+
+                <ul class="safety-details">
+
+                    <li>
+                        Cannabis can make the heart beat faster
+                        and can raise blood pressure shortly
+                        after use.
+                    </li>
+
+                    <li>
+                        Research is continuing into the
+                        relationship between cannabis use,
+                        heart disease, stroke, and other
+                        cardiovascular problems.
+                    </li>
+
+                    <li>
+                        Smoking cannabis also exposes the body
+                        to many of the same harmful substances
+                        found in tobacco smoke.
+                    </li>
+
+                    <li>
+                        People with heart or cardiovascular
+                        conditions should discuss cannabis use
+                        with a qualified healthcare
+                        professional.
+                    </li>
+
+                </ul>
+
+            </li>
+
+            <li>
+
+                <h4>
                     Watch for Tolerance and Changes in Use
                 </h4>
 
@@ -436,8 +510,9 @@
                 <ul class="safety-details">
 
                     <li>
-                        FDA advises against THC, CBD, and
-                        marijuana during pregnancy and while
+                        FDA strongly advises against using
+                        CBD, THC, or marijuana in any form
+                        during pregnancy or while
                         breastfeeding.
                     </li>
 
@@ -606,22 +681,19 @@
             </p>
 
             <p>
-                Marijuana remains subject to federal
-                controlled-substance law. Federal proceedings
-                in 2026 concern a proposed transfer of
-                marijuana from Schedule I to Schedule III.
-                The proposal should not be treated as
-                completed rescheduling.
-            </p>
-
-            <p>
+                Federal marijuana law changed in 2026, and
+                different products can be treated differently
+                under federal scheduling rules.
                 Check our
                 <router-link
-                    :to="{ name: 'legality' }"
+                    :to="{
+                        name: 'legality',
+                        hash: '#federal-cannabis-status'
+                    }"
                 >
-                    U.S. cannabis law guide
+                    federal cannabis status
                 </router-link>
-                for current federal and state information.
+                for the current explanation.
             </p>
 
             <p class="legal-review-date">
@@ -630,6 +702,12 @@
             </p>
 
         </section>
+
+        <!-- Display Health Information Review Date -->
+        <p class="health-review-date">
+            Health and safety information last reviewed:
+            October 2026
+        </p>
 
         <!-- Display THC Safety Image -->
         <figure class="safety-image">
