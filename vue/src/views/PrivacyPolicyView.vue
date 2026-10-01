@@ -274,50 +274,13 @@
 
         </section>
 
-        <!-- Display Strain Guide -->
-        <section
-            id="privacy-strain-guide"
-            aria-labelledby="privacy-strain-guide-heading"
-        >
-
-            <h2 id="privacy-strain-guide-heading">
-                Explore Our Strain Guide
-            </h2>
-
-            <StrainGuideVisit />
-
-        </section>
-
-        <!-- Display Latest Articles -->
-        <section
-            id="privacy-articles"
-            aria-labelledby="privacy-articles-heading"
-        >
-
-            <h2 id="privacy-articles-heading">
-                Latest Cannabis Articles
-            </h2>
-
-            <ArticlesVisit />
-
-        </section>
-
     </div>
 
 </template>
 
 <script>
-import StrainGuideVisit from "../components/strain-guide/StrainGuideVisit.vue";
-
-import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
-
 export default {
-    name: "PrivacyPolicyView",
-
-    components: {
-        StrainGuideVisit,
-        ArticlesVisit
-    }
+    name: "PrivacyPolicyView"
 };
 </script>
 

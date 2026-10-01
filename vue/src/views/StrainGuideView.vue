@@ -39,29 +39,11 @@
 
         </header>
 
-        <!-- Display Guide Jump Links -->
-        <nav
-            id="guide-links"
-            aria-label="Strain and terpene guide topics"
-        >
-
-            <ul>
-
-                <li>
-                    <a href="#strain-101">
-                        Strain 101
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#terpene-101">
-                        Terpene 101
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
+        <!-- Display Guide Navigation -->
+        <OnThisPage
+            :topics="guideSections"
+            heading="Guide Topics"
+        />
 
         <!-- Display Strain Guide -->
         <section
@@ -73,35 +55,11 @@
                 Strain Guide
             </h2>
 
-            <!-- Display Strain Jump Links -->
-            <nav
-                id="strain-links"
-                aria-label="Cannabis strain types"
-            >
-
-                <ul>
-
-                    <li>
-                        <a href="#indica">
-                            Indica
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#sativa">
-                            Sativa
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#hybrid">
-                            Hybrid
-                        </a>
-                    </li>
-
-                </ul>
-
-            </nav>
+            <!-- Display Strain Guide Navigation -->
+            <OnThisPage
+                :topics="strainGuideSections"
+                heading="Strain Guide Topics"
+            />
 
             <StrainGuide />
 
@@ -117,111 +75,13 @@
                 Terpene Guide
             </h2>
 
-            <!-- Display Terpene Jump Links -->
-            <nav
-                id="terpene-links"
-                aria-label="Cannabis terpenes"
-            >
-
-                <ul>
-
-                    <li>
-                        <a href="#humulene">
-                            Humulene
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#limonene">
-                            Limonene
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#myrcene">
-                            Myrcene
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#caryophyllene">
-                            Caryophyllene
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#linalool">
-                            Linalool
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#apinene">
-                            Alpha-Pinene
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#bpinene">
-                            Beta-Pinene
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#terpinolene">
-                            Terpinolene
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#ocimene">
-                            Ocimene
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#eucalyptol">
-                            Eucalyptol
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#nerolidol">
-                            Nerolidol
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#borneol">
-                            Borneol
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#camphene">
-                            Camphene
-                        </a>
-                    </li>
-
-                </ul>
-
-            </nav>
+            <!-- Display Terpene Guide Navigation -->
+            <OnThisPage
+                :topics="terpeneGuideSections"
+                heading="Terpene Guide Topics"
+            />
 
             <TerpeneGuide />
-
-        </section>
-
-        <!-- Display Latest Articles -->
-        <section
-            id="strain-guide-articles"
-            aria-labelledby="strain-guide-articles-heading"
-        >
-
-            <h2 id="strain-guide-articles-heading">
-                Latest Cannabis Articles
-            </h2>
-
-            <ArticlesVisit />
 
         </section>
 
@@ -230,23 +90,21 @@
 </template>
 
 <script>
+import OnThisPage from "../components/layout/OnThisPage.vue";
 import StrainGuide from "../components/strain-guide/StrainGuide.vue";
 import TerpeneGuide from "../components/strain-guide/TerpeneGuide.vue";
-import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
 
 import UserActivityService from "../services/UserActivityService.js";
 
-import {
-    USER_ACTIVITY_TYPES
-} from "../constants/userActivityTypes.js";
+import {USER_ACTIVITY_TYPES} from "../constants/userActivityTypes.js";
 
 export default {
     name: "StrainGuideView",
 
     components: {
+        OnThisPage,
         StrainGuide,
-        TerpeneGuide,
-        ArticlesVisit
+        TerpeneGuide
     },
 
     emits: [
@@ -258,8 +116,91 @@ export default {
 
             // Track strain guide topics viewed during this page visit
             strainGuideObserver: null,
-            viewedStrainGuideTopics: new Set()
+            viewedStrainGuideTopics: new Set(),
 
+            // Main guide sections used for navigation
+            guideSections: [
+                {
+                    id: "strain-guide",
+                    label: "Strain 101"
+                },
+                {
+                    id: "terpene-guide",
+                    label: "Terpene 101"
+                }
+            ],
+
+            // Strain guide sections used for navigation
+            strainGuideSections: [
+                {
+                    id: "indica",
+                    label: "Indica"
+                },
+                {
+                    id: "sativa",
+                    label: "Sativa"
+                },
+                {
+                    id: "hybrid",
+                    label: "Hybrid"
+                }
+            ],
+
+            // Terpene guide sections used for navigation
+            terpeneGuideSections: [
+                {
+                    id: "humulene",
+                    label: "Humulene"
+                },
+                {
+                    id: "limonene",
+                    label: "Limonene"
+                },
+                {
+                    id: "myrcene",
+                    label: "Myrcene"
+                },
+                {
+                    id: "caryophyllene",
+                    label: "Caryophyllene"
+                },
+                {
+                    id: "linalool",
+                    label: "Linalool"
+                },
+                {
+                    id: "alpha-pinene",
+                    label: "Alpha-Pinene"
+                },
+                {
+                    id: "beta-pinene",
+                    label: "Beta-Pinene"
+                },
+                {
+                    id: "terpinolene",
+                    label: "Terpinolene"
+                },
+                {
+                    id: "ocimene",
+                    label: "Ocimene"
+                },
+                {
+                    id: "eucalyptol",
+                    label: "Eucalyptol"
+                },
+                {
+                    id: "nerolidol",
+                    label: "Nerolidol"
+                },
+                {
+                    id: "borneol",
+                    label: "Borneol"
+                },
+                {
+                    id: "camphene",
+                    label: "Camphene"
+                }
+            ]
         };
     },
 

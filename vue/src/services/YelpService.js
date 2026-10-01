@@ -19,6 +19,15 @@ export default {
 
     },
 
+    // Get dispensaries near the user's saved home address
+    getDispensariesNearHome() {
+
+        return axios.get(
+            "/api/dispensaries/near-home"
+        );
+
+    },
+
     // Get the featured dispensary for the home page
     getFeatured() {
 

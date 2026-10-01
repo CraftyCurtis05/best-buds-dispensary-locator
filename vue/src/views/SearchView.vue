@@ -45,6 +45,7 @@
 
             <SearchBar
                 @search="searchDispensaries"
+                @search-near-home="searchDispensariesNearHome"
             />
 
             <!-- Display Travel & Legal Reminder -->
@@ -91,34 +92,6 @@
 
         </section>
 
-        <!-- Display Strain Guide -->
-        <section
-            id="search-strain-guide"
-            aria-labelledby="search-strain-guide-heading"
-        >
-
-            <h2 id="search-strain-guide-heading">
-                Explore Our Strain Guide
-            </h2>
-
-            <StrainGuideVisit />
-
-        </section>
-
-        <!-- Display Latest Articles -->
-        <section
-            id="search-articles"
-            aria-labelledby="search-articles-heading"
-        >
-
-            <h2 id="search-articles-heading">
-                Latest Cannabis Articles
-            </h2>
-
-            <ArticlesVisit />
-
-        </section>
-
     </div>
 
 </template>
@@ -127,14 +100,12 @@
 import SearchBar from "../components/search/SearchBar.vue";
 import SearchList from "../components/search/SearchList.vue";
 import SearchMap from "../components/search/SearchMap.vue";
-import StrainGuideVisit from "../components/strain-guide/StrainGuideVisit.vue";
-import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
 
 import UserActivityService from "../services/UserActivityService.js";
 
-import {
-    USER_ACTIVITY_TYPES
-} from "../constants/userActivityTypes.js";
+import {USER_ACTIVITY_TYPES} from "../constants/userActivityTypes.js";
+
+import {SEARCH_SOURCES} from "../constants/searchSources.js";
 
 export default {
     name: "SearchView",
@@ -142,9 +113,7 @@ export default {
     components: {
         SearchBar,
         SearchList,
-        SearchMap,
-        StrainGuideVisit,
-        ArticlesVisit
+        SearchMap
     },
 
     emits: [
@@ -177,6 +146,11 @@ export default {
                 searchLocation
             );
 
+            this.$store.commit(
+                "SET_SEARCH_SOURCE",
+                SEARCH_SOURCES.MANUAL
+            );
+
             UserActivityService
                 .createUserActivity(
                     USER_ACTIVITY_TYPES.AREA_SEARCH,
@@ -194,6 +168,40 @@ export default {
                 this.$refs.searchList?.search(
                     searchLocation
                 );
+
+            });
+
+        },
+
+        // Search near the authenticated user's saved home address
+        searchDispensariesNearHome() {
+
+            this.$store.commit(
+                "SET_SEARCH_LOCATION",
+                "Near Home"
+            );
+
+            this.$store.commit(
+                "SET_SEARCH_SOURCE",
+                SEARCH_SOURCES.NEAR_HOME
+            );
+
+            UserActivityService
+                .createUserActivity(
+                    USER_ACTIVITY_TYPES.AREA_SEARCH,
+                    "near-home"
+                )
+                .then(() => {
+                    this.activityRecorded();
+                })
+                .catch(() => {
+                    // Activity tracking should not block the search
+                });
+
+            this.$nextTick(() => {
+
+                this.$refs.searchList
+                    ?.searchNearHome();
 
             });
 

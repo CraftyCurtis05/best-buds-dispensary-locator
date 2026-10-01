@@ -55,56 +55,22 @@
 
         </section>
 
-        <!-- Display Strain Guide -->
-        <section
-            id="legality-strain-guide"
-            aria-labelledby="legality-strain-guide-heading"
-        >
-
-            <h2 id="legality-strain-guide-heading">
-                Explore Our Strain Guide
-            </h2>
-
-            <StrainGuideVisit />
-
-        </section>
-
-        <!-- Display Latest Articles -->
-        <section
-            id="legality-articles"
-            aria-labelledby="legality-articles-heading"
-        >
-
-            <h2 id="legality-articles-heading">
-                Latest Cannabis Articles
-            </h2>
-
-            <ArticlesVisit />
-
-        </section>
-
     </div>
 
 </template>
 
 <script>
 import LegalityMap from "../components/legality/LegalityMap.vue";
-import StrainGuideVisit from "../components/strain-guide/StrainGuideVisit.vue";
-import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
 
 import UserActivityService from "../services/UserActivityService.js";
 
-import {
-    USER_ACTIVITY_TYPES
-} from "../constants/userActivityTypes.js";
+import {USER_ACTIVITY_TYPES} from "../constants/userActivityTypes.js";
 
 export default {
     name: "LegalityView",
 
     components: {
-        LegalityMap,
-        StrainGuideVisit,
-        ArticlesVisit
+        LegalityMap
     },
 
     emits: [

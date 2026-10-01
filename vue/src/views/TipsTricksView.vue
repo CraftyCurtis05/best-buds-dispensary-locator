@@ -38,53 +38,10 @@
 
         </header>
 
-        <!-- Display Tips and Tricks Jump Links -->
-        <nav
-            id="tips-tricks-links"
-            aria-label="Cannabis tips and tricks topics"
-        >
-
-            <ul>
-
-                <li>
-                    <a href="#choose-products">
-                        Choose a Product
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#strain-guide">
-                        Strain Guide
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#safety-tips">
-                        Safety Tips
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#too-much">
-                        If You Have Too Much
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#legality">
-                        State Laws
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#questions">
-                        Common Questions
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
+        <!-- Display Tips & Tricks Navigation -->
+        <OnThisPage
+            :topics="tipsTricksSections"
+        />
 
         <!-- Display Tips and Tricks Guide -->
         <section
@@ -100,40 +57,76 @@
 
         </section>
 
-        <!-- Display Latest Articles -->
-        <section
-            id="tips-tricks-articles"
-            aria-labelledby="tips-tricks-articles-heading"
-        >
-
-            <h2 id="tips-tricks-articles-heading">
-                Latest Cannabis Articles
-            </h2>
-
-            <ArticlesVisit />
-
-        </section>
-
     </div>
 
 </template>
 
 <script>
+import OnThisPage from "../components/layout/OnThisPage.vue";
 import TipsTricksGuide from "../components/tips-tricks/TipsTricksGuide.vue";
-import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
 
 import UserActivityService from "../services/UserActivityService.js";
 
-import {
-    USER_ACTIVITY_TYPES
-} from "../constants/userActivityTypes.js";
+import {USER_ACTIVITY_TYPES} from "../constants/userActivityTypes.js";
 
 export default {
     name: "TipsTricksView",
 
     components: {
-        TipsTricksGuide,
-        ArticlesVisit
+        OnThisPage,
+        TipsTricksGuide
+    },
+
+    data() {
+        return {
+            // Tips and tricks sections used for navigation
+            tipsTricksSections: [
+                {
+                    id: "choose-products",
+                    label: "Choose a Product"
+                },
+                {
+                    id: "strain-guide",
+                    label: "Strain Guide"
+                },
+                {
+                    id: "read-label",
+                    label: "Read the Label"
+                },
+                {
+                    id: "safety-tips",
+                    label: "Safety Tips"
+                },
+                {
+                    id: "edible-timing",
+                    label: "Edible Timing"
+                },
+                {
+                    id: "too-much",
+                    label: "If You Have Too Much"
+                },
+                {
+                    id: "driving",
+                    label: "Driving"
+                },
+                {
+                    id: "legality",
+                    label: "State Laws"
+                },
+                {
+                    id: "federal-law",
+                    label: "Federal Law"
+                },
+                {
+                    id: "questions",
+                    label: "Common Questions"
+                },
+                {
+                    id: "getting-started",
+                    label: "Getting Started"
+                }
+            ]
+        };
     },
 
     emits: [

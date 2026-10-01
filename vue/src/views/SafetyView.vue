@@ -35,41 +35,10 @@
 
         </header>
 
-        <!-- Display Safety Tip Jump Links -->
-        <nav
-            id="safety-links"
-            aria-label="Cannabis safety topics"
-        >
-
-            <ul>
-
-                <li>
-                    <a href="#thc-consumption">
-                        THC Consumption
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#cbd-consumption">
-                        CBD Consumption
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#smoking-safety">
-                        Cannabis Smoking
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#topical-use">
-                        Topical Use
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
+        <!-- Display Safety Topic Navigation -->
+        <OnThisPage
+            :topics="safetyTopics"
+        />
 
         <!-- Display Safety Tips -->
         <section
@@ -142,62 +111,30 @@
 
         </section>
 
-        <!-- Display Strain Guide -->
-        <section
-            id="safety-strain-guide"
-            aria-labelledby="safety-strain-guide-heading"
-        >
-
-            <h2 id="safety-strain-guide-heading">
-                Explore Our Strain Guide
-            </h2>
-
-            <StrainGuideVisit />
-
-        </section>
-
-        <!-- Display Latest Articles -->
-        <section
-            id="safety-articles"
-            aria-labelledby="safety-articles-heading"
-        >
-
-            <h2 id="safety-articles-heading">
-                Latest Cannabis Articles
-            </h2>
-
-            <ArticlesVisit />
-
-        </section>
-
     </div>
 
 </template>
 
 <script>
+import OnThisPage from "../components/layout/OnThisPage.vue";
 import ThcSafety from "../components/safety/ThcSafety.vue";
 import CbdSafety from "../components/safety/CbdSafety.vue";
 import SmokingSafety from "../components/safety/SmokingSafety.vue";
 import TopicalSafety from "../components/safety/TopicalSafety.vue";
-import StrainGuideVisit from "../components/strain-guide/StrainGuideVisit.vue";
-import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
 
 import UserActivityService from "../services/UserActivityService.js";
 
-import {
-    USER_ACTIVITY_TYPES
-} from "../constants/userActivityTypes.js";
+import {USER_ACTIVITY_TYPES} from "../constants/userActivityTypes.js";
 
 export default {
     name: "SafetyView",
 
     components: {
+        OnThisPage,
         ThcSafety,
         CbdSafety,
         SmokingSafety,
-        TopicalSafety,
-        StrainGuideVisit,
-        ArticlesVisit
+        TopicalSafety
     },
 
     emits: [
@@ -209,7 +146,31 @@ export default {
 
             // Track safety topics viewed during this page visit
             safetyObserver: null,
-            viewedSafetyTopics: new Set()
+            viewedSafetyTopics: new Set(),
+
+            // Safety topics used for navigation and activity tracking
+            safetyTopics: [
+                {
+                    id: "thc-consumption",
+                    label: "THC Consumption",
+                    value: "thc"
+                },
+                {
+                    id: "cbd-consumption",
+                    label: "CBD Consumption",
+                    value: "cbd"
+                },
+                {
+                    id: "smoking-safety",
+                    label: "Cannabis Smoking",
+                    value: "smoking"
+                },
+                {
+                    id: "topical-use",
+                    label: "Topical Use",
+                    value: "topical"
+                }
+            ]
 
         };
     },
@@ -231,25 +192,6 @@ export default {
         // Watch safety sections as the user explores the page
         observeSafetySections() {
 
-            const safetySections = [
-                {
-                    id: "thc-consumption",
-                    value: "thc"
-                },
-                {
-                    id: "cbd-consumption",
-                    value: "cbd"
-                },
-                {
-                    id: "smoking-safety",
-                    value: "smoking"
-                },
-                {
-                    id: "topical-use",
-                    value: "topical"
-                }
-            ];
-
             this.safetyObserver =
                 new IntersectionObserver(
                     (entries) => {
@@ -262,11 +204,11 @@ export default {
                                 }
 
                                 const safetyTopic =
-                                    safetySections.find(
-                                        (item) =>
-                                            item.id
-                                            === entry.target.id
-                                    );
+                                        this.safetyTopics.find(
+                                            (item) =>
+                                                item.id
+                                                === entry.target.id
+                                        );
 
                                 if (!safetyTopic) {
                                     return;
@@ -285,22 +227,22 @@ export default {
                     }
                 );
 
-            safetySections.forEach(
-                (safetyTopic) => {
+                this.safetyTopics.forEach(
+                    (safetyTopic) => {
 
-                    const section =
-                        document.getElementById(
-                            safetyTopic.id
-                        );
+                        const section =
+                            document.getElementById(
+                                safetyTopic.id
+                            );
 
-                    if (section) {
-                        this.safetyObserver.observe(
-                            section
-                        );
+                        if (section) {
+                            this.safetyObserver.observe(
+                                section
+                            );
+                        }
+
                     }
-
-                }
-            );
+                );
 
         },
 

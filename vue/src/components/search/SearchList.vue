@@ -131,6 +131,13 @@ export default {
 
         },
 
+        // Search for dispensaries near the user's saved home address
+        searchNearHome() {
+
+            this.getNearHomeResults();
+
+        },
+
         // Get dispensaries near the current location
         getResults(
             searchLocation
@@ -175,6 +182,67 @@ export default {
 
                     this.searchError =
                         "Unable to load dispensaries. Please try again.";
+
+                })
+                .finally(() => {
+
+                    this.isLoading = false;
+
+                });
+
+        },
+
+        // Get dispensaries near the user's saved home address
+        getNearHomeResults() {
+
+            this.isLoading = true;
+            this.hasSearched = true;
+            this.searchError = "";
+
+            this.$store.commit(
+                "SET_DISPENSARIES",
+                []
+            );
+
+            YelpService
+                .getDispensariesNearHome()
+                .then((response) => {
+
+                    const dispensaries =
+                        response.data.businesses
+                        || [];
+
+                    this.$store.commit(
+                        "SET_DISPENSARIES",
+                        dispensaries
+                    );
+
+                })
+                .catch((error) => {
+
+                    console.error(
+                        "Unable to load dispensaries near home:",
+                        error
+                    );
+
+                    this.$store.commit(
+                        "SET_DISPENSARIES",
+                        []
+                    );
+
+                    if (
+                        error.response?.status
+                            === 400
+                    ) {
+
+                        this.searchError =
+                            "Add a complete home address to your profile to search near home.";
+
+                        return;
+                    }
+
+                    this.searchError =
+                        "Unable to load dispensaries near home. Please try again.";
 
                 })
                 .finally(() => {

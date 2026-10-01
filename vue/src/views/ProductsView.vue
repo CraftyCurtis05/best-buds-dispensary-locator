@@ -39,53 +39,10 @@
 
         </header>
 
-        <!-- Display Product Jump Links -->
-        <nav
-            id="product-links"
-            aria-label="Cannabis product sections"
-        >
-
-            <ul>
-
-                <li>
-                    <a href="#flower">
-                        Flower
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#edible">
-                        Edibles
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#wax">
-                        Wax
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#oil">
-                        Oil
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#tincture">
-                        Tinctures
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#topical">
-                        Topicals
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
+        <!-- Display Product Navigation -->
+        <OnThisPage
+            :topics="productSections"
+        />
 
         <!-- Display Cannabis Products -->
         <section
@@ -117,66 +74,34 @@
 
         </section>
 
-        <!-- Display Strain Guide -->
-        <section
-            id="products-strain-guide"
-            aria-labelledby="products-strain-guide-heading"
-        >
-
-            <h2 id="products-strain-guide-heading">
-                Explore Our Strain Guide
-            </h2>
-
-            <StrainGuideVisit />
-
-        </section>
-
-        <!-- Display Latest Articles -->
-        <section
-            id="products-articles"
-            aria-labelledby="products-articles-heading"
-        >
-
-            <h2 id="products-articles-heading">
-                Latest Cannabis Articles
-            </h2>
-
-            <ArticlesVisit />
-
-        </section>
-
     </div>
 
 </template>
 
 <script>
+import OnThisPage from "../components/layout/OnThisPage.vue";
 import FlowerProducts from "../components/products/FlowerProducts.vue";
 import EdibleProducts from "../components/products/EdibleProducts.vue";
 import WaxProducts from "../components/products/WaxProducts.vue";
 import OilProducts from "../components/products/OilProducts.vue";
 import TinctureProducts from "../components/products/TinctureProducts.vue";
 import TopicalProducts from "../components/products/TopicalProducts.vue";
-import StrainGuideVisit from "../components/strain-guide/StrainGuideVisit.vue";
-import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
 
 import UserActivityService from "../services/UserActivityService.js";
 
-import {
-    USER_ACTIVITY_TYPES
-} from "../constants/userActivityTypes.js";
+import {USER_ACTIVITY_TYPES} from "../constants/userActivityTypes.js";
 
 export default {
     name: "ProductsView",
 
     components: {
+        OnThisPage,
         FlowerProducts,
         EdibleProducts,
         WaxProducts,
         OilProducts,
         TinctureProducts,
-        TopicalProducts,
-        StrainGuideVisit,
-        ArticlesVisit
+        TopicalProducts
     },
 
     emits: [
@@ -188,7 +113,41 @@ export default {
 
             // Track product sections viewed during this page visit
             productObserver: null,
-            viewedProducts: new Set()
+            viewedProducts: new Set(),
+
+            // Product sections used for navigation and activity tracking
+            productSections: [
+                {
+                    id: "flower",
+                    label: "Flower",
+                    value: "flower"
+                },
+                {
+                    id: "edible",
+                    label: "Edibles",
+                    value: "edible"
+                },
+                {
+                    id: "wax",
+                    label: "Wax",
+                    value: "wax"
+                },
+                {
+                    id: "oil",
+                    label: "Oil",
+                    value: "oil"
+                },
+                {
+                    id: "tincture",
+                    label: "Tinctures",
+                    value: "tincture"
+                },
+                {
+                    id: "topical",
+                    label: "Topicals",
+                    value: "topical"
+                }
+            ]
 
         };
     },
@@ -210,33 +169,6 @@ export default {
         // Watch product sections as the user explores the page
         observeProductsSections() {
 
-            const productSections = [
-                {
-                    id: "flower",
-                    value: "flower"
-                },
-                {
-                    id: "edible",
-                    value: "edible"
-                },
-                {
-                    id: "wax",
-                    value: "wax"
-                },
-                {
-                    id: "oil",
-                    value: "oil"
-                },
-                {
-                    id: "tincture",
-                    value: "tincture"
-                },
-                {
-                    id: "topical",
-                    value: "topical"
-                }
-            ];
-
             this.productObserver =
                 new IntersectionObserver(
                     (entries) => {
@@ -249,11 +181,11 @@ export default {
                                 }
 
                                 const product =
-                                    productSections.find(
-                                        (item) =>
-                                            item.id
-                                            === entry.target.id
-                                    );
+                                        this.productSections.find(
+                                                (item) =>
+                                                    item.id
+                                                    === entry.target.id
+                                        );
 
                                 if (!product) {
                                     return;
@@ -272,7 +204,7 @@ export default {
                     }
                 );
 
-            productSections.forEach(
+            this.productSections.forEach(
                 (product) => {
 
                     const section =

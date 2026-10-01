@@ -70,9 +70,7 @@ import DropReveal from "./components/collectibles/DropReveal.vue";
 import CollectibleService from "./services/CollectibleService.js";
 import UserActivityService from "./services/UserActivityService.js";
 
-import {
-    USER_ACTIVITY_TYPES
-} from "./constants/userActivityTypes.js";
+import {USER_ACTIVITY_TYPES} from "./constants/userActivityTypes.js";
 
 export default {
     name: "App",
@@ -171,6 +169,8 @@ export default {
                 return Promise.resolve();
             }
 
+            // Use the browser-local date so visit Drops follow
+            // the user's calendar day instead of the server date
             const today =
                 new Date();
 
@@ -205,7 +205,7 @@ export default {
             return UserActivityService
                 .createUserActivity(
                     USER_ACTIVITY_TYPES.APP_VISIT,
-                    "visitDate"
+                    visitDate
                 )
                 .then(() => {
 
@@ -360,7 +360,5 @@ export default {
 </script>
 
 <style>
-img {
-    max-height: 10rem;
-}
+
 </style>

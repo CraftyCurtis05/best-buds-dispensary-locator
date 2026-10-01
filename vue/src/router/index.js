@@ -82,6 +82,16 @@ const routes = [
         }
     },
     {
+        path: "/learn",
+        name: "learn",
+        component: () => import("../views/LearnView.vue"),
+        meta: {
+            requiresAuth: true,
+            requiresAgeConfirmation: true,
+            title: "Learn | Best Buds"
+        }
+    },
+    {
         path: "/tips-tricks",
         name: "tips-tricks",
         component: () => import("../views/TipsTricksView.vue"),

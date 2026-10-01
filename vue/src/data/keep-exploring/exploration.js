@@ -37,6 +37,18 @@ export default {
         nextLabel: "Visit My Stash"
     },
 
+    // Learn
+    learn: {
+        category: "Choose Your Path",
+        messages: [
+            "There's more than one way to learn about cannabis. Start wherever your curiosity takes you.",
+            "Whether you're learning the basics or digging deeper, Best Buds has a place to start.",
+            "Explore products, strains, safety, questions, and more at your own pace."
+        ],
+        nextRoute: "tips-tricks",
+        nextLabel: "Start with the Basics"
+    },
+
     // Getting Started
     "tips-tricks": {
         category: "Know Your Buds",
@@ -80,6 +92,18 @@ export default {
             "Good decisions start with good information.",
             "Knowing what a product is only tells part of the story. Understanding safety matters too.",
             "Exploring responsibly means knowing what questions to ask."
+        ],
+        nextRoute: "too-much",
+        nextLabel: "Learn What To Do If It's Too Much"
+    },
+
+    // Too Much Cannabis
+    "too-much": {
+        category: "Take Care of Yourself",
+        messages: [
+            "Knowing what to do when cannabis feels like too much can make the situation less overwhelming.",
+            "Understanding your limits is part of exploring cannabis responsibly.",
+            "A little preparation can make an uncomfortable experience easier to manage."
         ],
         nextRoute: "questions",
         nextLabel: "Explore Common Questions"
@@ -133,6 +157,18 @@ export default {
         nextLabel: "Explore Best Buds Articles"
     },
 
+    // About Best Buds
+    about: {
+        category: "Explore Best Buds",
+        messages: [
+            "Best Buds is built to make cannabis information easier to explore and understand.",
+            "There's a lot more to Best Buds than finding dispensaries.",
+            "Ready to explore? Follow whatever part of cannabis makes you curious."
+        ],
+        nextRoute: "learn",
+        nextLabel: "Explore the Learn Hub"
+    },
+
     // Profile
     profile: {
         category: "Your Best Buds",
@@ -153,7 +189,7 @@ export default {
             "Keep exploring. You never know where the next Drop might be hiding.",
             "Some discoveries leave something behind. 👀"
         ],
-        nextRoute: "tips-tricks",
+        nextRoute: "learn",
         nextLabel: "Keep Exploring Best Buds"
     },
 
@@ -167,6 +203,18 @@ export default {
         ],
         nextRoute: "home",
         nextLabel: "Return Home"
+    },
+
+    // Privacy Policy
+    "privacy-policy": {
+        category: "Your Best Buds",
+        messages: [
+            "Knowing how your information is handled is part of using Best Buds with confidence.",
+            "Privacy matters, and so does having control over your Best Buds account.",
+            "With the details covered, you can get back to exploring."
+        ],
+        nextRoute: "account-settings",
+        nextLabel: "View Account Settings"
     }
 
 };

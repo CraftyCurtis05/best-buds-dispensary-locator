@@ -29,6 +29,14 @@
             Search
         </button>
 
+        <button
+            id="search-near-home-button"
+            type="button"
+            @click="searchNearHome"
+        >
+            Search Near Home
+        </button>
+
     </form>
 
 </template>
@@ -38,7 +46,8 @@ export default {
     name: "SearchBar",
 
     emits: [
-        "search"
+        "search",
+        "search-near-home"
     ],
 
     data() {
@@ -62,6 +71,15 @@ export default {
             this.$emit(
                 "search",
                 searchLocation
+            );
+
+        },
+
+        // Start a search near the user's saved home address
+        searchNearHome() {
+
+            this.$emit(
+                "search-near-home"
             );
 
         }

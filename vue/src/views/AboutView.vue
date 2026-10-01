@@ -95,49 +95,13 @@
             the benefits of this remarkable plant.
         </p>
 
-        <!-- Display Strain Guide -->
-        <section
-            id="strain-guide"
-            aria-labelledby="strain-guide-heading"
-        >
-
-            <h2 id="strain-guide-heading">
-                Explore Our Strain Guide
-            </h2>
-
-            <StrainGuideVisit />
-
-        </section>
-
-        <!-- Display Latest Articles -->
-        <section
-            id="latest-articles"
-            aria-labelledby="articles-heading"
-        >
-
-            <h2 id="articles-heading">
-                Latest Cannabis Articles
-            </h2>
-
-            <ArticlesVisit />
-
-        </section>
-
     </div>
 
 </template>
 
 <script>
-import StrainGuideVisit from "../components/strain-guide/StrainGuideVisit.vue";
-import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
-
 export default {
-    name: "AboutView",
-
-    components: {
-        StrainGuideVisit,
-        ArticlesVisit
-    }
+    name: "AboutView"
 };
 </script>
 

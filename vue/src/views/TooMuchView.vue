@@ -38,35 +38,10 @@
 
         </header>
 
-        <!-- Display Cannabis Overuse Jump Links -->
-        <nav
-            id="too-much-links"
-            aria-label="Cannabis overuse topics"
-        >
-
-            <ul>
-
-                <li>
-                    <a href="#symptoms">
-                        Signs and Symptoms
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#coping">
-                        How to Cope
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#what-to-do">
-                        What To Do
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
+        <!-- Display Cannabis Overuse Navigation -->
+        <OnThisPage
+            :topics="overuseTopics"
+        />
 
         <!-- Display Cannabis Overuse Information -->
         <section
@@ -78,39 +53,14 @@
                 Cannabis Overuse Guide
             </h2>
 
+            <!-- Display Overuse Symptoms -->
             <CannabisOveruseSymptoms />
 
-            <CannabisOveruseCoping />
-
+            <!-- Display Immediate Overuse Guide -->
             <CannabisOveruseGuide />
 
-        </section>
-
-        <!-- Display Strain Guide -->
-        <section
-            id="too-much-strain-guide"
-            aria-labelledby="too-much-strain-guide-heading"
-        >
-
-            <h2 id="too-much-strain-guide-heading">
-                Explore Our Strain Guide
-            </h2>
-
-            <StrainGuideVisit />
-
-        </section>
-
-        <!-- Display Latest Articles -->
-        <section
-            id="too-much-articles"
-            aria-labelledby="too-much-articles-heading"
-        >
-
-            <h2 id="too-much-articles-heading">
-                Latest Cannabis Articles
-            </h2>
-
-            <ArticlesVisit />
+            <!-- Display Overuse Coping Strategies -->
+            <CannabisOveruseCoping />
 
         </section>
 
@@ -119,32 +69,50 @@
 </template>
 
 <script>
+import OnThisPage from "../components/layout/OnThisPage.vue";
 import CannabisOveruseSymptoms from "../components/too-much/CannabisOveruseSymptoms.vue";
-import CannabisOveruseCoping from "../components/too-much/CannabisOveruseCoping.vue";
 import CannabisOveruseGuide from "../components/too-much/CannabisOveruseGuide.vue";
-import StrainGuideVisit from "../components/strain-guide/StrainGuideVisit.vue";
-import ArticlesVisit from "../components/articles/ArticlesVisit.vue";
+import CannabisOveruseCoping from "../components/too-much/CannabisOveruseCoping.vue";
 
 import UserActivityService from "../services/UserActivityService.js";
 
-import {
-    USER_ACTIVITY_TYPES
-} from "../constants/userActivityTypes.js";
+import {USER_ACTIVITY_TYPES} from "../constants/userActivityTypes.js";
 
 export default {
     name: "TooMuchView",
 
     components: {
+        OnThisPage,
         CannabisOveruseSymptoms,
-        CannabisOveruseCoping,
         CannabisOveruseGuide,
-        StrainGuideVisit,
-        ArticlesVisit
+        CannabisOveruseCoping
     },
 
     emits: [
         "activity-recorded"
     ],
+
+    data() {
+        return {
+
+            // Main cannabis overuse topics shown on this page
+            overuseTopics: [
+                {
+                    id: "cannabis-overuse-symptoms",
+                    label: "Signs & Symptoms"
+                },
+                {
+                    id: "cannabis-overuse-guide",
+                    label: "What To Do Now"
+                },
+                {
+                    id: "cannabis-overuse-coping",
+                    label: "How to Cope"
+                }
+            ]
+
+        };
+    },
 
     mounted() {
         this.recordEducationView();

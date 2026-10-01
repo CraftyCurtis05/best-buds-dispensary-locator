@@ -48,34 +48,18 @@
 
         </section>
 
-        <!-- Display Strain Guide -->
-        <section
-            id="articles-strain-guide"
-            aria-labelledby="articles-strain-guide-heading"
-        >
-
-            <h2 id="articles-strain-guide-heading">
-                Explore Our Strain Guide
-            </h2>
-
-            <StrainGuideVisit />
-
-        </section>
-
     </div>
 
 </template>
 
 <script>
 import ArticlesSearch from "../components/articles/ArticlesSearch.vue";
-import StrainGuideVisit from "../components/strain-guide/StrainGuideVisit.vue";
 
 export default {
     name: "ArticlesView",
 
     components: {
-        ArticlesSearch,
-        StrainGuideVisit
+        ArticlesSearch
     },
 
     emits: [

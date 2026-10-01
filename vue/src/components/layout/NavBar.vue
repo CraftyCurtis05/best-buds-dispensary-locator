@@ -87,6 +87,15 @@
 
                     <li>
                         <router-link
+                            :to="{ name: 'learn' }"
+                            @click="closeMenu"
+                        >
+                            Learn Hub
+                        </router-link>
+                    </li>
+
+                    <li>
+                        <router-link
                             :to="{ name: 'tips-tricks' }"
                             @click="closeMenu"
                         >
@@ -118,6 +127,15 @@
                             @click="closeMenu"
                         >
                             Safety
+                        </router-link>
+                    </li>
+
+                    <li>
+                        <router-link
+                            :to="{ name: 'too-much' }"
+                            @click="closeMenu"
+                        >
+                            Too Much Cannabis
                         </router-link>
                     </li>
 
