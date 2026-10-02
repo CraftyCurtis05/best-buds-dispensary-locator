@@ -3,6 +3,7 @@
 
     <section
         id="oil"
+        class="question-topic"
         aria-labelledby="oil-heading"
     >
 

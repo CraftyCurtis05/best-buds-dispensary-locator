@@ -7,7 +7,10 @@
         aria-labelledby="profile-setup-heading"
     >
 
-        <!-- Display Page Introduction -->
+        <!-- =================================================
+             Profile Setup Introduction
+             ================================================= -->
+
         <header class="auth-header">
 
             <img
@@ -16,31 +19,49 @@
                 alt="Best Buds"
             />
 
+            <p class="auth-eyebrow">
+                One Last Step
+            </p>
+
             <h1 id="profile-setup-heading">
                 Set Up Your Profile
             </h1>
 
             <p>
-                Tell us a little about yourself and where you call home.
+                Add the information Best Buds needs to
+                personalize your experience and help you
+                search near home.
             </p>
 
         </header>
 
-        <!-- Display Profile Setup Form -->
+
+        <!-- =================================================
+             Profile Setup Form
+             ================================================= -->
+
         <ProfileSetupForm
-            @profile-saved="handleProfileSaved"
+            @profile-saved="
+                handleProfileSaved
+            "
         />
 
     </div>
 
 </template>
 
-<script>
-import ProfileSetupForm from "../components/auth/ProfileSetupForm.vue";
 
-import Logo from "../assets/layout/logo/logo-dark-theme.png";
+<script>
+
+import ProfileSetupForm
+    from "../components/auth/ProfileSetupForm.vue";
+
+import Logo
+    from "../assets/layout/logo/logo-dark-theme.png";
+
 
 export default {
+
     name: "ProfileSetupView",
 
     components: {
@@ -48,15 +69,20 @@ export default {
     },
 
     data() {
+
         return {
             Logo
         };
+
     },
 
     methods: {
 
-        // Store the completed profile and continue to Best Buds
-        handleProfileSaved(profile) {
+        // Store the completed profile
+        // and continue to Best Buds
+        handleProfileSaved(
+            profile
+        ) {
 
             this.$store.commit(
                 "SET_PROFILE",
@@ -70,8 +96,11 @@ export default {
         }
 
     }
+
 };
+
 </script>
+
 
 <style scoped>
 

@@ -8,6 +8,8 @@
             class="saved-dispensary-image"
             :src="dispensaryImage"
             :alt="dispensaryImageAlt"
+            loading="lazy"
+            decoding="async"
             @error="useDefaultImage"
         />
 

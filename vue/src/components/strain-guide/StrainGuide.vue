@@ -3,8 +3,14 @@
 
     <section
         id="strain-101"
+        class="strain-guide-topic strain-guide-topic-strains"
         aria-labelledby="strain-101-heading"
     >
+
+        <!-- Guide Topic Label -->
+        <p class="strain-guide-topic-label">
+            Strain Guide
+        </p>
 
         <!-- Display Strain 101 Introduction -->
         <h3 id="strain-101-heading">
@@ -303,6 +309,8 @@
                         <img
                             :src="GranddaddyPurple"
                             alt="Granddaddy Purple cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -320,6 +328,8 @@
                         <img
                             :src="OriginalZ"
                             alt="The Original Z cannabis strain"
+                            loading="lazy"
+                            decoding="async"                            
                         />
                     </a>
                 </li>
@@ -337,6 +347,8 @@
                         <img
                             :src="Blueberry"
                             alt="Blueberry cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -354,6 +366,8 @@
                         <img
                             :src="RainbowRuntz"
                             alt="Rainbow Runtz cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -371,6 +385,8 @@
                         <img
                             :src="KingLouis"
                             alt="King Louis cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -388,6 +404,8 @@
                         <img
                             :src="Watermelon"
                             alt="Watermelon cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -486,6 +504,8 @@
                         <img
                             :src="DurbanPoison"
                             alt="Durban Poison cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -503,6 +523,8 @@
                         <img
                             :src="TropicanaCookies"
                             alt="Tropicana Cookies cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -520,6 +542,8 @@
                         <img
                             :src="MauiWowie"
                             alt="Maui Wowie cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -537,6 +561,8 @@
                         <img
                             :src="AcapulcoGold"
                             alt="Acapulco Gold cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -554,6 +580,8 @@
                         <img
                             :src="Tangie"
                             alt="Tangie cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -571,6 +599,8 @@
                         <img
                             :src="SuperLemonHaze"
                             alt="Super Lemon Haze cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -669,6 +699,8 @@
                         <img
                             :src="CG4"
                             alt="CG4 cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -686,6 +718,8 @@
                         <img
                             :src="WeddingCake"
                             alt="Wedding Cake cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -703,6 +737,8 @@
                         <img
                             :src="BlueDream"
                             alt="Blue Dream cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -720,6 +756,8 @@
                         <img
                             :src="LemonCherryGelato"
                             alt="Lemon Cherry Gelato cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -737,6 +775,8 @@
                         <img
                             :src="Runtz"
                             alt="Runtz cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -754,6 +794,8 @@
                         <img
                             :src="IceCreamCake"
                             alt="Ice Cream Cake cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>

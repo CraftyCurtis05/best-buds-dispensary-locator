@@ -3,6 +3,7 @@
 
     <section
         id="cbd"
+        class="question-topic"
         aria-labelledby="cbd-heading"
     >
 

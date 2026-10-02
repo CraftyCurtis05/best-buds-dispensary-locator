@@ -3,6 +3,7 @@
 
     <section
         id="delta9"
+        class="question-topic"
         aria-labelledby="delta9-heading"
     >
 

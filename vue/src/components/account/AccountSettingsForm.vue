@@ -22,6 +22,7 @@
 
             <!-- Display Username Settings -->
             <section
+                id="username-settings"
                 class="account-settings-section"
                 aria-labelledby="username-settings-heading"
             >
@@ -104,6 +105,7 @@
 
             <!-- Display Email Settings -->
             <section
+                id="email-settings"
                 class="account-settings-section"
                 aria-labelledby="email-settings-heading"
             >
@@ -185,6 +187,7 @@
 
             <!-- Display Password Settings -->
             <section
+                id="password-settings"
                 class="account-settings-section"
                 aria-labelledby="password-settings-heading"
             >

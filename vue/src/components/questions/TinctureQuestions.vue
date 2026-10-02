@@ -3,6 +3,7 @@
 
     <section
         id="tincture"
+        class="question-topic"
         aria-labelledby="tincture-heading"
     >
 

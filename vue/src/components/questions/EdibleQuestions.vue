@@ -3,6 +3,7 @@
 
     <section
         id="edibles"
+        class="question-topic"
         aria-labelledby="edibles-heading"
     >
 

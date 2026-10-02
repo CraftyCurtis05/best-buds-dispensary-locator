@@ -203,4 +203,308 @@ export default {
 
 <style scoped>
 
+/* =========================================================
+   Contact Form
+   ========================================================= */
+
+#contact-us-form {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap: 1rem;
+
+    width:
+        min(
+            100%,
+            48rem
+        );
+
+    padding:
+        clamp(
+            1.2rem,
+            4vw,
+            1.75rem
+        );
+
+    background:
+        var(--color-surface);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-large);
+
+    box-shadow:
+        0 12px 32px
+        var(--color-shadow);
+}
+
+
+/* =========================================================
+   Form Group
+   ========================================================= */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.35rem;
+
+    min-width: 0;
+}
+
+
+/* Message Field */
+.form-group:has(
+    #contact-message
+) {
+    grid-column:
+        1 / -1;
+}
+
+
+/* Label */
+.form-group label {
+    color:
+        var(--color-text);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   Form Fields
+   ========================================================= */
+
+.form-input {
+    width: 100%;
+
+    min-height: 2.9rem;
+
+    padding:
+        0.65rem
+        0.8rem;
+
+    background:
+        var(--color-background);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-medium);
+
+    color:
+        var(--color-text);
+
+    font-size: 0.82rem;
+
+    resize: vertical;
+}
+
+
+/* Textarea */
+textarea.form-input {
+    min-height: 10rem;
+
+    line-height: 1.6;
+}
+
+
+/* Field Hover */
+.form-input:hover {
+    border-color:
+        var(--color-border-strong);
+}
+
+
+/* Field Focus */
+.form-input:focus {
+    border-color:
+        var(--color-border-strong);
+
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px
+        var(--color-primary-soft);
+}
+
+
+/* =========================================================
+   Form Status
+   ========================================================= */
+
+#contact-us-form
+> p[role="status"] {
+    grid-column:
+        1 / -1;
+
+    margin: 0;
+
+    padding:
+        0.8rem
+        1rem;
+
+    background:
+        var(--color-primary-soft);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-medium);
+
+    color:
+        var(--color-primary);
+
+    font-size: 0.76rem;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   Submit Button
+   ========================================================= */
+
+#contact-us-form
+> button {
+    grid-column:
+        1 / -1;
+
+    justify-self: start;
+
+    min-width: 8rem;
+    min-height: 2.8rem;
+
+    padding:
+        0.55rem
+        1rem;
+
+    background:
+        var(--color-primary);
+
+    border:
+        1px solid
+        var(--color-primary);
+
+    border-radius:
+        var(--border-radius-pill);
+
+    color:
+        var(--color-background);
+
+    font-size: 0.76rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 160ms ease,
+        transform 160ms ease;
+}
+
+
+/* Button Hover */
+#contact-us-form
+> button:hover:not(:disabled) {
+    background:
+        var(--color-primary-hover);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* Disabled Button */
+#contact-us-form
+> button:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   Honeypot
+   ========================================================= */
+
+.honeypot {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    overflow: hidden;
+
+    clip-path:
+        inset(50%);
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 649.98px) {
+
+    #contact-us-form {
+        grid-template-columns: 1fr;
+    }
+
+
+    .form-group:has(
+        #contact-message
+    ),
+    #contact-us-form
+    > p[role="status"],
+    #contact-us-form
+    > button {
+        grid-column: auto;
+    }
+
+
+    #contact-us-form
+    > button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   Reduced Motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    #contact-us-form
+    > button {
+        transition: none;
+    }
+
+
+    #contact-us-form
+    > button:hover:not(:disabled) {
+        transform: none;
+    }
+
+}
+
 </style>

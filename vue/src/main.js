@@ -5,6 +5,15 @@ import BestBudsApp from "./BestBudsApp.vue";
 import { createRouter } from "./router";
 import { createStore } from "./store";
 
+import "./assets/layout/styles/global.css";
+import "./assets/layout/styles/products.css";
+import "./assets/layout/styles/questions.css";
+import "./assets/layout/styles/safety.css";
+import "./assets/layout/styles/too-much.css";
+import "./assets/layout/styles/strain-guide.css";
+import "./assets/layout/styles/account.css";
+import "./assets/layout/styles/auth.css";
+
 // Restore the saved user session
 const savedToken = localStorage.getItem("token");
 const savedUser = localStorage.getItem("user");

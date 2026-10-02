@@ -3,11 +3,17 @@
 
     <section
         id="flower"
+        class="product-section product-section-flower"
         aria-labelledby="flower-heading"
     >
 
         <!-- Display Flower Information -->
         <div class="product-information">
+
+            <!-- Product Type Label -->
+            <p class="product-type-label">
+                Flower Guide
+            </p>
 
             <h3 id="flower-heading">
                 Flower
@@ -442,6 +448,8 @@
             <img
                 :src="FlowerProductsImage"
                 alt="Cannabis flower product"
+                loading="lazy"
+                decoding="async"
             />
 
         </aside>

@@ -1,0 +1,684 @@
+/* =========================================================
+   Best Buds Product Education Styles
+   ========================================================= */
+
+
+/* =========================================================
+   Product Section
+   ========================================================= */
+
+.product-section {
+    display: grid;
+
+    grid-template-columns:
+        minmax(
+            0,
+            1.5fr
+        )
+        minmax(
+            15rem,
+            0.5fr
+        );
+
+    align-items: start;
+
+    gap:
+        2rem
+        3rem;
+
+    width: 100%;
+
+    padding:
+        clamp(
+            3.5rem,
+            8vw,
+            5.5rem
+        )
+        0;
+
+    border-top:
+        1px solid
+        var(--color-border);
+}
+
+
+/* First Product Section */
+.product-section:first-child {
+    border-top: 0;
+}
+
+
+/* =========================================================
+   Main Product Information
+   ========================================================= */
+
+.product-section
+> .product-information {
+    min-width: 0;
+}
+
+
+/* Product Type Label */
+.product-type-label {
+    display: inline-flex;
+
+    margin:
+        0
+        0
+        0.7rem;
+
+    padding:
+        0.35rem
+        0.6rem;
+
+    background:
+        var(--color-primary-soft);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-pill);
+
+    color:
+        var(--color-primary);
+
+    font-size: 0.62rem;
+    font-weight: 600;
+
+    letter-spacing: 0.11em;
+
+    text-transform: uppercase;
+}
+
+
+/* Main Product Heading */
+.product-section
+> .product-information
+> h3 {
+    margin:
+        0
+        0
+        1rem;
+
+    color:
+        var(--color-text);
+
+    font-size:
+        clamp(
+            2rem,
+            5vw,
+            3.4rem
+        );
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+}
+
+
+/* Main Product Introduction */
+.product-section
+> .product-information
+> p {
+    max-width: 48rem;
+
+    margin:
+        0
+        0
+        0.85rem;
+
+    color:
+        var(--color-text-soft);
+
+    font-size:
+        0.98rem;
+
+    line-height: 1.75;
+}
+
+
+/* Make First Introduction Paragraph Stronger */
+.product-section
+> .product-information
+> h3
++ p {
+    color:
+        var(--color-text);
+
+    font-size: 1.03rem;
+}
+
+
+/* =========================================================
+   Product Information Cards
+   ========================================================= */
+
+.product-section
+> .product-information
+> section {
+    margin-top: 1rem;
+
+    padding:
+        1.3rem;
+
+    background:
+        var(--color-surface);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-large);
+
+    box-shadow:
+        0 8px 22px
+        var(--color-shadow);
+}
+
+
+/* Product Information Heading */
+.product-section
+> .product-information
+> section
+> h4 {
+    margin:
+        0
+        0
+        0.8rem;
+
+    color:
+        var(--color-text);
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    line-height: 1.35;
+}
+
+
+/* Product Information Paragraph */
+.product-section
+> .product-information
+> section
+> p {
+    margin:
+        0
+        0
+        0.75rem;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.84rem;
+
+    line-height: 1.7;
+}
+
+
+/* Last Paragraph */
+.product-section
+> .product-information
+> section
+> p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   Product Lists
+   ========================================================= */
+
+.product-section
+ul {
+    display: grid;
+
+    gap: 0.55rem;
+
+    padding:
+        0
+        0
+        0
+        1.25rem;
+
+    margin:
+        0.75rem
+        0;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.82rem;
+
+    line-height: 1.6;
+}
+
+
+/* Product List Marker */
+.product-section
+li::marker {
+    color:
+        var(--color-gold);
+}
+
+
+/* Strong List Text */
+.product-section
+li strong {
+    color:
+        var(--color-text);
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   General Product Information
+   ========================================================= */
+
+.product-section
+.product-information
+.product-information {
+    border-left:
+        3px solid
+        var(--color-border-strong);
+}
+
+
+/* =========================================================
+   Product Benefits
+   ========================================================= */
+
+.product-benefits {
+    border-left:
+        3px solid
+        var(--color-primary) !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--color-surface),
+            var(--color-primary-soft)
+        ) !important;
+}
+
+
+/* Benefits Heading */
+.product-benefits h4 {
+    color:
+        var(--color-primary) !important;
+}
+
+
+/* =========================================================
+   Product Effects
+   ========================================================= */
+
+.product-effects {
+    border-left:
+        3px solid
+        var(--color-gold) !important;
+}
+
+
+/* Effects Heading */
+.product-effects h4 {
+    color:
+        var(--color-gold-dark) !important;
+}
+
+
+/* =========================================================
+   Product Risks
+   ========================================================= */
+
+.product-risks {
+    border-left:
+        3px solid
+        var(--color-danger) !important;
+}
+
+
+/* Risks Heading */
+.product-risks h4 {
+    color:
+        var(--color-danger) !important;
+}
+
+
+/* =========================================================
+   Product Safety
+   ========================================================= */
+
+.product-safety {
+    border-left:
+        3px solid
+        var(--color-primary) !important;
+}
+
+
+/* Safety Heading */
+.product-safety h4 {
+    color:
+        var(--color-primary) !important;
+}
+
+
+/* =========================================================
+   Product Questions
+   ========================================================= */
+
+.product-questions {
+    background:
+        var(--color-surface-soft) !important;
+}
+
+
+/* Questions Heading */
+.product-questions h4 {
+    margin-bottom: 1rem !important;
+}
+
+
+/* Questions List */
+.product-questions dl {
+    margin: 0;
+}
+
+
+/* Question */
+.product-questions dt {
+    margin:
+        1rem
+        0
+        0.35rem;
+
+    color:
+        var(--color-text);
+
+    font-size: 0.84rem;
+    font-weight: 600;
+
+    line-height: 1.5;
+}
+
+
+/* First Question */
+.product-questions dt:first-child {
+    margin-top: 0;
+}
+
+
+/* Answer */
+.product-questions dd {
+    margin:
+        0
+        0
+        1rem;
+
+    padding-bottom: 1rem;
+
+    border-bottom:
+        1px solid
+        var(--color-border);
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.82rem;
+
+    line-height: 1.65;
+}
+
+
+/* Last Answer */
+.product-questions dd:last-child {
+    margin-bottom: 0;
+
+    padding-bottom: 0;
+
+    border-bottom: 0;
+}
+
+
+/* =========================================================
+   Product Legal Information
+   ========================================================= */
+
+.product-legal {
+    border-left:
+        3px solid
+        var(--color-gold-dark) !important;
+
+    background:
+        var(--color-gold-soft) !important;
+}
+
+
+/* Legal Heading */
+.product-legal h4 {
+    color:
+        var(--color-gold-dark) !important;
+}
+
+
+/* Legal Links */
+.product-legal a {
+    color:
+        var(--color-primary);
+
+    font-weight: 600;
+
+    text-decoration-color:
+        var(--color-gold);
+
+    text-underline-offset: 0.2rem;
+}
+
+
+/* Legal Link Hover */
+.product-legal a:hover {
+    color:
+        var(--color-primary-hover);
+}
+
+
+/* Legal Review Date */
+.product-legal small {
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.7rem;
+}
+
+
+/* =========================================================
+   Product Image
+   ========================================================= */
+
+.product-image {
+    position: sticky;
+
+    top: 7rem;
+
+    overflow: hidden;
+
+    padding: 0.6rem;
+
+    background:
+        var(--color-surface);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-large);
+
+    box-shadow:
+        0 14px 34px
+        var(--color-shadow);
+}
+
+
+/* Product Image */
+.product-image img {
+    width: 100%;
+    height: auto;
+
+    max-height: 30rem;
+
+    object-fit: cover;
+
+    border-radius:
+        calc(
+            var(--border-radius-large)
+            - 0.4rem
+        );
+}
+
+
+/* =========================================================
+   Product Image Label
+   ========================================================= */
+
+.product-image::after {
+    display: block;
+
+    margin-top: 0.65rem;
+
+    padding:
+        0.25rem
+        0.2rem;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.62rem;
+    font-weight: 500;
+
+    letter-spacing: 0.08em;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    content:
+        "Best Buds Product Guide";
+}
+
+
+/* =========================================================
+   Tablet
+   ========================================================= */
+
+@media (max-width: 899.98px) {
+
+    .product-section {
+        grid-template-columns:
+            minmax(
+                0,
+                1fr
+            )
+            minmax(
+                13rem,
+                0.45fr
+            );
+
+        gap: 2rem;
+    }
+
+
+    .product-image {
+        top: 6rem;
+    }
+
+}
+
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 699.98px) {
+
+    .product-section {
+        grid-template-columns: 1fr;
+
+        gap: 1.5rem;
+
+        padding:
+            3rem
+            0;
+    }
+
+
+    /*
+     * Move the image above the educational
+     * content on smaller screens.
+     */
+    .product-image {
+        position: static;
+
+        order: -1;
+
+        width: 100%;
+
+        max-width: 28rem;
+
+        margin:
+            0
+            auto;
+    }
+
+
+    .product-image img {
+        max-height: 22rem;
+    }
+
+
+    .product-section
+    > .product-information
+    > section {
+        padding: 1.1rem;
+    }
+
+}
+
+
+/* =========================================================
+   Small Mobile
+   ========================================================= */
+
+@media (max-width: 420px) {
+
+    .product-image {
+        padding: 0.4rem;
+    }
+
+
+    .product-section
+    > .product-information
+    > section {
+        border-radius:
+            var(--border-radius-medium);
+    }
+
+}
+
+
+/* =========================================================
+   Reduced Motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .product-section a {
+        transition: none;
+    }
+
+}

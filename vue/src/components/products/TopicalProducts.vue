@@ -3,11 +3,17 @@
 
     <section
         id="topical"
+        class="product-section product-section-topical"
         aria-labelledby="topical-heading"
     >
 
         <!-- Display Topical Information -->
         <div class="product-information">
+
+            <!-- Product Type Label -->
+            <p class="product-type-label">
+                Topical Guide
+            </p>
 
             <h3 id="topical-heading">
                 Topicals
@@ -396,6 +402,8 @@
             <img
                 :src="TopicalProductsImage"
                 alt="Cannabis topical product"
+                loading="lazy"
+                decoding="async"
             />
 
         </aside>

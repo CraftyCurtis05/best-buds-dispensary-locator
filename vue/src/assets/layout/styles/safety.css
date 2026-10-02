@@ -1,0 +1,739 @@
+/* =========================================================
+   Best Buds Cannabis Safety Styles
+   ========================================================= */
+
+
+/* =========================================================
+   Safety Topic
+   ========================================================= */
+
+.safety-topic {
+    width: 100%;
+
+    padding:
+        clamp(
+            3.5rem,
+            8vw,
+            5.5rem
+        )
+        0;
+
+    border-top:
+        1px solid
+        var(--color-border);
+}
+
+
+/* First Safety Topic */
+.safety-topic:first-child {
+    border-top: 0;
+}
+
+
+/* =========================================================
+   Safety Topic Label
+   ========================================================= */
+
+.safety-topic-label {
+    display: inline-flex;
+
+    margin:
+        0
+        0
+        0.7rem !important;
+
+    padding:
+        0.35rem
+        0.6rem;
+
+    background:
+        var(--color-primary-soft);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-pill);
+
+    color:
+        var(--color-primary) !important;
+
+    font-size:
+        0.62rem !important;
+
+    font-weight: 600;
+
+    letter-spacing: 0.11em;
+
+    line-height: 1.4 !important;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   Safety Topic Heading
+   ========================================================= */
+
+.safety-topic
+> h3 {
+    max-width: 48rem;
+
+    margin:
+        0
+        0
+        1rem;
+
+    color:
+        var(--color-text);
+
+    font-size:
+        clamp(
+            2rem,
+            5vw,
+            3.2rem
+        );
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+}
+
+
+/* =========================================================
+   Safety Topic Introduction
+   ========================================================= */
+
+.safety-topic
+> p:not(
+    .safety-topic-label,
+    .health-review-date
+) {
+    max-width: 48rem;
+
+    margin:
+        0
+        0
+        0.8rem;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.94rem;
+
+    line-height: 1.75;
+}
+
+
+/* Stronger First Introduction */
+.safety-topic
+> h3
++ p {
+    color:
+        var(--color-text);
+
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   Safety List
+   ========================================================= */
+
+.safety-list {
+    display: grid;
+
+    gap: 0.9rem;
+
+    padding: 0;
+    margin:
+        2rem
+        0
+        0;
+
+    list-style: none;
+
+    counter-reset:
+        safety-point;
+}
+
+
+/* Individual Safety Point */
+.safety-list
+> li {
+    position: relative;
+
+    counter-increment:
+        safety-point;
+
+    padding:
+        1.25rem
+        1.3rem;
+
+    background:
+        var(--color-surface);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-large);
+
+    box-shadow:
+        0 8px 22px
+        var(--color-shadow);
+
+    transition:
+        transform 160ms ease,
+        border-color 160ms ease,
+        box-shadow 160ms ease;
+}
+
+
+/* Safety Point Hover */
+.safety-list
+> li:hover {
+    border-color:
+        var(--color-border-strong);
+
+    box-shadow:
+        0 12px 28px
+        var(--color-shadow-strong);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* Safety Point Number */
+.safety-list
+> li::before {
+    display: inline-flex;
+
+    margin-bottom: 0.55rem;
+
+    color:
+        var(--color-gold-dark);
+
+    font-size: 0.6rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.11em;
+
+    text-transform: uppercase;
+
+    content:
+        "Safety Point "
+        counter(
+            safety-point,
+            decimal-leading-zero
+        );
+}
+
+
+/* =========================================================
+   Safety Point Heading
+   ========================================================= */
+
+.safety-list
+> li
+> h4 {
+    margin:
+        0
+        0
+        0.75rem;
+
+    color:
+        var(--color-text);
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   Safety Details
+   ========================================================= */
+
+.safety-details {
+    display: grid;
+
+    gap: 0.55rem;
+
+    padding:
+        0
+        0
+        0
+        1.15rem;
+
+    margin: 0;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.82rem;
+
+    line-height: 1.65;
+}
+
+
+/* Safety Detail Marker */
+.safety-details
+> li::marker {
+    color:
+        var(--color-gold);
+}
+
+
+/* Strong Safety Detail Text */
+.safety-details strong {
+    color:
+        var(--color-text);
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   Quick Questions
+   ========================================================= */
+
+.safety-questions {
+    margin-top: 1.5rem;
+
+    padding:
+        1.3rem;
+
+    background:
+        var(--color-surface-soft);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-large);
+}
+
+
+/* Quick Questions Heading */
+.safety-questions
+> h4 {
+    margin:
+        0
+        0
+        1rem;
+
+    color:
+        var(--primary-color);
+
+    color:
+        var(--color-primary);
+
+    font-size: 1.1rem;
+
+    font-weight: 600;
+}
+
+
+/* Questions List */
+.safety-questions dl {
+    margin: 0;
+}
+
+
+/* Question */
+.safety-questions dt {
+    margin:
+        1rem
+        0
+        0.35rem;
+
+    color:
+        var(--color-text);
+
+    font-size: 0.84rem;
+
+    font-weight: 600;
+
+    line-height: 1.5;
+}
+
+
+/* First Question */
+.safety-questions dt:first-child {
+    margin-top: 0;
+}
+
+
+/* Answer */
+.safety-questions dd {
+    margin:
+        0
+        0
+        1rem;
+
+    padding-bottom: 1rem;
+
+    border-bottom:
+        1px solid
+        var(--color-border);
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.82rem;
+
+    line-height: 1.65;
+}
+
+
+/* Last Answer */
+.safety-questions dd:last-child {
+    margin-bottom: 0;
+
+    padding-bottom: 0;
+
+    border-bottom: 0;
+}
+
+
+/* =========================================================
+   Safety Legal Information
+   ========================================================= */
+
+.safety-legal {
+    margin-top: 1rem;
+
+    padding:
+        1.3rem;
+
+    background:
+        var(--color-gold-soft);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-left:
+        3px solid
+        var(--color-gold-dark);
+
+    border-radius:
+        var(--border-radius-large);
+}
+
+
+/* Legal Heading */
+.safety-legal
+> h4 {
+    margin:
+        0
+        0
+        0.75rem;
+
+    color:
+        var(--color-gold-dark);
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+}
+
+
+/* Legal Text */
+.safety-legal
+> p {
+    margin:
+        0
+        0
+        0.7rem;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.82rem;
+
+    line-height: 1.65;
+}
+
+
+/* Last Legal Paragraph */
+.safety-legal
+> p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Legal Link */
+.safety-legal a {
+    color:
+        var(--color-primary);
+
+    font-weight: 600;
+
+    text-decoration-color:
+        var(--color-gold);
+
+    text-underline-offset: 0.2rem;
+}
+
+
+/* Legal Link Hover */
+.safety-legal a:hover {
+    color:
+        var(--color-primary-hover);
+}
+
+
+/* =========================================================
+   Legal Review Date
+   ========================================================= */
+
+.legal-review-date {
+    display: inline-flex;
+
+    margin:
+        0.4rem
+        0
+        0 !important;
+
+    padding:
+        0.35rem
+        0.6rem;
+
+    background:
+        var(--color-surface);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-pill);
+
+    color:
+        var(--color-text-soft) !important;
+
+    font-size:
+        0.66rem !important;
+
+    line-height: 1.4 !important;
+}
+
+
+/* =========================================================
+   Health Review Date
+   ========================================================= */
+
+.health-review-date {
+    display: inline-flex;
+
+    margin:
+        1rem
+        0
+        0 !important;
+
+    padding:
+        0.4rem
+        0.65rem;
+
+    background:
+        var(--color-primary-soft);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-pill);
+
+    color:
+        var(--color-text-soft) !important;
+
+    font-size:
+        0.66rem !important;
+
+    line-height: 1.4 !important;
+}
+
+
+/* =========================================================
+   Safety Image
+   ========================================================= */
+
+.safety-image {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 48rem;
+
+    margin:
+        1.5rem
+        0
+        0;
+
+    overflow: hidden;
+
+    padding: 0.5rem;
+
+    background:
+        var(--color-surface);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-large);
+
+    box-shadow:
+        0 12px 30px
+        var(--color-shadow);
+}
+
+
+/* Safety Image */
+.safety-image img {
+    width: 100%;
+    height: auto;
+
+    max-height: 28rem;
+
+    object-fit: cover;
+
+    border-radius:
+        calc(
+            var(--border-radius-large)
+            - 0.35rem
+        );
+}
+
+
+/* Safety Image Label */
+.safety-image::after {
+    display: block;
+
+    padding:
+        0.65rem
+        0.25rem
+        0.15rem;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.6rem;
+
+    font-weight: 500;
+
+    letter-spacing: 0.08em;
+
+    text-align: center;
+
+    text-transform: uppercase;
+
+    content:
+        "Best Buds Safety Guide";
+}
+
+
+/* =========================================================
+   Links
+   ========================================================= */
+
+.safety-topic a {
+    color:
+        var(--color-primary);
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   Tablet
+   ========================================================= */
+
+@media (min-width: 900px) {
+
+    /*
+     * Keep safety information easy to read.
+     * The list stays one column instead of
+     * becoming a dense card grid.
+     */
+    .safety-list {
+        max-width: 54rem;
+    }
+
+
+    .safety-questions,
+    .safety-legal {
+        max-width: 54rem;
+    }
+
+}
+
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 575.98px) {
+
+    .safety-topic {
+        padding:
+            3rem
+            0;
+    }
+
+
+    .safety-list
+    > li {
+        padding: 1rem;
+    }
+
+
+    .safety-questions,
+    .safety-legal {
+        padding: 1rem;
+
+        border-radius:
+            var(--border-radius-medium);
+    }
+
+
+    .safety-image {
+        padding: 0.4rem;
+    }
+
+}
+
+
+/* =========================================================
+   Reduced Motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .safety-list
+    > li {
+        transition: none;
+    }
+
+
+    .safety-list
+    > li:hover {
+        transform: none;
+    }
+
+}

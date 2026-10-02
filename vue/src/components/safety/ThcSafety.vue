@@ -3,8 +3,14 @@
 
     <section
         id="thc-consumption"
+        class="safety-topic safety-topic-thc"
         aria-labelledby="thc-safety-heading"
     >
+
+        <!-- Safety Topic Label -->
+        <p class="safety-topic-label">
+            THC Safety Guide
+        </p>
 
         <!-- Display THC Safety Introduction -->
         <h3 id="thc-safety-heading">
@@ -715,6 +721,8 @@
             <img
                 :src="ThcSafetyImage"
                 alt="THC consumption safety"
+                loading="lazy"
+                decoding="async"
             />
 
         </figure>

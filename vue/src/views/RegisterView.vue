@@ -7,7 +7,10 @@
         aria-labelledby="register-heading"
     >
 
-        <!-- Display Page Introduction -->
+        <!-- =================================================
+             Registration Introduction
+             ================================================= -->
+
         <header class="auth-header">
 
             <img
@@ -16,31 +19,49 @@
                 alt="Best Buds"
             />
 
+            <p class="auth-eyebrow">
+                Join Best Buds
+            </p>
+
             <h1 id="register-heading">
-                Create Account
+                Create Your Account
             </h1>
 
             <p>
-                Create your Best Buds account to get started.
+                Create an account to save dispensaries,
+                personalize your experience, and collect
+                Best Buds Drops as you explore.
             </p>
 
         </header>
 
-        <!-- Display Registration Form -->
+
+        <!-- =================================================
+             Registration Form
+             ================================================= -->
+
         <RegisterForm
-            @registered="handleRegistration"
+            @registered="
+                handleRegistration
+            "
         />
 
     </div>
 
 </template>
 
-<script>
-import RegisterForm from "../components/auth/RegisterForm.vue";
 
-import Logo from "../assets/layout/logo/logo-dark-theme.png";
+<script>
+
+import RegisterForm
+    from "../components/auth/RegisterForm.vue";
+
+import Logo
+    from "../assets/layout/logo/logo-dark-theme.png";
+
 
 export default {
+
     name: "RegisterView",
 
     components: {
@@ -48,14 +69,17 @@ export default {
     },
 
     data() {
+
         return {
             Logo
         };
+
     },
 
     methods: {
 
-        // Continue to login after successful registration
+        // Continue to login after
+        // successful registration
         handleRegistration() {
 
             this.$router.push({
@@ -68,8 +92,11 @@ export default {
         }
 
     }
+
 };
+
 </script>
+
 
 <style scoped>
 

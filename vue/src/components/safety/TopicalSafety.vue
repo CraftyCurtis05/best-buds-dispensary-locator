@@ -3,8 +3,14 @@
 
     <section
         id="topical-use"
+        class="safety-topic safety-topic-topical"
         aria-labelledby="topical-safety-heading"
     >
+
+        <!-- Safety Topic Label -->
+        <p class="safety-topic-label">
+            Topical Safety Guide
+        </p>
 
         <!-- Display Topical Safety Introduction -->
         <h3 id="topical-safety-heading">
@@ -624,6 +630,8 @@
             <img
                 :src="TopicalSafetyImage"
                 alt="Cannabis topical use safety"
+                loading="lazy"
+                decoding="async"
             />
 
         </figure>

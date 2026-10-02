@@ -3,6 +3,7 @@
 
     <section
         id="flower"
+        class="question-topic"
         aria-labelledby="flower-heading"
     >
 

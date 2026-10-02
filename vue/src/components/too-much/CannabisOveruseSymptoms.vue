@@ -3,8 +3,14 @@
 
     <section
         id="cannabis-overuse-symptoms"
+        class="overuse-topic overuse-topic-symptoms"
         aria-labelledby="overuse-symptoms-heading"
     >
+
+        <!-- Topic Label -->
+        <p class="overuse-topic-label">
+            Signs &amp; Symptoms
+        </p>
 
         <!-- Display Symptoms Introduction -->
         <h3 id="overuse-symptoms-heading">

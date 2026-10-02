@@ -3,11 +3,17 @@
 
     <section
         id="wax"
+        class="product-section product-section-wax"
         aria-labelledby="wax-heading"
     >
 
         <!-- Display Wax Information -->
         <div class="product-information">
+
+            <!-- Product Type Label -->
+            <p class="product-type-label">
+                Concentrate Guide
+            </p>
 
             <h3 id="wax-heading">
                 Wax & Concentrates
@@ -558,6 +564,8 @@
             <img
                 :src="WaxProductsImage"
                 alt="Cannabis wax and concentrate product"
+                loading="lazy"
+                decoding="async"
             />
 
         </aside>

@@ -3,6 +3,7 @@
 
     <section
         id="dispensaries"
+        class="question-topic"
         aria-labelledby="dispensaries-heading"
     >
 

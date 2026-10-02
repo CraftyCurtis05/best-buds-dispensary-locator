@@ -3,6 +3,7 @@
 
     <section
         id="vaporizing"
+        class="question-topic"
         aria-labelledby="vaporizing-heading"
     >
 

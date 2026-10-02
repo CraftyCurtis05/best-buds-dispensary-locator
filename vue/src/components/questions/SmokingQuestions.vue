@@ -3,6 +3,7 @@
 
     <section
         id="smoking"
+        class="question-topic"
         aria-labelledby="smoking-heading"
     >
 

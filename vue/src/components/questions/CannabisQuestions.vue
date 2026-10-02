@@ -3,6 +3,7 @@
 
     <section
         id="cannabis"
+        class="question-topic"
         aria-labelledby="cannabis-heading"
     >
 

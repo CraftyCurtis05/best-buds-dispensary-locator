@@ -3,8 +3,14 @@
 
     <section
         id="cannabis-overuse-coping"
+        class="overuse-topic overuse-topic-coping"
         aria-labelledby="overuse-coping-heading"
     >
+
+        <!-- Topic Label -->
+        <p class="overuse-topic-label">
+            Getting Through It
+        </p>
 
         <!-- Display Coping Introduction -->
         <h3 id="overuse-coping-heading">

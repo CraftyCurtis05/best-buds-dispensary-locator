@@ -195,11 +195,13 @@ export default {
 
 <style scoped>
 
-/* Cover the application while a Drop is being revealed */
+/* =========================================================
+   Drop Reveal Overlay
+   ========================================================= */
+
 .drop-reveal-overlay {
     position: fixed;
     inset: 0;
-    z-index: 1000;
 
     display: flex;
     align-items: center;
@@ -207,44 +209,268 @@ export default {
 
     padding: 1.5rem;
 
-    background: rgba(0, 0, 0, 0.75);
+    background:
+        var(--color-overlay);
+
+    backdrop-filter:
+        blur(8px);
+
+    -webkit-backdrop-filter:
+        blur(8px);
+
+    z-index: 1000;
 }
 
-/* Display the Drop reveal modal */
+
+/* =========================================================
+   Drop Reveal
+   ========================================================= */
+
 .drop-reveal {
-    width: min(100%, 32rem);
-    max-height: calc(100vh - 3rem);
+    position: relative;
+
+    width:
+        min(
+            100%,
+            32rem
+        );
+
+    max-height:
+        calc(
+            100vh
+            - 3rem
+        );
+
     overflow-y: auto;
 
-    padding: 2rem;
+    padding:
+        clamp(
+            1.5rem,
+            5vw,
+            2.5rem
+        );
 
-    background: #ffffff;
-    border-radius: 1rem;
+    background:
+        linear-gradient(
+            145deg,
+            var(--color-surface),
+            var(--color-surface-soft)
+        );
+
+    border:
+        1px solid
+        var(--color-border-strong);
+
+    border-radius:
+        var(--border-radius-large);
+
+    box-shadow:
+        0 24px 70px
+        var(--color-shadow-strong);
+
+    color:
+        var(--color-text);
 
     text-align: center;
 }
 
-/* Organize the surprise and revealed Drop content */
+
+/* Decorative Ring */
+.drop-reveal::before {
+    position: absolute;
+
+    top: -5rem;
+    right: -5rem;
+
+    width: 12rem;
+    height: 12rem;
+
+    border:
+        1px solid
+        var(--color-gold-soft);
+
+    border-radius: 50%;
+
+    content: "";
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   Surprise / Result
+   ========================================================= */
+
 .drop-surprise,
 .drop-result {
+    position: relative;
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
     gap: 1rem;
+
+    z-index: 1;
 }
 
-/* Display the unlocked Drop artwork */
+
+/* Heading */
+.drop-reveal h2 {
+    margin: 0;
+
+    color:
+        var(--color-text);
+
+    font-size:
+        clamp(
+            1.5rem,
+            5vw,
+            2.2rem
+        );
+
+    font-weight: 500;
+
+    line-height: 1.15;
+
+    letter-spacing: -0.03em;
+}
+
+
+/* Text */
+.drop-reveal p {
+    margin: 0;
+
+    color:
+        var(--color-text-soft);
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   Drop Artwork
+   ========================================================= */
+
 .drop-reveal-artwork {
     display: block;
 
     width: auto;
     max-width: 100%;
-    height: auto;
+
+    max-height: 24rem;
+
+    object-fit: contain;
+
+    margin:
+        0.5rem
+        auto;
+
+    border-radius:
+        var(--border-radius-medium);
+
+    filter:
+        drop-shadow(
+            0 12px 20px
+            var(--color-shadow-strong)
+        );
 }
 
-/* Display modal actions */
+
+/* =========================================================
+   Drop Reveal Button
+   ========================================================= */
+
 .drop-reveal button {
+    min-height: 2.8rem;
+
+    padding:
+        0.6rem
+        1rem;
+
+    background:
+        var(--color-primary);
+
+    border:
+        1px solid
+        var(--color-primary);
+
+    border-radius:
+        var(--border-radius-pill);
+
+    color:
+        var(--color-background);
+
+    font-size: 0.78rem;
+    font-weight: 600;
+
     cursor: pointer;
+
+    transition:
+        background 160ms ease,
+        transform 160ms ease;
+}
+
+
+/* Button Hover */
+.drop-reveal
+button:hover {
+    background:
+        var(--color-primary-hover);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 575.98px) {
+
+    .drop-reveal-overlay {
+        padding: 0.75rem;
+    }
+
+
+    .drop-reveal {
+        max-height:
+            calc(
+                100vh
+                - 1.5rem
+            );
+    }
+
+
+    .drop-reveal-artwork {
+        max-height: 19rem;
+    }
+
+
+    .drop-reveal button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   Reduced Motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .drop-reveal button {
+        transition: none;
+    }
+
+
+    .drop-reveal
+    button:hover {
+        transform: none;
+    }
+
 }
 
 </style>

@@ -3,6 +3,7 @@
 
     <section
         id="wax"
+        class="question-topic"
         aria-labelledby="wax-heading"
     >
 

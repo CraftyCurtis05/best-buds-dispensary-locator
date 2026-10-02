@@ -1,0 +1,952 @@
+/* =========================================================
+   Best Buds Too Much Cannabis Styles
+   ========================================================= */
+
+
+/* =========================================================
+   Main Overuse Topic
+   ========================================================= */
+
+.overuse-topic {
+    width: 100%;
+
+    padding:
+        clamp(
+            3.5rem,
+            8vw,
+            5.5rem
+        )
+        0;
+
+    border-top:
+        1px solid
+        var(--color-border);
+}
+
+
+/* First Topic */
+.overuse-topic:first-child {
+    border-top: 0;
+}
+
+
+/* =========================================================
+   Topic Label
+   ========================================================= */
+
+.overuse-topic-label {
+    display: inline-flex;
+
+    margin:
+        0
+        0
+        0.7rem !important;
+
+    padding:
+        0.35rem
+        0.6rem;
+
+    background:
+        var(--color-primary-soft);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-pill);
+
+    color:
+        var(--color-primary) !important;
+
+    font-size:
+        0.62rem !important;
+
+    font-weight: 600;
+
+    letter-spacing: 0.11em;
+
+    line-height: 1.4 !important;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   Topic Heading
+   ========================================================= */
+
+.overuse-topic
+> h3 {
+    max-width: 50rem;
+
+    margin:
+        0
+        0
+        1rem;
+
+    color:
+        var(--color-text);
+
+    font-size:
+        clamp(
+            2rem,
+            5vw,
+            3.2rem
+        );
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+}
+
+
+/* =========================================================
+   Topic Introduction
+   ========================================================= */
+
+.overuse-topic
+> p:not(
+    .overuse-topic-label,
+    .legal-review-date
+) {
+    max-width: 50rem;
+
+    margin:
+        0
+        0
+        0.8rem;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.94rem;
+
+    line-height: 1.75;
+}
+
+
+/* Stronger First Introduction */
+.overuse-topic
+> h3
++ p {
+    color:
+        var(--color-text);
+
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   Standard Information Sections
+   ========================================================= */
+
+.overuse-section,
+.coping-section {
+    max-width: 54rem;
+
+    margin-top: 1.25rem;
+
+    padding: 1.3rem;
+
+    background:
+        var(--color-surface);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-large);
+
+    box-shadow:
+        0 8px 22px
+        var(--color-shadow);
+}
+
+
+/* Section Heading */
+.overuse-section
+> h4,
+.coping-section
+> h4 {
+    margin:
+        0
+        0
+        0.75rem;
+
+    color:
+        var(--color-text);
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    line-height: 1.4;
+}
+
+
+/* Section Paragraph */
+.overuse-section
+> p,
+.coping-section
+> p {
+    margin:
+        0
+        0
+        0.75rem;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.84rem;
+
+    line-height: 1.7;
+}
+
+
+/* Last Paragraph */
+.overuse-section
+> p:last-child,
+.coping-section
+> p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   Lists Inside Information Sections
+   ========================================================= */
+
+.overuse-section ul,
+.coping-section ul {
+    display: grid;
+
+    gap: 0.5rem;
+
+    padding:
+        0
+        0
+        0
+        1.2rem;
+
+    margin:
+        0.75rem
+        0;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.82rem;
+
+    line-height: 1.6;
+}
+
+
+/* List Markers */
+.overuse-section li::marker,
+.coping-section li::marker {
+    color:
+        var(--color-gold);
+}
+
+
+/* =========================================================
+   Immediate Steps and Coping Steps
+   ========================================================= */
+
+.overuse-steps,
+.coping-list {
+    display: grid;
+
+    gap: 0.9rem;
+
+    max-width: 54rem;
+
+    padding: 0;
+
+    margin:
+        2rem
+        0
+        0;
+
+    list-style: none;
+
+    counter-reset:
+        overuse-step;
+}
+
+
+/* Step Card */
+.overuse-steps
+> li,
+.coping-list
+> li {
+    position: relative;
+
+    counter-increment:
+        overuse-step;
+
+    padding:
+        1.25rem
+        1.3rem;
+
+    background:
+        var(--color-surface);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-large);
+
+    box-shadow:
+        0 8px 22px
+        var(--color-shadow);
+
+    transition:
+        transform 160ms ease,
+        border-color 160ms ease,
+        box-shadow 160ms ease;
+}
+
+
+/* Step Card Hover */
+.overuse-steps
+> li:hover,
+.coping-list
+> li:hover {
+    border-color:
+        var(--color-border-strong);
+
+    box-shadow:
+        0 12px 28px
+        var(--color-shadow-strong);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* Step Number */
+.overuse-steps
+> li::before,
+.coping-list
+> li::before {
+    display: inline-flex;
+
+    margin-bottom: 0.55rem;
+
+    color:
+        var(--color-gold-dark);
+
+    font-size: 0.6rem;
+    font-weight: 600;
+
+    letter-spacing: 0.11em;
+
+    text-transform: uppercase;
+
+    content:
+        "Step "
+        counter(
+            overuse-step,
+            decimal-leading-zero
+        );
+}
+
+
+/* Step Heading */
+.overuse-steps
+> li
+> h4,
+.coping-list
+> li
+> h4 {
+    margin:
+        0
+        0
+        0.7rem;
+
+    color:
+        var(--color-text);
+
+    font-size: 0.98rem;
+    font-weight: 600;
+
+    line-height: 1.45;
+}
+
+
+/* Step Paragraph */
+.overuse-steps
+> li
+> p,
+.coping-list
+> li
+> p {
+    margin:
+        0
+        0
+        0.65rem;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.82rem;
+
+    line-height: 1.65;
+}
+
+
+/* Last Step Paragraph */
+.overuse-steps
+> li
+> p:last-child,
+.coping-list
+> li
+> p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   Poison Control / Help Information
+   ========================================================= */
+
+.overuse-help {
+    max-width: 54rem;
+
+    margin-top: 1.25rem;
+
+    padding: 1.4rem;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--color-surface),
+            var(--color-primary-soft)
+        );
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-left:
+        3px solid
+        var(--color-primary);
+
+    border-radius:
+        var(--border-radius-large);
+
+    box-shadow:
+        0 8px 22px
+        var(--color-shadow);
+}
+
+
+/* Help Heading */
+.overuse-help
+> h4 {
+    margin:
+        0
+        0
+        0.75rem;
+
+    color:
+        var(--color-primary);
+
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+/* Help Text */
+.overuse-help
+> p {
+    margin:
+        0
+        0
+        0.7rem;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.84rem;
+
+    line-height: 1.65;
+}
+
+
+/* Last Help Paragraph */
+.overuse-help
+> p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   Poison Control Number
+   ========================================================= */
+
+.help-number {
+    display: inline-flex;
+
+    margin:
+        0.25rem
+        0
+        0.9rem !important;
+
+    padding:
+        0.5rem
+        0.8rem;
+
+    background:
+        var(--color-primary);
+
+    border-radius:
+        var(--border-radius-pill);
+
+    color:
+        var(--color-background) !important;
+
+    font-size:
+        1rem !important;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* Help Number Text */
+.help-number strong {
+    color: inherit;
+}
+
+
+/* =========================================================
+   Emergency Information
+   ========================================================= */
+
+.overuse-emergency {
+    max-width: 54rem;
+
+    margin-top: 1.25rem;
+
+    padding: 1.4rem;
+
+    background:
+        var(--color-surface);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-left:
+        3px solid
+        var(--color-danger);
+
+    border-radius:
+        var(--border-radius-large);
+
+    box-shadow:
+        0 10px 26px
+        var(--color-shadow);
+}
+
+
+/* Emergency Heading */
+.overuse-emergency
+> h4 {
+    margin:
+        0
+        0
+        0.75rem;
+
+    color:
+        var(--color-danger);
+
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+
+/* Emergency Text */
+.overuse-emergency
+> p {
+    margin:
+        0
+        0
+        0.75rem;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.84rem;
+
+    line-height: 1.65;
+}
+
+
+/* Emergency List */
+.overuse-emergency ul {
+    display: grid;
+
+    gap: 0.45rem;
+
+    padding:
+        0
+        0
+        0
+        1.2rem;
+
+    margin:
+        0.75rem
+        0;
+
+    color:
+        var(--color-text);
+
+    font-size: 0.84rem;
+
+    line-height: 1.6;
+}
+
+
+/* Emergency Marker */
+.overuse-emergency
+li::marker {
+    color:
+        var(--color-danger);
+}
+
+
+/* =========================================================
+   Quick Questions
+   ========================================================= */
+
+.overuse-questions {
+    max-width: 54rem;
+
+    margin-top: 1.25rem;
+
+    padding: 1.3rem;
+
+    background:
+        var(--color-surface-soft);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-large);
+}
+
+
+/* Questions Heading */
+.overuse-questions
+> h4 {
+    margin:
+        0
+        0
+        1rem;
+
+    color:
+        var(--color-primary);
+
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+
+/* Questions List */
+.overuse-questions dl {
+    margin: 0;
+}
+
+
+/* Question */
+.overuse-questions dt {
+    margin:
+        1rem
+        0
+        0.35rem;
+
+    color:
+        var(--color-text);
+
+    font-size: 0.84rem;
+    font-weight: 600;
+
+    line-height: 1.5;
+}
+
+
+/* First Question */
+.overuse-questions dt:first-child {
+    margin-top: 0;
+}
+
+
+/* Answer */
+.overuse-questions dd {
+    margin:
+        0
+        0
+        1rem;
+
+    padding-bottom: 1rem;
+
+    border-bottom:
+        1px solid
+        var(--color-border);
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.82rem;
+
+    line-height: 1.65;
+}
+
+
+/* Last Answer */
+.overuse-questions dd:last-child {
+    margin-bottom: 0;
+
+    padding-bottom: 0;
+
+    border-bottom: 0;
+}
+
+
+/* =========================================================
+   Legal Information
+   ========================================================= */
+
+.overuse-legal {
+    max-width: 54rem;
+
+    margin-top: 1.25rem;
+
+    padding: 1.3rem;
+
+    background:
+        var(--color-gold-soft);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-left:
+        3px solid
+        var(--color-gold-dark);
+
+    border-radius:
+        var(--border-radius-large);
+}
+
+
+/* Legal Heading */
+.overuse-legal
+> h4 {
+    margin:
+        0
+        0
+        0.75rem;
+
+    color:
+        var(--color-gold-dark);
+
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+/* Legal Text */
+.overuse-legal
+> p {
+    margin:
+        0
+        0
+        0.7rem;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.82rem;
+
+    line-height: 1.65;
+}
+
+
+/* Legal Link */
+.overuse-legal a {
+    color:
+        var(--color-primary);
+
+    font-weight: 600;
+
+    text-decoration-color:
+        var(--color-gold);
+
+    text-underline-offset: 0.2rem;
+}
+
+
+/* Legal Link Hover */
+.overuse-legal a:hover {
+    color:
+        var(--color-primary-hover);
+}
+
+
+/* =========================================================
+   Review Dates
+   ========================================================= */
+
+.legal-review-date,
+.health-review-date {
+    display: inline-flex;
+
+    padding:
+        0.4rem
+        0.65rem;
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-pill);
+
+    color:
+        var(--color-text-soft) !important;
+
+    font-size:
+        0.66rem !important;
+
+    line-height: 1.4 !important;
+}
+
+
+/* Legal Review */
+.legal-review-date {
+    margin:
+        0.4rem
+        0
+        0 !important;
+
+    background:
+        var(--color-surface);
+}
+
+
+/* Health Review */
+.health-review-date {
+    margin:
+        2rem
+        0
+        0 !important;
+
+    background:
+        var(--color-primary-soft);
+}
+
+
+/* =========================================================
+   Strong Text
+   ========================================================= */
+
+.overuse-topic strong {
+    color:
+        var(--color-text);
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   Links
+   ========================================================= */
+
+.overuse-topic a {
+    color:
+        var(--color-primary);
+
+    font-weight: 600;
+
+    text-decoration-color:
+        var(--color-gold);
+
+    text-underline-offset: 0.2rem;
+}
+
+
+/* Link Hover */
+.overuse-topic a:hover {
+    color:
+        var(--color-primary-hover);
+}
+
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 575.98px) {
+
+    .overuse-topic {
+        padding:
+            3rem
+            0;
+    }
+
+
+    .overuse-section,
+    .coping-section,
+    .overuse-help,
+    .overuse-emergency,
+    .overuse-questions,
+    .overuse-legal {
+        padding: 1rem;
+
+        border-radius:
+            var(--border-radius-medium);
+    }
+
+
+    .overuse-steps
+    > li,
+    .coping-list
+    > li {
+        padding: 1rem;
+    }
+
+}
+
+
+/* =========================================================
+   Reduced Motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .overuse-steps
+    > li,
+    .coping-list
+    > li {
+        transition: none;
+    }
+
+
+    .overuse-steps
+    > li:hover,
+    .coping-list
+    > li:hover {
+        transform: none;
+    }
+
+}

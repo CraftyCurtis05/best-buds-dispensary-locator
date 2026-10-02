@@ -3,8 +3,14 @@
 
     <section
         id="smoking-safety"
+        class="safety-topic safety-topic-smoking"
         aria-labelledby="smoking-safety-heading"
     >
+
+        <!-- Safety Topic Label -->
+        <p class="safety-topic-label">
+            Smoking Safety Guide
+        </p>
 
         <!-- Display Smoking Safety Introduction -->
         <h3 id="smoking-safety-heading">
@@ -672,6 +678,8 @@
             <img
                 :src="SmokingSafetyImage"
                 alt="Cannabis smoking safety"
+                loading="lazy"
+                decoding="async"
             />
 
         </figure>

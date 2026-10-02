@@ -3,11 +3,17 @@
 
     <section
         id="edible"
+        class="product-section product-section-edible"
         aria-labelledby="edible-heading"
     >
 
         <!-- Display Edible Information -->
         <div class="product-information">
+
+            <!-- Product Type Label -->
+            <p class="product-type-label">
+                Edible Guide
+            </p>
 
             <h3 id="edible-heading">
                 Edibles
@@ -456,6 +462,8 @@
             <img
                 :src="EdibleProductsImage"
                 alt="Cannabis edible products"
+                loading="lazy"
+                decoding="async"
             />
 
         </aside>

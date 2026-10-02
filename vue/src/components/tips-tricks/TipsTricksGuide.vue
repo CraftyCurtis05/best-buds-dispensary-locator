@@ -16,6 +16,8 @@
                 <img
                     :src="ProductImage"
                     alt="Different types of cannabis products"
+                    loading="lazy"
+                    decoding="async"
                 />
             </router-link>
 
@@ -73,6 +75,8 @@
                 <img
                     :src="StrainGuideImage"
                     alt="Cannabis strains, cannabinoids, and terpenes"
+                    loading="lazy"
+                    decoding="async"
                 />
             </router-link>
 
@@ -129,6 +133,8 @@
                 <img
                     :src="ProductImage"
                     alt="Cannabis product information and labels"
+                    loading="lazy"
+                    decoding="async"
                 />
             </router-link>
 
@@ -180,6 +186,8 @@
                 <img
                     :src="SafetyImage"
                     alt="Cannabis safety information"
+                    loading="lazy"
+                    decoding="async"
                 />
             </router-link>
 
@@ -237,6 +245,8 @@
                 <img
                     :src="QuestionsImage"
                     alt="Cannabis edible questions and information"
+                    loading="lazy"
+                    decoding="async"
                 />
             </router-link>
 
@@ -287,6 +297,8 @@
                 <img
                     :src="TooMuchImage"
                     alt="Too much cannabis help and information"
+                    loading="lazy"
+                    decoding="async"
                 />
             </router-link>
 
@@ -349,6 +361,8 @@
                 <img
                     :src="SafetyImage"
                     alt="Cannabis impairment and driving safety"
+                    loading="lazy"
+                    decoding="async"
                 />
             </router-link>
 
@@ -398,6 +412,8 @@
                 <img
                     :src="LegalImage"
                     alt="United States cannabis legality guide"
+                    loading="lazy"
+                    decoding="async"
                 />
             </router-link>
 
@@ -462,6 +478,8 @@
                 <img
                     :src="LegalImage"
                     alt="Federal cannabis law information"
+                    loading="lazy"
+                    decoding="async"
                 />
             </router-link>
 
@@ -528,6 +546,8 @@
                 <img
                     :src="QuestionsImage"
                     alt="Common cannabis questions and answers"
+                    loading="lazy"
+                    decoding="async"
                 />
             </router-link>
 
@@ -582,6 +602,8 @@
                 <img
                     :src="QuestionsImage"
                     alt="Getting started with cannabis education"
+                    loading="lazy"
+                    decoding="async"
                 />
             </router-link>
 
@@ -682,5 +704,556 @@ export default {
 </script>
 
 <style scoped>
+
+/* =========================================================
+   Tips & Tricks Guide
+   ========================================================= */
+
+#tips-tricks-guide {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    align-items: start;
+
+    gap: 1.25rem;
+
+    width: 100%;
+
+    counter-reset:
+        guide-number;
+}
+
+
+/* =========================================================
+   Guide Card
+   ========================================================= */
+
+#tips-tricks-guide
+> article {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    height: 100%;
+
+    overflow: hidden;
+
+    background:
+        var(--color-surface);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-large);
+
+    box-shadow:
+        0 10px 26px
+        var(--color-shadow);
+
+    counter-increment:
+        guide-number;
+
+    transition:
+        transform 160ms ease,
+        border-color 160ms ease,
+        box-shadow 160ms ease;
+}
+
+
+/* Guide Card Hover */
+#tips-tricks-guide
+> article:hover {
+    border-color:
+        var(--color-border-strong);
+
+    box-shadow:
+        0 16px 36px
+        var(--color-shadow-strong);
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =========================================================
+   Guide Number
+   ========================================================= */
+
+#tips-tricks-guide
+> article::before {
+    position: absolute;
+
+    top: 0.85rem;
+    left: 0.85rem;
+
+    padding:
+        0.32rem
+        0.55rem;
+
+    background:
+        var(--color-header-background);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-pill);
+
+    box-shadow:
+        0 4px 12px
+        var(--color-shadow);
+
+    color:
+        var(--color-gold-dark);
+
+    font-size: 0.58rem;
+    font-weight: 600;
+
+    letter-spacing: 0.09em;
+
+    text-transform: uppercase;
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+
+    content:
+        "Guide "
+        counter(
+            guide-number,
+            decimal-leading-zero
+        );
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   Guide Image
+   ========================================================= */
+
+#tips-tricks-guide
+> article
+> a:first-child {
+    display: block;
+
+    aspect-ratio:
+        16 / 9;
+
+    overflow: hidden;
+
+    background:
+        var(--color-surface-soft);
+
+    border-bottom:
+        1px solid
+        var(--color-border);
+}
+
+
+/* Guide Image */
+#tips-tricks-guide
+> article
+> a:first-child
+img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 220ms ease;
+}
+
+
+/* Image Hover */
+#tips-tricks-guide
+> article:hover
+> a:first-child
+img {
+    transform:
+        scale(1.025);
+}
+
+
+/* =========================================================
+   Guide Heading
+   ========================================================= */
+
+#tips-tricks-guide
+> article
+> h3 {
+    margin:
+        1.25rem
+        1.25rem
+        0.8rem;
+
+    color:
+        var(--color-text);
+
+    font-size:
+        clamp(
+            1.2rem,
+            3vw,
+            1.55rem
+        );
+
+    font-weight: 600;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.02em;
+}
+
+
+/* Guide Heading Link */
+#tips-tricks-guide
+> article
+> h3
+a {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+
+/* Heading Link Hover */
+#tips-tricks-guide
+> article
+> h3
+a:hover {
+    color:
+        var(--color-primary);
+
+    text-decoration: underline;
+
+    text-decoration-color:
+        var(--color-gold);
+
+    text-decoration-thickness: 1px;
+
+    text-underline-offset: 0.2em;
+}
+
+
+/* =========================================================
+   Guide Paragraphs
+   ========================================================= */
+
+#tips-tricks-guide
+> article
+> p {
+    margin:
+        0
+        1.25rem
+        0.85rem;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.84rem;
+
+    line-height: 1.7;
+}
+
+
+/* Stronger First Paragraph */
+#tips-tricks-guide
+> article
+> h3
++ p {
+    color:
+        var(--color-text);
+}
+
+
+/* Last Paragraph */
+#tips-tricks-guide
+> article
+> p:last-child {
+    margin-bottom: 1.3rem;
+}
+
+
+/* =========================================================
+   Guide Lists
+   ========================================================= */
+
+#tips-tricks-guide
+> article
+> ul {
+    display: grid;
+
+    gap: 0.5rem;
+
+    padding:
+        0
+        1.25rem
+        0
+        2.4rem;
+
+    margin:
+        0
+        0
+        1rem;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.82rem;
+
+    line-height: 1.6;
+}
+
+
+/* List Marker */
+#tips-tricks-guide
+> article
+> ul
+li::marker {
+    color:
+        var(--color-gold);
+}
+
+
+/* =========================================================
+   Inline Guide Links
+   ========================================================= */
+
+#tips-tricks-guide
+> article
+> p
+a {
+    color:
+        var(--color-primary);
+
+    font-weight: 600;
+
+    text-decoration-color:
+        var(--color-gold);
+
+    text-underline-offset: 0.2rem;
+}
+
+
+/* Inline Link Hover */
+#tips-tricks-guide
+> article
+> p
+a:hover {
+    color:
+        var(--color-primary-hover);
+}
+
+
+/* =========================================================
+   Higher Attention Guides
+   ========================================================= */
+
+/*
+ * These sections use the same card design,
+ * with a subtle accent to help important
+ * safety and legal information stand out.
+ */
+
+#too-much {
+    border-top:
+        3px solid
+        var(--color-danger) !important;
+}
+
+
+#driving {
+    border-top:
+        3px solid
+        var(--color-primary) !important;
+}
+
+
+#legality,
+#federal-law {
+    border-top:
+        3px solid
+        var(--color-gold) !important;
+}
+
+
+/* =========================================================
+   Legal Review Date
+   ========================================================= */
+
+.legal-review-date {
+    align-self: flex-start;
+
+    margin:
+        0
+        1.25rem
+        1.3rem !important;
+
+    padding:
+        0.38rem
+        0.6rem;
+
+    background:
+        var(--color-gold-soft);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-pill);
+
+    color:
+        var(--color-text-soft) !important;
+
+    font-size:
+        0.64rem !important;
+
+    line-height: 1.4 !important;
+}
+
+
+/* =========================================================
+   Getting Started Card
+   ========================================================= */
+
+#getting-started {
+    background:
+        linear-gradient(
+            145deg,
+            var(--color-surface),
+            var(--color-primary-soft)
+        );
+}
+
+
+/* =========================================================
+   Tablet
+   ========================================================= */
+
+@media (max-width: 899.98px) {
+
+    #tips-tricks-guide {
+        grid-template-columns: 1fr;
+    }
+
+
+    #tips-tricks-guide
+    > article {
+        max-width: 42rem;
+
+        margin:
+            0
+            auto;
+    }
+
+}
+
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 575.98px) {
+
+    #tips-tricks-guide {
+        gap: 1rem;
+    }
+
+
+    #tips-tricks-guide
+    > article
+    > h3 {
+        margin:
+            1.1rem
+            1rem
+            0.7rem;
+    }
+
+
+    #tips-tricks-guide
+    > article
+    > p {
+        margin:
+            0
+            1rem
+            0.8rem;
+    }
+
+
+    #tips-tricks-guide
+    > article
+    > p:last-child {
+        margin-bottom: 1.1rem;
+    }
+
+
+    #tips-tricks-guide
+    > article
+    > ul {
+        padding:
+            0
+            1rem
+            0
+            2.1rem;
+    }
+
+
+    .legal-review-date {
+        margin:
+            0
+            1rem
+            1.1rem !important;
+    }
+
+}
+
+
+/* =========================================================
+   Reduced Motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    #tips-tricks-guide
+    > article,
+    #tips-tricks-guide
+    > article
+    > a:first-child
+    img {
+        transition: none;
+    }
+
+
+    #tips-tricks-guide
+    > article:hover {
+        transform: none;
+    }
+
+
+    #tips-tricks-guide
+    > article:hover
+    > a:first-child
+    img {
+        transform: none;
+    }
+
+}
 
 </style>

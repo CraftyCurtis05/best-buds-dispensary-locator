@@ -7,7 +7,10 @@
         aria-labelledby="age-confirmation-heading"
     >
 
-        <!-- Display Page Introduction -->
+        <!-- =================================================
+             Age Confirmation Introduction
+             ================================================= -->
+
         <header class="auth-header">
 
             <img
@@ -15,6 +18,10 @@
                 class="auth-logo"
                 alt="Best Buds"
             />
+
+            <p class="auth-eyebrow">
+                Before You Enter
+            </p>
 
             <h1 id="age-confirmation-heading">
                 Are You 21 or Older?
@@ -27,7 +34,11 @@
 
         </header>
 
-        <!-- Display Age Confirmation -->
+
+        <!-- =================================================
+             Age Confirmation
+             ================================================= -->
+
         <div class="auth-form-section">
 
             <div class="age-confirmation-content">
@@ -43,7 +54,8 @@
                     an account.
                 </p>
 
-                <!-- Display Age Restriction Message -->
+
+                <!-- Age Restriction Message -->
                 <p
                     v-if="ageRestricted"
                     class="form-error"
@@ -53,19 +65,24 @@
                     21 years of age or older.
                 </p>
 
-                <!-- Display Confirmation Actions -->
+
+                <!-- Confirmation Actions -->
                 <div class="age-confirmation-actions">
 
                     <button
                         type="button"
-                        @click="confirmVisitorAge"
+                        @click="
+                            confirmVisitorAge
+                        "
                     >
                         Yes, I Am 21 or Older
                     </button>
 
                     <button
                         type="button"
-                        @click="denyAccess"
+                        @click="
+                            denyAccess
+                        "
                     >
                         No, I Am Under 21
                     </button>
@@ -80,22 +97,30 @@
 
 </template>
 
+
 <script>
-import Logo from "../assets/layout/logo/logo-dark-theme.png";
+
+import Logo
+    from "../assets/layout/logo/logo-dark-theme.png";
+
 
 export default {
+
     name: "AgeConfirmationView",
 
     data() {
+
         return {
             Logo,
             ageRestricted: false
         };
+
     },
 
     methods: {
 
-        // Confirm that the visitor meets the age requirement
+        // Confirm that the visitor
+        // meets the age requirement
         confirmVisitorAge() {
 
             sessionStorage.setItem(
@@ -109,15 +134,22 @@ export default {
 
         },
 
-        // Continue to the appropriate Best Buds page
+
+        // Continue to the appropriate
+        // Best Buds page
         continueToBestBuds() {
 
-            if (this.$store.state.token !== "") {
+            if (
+                this.$store.state.token
+                !== ""
+            ) {
+
                 this.$router.replace({
                     name: "home"
                 });
 
                 return;
+
             }
 
             this.$router.replace({
@@ -126,7 +158,9 @@ export default {
 
         },
 
-        // Keep underage visitors outside of the application
+
+        // Keep underage visitors
+        // outside of the application
         denyAccess() {
 
             sessionStorage.removeItem(
@@ -138,8 +172,11 @@ export default {
         }
 
     }
+
 };
+
 </script>
+
 
 <style scoped>
 

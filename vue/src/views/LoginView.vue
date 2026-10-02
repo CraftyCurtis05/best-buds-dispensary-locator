@@ -7,7 +7,10 @@
         aria-labelledby="login-heading"
     >
 
-        <!-- Display Page Introduction -->
+        <!-- =================================================
+             Login Introduction
+             ================================================= -->
+
         <header class="auth-header">
 
             <img
@@ -16,34 +19,55 @@
                 alt="Best Buds"
             />
 
+            <p class="auth-eyebrow">
+                Best Buds Account
+            </p>
+
             <h1 id="login-heading">
                 Welcome Back
             </h1>
 
             <p>
-                Sign in to continue to Best Buds.
+                Sign in to continue exploring dispensaries,
+                cannabis education, saved locations, and
+                your Best Buds collection.
             </p>
 
         </header>
 
-        <!-- Display Login Form -->
+
+        <!-- =================================================
+             Login Form
+             ================================================= -->
+
         <LoginForm
-            :registration-successful="registrationSuccessful"
-            @authenticated="handleAuthentication"
+            :registration-successful="
+                registrationSuccessful
+            "
+            @authenticated="
+                handleAuthentication
+            "
         />
 
     </div>
 
 </template>
 
+
 <script>
-import LoginForm from "../components/auth/LoginForm.vue";
 
-import ProfileService from "../services/ProfileService.js";
+import LoginForm
+    from "../components/auth/LoginForm.vue";
 
-import Logo from "../assets/layout/logo/logo-dark-theme.png";
+import ProfileService
+    from "../services/ProfileService.js";
+
+import Logo
+    from "../assets/layout/logo/logo-dark-theme.png";
+
 
 export default {
+
     name: "LoginView",
 
     components: {
@@ -51,24 +75,35 @@ export default {
     },
 
     data() {
+
         return {
             Logo
         };
+
     },
 
     computed: {
 
-        // Check whether the user just created an account
+        // Check whether the user just
+        // created an account
         registrationSuccessful() {
-            return this.$route.query.registration === "success";
+
+            return (
+                this.$route.query.registration
+                === "success"
+            );
+
         }
 
     },
 
     methods: {
 
-        // Store the user session and continue onboarding
-        handleAuthentication(loginResponse) {
+        // Store the user session and
+        // continue onboarding
+        handleAuthentication(
+            loginResponse
+        ) {
 
             this.saveUserSession(
                 loginResponse
@@ -78,8 +113,12 @@ export default {
 
         },
 
-        // Store the authenticated user and authorization token
-        saveUserSession(loginResponse) {
+
+        // Store the authenticated user
+        // and authorization token
+        saveUserSession(
+            loginResponse
+        ) {
 
             this.$store.commit(
                 "SET_AUTH_TOKEN",
@@ -93,21 +132,28 @@ export default {
 
         },
 
-        // Send the user to the next required onboarding step
+
+        // Send the user to the next
+        // required onboarding step
         continueOnboarding() {
 
             return this.checkProfile();
 
         },
 
-        // Check whether the user has completed profile setup
+
+        // Check whether the user has
+        // completed profile setup
         checkProfile() {
 
             return ProfileService
                 .getProfile()
                 .then((response) => {
 
-                    if (response.status === 204) {
+                    if (
+                        response.status
+                        === 204
+                    ) {
 
                         this.$store.commit(
                             "SET_PROFILE_MISSING"
@@ -133,8 +179,11 @@ export default {
         }
 
     }
+
 };
+
 </script>
+
 
 <style scoped>
 

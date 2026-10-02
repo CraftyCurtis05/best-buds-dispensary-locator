@@ -1,0 +1,1601 @@
+/* =========================================================
+   Best Buds Account & Collection Styles
+   ========================================================= */
+
+
+/* =========================================================
+   Shared Account Section Card
+   ========================================================= */
+
+.profile-image,
+.profile-info {
+    width: 100%;
+
+    padding:
+        clamp(
+            1.25rem,
+            3vw,
+            1.6rem
+        );
+
+    background:
+        var(--color-surface);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-large);
+
+    box-shadow:
+        0 10px 28px
+        var(--color-shadow);
+}
+
+
+/* =========================================================
+   Shared Section Headers
+   ========================================================= */
+
+.profile-image-header,
+.profile-section-header {
+    margin-bottom: 1.25rem;
+}
+
+
+/* Section Heading */
+.profile-image-header h3,
+.profile-section-header h3 {
+    margin:
+        0
+        0
+        0.4rem;
+
+    color:
+        var(--color-text);
+
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+
+/* Section Description */
+.profile-image-header p,
+.profile-section-header p {
+    margin: 0;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.8rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   Profile Picture
+   ========================================================= */
+
+.profile-image-display {
+    display: grid;
+    place-items: center;
+
+    margin:
+        1rem
+        0
+        1.25rem;
+}
+
+
+/* Profile Picture */
+.profile-image-picture {
+    width:
+        clamp(
+            8.5rem,
+            22vw,
+            12rem
+        );
+
+    aspect-ratio: 1;
+
+    object-fit: cover;
+
+    background:
+        var(--color-surface-soft);
+
+    border:
+        3px solid
+        var(--color-surface);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 1px
+        var(--color-border),
+        0 12px 28px
+        var(--color-shadow);
+}
+
+
+/* =========================================================
+   Profile Image Controls
+   ========================================================= */
+
+.profile-image-controls {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.7rem;
+}
+
+
+/* Image Input Label */
+.profile-image-label {
+    color:
+        var(--color-text);
+
+    font-size: 0.76rem;
+    font-weight: 600;
+}
+
+
+/* File Input */
+#profile-image-input {
+    width: 100%;
+
+    padding: 0.45rem;
+
+    background:
+        var(--color-background);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-medium);
+
+    color:
+        var(--color-text);
+
+    font-size: 0.74rem;
+}
+
+
+/* File Selector Button */
+#profile-image-input::file-selector-button {
+    margin-right: 0.7rem;
+
+    padding:
+        0.45rem
+        0.75rem;
+
+    background:
+        var(--color-primary-soft);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-pill);
+
+    color:
+        var(--color-primary);
+
+    font: inherit;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* File Selector Hover */
+#profile-image-input::file-selector-button:hover {
+    background:
+        var(--color-surface-strong);
+}
+
+
+/* Image Help */
+.profile-image-help {
+    margin: 0;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.68rem;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   Profile Form
+   ========================================================= */
+
+.profile-form {
+    display: grid;
+
+    gap: 1.25rem;
+}
+
+
+/* Profile Form Section */
+.profile-form-section {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap:
+        1rem
+        1.1rem;
+
+    padding:
+        1.25rem;
+
+    background:
+        var(--color-surface-soft);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-medium);
+}
+
+
+/* Form Section Heading */
+.profile-form-section
+> h4 {
+    grid-column:
+        1 / -1;
+
+    margin:
+        0
+        0
+        0.15rem;
+
+    color:
+        var(--color-primary);
+
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+
+/* Form Section Description */
+.profile-form-section
+> p {
+    grid-column:
+        1 / -1;
+
+    margin:
+        -0.2rem
+        0
+        0.15rem;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.74rem;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   Form Input Group
+   ========================================================= */
+
+.form-input-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.35rem;
+
+    min-width: 0;
+}
+
+
+/* Form Label */
+.form-input-group label {
+    color:
+        var(--color-text);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+
+/* Form Fields */
+.form-input-group input,
+.form-input-group select {
+    width: 100%;
+
+    min-height: 2.9rem;
+
+    padding:
+        0.65rem
+        0.8rem;
+
+    background:
+        var(--color-background);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-medium);
+
+    color:
+        var(--color-text);
+
+    font-size: 0.82rem;
+}
+
+
+/* Form Field Hover */
+.form-input-group input:hover,
+.form-input-group select:hover {
+    border-color:
+        var(--color-border-strong);
+}
+
+
+/* Form Field Focus */
+.form-input-group input:focus,
+.form-input-group select:focus {
+    border-color:
+        var(--color-border-strong);
+
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px
+        var(--color-primary-soft);
+}
+
+
+/* Form Help */
+.form-help {
+    margin: 0;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.66rem;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   Read Only Information
+   ========================================================= */
+
+.profile-read-only {
+    display: flex;
+    align-items: center;
+
+    min-height: 2.9rem;
+
+    margin: 0;
+
+    padding:
+        0.65rem
+        0.8rem;
+
+    background:
+        var(--color-surface);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-medium);
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.82rem;
+}
+
+
+/* =========================================================
+   Account Messages
+   ========================================================= */
+
+.profile-status,
+.profile-image-status,
+.saved-dispensaries-status,
+.my-stash-status {
+    margin: 0;
+
+    padding:
+        0.8rem
+        1rem;
+
+    background:
+        var(--color-primary-soft);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-medium);
+
+    color:
+        var(--color-primary);
+
+    font-size: 0.78rem;
+}
+
+
+/* Error Messages */
+.form-error,
+.profile-image-error,
+.saved-dispensaries-error,
+.my-stash-error {
+    margin: 0;
+
+    padding:
+        0.8rem
+        1rem;
+
+    background:
+        var(--color-surface-soft);
+
+    border:
+        1px solid
+        var(--color-danger);
+
+    border-left:
+        3px solid
+        var(--color-danger);
+
+    border-radius:
+        var(--border-radius-medium);
+
+    color:
+        var(--color-danger);
+
+    font-size: 0.76rem;
+
+    line-height: 1.5;
+}
+
+
+/* Success Messages */
+.form-success,
+.profile-image-success {
+    margin: 0;
+
+    padding:
+        0.8rem
+        1rem;
+
+    background:
+        var(--color-primary-soft);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-left:
+        3px solid
+        var(--color-primary);
+
+    border-radius:
+        var(--border-radius-medium);
+
+    color:
+        var(--color-primary);
+
+    font-size: 0.76rem;
+}
+
+
+/* =========================================================
+   Shared Account Buttons
+   ========================================================= */
+
+.profile-image-controls button,
+.profile-actions button {
+    min-height: 2.75rem;
+
+    padding:
+        0.55rem
+        0.9rem;
+
+    background:
+        var(--color-primary);
+
+    border:
+        1px solid
+        var(--color-primary);
+
+    border-radius:
+        var(--border-radius-pill);
+
+    color:
+        var(--color-background);
+
+    font-size: 0.76rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 160ms ease,
+        transform 160ms ease;
+}
+
+
+/* Button Hover */
+.profile-image-controls
+button:hover:not(:disabled),
+.profile-actions
+button:hover:not(:disabled) {
+    background:
+        var(--color-primary-hover);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* Remove Picture Button */
+.profile-image-controls
+button:last-child:not(:first-of-type) {
+    background:
+        transparent;
+
+    border-color:
+        var(--color-border);
+
+    color:
+        var(--color-danger);
+}
+
+
+/* Remove Picture Hover */
+.profile-image-controls
+button:last-child:not(:first-of-type):hover:not(:disabled) {
+    background:
+        var(--color-surface-soft);
+
+    border-color:
+        var(--color-danger);
+}
+
+
+/* Disabled Buttons */
+.profile-image-controls button:disabled,
+.profile-actions button:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.5;
+}
+
+
+/* Profile Actions */
+.profile-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* =========================================================
+   Saved Dispensaries
+   ========================================================= */
+
+ul.saved-dispensaries-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap: 1rem;
+
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+}
+
+
+/* Saved Dispensary Item */
+.saved-dispensary {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   Saved Dispensary Card
+   ========================================================= */
+
+.saved-dispensary-card {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    background:
+        var(--color-surface);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-large);
+
+    box-shadow:
+        0 10px 26px
+        var(--color-shadow);
+
+    transition:
+        transform 160ms ease,
+        border-color 160ms ease,
+        box-shadow 160ms ease;
+}
+
+
+/* Card Hover */
+.saved-dispensary-card:hover {
+    border-color:
+        var(--color-border-strong);
+
+    box-shadow:
+        0 16px 34px
+        var(--color-shadow-strong);
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* Dispensary Image */
+.saved-dispensary-image {
+    width: 100%;
+
+    aspect-ratio:
+        4 / 3;
+
+    object-fit: cover;
+
+    background:
+        var(--color-surface-soft);
+
+    border-bottom:
+        1px solid
+        var(--color-border);
+}
+
+
+/* Card Content */
+.saved-dispensary-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    padding: 1.1rem;
+}
+
+
+/* Card Heading */
+.saved-dispensary-content h3 {
+    margin:
+        0
+        0
+        0.55rem;
+
+    color:
+        var(--color-text);
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+
+/* Rating */
+.saved-dispensary-rating {
+    display: inline-flex;
+    align-self: flex-start;
+
+    margin:
+        0
+        0
+        0.75rem;
+
+    padding:
+        0.3rem
+        0.55rem;
+
+    background:
+        var(--color-gold-soft);
+
+    border-radius:
+        var(--border-radius-pill);
+
+    color:
+        var(--color-gold-dark);
+
+    font-size: 0.68rem;
+    font-weight: 600;
+}
+
+
+/* Address */
+.saved-dispensary-address {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.15rem;
+
+    margin:
+        0
+        0
+        0.75rem;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.76rem;
+    font-style: normal;
+
+    line-height: 1.5;
+}
+
+
+/* Saved Date */
+.saved-dispensary-date {
+    margin:
+        auto
+        0
+        0.9rem;
+
+    padding-top: 0.8rem;
+
+    border-top:
+        1px solid
+        var(--color-border);
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.66rem;
+}
+
+
+/* Remove Saved Dispensary */
+.saved-dispensary-content button {
+    width: 100%;
+
+    min-height: 2.5rem;
+
+    background:
+        transparent;
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-pill);
+
+    color:
+        var(--color-danger);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* Remove Hover */
+.saved-dispensary-content
+button:hover:not(:disabled) {
+    background:
+        var(--color-surface-soft);
+
+    border-color:
+        var(--color-danger);
+}
+
+
+/* Remove Disabled */
+.saved-dispensary-content
+button:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   Saved Dispensaries Empty State
+   ========================================================= */
+
+.saved-dispensaries-empty,
+.my-stash-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 0.7rem;
+
+    padding:
+        clamp(
+            2rem,
+            6vw,
+            3.5rem
+        );
+
+    background:
+        var(--color-surface);
+
+    border:
+        1px dashed
+        var(--color-border-strong);
+
+    border-radius:
+        var(--border-radius-large);
+
+    color:
+        var(--color-text-soft);
+
+    text-align: center;
+}
+
+
+/* Empty State Paragraph */
+.saved-dispensaries-empty p,
+.my-stash-empty p {
+    margin: 0;
+
+    max-width: 30rem;
+
+    line-height: 1.6;
+}
+
+
+/* First Empty Paragraph */
+.saved-dispensaries-empty
+p:first-child,
+.my-stash-empty
+p:first-child {
+    color:
+        var(--color-text);
+
+    font-weight: 600;
+}
+
+
+/* Find Dispensaries Link */
+.saved-dispensaries-search-link {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 2.6rem;
+
+    padding:
+        0.5rem
+        0.85rem;
+
+    background:
+        var(--color-primary);
+
+    border:
+        1px solid
+        var(--color-primary);
+
+    border-radius:
+        var(--border-radius-pill);
+
+    color:
+        var(--color-background);
+
+    font-size: 0.74rem;
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+/* Find Dispensaries Hover */
+.saved-dispensaries-search-link:hover {
+    background:
+        var(--color-primary-hover);
+}
+
+
+/* =========================================================
+   My Stash
+   ========================================================= */
+
+ul.my-stash-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap: 1rem;
+
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+}
+
+
+/* Stash Item */
+.my-stash-item {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   Drop Card
+   ========================================================= */
+
+.drop-card {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--color-surface),
+            var(--color-surface-soft)
+        );
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-large);
+
+    box-shadow:
+        0 10px 26px
+        var(--color-shadow);
+
+    transition:
+        transform 160ms ease,
+        border-color 160ms ease,
+        box-shadow 160ms ease;
+}
+
+
+/* Drop Hover */
+.drop-card:hover {
+    border-color:
+        var(--color-border-strong);
+
+    box-shadow:
+        0 16px 34px
+        var(--color-shadow-strong);
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* Drop Artwork */
+.drop-artwork {
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 1;
+
+    object-fit: contain;
+
+    background:
+        var(--color-surface-soft);
+}
+
+
+/* Drop Information */
+.drop-information {
+    margin-top: auto;
+
+    padding:
+        0.75rem
+        0.9rem;
+
+    border-top:
+        1px solid
+        var(--color-border);
+}
+
+
+/* Unlock Date */
+.drop-unlocked-date {
+    margin: 0;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.64rem;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   Tablet
+   ========================================================= */
+
+@media (max-width: 999.98px) {
+
+    ul.saved-dispensaries-list {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+    }
+
+
+    ul.my-stash-list {
+        grid-template-columns:
+            repeat(
+                3,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+    }
+
+}
+
+
+/* =========================================================
+   Small Tablet
+   ========================================================= */
+
+@media (max-width: 749.98px) {
+
+    .profile-form-section {
+        grid-template-columns: 1fr;
+    }
+
+
+    ul.my-stash-list {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+    }
+
+}
+
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 575.98px) {
+
+    ul.saved-dispensaries-list,
+    ul.my-stash-list {
+        grid-template-columns: 1fr;
+    }
+
+
+    .profile-image,
+    .profile-info {
+        padding: 1rem;
+    }
+
+
+    .profile-form-section {
+        padding: 1rem;
+    }
+
+
+    .profile-actions button {
+        width: 100%;
+    }
+
+
+    .drop-card {
+        max-width: 24rem;
+
+        margin:
+            0
+            auto;
+    }
+
+}
+
+
+/* =========================================================
+   Account Settings
+   ========================================================= */
+
+.account-settings-form {
+    width: 100%;
+}
+
+
+/* =========================================================
+   Loading / Account Error
+   ========================================================= */
+
+.account-settings-form
+> p[role="status"],
+.account-settings-form
+> p[role="alert"] {
+    margin: 0;
+
+    padding:
+        1rem
+        1.2rem;
+
+    background:
+        var(--color-surface);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-medium);
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.8rem;
+}
+
+
+/* Main Error */
+.account-settings-form
+> p[role="alert"] {
+    border-left:
+        3px solid
+        var(--color-danger);
+
+    color:
+        var(--color-danger);
+}
+
+
+/* =========================================================
+   Settings Content
+   ========================================================= */
+
+.account-settings-content {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap: 1rem;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   Settings Card
+   ========================================================= */
+
+.account-settings-section {
+    min-width: 0;
+
+    padding:
+        1.4rem;
+
+    background:
+        var(--color-surface);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-large);
+
+    box-shadow:
+        0 10px 28px
+        var(--color-shadow);
+}
+
+
+/* Settings Heading */
+.account-settings-section
+> h2 {
+    margin:
+        0
+        0
+        0.4rem;
+
+    color:
+        var(--color-text);
+
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+
+/* Current Information */
+.account-settings-section
+> p {
+    margin:
+        0
+        0
+        1.1rem;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.76rem;
+
+    line-height: 1.55;
+}
+
+
+/* Current Value */
+.account-settings-section
+> p
+strong {
+    color:
+        var(--color-text);
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   Settings Form
+   ========================================================= */
+
+.account-settings-section form {
+    display: grid;
+
+    gap: 0.9rem;
+}
+
+
+/* Field Group */
+.account-settings-section
+form
+> div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.35rem;
+}
+
+
+/* Label */
+.account-settings-section label {
+    color:
+        var(--color-text);
+
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+
+/* Input */
+.account-settings-section input {
+    width: 100%;
+
+    min-height: 2.85rem;
+
+    padding:
+        0.65rem
+        0.8rem;
+
+    background:
+        var(--color-background);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-medium);
+
+    color:
+        var(--color-text);
+
+    font-size: 0.8rem;
+}
+
+
+/* Input Hover */
+.account-settings-section
+input:hover {
+    border-color:
+        var(--color-border-strong);
+}
+
+
+/* Input Focus */
+.account-settings-section
+input:focus {
+    border-color:
+        var(--color-border-strong);
+
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px
+        var(--color-primary-soft);
+}
+
+
+/* =========================================================
+   Form Messages
+   ========================================================= */
+
+.account-settings-section
+form
+> p[role="status"],
+.account-settings-section
+form
+> p[role="alert"] {
+    margin: 0;
+
+    padding:
+        0.7rem
+        0.8rem;
+
+    border-radius:
+        var(--border-radius-medium);
+
+    font-size: 0.7rem;
+
+    line-height: 1.5;
+}
+
+
+/* Success / Status */
+.account-settings-section
+form
+> p[role="status"] {
+    background:
+        var(--color-primary-soft);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    color:
+        var(--color-primary);
+}
+
+
+/* Error */
+.account-settings-section
+form
+> p[role="alert"] {
+    background:
+        var(--color-surface-soft);
+
+    border:
+        1px solid
+        var(--color-danger);
+
+    color:
+        var(--color-danger);
+}
+
+
+/* =========================================================
+   Submit Button
+   ========================================================= */
+
+.account-settings-section
+button {
+    min-height: 2.75rem;
+
+    margin-top: 0.25rem;
+
+    padding:
+        0.55rem
+        0.9rem;
+
+    background:
+        var(--color-primary);
+
+    border:
+        1px solid
+        var(--color-primary);
+
+    border-radius:
+        var(--border-radius-pill);
+
+    color:
+        var(--color-background);
+
+    font-size: 0.74rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 160ms ease,
+        transform 160ms ease;
+}
+
+
+/* Button Hover */
+.account-settings-section
+button:hover:not(:disabled) {
+    background:
+        var(--color-primary-hover);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* Disabled Button */
+.account-settings-section
+button:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.5;
+}
+
+
+/* =========================================================
+   Tablet
+   ========================================================= */
+
+@media (max-width: 999.98px) {
+
+    .account-settings-content {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+    }
+
+
+    #password-settings {
+        grid-column:
+            1 / -1;
+
+        max-width: 36rem;
+    }
+
+}
+
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 649.98px) {
+
+    .account-settings-content {
+        grid-template-columns: 1fr;
+    }
+
+
+    #password-settings {
+        grid-column: auto;
+
+        max-width: none;
+    }
+
+
+    .account-settings-section {
+        padding: 1rem;
+    }
+
+
+    .account-settings-section
+    button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   Reduced Motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .account-settings-section
+    button {
+        transition: none;
+    }
+
+
+    .account-settings-section
+    button:hover:not(:disabled) {
+        transform: none;
+    }
+
+}
+
+
+/* =========================================================
+   Reduced Motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .profile-image-controls button,
+    .profile-actions button,
+    .saved-dispensary-card,
+    .drop-card {
+        transition: none;
+    }
+
+
+    .profile-image-controls
+    button:hover:not(:disabled),
+    .profile-actions
+    button:hover:not(:disabled),
+    .saved-dispensary-card:hover,
+    .drop-card:hover {
+        transform: none;
+    }
+
+}

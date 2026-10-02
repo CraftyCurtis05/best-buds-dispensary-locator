@@ -3,8 +3,14 @@
 
     <section
         id="terpene-101"
+        class="strain-guide-topic strain-guide-topic-terpenes"
         aria-labelledby="terpene-101-heading"
     >
+
+        <!-- Guide Topic Label -->
+        <p class="strain-guide-topic-label">
+            Terpene Guide
+        </p>
 
         <!-- Display Terpene 101 Introduction -->
         <h3 id="terpene-101-heading">
@@ -446,6 +452,8 @@
                         <img
                             :src="GSC"
                             alt="GSC Girl Scout Cookies cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -463,6 +471,8 @@
                         <img
                             :src="WhiteWidow"
                             alt="White Widow cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -480,6 +490,8 @@
                         <img
                             :src="SourDiesel"
                             alt="Sour Diesel cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -568,6 +580,8 @@
                         <img
                             :src="LemonSkunk"
                             alt="Lemon Skunk cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -585,6 +599,8 @@
                         <img
                             :src="LemonOG"
                             alt="Lemon OG cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -602,6 +618,8 @@
                         <img
                             :src="LemonCake"
                             alt="Lemon Cake cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -690,6 +708,8 @@
                         <img
                             :src="OGKush"
                             alt="OG Kush cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -707,6 +727,8 @@
                         <img
                             :src="MangoKush"
                             alt="Mango Kush cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -724,6 +746,8 @@
                         <img
                             :src="SkywalkerOG"
                             alt="Skywalker OG cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -805,6 +829,8 @@
                         <img
                             :src="GaryPayton"
                             alt="Gary Payton cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -822,6 +848,8 @@
                         <img
                             :src="Chemdawg"
                             alt="Chemdawg cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -839,6 +867,8 @@
                         <img
                             :src="GMOCookies"
                             alt="GMO Cookies cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -919,6 +949,8 @@
                         <img
                             :src="Lavender"
                             alt="Lavender cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -936,6 +968,8 @@
                         <img
                             :src="LAConfidential"
                             alt="LA Confidential cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -953,6 +987,8 @@
                         <img
                             :src="RedHaze"
                             alt="Red Haze cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1033,6 +1069,8 @@
                         <img
                             :src="JackHerer"
                             alt="Jack Herer cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1050,6 +1088,8 @@
                         <img
                             :src="PineappleExpress"
                             alt="Pineapple Express cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1067,6 +1107,8 @@
                         <img
                             :src="SuperSilverHaze"
                             alt="Super Silver Haze cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1146,6 +1188,8 @@
                         <img
                             :src="StrawberryCough"
                             alt="Strawberry Cough cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1163,6 +1207,8 @@
                         <img
                             :src="Afghani"
                             alt="Afghani cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1180,6 +1226,8 @@
                         <img
                             :src="HinduKush"
                             alt="Hindu Kush cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1259,6 +1307,8 @@
                         <img
                             :src="DutchTreat"
                             alt="Dutch Treat cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1276,6 +1326,8 @@
                         <img
                             :src="BerryWhite"
                             alt="Berry White cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1293,6 +1345,8 @@
                         <img
                             :src="AppleFritter"
                             alt="Apple Fritter cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1373,6 +1427,8 @@
                         <img
                             :src="MintChocolateChip"
                             alt="Mint Chocolate Chip cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1390,6 +1446,8 @@
                         <img
                             :src="Gelato"
                             alt="Gelato cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1407,6 +1465,8 @@
                         <img
                             :src="SunsetSherbert"
                             alt="Sunset Sherbet cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1492,6 +1552,8 @@
                         <img
                             :src="Haze"
                             alt="Haze cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1509,6 +1571,8 @@
                         <img
                             :src="Trainwreck"
                             alt="Trainwreck cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1526,6 +1590,8 @@
                         <img
                             :src="GreenCrack"
                             alt="Green Crack cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1604,6 +1670,8 @@
                         <img
                             :src="PurplePunch"
                             alt="Purple Punch cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1621,6 +1689,8 @@
                         <img
                             :src="AmnesiaHaze"
                             alt="Amnesia Haze cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1638,6 +1708,8 @@
                         <img
                             :src="CherryPie"
                             alt="Cherry Pie cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1717,6 +1789,8 @@
                         <img
                             :src="MasterKush"
                             alt="Master Kush cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1734,6 +1808,8 @@
                         <img
                             :src="BubbaKush"
                             alt="Bubba Kush cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1751,6 +1827,8 @@
                         <img
                             :src="NorthernLights"
                             alt="Northern Lights cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1828,6 +1906,8 @@
                         <img
                             :src="PineTar"
                             alt="Pine Tar cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1845,6 +1925,8 @@
                         <img
                             :src="AfghanKush"
                             alt="Afghan Kush cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>
@@ -1862,6 +1944,8 @@
                         <img
                             :src="SensiStar"
                             alt="Sensi Star cannabis strain"
+                            loading="lazy"
+                            decoding="async"
                         />
                     </a>
                 </li>

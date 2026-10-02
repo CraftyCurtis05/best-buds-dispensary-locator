@@ -1,0 +1,310 @@
+/* =========================================================
+   Best Buds Global Styles
+   ========================================================= */
+
+
+/* =========================================================
+   Light Theme Variables
+   ========================================================= */
+
+:root {
+
+    /* Main Colors */
+    --color-background: #f6f1e7;
+    --color-surface: #fffdf8;
+    --color-surface-soft: #f1eadc;
+    --color-surface-strong: #e8deca;
+
+    /* Text Colors */
+    --color-text: #14291e;
+    --color-text-soft: #657168;
+    --color-text-light: #f7f2e8;
+
+    /* Best Buds Greens */
+    --color-primary: #183d29;
+    --color-primary-hover: #24573a;
+    --color-primary-soft: #dfe9dd;
+
+    /* Best Buds Gold */
+    --color-gold: #aa8955;
+    --color-gold-dark: #876a3e;
+    --color-gold-soft: #e8dbc3;
+
+    /* Borders */
+    --color-border: #d8cbb4;
+    --color-border-strong: #b79a6c;
+
+    /* Header */
+    --color-header-background:
+        rgba(255, 253, 248, 0.94);
+
+    /* Navigation */
+    --color-nav-hover: #eee6d7;
+    --color-dropdown-background: #fffdf8;
+
+    /* Footer */
+    --color-footer-background: #0d281b;
+    --color-footer-surface: #143524;
+    --color-footer-text: #f7f2e8;
+    --color-footer-text-soft: #c8cdc7;
+
+    /* Status Colors */
+    --color-danger: #8a4742;
+    --color-danger-hover: #a65750;
+
+    /* Accessibility */
+    --color-focus: #9b7744;
+
+    /* Shadows */
+    --color-shadow:
+        rgba(18, 40, 27, 0.10);
+
+    --color-shadow-strong:
+        rgba(18, 40, 27, 0.18);
+
+    /* Overlay */
+    --color-overlay:
+        rgba(7, 22, 14, 0.40);
+
+    /* Cannabis Legality Map */
+    --color-map-adult-use: #4f7d5f;
+    --color-map-medical: #4f7f8c;
+    --color-map-limited: #b58a46;
+    --color-map-no-program: #9a5a57;
+
+
+    /* =====================================================
+       Typography
+       ===================================================== */
+
+    --font-family-main:
+        "Avenir Next",
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+
+    /* =====================================================
+       Layout
+       ===================================================== */
+
+    --page-max-width: 1440px;
+
+    --border-radius-small: 0.5rem;
+    --border-radius-medium: 0.9rem;
+    --border-radius-large: 1.4rem;
+    --border-radius-pill: 999px;
+
+}
+
+
+/* =========================================================
+   Dark Theme Variables
+   ========================================================= */
+
+[data-theme="dark"],
+[data-bs-theme="dark"] {
+
+    /* Main Colors */
+    --color-background: #06110c;
+    --color-surface: #0b1d14;
+    --color-surface-soft: #10281b;
+    --color-surface-strong: #173724;
+
+    /* Text Colors */
+    --color-text: #f0ede4;
+    --color-text-soft: #b7c0b8;
+    --color-text-light: #f8f4eb;
+
+    /* Best Buds Greens */
+    --color-primary: #dce7da;
+    --color-primary-hover: #ffffff;
+    --color-primary-soft: #1b3b28;
+
+    /* Best Buds Gold */
+    --color-gold: #b99a67;
+    --color-gold-dark: #d0b17b;
+    --color-gold-soft: #3d3323;
+
+    /* Borders */
+    --color-border: #294535;
+    --color-border-strong: #806b49;
+
+    /* Header */
+    --color-header-background:
+        rgba(6, 17, 12, 0.94);
+
+    /* Navigation */
+    --color-nav-hover: #173524;
+    --color-dropdown-background: #0d2117;
+
+    /* Footer */
+    --color-footer-background: #040e09;
+    --color-footer-surface: #0b2116;
+    --color-footer-text: #f7f2e8;
+    --color-footer-text-soft: #aeb9b0;
+
+    /* Status Colors */
+    --color-danger: #c77b73;
+    --color-danger-hover: #dc9188;
+
+    /* Accessibility */
+    --color-focus: #c0a06c;
+
+    /* Shadows */
+    --color-shadow:
+        rgba(0, 0, 0, 0.26);
+
+    --color-shadow-strong:
+        rgba(0, 0, 0, 0.42);
+
+    /* Overlay */
+    --color-overlay:
+        rgba(0, 0, 0, 0.55);
+
+    /* Cannabis Legality Map */
+    --color-map-adult-use: #76a786;
+    --color-map-medical: #6da7b5;
+    --color-map-limited: #d0a35d;
+    --color-map-no-program: #c57a74;
+
+}
+
+
+/* =========================================================
+   Basic Reset
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+html {
+    min-height: 100%;
+
+    /*
+     * Leave room for the sticky header when
+     * navigating to sections with anchor links.
+     */
+    scroll-padding-top: 7rem;
+
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+
+    margin: 0;
+
+    background:
+        var(--color-background);
+
+    color:
+        var(--color-text);
+
+    font-family:
+        var(--font-family-main);
+
+    line-height: 1.6;
+}
+
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+img,
+svg {
+    display: block;
+
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   Links
+   ========================================================= */
+
+a {
+    color: inherit;
+}
+
+
+/* =========================================================
+   Keyboard Focus
+   ========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline:
+        2px solid
+        var(--color-focus);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   Visually Hidden Content
+   ========================================================= */
+
+.visually-hidden {
+    position: absolute !important;
+
+    width: 1px !important;
+    height: 1px !important;
+
+    padding: 0 !important;
+    margin: -1px !important;
+
+    overflow: hidden !important;
+
+    clip: rect(0, 0, 0, 0) !important;
+
+    white-space: nowrap !important;
+
+    border: 0 !important;
+}
+
+
+/* =========================================================
+   Text Selection
+   ========================================================= */
+
+::selection {
+    background:
+        var(--color-gold-soft);
+
+    color:
+        var(--color-text);
+}
+
+
+/* =========================================================
+   Reduced Motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+}

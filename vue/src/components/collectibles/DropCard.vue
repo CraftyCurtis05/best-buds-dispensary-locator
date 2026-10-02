@@ -9,6 +9,8 @@
             class="drop-artwork"
             :src="dropArtwork"
             :alt="dropArtworkAlt"
+            loading="lazy"
+            decoding="async"
         />
 
         <!-- Display Drop Information -->

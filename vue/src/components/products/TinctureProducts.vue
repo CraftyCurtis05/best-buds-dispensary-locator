@@ -3,11 +3,17 @@
 
     <section
         id="tincture"
+        class="product-section product-section-tincture"
         aria-labelledby="tincture-heading"
     >
 
         <!-- Display Tincture Information -->
         <div class="product-information">
+
+            <!-- Product Type Label -->
+            <p class="product-type-label">
+                Tincture Guide
+            </p>
 
             <h3 id="tincture-heading">
                 Tinctures
@@ -400,6 +406,8 @@
             <img
                 :src="TinctureProductsImage"
                 alt="Cannabis tincture product"
+                loading="lazy"
+                decoding="async"
             />
 
         </aside>

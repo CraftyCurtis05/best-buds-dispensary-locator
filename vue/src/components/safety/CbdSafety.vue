@@ -3,8 +3,14 @@
 
     <section
         id="cbd-consumption"
+        class="safety-topic safety-topic-cbd"
         aria-labelledby="cbd-safety-heading"
     >
+
+        <!-- Safety Topic Label -->
+        <p class="safety-topic-label">
+            CBD Safety Guide
+        </p>
 
         <!-- Display CBD Safety Introduction -->
         <h3 id="cbd-safety-heading">
@@ -674,6 +680,8 @@
             <img
                 :src="CbdSafetyImage"
                 alt="CBD consumption safety"
+                loading="lazy"
+                decoding="async"
             />
 
         </figure>

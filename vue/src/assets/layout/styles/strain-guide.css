@@ -1,0 +1,832 @@
+/* =========================================================
+   Best Buds Strain & Terpene Guide Styles
+   ========================================================= */
+
+
+/* =========================================================
+   Main Guide Topic
+   ========================================================= */
+
+.strain-guide-topic {
+    width: 100%;
+
+    padding:
+        clamp(
+            3.5rem,
+            8vw,
+            5.5rem
+        )
+        0;
+}
+
+
+/* =========================================================
+   Guide Topic Label
+   ========================================================= */
+
+.strain-guide-topic-label {
+    display: inline-flex;
+
+    margin:
+        0
+        0
+        0.7rem !important;
+
+    padding:
+        0.35rem
+        0.6rem;
+
+    background:
+        var(--color-primary-soft);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-pill);
+
+    color:
+        var(--color-primary) !important;
+
+    font-size:
+        0.62rem !important;
+
+    font-weight: 600;
+
+    letter-spacing: 0.11em;
+
+    line-height: 1.4 !important;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   Main Topic Heading
+   ========================================================= */
+
+.strain-guide-topic
+> h3 {
+    max-width: 50rem;
+
+    margin:
+        0
+        0
+        1rem;
+
+    color:
+        var(--color-text);
+
+    font-size:
+        clamp(
+            2rem,
+            5vw,
+            3.2rem
+        );
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+}
+
+
+/* =========================================================
+   Main Topic Introduction
+   ========================================================= */
+
+.strain-guide-topic
+> p:not(
+    .strain-guide-topic-label
+) {
+    max-width: 50rem;
+
+    margin:
+        0
+        0
+        0.8rem;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.94rem;
+
+    line-height: 1.75;
+}
+
+
+/* Stronger First Paragraph */
+.strain-guide-topic
+> h3
++ p {
+    color:
+        var(--color-text);
+
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   Guide Article
+   ========================================================= */
+
+.strain-guide-topic
+> article {
+    position: relative;
+
+    margin-top: 1.25rem;
+
+    padding:
+        clamp(
+            1.2rem,
+            3vw,
+            1.5rem
+        );
+
+    background:
+        var(--color-surface);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-large);
+
+    box-shadow:
+        0 8px 22px
+        var(--color-shadow);
+}
+
+
+/* Article Heading */
+.strain-guide-topic
+> article
+> h4 {
+    margin:
+        0
+        0
+        0.8rem;
+
+    color:
+        var(--color-text);
+
+    font-size:
+        clamp(
+            1.15rem,
+            3vw,
+            1.45rem
+        );
+
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+
+/* Subheading */
+.strain-guide-topic
+> article
+> h5 {
+    margin:
+        1.3rem
+        0
+        0.65rem;
+
+    padding-top: 1rem;
+
+    border-top:
+        1px solid
+        var(--color-border);
+
+    color:
+        var(--color-primary);
+
+    font-size: 0.82rem;
+    font-weight: 600;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* Article Paragraph */
+.strain-guide-topic
+> article
+> p {
+    margin:
+        0
+        0
+        0.75rem;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.84rem;
+
+    line-height: 1.7;
+}
+
+
+/* Last Paragraph */
+.strain-guide-topic
+> article
+> p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   Information Lists
+   ========================================================= */
+
+.strain-details,
+.strain-effects,
+.terpene-details {
+    display: grid;
+
+    gap: 0.6rem;
+
+    padding:
+        0
+        0
+        0
+        1.2rem;
+
+    margin:
+        0.8rem
+        0;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.82rem;
+
+    line-height: 1.65;
+}
+
+
+/* Information List Marker */
+.strain-details
+li::marker,
+.strain-effects
+li::marker,
+.terpene-details
+li::marker {
+    color:
+        var(--color-gold);
+}
+
+
+/* Strong List Text */
+.strain-details strong,
+.strain-effects strong,
+.terpene-details strong {
+    color:
+        var(--color-text);
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   Step Lists
+   ========================================================= */
+
+.strain-steps,
+.terpene-steps {
+    display: grid;
+
+    gap: 0.65rem;
+
+    padding: 0;
+
+    margin:
+        1rem
+        0
+        0;
+
+    list-style: none;
+
+    counter-reset:
+        guide-step;
+}
+
+
+/* Step */
+.strain-steps
+> li,
+.terpene-steps
+> li {
+    position: relative;
+
+    counter-increment:
+        guide-step;
+
+    padding:
+        1rem
+        1rem
+        1rem
+        3.2rem;
+
+    background:
+        var(--color-surface-soft);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-medium);
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.82rem;
+
+    line-height: 1.65;
+}
+
+
+/* Step Number */
+.strain-steps
+> li::before,
+.terpene-steps
+> li::before {
+    position: absolute;
+
+    top: 1rem;
+    left: 1rem;
+
+    display: grid;
+    place-items: center;
+
+    width: 1.55rem;
+    height: 1.55rem;
+
+    background:
+        var(--color-primary);
+
+    border-radius: 50%;
+
+    color:
+        var(--color-background);
+
+    font-size: 0.62rem;
+    font-weight: 600;
+
+    content:
+        counter(
+            guide-step,
+            decimal-leading-zero
+        );
+}
+
+
+/* Step Strong Text */
+.strain-steps strong,
+.terpene-steps strong {
+    color:
+        var(--color-text);
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   Strain and Terpene Image Grids
+   ========================================================= */
+
+.strain-list,
+.terpene-strains {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(
+                0,
+                1fr
+            )
+        );
+
+    gap: 0.75rem;
+
+    padding: 0;
+
+    margin:
+        1rem
+        0
+        0;
+
+    list-style: none;
+}
+
+
+/* Individual Strain */
+.strain-list
+> li,
+.terpene-strains
+> li {
+    min-width: 0;
+}
+
+
+/* Strain Link */
+.strain-list a,
+.terpene-strains a {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    background:
+        var(--color-surface-soft);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-medium);
+
+    color:
+        var(--color-text);
+
+    text-decoration: none;
+
+    transition:
+        transform 160ms ease,
+        border-color 160ms ease,
+        box-shadow 160ms ease;
+}
+
+
+/* Strain Link Hover */
+.strain-list a:hover,
+.terpene-strains a:hover {
+    border-color:
+        var(--color-border-strong);
+
+    box-shadow:
+        0 10px 24px
+        var(--color-shadow-strong);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* Strain Name */
+.strain-list a
+> span,
+.terpene-strains a
+> span {
+    order: 2;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 3rem;
+
+    padding:
+        0.65rem
+        0.75rem;
+
+    color:
+        var(--color-text);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+
+    line-height: 1.35;
+}
+
+
+/* External Link Indicator */
+.strain-list a
+> span::after,
+.terpene-strains a
+> span::after {
+    margin-left: auto;
+
+    padding-left: 0.5rem;
+
+    color:
+        var(--color-gold-dark);
+
+    content: "↗";
+}
+
+
+/* =========================================================
+   Strain Images
+   ========================================================= */
+
+.strain-list img,
+.terpene-strains img {
+    order: 1;
+
+    width: 100%;
+
+    aspect-ratio:
+        4 / 3;
+
+    object-fit: cover;
+
+    background:
+        var(--color-surface);
+
+    border-bottom:
+        1px solid
+        var(--color-border);
+}
+
+
+/* =========================================================
+   Quick Questions
+   ========================================================= */
+
+#strain-questions,
+#terpene-questions {
+    background:
+        var(--color-surface-soft);
+}
+
+
+/* Quick Questions Heading */
+#strain-questions
+> h4,
+#terpene-questions
+> h4 {
+    color:
+        var(--color-primary);
+}
+
+
+/* Questions */
+#strain-questions dl,
+#terpene-questions dl {
+    margin: 0;
+}
+
+
+/* Question */
+#strain-questions dt,
+#terpene-questions dt {
+    margin:
+        1rem
+        0
+        0.35rem;
+
+    color:
+        var(--color-text);
+
+    font-size: 0.84rem;
+    font-weight: 600;
+
+    line-height: 1.5;
+}
+
+
+/* First Question */
+#strain-questions
+dt:first-child,
+#terpene-questions
+dt:first-child {
+    margin-top: 0;
+}
+
+
+/* Answer */
+#strain-questions dd,
+#terpene-questions dd {
+    margin:
+        0
+        0
+        1rem;
+
+    padding-bottom: 1rem;
+
+    border-bottom:
+        1px solid
+        var(--color-border);
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.82rem;
+
+    line-height: 1.65;
+}
+
+
+/* Last Answer */
+#strain-questions
+dd:last-child,
+#terpene-questions
+dd:last-child {
+    margin-bottom: 0;
+
+    padding-bottom: 0;
+
+    border-bottom: 0;
+}
+
+
+/* =========================================================
+   Introductory Guide Articles
+   ========================================================= */
+
+#strain-cultivar,
+#understanding-strains,
+#strain-labels,
+#terpene-basics,
+#terpene-profiles,
+#added-terpenes,
+#terpenes-and-inhalation,
+#entourage-effect,
+#common-terpenes {
+    border-left:
+        3px solid
+        var(--color-primary);
+}
+
+
+/* =========================================================
+   Major Strain Categories
+   ========================================================= */
+
+#indica,
+#sativa,
+#hybrid {
+    border-top:
+        3px solid
+        var(--color-gold);
+}
+
+
+/* =========================================================
+   Individual Terpenes
+   ========================================================= */
+
+#humulene,
+#limonene,
+#myrcene,
+#caryophyllene,
+#linalool,
+#alpha-pinene,
+#beta-pinene,
+#terpinolene,
+#ocimene,
+#eucalyptol,
+#nerolidol,
+#borneol,
+#camphene {
+    border-top:
+        3px solid
+        var(--color-gold);
+}
+
+
+/* =========================================================
+   Shopping / Selection Guides
+   ========================================================= */
+
+#reading-cannabis,
+#choosing-strain,
+#finding-preferences,
+#reading-terpenes {
+    background:
+        linear-gradient(
+            135deg,
+            var(--color-surface),
+            var(--color-primary-soft)
+        );
+}
+
+
+/* =========================================================
+   General Links
+   ========================================================= */
+
+.strain-guide-topic a {
+    color:
+        var(--color-primary);
+}
+
+
+/* =========================================================
+   Tablet
+   ========================================================= */
+
+@media (max-width: 899.98px) {
+
+    .strain-list,
+    .terpene-strains {
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(
+                    0,
+                    1fr
+                )
+            );
+    }
+
+}
+
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 575.98px) {
+
+    .strain-guide-topic {
+        padding:
+            3rem
+            0;
+    }
+
+
+    .strain-guide-topic
+    > article {
+        padding: 1rem;
+
+        border-radius:
+            var(--border-radius-medium);
+    }
+
+
+    .strain-list,
+    .terpene-strains {
+        grid-template-columns: 1fr;
+    }
+
+
+    .strain-list a,
+    .terpene-strains a {
+        display: grid;
+
+        grid-template-columns:
+            6.5rem
+            minmax(
+                0,
+                1fr
+            );
+
+        align-items: center;
+    }
+
+
+    .strain-list img,
+    .terpene-strains img {
+        grid-column: 1;
+        grid-row: 1;
+
+        width: 6.5rem;
+        height: 5.2rem;
+
+        border-right:
+            1px solid
+            var(--color-border);
+
+        border-bottom: 0;
+    }
+
+
+    .strain-list a
+    > span,
+    .terpene-strains a
+    > span {
+        grid-column: 2;
+        grid-row: 1;
+
+        min-height: 5.2rem;
+    }
+
+}
+
+
+/* =========================================================
+   Reduced Motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .strain-list a,
+    .terpene-strains a {
+        transition: none;
+    }
+
+
+    .strain-list a:hover,
+    .terpene-strains a:hover {
+        transform: none;
+    }
+
+}

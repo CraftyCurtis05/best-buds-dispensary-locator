@@ -3,11 +3,17 @@
 
     <section
         id="oil"
+        class="product-section product-section-oil"
         aria-labelledby="oil-heading"
     >
 
         <!-- Display Oil Information -->
         <div class="product-information">
+
+            <!-- Product Type Label -->
+            <p class="product-type-label">
+                Cannabis Oil Guide
+            </p>
 
             <h3 id="oil-heading">
                 Cannabis Oil
@@ -478,6 +484,8 @@
             <img
                 :src="OilProductsImage"
                 alt="Cannabis oil product"
+                loading="lazy"
+                decoding="async"
             />
 
         </aside>

@@ -3,6 +3,7 @@
 
     <section
         id="topicals"
+        class="question-topic"
         aria-labelledby="topicals-heading"
     >
 

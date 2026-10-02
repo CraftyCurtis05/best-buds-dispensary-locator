@@ -1,47 +1,62 @@
 <!-- Legality Map Component Display -->
 <template>
 
-    <section
-        id="legality-map"
-        aria-labelledby="legality-map-heading"
-    >
+<section
+    id="legality-map"
+    aria-labelledby="legality-map-heading"
+>
 
-        <!-- Display Component Title -->
-        <h3 id="legality-map-heading">
-            Interactive Legality Map
-        </h3>
+    <!-- =================================================
+         Map Introduction
+         ================================================= -->
 
-        <!-- Display Selected State Information -->
-        <article
-            id="selected-state"
-            aria-live="polite"
-        >
-            <h3>
-                {{ selectedState }}
+    <header class="legality-map-header">
+
+        <div>
+
+            <p class="map-eyebrow">
+                Interactive Map
+            </p>
+
+            <h3 id="legality-map-heading">
+                Explore Cannabis Laws by State
             </h3>
 
-            <p
-                v-if="stateStatus"
-                class="state-status"
-            >
-                {{ stateStatus }}
-            </p>
-
             <p>
-                {{ stateLaw }}
+                Select a state to see its general cannabis
+                program status and a short legal summary.
             </p>
-        </article>
 
-        <!-- Display Interactive Legality Map -->
+        </div>
+
+    </header>
+
+
+    <!-- =================================================
+         Map Workspace
+         ================================================= -->
+
+    <div class="legality-map-layout">
+
+        <!-- Interactive Map -->
         <div id="map">
 
+            <p class="map-help">
+                Select a state with your mouse, keyboard,
+                or touch screen.
+            </p>
+
             <svg
-                ref = "svg_map"
+                ref="svg_map"
                 viewBox="0 0 1122.5197 793.70081"
                 version="1.1"
                 role="img"
-                aria-labelledby="legality-svg-title legality-svg-description"
+                aria-labelledby="
+                    legality-svg-title
+                    legality-svg-description
+                "
                 @click="setSelectedState"
+                @keydown="handleMapKeydown"
             >
 
             <title id="legality-svg-title">
@@ -735,6 +750,36 @@
 
         </div>
 
+        <!-- Selected State Information -->
+        <article
+            id="selected-state"
+            aria-live="polite"
+        >
+
+            <p class="selected-state-label">
+                Selected State
+            </p>
+
+            <h3>
+                {{ selectedState }}
+            </h3>
+
+            <p
+                v-if="stateStatus"
+                class="state-status"
+                :class="stateStatusClass"
+            >
+                {{ stateStatus }}
+            </p>
+
+            <p class="state-law">
+                {{ stateLaw }}
+            </p>
+
+        </article>
+
+        </div>
+
         <!-- Display Map Color Legend -->
         <aside
             id="legend"
@@ -842,10 +887,13 @@
 
 <script>
 export default {
+
     name: "LegalityMap",
 
     data() {
+
         return {
+
             selectedState:
                 "Select a State",
 
@@ -854,16 +902,134 @@ export default {
 
             stateLaw:
                 "Select a state on the map to see its current cannabis status."
+
         };
+
+    },
+
+    computed: {
+
+        // Create the correct status style
+        // for the selected state
+        stateStatusClass() {
+
+            switch (this.stateStatus) {
+
+                case "Adult-Use & Medical":
+                    return "status-adult-use";
+
+                case "Medical":
+                    return "status-medical";
+
+                case "Limited / Low-THC":
+                    return "status-limited";
+
+                case "No Cannabis Program":
+                    return "status-no-program";
+
+                default:
+                    return "";
+
+            }
+
+        }
+
+    },
+
+    mounted() {
+
+        this.prepareMapAccessibility();
+
     },
 
     methods: {
 
+        // Make each state usable with a keyboard
+        prepareMapAccessibility() {
+
+            const map =
+                this.$refs.svg_map;
+
+            if (!map) {
+                return;
+            }
+
+            const states =
+                map.querySelectorAll(
+                    "path[law]"
+                );
+
+            states.forEach(
+                (state) => {
+
+                    const stateName =
+                        state.id;
+
+                    const stateStatus =
+                        state.getAttribute(
+                            "status"
+                        );
+
+                    state.setAttribute(
+                        "tabindex",
+                        "0"
+                    );
+
+                    state.setAttribute(
+                        "role",
+                        "button"
+                    );
+
+                    state.setAttribute(
+                        "aria-label",
+                        `${stateName}. ${stateStatus}. Select for details.`
+                    );
+
+                }
+            );
+
+        },
+
+
+        // Allow Enter and Space to select a state
+        handleMapKeydown(
+            event
+        ) {
+
+            if (
+                event.key !== "Enter"
+                &&
+                event.key !== " "
+            ) {
+                return;
+            }
+
+            if (
+                !event.target.matches(
+                    "path[law]"
+                )
+            ) {
+                return;
+            }
+
+            event.preventDefault();
+
+            this.setSelectedState(
+                event
+            );
+
+        },
+
+
         // Display the selected state's cannabis law
-        setSelectedState(event) {
+        setSelectedState(
+            event
+        ) {
 
             const state =
-                event.target.closest("path[law]");
+                event.target.closest(
+                    "path[law]"
+                );
 
             if (!state) {
                 return;
@@ -873,18 +1039,49 @@ export default {
                 state.id;
 
             const stateStatus =
-                state.getAttribute("status");
+                state.getAttribute(
+                    "status"
+                );
 
             const stateLaw =
-                state.getAttribute("law");
+                state.getAttribute(
+                    "law"
+                );
 
             if (
                 !stateName
-                || !stateLaw
+                ||
+                !stateLaw
             ) {
                 return;
             }
 
+
+            // Remove the previous selected state
+            const states =
+                this.$refs.svg_map
+                    ?.querySelectorAll(
+                        "path[law]"
+                    );
+
+            states?.forEach(
+                (mapState) => {
+
+                    mapState.classList.remove(
+                        "state-selected"
+                    );
+
+                }
+            );
+
+
+            // Highlight the new selected state
+            state.classList.add(
+                "state-selected"
+            );
+
+
+            // Update the information panel
             this.selectedState =
                 stateName;
 
@@ -897,28 +1094,600 @@ export default {
         }
 
     }
+
 };
+
 </script>
 
 <style scoped>
-/* Adult-Use & Medical */
-.legal {
-    fill: #4CAF50;
+
+/* =========================================================
+   Legality Map
+   ========================================================= */
+
+#legality-map {
+    width: 100%;
 }
+
+
+/* =========================================================
+   Map Header
+   ========================================================= */
+
+.legality-map-header {
+    max-width: 44rem;
+
+    margin-bottom: 1.25rem;
+}
+
+
+/* Map Eyebrow */
+.map-eyebrow {
+    margin:
+        0
+        0
+        0.4rem;
+
+    color:
+        var(--color-gold-dark);
+
+    font-size: 0.66rem;
+    font-weight: 600;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+}
+
+
+/* Map Heading */
+.legality-map-header h3 {
+    margin:
+        0
+        0
+        0.55rem;
+
+    color:
+        var(--color-text);
+
+    font-size:
+        clamp(
+            1.35rem,
+            3vw,
+            1.8rem
+        );
+
+    font-weight: 600;
+}
+
+
+/* Map Description */
+.legality-map-header > div > p:last-child {
+    margin: 0;
+
+    color:
+        var(--color-text-soft);
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   Map Layout
+   ========================================================= */
+
+.legality-map-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(
+            0,
+            1.8fr
+        )
+        minmax(
+            16rem,
+            0.7fr
+        );
+
+    gap: 1rem;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   Map
+   ========================================================= */
+
+#map {
+    overflow-x: auto;
+
+    padding: 1rem;
+
+    background:
+        var(--color-surface);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-large);
+
+    box-shadow:
+        0 14px 34px
+        var(--color-shadow);
+}
+
+
+/* Map Help */
+.map-help {
+    margin:
+        0
+        0
+        0.75rem;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.7rem;
+}
+
+
+/* SVG Map */
+#map svg {
+    width: 100%;
+    height: auto;
+
+    min-width: 40rem;
+}
+
+
+/* =========================================================
+   State Colors
+   ========================================================= */
+
+/* Adult-Use and Medical */
+.legal {
+    fill:
+        var(--color-map-adult-use);
+}
+
 
 /* Medical */
 .medical {
-    fill: #3C88A3;
+    fill:
+        var(--color-map-medical);
 }
+
 
 /* Limited / Low-THC */
 .limited {
-    fill: #E5A93D;
+    fill:
+        var(--color-map-limited);
 }
+
 
 /* No Cannabis Program */
 .illegal {
-    fill: #C95C5C;
+    fill:
+        var(--color-map-no-program);
+}
+
+
+/* =========================================================
+   Interactive States
+   ========================================================= */
+
+#map path[law] {
+    cursor: pointer;
+
+    transition:
+        opacity 140ms ease,
+        stroke 140ms ease,
+        stroke-width 140ms ease;
+}
+
+
+/* State Hover */
+#map path[law]:hover {
+    opacity: 0.82;
+
+    stroke:
+        var(--color-text);
+
+    stroke-width: 2px;
+
+    vector-effect:
+        non-scaling-stroke;
+}
+
+
+/* Keyboard Focus */
+#map path[law]:focus-visible {
+    outline: none;
+
+    stroke:
+        var(--color-focus);
+
+    stroke-width: 4px;
+
+    vector-effect:
+        non-scaling-stroke;
+}
+
+
+/* Selected State */
+#map path.state-selected {
+    stroke:
+        var(--color-gold-dark);
+
+    stroke-width: 5px;
+
+    vector-effect:
+        non-scaling-stroke;
+}
+
+
+/* =========================================================
+   Selected State Card
+   ========================================================= */
+
+#selected-state {
+    position: sticky;
+
+    top: 7rem;
+
+    padding: 1.4rem;
+
+    background:
+        var(--color-surface);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-large);
+
+    box-shadow:
+        0 14px 34px
+        var(--color-shadow);
+}
+
+
+/* Selected State Label */
+.selected-state-label {
+    margin:
+        0
+        0
+        0.4rem;
+
+    color:
+        var(--color-gold-dark);
+
+    font-size: 0.62rem;
+    font-weight: 600;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+
+/* State Name */
+#selected-state h3 {
+    margin:
+        0
+        0
+        0.75rem;
+
+    color:
+        var(--color-text);
+
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   Status Badge
+   ========================================================= */
+
+.state-status {
+    display: inline-flex;
+
+    margin:
+        0
+        0
+        1rem;
+
+    padding:
+        0.35rem
+        0.6rem;
+
+    border:
+        1px solid
+        currentColor;
+
+    border-radius:
+        var(--border-radius-pill);
+
+    font-size: 0.65rem;
+    font-weight: 600;
+}
+
+
+/* Adult-Use */
+.status-adult-use {
+    color:
+        var(--color-map-adult-use);
+}
+
+
+/* Medical */
+.status-medical {
+    color:
+        var(--color-map-medical);
+}
+
+
+/* Limited */
+.status-limited {
+    color:
+        var(--color-map-limited);
+}
+
+
+/* No Program */
+.status-no-program {
+    color:
+        var(--color-map-no-program);
+}
+
+
+/* State Law */
+.state-law {
+    margin: 0;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.82rem;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   Map Legend
+   ========================================================= */
+
+#legend {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap:
+        0.65rem
+        1rem;
+
+    margin-top: 1rem;
+
+    padding: 1rem;
+
+    background:
+        var(--color-surface);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-medium);
+}
+
+
+/* Legend Heading */
+#legend h4 {
+    width: 100%;
+
+    margin:
+        0
+        0
+        0.2rem;
+
+    color:
+        var(--color-text);
+
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+
+/* Legend Items */
+#legend > div {
+    display: flex;
+    align-items: center;
+
+    gap: 0.4rem;
+}
+
+
+/* Legend Text */
+#legend p {
+    margin: 0;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.7rem;
+}
+
+
+/* Legend Marker */
+#legend > div > span {
+    width: 0.7rem;
+    height: 0.7rem;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+}
+
+
+/* Adult-Use Marker */
+#legend #legal > span {
+    background:
+        var(--color-map-adult-use);
+}
+
+
+/* Medical Marker */
+#legend #medical > span {
+    background:
+        var(--color-map-medical);
+}
+
+
+/* Limited Marker */
+#legend #limited > span {
+    background:
+        var(--color-map-limited);
+}
+
+
+/* No Program Marker */
+#legend #illegal > span {
+    background:
+        var(--color-map-no-program);
+}
+
+
+/* =========================================================
+   Map Information
+   ========================================================= */
+
+#map-information {
+    margin-top: 1rem;
+
+    padding:
+        1.2rem;
+
+    background:
+        var(--color-surface-soft);
+
+    border:
+        1px solid
+        var(--color-border);
+
+    border-radius:
+        var(--border-radius-medium);
+}
+
+
+/* Information Heading */
+#map-information h4 {
+    margin:
+        0
+        0
+        0.7rem;
+
+    color:
+        var(--color-text);
+
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+
+/* Information Text */
+#map-information p {
+    margin:
+        0
+        0
+        0.6rem;
+
+    color:
+        var(--color-text-soft);
+
+    font-size: 0.78rem;
+
+    line-height: 1.6;
+}
+
+
+/* Last Information Paragraph */
+#map-information p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Review Date */
+#map-information strong {
+    color:
+        var(--color-text);
+
+    font-size: 0.72rem;
+}
+
+
+/* =========================================================
+   Tablet
+   ========================================================= */
+
+@media (max-width: 899.98px) {
+
+    .legality-map-layout {
+        grid-template-columns: 1fr;
+    }
+
+
+    #selected-state {
+        position: static;
+    }
+
+}
+
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
+@media (max-width: 575.98px) {
+
+    #map {
+        padding: 0.75rem;
+    }
+
+
+    #map svg {
+        min-width: 34rem;
+    }
+
+
+    #legend {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+
+    #legend h4 {
+        margin-bottom: 0.25rem;
+    }
+
+}
+
+
+/* =========================================================
+   Reduced Motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    #map path[law] {
+        transition: none;
+    }
+
 }
 
 </style>
